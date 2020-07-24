@@ -1,34 +1,73 @@
 
 const sample_state = {
     entities: {
-        stocks: {
+        assets: {
             1: {
                 id: 1,
                 ticker: "FB",
-                company_name: "Facebook, Inc.",
+                asset_name: "Facebook, Inc.",
                 price: 241.42,
-                watchlist_ids: [20, 24],
+                about: {
+                    ceo: "Sundar Pichai",
+                    employees: 118,899,
+                    hq: "Mountain View, California",
+                    founded: 2015,
+                },
+                biz: {
+                    marketCap: 1020000000,
+                    peRatio: 31.58,
+                    dividenYield: null,
+                    avgVol: 1830000,
+                    highToday: 1515.43,
+                    lowToday: 1487.84,
+                    marketOpen: 1495.90,
+                    vol: 826030,
+                    high52: 1587.05,
+                    low52: 1008.87,
+                },
             },
             2: {
                 id: 2,
                 ticker: "GOOGL",
                 company_name: "Alphabet Inc.",
                 price: 1555.92,
-                watchlist_ids: [12, 26]
+                about: {
+
+                },
+                biz: {
+
+                },
             }
         },
         users: {
             20: {
                 id: 20,
                 email: "abc@abc.com",
-                portfolio: [1, 2],
-                watchedStocks: [1, 2],
             },
             24: {
                 id: 24,
                 email: "def@def.com",
-                portfolio: [1],
-                watchedStocks: [1, 2],
+            }
+        },
+        transactions: {
+            1: {
+                id: 1,
+                userId: 20,
+                assetId: 1,
+                transactionPrice: "price",
+                transactionType: "type",
+                quantity: "quantity"
+            },
+            2: {
+                id: 2,
+
+            },
+        },
+        watchlist: {
+            1: {
+                id: 1,
+                userId: 20,
+                assetId: 1,
             }
         },
     },
