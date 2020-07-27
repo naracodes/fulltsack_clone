@@ -43,10 +43,16 @@ const sample_state = {
             20: {
                 id: 20,
                 email: "abc@abc.com",
+                firstName: 'Nara',
+                lastName: 'Lee',
+                watching: [1],
             },
             24: {
                 id: 24,
                 email: "def@def.com",
+                firstName: 'Pablo',
+                lastName: 'Kim',
+                watching: [2],
             }
         },
         transactions: {
