@@ -7,7 +7,7 @@ class NavBar extends React.Component {
         const { currentUser, logout } = this.props;
         return (
             <div>
-                <h3>This is navbar</h3>
+                <h5>This is navbar</h5>
                 <Link to={'/signup'}>Sign Up</Link>
             </div>
         )
