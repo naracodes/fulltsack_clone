@@ -19,7 +19,7 @@ class NavBar extends React.Component {
         const navBar = currentUser ? ( <button onClick={this.handleClick}>Log Out</button> ) : (
             <div className="user-entry">
                 <Link to={'/login'}>Log In</Link>
-                <Link to={'/signup'}>Sign Up</Link>
+                <Link id='sign-up' to={'/signup'}>Sign Up</Link>
             </div>
         )
         return (
