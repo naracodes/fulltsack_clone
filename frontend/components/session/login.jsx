@@ -3,7 +3,7 @@ import React from "react";
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.sate = this.props.user;
+        this.state = this.props.user;
     }
 
     handleSubmit(e) {
@@ -22,22 +22,26 @@ class Login extends React.Component {
         return (
             <div>
                 <form>
-                    <label>
+                    <label>Email or username
+                        <br/>
                         <input
                         type="text"
-                        value={}
+                        value={this.state.email}
                         placeholder={"Email"}
-                        onChange={}
+                        onChange={this.update('email')}
                         />
                     </label>
-                    <label>
+                    <br/>
+                    <label>Password
+                        <br/>
                         <input
                         type="password"
-                        value={}
+                        value={this.state.password}
                         placeholder={"Password"}
-                        onChange={}
+                        onChange={this.update('password')}
                         />
                     </label>
+                    <button onClick={this.handleSubmit}>Sign In</button>
                 </form>
             </div>
         )

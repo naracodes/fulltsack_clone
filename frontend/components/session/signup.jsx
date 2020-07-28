@@ -1,4 +1,5 @@
 import React from "react";
+import { debug } from "webpack";
 
 class Signup extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Signup extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         debugger;
-        this.props.createNewUser(this.state);
+        this.props.createNewUser(this.state)
+            // .then(() => this.props.history.push('/dashboard'));
     }
 
     update(field) {
@@ -40,6 +42,7 @@ class Signup extends React.Component {
                     onChange={this.update('lastName')}
                     />
                 </label>
+                <br/>
                 <label>
                     <input
                     type="text"
@@ -48,6 +51,7 @@ class Signup extends React.Component {
                     onChange={this.update('email')}
                     />
                 </label>
+                <br/>
                 <label>
                     <input
                     type="password"
@@ -56,6 +60,7 @@ class Signup extends React.Component {
                     onChange={this.update('password')}
                     />
                 </label>
+                <br/>
                 <button onClick={this.handleSubmit}>Continue</button>
             </form>
         </div>
