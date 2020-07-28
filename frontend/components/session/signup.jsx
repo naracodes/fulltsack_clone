@@ -27,32 +27,32 @@ class Signup extends React.Component {
                 <label>
                     <input
                     type="text"
-                    // value={"First Name"}
                     placeholder={"First Name"}
+                    value={this.state.firstName}
                     onChange={this.update('firstName')}
                     />
                 </label>
                 <label>
                     <input
                     type="text"
-                    // value={"Last Name"}
                     placeholder={"Last Name"}
+                    value={this.state.lastName}
                     onChange={this.update('lastName')}
                     />
                 </label>
                 <label>
                     <input
                     type="text"
-                    // value={"Email"}
                     placeholder={"Email"}
+                    value={this.state.email}
                     onChange={this.update('email')}
                     />
                 </label>
                 <label>
                     <input
                     type="password"
-                    // value={"Password (min. 10 characters)"}
                     placeholder={"Password (min. 10 characters)"}
+                    value={this.state.password}
                     onChange={this.update('password')}
                     />
                 </label>

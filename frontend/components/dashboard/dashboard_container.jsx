@@ -4,13 +4,13 @@ import Dashboard from './dashboard';
 
 const msp = state => {
     return {
-
+        currentUser: state.session.currentUser,
     }
 }
 
 const mdp = dispatch => {
     return {
-
+        logout: () => dispatch(logout()),
     }
 }
 
