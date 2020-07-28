@@ -1,12 +1,12 @@
 
 export const signup = user => {
-    debugger;
+    // debugger;
     const signup = $.ajax({
         method: 'POST',
         url: `/api/users`,
         data: { user }
     });
-    debugger
+    // debugger;
     return signup;
 };
 

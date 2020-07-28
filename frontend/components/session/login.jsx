@@ -4,6 +4,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.currentUser;
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
