@@ -1,14 +1,14 @@
 import React from "react";
-import { debug } from "webpack";
 
 class Signup extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.user;
+        this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         debugger;
         this.props.createNewUser(this.state)

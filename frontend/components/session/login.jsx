@@ -3,12 +3,14 @@ import React from "react";
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.user;
+        this.state = this.props.currentUser;
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state);
+        debugger;
+        this.props.login(this.state)
+            .then(() => this.props.history.push('/dashboard'));
         //.then(redirect to dashboard)
     }
 

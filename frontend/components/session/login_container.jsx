@@ -5,7 +5,7 @@ import Login from './login';
 
 const msp = () => {
     return {
-        user: {
+        currentUser: {
             email: '',
             password: '',
         }

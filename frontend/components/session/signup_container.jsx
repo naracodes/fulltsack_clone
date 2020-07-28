@@ -5,7 +5,7 @@ import Signup from './signup';
 
 const msp = () => {
     return {
-        user: {
+        currentUser: {
             email: '',
             firstName: '',
             lastName: '',
