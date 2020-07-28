@@ -26,21 +26,24 @@ class Signup extends React.Component {
                 <label>
                     <input
                     type="text"
-                    value={"First Name"}
+                    // value={"First Name"}
+                    placeholder={"First Name"}
                     onChange={this.update('firstName')}
                     />
                 </label>
                 <label>
                     <input
                     type="text"
-                    value={"Last Name"}
+                    // value={"Last Name"}
+                    placeholder={"Last Name"}
                     onChange={this.update('lastName')}
                     />
                 </label>
                 <label>
                     <input
                     type="text"
-                    value={"Email"}
+                    // value={"Email"}
+                    placeholder={"Email"}
                     onChange={this.update('email')}
                     />
                 </label>
