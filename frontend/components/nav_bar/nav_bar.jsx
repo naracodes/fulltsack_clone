@@ -17,16 +17,18 @@ class NavBar extends React.Component {
     render() {
         const { currentUser, logout } = this.props;
         const navBar = currentUser ? ( <button onClick={this.handleClick}>Log Out</button> ) : (
-            <div>
-                <h5>This is navbar</h5>
+            <div className="user-entry">
                 <Link to={'/login'}>Log In</Link>
                 <Link to={'/signup'}>Sign Up</Link>
             </div>
         )
         return (
+            <header className="nav-bar">
+                <h3>Robinhood</h3>
             <div>
                 {navBar}
             </div>
+            </header>
         )
     }
 }
