@@ -5,7 +5,7 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 export const receiveCurrentUser = user => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_CURRENT_USER,
         user
@@ -19,9 +19,9 @@ export const logoutCurrentUser = () => {
 }
 
 export const createNewUser = user => dispatch => {
-    debugger;
+    // debugger;
     return APIUtil.signup(user).then(response => {
-        debugger
+        // debugger
         return dispatch(receiveCurrentUser(response))
     })
 }

@@ -9,7 +9,7 @@ class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
+        // debugger;
         this.props.login(this.state)
             .then(() => this.props.history.push('/dashboard'));
         //.then(redirect to dashboard)
@@ -24,6 +24,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
+                <h3>Log In</h3>
                 <form>
                     <label>Email or username
                         <br/>
