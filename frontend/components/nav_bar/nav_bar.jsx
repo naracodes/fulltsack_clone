@@ -23,12 +23,10 @@ class NavBar extends React.Component {
             </div>
         )
         return (
-            <header className="nav-bar">
-                <h3>Robinhood</h3>
-            <div>
-                {navBar}
-            </div>
-            </header>
+            <nav className="nav-bar">
+                <div>Robinhood</div>
+                <div>{navBar}</div>
+            </nav>
         )
     }
 }
