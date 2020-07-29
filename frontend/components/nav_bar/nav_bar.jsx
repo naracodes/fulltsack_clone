@@ -11,24 +11,57 @@ class NavBar extends React.Component {
         e.preventDefault();
         // debugger
         this.props.logout()
-            .then(() => this.props.history.push('/login'))
+            .then(() => {
+                this.props.history.push('/login')
+            })
     }
 
     render() {
+        // debugger
         const { currentUser, logout } = this.props;
-        const navBar = currentUser ? ( <button onClick={this.handleClick}>Log Out</button> ) : (
-            <div className="user-entry">
-                <Link to={'/login'}>Log In</Link>
-                <Link id='sign-up' to={'/signup'}>Sign Up</Link>
-            </div>
-        )
+        const { history } = this.props.history;
+
+        let navBar;
+        if (currentUser) {
+           navBar = (<button onClick={this.handleClick}>Log Out</button>);
+        } else if (this.props.history.location.pathname === '/signup' || this.props.history.location.pathname === '/login') {
+            navBar = null;
+        } else {
+            navBar = (
+                <nav className="nav-bar">
+                    <div className='container'>
+                        <div className='logo'>
+                            <Link to={'/'}>Quiche (Logo)</Link>
+                        </div>
+                        <div className="user-entry">
+                            <ul className='navLinks'>
+                                <li><Link to={'/login'}>Log In</Link></li>
+                                <li><Link id='sign-up' to={'/signup'}>Sign Up</Link></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            )
+        }
         return (
-            <nav className="nav-bar">
-                <div>Quiche</div>
-                <div>{navBar}</div>
-            </nav>
+            
+                <div>
+                { navBar }
+                </div>
+            
         )
     }
 }
 
 export default NavBar;
+
+// return (
+//     <nav className="nav-bar">
+//         <div className='container'>
+//             <div className='logo'>
+//                 <Link to={'/'}>Quiche (Logo)</Link>
+//             </div>
+//             {navBar}
+//         </div>
+//     </nav>
+// )

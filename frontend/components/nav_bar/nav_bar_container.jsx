@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import NavBar from './nav_bar';
 import { logout } from '../../actions/session_actions';
 
-const msp = state => {
+const msp = (state, ownProps) => {
     return {
-        currentUser: state.session.user
+        currentUser: state.session.user,
+        ownProps: ownProps,
     }
 }
 

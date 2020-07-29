@@ -8,7 +8,7 @@ import LoginContainer from '../components/session/login_container';
 // login before signup
 export default () => (
   <div>
-    <Route exact path="/" component={NavBarContainer} />
+    <Route path="/" component={NavBarContainer} />
     <Route exact path="/login" component={LoginContainer} />
     <Route exact path="/signup" component={SignupContainer} />
     <Route exact path="/dashboard" component={DashboardContainer} />

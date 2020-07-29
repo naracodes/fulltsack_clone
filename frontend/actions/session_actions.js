@@ -19,19 +19,44 @@ export const logoutCurrentUser = () => {
     }
 }
 
+export const receiveErrors = errors => {
+    debugger
+    return {
+        type: RECEIVE_SESSION_ERRORS,
+        errors
+    }
+}
+
 export const createNewUser = user => dispatch => {
     // debugger;
     return APIUtil.signup(user).then(response => {
-        // debugger
+        debugger
         return dispatch(receiveCurrentUser(response))
+    }, err => {
+        debugger
+        return dispatch(receiveErrors(err.responseJSON))
     })
 }
 
 export const login = user => dispatch => {
+    debugger
     return APIUtil.login(user).then(response => {
+        debugger
         return dispatch(receiveCurrentUser(response))
+    }, err => {
+        debugger
+        return dispatch(receiveErrors(err.responseJSON))
     })
 }
+
+// export const login = user => dispatch => (
+//     APIUtil.login(user).then(user => (
+//         dispatch(receiveCurrentUser(user))
+//     ), err => (
+//         dispatch(receiveErrors(err.responseJSON))
+//     ))
+// );
+
 
 export const logout = () => dispatch => {
     debugger

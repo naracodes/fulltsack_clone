@@ -20,9 +20,6 @@ class Dashboard extends React.Component {
     // debugger;
     const dashboard = currentUser ? (
       <div>
-        <div>
-          <button onClick={this.handleClick}>Sign Out</button>
-        </div>
         Welcome, {`${currentUser.firstName} ${currentUser.lastName}`}
       </div>
     ) : (
