@@ -26,10 +26,13 @@ class Signup extends React.Component {
         return (
         <div>
             <h2>Quiche</h2>
-          <div className="signin-container">
+          <div className="signup-container">
             <div className="signup-form">
               <div className="info">
-                <div className='statement'>Grow your piece of the pie.</div>
+                  <div className='signup-slogan'>
+                    <div className='slogan'>Grow your piece of the pie.</div>
+                    <p className='statement'>Quiche is a new way to grow your money, offering a simple but dynamic platform for both traditional and alternative investing</p>
+                  </div>
               </div>
               <form className="signup-subform">
                 <label>
@@ -69,7 +72,7 @@ class Signup extends React.Component {
                 <button onClick={this.handleSubmit}>Continue</button>
                 <p className="message">
                   Already registered?
-                  <Link to={"/login"}>Log in</Link>
+                   <Link to={"/login"}>Log in</Link>
                 </p>
               </form>
             </div>
