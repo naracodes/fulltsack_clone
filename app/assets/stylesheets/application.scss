@@ -43,31 +43,6 @@
      line-height: 28px;
  }
  
- #sign-up {
-    align-items: center;
-    box-sizing: border-box;
-    justify-content: center;
-    overflow: hidden;
-    /* position: relative; */
-    text-align: center;
-    /* white-space: nowrap; */
-    /* padding: 0 36px; */
-    height: 48px;
-    min-width: 144px;
-    border-radius: 24px;
-    background-color: rgb(12, 222, 145);
- }
-
-//  .login-form {
-//     /* display: flex; */
-//     width: 60%;
-//     position: relative;
-//     top: 320px; left: 400px;
-//     flex-direction: column;
-//     height: 500px;
-//     box-sizing: border-box;
-//     font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
-//  }
 
  #welcome {
     font-size: 21px;
@@ -79,19 +54,82 @@
     
  }
 
-//  .signup-left {
-//     width: 60%;
-//     position: relative;
-//     top: 150px; left: 40px;
-//     flex-direction: column;
-//     height: 500px;
-//  }
+//  .signin-container {
+//   position: relative;
+//   z-index: 1;
+//   max-width: 300px;
+//   margin: 0 auto;
+// }
 
-//  #or-signup {
-//     text-decoration: none;
-//     font-size: 13px;
-//     margin-top: 20px;
-//  }
+.signin-container .info {
+    margin: 20px auto;
+    text-align: left;
+}
+
+ .signup-form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 300px;
+  margin: 0 auto 100px;
+  padding: 150px 30px 30px 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-align: left;
+  font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
+ }
+ 
+ .signup-form button {
+   outline: 0;
+   background: rgb(12, 222, 145);;
+   width: 100%;
+   border: 0;
+   padding: 15px;
+   border-top-left-radius: 3px;
+   border-top-right-radius: 3px;
+   border-bottom-left-radius: 3px;
+   border-bottom-right-radius: 3px;
+   color: #FFFFFF;
+   font-size: 14px;
+   -webkit-transition: all 0.3 ease;
+   transition: all 0.3 ease;
+   cursor: pointer;
+ }
+ 
+ .signup-form input {
+   outline: 0;
+   background: #f5f8fa;
+   width: 100%;
+   border: 0;
+   margin: 10px 0 15px;
+   padding: 15px;
+   border-top-left-radius: 3px;
+   border-top-right-radius: 3px;
+   border-bottom-left-radius: 3px;
+   border-bottom-right-radius: 3px;
+   box-sizing: border-box;
+   font-size: 14px;
+ }
+
+ .signup-form ::placeholder {
+     color: #e0e1e2;
+ }
+
+  .signup-form .message {
+     display: flex;
+     justify-content: space-between;
+     padding-left: 69px;
+     padding-right: 69px;
+     font-size: 13px;
+     margin: 15px 0 0;
+ }
+
+ .signup-form .message a {
+     text-decoration: none;
+     color: rgb(12, 222, 145);
+ }
 
 .login-form {
  position: relative;
@@ -107,6 +145,7 @@
  text-align: left;
  font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
 }
+
 
 .login-form button {
   outline: 0;

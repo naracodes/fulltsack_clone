@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Signup extends React.Component {
     constructor(props) {
@@ -23,48 +24,55 @@ class Signup extends React.Component {
 
     render() {
         return (
-        <div className='signup-left'>
-            <div>Robinhood Logo</div>
-            <div>marketing statement</div>
-            <form className="signup-form">
+          <div className="signin-container">
+            <div className="signup-form">
+              <div className="info">
+                <div>marketing statement</div>
+              </div>
+              <form className="signup-subform">
                 <label>
-                    <input
+                  <input
                     type="text"
                     placeholder={"First Name"}
                     value={this.state.firstName}
-                    onChange={this.update('firstName')}
-                    />
+                    onChange={this.update("firstName")}
+                  />
                 </label>
                 <label>
-                    <input
+                  <input
                     type="text"
                     placeholder={"Last Name"}
                     value={this.state.lastName}
-                    onChange={this.update('lastName')}
-                    />
+                    onChange={this.update("lastName")}
+                  />
                 </label>
                 <label>
-                    <input
+                  <input
                     type="text"
                     placeholder={"Email"}
                     value={this.state.email}
-                    onChange={this.update('email')}
-                    />
+                    onChange={this.update("email")}
+                  />
                 </label>
-                
+
                 <label>
-                    <input
+                  <input
                     type="password"
                     placeholder={"Password (min. 10 characters)"}
                     value={this.state.password}
-                    onChange={this.update('password')}
-                    />
+                    onChange={this.update("password")}
+                  />
                 </label>
-                
+
                 <button onClick={this.handleSubmit}>Continue</button>
-            </form>
-        </div>
-        )
+                <p className="message">
+                  Already registered?
+                  <Link to={"/login"}>Log in</Link>
+                </p>
+              </form>
+            </div>
+          </div>
+        );
     }
 
 }
