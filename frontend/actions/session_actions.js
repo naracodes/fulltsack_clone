@@ -13,6 +13,7 @@ export const receiveCurrentUser = user => {
 }
 
 export const logoutCurrentUser = () => {
+    debugger
     return {
         type: LOGOUT_CURRENT_USER,
     }
@@ -33,6 +34,7 @@ export const login = user => dispatch => {
 }
 
 export const logout = () => dispatch => {
+    debugger
     return APIUtil.logout().then(() => {
         return dispatch(logoutCurrentUser())
     })

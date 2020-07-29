@@ -1,4 +1,7 @@
 import React from "react";
+import Signup from "./signup";
+import { Link } from "react-router-dom";
+
 
 class Login extends React.Component {
     constructor(props) {
@@ -12,7 +15,6 @@ class Login extends React.Component {
         // debugger;
         this.props.login(this.state)
             .then(() => this.props.history.push('/dashboard'));
-        //.then(redirect to dashboard)
     }
 
     update(field) {
@@ -23,9 +25,10 @@ class Login extends React.Component {
     
     render() {
         return (
+            <div className="login-container">
             <div className="login-form">
                 <h3 id="welcome">Welcome to Robinhood</h3>
-                <form>
+                <form className='login-subform'>
                     <label id="guide">Email or username
                         <br/>
                         <input
@@ -44,8 +47,14 @@ class Login extends React.Component {
                         />
                     </label>
                     <br/>
-                    <button onClick={this.handleSubmit}>Sign In</button>
+                    <div className="signin-signup">
+                        <button className={'sign-in-button'} onClick={this.handleSubmit}>Sign In</button>
+                        <p className='message'>Not registered?
+                        <Link id='or-signup' to={'/signup'}>Create an account</Link>
+                        </p>
+                    </div>
                 </form>
+            </div>
             </div>
         )
     }
