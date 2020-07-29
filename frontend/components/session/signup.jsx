@@ -44,7 +44,7 @@ class Signup extends React.Component {
           <div>
             <div className="signup-home">
               <Link to={"/"}>
-                <button className="home-btn">&#10083;</button>
+                <button className="home-btn">&#8592;</button>
               </Link>
             </div>
             <div className="signup-container">
