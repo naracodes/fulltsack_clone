@@ -43,8 +43,8 @@ class Signup extends React.Component {
         return (
           <div>
             <div className="signup-home">
-              <Link className="home-btn" to={"/"}>
-                <button value='Quiche'></button>
+              <Link to={"/"}>
+                <button className="home-btn">&#10083;</button>
               </Link>
             </div>
             <div className="signup-container">

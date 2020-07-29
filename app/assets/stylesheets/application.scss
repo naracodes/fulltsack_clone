@@ -396,3 +396,20 @@ table {
    margin: 25px 15px 15px 27px;
   //  padding: 15px;
  }
+
+ .signup-home .home-btn {
+     outline: 0;
+  background: rgb(12, 222, 145);;
+  width: 28px;
+  border: 0;
+  padding: 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+ }
