@@ -8,6 +8,7 @@ class Login extends React.Component {
         super(props);
         this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleSubmit(e) {
@@ -38,6 +39,19 @@ class Login extends React.Component {
                 }
             </div>
         )
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+        const demoUser = {
+                email: 'demo@demo.com',
+                password: 'demopassworddemo',
+            };
+            
+        this.props.login(demoUser)
+            .then(() => {
+          this.props.history.push("/dashboard");
+        });
     }
     
     render() {
@@ -73,6 +87,10 @@ class Login extends React.Component {
                             <p className='message'>Not registered?
                             <Link id='or-signup' to={'/signup'}>Create an account</Link>
                             </p>
+                            <div className='demo-login'>
+                                <p onClick={this.handleDemo}>Demo user</p> 
+                            </div>
+                            
                         </div>
                     </form>
                 </div>

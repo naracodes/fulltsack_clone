@@ -413,3 +413,14 @@ table {
   transition: all 0.3 ease;
   cursor: pointer;
  }
+
+ .demo-login {
+   display: flex;
+   justify-content: center;
+   font-size: 13px;
+ }
+
+ .demo-login p {
+   padding-top: 9px;
+   cursor: pointer;
+ }
