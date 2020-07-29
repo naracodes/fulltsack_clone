@@ -24,10 +24,12 @@ class Signup extends React.Component {
 
     render() {
         return (
+        <div>
+            <h2>Quiche</h2>
           <div className="signin-container">
             <div className="signup-form">
               <div className="info">
-                <div>marketing statement</div>
+                <div className='statement'>Grow your piece of the pie.</div>
               </div>
               <form className="signup-subform">
                 <label>
@@ -72,6 +74,8 @@ class Signup extends React.Component {
               </form>
             </div>
           </div>
+
+        </div>
         );
     }
 

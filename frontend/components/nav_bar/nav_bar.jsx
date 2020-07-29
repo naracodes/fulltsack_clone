@@ -24,7 +24,7 @@ class NavBar extends React.Component {
         )
         return (
             <nav className="nav-bar">
-                <div>Robinhood</div>
+                <div>Quiche</div>
                 <div>{navBar}</div>
             </nav>
         )

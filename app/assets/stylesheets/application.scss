@@ -50,8 +50,12 @@
  }
 
  #guide {
-    font-size: 13px;
-    
+    font-size: 13px;    
+ }
+
+ #sign-up {
+    background-color: rgb(12, 222, 145);
+    border-radius: 24px;
  }
 
 //  .signin-container {
@@ -99,10 +103,10 @@
  }
  
  .signup-form input {
-   outline: 0;
+   outline: 3px;
    background: #f5f8fa;
    width: 100%;
-   border: 0;
+   border-style: none;
    margin: 10px 0 15px;
    padding: 15px;
    border-top-left-radius: 3px;
@@ -111,10 +115,58 @@
    border-bottom-right-radius: 3px;
    box-sizing: border-box;
    font-size: 14px;
+}
+
+.signup-form input:focus:not(hover) {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(12, 222, 145);
+    background-color: #FFFFFF;
  }
 
+ .login-form input:focus:not(hover) {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(12, 222, 145);
+    background-color: #FFFFFF;
+ }
+
+
  .signup-form ::placeholder {
-     color: #e0e1e2;
+    color: #e0e1e2;
+    // border-style: solid;
+    border-width: 1px;
+    border-color: #f5f8fa;
+ }
+
+ .signup-form input:hover {
+    // outline: 3px;
+   background: #FFFFFF;
+   width: 100%;
+   border-style: none;
+//    margin: 10px 0 15px;
+//    padding: 15px;
+//    border-top-left-radius: 3px;
+//    border-top-right-radius: 3px;
+//    border-bottom-left-radius: 3px;
+//    border-bottom-right-radius: 3px;
+   box-sizing: border-box;
+   font-size: 14px;
+ }
+
+  .login-form input:hover {
+    // outline: 3px;
+   background: #FFFFFF;
+   width: 100%;
+   border-style: none;
+//    margin: 10px 0 15px;
+//    padding: 15px;
+//    border-top-left-radius: 3px;
+//    border-top-right-radius: 3px;
+//    border-bottom-left-radius: 3px;
+//    border-bottom-right-radius: 3px;
+   box-sizing: border-box;
+   font-size: 14px;
  }
 
   .signup-form .message {
@@ -164,6 +216,15 @@
   cursor: pointer;
 }
 
+.login-form button:hover {
+    border-bottom: violet;
+    border-bottom-color: black;
+    // background-color: #17c082;
+}
+
+.signup-form .statement {
+    font-size: 18px;
+}
 
 .login-form input {
   outline: 0;
