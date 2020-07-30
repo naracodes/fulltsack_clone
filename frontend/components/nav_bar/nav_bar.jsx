@@ -28,22 +28,24 @@ class NavBar extends React.Component {
             navBar = null;
         } else {
             navBar = (
-                <nav className="nav-bar">
-                    <div className='container'>
-                        <div className='logo'>
-                            <Link to={'/'}>Quiche (Logo)</Link>
-                        </div>
-                        <div className='spacer'>
+                <div className='nav-master'>
+                    <nav className="nav-bar">
+                        <div className='container'>
+                            <div className='logo'>
+                                <Link to={'/'}>Quiche (Logo)</Link>
+                            </div>
+                            <div className='spacer'>
 
+                            </div>
+                            <div className="user-entry">
+                                <ul className='navLinks'>
+                                    <li><Link to={'/login'}>Log In</Link></li>
+                                    <li><Link id='sign-up' to={'/signup'}>Sign Up</Link></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div className="user-entry">
-                            <ul className='navLinks'>
-                                <li><Link to={'/login'}>Log In</Link></li>
-                                <li><Link id='sign-up' to={'/signup'}>Sign Up</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             )
         }
         return (

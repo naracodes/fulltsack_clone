@@ -80,6 +80,14 @@ table {
 //      line-height: 28px;
 //  }
 
+.nav-master {
+  display: block;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  max-height: calc(100% - 0px - env(safe-area-inset-bottom));
+}
+
 .nav-bar {
   max-width: 100%;
   // padding: 0 24px;
