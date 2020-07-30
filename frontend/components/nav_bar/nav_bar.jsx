@@ -24,7 +24,7 @@ class NavBar extends React.Component {
         let navBar;
         if (currentUser) {
            navBar = (<button onClick={this.handleClick}>Log Out</button>);
-        } else if (this.props.history.location.pathname === '/signup' || this.props.history.location.pathname === '/login') {
+        } else if (this.props.history.location.pathname === '/signup' || this.props.history.location.pathname === '/login' || this.props.history.location.pathname === '/dashboard') {
             navBar = null;
         } else {
             navBar = (

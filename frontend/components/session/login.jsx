@@ -64,7 +64,7 @@ class Login extends React.Component {
             <div className="login-container">
                 <div className="login-home">
                     <Link to={"/"}>
-                        <button className="home-btn">&#8592;</button>
+                        <button className="home-btn">&#8962;</button>
                     </Link>
                 </div>
                 <div className="login-form">
