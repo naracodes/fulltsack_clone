@@ -62,7 +62,11 @@ class Login extends React.Component {
     render() {
         return (
             <div className="login-container">
-                <Link className='home-btn' to={'/'}>Quiche</Link>
+                <div className="login-home">
+                    <Link to={"/"}>
+                        <button className="home-btn">&#8592;</button>
+                    </Link>
+                </div>
                 <div className="login-form">
                     <h3 id="welcome">Welcome to Quiche</h3>
                     <form className='login-subform'>

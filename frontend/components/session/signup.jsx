@@ -30,7 +30,7 @@ class Signup extends React.Component {
 
   renderErrors() {
     return (
-      <div>
+      <div className='signup-error-message'>
         {this.props.errors.map((error, i) => {
           return <p key={i}>&#10083; {error}</p>;
         })}
@@ -92,7 +92,7 @@ class Signup extends React.Component {
                   onChange={this.update("password")}
                 />
               </label>
-              <div className="error-message">{this.renderErrors()}</div>
+              <div >{this.renderErrors()}</div>
               <button onClick={this.handleSubmit}>Continue</button>
               <p className="message">
                 Already registered?
