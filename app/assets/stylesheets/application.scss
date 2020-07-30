@@ -83,7 +83,7 @@ table {
 .nav-bar {
   max-width: 100%;
   height: 64px;
-  padding: 5px;
+  padding: 0 24px;
   background: #d8f5e6;
 }
 
@@ -94,9 +94,10 @@ table {
 
 .nav-bar .logo a {
   float: left;
+  align-items: center;
   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
   font-size: 22px;
-  margin-left: 4%;
+  // margin-left: 4%;
   font-weight: 400;
   text-decoration: none;
   align-items: center;
@@ -116,10 +117,14 @@ table {
   li {
     display: inline-block;
     align-items: center;
-    padding: 25px 15px;
+    padding: 23px;
+    padding-right: 0px;
+    // padding-left: 400px;
+    margin-right: 0rem;
   }
   a {
-    padding: 5px;
+    padding: 0em;
+    margin-left: 0em;
     text-decoration: none;
     letter-spacing: 1px;
     color: black;
@@ -128,8 +133,6 @@ table {
      font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
   }
 }
-
- 
 
  #welcome {
     font-size: 21px;
@@ -440,3 +443,81 @@ table {
    padding-top: 9px;
    cursor: pointer;
  }
+
+  // .home {
+  //  min-height: 400px;
+  //  display: flex;
+  //  justify-content: center;
+  //  align-items: flex-end;
+  //  }
+
+.home {
+  display: box;
+  max-width: 100%;
+  min-height: 540px;
+  padding: 0 36px;
+  background: #adf621;
+  min-width: 1024px;
+  box-sizing: border-box;
+  border-bottom: solid 1px black;
+}
+
+.home-media {
+  display: flex;
+  align-items: center;
+}
+
+.front-page .disclosure {
+  display: box;
+  max-width: 100%;
+  min-height: 354px;
+  padding: 0 36px;
+  background: #cb7b79;
+  min-width: 1024px;
+  box-sizing: border-box;
+  border-bottom: solid 1px black;
+}
+
+.front-page .fractional-shares {
+  display: box;
+  max-width: 100%;
+  min-height: 526px;
+  padding: 0 0 50px;
+  background: #d0bdbd;
+  min-width: 1024px;
+  box-sizing: border-box;
+  border-bottom: solid 1px black;
+}
+
+.front-page .app-demo-black {
+  display: box;
+  max-width: 100%;
+  min-height: 526px;
+  padding: 0 0 50px;
+  background: black;
+  min-width: 1024px;
+  box-sizing: border-box;
+  border-bottom: solid 1px black;
+}
+
+.front-page .our-products {
+  display: box;
+  max-width: 100%;
+  min-height: 771px;
+  padding: 0 0 50px;
+  background: #f69779;
+  min-width: 1024px;
+  box-sizing: border-box;
+  border-bottom: solid 1px black;
+}
+
+.front-page .footer-container {
+  display: box;
+  max-width: 100%;
+  min-height: 777px;
+  padding: 0 0 50px;
+  background: black;
+  min-width: 1024px;
+  box-sizing: border-box;
+  border-bottom: solid 1px black;
+}

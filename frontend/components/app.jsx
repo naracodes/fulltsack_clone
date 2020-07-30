@@ -4,11 +4,13 @@ import { Route } from "react-router-dom";
 import NavBarContainer from './nav_bar/nav_bar_container'
 import DashboardContainer from '../components/dashboard/dashboard_container';
 import LoginContainer from '../components/session/login_container';
+import Home from './home/home';
 
 // login before signup
 export default () => (
   <div>
     <Route path="/" component={NavBarContainer} />
+    <Route exact path="/" component={Home} />
     <Route exact path="/login" component={LoginContainer} />
     <Route exact path="/signup" component={SignupContainer} />
     <Route exact path="/dashboard" component={DashboardContainer} />
