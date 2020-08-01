@@ -14,6 +14,7 @@ const usersReducer = (oldState = _nullSession, action) => {
             return Object.assign({}, { user: action.user });
             // return { id: action.user.id }
         case LOGOUT_CURRENT_USER:
+            debugger
             return _nullSession;
         default:
             return oldState;

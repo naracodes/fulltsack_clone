@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  firstName       :string           not null
+#  lastName        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
     # FIG VAPER
     validates :email, :password_digest, presence: true, uniqueness: true
@@ -6,7 +19,7 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    # has_many :assets
+    has_one :watchlist
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -20,6 +33,10 @@ class User < ApplicationRecord
 
     def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
+    end
+
+    def self.watchlist
+        User.joins(:watchlists).where('user_id = ?', self.id).pluck('watchlists.asset_id')
     end
     
 

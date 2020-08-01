@@ -4,7 +4,7 @@ const _nullSession = {
     user: null,
 };
 
-const sessionReducer = (oldState = _nullSession, action) => {
+const sessionReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let nextState = Object.assign({}, oldState);
 
@@ -12,7 +12,7 @@ const sessionReducer = (oldState = _nullSession, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, { user: action.user })
             // nextState[action.user.id] = action.user
-            return nextState;
+            // return nextState;
         case LOGOUT_CURRENT_USER:
             return _nullSession;
         default:
