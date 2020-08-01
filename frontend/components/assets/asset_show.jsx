@@ -3,26 +3,25 @@ import { Link } from 'react-router-dom';
 
 class AssetShow extends React.Component {
 
-    constructor(props) {
-        super(props);
-        // this.state = {
-        //     assetPrice: this.props.fetchPrice(this.props.asset.ticker)
-        // }
-        // this.tickPrice = this.tickPrice.bind(this);
-    }
-
     componentDidMount() {
-        debugger
+        // debugger
         const ticker = this.props.asset.ticker || this.props.match.params.ticker
         debugger
         // const fetchPrice = this.props.fetchPrice
-        debugger
+        // debugger
         this.props.fetchAsset(ticker);
-        this.intervalId = setInterval(() => {
-            debugger
-            this.props.fetchPrice(ticker)
-        }, 2000)
+        // this.intervalId = setInterval(() => {
+        //     debugger
+        //     this.props.fetchPrice(ticker)
+        // }, 2000)
     }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.latestPrice !== prevProps.latestPrice) {
+    //         this.props.fetchAsset(this.props.match.params.ticker)
+    //     }
+    // }
 
     // tickPrice() {
     //     this.setState({
@@ -32,7 +31,8 @@ class AssetShow extends React.Component {
 
     componentWillUnmount() {
         debugger
-        clearInterval(this.intervalId)
+        this.props.clearAsset();
+        // clearInterval(this.intervalId)
     }
 
     render() {

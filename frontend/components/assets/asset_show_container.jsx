@@ -24,7 +24,8 @@ export const mdp = dispatch => {
     debugger
     return {
         fetchAsset: ticker => dispatch(fetchAsset(ticker)),
-        fetchPrice: ticker => dispatch(fetchPrice(ticker))
+        fetchPrice: ticker => dispatch(fetchPrice(ticker)),
+        clearAsset: () => dispatch(clearAsset()),
     }
 }
 

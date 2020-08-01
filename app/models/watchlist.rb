@@ -23,5 +23,3 @@ class Watchlist < ApplicationRecord
     #     Asset.joins(:assets).where('user.id = ?', )
     # end
 end
-
-curl --header 'Accept: text/event-stream' https://cloud-sse.iexapis.com/stable/news-stream\?symbols\=aapl\&token\=YOUR_TOKEN

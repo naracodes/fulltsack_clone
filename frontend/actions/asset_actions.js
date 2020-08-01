@@ -7,6 +7,7 @@ export const RECEIVE_ASSET_STATS = "RECEIVE_ASSET_STATS"
 export const RECEIVE_ASSET_INTRADAY = "RECEIVE_ASSET_INTRADAY";
 export const RECEIVE_PRICE = "RECEIVE_PRICE";
 export const CLEAR_PRICE = "CLEAR_PRICE";
+export const CLEAR_ASSET = "CLEAR_ASSET";
 
 
 export const receiveAllAssets = assets => {
@@ -52,9 +53,24 @@ export const clearPrice = () => {
     }
 }
 
+export const clearAsset = () => {
+    debugger
+    return {
+        type: CLEAR_ASSET,
+    }
+}
+
 // export const fetchStocks = () => {
 
 // }
+
+export const fetchAssets = () => dispatch => {
+    debugger
+    return AssetAPIUtil.fetchAssets().then(assets => {
+        debugger
+        return dispatch(receiveAsset(assets))
+    })
+}
 
 export const fetchAsset = ticker => dispatch => {
     debugger

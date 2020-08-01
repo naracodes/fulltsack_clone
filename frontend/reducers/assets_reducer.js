@@ -1,4 +1,4 @@
-import { RECEIVE_ASSET, RECEIVE_PRICE, CLEAR_PRICE} from '../actions/asset_actions';
+import { RECEIVE_ASSET, RECEIVE_PRICE, CLEAR_PRICE, CLEAR_ASSET} from '../actions/asset_actions';
 
 const assetsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -13,6 +13,8 @@ const assetsReducer = (oldState = {}, action) => {
         case RECEIVE_PRICE:
             action.latestPrice = action.assetPrice;
         case CLEAR_PRICE:
+            return {};
+        case CLEAR_ASSET:
             return {};
         default:
             return oldState;

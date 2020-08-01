@@ -8,16 +8,16 @@ export const fetchAssets = () => {
 export const fetchAsset = ticker => {
     return $.ajax({
         method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/crypto/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
-        // url: `https://sandbox.iexapis.com/stable/stock/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
+        // url: `https://sandbox.iexapis.com/stable/crypto/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
+        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
     })
 }
 
 export const fetchPrice = ticker => {
     return $.ajax({
         method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/crypto/btcusd/quote/latestPrice?token=Tpk_9cc6c16a40494338943d728d111e9998`
-        // url: `https://sandbox.iexapis.com/stable/stock/${ticker}/price?token=Tpk_9cc6c16a40494338943d728d111e9998`
+        // url: `https://sandbox.iexapis.com/stable/crypto/btcusd/quote/latestPrice?token=Tpk_9cc6c16a40494338943d728d111e9998`
+        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/price?token=Tpk_9cc6c16a40494338943d728d111e9998`
     })
 }
 
