@@ -1,7 +1,8 @@
 class Api::AssetsController < ApplicationController
     def index
         @assets = Asset.order('ticker ASC')
-        render json: { status: 'Success!', message: 'Showing all assets', data: @assets}, status: :ok
+        # render json: { status: 'Success!', message: 'Showing all assets', data: @assets}, status: :ok
+        render :index
     end
     
     def show

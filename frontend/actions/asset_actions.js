@@ -68,7 +68,7 @@ export const fetchAssets = () => dispatch => {
     debugger
     return AssetAPIUtil.fetchAssets().then(assets => {
         debugger
-        return dispatch(receiveAsset(assets))
+        return dispatch(receiveAllAssets(assets))
     })
 }
 

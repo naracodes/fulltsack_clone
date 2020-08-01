@@ -29,11 +29,11 @@ class AssetShow extends React.Component {
     //     })
     // }
 
-    componentWillUnmount() {
-        debugger
-        this.props.clearAsset();
-        // clearInterval(this.intervalId)
-    }
+    // componentWillUnmount() {
+    //     debugger
+    //     this.props.clearAsset();
+    //     // clearInterval(this.intervalId)
+    // }
 
     render() {
         const { asset } = this.props;
@@ -44,6 +44,7 @@ class AssetShow extends React.Component {
                     <li>{asset.symbol}</li>
                     <li>{asset.latestPrice}</li>
                 </ul>
+                <Link to={`/dashboard`}>Dashboard</Link>
             </div>
         )
     }

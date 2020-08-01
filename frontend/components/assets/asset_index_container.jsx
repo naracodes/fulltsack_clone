@@ -6,7 +6,8 @@ import { fetchAssets } from '../../actions/asset_actions';
 const msp = state => {
     debugger
     return {
-        assets: state.entities.assets,
+        // assets: state.entities.assets.data
+        assets: Object.values(state.entities.assets)
     }
 }
 
