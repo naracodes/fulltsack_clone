@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users
     resource :session, only: [:new, :create, :destroy]
     resources :assets, except: [:show]
+    resource :watchlists, only: [:index, :create, :destroy]
     get '/assets/:ticker', to: 'assets#show'
   end
 end

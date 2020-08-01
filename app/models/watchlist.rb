@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  asset_id   :integer
 #  ticker     :string           not null
+#  asset_name :string
 #
 class Watchlist < ApplicationRecord
     validates :user_id, :ticker, presence: true
@@ -16,5 +17,5 @@ class Watchlist < ApplicationRecord
 
     has_many :assets,
         foreign_key: :ticker,
-        class_name: 'Asset'
+        class_name: :Asset
 end

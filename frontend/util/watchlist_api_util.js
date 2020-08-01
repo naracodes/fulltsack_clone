@@ -1,8 +1,15 @@
 
+export const fetchAllWatchlistAssets = () => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/watchlist`
+    })
+}
+
 export const addAssetToWatchlist = asset => {
     return $.ajax({
         method: 'POST',
-        url: `/api/watchlists/`,
+        url: `/api/watchlist/`,
         data: { asset }
     })
 }
@@ -10,6 +17,6 @@ export const addAssetToWatchlist = asset => {
 export const deleteAssetFromWatchlist = () => {
     return $.ajax({
         method: 'DELETE',
-        url: `/api/watchlists`,
+        url: `/api/watchlist`,
     })
 }

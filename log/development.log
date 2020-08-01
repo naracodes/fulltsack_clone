@@ -16461,3 +16461,2436 @@ Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.3ms)
 
 
   [1m[36mWatchlist Load (23.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+Started GET "/" for ::1 at 2020-08-01 15:59:47 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "DIKuf1TLNwmLeEggX2Ss5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 844ms (Views: 837.3ms | ActiveRecord: 4.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-08-01 15:59:51 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "DIKuf1TLNwmLeEggX2Ss5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$ehmG1ieGypXX5xhO/wnale7.lxtP8QmohZnmnXPqYHfTwb3V7j93G"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fNkiN3NDj8JZ9VHaZRd_Vw"], ["updated_at", "2020-08-01 19:59:51.429612"], ["id", 46]]
+  ↳ app/models/user.rb:49
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49
+No template found for Api::SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 103ms (ActiveRecord: 7.1ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2020-08-01 16:33:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 240ms (Views: 235.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-01 16:34:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 241ms (Views: 239.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-01 16:34:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-01 16:34:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-01 16:40:02 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$ehmG1ieGypXX5xhO/wnale7.lxtP8QmohZnmnXPqYHfTwb3V7j93G"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nIoqyFrjHb9Yj2_TkKCYow"], ["updated_at", "2020-08-01 20:40:02.487688"], ["id", 46]]
+  ↳ app/models/user.rb:49
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49
+  Rendering api/sessions/show.json.jbuilder
+  Rendered api/sessions/show.json.jbuilder (0.2ms)
+Completed 200 OK in 183ms (Views: 5.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-01 16:40:02 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mAsset Load (0.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (7.9ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 4.3ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.3ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 21]]
+  ↳ db/seeds.rb:11
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 22]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 23]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 24]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 25]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 26]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 27]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 28]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 29]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 30]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 31]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 32]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (3.0ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "F"], ["asset_name", "Ford Motor Co."], ["created_at", "2020-08-01 20:48:49.240082"], ["updated_at", "2020-08-01 20:48:49.240082"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GE"], ["asset_name", "General Electric Co."], ["created_at", "2020-08-01 20:48:49.438506"], ["updated_at", "2020-08-01 20:48:49.438506"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAL"], ["asset_name", "American Airlines Group, Inc."], ["created_at", "2020-08-01 20:48:49.707511"], ["updated_at", "2020-08-01 20:48:49.707511"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DIS"], ["asset_name", "The Walt Disney Co."], ["created_at", "2020-08-01 20:48:49.917117"], ["updated_at", "2020-08-01 20:48:49.917117"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAPL"], ["asset_name", "Apple, Inc."], ["created_at", "2020-08-01 20:48:50.142067"], ["updated_at", "2020-08-01 20:48:50.142067"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DAL"], ["asset_name", "Delta Air Lines, Inc."], ["created_at", "2020-08-01 20:48:50.347175"], ["updated_at", "2020-08-01 20:48:50.347175"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["created_at", "2020-08-01 20:48:50.559364"], ["updated_at", "2020-08-01 20:48:50.559364"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["created_at", "2020-08-01 20:48:50.769540"], ["updated_at", "2020-08-01 20:48:50.769540"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CCL"], ["asset_name", "Carnival Corp."], ["created_at", "2020-08-01 20:48:50.981956"], ["updated_at", "2020-08-01 20:48:50.981956"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GPRO"], ["asset_name", "GoPro, Inc."], ["created_at", "2020-08-01 20:48:51.187866"], ["updated_at", "2020-08-01 20:48:51.187866"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "ACB"], ["asset_name", "Aurora Cannabis, Inc."], ["created_at", "2020-08-01 20:48:51.400271"], ["updated_at", "2020-08-01 20:48:51.400271"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AMZN"], ["asset_name", "Amazon.com, Inc."], ["created_at", "2020-08-01 20:48:51.608459"], ["updated_at", "2020-08-01 20:48:51.608459"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mWatchlist Create (2.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:48:51.657658"], ["updated_at", "2020-08-01 20:48:51.657658"], ["ticker", "CPRI"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:48:51.668320"], ["updated_at", "2020-08-01 20:48:51.668320"], ["ticker", "LRCX"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:48:51.678556"], ["updated_at", "2020-08-01 20:48:51.678556"], ["ticker", "REAL"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.3ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 33]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 34]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 35]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 36]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 37]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 38]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 39]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 40]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 41]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 42]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 43]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 44]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.1ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.1ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "F"], ["asset_name", "Ford Motor Co."], ["created_at", "2020-08-01 20:51:57.794723"], ["updated_at", "2020-08-01 20:51:57.794723"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GE"], ["asset_name", "General Electric Co."], ["created_at", "2020-08-01 20:51:57.998960"], ["updated_at", "2020-08-01 20:51:57.998960"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAL"], ["asset_name", "American Airlines Group, Inc."], ["created_at", "2020-08-01 20:51:58.199369"], ["updated_at", "2020-08-01 20:51:58.199369"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DIS"], ["asset_name", "The Walt Disney Co."], ["created_at", "2020-08-01 20:51:58.406125"], ["updated_at", "2020-08-01 20:51:58.406125"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAPL"], ["asset_name", "Apple, Inc."], ["created_at", "2020-08-01 20:51:58.842229"], ["updated_at", "2020-08-01 20:51:58.842229"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DAL"], ["asset_name", "Delta Air Lines, Inc."], ["created_at", "2020-08-01 20:52:00.368371"], ["updated_at", "2020-08-01 20:52:00.368371"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["created_at", "2020-08-01 20:52:00.590110"], ["updated_at", "2020-08-01 20:52:00.590110"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["created_at", "2020-08-01 20:52:00.813461"], ["updated_at", "2020-08-01 20:52:00.813461"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CCL"], ["asset_name", "Carnival Corp."], ["created_at", "2020-08-01 20:52:01.021954"], ["updated_at", "2020-08-01 20:52:01.021954"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GPRO"], ["asset_name", "GoPro, Inc."], ["created_at", "2020-08-01 20:52:01.233741"], ["updated_at", "2020-08-01 20:52:01.233741"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "ACB"], ["asset_name", "Aurora Cannabis, Inc."], ["created_at", "2020-08-01 20:52:01.443225"], ["updated_at", "2020-08-01 20:52:01.443225"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AMZN"], ["asset_name", "Amazon.com, Inc."], ["created_at", "2020-08-01 20:52:01.658357"], ["updated_at", "2020-08-01 20:52:01.658357"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.3ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 45]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 46]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 47]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 48]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 49]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 50]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 51]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 52]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 53]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 54]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 55]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 56]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "F"], ["asset_name", "Ford Motor Co."], ["created_at", "2020-08-01 20:52:28.027623"], ["updated_at", "2020-08-01 20:52:28.027623"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GE"], ["asset_name", "General Electric Co."], ["created_at", "2020-08-01 20:52:28.229839"], ["updated_at", "2020-08-01 20:52:28.229839"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAL"], ["asset_name", "American Airlines Group, Inc."], ["created_at", "2020-08-01 20:52:28.430334"], ["updated_at", "2020-08-01 20:52:28.430334"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DIS"], ["asset_name", "The Walt Disney Co."], ["created_at", "2020-08-01 20:52:28.640921"], ["updated_at", "2020-08-01 20:52:28.640921"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAPL"], ["asset_name", "Apple, Inc."], ["created_at", "2020-08-01 20:52:28.850116"], ["updated_at", "2020-08-01 20:52:28.850116"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DAL"], ["asset_name", "Delta Air Lines, Inc."], ["created_at", "2020-08-01 20:52:29.046455"], ["updated_at", "2020-08-01 20:52:29.046455"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["created_at", "2020-08-01 20:52:29.248102"], ["updated_at", "2020-08-01 20:52:29.248102"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["created_at", "2020-08-01 20:52:29.442711"], ["updated_at", "2020-08-01 20:52:29.442711"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CCL"], ["asset_name", "Carnival Corp."], ["created_at", "2020-08-01 20:52:29.651047"], ["updated_at", "2020-08-01 20:52:29.651047"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GPRO"], ["asset_name", "GoPro, Inc."], ["created_at", "2020-08-01 20:52:29.856842"], ["updated_at", "2020-08-01 20:52:29.856842"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "ACB"], ["asset_name", "Aurora Cannabis, Inc."], ["created_at", "2020-08-01 20:52:30.078293"], ["updated_at", "2020-08-01 20:52:30.078293"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AMZN"], ["asset_name", "Amazon.com, Inc."], ["created_at", "2020-08-01 20:52:30.297229"], ["updated_at", "2020-08-01 20:52:30.297229"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Capri Holdings Ltd."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CPRI"], ["asset_name", "Capri Holdings Ltd."], ["created_at", "2020-08-01 20:52:30.497660"], ["updated_at", "2020-08-01 20:52:30.497660"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "LRCX"], ["asset_name", "Lam Research Corp."], ["created_at", "2020-08-01 20:52:30.704612"], ["updated_at", "2020-08-01 20:52:30.704612"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "REAL"], ["asset_name", "The RealReal, Inc."], ["created_at", "2020-08-01 20:52:30.917294"], ["updated_at", "2020-08-01 20:52:30.917294"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.3ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 57]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 58]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 59]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 60]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 61]]
+  ↳ db/seeds.rb:11
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 62]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 63]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 64]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 65]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 66]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 67]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 68]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 69]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 70]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 71]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "F"], ["asset_name", "Ford Motor Co."], ["created_at", "2020-08-01 20:52:52.883542"], ["updated_at", "2020-08-01 20:52:52.883542"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GE"], ["asset_name", "General Electric Co."], ["created_at", "2020-08-01 20:52:53.081854"], ["updated_at", "2020-08-01 20:52:53.081854"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAL"], ["asset_name", "American Airlines Group, Inc."], ["created_at", "2020-08-01 20:52:53.291435"], ["updated_at", "2020-08-01 20:52:53.291435"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DIS"], ["asset_name", "The Walt Disney Co."], ["created_at", "2020-08-01 20:52:53.553007"], ["updated_at", "2020-08-01 20:52:53.553007"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAPL"], ["asset_name", "Apple, Inc."], ["created_at", "2020-08-01 20:52:53.750897"], ["updated_at", "2020-08-01 20:52:53.750897"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DAL"], ["asset_name", "Delta Air Lines, Inc."], ["created_at", "2020-08-01 20:52:54.083970"], ["updated_at", "2020-08-01 20:52:54.083970"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["created_at", "2020-08-01 20:52:54.279067"], ["updated_at", "2020-08-01 20:52:54.279067"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["created_at", "2020-08-01 20:52:54.493576"], ["updated_at", "2020-08-01 20:52:54.493576"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CCL"], ["asset_name", "Carnival Corp."], ["created_at", "2020-08-01 20:52:54.714186"], ["updated_at", "2020-08-01 20:52:54.714186"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GPRO"], ["asset_name", "GoPro, Inc."], ["created_at", "2020-08-01 20:52:54.929412"], ["updated_at", "2020-08-01 20:52:54.929412"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "ACB"], ["asset_name", "Aurora Cannabis, Inc."], ["created_at", "2020-08-01 20:52:55.492270"], ["updated_at", "2020-08-01 20:52:55.492270"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AMZN"], ["asset_name", "Amazon.com, Inc."], ["created_at", "2020-08-01 20:52:56.024923"], ["updated_at", "2020-08-01 20:52:56.024923"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Capri Holdings Ltd."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CPRI"], ["asset_name", "Capri Holdings Ltd."], ["created_at", "2020-08-01 20:52:56.227311"], ["updated_at", "2020-08-01 20:52:56.227311"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "LRCX"], ["asset_name", "Lam Research Corp."], ["created_at", "2020-08-01 20:52:56.464565"], ["updated_at", "2020-08-01 20:52:56.464565"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "REAL"], ["asset_name", "The RealReal, Inc."], ["created_at", "2020-08-01 20:52:56.657719"], ["updated_at", "2020-08-01 20:52:56.657719"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.8ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Capri Holdings Ltd."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.3ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 72]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 73]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 74]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 75]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 76]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 77]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 78]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 79]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 80]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 81]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 82]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 83]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 84]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 85]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 86]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.4ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "F"], ["asset_name", "Ford Motor Co."], ["created_at", "2020-08-01 20:54:35.802366"], ["updated_at", "2020-08-01 20:54:35.802366"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GE"], ["asset_name", "General Electric Co."], ["created_at", "2020-08-01 20:54:36.006410"], ["updated_at", "2020-08-01 20:54:36.006410"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAL"], ["asset_name", "American Airlines Group, Inc."], ["created_at", "2020-08-01 20:54:36.222963"], ["updated_at", "2020-08-01 20:54:36.222963"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DIS"], ["asset_name", "The Walt Disney Co."], ["created_at", "2020-08-01 20:54:36.427111"], ["updated_at", "2020-08-01 20:54:36.427111"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAPL"], ["asset_name", "Apple, Inc."], ["created_at", "2020-08-01 20:54:36.626424"], ["updated_at", "2020-08-01 20:54:36.626424"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DAL"], ["asset_name", "Delta Air Lines, Inc."], ["created_at", "2020-08-01 20:54:36.851449"], ["updated_at", "2020-08-01 20:54:36.851449"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["created_at", "2020-08-01 20:54:38.063313"], ["updated_at", "2020-08-01 20:54:38.063313"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["created_at", "2020-08-01 20:54:38.274251"], ["updated_at", "2020-08-01 20:54:38.274251"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CCL"], ["asset_name", "Carnival Corp."], ["created_at", "2020-08-01 20:54:38.477421"], ["updated_at", "2020-08-01 20:54:38.477421"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GPRO"], ["asset_name", "GoPro, Inc."], ["created_at", "2020-08-01 20:54:38.693360"], ["updated_at", "2020-08-01 20:54:38.693360"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "ACB"], ["asset_name", "Aurora Cannabis, Inc."], ["created_at", "2020-08-01 20:54:38.903488"], ["updated_at", "2020-08-01 20:54:38.903488"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AMZN"], ["asset_name", "Amazon.com, Inc."], ["created_at", "2020-08-01 20:54:39.120849"], ["updated_at", "2020-08-01 20:54:39.120849"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "LRCX"], ["asset_name", "Lam Research Corp."], ["created_at", "2020-08-01 20:54:39.337307"], ["updated_at", "2020-08-01 20:54:39.337307"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "REAL"], ["asset_name", "The RealReal, Inc."], ["created_at", "2020-08-01 20:54:39.543377"], ["updated_at", "2020-08-01 20:54:39.543377"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.3ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 87]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 88]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 89]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 90]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 91]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 92]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 93]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 94]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 95]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 96]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 97]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 98]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 99]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 100]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "F"], ["asset_name", "Ford Motor Co."], ["created_at", "2020-08-01 20:55:13.025755"], ["updated_at", "2020-08-01 20:55:13.025755"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GE"], ["asset_name", "General Electric Co."], ["created_at", "2020-08-01 20:55:13.228721"], ["updated_at", "2020-08-01 20:55:13.228721"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAL"], ["asset_name", "American Airlines Group, Inc."], ["created_at", "2020-08-01 20:55:13.654404"], ["updated_at", "2020-08-01 20:55:13.654404"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DIS"], ["asset_name", "The Walt Disney Co."], ["created_at", "2020-08-01 20:55:13.862800"], ["updated_at", "2020-08-01 20:55:13.862800"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAPL"], ["asset_name", "Apple, Inc."], ["created_at", "2020-08-01 20:55:14.057392"], ["updated_at", "2020-08-01 20:55:14.057392"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DAL"], ["asset_name", "Delta Air Lines, Inc."], ["created_at", "2020-08-01 20:55:14.260962"], ["updated_at", "2020-08-01 20:55:14.260962"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["created_at", "2020-08-01 20:55:14.477346"], ["updated_at", "2020-08-01 20:55:14.477346"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.5ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["created_at", "2020-08-01 20:55:14.698367"], ["updated_at", "2020-08-01 20:55:14.698367"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CCL"], ["asset_name", "Carnival Corp."], ["created_at", "2020-08-01 20:55:14.917123"], ["updated_at", "2020-08-01 20:55:14.917123"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GPRO"], ["asset_name", "GoPro, Inc."], ["created_at", "2020-08-01 20:55:15.123227"], ["updated_at", "2020-08-01 20:55:15.123227"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "ACB"], ["asset_name", "Aurora Cannabis, Inc."], ["created_at", "2020-08-01 20:55:15.337473"], ["updated_at", "2020-08-01 20:55:15.337473"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AMZN"], ["asset_name", "Amazon.com, Inc."], ["created_at", "2020-08-01 20:55:15.560296"], ["updated_at", "2020-08-01 20:55:15.560296"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "LRCX"], ["asset_name", "Lam Research Corp."], ["created_at", "2020-08-01 20:55:15.772428"], ["updated_at", "2020-08-01 20:55:15.772428"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "REAL"], ["asset_name", "The RealReal, Inc."], ["created_at", "2020-08-01 20:55:16.027068"], ["updated_at", "2020-08-01 20:55:16.027068"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:55:16.067199"], ["updated_at", "2020-08-01 20:55:16.067199"], ["ticker", "LRCX"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:55:16.069516"], ["updated_at", "2020-08-01 20:55:16.069516"], ["ticker", "REAL"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mAsset Load (0.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.3ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 101]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 102]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 103]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.2ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 104]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 105]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 106]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 107]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 108]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 109]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 110]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 111]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 112]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 113]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAsset Destroy (0.1ms)[0m  [1m[31mDELETE FROM "assets" WHERE "assets"."id" = $1[0m  [["id", 114]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "F"], ["asset_name", "Ford Motor Co."], ["created_at", "2020-08-01 20:58:40.714896"], ["updated_at", "2020-08-01 20:58:40.714896"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GE"], ["asset_name", "General Electric Co."], ["created_at", "2020-08-01 20:58:40.931434"], ["updated_at", "2020-08-01 20:58:40.931434"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAL"], ["asset_name", "American Airlines Group, Inc."], ["created_at", "2020-08-01 20:58:41.299915"], ["updated_at", "2020-08-01 20:58:41.299915"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DIS"], ["asset_name", "The Walt Disney Co."], ["created_at", "2020-08-01 20:58:41.871475"], ["updated_at", "2020-08-01 20:58:41.871475"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AAPL"], ["asset_name", "Apple, Inc."], ["created_at", "2020-08-01 20:58:42.533059"], ["updated_at", "2020-08-01 20:58:42.533059"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "DAL"], ["asset_name", "Delta Air Lines, Inc."], ["created_at", "2020-08-01 20:58:42.750622"], ["updated_at", "2020-08-01 20:58:42.750622"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["created_at", "2020-08-01 20:58:42.962146"], ["updated_at", "2020-08-01 20:58:42.962146"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["created_at", "2020-08-01 20:58:44.668504"], ["updated_at", "2020-08-01 20:58:44.668504"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CCL"], ["asset_name", "Carnival Corp."], ["created_at", "2020-08-01 20:58:44.878495"], ["updated_at", "2020-08-01 20:58:44.878495"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "GPRO"], ["asset_name", "GoPro, Inc."], ["created_at", "2020-08-01 20:58:45.162987"], ["updated_at", "2020-08-01 20:58:45.162987"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "ACB"], ["asset_name", "Aurora Cannabis, Inc."], ["created_at", "2020-08-01 20:58:45.782048"], ["updated_at", "2020-08-01 20:58:45.782048"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "AMZN"], ["asset_name", "Amazon.com, Inc."], ["created_at", "2020-08-01 20:58:46.205563"], ["updated_at", "2020-08-01 20:58:46.205563"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.3ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "LRCX"], ["asset_name", "Lam Research Corp."], ["created_at", "2020-08-01 20:58:46.413891"], ["updated_at", "2020-08-01 20:58:46.413891"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.4ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "REAL"], ["asset_name", "The RealReal, Inc."], ["created_at", "2020-08-01 20:58:46.633105"], ["updated_at", "2020-08-01 20:58:46.633105"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Capri Holdings Ltd."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Create (0.2ms)[0m  [1m[32mINSERT INTO "assets" ("ticker", "asset_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["ticker", "CPRI"], ["asset_name", "Capri Holdings Ltd."], ["created_at", "2020-08-01 20:58:47.126247"], ["updated_at", "2020-08-01 20:58:47.126247"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:58:47.148811"], ["updated_at", "2020-08-01 20:58:47.148811"], ["ticker", "LRCX"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:58:47.150757"], ["updated_at", "2020-08-01 20:58:47.150757"], ["ticker", "REAL"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:58:47.152508"], ["updated_at", "2020-08-01 20:58:47.152508"], ["ticker", "CPRI"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.1ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.1ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Capri Holdings Ltd."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "asset_id", "ticker") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:59:09.478135"], ["updated_at", "2020-08-01 20:59:09.478135"], ["asset_id", 127], ["ticker", "LRCX"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "asset_id", "ticker") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:59:09.485905"], ["updated_at", "2020-08-01 20:59:09.485905"], ["asset_id", 128], ["ticker", "REAL"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "asset_id", "ticker") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 20:59:09.487795"], ["updated_at", "2020-08-01 20:59:09.487795"], ["asset_id", 129], ["ticker", "CPRI"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mWatchlist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Capri Holdings Ltd."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1641394129393257645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1641394129393257645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1641394129393257645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to UpdateWatchlists1 (20200801210232)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (25.4ms)[0m  [1m[35mALTER TABLE "watchlists" ADD "asset_name" character varying[0m
+  ↳ db/migrate/20200801210232_update_watchlists_1.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200801210232"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1641394129393257645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "F"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Ford Motor Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GE"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "General Electric Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "American Airlines Group, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DIS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The Walt Disney Co."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Apple, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "DAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Delta Air Lines, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "MSFT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Microsoft Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Tesla, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CCL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Carnival Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "GPRO"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "GoPro, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "ACB"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Aurora Cannabis, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Amazon.com, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Lam Research Corp."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "The RealReal, Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "assets" WHERE "assets"."asset_name" = $1 LIMIT $2[0m  [["asset_name", "Capri Holdings Ltd."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAsset Load (0.2ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "LRCX"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "asset_id", "ticker", "asset_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 21:04:51.689309"], ["updated_at", "2020-08-01 21:04:51.689309"], ["asset_id", 127], ["ticker", "LRCX"], ["asset_name", "Lam Research Corp."]]
+  ↳ db/seeds.rb:39
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "REAL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "asset_id", "ticker", "asset_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 21:04:51.697969"], ["updated_at", "2020-08-01 21:04:51.697969"], ["asset_id", 128], ["ticker", "REAL"], ["asset_name", "The RealReal, Inc."]]
+  ↳ db/seeds.rb:39
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mAsset Load (0.1ms)[0m  [1m[34mSELECT  "assets".* FROM "assets" WHERE "assets"."ticker" = $1 LIMIT $2[0m  [["ticker", "CPRI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Create (0.2ms)[0m  [1m[32mINSERT INTO "watchlists" ("user_id", "created_at", "updated_at", "asset_id", "ticker", "asset_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 46], ["created_at", "2020-08-01 21:04:51.706513"], ["updated_at", "2020-08-01 21:04:51.706513"], ["asset_id", 129], ["ticker", "CPRI"], ["asset_name", "Capri Holdings Ltd."]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  [1m[36mAsset Load (0.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets"[0m
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m

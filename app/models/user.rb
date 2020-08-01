@@ -36,7 +36,7 @@ class User < ApplicationRecord
     end
 
     def self.watchlist
-        User.joins(:watchlists).where('user_id = ?', self.id).pluck('watchlists.asset_id')
+        User.joins(:watchlists).where('user_id = ?', self.id).pluck('watchlists.ticker')
     end
     
 
