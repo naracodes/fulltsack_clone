@@ -10,16 +10,11 @@
 #  ticker     :string           not null
 #
 class Watchlist < ApplicationRecord
-    validates :user_id, :ticker, presence :true
+    validates :user_id, :ticker, presence: true
 
     belongs_to :user
 
     has_many :assets,
-        foreign_key: :asset_id,
+        foreign_key: :ticker,
         class_name: 'Asset'
-
-
-    # def watchlist
-    #     Asset.joins(:assets).where('user.id = ?', )
-    # end
 end

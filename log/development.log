@@ -16460,3 +16460,4 @@ Processing by Api::AssetsController#index as JSON
 Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.3ms)
 
 
+  [1m[36mWatchlist Load (23.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
