@@ -47,6 +47,12 @@ demo_watchlist_assets_46.each do |demo_watchlist_asset|
         latest_price: stock.latest_price
         })
 end
+
+demo_user = User.create({
+    email: 'demo@demo.com',
+    password: 'demopassworddemo',
+    id: 12345,
+})
     
 # demo_watchlist_assets_48.each do |demo_watchlist_asset|
 #     stock = client.quote(demo_watchlist_asset)
