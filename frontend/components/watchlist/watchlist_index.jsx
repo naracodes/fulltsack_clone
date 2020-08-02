@@ -8,16 +8,18 @@ class WatchlistIndex extends React.Component {
     }
 
     render() {
-        const { watchlistAssets } = this.props;
+        const { watchlistAssets, currentUser } = this.props;
         debugger
         return (
             <div>
                 <ul>
                     {
                         watchlistAssets.map(watchlistAsset => {
+                            debugger
                             return <WatchlistIndexItem
                              key={watchlistAsset.id}
-                             watchlistAsset={watchlistAsset} 
+                             watchlistAsset={watchlistAsset}
+                             currentUser={currentUser}
                             />
                         })
                     }

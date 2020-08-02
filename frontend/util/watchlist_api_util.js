@@ -2,21 +2,37 @@
 export const fetchAllWatchlistAssets = () => {
     return $.ajax({
         method: 'GET',
-        url: `/api/watchlist`
+        url: `/api/watchlists`
     })
 }
 
-export const addAssetToWatchlist = asset => {
-    return $.ajax({
+export const addAssetToWatchlist = (asset, currentUser) => {
+    debugger
+    const assetToAdd = $.ajax({
         method: 'POST',
-        url: `/api/watchlist/`,
-        data: { asset }
+        url: `/api/watchlists`,
+        data: {
+            user_id: currentUser.id,
+            ticker: asset.ticker,
+            asset_name: asset.companyName,
+        }
     })
+    debugger
+    return assetToAdd;
 }
+
+// export const addAssetToWatchlist = asset => {
+//     debugger
+//     return $.ajax({
+//         method: 'POST',
+//         url: `/api/watchlists`,
+//         data: { asset }
+//     })
+// }
 
 export const deleteAssetFromWatchlist = () => {
     return $.ajax({
         method: 'DELETE',
-        url: `/api/watchlist`,
+        url: `/api/watchlists`,
     })
 }

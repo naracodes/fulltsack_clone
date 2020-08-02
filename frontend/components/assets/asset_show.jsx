@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 
 class AssetShow extends React.Component {
 
+    constructor(props) {
+        debugger
+        super(props);
+        this.handleAddToList = this.handleAddToList.bind(this);
+    }
+
     componentDidMount() {
         // debugger
         const ticker = this.props.asset.ticker || this.props.match.params.ticker
@@ -14,6 +20,18 @@ class AssetShow extends React.Component {
         //     debugger
         //     this.props.fetchPrice(ticker)
         // }, 2000)
+    }
+
+    handleAddToList(e) {
+        e.preventDefault();
+        const { addAssetToWatchlist, currentUser, asset } = this.props;
+        debugger
+        // const currentUserId = currentUser.id;
+        debugger
+        addAssetToWatchlist(asset, currentUser).then(() => {
+            debugger
+            this.props.history.push(`/dashboard/${asset.ticker}`);
+        })
     }
 
     // componentDidUpdate(prevProps) {
@@ -36,17 +54,28 @@ class AssetShow extends React.Component {
     // }
 
     render() {
-        const { asset } = this.props;
         debugger
-        return (
-            <div>
-                <ul>
-                    <li>{asset.symbol}</li>
-                    <li>{asset.latestPrice}</li>
-                </ul>
-                <Link to={`/dashboard`}>Dashboard</Link>
-            </div>
-        )
+        const { asset, watchlistArr } = this.props;
+        const ticker = this.props.match.params.ticker;
+        if (!this.props.watchlistArr) {
+            debugger
+            return null;
+        } else {
+            const button = !watchlistArr.includes(ticker) ? <button onClick={this.handleAddToList}>Add to list</button> : <p>Remove</p>
+            debugger
+            return (
+                <div>
+                    <ul>
+                        <li>{asset.symbol}</li>
+                        <li>{asset.latestPrice}</li>
+                    </ul>
+                    <div>
+                        <Link to={`/dashboard`}>Dashboard</Link>
+                        {button}
+                    </div>
+                </div>
+            )
+        }
     }
 
     // render() {

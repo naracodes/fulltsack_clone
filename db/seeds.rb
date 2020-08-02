@@ -33,11 +33,21 @@ demo_stocks.each do |demo_stock|
     end
 # -------
 
-demo_watchlist_assets = ['LRCX', 'REAL', 'CPRI']
+demo_watchlist_assets_46 = ['F', 'GE', 'AAL']
+demo_watchlist_assets_48 = ['LRCX', 'REAL', 'CPRI']
 
-demo_watchlist_assets.each do |demo_watchlist_asset|
+demo_watchlist_assets_46.each do |demo_watchlist_asset|
     Watchlist.create({
         user_id: 46,
+        ticker: demo_watchlist_asset,
+        asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
+        asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name
+    })
+end
+
+demo_watchlist_assets_48.each do |demo_watchlist_asset|
+    Watchlist.create({
+        user_id: 48,
         ticker: demo_watchlist_asset,
         asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
         asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name

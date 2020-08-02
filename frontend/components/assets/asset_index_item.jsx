@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostIndexItem = props => {
+const AssetIndexItem = props => {
     const { asset } = props;
     debugger
     return (
@@ -11,4 +11,4 @@ const PostIndexItem = props => {
     )
 }
 
-export default PostIndexItem;
+export default AssetIndexItem;

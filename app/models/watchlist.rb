@@ -15,7 +15,7 @@ class Watchlist < ApplicationRecord
 
     belongs_to :user
 
-    has_many :assets,
-        foreign_key: :ticker,
-        class_name: :Asset
+    # has_many :assets,
+    #     through: :user,
+    #     source: :asset
 end

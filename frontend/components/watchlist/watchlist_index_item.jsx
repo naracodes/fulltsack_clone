@@ -6,9 +6,8 @@ const WatchlistIndexItem = props => {
     debugger
     return (
         <div>
-            <h4>My Watchlist</h4>
             <li>
-                <Link>{watchlistAsset.ticker}</Link>
+                {watchlistAsset.ticker} - {watchlistAsset.asset_name}
             </li>
         </div>
     )
