@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  asset_id   :integer
 #  ticker     :string           not null
+#  asset_name :string
 #
 
 # This model initially had no columns defined. If you add columns to the

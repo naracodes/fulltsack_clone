@@ -8,7 +8,8 @@
 
 require 'iex-ruby-client'
 
-Asset.destroy_all
+# Asset.destroy_all
+Watchlist.destroy_all
 
 IEX::Api.configure do |config|
     config.publishable_token = 'Tpk_9cc6c16a40494338943d728d111e9998' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
@@ -20,15 +21,40 @@ client = IEX::Api::Client.new(
   endpoint: 'https://sandbox.iexapis.com/v1'
 )
 
-demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN']
+# -------
+demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
 
 demo_stocks.each do |demo_stock|
     stock = client.quote(demo_stock)
     Asset.create({
         ticker: stock.symbol,
         asset_name: stock.company_name
+        })
+    end
+# -------
+
+demo_watchlist_assets_46 = ['F', 'GE', 'AAL']
+demo_watchlist_assets_48 = ['LRCX', 'REAL', 'CPRI']
+
+demo_watchlist_assets_46.each do |demo_watchlist_asset|
+    Watchlist.create({
+        user_id: 46,
+        ticker: demo_watchlist_asset,
+        asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
+        asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name
     })
 end
+
+demo_watchlist_assets_48.each do |demo_watchlist_asset|
+    Watchlist.create({
+        user_id: 48,
+        ticker: demo_watchlist_asset,
+        asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
+        asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name
+    })
+end
+
+
 
 # 10.times do
 #     Product.create({

@@ -4,25 +4,49 @@ import { Link } from 'react-router-dom';
 class AssetShow extends React.Component {
 
     constructor(props) {
+        debugger
         super(props);
         // this.state = {
-        //     assetPrice: this.props.fetchPrice(this.props.asset.ticker)
+        //     watching: false,
         // }
-        // this.tickPrice = this.tickPrice.bind(this);
+        this.handleAddToList = this.handleAddToList.bind(this);
+        this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
     }
 
     componentDidMount() {
-        debugger
+        // debugger
         const ticker = this.props.asset.ticker || this.props.match.params.ticker
         debugger
         // const fetchPrice = this.props.fetchPrice
-        debugger
+        // debugger
         this.props.fetchAsset(ticker);
-        this.intervalId = setInterval(() => {
-            debugger
-            this.props.fetchPrice(ticker)
-        }, 2000)
+        // this.intervalId = setInterval(() => {
+        //     debugger
+        //     this.props.fetchPrice(ticker)
+        // }, 2000)
     }
+
+    handleAddToList(e) {
+        e.preventDefault();
+        const { addAssetToWatchlist, currentUser, asset } = this.props;
+        // const currentUserId = currentUser.id;
+        debugger
+        addAssetToWatchlist(asset, currentUser);
+    }
+
+    handleRemoveFromList(e) {
+        e.preventDefault();
+        const { deleteAssetFromWatchlist, currentUser, asset } = this.props;
+        debugger
+        deleteAssetFromWatchlist(asset, currentUser);
+    }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.latestPrice !== prevProps.latestPrice) {
+    //         this.props.fetchAsset(this.props.match.params.ticker)
+    //     }
+    // }
 
     // tickPrice() {
     //     this.setState({
@@ -30,22 +54,37 @@ class AssetShow extends React.Component {
     //     })
     // }
 
-    componentWillUnmount() {
-        debugger
-        clearInterval(this.intervalId)
-    }
+    // componentWillUnmount() {
+    //     debugger
+    //     this.props.clearAsset();
+    //     // clearInterval(this.intervalId)
+    // }
 
     render() {
-        const { asset } = this.props;
         debugger
-        return (
-            <div>
-                <ul>
-                    <li>{asset.symbol}</li>
-                    <li>{asset.latestPrice}</li>
-                </ul>
-            </div>
-        )
+        const { asset, watchlistArr } = this.props;
+        const ticker = this.props.match.params.ticker;
+        if (!this.props.watchlistArr) {
+            debugger
+            return null;
+        } else {
+            debugger
+            let button = watchlistArr.includes(ticker) ? (
+                <button onClick={this.handleRemoveFromList}>Remove</button>
+            ) : (
+             <button onClick={this.handleAddToList}>Add</button>
+            )
+            return (
+                <div className="dashboard-body">
+                    <ul className='dashboard-list'>
+                        <li className='tg-list-item'>{asset.symbol}</li>
+                        <li className='tg-list-item'>{asset.latestPrice}</li>
+                        {button}
+                        <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
+                    </ul>
+                </div>
+            )
+        }
     }
 
     // render() {
@@ -64,3 +103,4 @@ class AssetShow extends React.Component {
 }
 
 export default AssetShow;
+

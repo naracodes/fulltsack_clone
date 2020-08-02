@@ -20,7 +20,12 @@ export const receiveWatchlistAsset = asset => {
     }
 }
 
+<<<<<<< HEAD
 export const deleteAssetFromWatchlist = () => {
+=======
+export const removeWatchlistAsset = () => {
+    debugger
+>>>>>>> apifetch
     return {
         type: REMOVE_WATCHLIST_ASSET,
     }
@@ -36,6 +41,7 @@ export const fetchAllWatchlistAssets = () => dispatch => {
 
 export const addAssetToWatchlist = (asset, currentUser) => dispatch => {
     debugger
+<<<<<<< HEAD
     return WatchlistAPIUtil.addAssetToWatchlist(asset, currentUser).then(asset => {
         debugger
         return dispatch(receiveWatchlistAsset(asset));
@@ -47,3 +53,18 @@ export const addAssetToWatchlist = (asset, currentUser) => dispatch => {
 //         return dispatch(removeWatchlistAsset());
 //     })
 // }
+=======
+    return WatchlistAPIUtil.addAssetToWatchlist(asset, currentUser).then(assets => {
+        debugger
+        return dispatch(receiveWatchlistAssets(assets));
+    })
+}
+
+export const deleteAssetFromWatchlist = (asset, currentUser) => dispatch => {
+    debugger
+    return WatchlistAPIUtil.deleteAssetFromWatchlist(asset, currentUser).then(response => {
+        debugger
+        return dispatch(removeWatchlistAsset());
+    })
+}
+>>>>>>> apifetch
