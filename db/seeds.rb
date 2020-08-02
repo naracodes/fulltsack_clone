@@ -40,7 +40,7 @@ demo_watchlist_assets_48 = ['LRCX', 'REAL', 'CPRI']
 demo_watchlist_assets_46.each do |demo_watchlist_asset|
     stock = client.quote(demo_watchlist_asset)
     Watchlist.create({
-        user_id: 46,
+        email: 'demo@demo.com',
         ticker: demo_watchlist_asset,
         asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
         asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name,
@@ -48,16 +48,16 @@ demo_watchlist_assets_46.each do |demo_watchlist_asset|
         })
 end
     
-demo_watchlist_assets_48.each do |demo_watchlist_asset|
-    stock = client.quote(demo_watchlist_asset)
-    Watchlist.create({
-        user_id: 48,
-        ticker: demo_watchlist_asset,
-        asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
-        asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name,
-        latest_price: stock.latest_price
-    })
-end
+# demo_watchlist_assets_48.each do |demo_watchlist_asset|
+#     stock = client.quote(demo_watchlist_asset)
+#     Watchlist.create({
+#         user_id: 48,
+#         ticker: demo_watchlist_asset,
+#         asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
+#         asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name,
+#         latest_price: stock.latest_price
+#     })
+# end
 
 
 

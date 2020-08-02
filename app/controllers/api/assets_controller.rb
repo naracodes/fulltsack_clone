@@ -39,6 +39,6 @@ class Api::AssetsController < ApplicationController
 
     private
     def asset_params
-        params.permit(:ticker, :asset_name)
+        params.permit(:ticker, :asset_name, :latest_price)
     end
 end
