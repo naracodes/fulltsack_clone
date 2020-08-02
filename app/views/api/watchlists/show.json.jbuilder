@@ -1,1 +1,1 @@
-json.extract! @watchlist_asset, :id, :ticker, :asset_id, :asset_name, :user_id
+json.extract! @watchlist_asset, :id, :ticker, :asset_id, :asset_name, :user_id, :latest_price

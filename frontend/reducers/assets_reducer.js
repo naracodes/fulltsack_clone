@@ -6,11 +6,12 @@ const assetsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_ASSETS:
-            debugger
+            // debugger
             return action.assets;
         case RECEIVE_ASSET:
             action.asset.asset_name = action.asset.companyName;
             action.asset.ticker = action.asset.symbol;
+            action.latest_price =action.latest_price
             nextState[action.asset.symbol] = action.asset;
             return nextState;
         case RECEIVE_PRICE:

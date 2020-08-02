@@ -4,6 +4,7 @@ class Api::WatchlistsController < ApplicationController
         # debugger
         @watchlist_assets =  Watchlist.where('user_id = ?', current_user.id)
         # @watchlist_assets = Watchlist.all
+        # debugger
         render :index
     end
 
@@ -17,6 +18,7 @@ class Api::WatchlistsController < ApplicationController
             @watchlist_asset = Watchlist.new(watchlist_params)
                 if @watchlist_asset.save
                     @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
+                    # debugger
                     render :index
                     # render json: { data: @watchlist_asset }
                 end
@@ -38,6 +40,6 @@ class Api::WatchlistsController < ApplicationController
     private
     def watchlist_params
         # params.require(:watchlist).permit(:ticker, :user_id => current_user.id)
-        params.permit(:ticker, :user_id, :asset_name)
+        params.permit(:ticker, :user_id, :asset_name, :latest_price)
     end
 end
