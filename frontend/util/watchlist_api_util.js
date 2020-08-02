@@ -30,9 +30,14 @@ export const addAssetToWatchlist = (asset, currentUser) => {
 //     })
 // }
 
-export const deleteAssetFromWatchlist = () => {
+export const deleteAssetFromWatchlist = (asset, currentUser) => {
+    debugger
     return $.ajax({
         method: 'DELETE',
-        url: `/api/watchlists`,
+        url: `/api/watchlists/${asset.ticker}`,
+        data: {
+            user_id: currentUser.id,
+            ticker: asset.ticker,
+        }
     })
 }

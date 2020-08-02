@@ -13,25 +13,26 @@ class Api::WatchlistsController < ApplicationController
     end
 
     def create
-        debugger
         if !Watchlist.exists?(watchlist_params)
             @watchlist_asset = Watchlist.new(watchlist_params)
                 if @watchlist_asset.save
-                    render :show
+                    @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
+                    render :index
                     # render json: { data: @watchlist_asset }
                 end
         else
-            debugger
             render json: { message: 'asset already exists on watchlist' }
         end
     end
 
     def destroy
-        @watchlist_asset = Watchlist.find_by(ticker: params[:ticker], user_id: params[user_id])
+        @watchlist_asset = Watchlist.find_by(ticker: params[:ticker], user_id: params[:user_id])
         if @watchlist_asset
-            @watchlist_asset.destroy            
+            @watchlist_asset.destroy
+            render :show
+        else
+            render json: { message: 'error while destroying' }
         end
-        render json: { message: 'watchlist asset deleted', data: @watchlist_asset}
     end
 
     private

@@ -10,9 +10,10 @@ const watchlistsReducer = (oldState = {}, action) => {
             return action.assets;
         case RECEIVE_WATCHLIST_ASSET:
             debugger
-            return action.asset;
-        // case REMOVE_WATCHLIST_ASSET:
-        //     return;
+            return action.assets;
+        case REMOVE_WATCHLIST_ASSET:
+            debugger
+            return {};
         default:
             return oldState;
     }

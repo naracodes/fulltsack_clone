@@ -6,7 +6,11 @@ class AssetShow extends React.Component {
     constructor(props) {
         debugger
         super(props);
+        // this.state = {
+        //     watching: false,
+        // }
         this.handleAddToList = this.handleAddToList.bind(this);
+        this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
     }
 
     componentDidMount() {
@@ -25,13 +29,16 @@ class AssetShow extends React.Component {
     handleAddToList(e) {
         e.preventDefault();
         const { addAssetToWatchlist, currentUser, asset } = this.props;
-        debugger
         // const currentUserId = currentUser.id;
         debugger
-        addAssetToWatchlist(asset, currentUser).then(() => {
-            debugger
-            this.props.history.push(`/dashboard/${asset.ticker}`);
-        })
+        addAssetToWatchlist(asset, currentUser);
+    }
+
+    handleRemoveFromList(e) {
+        e.preventDefault();
+        const { deleteAssetFromWatchlist, currentUser, asset } = this.props;
+        debugger
+        deleteAssetFromWatchlist(asset, currentUser);
     }
 
     // componentDidUpdate(prevProps) {
@@ -61,18 +68,20 @@ class AssetShow extends React.Component {
             debugger
             return null;
         } else {
-            const button = !watchlistArr.includes(ticker) ? <button onClick={this.handleAddToList}>Add to list</button> : <p>Remove</p>
             debugger
+            let button = watchlistArr.includes(ticker) ? (
+                <button onClick={this.handleRemoveFromList}>Remove</button>
+            ) : (
+             <button onClick={this.handleAddToList}>Add</button>
+            )
             return (
-                <div>
-                    <ul>
-                        <li>{asset.symbol}</li>
-                        <li>{asset.latestPrice}</li>
-                    </ul>
-                    <div>
-                        <Link to={`/dashboard`}>Dashboard</Link>
+                <div className="dashboard-body">
+                    <ul className='dashboard-list'>
+                        <li className='tg-list-item'>{asset.symbol}</li>
+                        <li className='tg-list-item'>{asset.latestPrice}</li>
                         {button}
-                    </div>
+                        <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
+                    </ul>
                 </div>
             )
         }
@@ -94,3 +103,4 @@ class AssetShow extends React.Component {
 }
 
 export default AssetShow;
+

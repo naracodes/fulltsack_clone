@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import AssetShow from './asset_show';
 import { fetchAsset, fetchPrice } from '../../actions/asset_actions';
-import { addAssetToWatchlist } from '../../actions/watchlist_actions'
+import { addAssetToWatchlist, deleteAssetFromWatchlist } from '../../actions/watchlist_actions'
+
 
 export const msp = (state, ownProps) => {
     debugger
@@ -30,6 +31,7 @@ export const mdp = dispatch => {
         fetchPrice: ticker => dispatch(fetchPrice(ticker)),
         clearAsset: () => dispatch(clearAsset()),
         addAssetToWatchlist: (asset, currentUser) => dispatch(addAssetToWatchlist(asset, currentUser)),
+        deleteAssetFromWatchlist: (asset, currentUser) => dispatch(deleteAssetFromWatchlist(asset, currentUser)),
 
     }
 }
