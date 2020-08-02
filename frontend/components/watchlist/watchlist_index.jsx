@@ -12,15 +12,27 @@ class WatchlistIndex extends React.Component {
         debugger
         return (
             <div>
+                <h3>Your portfolio</h3>
                 <ul>
+                    {
+                    watchlistAssets.reduce((acc, el) => {
+                        debugger
+                        return acc + el.latest_price;
+                    }, 0).toFixed(2)}
                     {
                         watchlistAssets.map(watchlistAsset => {
                             debugger
-                            return <WatchlistIndexItem
-                             key={watchlistAsset.id}
-                             watchlistAsset={watchlistAsset}
-                             currentUser={currentUser}
-                            />
+                            return (
+                                <div>
+                                    <div>
+                                        <WatchlistIndexItem
+                                        key={watchlistAsset.id}
+                                        watchlistAsset={watchlistAsset}
+                                        currentUser={currentUser}
+                                        />
+                                    </div>
+                                </div>
+                            )
                         })
                     }
                 </ul>

@@ -1,5 +1,5 @@
 export const fetchAssets = () => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'GET',
         url: `/api/assets`

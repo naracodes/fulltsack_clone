@@ -39,7 +39,7 @@ export const receiveAssetStats = assetStats => {
 }
 
 export const receivePrice = assetPrice => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_PRICE,
         assetPrice
@@ -47,14 +47,14 @@ export const receivePrice = assetPrice => {
 }
 
 export const clearPrice = () => {
-    debugger
+    // debugger
     return {
         type: CLEAR_PRICE,
     }
 }
 
 export const clearAsset = () => {
-    debugger
+    // debugger
     return {
         type: CLEAR_ASSET,
     }
@@ -65,25 +65,25 @@ export const clearAsset = () => {
 // }
 
 export const fetchAssets = () => dispatch => {
-    debugger
+    // debugger
     return AssetAPIUtil.fetchAssets().then(assets => {
-        debugger
+        // debugger
         return dispatch(receiveAllAssets(assets))
     })
 }
 
 export const fetchAsset = ticker => dispatch => {
-    debugger
+    // debugger
     return AssetAPIUtil.fetchAsset(ticker).then(asset => {
-        debugger
+        // debugger
         return dispatch(receiveAsset(asset))
     })
 }
 
 export const fetchPrice = ticker => dispatch => {
-    debugger
+    // debugger
     return AssetAPIUtil.fetchPrice(ticker).then(assetPrice => {
-        debugger
+        // debugger
         return dispatch(receivePrice(assetPrice));
     })
 }

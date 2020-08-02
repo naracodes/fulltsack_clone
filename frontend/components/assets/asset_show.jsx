@@ -77,7 +77,7 @@ class AssetShow extends React.Component {
             return (
                 <div className="dashboard-body">
                     <ul className='dashboard-list'>
-                        <li className='tg-list-item'>{asset.symbol}</li>
+                        <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
                         <li className='tg-list-item'>{asset.latestPrice}</li>
                         {button}
                         <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>

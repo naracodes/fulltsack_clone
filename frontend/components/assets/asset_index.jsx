@@ -4,19 +4,19 @@ import AssetIndexItem from './asset_index_item';
 class AssetIndex extends React.Component {
 
     componentDidMount() {
-        debugger
+        // debugger
         this.props.fetchAssets();
     }
 
     render() {
         const { assets } = this.props;
-        debugger
+        // debugger
         return (
             <div>
                 <ul>
                     {
                         assets.map(asset => {
-                            debugger
+                            // debugger
                             return <AssetIndexItem 
                              key={asset.id}
                              asset={asset}

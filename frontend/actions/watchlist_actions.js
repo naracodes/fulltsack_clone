@@ -30,7 +30,9 @@ export const removeWatchlistAsset = () => {
 //thunk action creators
 
 export const fetchAllWatchlistAssets = () => dispatch => {
+    debugger
     return WatchlistAPIUtil.fetchAllWatchlistAssets().then(assets => {
+        debugger
         return dispatch(receiveWatchlistAssets(assets));
     })
 }

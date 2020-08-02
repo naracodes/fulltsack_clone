@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_01_210232) do
+ActiveRecord::Schema.define(version: 2020_08_02_203605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_08_01_210232) do
     t.string "asset_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latest_price"
     t.index ["ticker"], name: "index_assets_on_ticker", unique: true
   end
 
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_08_01_210232) do
     t.integer "asset_id"
     t.string "ticker", null: false
     t.string "asset_name"
+    t.float "latest_price"
     t.index ["user_id"], name: "index_watchlists_on_user_id"
   end
 

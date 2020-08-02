@@ -2,11 +2,12 @@
 #
 # Table name: assets
 #
-#  id         :bigint           not null, primary key
-#  ticker     :string           not null
-#  asset_name :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :bigint           not null, primary key
+#  ticker       :string           not null
+#  asset_name   :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  latest_price :float
 #
 
 # This model initially had no columns defined. If you add columns to the
