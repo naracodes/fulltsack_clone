@@ -30213,3 +30213,117 @@ Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.5ms)
 Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for ::1 at 2020-08-03 16:51:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PpSk0i9EimeNUeN0P-x_xA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 42ms (Views: 34.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 16:51:11 -0400
+Processing by Api::AssetsController#index as JSON
+Started GET "/api/watchlists" for ::1 at 2020-08-03 16:51:11 -0400
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mAsset Load (1.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PpSk0i9EimeNUeN0P-x_xA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/assets/index.json.jbuilder (18.2ms)
+Completed 200 OK in 26ms (Views: 12.2ms | ActiveRecord: 12.4ms)
+
+
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (4.6ms)
+Completed 200 OK in 20ms (Views: 12.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/watchlists" for ::1 at 2020-08-03 16:51:15 -0400
+Processing by Api::WatchlistsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"TSLA", "asset_name"=>"Tesla, Inc.", "latest_price"=>"1502.31"}
+Unpermitted parameter: :format
+  [1m[36mWatchlist Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "watchlists" WHERE "watchlists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:18
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/watchlists_controller.rb:22
+No template found for Api::WatchlistsController#create, rendering head :no_content
+Completed 204 No Content in 176ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 16:51:18 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 16:51:18 -0400
+Processing by Api::WatchlistsController#index as JSON
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PpSk0i9EimeNUeN0P-x_xA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mAsset Load (2.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (4.5ms)
+  Rendering api/watchlists/index.json.jbuilder
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mWatchlist Load (0.6ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.3ms)
+Completed 200 OK in 17ms (Views: 8.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 16:51:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PpSk0i9EimeNUeN0P-x_xA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 16:51:22 -0400
+Processing by Api::AssetsController#index as JSON
+Started GET "/api/watchlists" for ::1 at 2020-08-03 16:51:22 -0400
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mAsset Load (0.9ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+Processing by Api::WatchlistsController#index as JSON
+  Rendered api/assets/index.json.jbuilder (3.4ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PpSk0i9EimeNUeN0P-x_xA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.3ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/watchlists" for ::1 at 2020-08-03 16:51:27 -0400
+Processing by Api::WatchlistsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"REAL", "asset_name"=>"The RealReal, Inc.", "latest_price"=>"15.073"}
+Unpermitted parameter: :format
+  [1m[36mWatchlist Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "watchlists" WHERE "watchlists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:18
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/watchlists_controller.rb:22
+No template found for Api::WatchlistsController#create, rendering head :no_content
+Completed 204 No Content in 93ms (ActiveRecord: 0.7ms)
+
+
