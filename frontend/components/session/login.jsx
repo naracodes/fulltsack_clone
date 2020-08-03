@@ -16,12 +16,12 @@ class Login extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
-        debugger;
+        // debugger;
         this.props.login(this.state)
             .then(() => {
-                debugger
+                // debugger
                 this.props.history.push('/dashboard');
             })
     }

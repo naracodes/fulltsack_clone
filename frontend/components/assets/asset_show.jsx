@@ -15,11 +15,20 @@ class AssetShow extends React.Component {
 
     componentDidMount() {
         // debugger
+        const { fetchAsset, fetchCompanyInfo } = this.props;
         const ticker = this.props.asset.ticker || this.props.match.params.ticker
         debugger
         // const fetchPrice = this.props.fetchPrice
         // debugger
-        this.props.fetchAsset(ticker);
+        Promise.all([
+            fetchAsset(ticker),
+            fetchCompanyInfo(ticker)
+        ]).then(() => {
+            debugger
+            console.log('both asset and company info fetched')
+        })
+        // this.props.fetchAsset(ticker);
+        // this.props.fetchCompanyInfo(ticker);
         // this.intervalId = setInterval(() => {
         //     debugger
         //     this.props.fetchPrice(ticker)
@@ -62,10 +71,10 @@ class AssetShow extends React.Component {
 
     render() {
         debugger
-        const { asset, watchlistArr } = this.props;
+        const { asset, watchlistArr, company } = this.props;
         const ticker = this.props.match.params.ticker;
+        debugger
         if (!this.props.watchlistArr) {
-            debugger
             return null;
         } else {
             debugger
@@ -79,6 +88,8 @@ class AssetShow extends React.Component {
                     <ul className='dashboard-list'>
                         <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
                         <li className='tg-list-item'>{asset.latestPrice}</li>
+                        <li className='tg-list-item'>{asset.industry}</li>
+                        <li className='tg-list-item'>{asset.description}</li>
                         {button}
                         <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
                     </ul>

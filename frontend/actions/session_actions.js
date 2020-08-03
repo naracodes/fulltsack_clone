@@ -14,14 +14,14 @@ export const receiveCurrentUser = user => {
 }
 
 export const logoutCurrentUser = () => {
-    debugger
+    // debugger
     return {
         type: LOGOUT_CURRENT_USER,
     }
 }
 
 export const receiveErrors = errors => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_SESSION_ERRORS,
         errors
@@ -38,21 +38,21 @@ export const clearErrors = () => {
 export const createNewUser = user => dispatch => {
     // debugger;
     return APIUtil.signup(user).then(response => {
-        debugger
+        // debugger
         return dispatch(receiveCurrentUser(response))
     }, err => {
-        debugger
+        // debugger
         return dispatch(receiveErrors(err.responseJSON))
     })
 }
 
 export const login = user => dispatch => {
-    debugger
+    // debugger
     return APIUtil.login(user).then(response => {
-        debugger
+        // debugger
         return dispatch(receiveCurrentUser(response))
     }, err => {
-        debugger
+        // debugger
         return dispatch(receiveErrors(err.responseJSON))
     })
 }
@@ -67,7 +67,7 @@ export const login = user => dispatch => {
 
 
 export const logout = () => dispatch => {
-    debugger
+    // debugger
     return APIUtil.logout().then(() => {
         return dispatch(logoutCurrentUser())
     })

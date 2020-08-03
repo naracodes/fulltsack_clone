@@ -13,11 +13,11 @@ class Signup extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
+    // debugger;
     e.preventDefault();
-    debugger;
+    // debugger;
     this.props.createNewUser(this.state).then(() => {
-      debugger;
+      // debugger;
       this.props.history.push("/dashboard");
     });
   }
