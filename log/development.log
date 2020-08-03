@@ -29017,3 +29017,493 @@ Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 2.0ms)
 Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 4.4ms)
 
 
+Started GET "/" for ::1 at 2020-08-03 14:09:56 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ah48m3iA2S0uqHzyNJVBQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 728ms (Views: 721.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:09:57 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:09:57 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mAsset Load (1.4ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (12.7ms)
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 7.1ms)
+
+
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ah48m3iA2S0uqHzyNJVBQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.6ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (12.5ms)
+Completed 200 OK in 23ms (Views: 12.0ms | ActiveRecord: 7.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-08-03 14:09:59 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ah48m3iA2S0uqHzyNJVBQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$ehmG1ieGypXX5xhO/wnale7.lxtP8QmohZnmnXPqYHfTwb3V7j93G"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BQ98_sDNE-JDRcv8Ezpo8g"], ["updated_at", "2020-08-03 18:09:59.021095"], ["id", 46]]
+  ↳ app/models/user.rb:49
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49
+No template found for Api::SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 101ms (ActiveRecord: 6.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-03 14:10:00 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$ehmG1ieGypXX5xhO/wnale7.lxtP8QmohZnmnXPqYHfTwb3V7j93G"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["updated_at", "2020-08-03 18:10:00.585553"], ["id", 46]]
+  ↳ app/models/user.rb:49
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49
+  Rendering api/sessions/show.json.jbuilder
+  Rendered api/sessions/show.json.jbuilder (0.3ms)
+Completed 200 OK in 177ms (Views: 6.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:00 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:00 -0400
+Processing by Api::AssetsController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mAsset Load (2.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (4.3ms)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 2.7ms)
+
+
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.6ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.6ms)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/api/watchlists/TSLA" for ::1 at 2020-08-03 14:10:03 -0400
+Processing by Api::WatchlistsController#destroy as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"TSLA"}
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."ticker" = $1 AND "watchlists"."user_id" = $2 LIMIT $3[0m  [["ticker", "TSLA"], ["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[36mWatchlist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 107]]
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  Rendering api/watchlists/show.json.jbuilder
+  Rendered api/watchlists/show.json.jbuilder (0.3ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:04 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:04 -0400
+Processing by Api::AssetsController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mAsset Load (2.7ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendering api/watchlists/index.json.jbuilder
+  Rendered api/assets/index.json.jbuilder (8.8ms)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mWatchlist Load (0.7ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.9ms)
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:07 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:07 -0400
+Processing by Api::AssetsController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mAsset Load (2.0ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendering api/watchlists/index.json.jbuilder
+  Rendered api/assets/index.json.jbuilder (12.5ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mWatchlist Load (0.6ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (2.2ms)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/watchlists" for ::1 at 2020-08-03 14:10:17 -0400
+Processing by Api::WatchlistsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"MSFT", "asset_name"=>"Microsoft Corp.", "latest_price"=>"223.77"}
+Unpermitted parameter: :format
+  [1m[36mWatchlist Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "watchlists" WHERE "watchlists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:17
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[36mWatchlist Create (0.4ms)[0m  [1m[32mINSERT INTO "watchlists" ("created_at", "updated_at", "ticker", "asset_name", "latest_price", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2020-08-03 18:10:17.861126"], ["updated_at", "2020-08-03 18:10:17.861126"], ["ticker", "MSFT"], ["asset_name", "Microsoft Corp."], ["latest_price", 223.77], ["user_id", 46]]
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.6ms)
+Completed 200 OK in 29ms (Views: 6.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:19 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:19 -0400
+Processing by Api::WatchlistsController#index as JSON
+Processing by Api::AssetsController#index as JSON
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/assets/index.json.jbuilder
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mAsset Load (4.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (7.4ms)
+  [1m[36mWatchlist Load (2.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 4.3ms)
+
+
+  Rendered api/watchlists/index.json.jbuilder (4.4ms)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 4.6ms)
+
+
+Started DELETE "/api/watchlists/MSFT" for ::1 at 2020-08-03 14:10:26 -0400
+Processing by Api::WatchlistsController#destroy as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"MSFT"}
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."ticker" = $1 AND "watchlists"."user_id" = $2 LIMIT $3[0m  [["ticker", "MSFT"], ["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[36mWatchlist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 109]]
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  Rendering api/watchlists/show.json.jbuilder
+  Rendered api/watchlists/show.json.jbuilder (0.6ms)
+Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:27 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:27 -0400
+Processing by Api::AssetsController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mAsset Load (2.1ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendering api/watchlists/index.json.jbuilder
+  Rendered api/assets/index.json.jbuilder (8.2ms)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mWatchlist Load (0.4ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.7ms)
+Completed 200 OK in 16ms (Views: 8.7ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/api/watchlists/TSLA" for ::1 at 2020-08-03 14:10:30 -0400
+Processing by Api::WatchlistsController#destroy as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"TSLA"}
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."ticker" = $1 AND "watchlists"."user_id" = $2 LIMIT $3[0m  [["ticker", "TSLA"], ["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[36mWatchlist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 108]]
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  Rendering api/watchlists/show.json.jbuilder
+  Rendered api/watchlists/show.json.jbuilder (0.6ms)
+Completed 200 OK in 14ms (Views: 6.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:31 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:31 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mAsset Load (1.3ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  Rendered api/assets/index.json.jbuilder (4.3ms)
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 1.3ms)
+
+
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (3.4ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (3.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-08-03 14:10:37 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH4xfk3WA58VjdvCuzWZ5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$ehmG1ieGypXX5xhO/wnale7.lxtP8QmohZnmnXPqYHfTwb3V7j93G"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "_xurO2iLNl3GbV028NtANg"], ["updated_at", "2020-08-03 18:10:37.142828"], ["id", 46]]
+  ↳ app/models/user.rb:49
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49
+No template found for Api::SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 100ms (ActiveRecord: 6.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-03 14:10:40 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$ehmG1ieGypXX5xhO/wnale7.lxtP8QmohZnmnXPqYHfTwb3V7j93G"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["updated_at", "2020-08-03 18:10:40.219634"], ["id", 46]]
+  ↳ app/models/user.rb:49
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:49
+  Rendering api/sessions/show.json.jbuilder
+  Rendered api/sessions/show.json.jbuilder (0.4ms)
+Completed 200 OK in 176ms (Views: 5.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:40 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:40 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mAsset Load (0.8ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (3.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.8ms)
+
+
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.1ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/api/watchlists/LRCX" for ::1 at 2020-08-03 14:10:44 -0400
+Processing by Api::WatchlistsController#destroy as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"LRCX"}
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT  "watchlists".* FROM "watchlists" WHERE "watchlists"."ticker" = $1 AND "watchlists"."user_id" = $2 LIMIT $3[0m  [["ticker", "LRCX"], ["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[36mWatchlist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "watchlists" WHERE "watchlists"."id" = $1[0m  [["id", 106]]
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/watchlists_controller.rb:33
+  Rendering api/watchlists/show.json.jbuilder
+  Rendered api/watchlists/show.json.jbuilder (0.3ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:10:45 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:10:45 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mAsset Load (0.8ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (2.9ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.8ms)
+
+
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.2ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-03 14:10:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/watchlists" for ::1 at 2020-08-03 14:11:02 -0400
+Processing by Api::WatchlistsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"TSLA", "asset_name"=>"Tesla, Inc.", "latest_price"=>"1494.19"}
+Unpermitted parameter: :format
+  [1m[36mWatchlist Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "watchlists" WHERE "watchlists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:17
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[36mWatchlist Create (0.3ms)[0m  [1m[32mINSERT INTO "watchlists" ("created_at", "updated_at", "ticker", "asset_name", "latest_price", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2020-08-03 18:11:02.379549"], ["updated_at", "2020-08-03 18:11:02.379549"], ["ticker", "TSLA"], ["asset_name", "Tesla, Inc."], ["latest_price", 1494.19], ["user_id", 46]]
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/watchlists_controller.rb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (0.9ms)
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/assets" for ::1 at 2020-08-03 14:11:03 -0400
+Started GET "/api/watchlists" for ::1 at 2020-08-03 14:11:03 -0400
+Processing by Api::AssetsController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b7K9Ie8TEvkpBEsGd2xRzw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mAsset Load (2.0ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (3.5ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 2.0ms)
+
+
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.6ms)
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 4.5ms)
+
+
