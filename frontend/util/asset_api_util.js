@@ -64,6 +64,7 @@ export const fetchAssetk5YData = ticker => {
 }
 
 export const fetchCompanyInfo = ticker => {
+    debugger
     return $.ajax({
         method: 'GET',
         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tsk_498db2929da24682a573da9403ff8a2a`

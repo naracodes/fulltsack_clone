@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    debugger
+    // debugger
     this.props.logout()
     }
 

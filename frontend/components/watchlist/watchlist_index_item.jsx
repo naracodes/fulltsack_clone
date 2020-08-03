@@ -7,7 +7,7 @@ const WatchlistIndexItem = props => {
     return (
         <div>
             <li>
-                {watchlistAsset.ticker} - {watchlistAsset.asset_name} - {watchlistAsset.latest_price}
+                <Link to={`/dashboard/${watchlistAsset.ticker}`}>{watchlistAsset.ticker} - {watchlistAsset.asset_name} - {watchlistAsset.latest_price}</Link>
             </li>
         </div>
     )

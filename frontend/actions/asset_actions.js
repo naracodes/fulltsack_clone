@@ -6,6 +6,7 @@ export const RECEIVE_ASSET = "RECEIVE_ASSET"
 export const RECEIVE_ASSET_STATS = "RECEIVE_ASSET_STATS"
 export const RECEIVE_ASSET_INTRADAY = "RECEIVE_ASSET_INTRADAY";
 export const RECEIVE_PRICE = "RECEIVE_PRICE";
+export const RECEIVE_COMPANY_INFO = "RECEIVE_COMPANY_INFO";
 export const CLEAR_PRICE = "CLEAR_PRICE";
 export const CLEAR_ASSET = "CLEAR_ASSET";
 
@@ -43,6 +44,14 @@ export const receivePrice = assetPrice => {
     return {
         type: RECEIVE_PRICE,
         assetPrice
+    }
+}
+
+export const receiveCompanyInfo = company => {
+    debugger
+    return {
+        type: RECEIVE_COMPANY_INFO,
+        company,
     }
 }
 
@@ -85,5 +94,13 @@ export const fetchPrice = ticker => dispatch => {
     return AssetAPIUtil.fetchPrice(ticker).then(assetPrice => {
         // debugger
         return dispatch(receivePrice(assetPrice));
+    })
+}
+
+export const fetchCompanyInfo = ticker => dispatch => {
+    debugger
+    return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
+        debugger
+        return dispatch(receiveCompanyInfo(company));
     })
 }

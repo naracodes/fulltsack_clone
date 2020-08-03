@@ -5,7 +5,7 @@ import Login from './login';
 import { clearErrors } from '../../actions/session_actions'
 
 const msp = (state) => {
-    debugger
+    // debugger
     return {
         currentUser: {
             email: '',
