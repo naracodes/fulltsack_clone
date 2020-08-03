@@ -20,7 +20,7 @@ export const msp = (state, ownProps) => {
             asset: asset,
             currentUser: state.session.user,
             watchlistArr: Object.keys(state.entities.watchlists),
-            company: state.entities.assets || state.entities.company,
+            // company: state.entities.assets || state.entities.company,
             //company: state.entities.assets[ownProps.match.params.ticker]
         }
     }

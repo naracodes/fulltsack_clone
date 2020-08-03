@@ -71,7 +71,7 @@ class AssetShow extends React.Component {
 
     render() {
         debugger
-        const { asset, watchlistArr, company } = this.props;
+        const { asset, watchlistArr } = this.props;
         const ticker = this.props.match.params.ticker;
         debugger
         if (!this.props.watchlistArr) {
