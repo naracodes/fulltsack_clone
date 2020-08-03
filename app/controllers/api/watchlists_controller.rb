@@ -18,10 +18,8 @@ class Api::WatchlistsController < ApplicationController
         if !Watchlist.exists?(watchlist_params)
             @watchlist_asset = Watchlist.new(watchlist_params)
             # debugger
-                @watchlist_asset.asset_id = Asset.where(ticker: watchlist_params[:ticker]).first.id
+                # @watchlist_asset.asset_id = Asset.where(ticker: watchlist_params[:ticker]).first.id
                 if @watchlist_asset.save
-                    # @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
-                    # @watchlist_assets = Watchlist.where('email = ?', current_user.email)
                     @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
 
                     # debugger
