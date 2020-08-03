@@ -20,6 +20,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     # has_one :watchlist
+<<<<<<< HEAD
+=======
+
+>>>>>>> apifetch
     has_many :watchlist_items,
         foreign_key: :user_id,
         class_name: :Watchlist
