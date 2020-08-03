@@ -40,6 +40,6 @@ class Api::WatchlistsController < ApplicationController
     private
     def watchlist_params
         # params.require(:watchlist).permit(:ticker, :user_id => current_user.id)
-        params.permit(:ticker, :user_id, :asset_name, :latest_price)
+        params.permit(:ticker, :user_id, :asset_name, :latest_price, :asset_id)
     end
 end
