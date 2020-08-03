@@ -19,7 +19,14 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_one :watchlist
+    # has_one :watchlist
+    has_many :watchlist_items,
+        foreign_key: :user_id,
+        class_name: :Watchlist
+
+    has_many :watched_assets,
+        through: :watchlist_items,
+        source: :asset
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

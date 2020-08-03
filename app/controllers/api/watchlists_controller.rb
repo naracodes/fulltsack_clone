@@ -2,8 +2,8 @@ class Api::WatchlistsController < ApplicationController
 
     def index
         # debugger
-        # @watchlist_assets =  Watchlist.where('user_id = ?', current_user.id)
-        @watchlist_assets =  Watchlist.where('email = ?', current_user.email)
+        @watchlist_assets =  Watchlist.where('user_id = ?', current_user.id)
+        # @watchlist_assets =  Watchlist.where('email = ?', current_user.email)
         # @watchlist_assets = Watchlist.all
         # debugger
         render :index
@@ -17,9 +17,12 @@ class Api::WatchlistsController < ApplicationController
     def create
         if !Watchlist.exists?(watchlist_params)
             @watchlist_asset = Watchlist.new(watchlist_params)
+            # debugger
+                @watchlist_asset.asset_id = Asset.where(ticker: watchlist_params[:ticker]).first.id
                 if @watchlist_asset.save
                     # @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
-                    @watchlist_assets = Watchlist.where('email = ?', current_user.email)
+                    # @watchlist_assets = Watchlist.where('email = ?', current_user.email)
+                    @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
 
                     # debugger
                     render :index
@@ -43,6 +46,6 @@ class Api::WatchlistsController < ApplicationController
     private
     def watchlist_params
         # params.require(:watchlist).permit(:ticker, :user_id => current_user.id)
-        params.permit(:ticker, :user_id, :asset_name, :latest_price, :email)
+        params.permit(:asset_id, :ticker, :user_id, :asset_name, :latest_price, :email)
     end
 end

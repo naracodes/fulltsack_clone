@@ -13,10 +13,9 @@
 #
 class Watchlist < ApplicationRecord
     validates :user_id, :ticker, presence: true
+    #artshare api unique validation (user_id and asset_id/ticker)
 
     belongs_to :user
 
-    # has_many :assets,
-    #     through: :user,
-    #     source: :asset
+    belongs_to :asset
 end
