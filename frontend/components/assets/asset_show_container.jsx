@@ -31,6 +31,37 @@ export const msp = (state, ownProps) => {
     }
 }
 
+class AssetLineChart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const { data } = this.props;
+    debugger;
+    if (!data) {
+      return null;
+    } else {
+      return (
+        <div className="chartContainer">
+          <h3>Hello!</h3>
+          <h3>{data[data.length - 1].close}</h3>
+          <LineChart
+            width={600}
+            height={300}
+            data={this.props.data}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <XAxis tickLine={false} dataKey="label" hide={true} />
+            <YAxis hide={true} domain={["auto", "dataMax"]} />
+            <Tooltip />
+            <Line type="linear" dataKey="close" stroke="#1aee99" dot={false} />
+          </LineChart>
+        </div>
+      );
+    }
+  }
+}
+
 export const mdp = dispatch => {
     debugger
     return {

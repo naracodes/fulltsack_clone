@@ -92,7 +92,6 @@ class AssetShow extends React.Component {
                         <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
                         <li className='tg-list-item'>{asset.latestPrice}</li>
                         <li>
-                            Chart renders here!
                             <AssetLineChart data={asset.chartData} />
                         </li>
                         <li className='tg-list-item'>{asset.industry}</li>
