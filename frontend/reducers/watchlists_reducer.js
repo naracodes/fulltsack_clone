@@ -6,7 +6,7 @@ const watchlistsReducer = (oldState = {}, action) => {
     debugger
     switch (action.type) {
         case RECEIVE_WATCHLIST_ASSETS:
-            debugger
+            // debugger
             return action.assets;
         case RECEIVE_WATCHLIST_ASSET:
             debugger

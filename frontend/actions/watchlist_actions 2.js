@@ -37,6 +37,7 @@ export const fetchAllWatchlistAssets = () => dispatch => {
 
 export const addAssetToWatchlist = (asset, currentUser) => dispatch => {
     debugger
+    console.log(asset);
     return WatchlistAPIUtil.addAssetToWatchlist(asset, currentUser).then(assets => {
         debugger
         return dispatch(receiveWatchlistAssets(assets));

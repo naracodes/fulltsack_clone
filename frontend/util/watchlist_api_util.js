@@ -16,7 +16,7 @@ export const addAssetToWatchlist = (asset, currentUser) => {
             ticker: asset.ticker,
             asset_name: asset.companyName,
             latest_price: asset.latestPrice,
-            asset_id: asset.id,
+            // asset_id: asset.id,
         }
     })
     debugger

@@ -15,9 +15,9 @@ class Api::WatchlistsController < ApplicationController
     end
 
     def create
-        if !Watchlist.exists?(ticker: params[:ticker], user_id: current_user.id)
+        if !Watchlist.exists?(ticker: params[:ticker], user_id: params[:user_id])
             @watchlist_asset = Watchlist.new(watchlist_params)
-            # debugger
+            debugger
                 # @watchlist_asset.asset_id = Asset.where(ticker: watchlist_params[:ticker]).first.id
                 if @watchlist_asset.save
                     @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
@@ -25,6 +25,8 @@ class Api::WatchlistsController < ApplicationController
                     # debugger
                     render :index
                     # render json: { data: @watchlist_asset }
+                else
+                    render json: { message: 'Error while saving asset' }
                 end
         else
             render json: { message: 'asset already exists on watchlist' }
@@ -44,6 +46,6 @@ class Api::WatchlistsController < ApplicationController
     private
     def watchlist_params
         # params.require(:watchlist).permit(:ticker, :user_id => current_user.id)
-        params.permit(:ticker, :user_id, :asset_name, :latest_price, :asset_id)
+        params.permit(:ticker, :user_id, :asset_name, :latest_price)
     end
 end
