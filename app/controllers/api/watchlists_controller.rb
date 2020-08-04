@@ -14,7 +14,7 @@ class Api::WatchlistsController < ApplicationController
     end
 
     def create
-        if !Watchlist.exists?(watchlist_params)
+        if !Watchlist.exists?(ticker: params[:ticker], user_id: current_user.id)
             @watchlist_asset = Watchlist.new(watchlist_params)
                 if @watchlist_asset.save
                     @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
