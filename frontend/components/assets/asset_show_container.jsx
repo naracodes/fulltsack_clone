@@ -1,7 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AssetShow from './asset_show';
-import { fetchAsset, fetchPrice, fetchCompanyInfo } from '../../actions/asset_actions';
+import {
+  fetchAsset,
+  fetchPrice,
+  fetchCompanyInfo,
+  fetchIntraday,
+} from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist } from '../../actions/watchlist_actions'
 
 
@@ -35,7 +40,7 @@ export const mdp = dispatch => {
         addAssetToWatchlist: (asset, currentUser) => dispatch(addAssetToWatchlist(asset, currentUser)),
         deleteAssetFromWatchlist: (asset, currentUser) => dispatch(deleteAssetFromWatchlist(asset, currentUser)),
         fetchCompanyInfo: ticker => dispatch(fetchCompanyInfo(ticker)),
-
+        fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
     }
 }
 

@@ -39,6 +39,15 @@ export const receiveAssetStats = assetStats => {
     }
 }
 
+export const receiveAssetIntraday = (assetIntraday, ticker) => {
+    return {
+        type: RECEIVE_ASSET_INTRADAY,
+        assetIntraday,
+        ticker,
+    }
+}
+
+
 export const receivePrice = assetPrice => {
     // debugger
     return {
@@ -102,5 +111,13 @@ export const fetchCompanyInfo = ticker => dispatch => {
     return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
         debugger
         return dispatch(receiveCompanyInfo(company));
+    })
+}
+
+export const fetchIntraday = ticker => dispatch => {
+    debugger
+    return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
+        debugger
+        return dispatch(receiveAssetIntraday(assetIntraday, ticker));
     })
 }

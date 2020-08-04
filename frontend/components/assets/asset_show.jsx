@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AssetLineChart from "../charts/linechart";
 
 class AssetShow extends React.Component {
 
@@ -15,17 +16,19 @@ class AssetShow extends React.Component {
 
     componentDidMount() {
         // debugger
-        const { fetchAsset, fetchCompanyInfo } = this.props;
+        const { fetchAsset, fetchCompanyInfo, fetchIntraday } = this.props;
         const ticker = this.props.asset.ticker || this.props.match.params.ticker
         debugger
         // const fetchPrice = this.props.fetchPrice
         // debugger
         Promise.all([
             fetchAsset(ticker),
-            fetchCompanyInfo(ticker)
+            fetchCompanyInfo(ticker),
+            fetchIntraday(ticker)
+
         ]).then(() => {
             debugger
-            console.log('both asset and company info fetched')
+            console.log('all promises resolved')
         })
         // this.props.fetchAsset(ticker);
         // this.props.fetchCompanyInfo(ticker);
@@ -88,6 +91,10 @@ class AssetShow extends React.Component {
                     <ul className='dashboard-list'>
                         <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
                         <li className='tg-list-item'>{asset.latestPrice}</li>
+                        <li>
+                            Chart renders here!
+                            <AssetLineChart data={asset.chartData} />
+                        </li>
                         <li className='tg-list-item'>{asset.industry}</li>
                         <li className='tg-list-item'>{asset.description}</li>
                         {button}
