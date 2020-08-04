@@ -72,7 +72,7 @@ class AssetShow extends React.Component {
     render() {
         debugger
         const { asset, watchlistArr } = this.props;
-        const ticker = this.props.match.params.ticker;
+        const ticker = this.props.match.params.ticker.toUpperCase();
         debugger
         if (!this.props.watchlistArr) {
             return null;
