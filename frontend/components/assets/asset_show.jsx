@@ -24,7 +24,7 @@ class AssetShow extends React.Component {
         Promise.all([
             fetchAsset(ticker),
             fetchCompanyInfo(ticker),
-            fetchIntraday(ticker)
+            fetchIntraday(ticker),
 
         ]).then(() => {
             debugger
@@ -90,7 +90,7 @@ class AssetShow extends React.Component {
                 <div className="dashboard-body">
                     <ul className='dashboard-list'>
                         <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
-                        <li className='tg-list-item'>{asset.latestPrice}</li>
+                        {/* <li className='tg-list-item'>{asset.latestPrice}</li> */}
                         <li>
                             <AssetLineChart data={asset.chartData} />
                         </li>

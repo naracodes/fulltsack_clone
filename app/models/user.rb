@@ -58,4 +58,11 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    def buying_power
+        # deposit and withd bonus feature
+        # buy and sell
+        # FIFO - chronological :created_at - things to do later maybe?
+        last_position = Transaction.where(transaction_type: "Deposit", user_id: self.id).pluck(:transaction_amount)
+    end
+
 end

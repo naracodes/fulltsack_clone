@@ -13,4 +13,6 @@
 #
 class Transaction < ApplicationRecord
     validates :user_id, :asset_id, :transaction_type, :transaction_amount, :quantity, presence: true
+
+    
 end

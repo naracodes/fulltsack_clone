@@ -8,8 +8,8 @@
 
 require 'iex-ruby-client'
 
-Asset.destroy_all
-Watchlist.destroy_all
+# Asset.destroy_all
+# Watchlist.destroy_all
 
 IEX::Api.configure do |config|
     config.publishable_token = 'Tpk_9cc6c16a40494338943d728d111e9998' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
@@ -59,6 +59,29 @@ demo_watchlist_assets_48.each do |demo_watchlist_asset|
     })
 end
 
+Transaction.create({
+    user_id: 46,
+    asset_id: 2,
+    transaction_type: "Deposit",
+    transaction_amount: 2000,
+    quantity: 1,
+})
+
+Transaction.create({
+    user_id: 46,
+    asset_id: 24,
+    transaction_type: "Deposit",
+    transaction_amount: 1000,
+    quantity: 1,
+})
+
+Transaction.create({
+    user_id: 46,
+    asset_id: 20,
+    transaction_type: "Withdraw",
+    transaction_amount: 500,
+    quantity: 1,
+})
 
 
 # 10.times do
