@@ -17,14 +17,14 @@ class AssetShow extends React.Component {
     componentDidMount() {
         // debugger
         const { fetchAsset, fetchCompanyInfo, fetchIntraday } = this.props;
-        const ticker = this.props.asset.ticker || this.props.match.params.ticker
+        const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase()
         debugger
         // const fetchPrice = this.props.fetchPrice
         // debugger
         Promise.all([
             fetchAsset(ticker),
             fetchCompanyInfo(ticker),
-            fetchIntraday(ticker)
+            fetchIntraday(ticker),
 
         ]).then(() => {
             debugger
@@ -90,7 +90,7 @@ class AssetShow extends React.Component {
                 <div className="dashboard-body">
                     <ul className='dashboard-list'>
                         <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
-                        <li className='tg-list-item'>{asset.latestPrice}</li>
+                        {/* <li className='tg-list-item'>{asset.latestPrice}</li> */}
                         <li>
                             <AssetLineChart data={asset.chartData} />
                         </li>
