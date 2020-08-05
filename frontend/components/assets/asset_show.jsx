@@ -17,7 +17,7 @@ class AssetShow extends React.Component {
     componentDidMount() {
         // debugger
         const { fetchAsset, fetchCompanyInfo, fetchIntraday } = this.props;
-        const ticker = this.props.asset.ticker || this.props.match.params.ticker
+        const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase()
         debugger
         // const fetchPrice = this.props.fetchPrice
         // debugger
