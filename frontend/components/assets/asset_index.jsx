@@ -17,10 +17,10 @@ class AssetIndex extends React.Component {
                     {
                         assets.map(asset => {
                             // debugger
-                            return <AssetIndexItem 
+                            return <li><AssetIndexItem 
                              key={asset.id}
                              asset={asset}
-                            />
+                            /></li>
                         })
                     }
                 </ul>

@@ -89,13 +89,27 @@ class AssetShow extends React.Component {
             return (
                 <div className="dashboard-body">
                     <ul className='dashboard-list'>
+                        <h1>
                         <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
+                        </h1>
                         {/* <li className='tg-list-item'>{asset.latestPrice}</li> */}
                         <li>
                             <AssetLineChart data={asset.chartData} />
                         </li>
-                        <li className='tg-list-item'>{asset.industry}</li>
-                        <li className='tg-list-item'>{asset.description}</li>
+                        <div className="asset-about">
+                            <h2>About</h2>
+                            <br/>
+                            <label>CEO<div>{asset["CEO"]}</div></label>
+                            <br/>
+                            <label>Employees<div>{asset.employees}</div></label>
+                            <label>Headquarters<div>{asset.city}, {asset["state"]}</div></label>
+                            <label>Market Cap<div>{asset.marketCap}</div></label>
+                            <label>PE Ratio<div>{asset.peRatio}</div></label>
+                            <label>Dividend Yield<div>{asset.dividendYield}</div></label>
+                            <label>Avg Total Volume<div>{asset.avgTotalVolume}</div></label>
+                            <label>Decription<div>{asset.description}</div></label>
+                            <label>Industry<div>{asset.industry}</div></label>
+                        </div>
                         {button}
                         <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
                     </ul>

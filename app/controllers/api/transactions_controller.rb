@@ -14,10 +14,6 @@ class Api::TransactionsController < ApplicationController
         
     end
 
-    def destroy
-        
-    end
-
     private
     def transaction_params
         params.permit(:user_id, :asset_id, :transaction_type, :transaction_amount, :quantity)

@@ -28,16 +28,12 @@ class Dashboard extends React.Component {
             <AssetIndexContainer />
           </div>
         </ul>
+
         <br/>
           <div>
-          <h4>My Watchlist</h4>
-            <li> 
               <WatchlistIndexContainer />
-            </li>
           </div>
-        <div>
-          <li>
-          </li>
+          <div>
         </div>
       </div>
     ) : (
@@ -45,7 +41,7 @@ class Dashboard extends React.Component {
             <LoginContainer />
         </div>
     );
-    return <div>{dashboard}</div>;
+    return <div className="dashboard-container">{dashboard}</div>;
   }
 }
 

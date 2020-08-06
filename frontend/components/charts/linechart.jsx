@@ -41,7 +41,7 @@ class AssetLineChart extends React.Component {
     debugger
     if (e.activePayload && this.props.data) {
       this.setState({
-        closePrice: e.activePayload[0].payload.close,
+        closePrice: e.activePayload[0].payload.close.toFixed(2),
       })
     }
   }
@@ -54,7 +54,7 @@ class AssetLineChart extends React.Component {
       return null;
     } else {
       if (this.state.closePrice === null) { // null -> string and in constructor
-        const closePrice = this.props.data[this.props.data.length - 1].close;
+        const closePrice = this.props.data[this.props.data.length - 1].close.toFixed(2);
         this.setState({
           closePrice: closePrice,
         });
@@ -63,7 +63,8 @@ class AssetLineChart extends React.Component {
       return (
         <div className="chartContainer">
           <h3>Hello!</h3>
-          <h3>{this.state.closePrice}</h3>
+          {/* <h3>{this.state.closePrice}</h3> */}
+          <h1>$<Odometer className="odometer" value={this.state.closePrice} format="(,ddd).dd" /></h1>
           <LineChart
             width={600}
             height={300}
