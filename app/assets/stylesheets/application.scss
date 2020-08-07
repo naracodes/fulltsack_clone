@@ -621,11 +621,11 @@ table {
   position: absolute;
   padding-top: 70px;
   background-color: whitesmoke;
-  border: lightslategrey solid 0.5px;
-  border-radius: 7px;
+  border: rgb(235, 239, 243) solid 0.5px;
+  border-radius: 2px;
   right: 7px;
   min-width: 100px;
-  min-height: 100px;
+  height: 46px;
   cursor: pointer;
 }
 
@@ -658,19 +658,23 @@ table {
   
 }
 
-.dash1 a {
-  text-decoration: none;
-}
 
 body{
   padding-top: 15px;
 }
 
-.search-container{
+.search-outer {
+  align-items: center;
   width: 320px;
   display: block;
   margin: 0 auto;
 }
+
+// .search-container{
+//   width: 320px;
+//   display: block;
+//   margin: 0 auto;
+// }
 
 input#search-bar{
   margin: 0 auto;
@@ -708,4 +712,71 @@ input#search-bar{
   height: 60px;
   top: -49px;
   right: -45px;
+}
+
+.watchlist-container a {
+  text-decoration: none;
+}
+
+.watchlist-container {
+  list-style: none;
+  // display: flex;
+  align-items: center;
+  // display: flex;
+  // padding-top: 20px;
+  // border: solid lightgray 1px;
+  // margin-left: 580px;
+  // font-size: 13px;
+  // padding-right: 70px;
+  width: 200px;
+  // height: 100%;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 80px;
+}
+
+.dashboard-container .watchlist-container {
+  padding-top: 88px;
+}
+
+#list-title {
+  font-weight: bold;
+  border-bottom: solid 1px #a7b4b4;
+  padding-bottom: 8px;
+  font-size: 15px;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  color: #242c2b;
+  font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
+}
+
+// .watchlist-container li a{
+//   color: red;
+//   padding: 10px;
+// }
+
+.watchlist2 {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  color: #242c2b;
+  font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
+}
+
+.watchlist2 a {
+  color: #242c2b;
+}
+
+#watchlist-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.watchlist2:hover {
+  background-color: rgb(192, 245, 191);
 }

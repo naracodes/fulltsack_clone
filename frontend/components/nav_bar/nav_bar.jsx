@@ -28,6 +28,7 @@ class NavBar extends React.Component {
                 <div className="dropdown-trigger">
                     <h4 className="dropdown-btn">Account</h4>
                         <ul className="dropdown-list">
+                            <li>{currentUser.firstName} {currentUser.lastName}</li>
                             <li><button onClick={this.handleClick}>Log Out</button></li>
                         </ul>
                 </div>
