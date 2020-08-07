@@ -621,11 +621,11 @@ table {
   position: absolute;
   padding-top: 70px;
   background-color: whitesmoke;
-  border: lightslategrey solid 0.5px;
-  border-radius: 7px;
+  border: rgb(235, 239, 243) solid 0.5px;
+  border-radius: 2px;
   right: 7px;
   min-width: 100px;
-  min-height: 100px;
+  height: 46px;
   cursor: pointer;
 }
 
@@ -769,4 +769,14 @@ input#search-bar{
 
 .watchlist2 a {
   color: #242c2b;
+}
+
+#watchlist-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.watchlist2:hover {
+  background-color: rgb(192, 245, 191);
 }
