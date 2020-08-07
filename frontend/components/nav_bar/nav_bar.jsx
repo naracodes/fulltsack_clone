@@ -23,7 +23,16 @@ class NavBar extends React.Component {
 
         let navBar;
         if (currentUser) {
-           navBar = (<button onClick={this.handleClick}>Log Out</button>);
+            navBar = (
+            <nav className="logout-container">
+                <div className="dropdown-trigger">
+                    <h4 className="dropdown-btn">Account</h4>
+                        <ul className="dropdown-list">
+                            <li><button onClick={this.handleClick}>Log Out</button></li>
+                        </ul>
+                </div>
+            </nav>
+            );
         } else if (this.props.history.location.pathname === '/signup' || this.props.history.location.pathname === '/login' || this.props.history.location.pathname === '/dashboard') {
             navBar = null;
         } else {
