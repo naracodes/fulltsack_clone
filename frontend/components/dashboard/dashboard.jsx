@@ -22,12 +22,12 @@ class Dashboard extends React.Component {
     // debugger;
     const dashboard = currentUser ? (
       <div>
-        <ul>
+        <form className="search-container">
+          <input type="text" id="search-bar" placeholder="" />
+          <a href="#"><img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" /></a>
+        </form>
+
           <li>Welcome, {`${currentUser.firstName} ${currentUser.lastName}`}</li>
-          <div>
-            <AssetIndexContainer />
-          </div>
-        </ul>
 
         <br/>
           <div>

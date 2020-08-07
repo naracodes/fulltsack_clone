@@ -62,6 +62,7 @@ class User < ApplicationRecord
         # deposit and withd bonus feature
         # buy and sell
         # FIFO - chronological :created_at - things to do later maybe?
+        cash_balance = Transaction.where(transaction_type: "Deposit", user_id: self.id)
         last_position = Transaction.where(transaction_type: "Deposit", user_id: self.id).pluck(:transaction_amount)
     end
 

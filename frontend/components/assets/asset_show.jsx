@@ -16,7 +16,7 @@ class AssetShow extends React.Component {
 
     componentDidMount() {
         // debugger
-        const { fetchAsset, fetchCompanyInfo, fetchIntraday } = this.props;
+        const { fetchAsset, fetchCompanyInfo, fetchIntraday, fetchNews } = this.props;
         const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase()
         debugger
         // const fetchPrice = this.props.fetchPrice
@@ -25,6 +25,7 @@ class AssetShow extends React.Component {
             fetchAsset(ticker),
             fetchCompanyInfo(ticker),
             fetchIntraday(ticker),
+            // fetchNews(ticker),
 
         ]).then(() => {
             debugger
@@ -77,7 +78,7 @@ class AssetShow extends React.Component {
         const { asset, watchlistArr } = this.props;
         const ticker = this.props.match.params.ticker.toUpperCase();
         debugger
-        if (!this.props.watchlistArr) {
+        if (!asset || !watchlistArr) {
             return null;
         } else {
             debugger
@@ -110,6 +111,14 @@ class AssetShow extends React.Component {
                             <label>Decription<div>{asset.description}</div></label>
                             <label>Industry<div>{asset.industry}</div></label>
                         </div>
+{/* 
+                        <div className="asset-news">
+                            <h2>News</h2>
+                            <label><div>{asset.news.headline}</div></label>
+                            <label><div>{asset.news.source}</div></label>
+                            <label><div>{asset.news.summary}</div></label>
+                        </div> */}
+
                         {button}
                         <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
                     </ul>

@@ -5,7 +5,7 @@ const AssetIndexItem = props => {
     const { asset } = props;
     debugger
     return (
-        <Link to={`/dashboard/${asset.ticker}`}>{asset.ticker} - {asset.asset_name} - {asset.latest_price}</Link>
+        <Link to={`/dashboard/${asset.ticker}`}>{asset.ticker} - {asset.asset_name}</Link>
     )
 }
 

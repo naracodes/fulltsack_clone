@@ -6,6 +6,8 @@ import {
   fetchPrice,
   fetchCompanyInfo,
   fetchIntraday,
+  fetchNews,
+  fetchQuoteAndNews,
 } from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist } from '../../actions/watchlist_actions'
 
@@ -41,6 +43,8 @@ export const mdp = dispatch => {
         deleteAssetFromWatchlist: (asset, currentUser) => dispatch(deleteAssetFromWatchlist(asset, currentUser)),
         fetchCompanyInfo: ticker => dispatch(fetchCompanyInfo(ticker)),
         fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
+        // fetchNews: ticker => dispatch(fetchNews(ticker)),
+        // fetchQuoteAndNews: ticker => dispatch(fetchQuoteAndNews(ticker)),
     }
 }
 
