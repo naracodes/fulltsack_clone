@@ -67,28 +67,51 @@ demo_user = User.create({
 
 Transaction.create({
     user_id: 46,
-    asset_id: 2,
+    asset_id: ,
     transaction_type: "Deposit",
     transaction_amount: 2000,
     quantity: 1,
 })
 
+# BANK DEPOSIT
 Transaction.create({
     user_id: 46,
-    asset_id: 24,
+    asset_id: ,
     transaction_type: "Deposit",
     transaction_amount: 1000,
     quantity: 1,
 })
 
+# BANK WITHDRAW
 Transaction.create({
     user_id: 46,
-    asset_id: 20,
+    asset_id: ,
     transaction_type: "Withdraw",
     transaction_amount: 500,
     quantity: 1,
 })
 
+# BUY
+# WITHDRAW FROM CASH, CONVERT INTO STOCK
+Transaction.create({
+    user_id: 46,
+    ticker: "FB",
+    transaction_type: "Buy",
+    transaction_amount: ,
+    quantity: 3,
+    cost_per_share: 250.00,
+})
+
+# SELL
+# CONVERT INTO CASH AND DEPOSIT AS CASH
+Transaction.create({
+    user_id: 46,
+    ticker: ,
+    transaction_type: "Sell",
+    transaction_amount: ,
+    quantity: 2,
+    cost_per_share: 260.00,
+})
 
 # 10.times do
 #     Product.create({

@@ -9,6 +9,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown(this);
   }
 
   handleClick(e) {
@@ -17,27 +18,33 @@ class Dashboard extends React.Component {
     this.props.logout()
     }
 
+  handleKeyDown(e) {
+    return e => {
+      if (e.keyCode === 13) {
+        this.props.history.push(`/dashboard/${e.currentTarget.value.toUpperCase()}`);
+      } else {
+        return;
+      }
+    }
+  }
+
   render() {
     const { currentUser, logout } = this.props;
     // debugger;
     const dashboard = currentUser ? (
       <div>
-        <ul>
+        <form className="search-container">
+          <input type="text" id="search-bar" onKeyDown={this.handleKeyDown} tabIndex="0"/>
+          <img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
+        </form>
+
           <li>Welcome, {`${currentUser.firstName} ${currentUser.lastName}`}</li>
-          <div>
-            <AssetIndexContainer />
-          </div>
-        </ul>
+
         <br/>
           <div>
-          <h4>My Watchlist</h4>
-            <li> 
               <WatchlistIndexContainer />
-            </li>
           </div>
-        <div>
-          <li>
-          </li>
+          <div>
         </div>
       </div>
     ) : (
@@ -45,7 +52,7 @@ class Dashboard extends React.Component {
             <LoginContainer />
         </div>
     );
-    return <div>{dashboard}</div>;
+    return <div className="dashboard-container">{dashboard}</div>;
   }
 }
 

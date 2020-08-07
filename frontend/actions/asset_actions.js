@@ -7,6 +7,7 @@ export const RECEIVE_ASSET_STATS = "RECEIVE_ASSET_STATS"
 export const RECEIVE_ASSET_INTRADAY = "RECEIVE_ASSET_INTRADAY";
 export const RECEIVE_PRICE = "RECEIVE_PRICE";
 export const RECEIVE_COMPANY_INFO = "RECEIVE_COMPANY_INFO";
+export const RECEIVE_NEWS = "RECEIVE_NEWS";
 export const CLEAR_PRICE = "CLEAR_PRICE";
 export const CLEAR_ASSET = "CLEAR_ASSET";
 
@@ -47,6 +48,21 @@ export const receiveAssetIntraday = (assetIntraday, ticker) => {
     }
 }
 
+export const receiveNews = (news, ticker) => {
+    return {
+        type: RECEIVE_ASSET_INTRADAY,
+        news,
+        ticker,
+    }
+}
+
+// export const receiveQuoteAndNews = (quoteAndNews) => {
+//     debugger
+//     return {
+//         type: RECEIVE_ASSET_INTRADAY,
+//         quoteAndNews,
+//     }
+// }
 
 export const receivePrice = assetPrice => {
     // debugger
@@ -121,3 +137,11 @@ export const fetchIntraday = ticker => dispatch => {
         return dispatch(receiveAssetIntraday(assetIntraday, ticker));
     })
 }
+
+// export const fetchQuoteAndNews = ticker => dispatch => {
+//     debugger
+//     return AssetAPIUtil.fetchQuoteAndNew(ticker).then((quoteAndNews) => {
+//         debugger
+//         return dispatch(receiveQuoteAndNews(quoteAndNews));
+//     })
+// }
