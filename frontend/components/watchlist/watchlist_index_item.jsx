@@ -5,7 +5,9 @@ const WatchlistIndexItem = props => {
     const { watchlistAsset } = props;
     debugger
     return (
-        <Link to={`/dashboard/${watchlistAsset.ticker}`}>{watchlistAsset.ticker} - ${watchlistAsset.latest_price.toFixed(2)}</Link>
+        <Link to={`/dashboard/${watchlistAsset.ticker}`}>
+            {watchlistAsset.ticker} {"    "} ${watchlistAsset.latest_price.toFixed(2)}
+        </Link>
     )
 }
 

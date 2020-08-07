@@ -32,16 +32,18 @@ class Dashboard extends React.Component {
     const { currentUser, logout } = this.props;
     // debugger;
     const dashboard = currentUser ? (
-      <div>
-        <form className="search-container">
-          <input type="text" id="search-bar" onKeyDown={this.handleKeyDown} tabIndex="0"/>
-          <img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
-        </form>
-
-          <li>Welcome, {`${currentUser.firstName} ${currentUser.lastName}`}</li>
+      <div className="dashboard-container">
+        <div className="search-outer">
+          <form className="search-container">
+            <input type="text" id="search-bar" onKeyDown={this.handleKeyDown} tabIndex="0"/>
+            <img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
+          </form>
+        </div>
 
           <div className="watchlist-container">
+            <div className="watchlist-items">
               <WatchlistIndexContainer />
+            </div>
           </div>
       </div>
     ) : (

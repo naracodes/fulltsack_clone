@@ -13,15 +13,16 @@ class WatchlistIndex extends React.Component {
         return (
           <div className="port-and-watch">
                 <div className="portfolio-container">
-                    <h3>Your portfolio</h3>
+                    {/* <h3>Your portfolio</h3>
                     {watchlistAssets
                     .reduce((acc, el) => {
                     debugger;
                     return acc + el.latest_price;
                     }, 0)
-                    .toFixed(2)}
+                    .toFixed(2)} */}
                 </div>
                 <div className="inner-watch-list-container">
+                  <li id="list-title"><h3>Watchlist</h3></li>
                   {watchlistAssets.map((watchlistAsset) => {
                     debugger;
                     return (
