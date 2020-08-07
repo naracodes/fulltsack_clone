@@ -13,7 +13,7 @@ class AssetIndex extends React.Component {
         // debugger
         return (
             <div>
-                <ul>
+                <div className="asset-index">
                     {
                         assets.map(asset => {
                             // debugger
@@ -23,7 +23,7 @@ class AssetIndex extends React.Component {
                             /></li>
                         })
                     }
-                </ul>
+                </div>
             </div>
         )
     }

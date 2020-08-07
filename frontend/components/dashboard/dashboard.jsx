@@ -40,19 +40,16 @@ class Dashboard extends React.Component {
 
           <li>Welcome, {`${currentUser.firstName} ${currentUser.lastName}`}</li>
 
-        <br/>
-          <div>
+          <div className="watchlist-container">
               <WatchlistIndexContainer />
           </div>
-          <div>
-        </div>
       </div>
     ) : (
         <div>
             <LoginContainer />
         </div>
     );
-    return <div className="dashboard-container">{dashboard}</div>;
+    return dashboard;
   }
 }
 

@@ -11,10 +11,9 @@ class WatchlistIndex extends React.Component {
         const { watchlistAssets, currentUser } = this.props;
         debugger
         return (
-          <div>
-            <h3>Your portfolio</h3>
-            <div>
-                <div>
+          <div className="port-and-watch">
+                <div className="portfolio-container">
+                    <h3>Your portfolio</h3>
                     {watchlistAssets
                     .reduce((acc, el) => {
                     debugger;
@@ -22,21 +21,23 @@ class WatchlistIndex extends React.Component {
                     }, 0)
                     .toFixed(2)}
                 </div>
-                <div>
-              {watchlistAssets.map((watchlistAsset) => {
-                debugger;
-                return (
-                  <li>
-                      <WatchlistIndexItem
-                        key={watchlistAsset.id}
-                        watchlistAsset={watchlistAsset}
-                        currentUser={currentUser}
-                      />
-                  </li>
-                );
-              })}
+                <div className="inner-watch-list-container">
+                  {watchlistAssets.map((watchlistAsset) => {
+                    debugger;
+                    return (
+                      <div className="watchlist2">
+                        <li>
+                            <WatchlistIndexItem
+                              key={watchlistAsset.id}
+                              watchlistAsset={watchlistAsset}
+                              currentUser={currentUser}
+                            />
+                        </li>
+
+                      </div>
+                    );
+                  })}
                 </div>
-            </div>
           </div>
         );
     }
