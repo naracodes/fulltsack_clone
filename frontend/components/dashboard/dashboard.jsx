@@ -33,6 +33,9 @@ class Dashboard extends React.Component {
     const dashboard = currentUser ? (
       <div className="dashboard-body">
         <div className="dashboard-grid">
+              <div className="portfolio-graph"></div>
+              <div className="pop-collection"></div>
+              <div className="news-stand"></div>
               <WatchlistIndexContainer />
         </div>
       </div>
