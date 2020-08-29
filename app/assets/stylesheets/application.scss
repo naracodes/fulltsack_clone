@@ -677,13 +677,12 @@ input#search-bar{
   // display: flex;
   // justify-content: start;
   grid-column: 4 / 4;
-}
-
-.watchlist-items {
   width: 100%;
 }
 
 .watchlist-item {
+  display: inline-block;
+  
   width: 92%;
   font-size: 14px;
   padding: 10px;
