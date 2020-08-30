@@ -242,7 +242,7 @@ input#search-bar{
   display: grid;
   grid-area: 4 / 1 / 6 / 4;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   background-color: lightgray;
   font-size: 22px;
 }
@@ -250,4 +250,43 @@ input#search-bar{
 .about .asset-description {
   grid-area: 2 / 1 / 2 / 4;
   font-size: 15px;
+}
+
+//read more
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: 10ms ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: 15px;
+  
+  // max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: "Show more";
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: "Show less";
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  // display: inline-block;
+  text-align: right;
+  padding: 0 .5em;
+  font-size: .9em;
+  line-height: 2;
+  // border: 1px solid #ddd;
+  // border-radius: .25em;
 }

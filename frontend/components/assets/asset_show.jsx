@@ -63,8 +63,8 @@ class AssetShow extends React.Component {
             return null;
         } else {
 
-            let shortDescription = asset.description.slice(0, 250);
-            let restOfDescription = asset.description.slice(250);
+            let shortDescription = asset.description.slice(0, 245);
+            let restOfDescription = asset.description.slice(245);
             let button = watchlistArr.includes(ticker) ? (
                 <button onClick={this.handleRemoveFromList}>Remove</button>
             ) : (
@@ -82,9 +82,9 @@ class AssetShow extends React.Component {
                         <div className="about">
                             About
                             <div className="asset-description">
-                                {shortDescription}
-                                {/* {`${asset.description.slice(0, 265)}`} */}
-                                
+                                <input type="checkbox" className="read-more-state" id="description-1"/>
+                                <p className="read-more-wrap">{shortDescription} <span className="read-more-target">{restOfDescription}
+                                </span></p><label htmlFor="description-1" className="read-more-trigger"></label>
                             </div>
                         </div>
                         <ul className='dashboard-list'>
