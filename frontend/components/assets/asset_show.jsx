@@ -62,9 +62,8 @@ class AssetShow extends React.Component {
             debugger
             return null;
         } else {
-
-            let shortDescription = asset.description.slice(0, 245);
-            let restOfDescription = asset.description.slice(245);
+            let shortDescription = asset ? asset.description.slice(0, 245) : "";
+            let restOfDescription = asset ? asset.description.slice(245) : "";
             let button = watchlistArr.includes(ticker) ? (
                 <button onClick={this.handleRemoveFromList}>Remove</button>
             ) : (
@@ -86,22 +85,31 @@ class AssetShow extends React.Component {
                                 <p className="read-more-wrap">{shortDescription} <span className="read-more-target">{restOfDescription}
                                 </span></p><label htmlFor="description-1" className="read-more-trigger"></label>
                             </div>
+                            <label className="ceo">CEO
+                            <div>{asset["CEO"]}</div>
+                            </label>
+                            <label className="employees">Employees
+                            <div>{asset.employees}</div>
+                            </label>
+                            <label className="hq">Headquarters
+                            <div>{asset.city}, {asset["state"]}</div>
+                            </label>
+                            <label className="founded">Founded
+                            <div>????</div>
+                            </label>
+                            <label className="market-cap">Market Cap
+                            <div>{asset.marketCap}</div>
+                            </label>
+                            <label className="pe-ratio">Price-Earning Ratio
+                            <div>{asset.peRatio}</div>
+                            </label>
+                            <label className="dividend">Dividend Yield
+                            <div>{!asset.dividendYield ? "-" : asset.dividendYield}</div>
+                            </label>
+                            <label className="avg-vol">Average Volume
+                            <div>{asset.avgTotalVolume}</div>
+                            </label>
                         </div>
-                        <ul className='dashboard-list'>
-                            {/* <div className="asset-about">
-                                <h2>About</h2>
-                                <br/>
-                                <label>CEO<div>{asset["CEO"]}</div></label>
-                                <br/>
-                                <label>Employees<div>{asset.employees}</div></label>
-                                <label>Headquarters<div>{asset.city}, {asset["state"]}</div></label>
-                                <label>Market Cap<div>{asset.marketCap}</div></label>
-                                <label>PE Ratio<div>{asset.peRatio}</div></label>
-                                <label>Dividend Yield<div>{asset.dividendYield}</div></label>
-                                <label>Avg Total Volume<div>{asset.avgTotalVolume}</div></label>
-                                <label>Industry<div>{asset.industry}</div></label>
-                            </div> */}
-                        </ul>
                     </div>
                 </div>
             )
