@@ -3,59 +3,42 @@ import { Link } from 'react-router-dom';
 import AssetLineChart from "../charts/linechart";
 
 class AssetShow extends React.Component {
-
     constructor(props) {
-        debugger
         super(props);
         // this.state = {
-        //     watching: false,
+        //     fullDescription: this.props.asset.description,
         // }
         this.handleAddToList = this.handleAddToList.bind(this);
         this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
     }
 
     componentDidMount() {
-        // debugger
         const { fetchAsset, fetchCompanyInfo, fetchIntraday, fetchNews } = this.props;
-        const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase()
-        debugger
-        // const fetchPrice = this.props.fetchPrice
-        // debugger
+        const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
         Promise.all([
-            fetchAsset(ticker),
             fetchCompanyInfo(ticker),
+            fetchAsset(ticker),
             fetchIntraday(ticker),
             // fetchNews(ticker),
 
-        ]).then(() => {
-            debugger
+        ]).then(() => {        
             console.log('all promises resolved')
         })
-        // this.props.fetchAsset(ticker);
-        // this.props.fetchCompanyInfo(ticker);
-        // this.intervalId = setInterval(() => {
-        //     debugger
-        //     this.props.fetchPrice(ticker)
-        // }, 2000)
     }
 
     handleAddToList(e) {
         e.preventDefault();
         const { addAssetToWatchlist, currentUser, asset } = this.props;
-        // const currentUserId = currentUser.id;
-        debugger
         addAssetToWatchlist(asset, currentUser);
     }
 
     handleRemoveFromList(e) {
         e.preventDefault();
-        const { deleteAssetFromWatchlist, currentUser, asset } = this.props;
-        debugger
+        const { deleteAssetFromWatchlist, currentUser, asset } = this.props;    
         deleteAssetFromWatchlist(asset, currentUser);
     }
 
     // componentDidUpdate(prevProps) {
-    //     debugger
     //     if (this.props.latestPrice !== prevProps.latestPrice) {
     //         this.props.fetchAsset(this.props.match.params.ticker)
     //     }
@@ -68,20 +51,20 @@ class AssetShow extends React.Component {
     // }
 
     // componentWillUnmount() {
-    //     debugger
     //     this.props.clearAsset();
     //     // clearInterval(this.intervalId)
     // }
 
     render() {
-        debugger
         const { asset, watchlistArr } = this.props;
         const ticker = this.props.match.params.ticker.toUpperCase();
-        debugger
         if (!asset || !watchlistArr) {
+            debugger
             return null;
         } else {
-            debugger
+
+            let shortDescription = asset.description.slice(0, 250);
+            let restOfDescription = asset.description.slice(250);
             let button = watchlistArr.includes(ticker) ? (
                 <button onClick={this.handleRemoveFromList}>Remove</button>
             ) : (
@@ -89,57 +72,41 @@ class AssetShow extends React.Component {
             )
             return (
                 <div className="dashboard-body">
-                    <ul className='dashboard-list'>
-                        <h1>
-                        <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
-                        </h1>
-                        {/* <li className='tg-list-item'>{asset.latestPrice}</li> */}
-                        <li>
-                            <AssetLineChart data={asset.chartData} />
-                        </li>
-                        <div className="asset-about">
-                            <h2>About</h2>
-                            <br/>
-                            <label>CEO<div>{asset["CEO"]}</div></label>
-                            <br/>
-                            <label>Employees<div>{asset.employees}</div></label>
-                            <label>Headquarters<div>{asset.city}, {asset["state"]}</div></label>
-                            <label>Market Cap<div>{asset.marketCap}</div></label>
-                            <label>PE Ratio<div>{asset.peRatio}</div></label>
-                            <label>Dividend Yield<div>{asset.dividendYield}</div></label>
-                            <label>Avg Total Volume<div>{asset.avgTotalVolume}</div></label>
-                            <label>Decription<div>{asset.description}</div></label>
-                            <label>Industry<div>{asset.industry}</div></label>
+                    <div className="asset-showpage-grid">
+                        <AssetLineChart data={asset.chartData} company={asset.asset_name} className="stock-graph"/>
+                        <div className="transaction-sidebar">
+                            Buy/Sell
+                            {button}
+                            <Link to={`/dashboard`}>Dashboard</Link>
                         </div>
-{/* 
-                        <div className="asset-news">
-                            <h2>News</h2>
-                            <label><div>{asset.news.headline}</div></label>
-                            <label><div>{asset.news.source}</div></label>
-                            <label><div>{asset.news.summary}</div></label>
-                        </div> */}
-
-                        {button}
-                        <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
-                    </ul>
+                        <div className="about">
+                            About
+                            <div className="asset-description">
+                                {shortDescription}
+                                {/* {`${asset.description.slice(0, 265)}`} */}
+                                
+                            </div>
+                        </div>
+                        <ul className='dashboard-list'>
+                            {/* <div className="asset-about">
+                                <h2>About</h2>
+                                <br/>
+                                <label>CEO<div>{asset["CEO"]}</div></label>
+                                <br/>
+                                <label>Employees<div>{asset.employees}</div></label>
+                                <label>Headquarters<div>{asset.city}, {asset["state"]}</div></label>
+                                <label>Market Cap<div>{asset.marketCap}</div></label>
+                                <label>PE Ratio<div>{asset.peRatio}</div></label>
+                                <label>Dividend Yield<div>{asset.dividendYield}</div></label>
+                                <label>Avg Total Volume<div>{asset.avgTotalVolume}</div></label>
+                                <label>Industry<div>{asset.industry}</div></label>
+                            </div> */}
+                        </ul>
+                    </div>
                 </div>
             )
         }
     }
-
-    // render() {
-    //     const { asset, assetPrice } = this.props;
-    //     if (!asset) {
-    //         return null;
-    //     } else {
-    //         return (
-    //             <div>
-    //                 <h3>{asset.asset_name}</h3>
-    //                 <h5>{this.state.assetPrice}</h5>
-    //             </div>
-    //         )
-    //     }
-    // }
 }
 
 export default AssetShow;

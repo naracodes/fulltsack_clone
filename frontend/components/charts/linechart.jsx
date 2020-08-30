@@ -11,18 +11,6 @@ import {
 } from 'recharts';
 import Odometer from "react-odometerjs";
 
-
-// const {
-//   LineChart,
-//   Line,
-//   XAxis,
-//   YAxis,
-//   CartesianGrid,
-//   Tooltip,
-//   Legend,
-// } = Recharts;
-
-
 class AssetLineChart extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +35,7 @@ class AssetLineChart extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, company } = this.props;
     debugger;
     if (!data) {
       debugger
@@ -62,13 +50,13 @@ class AssetLineChart extends React.Component {
     //   }
 
       return (
-        <div className="chartContainer">
-          <h3>Hello!</h3>
+        <div className="stock-graph">
+          <h3>{company}</h3>
           {/* <h3>{this.state.closePrice}</h3> */}
           <h1>$<Odometer className="odometer" value={this.state.closePrice} format="(,ddd).dd" /></h1>
           <LineChart
-            width={600}
-            height={300}
+            width={750}
+            height={360}
             data={this.props.data}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             onMouseMove={this.handleHover}
