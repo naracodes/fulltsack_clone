@@ -63,473 +63,6 @@ table {
 	border-spacing: 0;
 }
 
-// .nav-master {
-//   display: block;
-//   width: 100%;
-//   top: 0;
-//   position: fixed;
-//   max-height: calc(100% - 0px - env(safe-area-inset-bottom));
-// }
-
-// .nav-bar {
-//   max-width: 100%;
-//   // padding: 0 24px;
-//   background: #FFFFFF;
-//   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
-//   position: relative;
-// }
-
-// .nav-bar .container {
-//   padding: 0 24px;
-//   -webkit-box-align: center;
-//   align-items: center;
-//   height: 64px;
-//   display: flex;
-// }
-
-// .nav-bar a {
-//   align-items: center;
-
-// }
-
-// .nav-bar .logo a {
-//   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
-//   font-size: 22px;
-//   text-decoration: none;
-// }
-
-// .nav-bar .spacer {
-//   -webkit-box-flex: 1;
-//   flex-grow: 1;
-//   display: block;
-// }
-
-// .user-entry {
-//   margin-right: 2%;
-// }
-
-// .navLinks {
-//   padding: 0;
-//   margin: 0;
-//   float: right;
-//   -webkit-transition: max-height 0.5s;
-//   transition: max-height 0.5s;
-//   display: flex;
-//   align-items: flex-end;
-//   li {
-//     display: inline-block;
-//     align-items: center;
-//     padding: 23px;
-//     padding-right: 0px;
-//     // padding-left: 400px;
-//     margin-right: 0rem;
-//   }
-//   a {
-//     padding: 0em;
-//     margin-left: 0em;
-//     text-decoration: none;
-//     letter-spacing: 1px;
-//     color: black;
-//      font-size: 18px;
-//      font-style: normal;
-//      font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
-//   }
-// }
-
-//  #welcome {
-//     font-size: 21px;
-//     font-weight: 400;
-//     margin-bottom: 22px;
-//  }
-
-//  #guide {
-//     font-size: 13px;    
-//  }
-
-//  #sign-up {
-//     background-color: rgb(12, 222, 145);
-//     border-radius: 24px;
-//     box-sizing: border-box;
-//     padding: 13px 36px;
-//     height: 48px;
-//     min-width: 144px;
-//  }
-
-//  #sign-up:hover {
-//    background-color: #3aad74;
-//  }
-
-// .signup-container .info {
-//     margin: 20px auto;
-//     text-align: left;
-// }
-
-//  .signup-form {
-//   position: relative;
-//   z-index: 1;
-//   background: #FFFFFF;
-//   max-width: 490px;
-//   margin: 0 auto 100px;
-//   padding: 150px 30px 30px 30px;
-//   border-top-left-radius: 3px;
-//   border-top-right-radius: 3px;
-//   border-bottom-left-radius: 3px;
-//   border-bottom-right-radius: 3px;
-//   text-align: left;
-//   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
-//  }
- 
-//  .signup-form button {
-//    outline: 0;
-//    background: rgb(12, 222, 145);;
-//    width: 100%;
-//    border: 0;
-//    padding: 15px;
-//    border-top-left-radius: 3px;
-//    border-top-right-radius: 3px;
-//    border-bottom-left-radius: 3px;
-//    border-bottom-right-radius: 3px;
-//    color: #FFFFFF;
-//    font-size: 14px;
-//    -webkit-transition: all 0.3 ease;
-//    transition: all 0.3 ease;
-//    cursor: pointer;
-//  }
- 
-//  .signup-form input {
-//    outline: 3px;
-//    background: #f5f8fa;
-//    width: 100%;
-//    border-style: none;
-//    margin: 10px 0 15px;
-//    padding: 15px;
-//    border-top-left-radius: 3px;
-//    border-top-right-radius: 3px;
-//    border-bottom-left-radius: 3px;
-//    border-bottom-right-radius: 3px;
-//    box-sizing: border-box;
-//    font-size: 14px;
-// }
-
-// .signup-form input:focus:not(hover) {
-//     border-style: solid;
-//     border-width: 1px;
-//     border-color: rgb(12, 222, 145);
-//     background-color: #FFFFFF;
-//  }
-
-//  .login-form input:focus:not(hover) {
-//     border-style: solid;
-//     border-width: 1px;
-//     border-color: rgb(12, 222, 145);
-//     background-color: #FFFFFF;
-//  }
-
-
-//  .signup-form ::placeholder {
-//     color: #e0e1e2;
-//     // border-style: solid;
-//     border-width: 1px;
-//     border-color: #f5f8fa;
-//  }
-
-//  .signup-form input:hover {
-//     // outline: 3px;
-//    background: #FFFFFF;
-//    width: 100%;
-//    border-style: none;
-//    box-sizing: border-box;
-//    font-size: 14px;
-//  }
-
-//   .login-form input:hover {
-//     // outline: 3px;
-//    background: #FFFFFF;
-//    width: 100%;
-//    border-style: none;
-//    box-sizing: border-box;
-//    font-size: 14px;
-//  }
-
-//   .signup-form .message {
-//      display: flex;
-//     //  justify-content: space-between;
-//      justify-content: space-evenly;
-//      padding-left: 155px;
-//      padding-right: 155px;
-//      font-size: 13px;
-//      margin: 15px 0 0;
-//  }
-
-//  .signup-form .message a {
-//      text-decoration: none;
-//      color: rgb(12, 222, 145);
-//  }
-
-// .login-form {
-//  position: relative;
-//  z-index: 1;
-//  background: #FFFFFF;
-//  max-width: 300px;
-//  margin: 0 auto 100px;
-//  padding: 300px;
-//  border-top-left-radius: 3px;
-//  border-top-right-radius: 3px;
-//  border-bottom-left-radius: 3px;
-//  border-bottom-right-radius: 3px;
-//  text-align: left;
-//  font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
-// }
-
-
-// .login-form button {
-//   outline: 0;
-//   background: rgb(12, 222, 145);;
-//   width: 100%;
-//   border: 0;
-//   padding: 15px;
-//   border-top-left-radius: 3px;
-//   border-top-right-radius: 3px;
-//   border-bottom-left-radius: 3px;
-//   border-bottom-right-radius: 3px;
-//   color: #FFFFFF;
-//   font-size: 14px;
-//   -webkit-transition: all 0.3 ease;
-//   transition: all 0.3 ease;
-//   cursor: pointer;
-// }
-
-// .signup-form button:hover {
-//     background-color: #17c082;
-// }
-
-// .login-form button:hover {
-//     background-color: #17c082;
-// }
-
-// .signup-form .slogan {
-//     font-size: 24px;
-//     margin-bottom: 15px;
-// }
-
-// .signup-slogan {
-//     // font-size: 22px;
-//     margin: 10px 10px 10px 10px;
-// }
-
-
-// .login-form input {
-//   outline: 0;
-//   background: #f5f8fa;
-//   width: 100%;
-//   border: 0;
-//   margin: 10px 0 15px;
-//   padding: 15px;
-//   border-top-left-radius: 3px;
-//   border-top-right-radius: 3px;
-//   border-bottom-left-radius: 3px;
-//   border-bottom-right-radius: 3px;
-//   box-sizing: border-box;
-//   font-size: 14px;
-// }
-
-//  .login-form .message {
-//      display: flex;
-//      justify-content: space-between;
-//      padding-left: 43px;
-//      padding-right: 43px;
-//      font-size: 13px;
-//      margin: 15px 0 0;
-//  }
-
-//  .login-form .message a {
-//      text-decoration: none;
-//      color: rgb(12, 222, 145);
-//  }
-
-//  .login-form .error-message {
-//    font-size: 13px;
-//    padding-bottom: 10px;
-//    padding-left: 3px;
-//  }
-
-//  .login-form .input:focus {
-//    .login-form .error-message {
-//      display: none;
-//    }
-//  }
-
-
-// .signup-error-message{
-//   font-size: 13px;
-
-// }
-
-// .signup-error-message p {
-//   // padding-bottom: 5px;
-//   margin-bottom: 10px;
-//   padding-left: 3px;
-// }
-
-//  .home-btn {
-//    text-decoration: none;
-//    position: absolute;
-//    margin: 15px 15px 10px 22px;
-//   //  padding: 15px;
-//  }
-
-//  .home-btn {
-//   outline: 0;
-//   background: rgb(12, 222, 145);;
-//   width: 34px;
-//   height: 30px;
-//   border: 0;
-//   padding: 20px;
-//   padding-left: 10px;
-//   padding-top: 1px;
-//   border-top-left-radius: 3px;
-//   border-top-right-radius: 3px;
-//   border-bottom-left-radius: 3px;
-//   border-bottom-right-radius: 3px;
-//   color: #FFFFFF;
-//   font-size: 22px;
-//   font: 800;
-//   // -webkit-transition: all 0.3 ease;
-//   // transition: all 0.3 ease;
-//   cursor: pointer;
-//  }
-
-//  .demo-login {
-//    display: flex;
-//    justify-content: center;
-//    font-size: 13px;
-//  }
-
-//  .demo-login p {
-//    padding-top: 9px;
-//    cursor: pointer;
-//  }
-
-
-// .home {
-//   display: box;
-//   max-width: 100%;
-//   min-height: 540px;
-//   padding: 0 36px;
-//   background: #adf621;
-//   min-width: 1024px;
-//   box-sizing: border-box;
-//   border-bottom: solid 1px black;
-// }
-
-// .home-media {
-//   display: flex;
-//   align-items: center;
-// }
-
-// .front-page .disclosure {
-//   display: box;
-//   max-width: 100%;
-//   min-height: 354px;
-//   padding: 0 36px;
-//   background: #cb7b79;
-//   min-width: 1024px;
-//   box-sizing: border-box;
-//   border-bottom: solid 1px black;
-// }
-
-// .front-page .fractional-shares {
-//   display: box;
-//   max-width: 100%;
-//   min-height: 526px;
-//   padding: 0 0 50px;
-//   background: #d0bdbd;
-//   min-width: 1024px;
-//   box-sizing: border-box;
-//   border-bottom: solid 1px black;
-// }
-
-// .front-page .app-demo-black {
-//   display: box;
-//   max-width: 100%;
-//   min-height: 526px;
-//   padding: 0 0 50px;
-//   background: black;
-//   min-width: 1024px;
-//   box-sizing: border-box;
-//   border-bottom: solid 1px black;
-// }
-
-// .front-page .our-products {
-//   display: box;
-//   max-width: 100%;
-//   min-height: 771px;
-//   padding: 0 0 50px;
-//   background: #f69779;
-//   min-width: 1024px;
-//   box-sizing: border-box;
-//   border-bottom: solid 1px black;
-// }
-
-// .front-page .footer-container {
-//   display: box;
-//   max-width: 100%;
-//   min-height: 777px;
-//   padding: 0 0 50px;
-//   background: black;
-//   min-width: 1024px;
-//   box-sizing: border-box;
-//   border-bottom: solid 1px black;
-// }
-
-// .tgl {
-// 	display: none;
-  
-// 	// add default box-sizing for this scope
-// 	&,
-//   &:after,
-//   &:before,
-// 	& *,
-//   & *:after,
-//   & *:before,
-// 	& + .tgl-btn {
-// 		box-sizing: border-box;
-// 		&::selection {
-// 			background: none;
-// 		}
-// 	}
-  
-// 	+ .tgl-btn {
-// 		outline: 0;
-// 		display: block;
-// 		width: 4em;
-// 		height: 2em;
-// 		position: relative;
-// 		cursor: pointer;
-//     user-select: none;
-// 		&:after,
-//     &:before {
-// 			position: relative;
-// 			display: block;
-// 			content: "";
-// 			width: 50%;
-// 			height: 100%;
-// 		}
-    
-// 		&:after {
-// 			left: 0;
-// 		}
-    
-// 		&:before {
-// 			display: none;
-// 		}
-// 	}
-  
-// 	&:checked + .tgl-btn:after {
-// 		left: 50%;
-// 	}
-// }
-
 .logout-container {
   display: flex;
   padding-top: 10px;
@@ -569,47 +102,6 @@ table {
   display: block;
 }
 
-
-// .dashboard-body {
-// 	display: flex;
-//   min-height: 100%;
-//   padding: 2px;
-// 	justify-content: center;
-// 	align-items: center;
-// 	flex-direction: column;
-// 	font-family: sans-serif;
-// }
-
-// .dashboard-list {
-//   text-align: center;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-
-// .tg-list-item {
-//   margin: 0 2em;
-//   padding: 10px;
-  
-// }
-
-
-// body{
-//   padding-top: 15px;
-// }
-
-
-// .dashboard-container {
-//   display: flex;
-//   justify-content: flex-end;
-//   padding-right: 80px;
-// }
-
-// .dashboard-container .watchlist-container {
-//   padding-top: 88px;
-// }
-
 .dashboard-body {
   display: flex;
   justify-content: center;
@@ -619,7 +111,7 @@ table {
   display: grid;
   width: 1080px;
   height: 1950px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr) 275px;
   grid-template-rows: repeat(10, 1fr);
   border: hotpink 1px solid;
   // column-gap: 70px;
@@ -720,4 +212,42 @@ input#search-bar{
 
 .watchlist-item:hover {
   background-color: rgb(192, 245, 191);
+}
+
+//Asset show page
+
+.asset-showpage-grid {
+  display: grid;
+  width: 1080px;
+  height: 1950px;
+  grid-template-columns: repeat(3, 1fr) 275px;
+  grid-template-rows: repeat(10, 1fr);
+  border: hotpink 1px solid;
+  // column-gap: 70px;
+  gap: 60px 60px;
+}
+
+.transaction-sidebar {
+  grid-column: 4 / 4;
+  grid-row: 1 / 10;
+  background-color: lightcoral;
+}
+
+.stock-graph {
+  grid-area: 1 / 1 / 4 / 4;
+  background-color: lightgray;
+}
+
+.about {
+  display: grid;
+  grid-area: 4 / 1 / 6 / 4;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-color: lightgray;
+  font-size: 22px;
+}
+
+.about .asset-description {
+  grid-area: 2 / 1 / 2 / 4;
+  font-size: 15px;
 }

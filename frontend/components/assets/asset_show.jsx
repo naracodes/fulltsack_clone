@@ -6,7 +6,7 @@ class AssetShow extends React.Component {
     constructor(props) {
         super(props);
         // this.state = {
-        //     watching: false,
+        //     fullDescription: this.props.asset.description,
         // }
         this.handleAddToList = this.handleAddToList.bind(this);
         this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
@@ -14,10 +14,10 @@ class AssetShow extends React.Component {
 
     componentDidMount() {
         const { fetchAsset, fetchCompanyInfo, fetchIntraday, fetchNews } = this.props;
-        const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase()
+        const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
         Promise.all([
-            fetchAsset(ticker),
             fetchCompanyInfo(ticker),
+            fetchAsset(ticker),
             fetchIntraday(ticker),
             // fetchNews(ticker),
 
@@ -29,7 +29,6 @@ class AssetShow extends React.Component {
     handleAddToList(e) {
         e.preventDefault();
         const { addAssetToWatchlist, currentUser, asset } = this.props;
-        // const currentUserId = currentUser.id;    
         addAssetToWatchlist(asset, currentUser);
     }
 
@@ -60,8 +59,12 @@ class AssetShow extends React.Component {
         const { asset, watchlistArr } = this.props;
         const ticker = this.props.match.params.ticker.toUpperCase();
         if (!asset || !watchlistArr) {
+            debugger
             return null;
         } else {
+
+            let shortDescription = asset.description.slice(0, 250);
+            let restOfDescription = asset.description.slice(250);
             let button = watchlistArr.includes(ticker) ? (
                 <button onClick={this.handleRemoveFromList}>Remove</button>
             ) : (
@@ -69,31 +72,37 @@ class AssetShow extends React.Component {
             )
             return (
                 <div className="dashboard-body">
-                    <ul className='dashboard-list'>
-                        <h1>
-                        <li className='tg-list-item'>{asset.asset_name} - {asset.symbol}</li>
-                        </h1>
-                        {/* <li className='tg-list-item'>{asset.latestPrice}</li> */}
-                        <li>
-                            <AssetLineChart data={asset.chartData} />
-                        </li>
-                        <div className="asset-about">
-                            <h2>About</h2>
-                            <br/>
-                            <label>CEO<div>{asset["CEO"]}</div></label>
-                            <br/>
-                            <label>Employees<div>{asset.employees}</div></label>
-                            <label>Headquarters<div>{asset.city}, {asset["state"]}</div></label>
-                            <label>Market Cap<div>{asset.marketCap}</div></label>
-                            <label>PE Ratio<div>{asset.peRatio}</div></label>
-                            <label>Dividend Yield<div>{asset.dividendYield}</div></label>
-                            <label>Avg Total Volume<div>{asset.avgTotalVolume}</div></label>
-                            <label>Decription<div>{asset.description}</div></label>
-                            <label>Industry<div>{asset.industry}</div></label>
+                    <div className="asset-showpage-grid">
+                        <AssetLineChart data={asset.chartData} company={asset.asset_name} className="stock-graph"/>
+                        <div className="transaction-sidebar">
+                            Buy/Sell
+                            {button}
+                            <Link to={`/dashboard`}>Dashboard</Link>
                         </div>
-                        {button}
-                        <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
-                    </ul>
+                        <div className="about">
+                            About
+                            <div className="asset-description">
+                                {shortDescription}
+                                {/* {`${asset.description.slice(0, 265)}`} */}
+                                
+                            </div>
+                        </div>
+                        <ul className='dashboard-list'>
+                            {/* <div className="asset-about">
+                                <h2>About</h2>
+                                <br/>
+                                <label>CEO<div>{asset["CEO"]}</div></label>
+                                <br/>
+                                <label>Employees<div>{asset.employees}</div></label>
+                                <label>Headquarters<div>{asset.city}, {asset["state"]}</div></label>
+                                <label>Market Cap<div>{asset.marketCap}</div></label>
+                                <label>PE Ratio<div>{asset.peRatio}</div></label>
+                                <label>Dividend Yield<div>{asset.dividendYield}</div></label>
+                                <label>Avg Total Volume<div>{asset.avgTotalVolume}</div></label>
+                                <label>Industry<div>{asset.industry}</div></label>
+                            </div> */}
+                        </ul>
+                    </div>
                 </div>
             )
         }
