@@ -224,7 +224,7 @@ input#search-bar{
   grid-template-rows: repeat(16, 1fr);
   border: hotpink 1px solid;
   // column-gap: 70px;
-  gap: 60px 60px;
+  gap: 50px 50px;
 }
 
 .transaction-sidebar {
@@ -235,7 +235,7 @@ input#search-bar{
 
 .stock-graph {
   grid-area: 1 / 1 / 4 / 4;
-  background-color: lightgray;
+  background-color: rgba(237, 237, 237, 1);
 }
 
 .about {

@@ -72,7 +72,7 @@ class AssetShow extends React.Component {
             return (
                 <div className="dashboard-body">
                     <div className="asset-showpage-grid">
-                        <AssetLineChart data={asset.chartData} company={asset.asset_name} className="stock-graph"/>
+                        <AssetLineChart data={asset.chartData} company={asset.asset_name} closePrice={asset.close} className="stock-graph"/>
                         <div className="transaction-sidebar">
                             Buy/Sell
                             {button}
