@@ -110,6 +110,22 @@ class AssetShow extends React.Component {
                             <div>{asset.avgTotalVolume}</div>
                             </label>
                         </div>
+
+                        <div className="collections">
+                            Collections placeholder
+                        </div>
+
+                        <div className="asset-news-stand">
+                            News Stand placeholder
+                        </div>
+
+                        <div className="analyst-ratings">
+                            Analyst ratings placeholder
+                        </div>
+
+                        <div className="earnings">
+                            earnings placeholder
+                        </div>
                     </div>
                 </div>
             )
