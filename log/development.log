@@ -43121,3 +43121,13 @@ Processing by Api::WatchlistsController#index as JSON
 Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2020-08-30 16:18:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "X_YLsm0bRSflc4hZ9f9trg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 435ms (Views: 432.7ms | ActiveRecord: 0.3ms)
+
+

@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import AssetLineChart from "../charts/linechart";
 
 class AssetShow extends React.Component {
-
     constructor(props) {
-        debugger
         super(props);
         // this.state = {
         //     watching: false,
@@ -15,47 +13,33 @@ class AssetShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         const { fetchAsset, fetchCompanyInfo, fetchIntraday, fetchNews } = this.props;
         const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase()
-        debugger
-        // const fetchPrice = this.props.fetchPrice
-        // debugger
         Promise.all([
             fetchAsset(ticker),
             fetchCompanyInfo(ticker),
             fetchIntraday(ticker),
             // fetchNews(ticker),
 
-        ]).then(() => {
-            debugger
+        ]).then(() => {        
             console.log('all promises resolved')
         })
-        // this.props.fetchAsset(ticker);
-        // this.props.fetchCompanyInfo(ticker);
-        // this.intervalId = setInterval(() => {
-        //     debugger
-        //     this.props.fetchPrice(ticker)
-        // }, 2000)
     }
 
     handleAddToList(e) {
         e.preventDefault();
         const { addAssetToWatchlist, currentUser, asset } = this.props;
-        // const currentUserId = currentUser.id;
-        debugger
+        // const currentUserId = currentUser.id;    
         addAssetToWatchlist(asset, currentUser);
     }
 
     handleRemoveFromList(e) {
         e.preventDefault();
-        const { deleteAssetFromWatchlist, currentUser, asset } = this.props;
-        debugger
+        const { deleteAssetFromWatchlist, currentUser, asset } = this.props;    
         deleteAssetFromWatchlist(asset, currentUser);
     }
 
     // componentDidUpdate(prevProps) {
-    //     debugger
     //     if (this.props.latestPrice !== prevProps.latestPrice) {
     //         this.props.fetchAsset(this.props.match.params.ticker)
     //     }
@@ -68,20 +52,16 @@ class AssetShow extends React.Component {
     // }
 
     // componentWillUnmount() {
-    //     debugger
     //     this.props.clearAsset();
     //     // clearInterval(this.intervalId)
     // }
 
     render() {
-        debugger
         const { asset, watchlistArr } = this.props;
         const ticker = this.props.match.params.ticker.toUpperCase();
-        debugger
         if (!asset || !watchlistArr) {
             return null;
         } else {
-            debugger
             let button = watchlistArr.includes(ticker) ? (
                 <button onClick={this.handleRemoveFromList}>Remove</button>
             ) : (
@@ -111,14 +91,6 @@ class AssetShow extends React.Component {
                             <label>Decription<div>{asset.description}</div></label>
                             <label>Industry<div>{asset.industry}</div></label>
                         </div>
-{/* 
-                        <div className="asset-news">
-                            <h2>News</h2>
-                            <label><div>{asset.news.headline}</div></label>
-                            <label><div>{asset.news.source}</div></label>
-                            <label><div>{asset.news.summary}</div></label>
-                        </div> */}
-
                         {button}
                         <li className='tg-list-item dash1'><Link to={`/dashboard`}>Dashboard</Link></li>
                     </ul>
@@ -126,20 +98,6 @@ class AssetShow extends React.Component {
             )
         }
     }
-
-    // render() {
-    //     const { asset, assetPrice } = this.props;
-    //     if (!asset) {
-    //         return null;
-    //     } else {
-    //         return (
-    //             <div>
-    //                 <h3>{asset.asset_name}</h3>
-    //                 <h5>{this.state.assetPrice}</h5>
-    //             </div>
-    //         )
-    //     }
-    // }
 }
 
 export default AssetShow;
