@@ -8,23 +8,13 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.handleKeyDown = this.handleKeyDown(this);
+    
   }
 
   handleClick(e) {
     e.preventDefault();
     // debugger
     this.props.logout()
-    }
-
-  handleKeyDown(e) {
-    return e => {
-      if (e.keyCode === 13) {
-        this.props.history.push(`/dashboard/${e.currentTarget.value.toUpperCase()}`);
-      } else {
-        return;
-      }
-    }
   }
 
   render() {

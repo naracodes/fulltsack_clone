@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
+      super(props);
+      this.handleClick = this.handleClick.bind(this);
+      this.handleKeyDown = this.handleKeyDown(this);
     }
 
     handleClick(e) {
@@ -15,6 +16,16 @@ class NavBar extends React.Component {
                 this.props.history.push('/login')
             })
     }
+
+  handleKeyDown(e) {
+    return e => {
+      if (e.keyCode === 13) {
+        this.props.history.push(`/dashboard/${e.currentTarget.value.toUpperCase()}`);
+      } else {
+        return;
+      }
+    }
+  }
 
     render() {
         // debugger
