@@ -13,20 +13,16 @@ import Odometer from "react-odometerjs";
 
 class AssetLineChart extends React.Component {
   constructor(props) {
+    debugger
     super(props);
     this.state = {
       closePrice: null, // null to string
     };
     this.handleHover = this.handleHover.bind(this);
-    // this.updatePrice = this.updatePrice.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
   
   handleHover(e) {
-    if (!e.activePayload) {
-      console.log(e);
-    }
-    debugger
     if (e.activePayload && this.props.data) {
       this.setState({
         closePrice: e.activePayload[0].payload.close,
@@ -34,11 +30,15 @@ class AssetLineChart extends React.Component {
     }
   }
 
+  handleMouseLeave(e) {
+    this.setState({
+      closePrice: null,
+    })
+  }
+
   render() {
-    const { data, company } = this.props;
-    debugger;
+    const { data, company, closePrice } = this.props;
     if (!data) {
-      debugger
       return null;
     } 
     // else {
@@ -53,13 +53,14 @@ class AssetLineChart extends React.Component {
         <div className="stock-graph">
           <h3>{company}</h3>
           {/* <h3>{this.state.closePrice}</h3> */}
-          <h1>$<Odometer className="odometer" value={this.state.closePrice} format="(,ddd).dd" /></h1>
+          <h1>$<Odometer className="odometer" value={!this.state.closePrice ? closePrice : this.state.closePrice} format="(,ddd).dd" /></h1>
           <LineChart
             width={750}
             height={360}
             data={this.props.data}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             onMouseMove={this.handleHover}
+            onMouseLeave={this.handleMouseLeave}
           >
             <XAxis tickLine={false} dataKey="label" hide={true} />
             <YAxis hide={true} domain={["auto", "dataMax"]} />

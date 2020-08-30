@@ -219,12 +219,12 @@ input#search-bar{
 .asset-showpage-grid {
   display: grid;
   width: 1080px;
-  height: 1950px;
+  height: 2330px;
   grid-template-columns: repeat(3, 1fr) 275px;
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(16, 1fr);
   border: hotpink 1px solid;
   // column-gap: 70px;
-  gap: 60px 60px;
+  gap: 50px 50px;
 }
 
 .transaction-sidebar {
@@ -235,7 +235,7 @@ input#search-bar{
 
 .stock-graph {
   grid-area: 1 / 1 / 4 / 4;
-  background-color: lightgray;
+  background-color: rgba(237, 237, 237, 1);
 }
 
 .about {
@@ -331,3 +331,27 @@ input#search-bar{
   // border: 1px solid #ddd;
   // border-radius: .25em;
 }
+
+//abount grid collections
+
+.collections {
+  grid-area: 6 / 1 / 6 / 4;
+  background-color: #dedede;
+}
+
+.asset-news-stand {
+  grid-area: 7 / 1 / 11 / 4;
+  background-color: #dedede;
+}
+
+.analyst-ratings {
+  grid-area: 11 / 1 / 13 / 4;
+  background-color: #dedede;
+}
+
+.earnings {
+  grid-area: 13 / 1 / 15 / 4;
+  background-color: #dedede;
+}
+
+

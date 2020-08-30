@@ -72,7 +72,7 @@ class AssetShow extends React.Component {
             return (
                 <div className="dashboard-body">
                     <div className="asset-showpage-grid">
-                        <AssetLineChart data={asset.chartData} company={asset.asset_name} className="stock-graph"/>
+                        <AssetLineChart data={asset.chartData} company={asset.asset_name} closePrice={asset.close} className="stock-graph"/>
                         <div className="transaction-sidebar">
                             Buy/Sell
                             {button}
@@ -109,6 +109,22 @@ class AssetShow extends React.Component {
                             <label className="avg-vol">Average Volume
                             <div>{asset.avgTotalVolume}</div>
                             </label>
+                        </div>
+
+                        <div className="collections">
+                            Collections placeholder
+                        </div>
+
+                        <div className="asset-news-stand">
+                            News Stand placeholder
+                        </div>
+
+                        <div className="analyst-ratings">
+                            Analyst ratings placeholder
+                        </div>
+
+                        <div className="earnings">
+                            earnings placeholder
                         </div>
                     </div>
                 </div>
