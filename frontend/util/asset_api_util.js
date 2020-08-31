@@ -1,5 +1,4 @@
 export const fetchAssets = () => {
-    // debugger
     return $.ajax({
         method: 'GET',
         url: `/api/assets`
@@ -64,7 +63,6 @@ export const fetchAssetk5YData = ticker => {
 }
 
 export const fetchCompanyInfo = ticker => {
-    debugger
     return $.ajax({
         method: 'GET',
         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tsk_498db2929da24682a573da9403ff8a2a`
@@ -72,14 +70,12 @@ export const fetchCompanyInfo = ticker => {
 }
 
 // export const fetchQuoteAndNews = ticker => {
-//     debugger
 //     return $.ajax({
 //         method: 'GET',
 //         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/batch?types=quote,news&range=1m&last=1&token=Tpk_9cc6c16a40494338943d728d111e9998`,
 //     })
 // }
 // export const fetchNews = ticker => {
-//     debugger
 //     return $.ajax({
 //         method: 'GET',
 //         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/news/last/1?token=Tsk_498db2929da24682a573da9403ff8a2a`,
