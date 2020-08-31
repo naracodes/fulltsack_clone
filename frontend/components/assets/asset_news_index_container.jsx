@@ -1,7 +1,7 @@
 import React from "react";
 import AssetNewsIndex from "./asset_index";
 import { connect } from "react-redux";
-import { fetchAlltNews,fetchAssetNews } from "../../actions/asset_actions";
+import { fetchAlltNews, fetchAssetNews } from "../../actions/asset_actions";
 
 const msp = (state) => {
   debugger

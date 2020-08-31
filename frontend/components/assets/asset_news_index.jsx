@@ -1,5 +1,4 @@
 import React from "react";
-import AssetIndexItem from "./asset_index_item";
 
 class AssetNewsIndex extends React.Component {
   componentDidMount() {

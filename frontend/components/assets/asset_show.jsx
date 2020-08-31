@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AssetNewsIndex from './asset_news_index';
 import AssetLineChart from "../charts/linechart";
+import AssetNewsIndexContainer from './asset_news_index_container';
 
 class AssetShow extends React.Component {
     constructor(props) {
@@ -116,7 +117,7 @@ class AssetShow extends React.Component {
                             Collections placeholder
                         </div>
 
-                        <AssetNewsIndex className="asset-news-stand" companyName={asset.asset_name} />
+                        <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} />
 
                         <div className="analyst-ratings">
                             Analyst ratings placeholder

@@ -11,6 +11,7 @@ export const receiveAllNews = allNews => {
 }
 
 export const receiveAssetNews = assetNews => {
+    debugger
     return {
         type: RECEIVE_ASSET_NEWS,
         assetNews
@@ -24,7 +25,9 @@ export const fetchAllNews = () => dispatch => {
 }
 
 export const fetchAssetNews = companyName => dispatch => {
+    debugger
     return NewsAPIUtil.fetchAssetNews(companyName).then(assetNews => {
+        debugger
         return dispatch(receiveAssetNews(assetNews));
     })
 }
