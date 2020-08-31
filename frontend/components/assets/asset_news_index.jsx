@@ -1,23 +1,23 @@
 import React from "react";
 import AssetIndexItem from "./asset_index_item";
 
-class AssetIndex extends React.Component {
+class AssetNewsIndex extends React.Component {
   componentDidMount() {
-    // debugger
-    const ticker = this.props.match.params.ticker.toUpperCase();
-    this.props.fetchAssetNews(ticker);
+    debugger
+    const { companyName } = this.props;
+    this.props.fetchAssetNews(companyName);
   }
 
   render() {
     const { assetNews } = this.props;
-    // debugger
+    debugger
     return (
       <div>
         <div className="asset-index">
-          {assetNews.map((article) => {
+          {assetNews.map((news) => {
             return (
-              <li>
-                {/* <AssetIndexItem key={asset.id} asset={asset} /> */}
+              <li key={Math.foor(Math.random() * 100)}>
+                {news.title}
               </li>
             );
           })}
@@ -27,6 +27,6 @@ class AssetIndex extends React.Component {
   }
 }
 
-export default AssetIndex;
+export default AssetNewsIndex;
 
 // news API: e6c80b74b664420d8dd71e77555fa65b
