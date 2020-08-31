@@ -27,7 +27,18 @@ class AssetNewsIndex extends React.Component {
           This is news {!companyName ? "null" : companyName}
           {
             this.props.news.slice(0, 3).map((newsItem, i) => {
-            return <li key={i}>{newsItem.title}</li>
+            return (
+            <div key={i} className={`news-item-${i}`} >
+              {`${newsItem.source.name}
+              ${new Intl.DateTimeFormat('en', { month: 'short' }).format(new Date(newsItem.publishedAt))}
+              ${new Intl.DateTimeFormat('en', { day: '2-digit' }).format(new Date(newsItem.publishedAt))}`}
+              <br></br>
+              {newsItem.title.split("-")[0]}
+              <br></br>
+              {`(${newsItem.source.name}) -- ${newsItem.content.slice(0, 50)}...`}
+              <img className="asset-show-image" src={newsItem.urlToImage} alt=""/>
+            </div>
+            )
             })
           }
         </div>
