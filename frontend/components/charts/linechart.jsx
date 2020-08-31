@@ -51,9 +51,9 @@ class AssetLineChart extends React.Component {
 
       return (
         <div className="stock-graph">
-          <h3>{company}</h3>
+          <h1 className="company-name">{company.split(',')[0]}</h1>
           {/* <h3>{this.state.closePrice}</h3> */}
-          <h1>$<Odometer className="odometer" value={!this.state.closePrice ? closePrice : this.state.closePrice} format="(,ddd).dd" /></h1>
+          <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice : this.state.closePrice} format="(,ddd).dd" /></div>
           <LineChart
             width={750}
             height={360}
