@@ -16,6 +16,7 @@ export default () => (
     <Route exact path="/signup" component={SignupContainer} />
     <Route exact path="/dashboard" component={DashboardContainer} />
     <Route exact path="/dashboard/:ticker" component={AssetShowContainer} />
+    {/* <Route exact path="/news/:ticker" component={AssetShowContainer} /> */}
     
   </div>
 );

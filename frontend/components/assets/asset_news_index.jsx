@@ -12,15 +12,7 @@ class AssetNewsIndex extends React.Component {
     debugger
     return (
       <div>
-        <div className="asset-index">
-          {assetNews.map((news) => {
-            return (
-              <li key={Math.foor(Math.random() * 100)}>
-                {news.title}
-              </li>
-            );
-          })}
-        </div>
+        This is news
       </div>
     );
   }
