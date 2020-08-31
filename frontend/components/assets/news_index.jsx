@@ -4,20 +4,20 @@ import AssetIndexItem from "./asset_index_item";
 class AssetIndex extends React.Component {
   componentDidMount() {
     // debugger
-    this.props.fetchAssets();
+    const ticker = this.props.match.params.ticker.toUpperCase();
+    this.props.fetchAssetNews(ticker);
   }
 
   render() {
-    const { assets } = this.props;
+    const { assetNews } = this.props;
     // debugger
     return (
       <div>
         <div className="asset-index">
-          {assets.map((asset) => {
-            // debugger
+          {assetNews.map((article) => {
             return (
               <li>
-                <AssetIndexItem key={asset.id} asset={asset} />
+                {/* <AssetIndexItem key={asset.id} asset={asset} /> */}
               </li>
             );
           })}
@@ -28,3 +28,5 @@ class AssetIndex extends React.Component {
 }
 
 export default AssetIndex;
+
+// news API: e6c80b74b664420d8dd71e77555fa65b

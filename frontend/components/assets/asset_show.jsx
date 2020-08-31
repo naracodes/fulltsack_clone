@@ -19,7 +19,6 @@ class AssetShow extends React.Component {
             fetchCompanyInfo(ticker),
             fetchAsset(ticker),
             fetchIntraday(ticker),
-            // fetchNews(ticker),
 
         ]).then(() => {        
             console.log('all promises resolved')
