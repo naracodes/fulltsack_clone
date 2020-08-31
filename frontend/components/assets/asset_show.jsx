@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AssetLineChart from "../charts/linechart";
+import AssetNewsIndexContainer from '../assets/asset_news_index_container';
 
 class AssetShow extends React.Component {
     constructor(props) {
@@ -19,7 +20,6 @@ class AssetShow extends React.Component {
             fetchCompanyInfo(ticker),
             fetchAsset(ticker),
             fetchIntraday(ticker),
-            // fetchNews(ticker),
 
         ]).then(() => {        
             console.log('all promises resolved')
@@ -62,8 +62,9 @@ class AssetShow extends React.Component {
             debugger
             return null;
         } else {
-            let shortDescription = asset ? asset.description.slice(0, 245) : "";
-            let restOfDescription = asset ? asset.description.slice(245) : "";
+            let shortDescription = asset.description ? asset.description.slice(0, 245) : "";
+            let restOfDescription = asset.description ? asset.description.slice(245) : "";
+            // let companyName = asset ? asset.asset_name.split(",")[0] : "";
             let button = watchlistArr.includes(ticker) ? (
                 <button onClick={this.handleRemoveFromList}>Remove</button>
             ) : (
@@ -115,9 +116,7 @@ class AssetShow extends React.Component {
                             Collections placeholder
                         </div>
 
-                        <div className="asset-news-stand">
-                            News Stand placeholder
-                        </div>
+                        {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
 
                         <div className="analyst-ratings">
                             Analyst ratings placeholder

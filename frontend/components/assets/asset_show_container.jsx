@@ -13,16 +13,12 @@ import { addAssetToWatchlist, deleteAssetFromWatchlist } from '../../actions/wat
 
 
 export const msp = (state, ownProps) => {
-    debugger
     let asset = asset || state.entities.assets[(ownProps.match.params.ticker).toUpperCase()]
-    // debugger
     if (!asset) {
-        debugger
         return {
             asset: {}
         }
     } else {
-        debugger
         return {
             asset: asset,
             currentUser: state.session.user,
@@ -34,7 +30,6 @@ export const msp = (state, ownProps) => {
 }
 
 export const mdp = dispatch => {
-    debugger
     return {
         fetchAsset: ticker => dispatch(fetchAsset(ticker)),
         fetchPrice: ticker => dispatch(fetchPrice(ticker)),

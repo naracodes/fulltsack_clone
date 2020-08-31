@@ -309,8 +309,7 @@ input#search-bar{
 .read-more-state:checked ~ .read-more-wrap .read-more-target {
   opacity: 1;
   font-size: 15px;
-
-  // max-height: 999em;
+  // height: 99%;
 }
 
 .read-more-state ~ .read-more-trigger:before {
