@@ -57,7 +57,6 @@ export const receiveNews = (news, ticker) => {
 }
 
 // export const receiveQuoteAndNews = (quoteAndNews) => {
-//     debugger
 //     return {
 //         type: RECEIVE_ASSET_INTRADAY,
 //         quoteAndNews,
@@ -65,7 +64,6 @@ export const receiveNews = (news, ticker) => {
 // }
 
 export const receivePrice = assetPrice => {
-    // debugger
     return {
         type: RECEIVE_PRICE,
         assetPrice
@@ -73,7 +71,6 @@ export const receivePrice = assetPrice => {
 }
 
 export const receiveCompanyInfo = company => {
-    debugger
     return {
         type: RECEIVE_COMPANY_INFO,
         company,
@@ -81,14 +78,12 @@ export const receiveCompanyInfo = company => {
 }
 
 export const clearPrice = () => {
-    // debugger
     return {
         type: CLEAR_PRICE,
     }
 }
 
 export const clearAsset = () => {
-    // debugger
     return {
         type: CLEAR_ASSET,
     }
@@ -99,41 +94,31 @@ export const clearAsset = () => {
 // }
 
 export const fetchAssets = () => dispatch => {
-    // debugger
     return AssetAPIUtil.fetchAssets().then(assets => {
-        // debugger
         return dispatch(receiveAllAssets(assets))
     })
 }
 
 export const fetchAsset = ticker => dispatch => {
-    // debugger
     return AssetAPIUtil.fetchAsset(ticker).then(asset => {
-        // debugger
         return dispatch(receiveAsset(asset))
     })
 }
 
 export const fetchPrice = ticker => dispatch => {
-    // debugger
     return AssetAPIUtil.fetchPrice(ticker).then(assetPrice => {
-        // debugger
         return dispatch(receivePrice(assetPrice));
     })
 }
 
 export const fetchCompanyInfo = ticker => dispatch => {
-    debugger
     return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
-        debugger
         return dispatch(receiveCompanyInfo(company));
     })
 }
 
 export const fetchIntraday = ticker => dispatch => {
-    debugger
     return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-        debugger
         return dispatch(receiveAssetIntraday(assetIntraday, ticker));
     })
 }

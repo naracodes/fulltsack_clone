@@ -1,21 +1,22 @@
 import React from "react";
-import WatchlistIndex from "./watchlist_index";
+import AssetNewsIndex from "./asset_news_index";
 import { connect } from "react-redux";
-import { fetchAllWatchlistAssets } from "../../actions/watchlist_actions";
+import { fetchAssetNews } from "../../actions/news_actions";
 
 const msp = (state) => {
   debugger;
+  let news = state.entities.news ? state.entities.news : {};
   return {
-    watchlistAssets: Object.values(state.entities.watchlists),
-    currentUser: state.session.user,
+    assetNews: Object.values(news),
+    // assetNews: state.entities.news.articles,
   };
 };
 
 const mdp = (dispatch) => {
   debugger;
   return {
-    fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
+    fetchAssetNews: (companyName) => dispatch(fetchAssetNews(companyName)),
   };
 };
 
-export default connect(msp, mdp)(WatchlistIndex);
+export default connect(msp, mdp)(AssetNewsIndex);

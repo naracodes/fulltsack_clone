@@ -1,28 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AssetLineChart from "../charts/linechart";
-import AssetNewsIndexContainer from '../assets/asset_news_index_container';
+// import AssetNewsIndexContainer from '../assets/asset_news_index_container';
+import AssetNewsIndex from './asset_news_index';
 
 class AssetShow extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     fullDescription: this.props.asset.description,
-        // }
         this.handleAddToList = this.handleAddToList.bind(this);
         this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
     }
 
     componentDidMount() {
-        const { fetchAsset, fetchCompanyInfo, fetchIntraday, fetchNews } = this.props;
+        const { fetchAsset, fetchCompanyInfo, fetchIntraday, fetchAssetNews } = this.props;
         const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
+        const companyName = this.props.asset.asset_name ? this.props.asset.asset_name.split(',')[0] : "";
+        debugger
         Promise.all([
             fetchCompanyInfo(ticker),
             fetchAsset(ticker),
             fetchIntraday(ticker),
-
-        ]).then(() => {        
-            console.log('all promises resolved')
+        ]).then((response) => {        
+            debugger
+            const companyName = response[1].asset.companyName.split(",")[0];
+            fetchAssetNews(companyName);
         })
     }
 
@@ -38,28 +39,10 @@ class AssetShow extends React.Component {
         deleteAssetFromWatchlist(asset, currentUser);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.latestPrice !== prevProps.latestPrice) {
-    //         this.props.fetchAsset(this.props.match.params.ticker)
-    //     }
-    // }
-
-    // tickPrice() {
-    //     this.setState({
-    //         assetPrice: fetchPrice(this.props.asset.ticker)
-    //     })
-    // }
-
-    // componentWillUnmount() {
-    //     this.props.clearAsset();
-    //     // clearInterval(this.intervalId)
-    // }
-
     render() {
-        const { asset, watchlistArr } = this.props;
+        const { asset, watchlistArr, assetNews} = this.props;
         const ticker = this.props.match.params.ticker.toUpperCase();
         if (!asset || !watchlistArr) {
-            debugger
             return null;
         } else {
             let shortDescription = asset.description ? asset.description.slice(0, 245) : "";
@@ -117,6 +100,8 @@ class AssetShow extends React.Component {
                         </div>
 
                         {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
+                        {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
+                        <AssetNewsIndex companyName={asset.asset_name} news={assetNews} />
 
                         <div className="analyst-ratings">
                             Analyst ratings placeholder
