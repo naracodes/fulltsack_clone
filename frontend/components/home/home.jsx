@@ -27,9 +27,24 @@ class Home extends React.Component {
                         <Link to="/signup">Sign Up</Link>
                     </div>
                 </nav>
-                <div className="splash-content">
+                <header className="splash-content">
                     Splash Content
-                </div>
+                    <div className="inner-content">
+                        <div className="splash-pitch">
+                            <div className="heading">
+                                <h1>Investing for Everyone</h1>
+                            </div>
+                            <div className="short-intro">
+                                <span className="paragraph">
+                                    "Quiche Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat ante libero, quis ultrices ligula aliquet vehicula. Vivamus"
+                                </span>
+                            </div>
+                            <div className="splash-signup">
+                                <Link to="/signup">Sign Up</Link>
+                            </div>
+                        </div>
+                    </div>
+                </header>
             </div>
         )
     }
