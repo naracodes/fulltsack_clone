@@ -12,11 +12,12 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 export default () => (
   <div>
     <Route path="/" component={NavBarContainer} />
-    <Route exact path="/" component={Home} />
+    <ProtectedRoute exact path="/" component={DashboardContainer} />
+    <Route exact path="/us/en" component={Home} />
     <AuthRoute exact path="/login" component={LoginContainer} />
     <AuthRoute exact path="/signup" component={SignupContainer} />
-    <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
-    <Route exact path="/dashboard/:ticker" component={AssetShowContainer} />
+    {/* <ProtectedRoute exact path="/dashboard" component={DashboardContainer} /> */}
+    <Route exact path="/:ticker" component={AssetShowContainer} />
     {/* <Route exact path="/news/:ticker" component={AssetShowContainer} /> */}
     
   </div>
