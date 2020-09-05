@@ -6,14 +6,15 @@ import DashboardContainer from '../components/dashboard/dashboard_container';
 import LoginContainer from '../components/session/login_container';
 import Home from './home/home';
 import AssetShowContainer from './assets/asset_show_container'
+import { AuthRoute } from '../util/route_utils';
 
 // login before signup
 export default () => (
   <div>
     <Route path="/" component={NavBarContainer} />
     <Route exact path="/" component={Home} />
-    <Route exact path="/login" component={LoginContainer} />
-    <Route exact path="/signup" component={SignupContainer} />
+    <AuthRoute exact path="/login" component={LoginContainer} />
+    <AuthRoute exact path="/signup" component={SignupContainer} />
     <Route exact path="/dashboard" component={DashboardContainer} />
     <Route exact path="/dashboard/:ticker" component={AssetShowContainer} />
     {/* <Route exact path="/news/:ticker" component={AssetShowContainer} /> */}
