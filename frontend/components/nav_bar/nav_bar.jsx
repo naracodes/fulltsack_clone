@@ -34,35 +34,7 @@ class NavBar extends React.Component {
 
         let navBar;
         if (currentUser) {
-            navBar = (
-              <nav className="logout-container">
-                <div className="search-outer">
-                  <form className="search-container">
-                    <input
-                      type="text"
-                      id="search-bar"
-                      onKeyDown={this.handleKeyDown}
-                      tabIndex="0"
-                    />
-                    <img
-                      className="search-icon"
-                      src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
-                    />
-                  </form>
-                </div>
-                <div className="dropdown-trigger">
-                  <h4 className="dropdown-btn">Account</h4>
-                  <ul className="dropdown-list">
-                    <li>
-                      {currentUser.firstName} {currentUser.lastName}
-                    </li>
-                    <li>
-                      <button onClick={this.handleClick}>Log Out</button>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            );
+            navBar = null;
         } else if (this.props.history.location.pathname === '/signup' || this.props.history.location.pathname === '/login' || this.props.history.location.pathname === '/dashboard') {
             navBar = null;
         } else {
