@@ -19,12 +19,12 @@ class WatchlistIndex extends React.Component {
               debugger;
               return (
                 <div className="watchlist-item" key={watchlistAsset.id}>
-                  <li>
+                  <div>
                     <WatchlistIndexItem
                       watchlistAsset={watchlistAsset}
                       currentUser={currentUser}
                     />
-                  </li>
+                  </div>
                 </div>
               );
             })}

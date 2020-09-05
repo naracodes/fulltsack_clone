@@ -54,13 +54,13 @@ class AssetShow extends React.Component {
              <button onClick={this.handleAddToList}>Add</button>
             )
             return (
-                <div className="dashboard-body">
+                <div className="asset-show-body">
                     <div className="asset-showpage-grid">
                         <AssetLineChart data={asset.chartData} company={asset.asset_name} closePrice={asset.close} className="stock-graph"/>
                         <div className="transaction-sidebar">
                             Buy/Sell
                             {button}
-                            <Link to={`/dashboard`}>Dashboard</Link>
+                            <Link to={`/`}>Dashboard</Link>
                         </div>
                         <div className="about">
                             About

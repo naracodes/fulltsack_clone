@@ -107,13 +107,16 @@ table {
 }
 
 .dashboard-body {
-  display: flex;
+  // display: flex;
   justify-content: center;
 }
 
-.dashboard-body header {
+.header-bar {
   width: 100%;
-  height: 30px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dashboard-grid {
@@ -123,9 +126,8 @@ table {
   grid-template-columns: repeat(3, 1fr) 275px;
   grid-template-rows: repeat(10, 1fr);
   border: hotpink 1px solid;
-  // column-gap: 70px;
   gap: 60px 60px;
-  margin-top: 50px;
+  margin: 0 auto;
 }
 
 .box {
@@ -136,8 +138,11 @@ table {
   // align-items: center;
   // grid-column: 2 / 4;
   width: 320px;
-  display: block;
-  margin: 0 auto;
+  // display: block;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  // margin: 0 auto;
 }
 
 input#search-bar{
@@ -225,6 +230,11 @@ input#search-bar{
 }
 
 //Asset show page
+
+.asset-show-body {
+  display: flex;
+  justify-content: center;
+}
 
 .asset-showpage-grid {
   display: grid;
@@ -412,4 +422,11 @@ input#search-bar{
 .odometer {
   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
   font-size: 32px;
+}
+
+.splash-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import NavBar from './nav_bar';
+import Home from './home';
 import { logout } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {
@@ -16,4 +16,4 @@ const mdp = dispatch => {
     }
 }
 
-export default connect(msp, mdp)(NavBar);
+export default connect(msp, mdp)(Home);
