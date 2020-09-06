@@ -572,33 +572,59 @@ input#search-bar{
   .right-content-3 {
     min-width: 100%;
   }
-  // .login-outermost, .left-image {
-  // background-image: url(https://cdn.robinhood.com/assets/generated_assets/cdfcb3c….jpg);
-  // }
+  .login-outermost-3 .left-image {
+    background-image: url("https://cdn.robinhood.com/assets/generated_assets/cdfcb3cb965d71cf114d0aeb8f0a50cd.jpg");
+  }
 }
 
 .login-outermost {
-  display: flex;
-  align-items: center;
   -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  height: 100vh;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-outermost-2 {
+  background-color: var(--rh__neutral-bg1);
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.login-outermost-3 {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
-  height: 100%;
-  width: 100%;
   -webkit-box-flex: 1;
   flex-grow: 1;
-  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
-.left-image {
-  background-image: url("https://cdn.robinhood.com/assets/generated_assets/cdfcb3cb965d71cf114d0aeb8f0a50cd.jpg");
-}
-.left-image {
+.login-outermost-3 .left-image {
   background-position: center;
   background-size: cover;
-  height: 500px;
-  width: 400px;
+  height: 100%;
+  display: block;
+  background-image: url("https://cdn.robinhood.com/assets/generated_assets/cdfcb3cb965d71cf114d0aeb8f0a50cd.jpg");
+}
+
+.login-outermost-3 > div {
+  -webkit-box-flex: 1;
+  flex: 1 1 50%;
+  display: block;
 }
 
 .right-content-3 {
