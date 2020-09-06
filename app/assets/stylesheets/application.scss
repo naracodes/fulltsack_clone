@@ -627,6 +627,39 @@ input#search-bar{
   display: block;
 }
 
+.login-container {
+  height: 400px;
+  margin-left: 52px;
+  margin-right: 52px;
+  width: 412px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.login-form {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 0em;
+}
+
+.login-header {
+  margin-bottom: 12px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.login-span {
+  color: var(--rh__text-color);
+  font-family: var(--rh__type-palette__type15__stack);
+  font-size: var(--rh__type-palette__type15__font-size);
+  font-style: normal;
+  font-weight: var(--rh__type-palette__type15__font-weight);
+  line-height: var(--rh__type-palette__type15__line-height);
+  letter-spacing: var(--rh__type-palette__type15__letter-spacing);
+  text-decoration: unset;
+  box-sizing: border-box;
+}
+
 .right-content-3 {
   display: flex;
   align-items: center;
