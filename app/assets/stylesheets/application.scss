@@ -431,8 +431,19 @@ input#search-bar{
   height: 64px;
   background-color: #fff;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  padding: 0 24px;
   // position: fixed;
+    #logo {
+      text-decoration: none;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+    }
+}
 
+.splash-nav #logo:visited {
+  color: black;
 }
 
 .splash-content {
@@ -462,7 +473,16 @@ input#search-bar{
   padding-right: 36px;
 }
 
+.splash-pitch {
+  margin-left: 9px;
+  margin-right: 9px;
+  width: calc(41.667% - 18px);
+  display: block;
+  visibility: visible;
+}
+
 .splash-pitch .heading {
+  display: block;
   margin-bottom: 18px;
   white-space: pre-line;
   max-width: 492px;
@@ -478,6 +498,82 @@ input#search-bar{
   text-decoration: unset;
 }
 
+.image-container {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  align-content: center;
+}
+
+.right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 223.52px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+    a {
+      text-decoration: none;
+    }
+    #login {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      // letter-spacing: -0.25px;
+      // box-sizing: border-box;
+      // text-align: start;
+      // width: 49.52px;
+    }
+    #signup {
+      height: 48px;
+      min-width: 144px;
+      border-radius: 24px;
+      background-color: rgb(0, 200, 5);
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .auth-spacer {
+      width: 25px;
+    }
+}
+
+.splash-signup {
+  margin-top: 40px;
+  a {
+    text-decoration: none;  
+  }
+}
+
+#signup-black {
+  color: white;
+  height: 48px;
+  min-width: 144px;
+  border-radius: 24px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  background-color: black;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container a:visited {
+  color: black;
+}
+
+
 // @media (max-width: 1279px) and (min-width: 1024px)
 // .inner-content {
 //     min-width: 1024px;
@@ -487,7 +583,8 @@ input#search-bar{
 // }
 
 .short-intro {
-  max-width: 492px;
+  display: block;
+  margin-top: 24px;
 }
 
 .short-intro .paragraph {
@@ -497,5 +594,6 @@ input#search-bar{
   font-weight: 500;
   line-height: 36px;
   text-decoration: unset;
-  word-wrap: break-word;
+  letter-spacing: -0.24px;
+  margin: 0;
 }
