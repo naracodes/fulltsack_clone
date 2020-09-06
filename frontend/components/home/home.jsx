@@ -67,6 +67,12 @@ class Home extends React.Component {
                   <div className="right-content">
                     <div className="right-content-2">
                       <div className="right-content-3">
+                        {/* <video autoPlay controlsList="nodownload nofullscreen noremoteplayback" loop playsInline preload="auto" className="video-content">
+                          <source src="https://cdn.robinhood.com/assets/robinhood/brand/3x__8a5e77cafdc8af11be3651d08c2ff2a2.mp4" type="video/mp4"/>
+                          <img className="image-container" draggable="false" role="presentation"
+                          src="https://cdn.robinhood.com/assets/robinhood/brand/1x__d05b6c860541960976715b15872f6027.png"
+                          srcset="https://cdn.robinhood.com/assets/robinhood/brand/1x__d05b6c860541960976715b15872f6027.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__cc315b9c078102e16b08ae0e8490ee9f.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__f91478063fabe05577d7e75323c10826.png 3x"></img>
+                        </video> */}
                         <div className="image-container">
                           <img
                             src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
