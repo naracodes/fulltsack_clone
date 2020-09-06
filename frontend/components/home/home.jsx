@@ -28,20 +28,26 @@ class Home extends React.Component {
                     </div>
                 </nav>
                 <header className="splash-content">
-                    Splash Content
-                    <div className="inner-content">
-                        <div className="splash-pitch">
-                            <div className="heading">
-                                <h1>Investing for Everyone</h1>
+                    <div className="splash-container">
+                        <div className="inner-content">
+                            <div className="splash-pitch">
+                                <div className="heading">
+                                    <h1>Investing for Everyone</h1>
+                                </div>
+                                <div className="short-intro">
+                                    <span className="paragraph">
+                                        "Quiche Lorem ipsum dolor sit amet, consectetur adipiscing elit. etur adipiscing elit."
+                                    </span>
+                                </div>
+                                <div className="splash-signup">
+                                    <Link to="/signup">Sign Up</Link>
+                                </div>
                             </div>
-                            <div className="short-intro">
-                                <span className="paragraph">
-                                    "Quiche Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat ante libero, quis ultrices ligula aliquet vehicula. Vivamus"
-                                </span>
-                            </div>
-                            <div className="splash-signup">
-                                <Link to="/signup">Sign Up</Link>
-                            </div>
+                        </div>
+                        <div className="right-content">
+                            <img src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
+                            srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
+                            alt=""/>
                         </div>
                     </div>
                 </header>

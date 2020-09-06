@@ -429,6 +429,10 @@ input#search-bar{
   justify-content: space-between;
   align-items: center;
   height: 64px;
+  background-color: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  // position: fixed;
+
 }
 
 .splash-content {
@@ -441,7 +445,12 @@ input#search-bar{
   position: relative;
 }
 
-
+.splash-container {
+  display: flex;
+  align-items: center;
+  // flex-wrap: wrap;
+  // flex-direction: row;
+}
 
 .inner-content {
   width: 100%;
@@ -456,6 +465,7 @@ input#search-bar{
 .splash-pitch .heading {
   margin-bottom: 18px;
   white-space: pre-line;
+  max-width: 492px;
 }
 
 .splash-pitch .heading h1{
@@ -477,7 +487,7 @@ input#search-bar{
 // }
 
 .short-intro {
-  
+  max-width: 492px;
 }
 
 .short-intro .paragraph {
@@ -487,4 +497,5 @@ input#search-bar{
   font-weight: 500;
   line-height: 36px;
   text-decoration: unset;
+  word-wrap: break-word;
 }
