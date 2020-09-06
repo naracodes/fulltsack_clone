@@ -40,6 +40,7 @@ class Home extends React.Component {
             </nav>
             <header className="splash-content">
               <div className="splash-container">
+                <div className="splash-container-2">
                   <div className="inner-splash-container">
                     <div className="inner-content">
                         <div className="heading">
@@ -63,15 +64,16 @@ class Home extends React.Component {
                         </div>
                     </div>
                   </div>
-                <div className="right-content">
-                  <div className="right-content-2">
-                    <div className="right-content-3">
-                      <div className="image-container">
-                        <img
-                          src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
-                          srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
-                          alt=""
-                        />
+                  <div className="right-content">
+                    <div className="right-content-2">
+                      <div className="right-content-3">
+                        <div className="image-container">
+                          <img
+                            src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
+                            srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
+                            alt=""
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
