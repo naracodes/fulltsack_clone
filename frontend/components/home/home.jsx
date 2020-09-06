@@ -42,32 +42,38 @@ class Home extends React.Component {
               <div className="splash-container">
                   <div className="inner-splash-container">
                     <div className="inner-content">
-                    <div className="splash-pitch">
                         <div className="heading">
-                        <h1>Investing for Everyone</h1>
+                          <h1>Investing for Everyone</h1>
                         </div>
                         <div className="short-intro">
-                        <span className="paragraph">
-                            Quiche Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. etur adipiscing elit etur adipiscing
-                            elit.
-                        </span>
+                          <span className="paragraph">
+                              Quiche Lorem ipsum dolor sit amet, consectetur
+                              adipiscing elit. etur adipiscing elit etur adipiscing
+                              elit.
+                          </span>
                         </div>
                         <div className="splash-signup">
-                        <Link id="signup-black" to="/signup">
-                            Sign Up
-                        </Link>
+                          <div className="splash-signup-2">
+                            <div className="splash-signup-3">
+                              <Link id="signup-black" to="/signup">
+                                  Sign Up
+                              </Link>
+                            </div>
+                          </div>
                         </div>
-                    </div>
                     </div>
                   </div>
                 <div className="right-content">
-                  <div className="image-container">
-                    <img
-                      src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
-                      srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
-                      alt=""
-                    />
+                  <div className="right-content-2">
+                    <div className="right-content-3">
+                      <div className="image-container">
+                        <img
+                          src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
+                          srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
+                          alt=""
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -76,6 +82,7 @@ class Home extends React.Component {
         );
     }
 }
+
 
 export default Home;
 
