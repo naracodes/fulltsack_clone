@@ -22,7 +22,7 @@ class Login extends React.Component {
         this.props.login(this.state)
             .then(() => {
                 // debugger
-                this.props.history.push('/dashboard');
+                this.props.history.push('/');
             })
     }
 
@@ -55,7 +55,7 @@ class Login extends React.Component {
             
         this.props.login(demoUser)
             .then(() => {
-          this.props.history.push("/dashboard");
+          this.props.history.push("/");
         });
     }
     

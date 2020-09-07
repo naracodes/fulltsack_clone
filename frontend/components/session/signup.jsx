@@ -20,7 +20,7 @@ class Signup extends React.Component {
     // debugger;
     this.props.createNewUser(this.state).then(() => {
       // debugger;
-      this.props.history.push("/dashboard");
+      this.props.history.push("/");
     });
   }
 
