@@ -939,7 +939,7 @@ input#search-bar{
   box-sizing: border-box;
 }
 
-.signuup-left-container {
+.signup-left-container {
   width: 60%;
   display: flex;
   justify-content: flex-end;
@@ -948,7 +948,7 @@ input#search-bar{
   text-size-adjust: none;
 }
 
-.signuup-left-container-2 {
+.signup-left-container-2 {
   margin: 0px 15%;
   padding-bottom: 2rem;
   width: 800px;
@@ -956,6 +956,47 @@ input#search-bar{
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
+    .signup-logo {
+      position: absolute;
+      top: 40px;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    .signup-header {
+      margin-top: 161px;
+      margin-bottom: 51px;
+      box-sizing: border-box;
+      display: block;
+        .signup-header-message {
+          box-sizing: border-box;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+          letter-spacing: -0.33px;
+          line-height: 32px;
+        }
+    }
+
+    .signup-intro-message {
+      margin-top: 17px;
+      box-sizing: border-box;
+      display: block;
+
+        .signup-intro-message-2 {
+          margin-top: -9px;
+          box-sizing: border-box;
+          display: block;
+
+            span {
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 400;
+              letter-spacing: -0.1px;
+              line-height: 24px;
+            }
+        }
+    }
 }
 
 .signup-right-container {

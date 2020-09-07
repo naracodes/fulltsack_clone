@@ -50,7 +50,7 @@ class Signup extends React.Component {
               <div className="signup-header">
                 <div><span className="signup-header-message">Grow your piece of the pie.</span></div>
                 <div className="signup-intro-message">
-                  <div className="signup-intro-message">
+                  <div className="signup-intro-message-2">
                     <span className="message">Quiche is a new way to grow your money, offering a simple but
                     dynamic platform for both traditional and alternative investing.</span>
                   </div>
