@@ -926,3 +926,43 @@ input#search-bar{
   margin: 0;
 }
 
+.signup-body {
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.signup-outermost {
+  display: flex;
+  flex: 1 1 0%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.signuup-left-container {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  text-size-adjust: none;
+}
+
+.signuup-left-container-2 {
+  margin: 0px 15%;
+  padding-bottom: 2rem;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.signup-right-container {
+  display: flex;
+  flex-direction: column;
+  padding: 174px 4% 0px;
+  width: 40%;
+  background-color: rgb(245, 248, 250);
+  box-sizing: border-box;
+}
