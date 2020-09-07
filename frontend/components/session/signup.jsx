@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -41,24 +43,19 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="signup-outermost">
-        <div className="signup-outermost-container"> 
-          <div className="signup-home">
-            <Link to={"/"}>
-              <button className="home-btn">&#8962;</button>
-            </Link>
-          </div>
-          <div className="signup-container">
-            <div className="signup-form">
-              <div className="info">
-                <div className="signup-slogan">
-                  <div className="slogan">Grow your piece of the pie.</div>
-                  <p className="statement">
-                    Quiche is a new way to grow your money, offering a simple but
-                    dynamic platform for both traditional and alternative
-                    investing
-                  </p>
+        <div className="signup-left-container">
+          <div className="signup-left-container-2">
+            <div className="signup-logo"><span>Quiche<FontAwesomeIcon icon={faPizzaSlice} className="pizza-slice" /></span></div>
+            <div className="signup-header">
+              <div><span className="signup-header-message">Grow your piete of the pie.</span></div>
+              <div className="signup-intro-message">
+                <div className="signup-intro-message">
+                  <span className="message">Quiche is a new way to grow your money, offering a simple but
+                  dynamic platform for both traditional and alternative investing.</span>
                 </div>
               </div>
+            </div>
+            <div className="form-container">
               <form className="signup-subform">
                 <label>
                   <input
@@ -100,6 +97,22 @@ class Signup extends React.Component {
                   <Link to={"/login"}>Log in</Link>
                 </p>
               </form>
+            </div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div className="signup-right-container">
+
+        </div>
+        <div className="signup-outermost-container"> 
+          <div className="signup-container">
+            <div className="signup-form">
+              <div className="info">
+                <div className="signup-slogan">
+                  <div className="slogan"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
