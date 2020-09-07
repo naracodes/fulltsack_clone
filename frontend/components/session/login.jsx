@@ -102,19 +102,19 @@ class Login extends React.Component {
                                                     </label>
                                                 </div>
                                             </div>
+                                            <p>
+                                                Not registered? <Link id="signup-link" to={'/signup'}>Create an account</Link>
+                                            </p>
                                             <div className='error-message'>
                                                 {this.renderErrors()}
                                             </div>
                                         </div>
                                         <footer className="signin-button">
-                                            <div className="signin-signup">
-                                                <button className={'sign-in-button'} onClick={this.handleSubmit}>Sign In</button>
-                                                <p className='message'>Not registered?
-                                                <Link id='or-signup' to={'/signup'}>Create an account</Link>
-                                                </p>
-                                                <div className='demo-login'>
-                                                    <p onClick={this.handleDemo}>Demo user</p> 
-                                                </div>
+                                            <div className="the-button">
+                                                <button className="the-actual-button" onClick={this.handleSubmit}>
+                                                    <span>Sign In</span>
+                                                </button>
+                                                <p onClick={this.handleDemo}>Demo user</p>
                                             </div>
                                         </footer>
                                     </form>

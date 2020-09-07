@@ -646,18 +646,63 @@ input#search-bar{
   margin-bottom: 12px;
   display: block;
   box-sizing: border-box;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.1px;
+  font-family: "Capsule Sans Text", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .login-span {
-  color: var(--rh__text-color);
-  font-family: var(--rh__type-palette__type15__stack);
-  font-size: var(--rh__type-palette__type15__font-size);
   font-style: normal;
-  font-weight: var(--rh__type-palette__type15__font-weight);
-  line-height: var(--rh__type-palette__type15__line-height);
-  letter-spacing: var(--rh__type-palette__type15__letter-spacing);
   text-decoration: unset;
   box-sizing: border-box;
+}
+
+.signup-button {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+  box-sizing: border-box;
+}
+
+.the-button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  p {
+    font-size: 13px;
+    padding-left: 13px;
+    cursor: pointer;
+    color: rgb(0, 200, 5);
+  }
+}
+
+.the-actual-button {
+  background: rgb(0, 200, 5);
+  border-color: rgb(0, 200, 5);
+  align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: 0 48px;
+    white-space: nowrap;
+    span {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: -0.1px;
+      color: rgb(255, 255, 255);;
+    }
 }
 
 .login-input {
@@ -665,6 +710,10 @@ input#search-bar{
   margin-bottom: 60px;
   box-sizing: border-box;
   display: block;
+  font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    line-height: 20px;
     input {
       box-sizing: border-box;
       display: block;
@@ -681,6 +730,24 @@ input#search-bar{
       border-color: rgb(245, 248, 250);
       transition: border-color 200ms;
       width: 100%;
+    }
+    .error-message {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: -0.1px;
+      font-style: normal;
+    }
+
+    p {
+      margin: 0;
+      padding: 14px 0px;
+      letter-spacing: -0.1px;
+        #signup-link {
+          color: rgb(0, 200, 5);
+          text-decoration: none;
+          font-weight: 500;
+        }
     }
   }
   
