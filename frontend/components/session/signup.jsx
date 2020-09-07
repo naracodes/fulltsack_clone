@@ -144,7 +144,7 @@ class Signup extends React.Component {
           </div>
           <div className="signup-right-container">
             <div className="signup-right-container-2">
-              <div>
+              <div className="intro-head-1">
                 <span>Comission-free stock trading</span>
               </div>
               <div>
@@ -154,7 +154,7 @@ class Signup extends React.Component {
                   so we can offer zero commission trading.
                 </span>
               </div>
-              <div>
+              <div className="intro-head-2">
                 <span>Account Protection</span>
               </div>
               <div>
@@ -162,7 +162,7 @@ class Signup extends React.Component {
                   Quiche is a member of WISE. Securities in your account are protected up to $500,000,000. For details, please see HERE.
                 </span>
               </div>
-              <div>
+              <div className="intro-head-3">
                 <span>Keep tabs on your money</span>
               </div>
               <div>
