@@ -660,6 +660,54 @@ input#search-bar{
   box-sizing: border-box;
 }
 
+.login-input {
+  flex-direction: column;
+  margin-bottom: 60px;
+  box-sizing: border-box;
+  display: block;
+    input {
+      box-sizing: border-box;
+      display: block;
+      flex: 1 1 auto;
+      height: 48px;
+      padding: 15px 20px;
+      color: var(--rh__neutral-fg1);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 4px;
+      line-height: 1.5em;
+      outline: 0;
+      background: rgb(245, 248, 250);
+      border-color: rgb(245, 248, 250);
+      transition: border-color 200ms;
+      width: 100%;
+    }
+  }
+  
+  .login-input .input-box:hover {    
+    background: rgb(255, 255, 255);
+    border-color: rgb(228, 233, 237);
+  }
+
+.login-input .input-box:focus {
+  background-color: #fff;
+  border-color: rgb(0, 200, 5);
+}
+
+.login-input label > :first-child {
+  padding: 9px 0;
+  display: block;
+}
+
+.email-field {
+  display: block;
+  box-sizing: border-box;
+    label {
+      cursor: default;
+    }
+}
+
+
 .right-content-3 {
   display: flex;
   align-items: center;

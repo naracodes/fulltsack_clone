@@ -73,36 +73,50 @@ class Login extends React.Component {
                                         <header className="login-header">
                                             <span className="login-span">Welcome to Quiche</span>
                                         </header>
-                                        <label id="guide">Email or username
-                                            <br/>
-                                            <input
-                                            type="text"
-                                            value={this.state.email}
-                                            onChange={this.update('email')}
-                                            />
-                                        </label>
-                                        <br/>
-                                        <label id="guide">Password
-                                            <br/>
-                                            <input
-                                            type="password"
-                                            value={this.state.password}
-                                            onChange={this.update('password')}
-                                            />
-                                        </label>
-                                        <br/>
-                                        <div className='error-message'>
-                                            {this.renderErrors()}
-                                        </div>
-                                        <div className="signin-signup">
-                                            <button className={'sign-in-button'} onClick={this.handleSubmit}>Sign In</button>
-                                            <p className='message'>Not registered?
-                                            <Link id='or-signup' to={'/signup'}>Create an account</Link>
-                                            </p>
-                                            <div className='demo-login'>
-                                                <p onClick={this.handleDemo}>Demo user</p> 
+                                        <div className="login-input">
+                                            <div>
+                                                <div className="email-field">                                                    
+                                                    <label id="login-label">
+                                                        <div>Email or username</div>
+                                                        <div>
+                                                            <input
+                                                            className="input-box"
+                                                            type="text"
+                                                            value={this.state.email}
+                                                            onChange={this.update('email')}
+                                                            />
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div className="password-field">
+                                                    <label id="login-label">
+                                                        <div>Password</div>
+                                                        <div>
+                                                            <input
+                                                            className="input-box"
+                                                            type="password"
+                                                            value={this.state.password}
+                                                            onChange={this.update('password')}
+                                                            />
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div className='error-message'>
+                                                {this.renderErrors()}
                                             </div>
                                         </div>
+                                        <footer className="signin-button">
+                                            <div className="signin-signup">
+                                                <button className={'sign-in-button'} onClick={this.handleSubmit}>Sign In</button>
+                                                <p className='message'>Not registered?
+                                                <Link id='or-signup' to={'/signup'}>Create an account</Link>
+                                                </p>
+                                                <div className='demo-login'>
+                                                    <p onClick={this.handleDemo}>Demo user</p> 
+                                                </div>
+                                            </div>
+                                        </footer>
                                     </form>
                                 </div>
                             </div>
