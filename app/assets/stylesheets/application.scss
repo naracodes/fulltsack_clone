@@ -961,6 +961,7 @@ input#search-bar{
       top: 40px;
       box-sizing: border-box;
       display: block;
+      font-size: 24px;
     }
 
     .signup-header {
@@ -1256,4 +1257,27 @@ input#search-bar{
    p {
      padding: 4px 0;
    }
+}
+
+.t-and-c {
+  margin-top: auto;
+  align-self: flex-end;
+  padding-top: 64px;
+  display: inline-block;
+    .t-and-c-2 {
+      line-height: 20px;
+      letter-spacing: -0.1px;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    .t-and-c-3 {
+      margin: 19px 0;
+      display: block;
+    }
+
+    .t-and-c-4 {
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
 }

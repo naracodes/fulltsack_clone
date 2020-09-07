@@ -117,10 +117,10 @@ class Signup extends React.Component {
                   <div className="signup-error">{this.renderErrors()}</div>
                 </form>
               </div>
-              <div>
-                <div>
-                  <div>
-                    <div>
+              <div className="t-and-c">
+                <div className="t-and-c-2">
+                  <div className="t-and-c-3">
+                    <div className="t-and-c-4">
                       <div>
                         All investments involve risk and the past performance of a security, or 
                         financial product does not guarantee future results or returns. Keep in 
