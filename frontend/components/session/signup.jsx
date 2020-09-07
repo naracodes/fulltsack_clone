@@ -56,33 +56,43 @@ class Signup extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="left-container">
+              <div className="form-container">
                 <form className="signup-subform">
-                  <label>
-                    <input
-                      type="text"
-                      placeholder={"First Name"}
-                      value={this.state.firstName}
-                      onChange={this.update("firstName")}
-                    />
-                  </label>
-                  <label>
-                    <input
-                      type="text"
-                      placeholder={"Last Name"}
-                      value={this.state.lastName}
-                      onChange={this.update("lastName")}
-                    />
-                  </label>
-                  <label>
-                    <input
-                      type="text"
-                      placeholder={"Email"}
-                      value={this.state.email}
-                      onChange={this.update("email")}
-                    />
-                  </label>
-
+                  <div className="full-name">
+                    <div className="first-name">
+                      <div className="first-name-input">
+                        <input
+                          type="text"
+                          className="first-name-input-2"
+                          placeholder={"First Name"}
+                          value={this.state.firstName}
+                          onChange={this.update("firstName")}
+                        />
+                      </div>
+                    </div>
+                    <div className="last-name">
+                      <div className="last-name-input">
+                        <input
+                          type="text"
+                          className="last-name-input-2"
+                          placeholder={"Last Name"}
+                          value={this.state.lastName}
+                          onChange={this.update("lastName")}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="email-container">
+                    <div className="email-input">
+                      <input
+                        type="text"
+                        className="email-input-2"
+                        placeholder={"Email"}
+                        value={this.state.email}
+                        onChange={this.update("email")}
+                      />
+                    </div>
+                  </div>
                   <label>
                     <input
                       type="password"
