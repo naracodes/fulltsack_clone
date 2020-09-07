@@ -93,20 +93,28 @@ class Signup extends React.Component {
                       />
                     </div>
                   </div>
-                  <label>
-                    <input
-                      type="password"
-                      placeholder={"Password (min. 10 characters)"}
-                      value={this.state.password}
-                      onChange={this.update("password")}
-                    />
-                  </label>
-                  <div >{this.renderErrors()}</div>
-                  <button onClick={this.handleSubmit}>Continue</button>
-                  <p className="message">
-                    Already registered?
-                    <Link to={"/login"}>Log in</Link>
-                  </p>
+                  <div className="password-container">
+                    <div className="password-input">
+                      <input
+                        type="password"
+                        className="password-input-2"
+                        placeholder={"Password (min. 10 characters)"}
+                        value={this.state.password}
+                        onChange={this.update("password")}
+                      />
+                    </div>
+                  </div>
+                  <div className="button-container">
+                    <div className="button-content">
+                      <button onClick={this.handleSubmit}>Continue</button>
+                    </div>
+                    <div className="already-registered">
+                      <span>Already registered?</span>
+                      <br/>
+                      <Link to={"/login"}>Log in</Link>
+                    </div>
+                  </div>
+                  <div className="signup-error">{this.renderErrors()}</div>
                 </form>
               </div>
               <div>
