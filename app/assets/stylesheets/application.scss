@@ -1264,6 +1264,7 @@ input#search-bar{
   align-self: flex-end;
   padding-top: 64px;
   display: inline-block;
+  font-family: "Capsule Sans Text", -apple-system, BlinkMacSystemFont, sans-serif;;
     .t-and-c-2 {
       line-height: 20px;
       letter-spacing: -0.1px;
@@ -1279,5 +1280,51 @@ input#search-bar{
     .t-and-c-4 {
       padding: 0 15px;
       box-sizing: border-box;
+    }
+
+    .terms-text-1 {
+      margin: 1em 0;
+      font-size: 12.75px;
+      color: rgb(180, 189, 194);
+      line-height: 20px;
+    }
+
+    .terms-text-2 {
+      margin: 1em 0;
+      font-size: 12.75px;
+      color: rgb(180, 189, 194);
+      line-height: 20px;
+        a {
+          color: rgb(0, 200, 5);
+          text-decoration: none;
+          font-weight: 500;
+        }
+    }
+
+    .terms-text-3 {
+      margin: 1em 0;
+      font-size: 12.75px;
+      color: rgb(180, 189, 194);
+      line-height: 20px;
+    }
+
+    .terms-text-4 {
+      margin: 1em 0;
+      font-size: 12.75px;
+      color: rgb(180, 189, 194);
+      line-height: 20px;
+        a {
+          text-decoration: none;
+          color: rgb(0, 200, 5);
+          font-weight: 500;
+          padding-right: 10px;
+        }
+    }
+
+    .trademark {
+      margin: 1em 0;
+      font-size: 12.75px;
+      color: rgb(180, 189, 194);
+      line-height: 20px;
     }
 }

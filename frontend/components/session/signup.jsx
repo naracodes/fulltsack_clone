@@ -121,7 +121,7 @@ class Signup extends React.Component {
                 <div className="t-and-c-2">
                   <div className="t-and-c-3">
                     <div className="t-and-c-4">
-                      <div>
+                      <div className="terms-text-1">
                         All investments involve risk and the past performance of a security, or 
                         financial product does not guarantee future results or returns. Keep in 
                         mind that while diversification may help spread risk it does not assure a profit, or 
@@ -129,12 +129,12 @@ class Signup extends React.Component {
                         when you invest in securities, or other financial products. Investors should consider 
                         their investment objectives and risks carefully before investing.
                       </div>
-                      <div>All securities and investments are offered to self-directed customers by Quiche. Additional information
-                        about your broker can be found by clicking here. Quiche is a wholly owned entity of Nara Lee Inc.
+                      <div className="terms-text-2">All securities and investments are offered to self-directed customers by Quiche. Additional information
+                        about your broker can be found by clicking here. Quiche is a wholly owned entity of <a href="">Nara Lee Inc.</a>
                       </div>
-                      <div>Check the background of Quiche and Nara Lee Inc. on My Personal Website.</div>
-                      <div><a href="">{"Quiche Terms & Conditions"}</a> <a href="">Contact Us</a> <a href="">FAQ</a></div>
-                      <div>© 2020 Quiche. All rights reserved.</div>
+                      <div className="terms-text-3">Check the background of Quiche and Nara Lee Inc. on My Personal Website.</div>
+                      <div className="terms-text-4"><a href="">{"Quiche Terms & Conditions"}</a> <a href="">Contact Us</a> <a href="">FAQ</a></div>
+                      <div className="trademark">© 2020 Quiche. All rights reserved.</div>
                     </div>
                   </div>
                 </div>
