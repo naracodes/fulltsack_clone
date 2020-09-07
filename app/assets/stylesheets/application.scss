@@ -705,6 +705,10 @@ input#search-bar{
     }
 }
 
+.the-actual-button:hover {
+  background-color: rgb(0, 180, 5);;
+}
+
 .login-input {
   flex-direction: column;
   margin-bottom: 60px;
