@@ -1644,4 +1644,17 @@ table {
   position: relative;
   width: 276px;
   overflow: hidden auto;
+    .single-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      padding: 0 24px;
+    }
 }
+
+// .single-item {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }
