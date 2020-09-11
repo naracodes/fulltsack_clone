@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import WatchlistIndexItem from './watchlist_index_item';
 
 class WatchlistIndex extends React.Component {
@@ -15,11 +16,13 @@ class WatchlistIndex extends React.Component {
             </header>
             {watchlistAssets.map((watchlistAsset) => {
               return (
-                    <WatchlistIndexItem
-                      key={watchlistAsset.id}
-                      watchlistAsset={watchlistAsset}
-                      currentUser={currentUser}
-                    />
+                    <Link to={`/stocks/${watchlistAsset.ticker}`} id="wl-link">
+                      <WatchlistIndexItem
+                        key={watchlistAsset.id}
+                        watchlistAsset={watchlistAsset}
+                        currentUser={currentUser}
+                      />
+                    </Link>
               );
             })}
           </div>

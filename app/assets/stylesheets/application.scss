@@ -70,6 +70,7 @@ table {
 //Asset show page
 
 .asset-show-body {
+  padding-top: 64px;
   display: flex;
   justify-content: center;
 }
@@ -81,6 +82,7 @@ table {
   grid-template-columns: repeat(3, 1fr) 275px;
   grid-template-rows: repeat(16, 1fr);
   border: hotpink 1px solid;
+  padding-top: 36px;
   // column-gap: 70px;
   gap: 50px 50px;
 }
@@ -94,6 +96,7 @@ table {
 .stock-graph {
   grid-area: 1 / 1 / 4 / 4;
   background-color: rgba(237, 237, 237, 1);
+  min-width: 676px;
 }
 
 .about {
@@ -1448,6 +1451,7 @@ table {
   z-index: 100;
   display: block;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .header-container {
@@ -1644,13 +1648,22 @@ table {
   position: relative;
   width: 276px;
   overflow: hidden auto;
-    .single-item {
+  .single-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 60px;
       padding: 0 24px;
     }
+  #wl-link {
+    text-decoration: none;
+  }
+  #wl-link:active,
+  #wl-link:link,
+  #wl-link:visited {
+    color: black;
+  }
+
 }
 
 // .single-item {
