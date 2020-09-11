@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginContainer from '../session/login_container';
 import WatchlistIndexContainer from '../watchlist/watchlist_index_container';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -35,6 +37,9 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard-body">
           <div className="header-bar">
+              <Link id="logo" to="/us/en">
+                <FontAwesomeIcon icon={faPizzaSlice} className="pizza-slice" />
+              </Link>
               <div className="search-outer">
                 <form className="search-container">
                   <input
@@ -43,10 +48,10 @@ class Dashboard extends React.Component {
                     onKeyDown={this.handleKeyDown}
                     tabIndex="0"
                   />
-                  <img
+                  {/* <img
                     className="search-icon"
                     src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
-                  />
+                  /> */}
                 </form>
               </div>
               <div className="dropdown-trigger">
