@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from 'recharts';
 import Odometer from "react-odometerjs";
 
@@ -54,29 +55,32 @@ class AssetLineChart extends React.Component {
           <h1 className="company-name">{company.split(',')[0]}</h1>
           {/* <h3>{this.state.closePrice}</h3> */}
           <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice : this.state.closePrice} format="(,ddd).dd" /></div>
-          <LineChart
-            width={750}
-            height={360}
-            data={this.props.data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-            onMouseMove={this.handleHover}
-            onMouseLeave={this.handleMouseLeave}
-          >
-            <XAxis tickLine={false} dataKey="label" hide={true} />
-            <YAxis hide={true} domain={["auto", "dataMax"]} />
-            <Tooltip
-              isAnimationActive={false}
-              // offset={5}
-              // position={{y: -20}}
-            />
-            <Line
-              type="linear"
-              dataKey="close"
-              stroke="#1aee99"
-              dot={false}
-              // activeDot={ { onClick: (e) => console.log(e) } }
-            />
-          </LineChart>
+          <ResponsiveContainer id="responsive-container">
+            <LineChart
+              // id="stock-line-chart"
+              // width={100}
+              // height={360}
+              data={this.props.data}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              onMouseMove={this.handleHover}
+              onMouseLeave={this.handleMouseLeave}
+            >
+              <XAxis tickLine={false} dataKey="label" hide={true} />
+              <YAxis hide={true} domain={["auto", "dataMax"]} />
+              <Tooltip
+                isAnimationActive={false}
+                // offset={5}
+                // position={{y: -20}}
+              />
+              <Line
+                type="linear"
+                dataKey="close"
+                stroke="#1aee99"
+                dot={false}
+                // activeDot={ { onClick: (e) => console.log(e) } }
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       );
   }
