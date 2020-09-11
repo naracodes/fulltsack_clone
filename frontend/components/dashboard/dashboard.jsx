@@ -109,7 +109,13 @@ class Dashboard extends React.Component {
                 <section className="news-stand"></section>
               </div>
               <div className="right col-2">
-                <WatchlistIndexContainer />
+                <div className="watchlist-content">
+                  <div className="watchlist-card">
+                    <div className="actual-sidebar">
+                      <WatchlistIndexContainer />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </main>
