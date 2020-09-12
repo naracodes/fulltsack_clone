@@ -159,10 +159,11 @@ class AssetShow extends React.Component {
                             </nav>
                           </section>
                           <section className="about-section">
-                            
+                            <div className="about-heading">
+                              <h2>About</h2>
+                            </div>
                           </section>
                           <div className="about">
-                            About
                             <div className="asset-description">
                               {/* <input type="checkbox" className="read-more-state" id="description-1"/>
                                         <p className="read-more-wrap">{shortDescription} <span className="read-more-target">{restOfDescription}
