@@ -123,6 +123,68 @@ class AssetShow extends React.Component {
                           <h1>{asset.asset_name}</h1>
                         </header>                        
                         <div>
+                          <AssetLineChart
+                            data={asset.chartData}
+                            company={asset.asset_name}
+                            closePrice={asset.close}
+                            className="stock-graph"
+                          />
+                          <div className="about">
+                            About
+                            <div className="asset-description">
+                              {/* <input type="checkbox" className="read-more-state" id="description-1"/>
+                                        <p className="read-more-wrap">{shortDescription} <span className="read-more-target">{restOfDescription}
+                                        </span></p><label htmlFor="description-1" className="read-more-trigger"></label> */}
+                            </div>
+                            <label className="ceo">
+                              CEO
+                              <div>{asset["CEO"]}</div>
+                            </label>
+                            <label className="employees">
+                              Employees
+                              <div>{asset.employees}</div>
+                            </label>
+                            <label className="hq">
+                              Headquarters
+                              <div>
+                                {asset.city}, {asset["state"]}
+                              </div>
+                            </label>
+                            <label className="founded">
+                              Founded
+                              <div>????</div>
+                            </label>
+                            <label className="market-cap">
+                              Market Cap
+                              <div>{asset.marketCap}</div>
+                            </label>
+                            <label className="pe-ratio">
+                              Price-Earning Ratio
+                              <div>{asset.peRatio}</div>
+                            </label>
+                            <label className="dividend">
+                              Dividend Yield
+                              <div>
+                                {!asset.dividendYield ? "-" : asset.dividendYield}
+                              </div>
+                            </label>
+                            <label className="avg-vol">
+                              Average Volume
+                              <div>{asset.avgTotalVolume}</div>
+                            </label>
+                          </div>
+
+                          <div className="collections">Collections placeholder</div>
+
+                          {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
+                          {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
+                          {/* <AssetNewsIndex companyName={asset.asset_name} news={assetNews} /> */}
+
+                          <div className="analyst-ratings">
+                            Analyst ratings placeholder
+                          </div>
+
+                          <div className="earnings">earnings placeholder</div>
 
                         </div>
                       </div>
@@ -134,68 +196,6 @@ class AssetShow extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <AssetLineChart
-                      data={asset.chartData}
-                      company={asset.asset_name}
-                      closePrice={asset.close}
-                      className="stock-graph"
-                    />
-                    <div className="about">
-                      About
-                      <div className="asset-description">
-                        {/* <input type="checkbox" className="read-more-state" id="description-1"/>
-                                  <p className="read-more-wrap">{shortDescription} <span className="read-more-target">{restOfDescription}
-                                  </span></p><label htmlFor="description-1" className="read-more-trigger"></label> */}
-                      </div>
-                      <label className="ceo">
-                        CEO
-                        <div>{asset["CEO"]}</div>
-                      </label>
-                      <label className="employees">
-                        Employees
-                        <div>{asset.employees}</div>
-                      </label>
-                      <label className="hq">
-                        Headquarters
-                        <div>
-                          {asset.city}, {asset["state"]}
-                        </div>
-                      </label>
-                      <label className="founded">
-                        Founded
-                        <div>????</div>
-                      </label>
-                      <label className="market-cap">
-                        Market Cap
-                        <div>{asset.marketCap}</div>
-                      </label>
-                      <label className="pe-ratio">
-                        Price-Earning Ratio
-                        <div>{asset.peRatio}</div>
-                      </label>
-                      <label className="dividend">
-                        Dividend Yield
-                        <div>
-                          {!asset.dividendYield ? "-" : asset.dividendYield}
-                        </div>
-                      </label>
-                      <label className="avg-vol">
-                        Average Volume
-                        <div>{asset.avgTotalVolume}</div>
-                      </label>
-                    </div>
-
-                    <div className="collections">Collections placeholder</div>
-
-                    {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
-                    {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
-                    {/* <AssetNewsIndex companyName={asset.asset_name} news={assetNews} /> */}
-
-                    <div className="analyst-ratings">
-                      Analyst ratings placeholder
-                    </div>
-
-                    <div className="earnings">earnings placeholder</div>
 
                   </main>
                 </div>
