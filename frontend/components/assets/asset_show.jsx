@@ -57,7 +57,7 @@ class AssetShow extends React.Component {
              <button onClick={this.handleAddToList}>Add</button>
             )
             return (
-              <div className="asset-show-body">
+              <div className="asset-show-outermost">
                 <div className="header-bar">
                   <div className="header-container">
                     <div className="logo-container">
@@ -115,74 +115,89 @@ class AssetShow extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="asset-showpage-grid">
-                  <AssetLineChart
-                    data={asset.chartData}
-                    company={asset.asset_name}
-                    closePrice={asset.close}
-                    className="stock-graph"
-                  />
-                  <div className="transaction-sidebar">
-                    Buy/Sell
-                    {button}
-                    <Link to={`/`}>Dashboard</Link>
-                  </div>
-                  <div className="about">
-                    About
-                    <div className="asset-description">
-                      {/* <input type="checkbox" className="read-more-state" id="description-1"/>
-                                <p className="read-more-wrap">{shortDescription} <span className="read-more-target">{restOfDescription}
-                                </span></p><label htmlFor="description-1" className="read-more-trigger"></label> */}
+                <div className="asset-container">
+                  <main className="main-container">
+                    <div className="row">
+                      <div className="left col-1">
+                        <header className="stock-name">
+                          <h1>{asset.asset_name}</h1>
+                        </header>                        
+                        <div>
+
+                        </div>
+                      </div>
+                      <div className="right col-2">
+                        <div className="transaction-sidebar">
+                          Buy/Sell
+                          {button}
+                          <Link to={`/`}>Dashboard</Link>
+                        </div>
+                      </div>
                     </div>
-                    <label className="ceo">
-                      CEO
-                      <div>{asset["CEO"]}</div>
-                    </label>
-                    <label className="employees">
-                      Employees
-                      <div>{asset.employees}</div>
-                    </label>
-                    <label className="hq">
-                      Headquarters
-                      <div>
-                        {asset.city}, {asset["state"]}
+                    <AssetLineChart
+                      data={asset.chartData}
+                      company={asset.asset_name}
+                      closePrice={asset.close}
+                      className="stock-graph"
+                    />
+                    <div className="about">
+                      About
+                      <div className="asset-description">
+                        {/* <input type="checkbox" className="read-more-state" id="description-1"/>
+                                  <p className="read-more-wrap">{shortDescription} <span className="read-more-target">{restOfDescription}
+                                  </span></p><label htmlFor="description-1" className="read-more-trigger"></label> */}
                       </div>
-                    </label>
-                    <label className="founded">
-                      Founded
-                      <div>????</div>
-                    </label>
-                    <label className="market-cap">
-                      Market Cap
-                      <div>{asset.marketCap}</div>
-                    </label>
-                    <label className="pe-ratio">
-                      Price-Earning Ratio
-                      <div>{asset.peRatio}</div>
-                    </label>
-                    <label className="dividend">
-                      Dividend Yield
-                      <div>
-                        {!asset.dividendYield ? "-" : asset.dividendYield}
-                      </div>
-                    </label>
-                    <label className="avg-vol">
-                      Average Volume
-                      <div>{asset.avgTotalVolume}</div>
-                    </label>
-                  </div>
+                      <label className="ceo">
+                        CEO
+                        <div>{asset["CEO"]}</div>
+                      </label>
+                      <label className="employees">
+                        Employees
+                        <div>{asset.employees}</div>
+                      </label>
+                      <label className="hq">
+                        Headquarters
+                        <div>
+                          {asset.city}, {asset["state"]}
+                        </div>
+                      </label>
+                      <label className="founded">
+                        Founded
+                        <div>????</div>
+                      </label>
+                      <label className="market-cap">
+                        Market Cap
+                        <div>{asset.marketCap}</div>
+                      </label>
+                      <label className="pe-ratio">
+                        Price-Earning Ratio
+                        <div>{asset.peRatio}</div>
+                      </label>
+                      <label className="dividend">
+                        Dividend Yield
+                        <div>
+                          {!asset.dividendYield ? "-" : asset.dividendYield}
+                        </div>
+                      </label>
+                      <label className="avg-vol">
+                        Average Volume
+                        <div>{asset.avgTotalVolume}</div>
+                      </label>
+                    </div>
 
-                  <div className="collections">Collections placeholder</div>
+                    <div className="collections">Collections placeholder</div>
 
-                  {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
-                  {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
-                  {/* <AssetNewsIndex companyName={asset.asset_name} news={assetNews} /> */}
+                    {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
+                    {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
+                    {/* <AssetNewsIndex companyName={asset.asset_name} news={assetNews} /> */}
 
-                  <div className="analyst-ratings">
-                    Analyst ratings placeholder
-                  </div>
+                    <div className="analyst-ratings">
+                      Analyst ratings placeholder
+                    </div>
 
-                  <div className="earnings">earnings placeholder</div>
+                    <div className="earnings">earnings placeholder</div>
+
+                  </main>
                 </div>
               </div>
             );
