@@ -1678,3 +1678,19 @@ table {
 //   flex-direction: row;
 //   justify-content: space-between;
 // }
+
+
+// Asset show page 9.12
+
+.range-buttons {
+  height: 33px;
+  width: 175px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // margin-left: -12px;
+  // margin-right: -12px;
+    span {
+      padding-right: 18px;
+    }
+}

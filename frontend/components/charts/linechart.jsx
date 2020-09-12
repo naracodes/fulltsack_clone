@@ -55,11 +55,11 @@ class AssetLineChart extends React.Component {
           <h1 className="company-name">{company.split(',')[0]}</h1>
           {/* <h3>{this.state.closePrice}</h3> */}
           <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice : this.state.closePrice} format="(,ddd).dd" /></div>
-          <ResponsiveContainer id="responsive-container">
+          {/* <ResponsiveContainer id="responsive-container"> */}
             <LineChart
               // id="stock-line-chart"
-              // width={100}
-              // height={360}
+              width={676}
+              height={361}
               data={this.props.data}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               onMouseMove={this.handleHover}
@@ -80,7 +80,7 @@ class AssetLineChart extends React.Component {
                 // activeDot={ { onClick: (e) => console.log(e) } }
               />
             </LineChart>
-          </ResponsiveContainer>
+          {/* </ResponsiveContainer> */}
         </div>
       );
   }

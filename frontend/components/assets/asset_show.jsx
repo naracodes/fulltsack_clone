@@ -123,12 +123,44 @@ class AssetShow extends React.Component {
                           <h1>{asset.asset_name}</h1>
                         </header>                        
                         <div>
-                          <AssetLineChart
-                            data={asset.chartData}
-                            company={asset.asset_name}
-                            closePrice={asset.close}
-                            className="stock-graph"
-                          />
+                          <section className="graph-section">
+                            <header className="asset-price">
+                              <h1>{asset.close}</h1>
+                            </header>
+                            <div className="react-chart">
+                              <AssetLineChart
+                                data={asset.chartData}
+                                company={asset.asset_name}
+                                closePrice={asset.close}
+                                className="stock-graph"
+                              />
+                            </div>
+                            <nav className="range">
+                              <div className="range-buttons">
+                                <div className="1D">
+                                  <span>1D</span>
+                                </div>
+                                <div className="1W">
+                                  <span>1W</span>
+                                </div>
+                                <div className="1M">
+                                  <span>1M</span>
+                                </div>
+                                <div className="3M">
+                                  <span>3M</span>
+                                </div>
+                                <div className="1Y">
+                                  <span>1Y</span>
+                                </div>
+                                <div className="5Y">
+                                  <span>5Y</span>
+                                </div>
+                              </div>
+                            </nav>
+                          </section>
+                          <section className="about-section">
+                            
+                          </section>
                           <div className="about">
                             About
                             <div className="asset-description">
