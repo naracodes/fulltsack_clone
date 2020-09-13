@@ -1695,3 +1695,23 @@ table {
       padding-right: 18px;
     }
 }
+
+.add-button {
+  background: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  width: 100%;
+  border-color: rgb(255, 80, 0);
+  border-style: solid;
+  height: 48px;
+  color: rgb(255, 80, 0);
+}
+
+.add-button:hover {
+
+}

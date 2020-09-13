@@ -72,9 +72,9 @@ class AssetShow extends React.Component {
       // let restOfDescription = asset.description ? asset.description.slice(245) : "";
       // let companyName = asset ? asset.asset_name.split(",")[0] : "";
       let button = watchlistArr.includes(ticker) ? (
-        <button onClick={this.handleRemoveFromList}>Remove</button>
+        <button className="add-button" onClick={this.handleRemoveFromList}>&#10004; Add to List</button>
       ) : (
-        <button onClick={this.handleAddToList}>Add</button>
+        <button className="add-button" onClick={this.handleAddToList}>+ Add to List</button>
       );
       return (
         <div className="asset-show-outermost">
@@ -399,7 +399,9 @@ class AssetShow extends React.Component {
                     <div className="order-card">
 
                     </div>
-                    Buy/Sell
+                    <div className="sidebar-buttons">
+                      
+                    </div>
                     {button}
                     <Link to={`/`}>Dashboard</Link>
                   </div>
