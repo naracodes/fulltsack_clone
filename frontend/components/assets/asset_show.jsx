@@ -400,9 +400,11 @@ class AssetShow extends React.Component {
 
                     </div>
                     <div className="sidebar-buttons">
-                      
+                      <button className="add-button options">
+                        Options - coming soon!
+                      </button>
+                      {button}
                     </div>
-                    {button}
                     <Link to={`/`}>Dashboard</Link>
                   </div>
                 </div>

@@ -1696,6 +1696,23 @@ table {
     }
 }
 
+.order-card {
+  height: 367px;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.sidebar-buttons {
+  margin-top: 24px;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+    .options {
+      margin-bottom: 12px;
+    }
+}
+
 .add-button {
   background: none;
   padding-top: 0;
@@ -1710,8 +1727,12 @@ table {
   border-style: solid;
   height: 48px;
   color: rgb(255, 80, 0);
+  font-weight: 700;
+  align-items: center;
+  border-radius: 5px;
 }
 
 .add-button:hover {
-
+  border-color: rgba(255,106,38,1);
+  color: rgba(255,106,38,1);
 }
