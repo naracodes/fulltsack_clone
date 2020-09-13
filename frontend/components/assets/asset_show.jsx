@@ -395,7 +395,10 @@ class AssetShow extends React.Component {
                   </div>
                 </div>
                 <div className="right col-2">
-                  <div className="transaction-sidebar">
+                  <div className="transaction-content">
+                    <div className="order-container">
+                      
+                    </div>
                     Buy/Sell
                     {button}
                     <Link to={`/`}>Dashboard</Link>
