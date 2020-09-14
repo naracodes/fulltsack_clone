@@ -73,7 +73,7 @@ class AssetShow extends React.Component {
   }
 
   render() {
-    const { asset, watchlistArr, assetNews } = this.props;
+    const { asset, watchlistArr, assetNews, currentUser } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     if (!asset || !watchlistArr) {
       return null;
@@ -137,6 +137,15 @@ class AssetShow extends React.Component {
                   </div>
                   <div className="account">
                     <span>Account</span>
+                  </div>
+                  <div className="dropdown-outer">
+                    <div className="dropdown-container">
+                      <header>
+                        <h3>
+                          <span>{`${currentUser.firstName} ${currentUser.lastName}`}</span>
+                        </h3>
+                      </header>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -397,9 +406,7 @@ class AssetShow extends React.Component {
                                 <div className="inner-choice">
                                   <div className="combo-box">
                                     <div className="invest-option-input">
-                                      <input type="text"
-                                      placeholder="$0.00"
-                                      />
+                                      <input type="text" placeholder="$0.00" />
                                     </div>
                                   </div>
                                 </div>
@@ -428,9 +435,7 @@ class AssetShow extends React.Component {
                         </div>
                         <footer className="buying-power-footer">
                           <div className="buying-power-content">
-                            <span>
-                              $0.00 Buying Power Available 
-                            </span>
+                            <span>$0.00 Buying Power Available</span>
                           </div>
                         </footer>
                       </form>
