@@ -25,8 +25,6 @@ export const msp = (state, ownProps) => {
           currentUser: state.session.user,
           watchlistArr: Object.keys(state.entities.watchlists),
           assetNews: Object.values(news),
-          // company: state.entities.assets || state.entities.company,
-          //company: state.entities.assets[ownProps.match.params.ticker]
         };
     }
 }

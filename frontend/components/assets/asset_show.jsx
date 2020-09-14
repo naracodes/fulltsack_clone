@@ -103,9 +103,6 @@ class AssetShow extends React.Component {
     if (!asset || !watchlistArr) {
       return null;
     } else {
-      // let shortDescription = asset.description ? asset.description.slice(0, 245) : "";
-      // let restOfDescription = asset.description ? asset.description.slice(245) : "";
-      // let companyName = asset ? asset.asset_name.split(",")[0] : "";
       let button = watchlistArr.includes(ticker) ? (
         <button className="add-button" onClick={this.handleRemoveFromList}>Remove</button>
       ) : (
@@ -411,14 +408,42 @@ class AssetShow extends React.Component {
                           </div>
                         </div>
                       </header>
+                      <div>
+                        {
+                          assetNews.map((article, i) => {
+                            return (
+                              <div key={i} className="article">
+                                <div className="inner-news-content">
+                                  <div className="title-side">
+                                    <div className="news-source">
+                                      <span>{article.source}</span>
+                                        <span className="time-since">xh</span>
+                                    </div>
+                                    <div className="news-title-and-more">
+                                      <h3 className="title-h3">
+                                        {article.headline}
+                                      </h3>
+                                      <div>
+                                        <span>{article.summary.slice(0, 40)}...</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="news-image">
+                                    <img
+                                      src="https://images.robinhood.com/WYBvSMKXdd8z6EYOysmzlW72gWw/aHR0cHM6Ly9pbWFnZXMucm9iaW5ob29kLmNvbS9IeHBzNlktdDZyV3pWaTk4SEs3OTU3alllQm8vYUhSMGNITTZMeTl6TG5scGJXY3VZMjl0TDNWMUwyRndhUzl5WlhNdk1TNHlMM3BwWDJkUE1HUjNMblJFUjBsTVNHcDNURVl1UVhjdExYNUNMMkZFTURGT1JHYzNaSG93TkUxRVFUZGpNakE1VFZSMGFHTklRbkJhUkRFMVpFZEdhbUZJYkhaaVp5MHRMMmgwZEhCek9pOHZiV1ZrYVdFdWVtVnVabk11WTI5dEwyVnVMVlZUTDNKbGRYUmxjbk10Wm1sdVlXNWpaUzVqYjIwdllUYzNOR1F6TWpVeE56Wm1ZbVJtTW1NeE5XTXhNV0ZrTWpZNE1UTTNaR0U"
+                                      alt="image of news"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })
+                        }
+                      </div>
                     </section>
                     <section className="analyst-ratings"></section>
                     <section className="earnings"></section>
                     <section className="history"></section>
-
-                    {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
-                    {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
-                    {/* <AssetNewsIndex companyName={asset.asset_name} news={assetNews} /> */}
                   </div>
                 </div>
                 <div className="right col-2">
