@@ -339,7 +339,7 @@ class AssetShow extends React.Component {
                         <div className="order-type">
                           <div className="inner-order-type">
                             <div className="type">
-                              <span>Buy XXXXXXX</span>
+                              <span>Buy {asset.ticker}</span>
                             </div>
                           </div>
                         </div>
