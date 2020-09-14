@@ -2039,3 +2039,38 @@ table {
       letter-spacing: -0.1px;
     }
 }
+
+.info-grid {
+  padding-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.asset-info {
+  flex-basis: calc(25% - 12px);
+  margin: 0 6px 12px;
+  box-sizing: border-box;
+}
+
+.info-label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.info-label-div {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+}
+
+.info-data {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 40;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}

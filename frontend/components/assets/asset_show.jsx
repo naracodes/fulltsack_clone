@@ -162,24 +162,21 @@ class AssetShow extends React.Component {
                   </div>
                   <div className="account" ref={this.wrapperRef}>
                     <span onClick={this.showDropdown}>Account</span>
-                    {
-                      this.state.showDropdown ? 
-                      (
+                    {this.state.showDropdown ? (
                       <div className="dropdown-outer">
                         <div className="dropdown-container">
                           <header>
-                            {
-                              currentUser ? (
-                                <h3>
-                                  <span>{`${currentUser.firstName} ${currentUser.lastName}`}</span>
-                                </h3>
-
-                              ) : (
-                                <h3>
-                                  <span>Please log in or sign up to continue.</span>
-                                </h3>
-                              )
-                            }
+                            {currentUser ? (
+                              <h3>
+                                <span>{`${currentUser.firstName} ${currentUser.lastName}`}</span>
+                              </h3>
+                            ) : (
+                              <h3>
+                                <span>
+                                  Please log in or sign up to continue.
+                                </span>
+                              </h3>
+                            )}
                             <div className="account-details">
                               <div className="portfolio-value">
                                 <div className="portfolio-value-container">
@@ -203,7 +200,10 @@ class AssetShow extends React.Component {
                               </div>
                             </div>
                           </header>
-                          <div className="logout-div-container" onClick={this.handleLogOut}>
+                          <div
+                            className="logout-div-container"
+                            onClick={this.handleLogOut}
+                          >
                             <div className="logout-div">
                               <span className="logout-svg">
                                 <svg
@@ -226,8 +226,7 @@ class AssetShow extends React.Component {
                           </div>
                         </div>
                       </div>
-                      ) : (null)
-                    }
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -288,57 +287,65 @@ class AssetShow extends React.Component {
                       </header>
                       <div className="company-description">
                         <h3>
-                          <span className="company-span">{asset.description}</span>
+                          <span className="company-span">
+                            {asset.description}
+                          </span>
                         </h3>
                       </div>
                       <div className="info-grid">
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">CEO</div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">{asset["CEO"]}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">Employees</div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">{asset.employees}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">Headquarters</div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">{`${asset.city}, ${asset["state"]}`}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">Founded</div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">????</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">Market Cap</div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">{asset.marketCap}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">
+                              Price-Earnings Ratio
+                            </div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">{asset.peRatio}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">Dividend Yield</div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">
+                            {!asset.dividendYield ? "—" : asset.dividendYield}
+                          </div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div"></div>
+                            <div className="info-label-div">Average Volume</div>
                           </span>
-                          <div className="info-data"></div>
+                          <div className="info-data">
+                            {asset.avgTotalVolume}
+                          </div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
@@ -384,10 +391,6 @@ class AssetShow extends React.Component {
                     <section className="earnings"></section>
                     <section className="history"></section>
                     <div className="about">
-                      <label className="ceo">
-                        CEO
-                        <div>{asset["CEO"]}</div>
-                      </label>
                       <label className="employees">
                         Employees
                         <div>{asset.employees}</div>
