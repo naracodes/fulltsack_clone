@@ -1636,6 +1636,8 @@ table {
   position: fixed;
   top: 95px;
   display: block;
+  box-sizing: border-box;
+  width: 323.777778px;
 }
 
 .watchlist-card {
@@ -1710,6 +1712,8 @@ table {
   box-sizing: border-box;
     .options {
       margin-bottom: 12px;
+      border: 1px solid grey;
+      color: grey;
     }
 }
 
@@ -1725,6 +1729,7 @@ table {
   width: 100%;
   border-color: rgb(255, 80, 0);
   border-style: solid;
+  border-width: 1px;
   height: 48px;
   color: rgb(255, 80, 0);
   font-weight: 700;
@@ -1735,4 +1740,34 @@ table {
 .add-button:hover {
   border-color: rgba(255,106,38,1);
   color: rgba(255,106,38,1);
+}
+
+.order-form {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 0em;
+}
+
+.order-type {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: darkgray;
+  box-sizing: border-box;
+  display: block;
+  height: 52px;
+  padding-top: 4px;
+    .inner-order-type {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+    span {
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: 700;
+    }
 }

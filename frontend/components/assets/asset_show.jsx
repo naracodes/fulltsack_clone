@@ -397,7 +397,18 @@ class AssetShow extends React.Component {
                 <div className="right col-2">
                   <div className="transaction-content">
                     <div className="order-card">
-
+                      <form className="order-form">
+                        <div className="order-type">
+                          <div className="inner-order-type">
+                            <div className="type">
+                              <span>Buy XXXXXXX</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <footer></footer>
+                      </form>
                     </div>
                     <div className="sidebar-buttons">
                       <button className="add-button options">
