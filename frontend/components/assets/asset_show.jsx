@@ -408,7 +408,15 @@ class AssetShow extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <div></div>
+                        <div className="review-button-outer">
+                          <div className="review-container">
+                            <div className="review-button">
+                              <button className="review-submit">
+                                <span>Review Order</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                         <footer></footer>
                       </form>
                     </div>

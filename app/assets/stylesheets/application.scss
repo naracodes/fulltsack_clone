@@ -1701,7 +1701,7 @@ table {
 .order-card {
   height: 367px;
   width: 100%;
-  border: 1px solid grey;
+  border: 1px solid rgb(224, 221, 221);
   border-radius: 5px;
 }
 
@@ -1753,7 +1753,7 @@ table {
   padding-right: 24px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-color: darkgray;
+  border-color: rgb(224, 221, 221);
   box-sizing: border-box;
   display: block;
   height: 52px;
@@ -1808,7 +1808,7 @@ table {
 }
 
 .invest-option {
-  border: 1px solid darkgray;
+  border: 1px solid rgb(224, 221, 221);
   border-radius: 4px;
   position: absolute;
   left: 0;
@@ -1867,7 +1867,7 @@ table {
   align-items: center;
   box-sizing: border-box;
     input {
-      border: 1px solid darkgray;
+      border: 1px solid rgb(224, 221, 221);
       box-sizing: border-box;
       height: 36px;
       padding-left: 12px;
@@ -1905,6 +1905,38 @@ table {
           margin-right: 12px;
           min-width: 48px;
           white-space: nowrap;
+        }
+    }
+}
+
+.review-button-outer {
+  padding-top: 12px;
+  box-sizing: border-box;
+}
+
+.review-container {
+  padding: 12px 24px 24px;
+    .review-button {
+      margin-bottom: 12px;
+      box-sizing: border-box;
+        button {
+          background-color: rgb(255, 80, 0);
+          height: 48px;
+          min-width: 120px;
+          line-height: 20px;
+          width: 100%;
+          padding-left: 48px;
+          padding-right: 48px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+            span {
+              color: white;
+              font-weight: 700;
+            }
+        }
+        button:hover {
+          background-color: rgba(255,106,38,1);
         }
     }
 }
