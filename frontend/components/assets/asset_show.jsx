@@ -401,7 +401,17 @@ class AssetShow extends React.Component {
                         </div>
                       </div>
                     </section>
-                    <section className="asset-news"></section>
+                    <section className="asset-news-section">
+                      <header className="asset-news-heading">
+                        <div className="asset-news-div">
+                          <div className="asset-news-div-inner">
+                            <h2 className="asset-news-h2">
+                              <span>News</span>
+                            </h2>
+                          </div>
+                        </div>
+                      </header>
+                    </section>
                     <section className="analyst-ratings"></section>
                     <section className="earnings"></section>
                     <section className="history"></section>
@@ -409,12 +419,6 @@ class AssetShow extends React.Component {
                     {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
                     {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
                     {/* <AssetNewsIndex companyName={asset.asset_name} news={assetNews} /> */}
-
-                    <div className="analyst-ratings">
-                      Analyst ratings placeholder
-                    </div>
-
-                    <div className="earnings">earnings placeholder</div>
                   </div>
                 </div>
                 <div className="right col-2">

@@ -1993,7 +1993,8 @@ table {
 
 //about section
 .about-section,
-.related-lists-section {
+.related-lists-section,
+.asset-news-section {
   margin-bottom: 60px;
   display: block;
   box-sizing: border-box;
@@ -2002,20 +2003,23 @@ table {
       box-sizing: border-box;
     }
     .about-div,
-    .related-lists-div {
+    .related-lists-div,
+    .asset-news-div {
       border-bottom: 1px solid rgb(228, 233, 237);
       padding-bottom: 16px;
       display: flex;
       align-items: center;
     }
     .about-div-inner,
-    .related-lists-div-inner {
+    .related-lists-div-inner,
+    .asset-news-div-inner {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-grow: 1;
         .about-h2,
-        .related-lists-h2 {
+        .related-lists-h2,
+        .asset-news-h2 {
           display: flex;
           margin: 0;
           align-items: center;
