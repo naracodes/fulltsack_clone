@@ -50,6 +50,16 @@ class AssetShow extends React.Component {
     });
   }
 
+  renderDropDown() {
+    return (
+      <div className="dropdown-outer">
+        <div className="dropdown-container">
+
+        </div>
+      </div>
+    )
+  }
+
   handleAddToList(e) {
     e.preventDefault();
     const { addAssetToWatchlist, currentUser, asset } = this.props;
