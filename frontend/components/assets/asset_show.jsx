@@ -51,13 +51,57 @@ class AssetShow extends React.Component {
   }
 
   renderDropDown() {
+    const { currentUser } = this.props;
     return (
       <div className="dropdown-outer">
         <div className="dropdown-container">
-
+          <header>
+            <h3>
+              <span>{`${currentUser.firstName} ${currentUser.lastName}`}</span>
+            </h3>
+            <div className="account-details">
+              <div className="portfolio-value">
+                <div className="portfolio-value-container">
+                  <span>
+                    <h3>$0.00</h3>
+                  </span>
+                  <div className="portfolio-value-text">Portfolio Value</div>
+                </div>
+              </div>
+              <div className="buying-power-value">
+                <div className="buying-power-value-container">
+                  <span>
+                    <h3>$0.00</h3>
+                  </span>
+                  <div className="buying-value-text">Buying Power</div>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div className="logout-div-container">
+            <div className="logout-div">
+              <span className="logout-svg">
+                <svg
+                  fill="none"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clipRule="evenodd"
+                    d="M19.4444 4.29L4.55844 4.29885C3.7013 4.29885 3 5.07027 3 6.01313V9.43313H4.55844V5.99599L19.4444 5.98714V18.0129L4.55844 18.0217V14.576H3V18.0131C3 18.956 3.7013 19.7103 4.55844 19.7103L19.4444 19.7014C20.3016 19.7014 21.0029 18.9471 21.0029 18.0043V6.00429C21.0029 5.05286 20.3016 4.29 19.4444 4.29ZM12.0116 15.4331L15.4402 12.0046L12.0116 8.57599V11.1474L3 11.1474V12.8617L12.0116 12.8617V15.4331Z"
+                    fill="black"
+                    fillRule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+              <div className="logout-text">Log Out</div>
+            </div>
+          </div>
         </div>
       </div>
-    )
+    );
   }
 
   handleAddToList(e) {
@@ -136,59 +180,7 @@ class AssetShow extends React.Component {
                     />
                   </div>
                   <div className="account">
-                    <span>Account</span>
-                  </div>
-                  <div className="dropdown-outer">
-                    <div className="dropdown-container">
-                      <header>
-                        <h3>
-                          <span>{`${currentUser.firstName} ${currentUser.lastName}`}</span>
-                        </h3>
-                        <div className="account-details">
-                          <div className="portfolio-value">
-                            <div className="portfolio-value-container">
-                              <span>
-                                <h3>$0.00</h3>
-                              </span>
-                              <div className="portfolio-value-text">
-                                Portfolio Value
-                              </div>
-                            </div>
-                          </div>
-                          <div className="buying-power-value">
-                            <div className="buying-power-value-container">
-                              <span>
-                                <h3>$0.00</h3>
-                              </span>
-                              <div className="buying-value-text">
-                                Buying Power
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </header>
-                      <div className="logout-div-container">
-                        <div className="logout-div">
-                          <span className="logout-svg">
-                            <svg
-                              fill="none"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              width="24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                clipRule="evenodd"
-                                d="M19.4444 4.29L4.55844 4.29885C3.7013 4.29885 3 5.07027 3 6.01313V9.43313H4.55844V5.99599L19.4444 5.98714V18.0129L4.55844 18.0217V14.576H3V18.0131C3 18.956 3.7013 19.7103 4.55844 19.7103L19.4444 19.7014C20.3016 19.7014 21.0029 18.9471 21.0029 18.0043V6.00429C21.0029 5.05286 20.3016 4.29 19.4444 4.29ZM12.0116 15.4331L15.4402 12.0046L12.0116 8.57599V11.1474L3 11.1474V12.8617L12.0116 12.8617V15.4331Z"
-                                fill="black"
-                                fillRule="evenodd"
-                              ></path>
-                            </svg>
-                          </span>
-                          <div className="logout-text">Log Out</div>
-                        </div>
-                      </div>
-                    </div>
+                    <span onClick={() => this.renderDropDown()}>Account</span>
                   </div>
                 </div>
               </div>
