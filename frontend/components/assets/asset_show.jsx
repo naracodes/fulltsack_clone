@@ -178,170 +178,108 @@ class AssetShow extends React.Component {
                     <section className="about-section">
                       <header className="about-heading">
                         <div className="about-div">
-                          <h2><span>About</span></h2>
+                          <h2>
+                            <span>About</span>
+                          </h2>
                         </div>
                       </header>
                       <div className="company-description">
-                        <h3><span>{asset.description}</span></h3>
+                        <h3>
+                          <span>{asset.description}</span>
+                        </h3>
                       </div>
                       <div className="info-grid">
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">
-
-                            </div>
+                            <div className="info-label-div"></div>
                           </span>
-                          <div className="info-data">
-                            
-                          </div>
+                          <div className="info-data"></div>
                         </div>
                       </div>
                     </section>
-                    <section className="related-lists">
-
-                    </section>
-                    <section className="asset-news">
-
-                    </section>
-                    <section className="analyst-ratings">
-
-                    </section>
-                    <section className="earnings">
-
-                    </section>
-                    <section className="history">
-
-                    </section>
+                    <section className="related-lists"></section>
+                    <section className="asset-news"></section>
+                    <section className="analyst-ratings"></section>
+                    <section className="earnings"></section>
+                    <section className="history"></section>
                     <div className="about">
                       <label className="ceo">
                         CEO
@@ -405,7 +343,49 @@ class AssetShow extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <div></div>
+                        <div className="order-amount">
+                          <div>
+                            <div>
+                              <div className="selection">
+                                <label>Invest In</label>
+                                <div className="choice">
+                                  <div className="inner-choice">
+                                    <div className="combo-box">
+                                      <div className="invest-option">
+                                        <button className="invest-button">
+                                          <div className="text">
+                                            <span>Dollars</span>
+                                          </div>
+                                          <div className="svg">
+                                            <svg
+                                              class="_1R7LeIUId4Xe_-4Cgv1sDQ _3oCuZIC2HfgJxwlpOPphvu"
+                                              width="27"
+                                              height="27"
+                                              viewBox="0 0 27 27"
+                                            >
+                                              <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M9.66675 15.3334L13.0001 19.5L16.3334 15.3334H9.66675Z"
+                                              ></path>
+                                              <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M9.66675 11.6667L13.0001 7.5L16.3334 11.6667H9.66675Z"
+                                              ></path>
+                                            </svg>
+                                          </div>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                        </div>
                         <div></div>
                         <footer></footer>
                       </form>

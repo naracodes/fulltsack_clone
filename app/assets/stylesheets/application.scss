@@ -1771,3 +1771,73 @@ table {
       font-weight: 700;
     }
 }
+
+.order-amount {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  box-sizing: border-box;
+}
+
+.selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  box-sizing: border-box;
+    label {
+      margin-right: 12px;
+      min-width: 48px;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: -0.1px;
+    }
+}
+
+.inner-choice {
+  text-align: right;
+  width: 136px;
+  box-sizing: border-box;
+}
+
+.combo-box {
+  text-align: right;
+  height: 36px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.invest-option {
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 36px;
+    button {
+      display: flex;
+      width: 100%;
+      position: relative;
+      padding: 1px 1px 0 12px;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
+      height: 36px;
+    }
+    
+    .text {
+      flex: 1 1 auto;
+      overflow: hidden;
+      text-align: left;
+      box-sizing: border-box;
+      font-size: 13px;
+      line-height: 14.95px;
+      letter-spacing: normal;
+    }
+}
