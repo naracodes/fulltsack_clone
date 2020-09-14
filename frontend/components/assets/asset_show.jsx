@@ -72,9 +72,9 @@ class AssetShow extends React.Component {
       // let restOfDescription = asset.description ? asset.description.slice(245) : "";
       // let companyName = asset ? asset.asset_name.split(",")[0] : "";
       let button = watchlistArr.includes(ticker) ? (
-        <button className="add-button" onClick={this.handleRemoveFromList}>&#10004; Add to List</button>
+        <button className="add-button" onClick={this.handleRemoveFromList}>Remove</button>
       ) : (
-        <button className="add-button" onClick={this.handleAddToList}>+ Add to List</button>
+        <button className="add-button" onClick={this.handleAddToList}>Add</button>
       );
       return (
         <div className="asset-show-outermost">
@@ -358,7 +358,6 @@ class AssetShow extends React.Component {
                                           </div>
                                           <div className="svg">
                                             <svg
-                                              class="_1R7LeIUId4Xe_-4Cgv1sDQ _3oCuZIC2HfgJxwlpOPphvu"
                                               width="27"
                                               height="27"
                                               viewBox="0 0 27 27"
@@ -417,7 +416,13 @@ class AssetShow extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <footer></footer>
+                        <footer className="buying-power-footer">
+                          <div className="buying-power-content">
+                            <span>
+                              $0.00 Buying Power Available 
+                            </span>
+                          </div>
+                        </footer>
                       </form>
                     </div>
                     <div className="sidebar-buttons">

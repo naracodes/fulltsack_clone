@@ -1719,6 +1719,7 @@ table {
 }
 
 .add-button {
+  outline: none;
   background: none;
   padding-top: 0;
   padding-bottom: 0;
@@ -1938,6 +1939,27 @@ table {
         }
         button:hover {
           background-color: rgba(255,106,38,1);
+        }
+    }
+}
+
+.buying-power-footer {
+  border-top: 1px solid lightgray;
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+    .buying-power-content {
+      flex: 1;
+      text-align: center;
+      box-sizing: border-box;
+        span {
+          color: rgb(255, 80, 0);
+          font-size: 13px;
+          line-height: 20px;
+          font-weight: 500;
         }
     }
 }

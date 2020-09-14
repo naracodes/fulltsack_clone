@@ -16,7 +16,7 @@ class WatchlistIndex extends React.Component {
             </header>
             {watchlistAssets.map((watchlistAsset) => {
               return (
-                    <Link to={`/stocks/${watchlistAsset.ticker}`} id="wl-link">
+                    <Link to={`/stocks/${watchlistAsset.ticker}`} id="wl-link" key={watchlistAsset.id}>
                       <WatchlistIndexItem
                         key={watchlistAsset.id}
                         watchlistAsset={watchlistAsset}
