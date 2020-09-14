@@ -20,6 +20,24 @@ class Home extends React.Component {
 
     render() {
         const { currentUser } = this.props;
+        const authContainer = !currentUser ? (
+          <div className="auth-container">
+            <Link id="login" to="/login">
+              Log In
+            </Link>
+            <div className="auth-spacer"></div>
+            <Link id="signup" to="/signup">
+              Sign Up
+            </Link>
+          </div>
+        ) : (
+          <div className="auth-container">
+            <div className="auth-spacer"></div>
+            <Link id="signup" to="/">
+              My Account
+            </Link>
+          </div>
+        );
         return (
           <div className="splash-body">
             <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
@@ -28,15 +46,7 @@ class Home extends React.Component {
                 Quiche
                 <FontAwesomeIcon icon={faPizzaSlice} className="pizza-slice" />
               </Link>
-              <div className="auth-container">
-                <Link id="login" to="/login">
-                  Log In
-                </Link>
-                <div className="auth-spacer"></div>
-                <Link id="signup" to="/signup">
-                  Sign Up
-                </Link>
-              </div>
+              {authContainer}
             </nav>
             <header className="splash-content">
               <div className="splash-container">
