@@ -425,14 +425,10 @@ table {
 }
 
 .login-outermost {
-  -webkit-box-align: center;
   align-items: center;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
   height: 100vh;
-  -webkit-box-pack: center;
   justify-content: center;
   width: 100%;
 }
@@ -440,21 +436,15 @@ table {
 .login-outermost-2 {
   background-color: var(--rh__neutral-bg1);
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
   height: 100%;
   width: 100%;
 }
 
 .login-outermost-3 {
-  -webkit-box-align: center;
   align-items: center;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
-  -webkit-box-flex: 1;
   flex-grow: 1;
   height: 100%;
   width: 100%;
@@ -469,7 +459,6 @@ table {
 }
 
 .login-outermost-3 > div {
-  -webkit-box-flex: 1;
   flex: 1 1 50%;
   display: block;
 }
@@ -507,7 +496,6 @@ table {
 }
 
 .signup-button {
-  -webkit-box-align: center;
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -538,7 +526,7 @@ table {
     cursor: pointer;
     display: inline-flex;
     height: 48px;
-    -webkit-box-pack: center;
+
     justify-content: center;
     min-width: 120px;
     padding: 0 48px;
@@ -630,7 +618,6 @@ table {
 .right-content-3 {
   display: flex;
   align-items: center;
-  -webkit-box-pack: center;
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -665,7 +652,6 @@ table {
   align-content: center;
   display: flex;
   height: 100%;
-  -webkit-box-pack: center;
   justify-content: center;
 }
 
@@ -720,10 +706,6 @@ table {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      // letter-spacing: -0.25px;
-      // box-sizing: border-box;
-      // text-align: start;
-      // width: 49.52px;
     }
     #signup {
       height: 48px;
@@ -739,8 +721,6 @@ table {
       width: 25px;
     }
 }
-
-
 
 #signup-black {
   color: white;
@@ -761,7 +741,6 @@ table {
 .auth-container a:visited {
   color: black;
 }
-
 
 .short-intro .paragraph {
   font-family: "Capsule Sans Display",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -792,7 +771,6 @@ table {
   display: flex;
   justify-content: flex-end;
   box-sizing: border-box;
-  -webkit-box-pack: end;
   text-size-adjust: none;
 }
 
@@ -1290,55 +1268,6 @@ table {
 
 // .box {
 //   background-color: beige;
-// }
-
-// .search-outer {
-//   // align-items: center;
-//   // grid-column: 2 / 4;
-//   width: 320px;
-//   // display: block;
-//   display: flex;
-//   flex-direction: column;
-//   align-content: center;
-//   // margin: 0 auto;
-// }
-
-// input#search-bar{
-//   margin: 0 auto;
-//   width: 100%;
-//   height: 36px;
-//   padding: 0 20px;
-//   font-size: 1rem;
-//   border: 1px solid #D0CFCE;
-//   outline: none;
-//   border-radius: 5px;
-//   &:focus{
-//     border: 1px solid #5bf469;
-//     transition: 0.35s ease;
-//     color: #171f17;
-//     font-size: 13px;
-//     &::-webkit-input-placeholder{
-//       transition: opacity 0.45s ease; 
-//   	  opacity: 0;
-//      }
-//     &::-moz-placeholder {
-//       transition: opacity 0.45s ease; 
-//   	  opacity: 0;
-//      }
-//     &:-ms-placeholder {
-//      transition: opacity 0.45s ease; 
-//   	 opacity: 0;
-//      }    
-//    }
-//  }
-
-// .search-icon{
-//   position: relative;
-//   float: right;
-//   width: 60px;
-//   height: 60px;
-//   top: -49px;
-//   right: -45px;
 // }
 
 // .portfolio-graph {
