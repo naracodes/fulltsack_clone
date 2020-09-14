@@ -363,13 +363,13 @@ class AssetShow extends React.Component {
                                               viewBox="0 0 27 27"
                                             >
                                               <path
-                                                fill-rule="evenodd"
-                                                clip-rule="evenodd"
+                                                fillRule="evenodd"
+                                                clipRule="evenodd"
                                                 d="M9.66675 15.3334L13.0001 19.5L16.3334 15.3334H9.66675Z"
                                               ></path>
                                               <path
-                                                fill-rule="evenodd"
-                                                clip-rule="evenodd"
+                                                fillRule="evenodd"
+                                                clipRule="evenodd"
                                                 d="M9.66675 11.6667L13.0001 7.5L16.3334 11.6667H9.66675Z"
                                               ></path>
                                             </svg>
