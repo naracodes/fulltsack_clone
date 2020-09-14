@@ -1917,5 +1917,63 @@ table {
       padding: 0 24px 12px;
       display: block;
       box-sizing: border-box;
+        span {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 24px;
+        }
+        .account-details {
+          margin-top: 12px;
+          display: flex;
+          box-sizing: border-box;
+        }
+    }
+
+    .portfolio-value {
+      margin-right: 36px;
+      white-space: nowrap;
+      box-sizing: border-box;
+        .portfolio-value-container,
+        .buying-power-value-container {
+          margin-bottom: 0;
+        }
+    }
+}
+
+.portfolio-value-text,
+.buying-power-value {
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.logout-div-container {
+  display: flex;
+  height: 48px;
+  align-items: center;
+  padding: 0 24px;
+  font-weight: 500;
+}
+
+.logout-div-container:hover {
+  background-color: rgb(245, 248, 250);
+  cursor: pointer;
+}
+
+.logout-div {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+    svg {
+      margin-right: 12px;
+      display: inline-flex;
+      box-sizing: border-box;
+    }
+    .logout-text {
+      padding-bottom: 4px;
+      margin-right: 12px;
+      align-items: center;
     }
 }
