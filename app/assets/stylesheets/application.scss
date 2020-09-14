@@ -1631,8 +1631,9 @@ table {
 .order-card {
   height: 367px;
   width: 100%;
-  border: 1px solid rgb(224, 221, 221);
+  // border: 1px solid rgb(224, 221, 221);
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 12px 24px 0, rgba(0, 0, 0, 0.06) 0 -12px 24px 0;
 }
 
 .sidebar-buttons {
@@ -1739,7 +1740,7 @@ table {
 }
 
 .invest-option {
-  border: 1px solid rgb(224, 221, 221);
+  border: 1px solid rgb(245, 248, 250);
   border-radius: 4px;
   position: absolute;
   left: 0;
@@ -1798,7 +1799,7 @@ table {
   align-items: center;
   box-sizing: border-box;
     input {
-      border: 1px solid rgb(224, 221, 221);
+      border: 1px solid rgb(245, 248, 250);
       box-sizing: border-box;
       height: 36px;
       padding-left: 12px;
@@ -1807,7 +1808,10 @@ table {
       border-radius: 4px;
       display: block;
       text-align: right;
-      background-color: rgb(242, 238, 238);
+      background-color: rgb(245, 248, 250);
+    }
+    input::placeholder {
+      color: lightgray;
     }
     input:focus {
       outline: 0;
@@ -1817,6 +1821,7 @@ table {
       background-color: transparent;
     }
 }
+
 
 .est-qt-shares {
   border-top: 1px solid lightgray;
@@ -1975,5 +1980,62 @@ table {
       padding-bottom: 4px;
       margin-right: 12px;
       align-items: center;
+    }
+}
+
+//graph section
+.graph-section {
+  width: 676px;
+  margin-bottom: 44px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+//about section
+.about-section {
+  margin-bottom: 60px;
+  display: block;
+  box-sizing: border-box;
+    header {
+      margin-bottom: 24px;
+      box-sizing: border-box;
+    }
+    .about-div {
+      border-bottom: 1px solid rgb(228, 233, 237);
+      padding-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
+    .about-div-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-grow: 1;
+        .about-h2 {
+          display: flex;
+          margin: 0;
+          align-items: center;
+        }
+      h2 {
+        font-size: 24px;
+        font-weight: 50;
+        letter-spacing: -0.33px;
+        line-height: 28px;
+      }
+    }
+}
+
+.company-description {
+  margin-bottom: 15px;
+  box-sizing: border-box;
+    .company-span {
+      margin: 0 0 24px;
+      max-width: 570px;
+    }
+    span {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.1px;
     }
 }

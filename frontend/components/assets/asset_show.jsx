@@ -279,14 +279,16 @@ class AssetShow extends React.Component {
                     <section className="about-section">
                       <header className="about-heading">
                         <div className="about-div">
-                          <h2>
-                            <span>About</span>
-                          </h2>
+                          <div className="about-div-inner">
+                            <h2 className="about-h2">
+                              <span>About</span>
+                            </h2>
+                          </div>
                         </div>
                       </header>
                       <div className="company-description">
                         <h3>
-                          <span>{asset.description}</span>
+                          <span className="company-span">{asset.description}</span>
                         </h3>
                       </div>
                       <div className="info-grid">
