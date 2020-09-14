@@ -289,7 +289,8 @@ table {
     }
 }
 
-.splash-nav #logo:visited {
+#logo:visited,
+#logo:link {
   color: black;
 }
 
