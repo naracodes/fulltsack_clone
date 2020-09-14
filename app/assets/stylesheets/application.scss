@@ -1992,7 +1992,8 @@ table {
 }
 
 //about section
-.about-section {
+.about-section,
+.related-lists-section {
   margin-bottom: 60px;
   display: block;
   box-sizing: border-box;
@@ -2000,18 +2001,21 @@ table {
       margin-bottom: 24px;
       box-sizing: border-box;
     }
-    .about-div {
+    .about-div,
+    .related-lists-div {
       border-bottom: 1px solid rgb(228, 233, 237);
       padding-bottom: 16px;
       display: flex;
       align-items: center;
     }
-    .about-div-inner {
+    .about-div-inner,
+    .related-lists-div-inner {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-grow: 1;
-        .about-h2 {
+        .about-h2,
+        .related-lists-h2 {
           display: flex;
           margin: 0;
           align-items: center;
@@ -2073,4 +2077,29 @@ table {
   font-weight: 40;
   line-height: 20px;
   letter-spacing: -0.1px;
+}
+
+.list-buttons {
+  margin-bottom: -8px;
+  box-sizing: border-box;
+  height: 44px;
+    .button-one {
+      margin-bottom: 8px;
+      margin-right: 8px;
+      box-sizing: border-box;
+      border: 1px solid rgb(228, 233, 237);
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-radius: 20px;
+      height: 36px;
+      padding-right: 16px;
+      box-sizing: border-box;
+      width: 159px;
+        span {
+          font-size: 13px;
+          line-height: 20px;
+          letter-spacing: -0.1px;
+        }
+    }
 }

@@ -385,47 +385,26 @@ class AssetShow extends React.Component {
                         </div>
                       </div>
                     </section>
-                    <section className="related-lists"></section>
+                    <section className="related-lists-section">
+                      <header className="related-lists-heading">
+                        <div className="related-lists-div">
+                          <div className="related-lists-div-inner">
+                            <h2 className="related-lists-h2">
+                              <span>Related Lists</span>
+                            </h2>
+                          </div>
+                        </div>
+                      </header>
+                      <div className="list-buttons">
+                        <div className="button-one">
+                            <span>100 Most Popular</span>
+                        </div>
+                      </div>
+                    </section>
                     <section className="asset-news"></section>
                     <section className="analyst-ratings"></section>
                     <section className="earnings"></section>
                     <section className="history"></section>
-                    <div className="about">
-                      <label className="employees">
-                        Employees
-                        <div>{asset.employees}</div>
-                      </label>
-                      <label className="hq">
-                        Headquarters
-                        <div>
-                          {asset.city}, {asset["state"]}
-                        </div>
-                      </label>
-                      <label className="founded">
-                        Founded
-                        <div>????</div>
-                      </label>
-                      <label className="market-cap">
-                        Market Cap
-                        <div>{asset.marketCap}</div>
-                      </label>
-                      <label className="pe-ratio">
-                        Price-Earning Ratio
-                        <div>{asset.peRatio}</div>
-                      </label>
-                      <label className="dividend">
-                        Dividend Yield
-                        <div>
-                          {!asset.dividendYield ? "-" : asset.dividendYield}
-                        </div>
-                      </label>
-                      <label className="avg-vol">
-                        Average Volume
-                        <div>{asset.avgTotalVolume}</div>
-                      </label>
-                    </div>
-
-                    <div className="collections">Collections placeholder</div>
 
                     {/* <AssetNewsIndexContainer className="asset-news-stand" companyName={asset.asset_name} /> */}
                     {/* <AssetNewsIndexContainer companyName={asset.asset_name} /> */}
