@@ -10,7 +10,7 @@ const newsReducer = (oldState = {}, action) => {
             return action.allNews;
         case RECEIVE_ASSET_NEWS:
             debugger
-            return Object.assign({}, nextState, action.assetNews.articles);
+            return Object.assign({}, nextState, action.assetNews);
         default:
             return oldState;
     }

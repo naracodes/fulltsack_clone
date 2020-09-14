@@ -24,9 +24,9 @@ export const fetchAllNews = () => dispatch => {
     })
 }
 
-export const fetchAssetNews = companyName => dispatch => {
+export const fetchAssetNews = ticker => dispatch => {
     debugger
-    return NewsAPIUtil.fetchAssetNews(companyName).then(assetNews => {
+    return NewsAPIUtil.fetchAssetNews(ticker).then(assetNews => {
         debugger
         return dispatch(receiveAssetNews(assetNews));
     })

@@ -39,8 +39,8 @@ export const mdp = dispatch => {
         addAssetToWatchlist: (asset, currentUser) => dispatch(addAssetToWatchlist(asset, currentUser)),
         deleteAssetFromWatchlist: (asset, currentUser) => dispatch(deleteAssetFromWatchlist(asset, currentUser)),
         fetchCompanyInfo: ticker => dispatch(fetchCompanyInfo(ticker)),
-        fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),fetchAssetNews: (companyName) => dispatch(fetchAssetNews(companyName)),
-        fetchAssetNews: (companyName) => dispatch(fetchAssetNews(companyName)),
+        fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
+        fetchAssetNews: (ticker) => dispatch(fetchAssetNews(ticker)),
         logout: () => dispatch(logout()),
     }
 }

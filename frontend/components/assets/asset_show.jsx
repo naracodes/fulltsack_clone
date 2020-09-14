@@ -70,8 +70,8 @@ class AssetShow extends React.Component {
       fetchAsset(ticker),
       fetchIntraday(ticker),
     ]).then((response) => {
-      const companyName = response[1].asset.companyName.split(",")[0];
-      fetchAssetNews(companyName);
+      // const companyName = response[1].asset.companyName.split(",")[0];
+      fetchAssetNews(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
   }
