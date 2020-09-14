@@ -1818,7 +1818,7 @@ table {
   overflow: hidden;
   box-sizing: border-box;
   height: 36px;
-    button {
+    button,input {
       display: flex;
       width: 100%;
       position: relative;
@@ -1827,8 +1827,17 @@ table {
       background-color: transparent;
       border: none;
       border-bottom: 1px solid transparent;
-      cursor: pointer;
       height: 36px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+    input {
+      text-align: right;
+      padding-right: 12px;
+      padding-left: 12px;
+      text-indent: 0px;
     }
     
     .text {
@@ -1839,5 +1848,63 @@ table {
       font-size: 13px;
       line-height: 14.95px;
       letter-spacing: normal;
+      margin-right: 10px;
+    }
+}
+
+.amount-shares {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+.invest-option-input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+    input {
+      border: 1px solid darkgray;
+      box-sizing: border-box;
+      height: 36px;
+      padding-left: 12px;
+      padding-right: 12px;
+      width: 136px;
+      border-radius: 4px;
+      display: block;
+      text-align: right;
+      background-color: rgb(242, 238, 238);
+    }
+    input:focus {
+      outline: 0;
+      border: 1px solid rgb(255, 80, 0);
+    }
+    input:hover {
+      background-color: transparent;
+    }
+}
+
+.est-qt-shares {
+  border-top: 1px solid lightgray;
+  box-sizing: border-box;
+    .est-qt-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      box-sizing: border-box;
+        span {
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+        }
+        .est-qt-text {
+          margin-right: 12px;
+          min-width: 48px;
+          white-space: nowrap;
+        }
     }
 }

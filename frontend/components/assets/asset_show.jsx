@@ -382,8 +382,30 @@ class AssetShow extends React.Component {
                                 </div>
                               </div>
                             </div>
-                            <div></div>
-                            <div></div>
+                            <div className="selection">
+                              <label>Amount</label>
+                              <div className="choice">
+                                <div className="inner-choice">
+                                  <div className="combo-box">
+                                    <div className="invest-option-input">
+                                      <input type="text"
+                                      placeholder="$0.00"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="est-qt-shares">
+                              <div className="est-qt-content">
+                                <div className="est-qt-text">
+                                  <span>Est. Quantity</span>
+                                </div>
+                                <div className="calculated-qt">
+                                  <span>num</span>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div></div>
