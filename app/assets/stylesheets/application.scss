@@ -2152,6 +2152,12 @@ table {
   max-width: 420px;
   overflow: hidden;
   box-sizing: border-box;
+    span {
+      color: rgb(121, 133, 139);
+      font-weight: 400;
+      line-height: 20px;
+      font-size: 13px;
+    }
 }
 
 .title-h3 {

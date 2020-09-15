@@ -36,11 +36,9 @@ class AssetShow extends React.Component {
   }
 
   handleLogOut(e) {
-    debugger
     e.preventDefault();
     this.props.logout()
       .then(() => {
-        debugger
         this.props.history.push('/login')
       })
   }
@@ -59,6 +57,7 @@ class AssetShow extends React.Component {
       fetchCompanyInfo,
       fetchIntraday,
       fetchAssetNews,
+      fetchRating
     } = this.props;
     const ticker =
       this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
@@ -72,6 +71,7 @@ class AssetShow extends React.Component {
     ]).then((response) => {
       // const companyName = response[1].asset.companyName.split(",")[0];
       fetchAssetNews(ticker);
+      fetchRating(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
   }
@@ -424,7 +424,7 @@ class AssetShow extends React.Component {
                                         {article.headline}
                                       </h3>
                                       <div>
-                                        <span>{article.summary.slice(0, 40)}...</span>
+                                        <span>{article.summary.slice(0, 59)}...</span>
                                       </div>
                                     </div>
                                   </div>
@@ -441,7 +441,9 @@ class AssetShow extends React.Component {
                         }
                       </div>
                     </section>
-                    <section className="analyst-ratings"></section>
+                    <section className="analyst-ratings">
+                      
+                    </section>
                     <section className="earnings"></section>
                     <section className="history"></section>
                   </div>

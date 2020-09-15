@@ -8,6 +8,7 @@ export const RECEIVE_ASSET_INTRADAY = "RECEIVE_ASSET_INTRADAY";
 export const RECEIVE_PRICE = "RECEIVE_PRICE";
 export const RECEIVE_COMPANY_INFO = "RECEIVE_COMPANY_INFO";
 export const RECEIVE_NEWS = "RECEIVE_NEWS";
+export const RECEIVE_RATING = "RECEIVE_RATING";
 export const CLEAR_PRICE = "CLEAR_PRICE";
 export const CLEAR_ASSET = "CLEAR_ASSET";
 
@@ -56,12 +57,14 @@ export const receiveNews = (news, ticker) => {
     }
 }
 
-// export const receiveQuoteAndNews = (quoteAndNews) => {
-//     return {
-//         type: RECEIVE_ASSET_INTRADAY,
-//         quoteAndNews,
-//     }
-// }
+export const receiveRating = (rating, ticker) => {
+    debugger
+    return {
+        type: RECEIVE_RATING,
+        rating,
+        ticker,
+    }
+}
 
 export const receivePrice = assetPrice => {
     return {
@@ -88,10 +91,6 @@ export const clearAsset = () => {
         type: CLEAR_ASSET,
     }
 }
-
-// export const fetchStocks = () => {
-
-// }
 
 export const fetchAssets = () => dispatch => {
     return AssetAPIUtil.fetchAssets().then(assets => {
@@ -123,10 +122,10 @@ export const fetchIntraday = ticker => dispatch => {
     })
 }
 
-// export const fetchQuoteAndNews = ticker => dispatch => {
-//     debugger
-//     return AssetAPIUtil.fetchQuoteAndNew(ticker).then((quoteAndNews) => {
-//         debugger
-//         return dispatch(receiveQuoteAndNews(quoteAndNews));
-//     })
-// }
+export const fetchRating = ticker => dispatch => {
+    debugger
+    return AssetAPIUtil.fetchRating(ticker).then(rating => {
+        debugger
+        return dispatch(receiveRating(rating, ticker));
+    })
+}

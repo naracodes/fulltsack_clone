@@ -7,6 +7,7 @@ import {
   fetchPrice,
   fetchCompanyInfo,
   fetchIntraday,
+  fetchRating
 } from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist } from '../../actions/watchlist_actions';
 import { fetchAssetNews } from "../../actions/news_actions";
@@ -40,6 +41,7 @@ export const mdp = dispatch => {
         fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
         fetchAssetNews: (ticker) => dispatch(fetchAssetNews(ticker)),
         logout: () => dispatch(logout()),
+        fetchRating: ticker => dispatch(fetchRating(ticker)),
     }
 }
 

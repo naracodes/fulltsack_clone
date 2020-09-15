@@ -21,10 +21,6 @@ export const fetchPrice = ticker => {
     })
 }
 
-// export const fetchMultipleStocks = (...tickers) => {
-    
-// }
-
 export const fetchMultipleAssets = (tickersArr) => {
     const tickers = tickersArr.join(',')
     return $.ajax({
@@ -69,30 +65,10 @@ export const fetchCompanyInfo = ticker => {
     })
 }
 
-// export const fetchQuoteAndNews = ticker => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/batch?types=quote,news&range=1m&last=1&token=Tpk_9cc6c16a40494338943d728d111e9998`,
-//     })
-// }
-// export const fetchNews = ticker => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/news/last/1?token=Tsk_498db2929da24682a573da9403ff8a2a`,
-//     })
-// }
-
-
-// const data = (ticker, ...tickers) => {
-//     // return arguments[0]
-//     // return [...arguments][0]
-//     // return [ticker, ...tickers].reduce((acc, el) => acc + ',' + el);
-//     if (Array.isArray(ticker)) {
-//         return ticker.reduce((acc, el) => acc + ',' + el);
-//     } else {
-//         return [ticker, ...tickers].reduce((acc, el) => acc + ',' + el);
-//     }
-// }
-
-// console.log(data(['fb', 'aapl']))
-// console.log(data('fb', 'aapl'))
+export const fetchRating = ticker => {
+    debugger
+    return $.ajax({
+      method: "GET",
+      url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tsk_498db2929da24682a573da9403ff8a2a`,
+    });
+}
