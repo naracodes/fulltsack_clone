@@ -98,7 +98,7 @@ class AssetShow extends React.Component {
   }
 
   render() {
-    const { asset, watchlistArr, assetNews, currentUser } = this.props;
+    const { asset, watchlistArr, assetNews, currentUser, rating } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     if (!asset || !watchlistArr) {
       return null;
@@ -441,8 +441,28 @@ class AssetShow extends React.Component {
                         }
                       </div>
                     </section>
-                    <section className="analyst-ratings">
-                      
+                    <section className="rating-section">
+                      <div className="rating-heading">
+                        <div className="rating-div">
+                          <div className="rating-div-inner">
+                            <h2 className="rating-h2">
+                              <span>Analyst Ratings</span>
+                            </h2>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="left-rating">
+                            <div className="rating-circle">
+                              <h2>{(assetRating.ratingBuy + assetRating.ratingOverweight) / (assetRating.ratingBuy + assetRating.ratingOverweight + assetRating.ratingHold + assetRating.ratingUnderweight + assetRating.ratingSell + assetRating.ratingNone)}</h2>
+                      <span>{console.log(assetRating)}</span>
+                            </div>
+                          </div>
+                          <div className="rignt-rating">
+
+                          </div>
+                        </div>
+                      </div>
+
                     </section>
                     <section className="earnings"></section>
                     <section className="history"></section>
