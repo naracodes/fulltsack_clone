@@ -55728,3 +55728,234 @@ Completed 200 OK in 43ms (Views: 11.7ms | ActiveRecord: 27.3ms)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:10:00.228916"], ["updated_at", "2020-09-17 19:10:00.228916"], ["ticker", "GOOGL"], ["quantity", 2], ["cost_per_share", 100.0]]
   [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (12.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:42:06.249341"], ["updated_at", "2020-09-17 19:42:06.249341"], ["ticker", "CPRI"], ["quantity", 2], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:42:06.262850"], ["updated_at", "2020-09-17 19:42:06.262850"], ["ticker", "LRCX"], ["quantity", 1], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:42:06.264108"], ["updated_at", "2020-09-17 19:42:06.264108"], ["ticker", "AAPL"], ["quantity", 3], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:42:06.265281"], ["updated_at", "2020-09-17 19:42:06.265281"], ["ticker", "GPRO"], ["quantity", 1], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:42:06.266416"], ["updated_at", "2020-09-17 19:42:06.266416"], ["ticker", "LRCX"], ["quantity", 2], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:42:06.267575"], ["updated_at", "2020-09-17 19:42:06.267575"], ["ticker", "GPRO"], ["quantity", 1], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:42:06.268713"], ["updated_at", "2020-09-17 19:42:06.268713"], ["ticker", "DAL"], ["quantity", 3], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:48:16.737916"], ["updated_at", "2020-09-17 19:48:16.737916"], ["ticker", "MSFT"], ["quantity", 3], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:48:16.745013"], ["updated_at", "2020-09-17 19:48:16.745013"], ["ticker", "DIS"], ["quantity", 1], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:48:16.746209"], ["updated_at", "2020-09-17 19:48:16.746209"], ["ticker", "GE"], ["quantity", 3], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:48:16.747377"], ["updated_at", "2020-09-17 19:48:16.747377"], ["ticker", "CPRI"], ["quantity", 2], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:48:16.748582"], ["updated_at", "2020-09-17 19:48:16.748582"], ["ticker", "LRCX"], ["quantity", 2], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:48:16.749729"], ["updated_at", "2020-09-17 19:48:16.749729"], ["ticker", "F"], ["quantity", 3], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["transaction_amount", 0.0], ["created_at", "2020-09-17 19:48:16.750907"], ["updated_at", "2020-09-17 19:48:16.750907"], ["ticker", "ACB"], ["quantity", 3], ["cost_per_share", 250.0]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Deposit&transaction_amount=2000.00" for ::1 at 2020-09-17 16:00:21 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Deposit", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+No template found for Api::TransactionsController#create, rendering head :no_content
+Completed 204 No Content in 167ms (ActiveRecord: 5.8ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Deposit&transaction_amount=2000.00" for ::1 at 2020-09-17 16:00:41 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Deposit", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+No template found for Api::TransactionsController#create, rendering head :no_content
+Completed 204 No Content in 170ms (ActiveRecord: 5.8ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Deposit&transaction_amount=2000.00" for ::1 at 2020-09-17 16:01:42 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Deposit", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+No template found for Api::TransactionsController#create, rendering head :no_content
+Completed 204 No Content in 128ms (ActiveRecord: 8.9ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Deposit&transaction_amount=2000.00" for ::1 at 2020-09-17 16:02:14 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Deposit", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Unpermitted parameter: :format
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ (byebug):1
+Unpermitted parameter: :format
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ (byebug):1
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+No template found for Api::TransactionsController#create, rendering head :no_content
+Completed 204 No Content in 58321ms (ActiveRecord: 8.7ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Deposit&transaction_amount=2000.00" for ::1 at 2020-09-17 16:03:23 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Deposit", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["transaction_amount", 2000.0], ["created_at", "2020-09-17 20:03:30.905543"], ["updated_at", "2020-09-17 20:03:30.905543"], ["ticker", "GOOGL"]]
+  ↳ (byebug):1
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ (byebug):1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ (byebug):1
+Completed 500 Internal Server Error in 60161ms (ActiveRecord: 13.3ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:24:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Deposit&transaction_amount=2000.00" for ::1 at 2020-09-17 16:07:28 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Deposit", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["transaction_amount", 2000.0], ["created_at", "2020-09-17 20:07:31.116869"], ["updated_at", "2020-09-17 20:07:31.116869"], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:25
+  [1m[36mPortfolio Create (5.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 2876.0], ["date", "2020-09-17 20:07:32.173104"], ["created_at", "2020-09-17 20:07:32.173751"], ["updated_at", "2020-09-17 20:07:32.173751"]]
+  ↳ app/controllers/api/transactions_controller.rb:25
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:25
+Completed 200 OK in 40756ms (Views: 0.4ms | ActiveRecord: 29.9ms)
+
+
