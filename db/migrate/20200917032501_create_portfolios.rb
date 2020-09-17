@@ -5,7 +5,6 @@ class CreatePortfolios < ActiveRecord::Migration[5.2]
       t.float :balance, null: false
       t.datetime :date, null: false
 
-
       t.timestamps
     end
     add_index :portfolios, :user_id
