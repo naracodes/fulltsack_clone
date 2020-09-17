@@ -11,6 +11,7 @@ require 'date'
 
 # Asset.destroy_all
 # Watchlist.destroy_all
+Transaction.destroy_all
 
 IEX::Api.configure do |config|
     config.publishable_token = 'Tpk_9cc6c16a40494338943d728d111e9998' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
@@ -23,7 +24,7 @@ client = IEX::Api::Client.new(
 )
 
 # # -------
-# demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
+demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
 
 # demo_stocks.each do |demo_stock|
 #     stock = client.quote(demo_stock)
@@ -94,14 +95,29 @@ client = IEX::Api::Client.new(
 
 # # BUY
 # # WITHDRAW FROM CASH, CONVERT INTO STOCK
-# Transaction.create({
-#     user_id: 46,
-#     ticker: "FB",
-#     transaction_type: "Buy",
-#     transaction_amount: ,
-#     quantity: 3,
-#     cost_per_share: 250.00,
-# })
+
+transaction_types = ["Buy", "Sell"]
+stock_qt = [1, 2, 3]
+
+7.times do
+    Transaction.create({
+        user_id: 46,
+        ticker: demo_stocks.sample,
+        transaction_type: transaction_types.sample,
+        transaction_amount: 0,
+        quantity: stock_qt.sample,
+        cost_per_share: 250.00,
+    })
+end
+
+    Transaction.create({
+        user_id: 46,
+        ticker: "GOOGL",
+        transaction_type: "Buy",
+        transaction_amount: 0,
+        quantity: 2,
+        cost_per_share: 100.00,
+    })
 
 # # SELL
 # # CONVERT INTO CASH AND DEPOSIT AS CASH
@@ -122,13 +138,13 @@ client = IEX::Api::Client.new(
 #     })
 # end
 
-balance_init = 1000
-subtractor = (1..20).to_a
+# balance_init = 1000
+# subtractor = (1..20).to_a
 
-10.times do
-    Portfolio.create({
-        user_id: 46,
-        balance: balance_init -= subtractor.sample,
-        date: DateTime.now()
-    })
-end
+# 10.times do
+#     Portfolio.create({
+#         user_id: 46,
+#         balance: balance_init -= subtractor.sample,
+#         date: DateTime.now()
+#     })
+# end
