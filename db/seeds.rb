@@ -110,14 +110,14 @@ stock_qt = [1, 2, 3]
     })
 end
 
-    Transaction.create({
-        user_id: 46,
-        ticker: "GOOGL",
-        transaction_type: "Buy",
-        transaction_amount: 0,
-        quantity: 2,
-        cost_per_share: 100.00,
-    })
+    # Transaction.create({
+    #     user_id: 46,
+    #     ticker: "GOOGL",
+    #     transaction_type: "Buy",
+    #     transaction_amount: 0,
+    #     quantity: 2,
+    #     cost_per_share: 100.00,
+    # })
 
 # # SELL
 # # CONVERT INTO CASH AND DEPOSIT AS CASH

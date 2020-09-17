@@ -3,7 +3,8 @@ require 'date'
 class Api::TransactionsController < ApplicationController
 
     def index
-        @transactions = Transactions.where('user_id = ?', current_user.id)
+        # @transactions = Transaction.where('user_id = ?', current_user.id)
+        @transactions = Transaction.all
         render :index
     end
 
@@ -13,10 +14,55 @@ class Api::TransactionsController < ApplicationController
     end
 
     def create
-        @current_user = current_user
         @transaction_record = Transaction.new(transaction_params)
+        @current_user_id = @transaction_record.user_id
         if @transaction_record.save
+            case @transaction_record.transaction_type
+            when "Deposit"
+                last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
+                @portfo_record = Portfolio.create({
+                    user_id: @current_user_id,
+                    balance: last_cash_balance += @transaction_record.transaction_amount,
+                    date: DateTime.now()
+                })
+                render json: { data: @portfo_record }
+            when "Withdraw"
+                last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
+                Portfolio.create({
+                    user_id: @current_user_id,
+                    balance: last_cash_balance -= @transaction_record.transaction_amount,
+                    date: DateTime.now()
+                })
+                render json: { data: @portfo_record }
+            when "Buy"
+                last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
+                @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
+                
+                Portfolio.create({
+                    user_id: @current_user_id,
+                    balance: last_cash_balance -= @transaction_record.transaction_amount,
+                    date: DateTime.now()
+                })
 
+                #stocks owned
+                @user_holdings = Transaction.where(user_id: @current_user_id, transaction_type: "Buy")
+                @portfo_snapshot = Hash.new()
+                @user_holdings.pluck(:ticker).uniq.each do |holding|
+                    average_cost = @user_holdings.where()
+                    @portfo_snapshot[]
+                end
+                
+                render json: { owned: @user_holdings, transaction: @transaction_record }
+                
+            when "Sell"
+                @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
+            else
+                "Not a valid transaction type"
+            end
+
+            # debugger
+            # @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
+            # render json: { data: @transaction_record }
         end
 
     end
