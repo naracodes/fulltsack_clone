@@ -16,9 +16,7 @@ class Api::TransactionsController < ApplicationController
     def create
         @transaction_record = Transaction.new(transaction_params)
         @current_user_id = @transaction_record.user_id
-        debugger
         if @transaction_record.save
-            debugger
             case @transaction_record.transaction_type
             when "Deposit"
                 last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
@@ -27,9 +25,7 @@ class Api::TransactionsController < ApplicationController
                     balance: last_cash_balance += @transaction_record.transaction_amount,
                     date: DateTime.now()
                 })
-                debugger
                 render json: { data: @portfo_record }
-                # @current_user.buying_power += @transaction.transaction_amount
             when "Withdraw"
                 last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                 Portfolio.create({
@@ -37,7 +33,7 @@ class Api::TransactionsController < ApplicationController
                     balance: last_cash_balance -= @transaction_record.transaction_amount,
                     date: DateTime.now()
                 })
-                # @current_user.buying_power -= @transaction.transaction_amount
+                render json: { data: @portfo_record }
             when "Buy"
                 last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                 @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
@@ -50,7 +46,13 @@ class Api::TransactionsController < ApplicationController
 
                 #stocks owned
                 @user_holdings = Transaction.where(user_id: @current_user_id, transaction_type: "Buy")
-                render json: { data: @user_holdings }
+                @portfo_snapshot = Hash.new()
+                @user_holdings.pluck(:ticker).uniq.each do |holding|
+                    average_cost = @user_holdings.where()
+                    @portfo_snapshot[]
+                end
+                
+                render json: { owned: @user_holdings, transaction: @transaction_record }
                 
             when "Sell"
                 @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)

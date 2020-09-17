@@ -55959,3 +55959,116 @@ Unpermitted parameter: :format
 Completed 200 OK in 40756ms (Views: 0.4ms | ActiveRecord: 29.9ms)
 
 
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=2000.00" for ::1 at 2020-09-17 16:38:15 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 2000.0], ["created_at", "2020-09-17 20:38:15.620275"], ["updated_at", "2020-09-17 20:38:15.620275"], ["ticker", "GOOGL"], ["quantity", 2], ["cost_per_share", 100.0]]
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[36mTransaction Update (0.4ms)[0m  [1m[33mUPDATE "transactions" SET "transaction_amount" = $1, "updated_at" = $2 WHERE "transactions"."id" = $3[0m  [["transaction_amount", 200.0], ["updated_at", "2020-09-17 20:38:15.637645"], ["id", 76]]
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 2676.0], ["date", "2020-09-17 20:38:15.644536"], ["created_at", "2020-09-17 20:38:15.645070"], ["updated_at", "2020-09-17 20:38:15.645070"]]
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/controllers/api/transactions_controller.rb:49
+Completed 200 OK in 44ms (Views: 1.4ms | ActiveRecord: 26.2ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=2000.00" for ::1 at 2020-09-17 16:38:37 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 2000.0], ["created_at", "2020-09-17 20:38:37.384979"], ["updated_at", "2020-09-17 20:38:37.384979"], ["ticker", "GOOGL"], ["quantity", 2], ["cost_per_share", 100.0]]
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[36mTransaction Update (0.3ms)[0m  [1m[33mUPDATE "transactions" SET "transaction_amount" = $1, "updated_at" = $2 WHERE "transactions"."id" = $3[0m  [["transaction_amount", 200.0], ["updated_at", "2020-09-17 20:38:37.398324"], ["id", 77]]
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 2476.0], ["date", "2020-09-17 20:38:37.399416"], ["created_at", "2020-09-17 20:38:37.399802"], ["updated_at", "2020-09-17 20:38:37.399802"]]
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "transactions"."ticker" FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/controllers/api/transactions_controller.rb:48
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=2000.00" for ::1 at 2020-09-17 16:43:22 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"2000.00"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "transaction_amount", "created_at", "updated_at", "ticker", "quantity", "cost_per_share") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["transaction_amount", 2000.0], ["created_at", "2020-09-17 20:43:22.581579"], ["updated_at", "2020-09-17 20:43:22.581579"], ["ticker", "AAPL"], ["quantity", 2], ["cost_per_share", 100.0]]
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:19
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[36mTransaction Update (0.2ms)[0m  [1m[33mUPDATE "transactions" SET "transaction_amount" = $1, "updated_at" = $2 WHERE "transactions"."id" = $3[0m  [["transaction_amount", 200.0], ["updated_at", "2020-09-17 20:43:22.594937"], ["id", 78]]
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 2276.0], ["date", "2020-09-17 20:43:22.595923"], ["created_at", "2020-09-17 20:43:22.596286"], ["updated_at", "2020-09-17 20:43:22.596286"]]
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/controllers/api/transactions_controller.rb:49
+Completed 200 OK in 27ms (Views: 1.3ms | ActiveRecord: 12.6ms)
+
+
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" IS NULL AND "transactions"."transaction_type" = $1[0m  [["transaction_type", "Buy"]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2 AND "transactions"."ticker" = $3[0m  [["user_id", 46], ["transaction_type", "Buy"], ["ticker", "GOOGL"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "transactions"."cost_per_share" FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2 AND "transactions"."ticker" = $3[0m  [["user_id", 46], ["transaction_type", "Buy"], ["ticker", "GOOGL"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "transactions"."cost_per_share" FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2 AND "transactions"."ticker" = $3[0m  [["user_id", 46], ["transaction_type", "Buy"], ["ticker", "GOOGL"]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 46]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 11]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 46]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 11]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 46]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 11]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
