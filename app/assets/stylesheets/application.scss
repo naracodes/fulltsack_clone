@@ -1365,10 +1365,11 @@ table {
 
 .col-2 {
   margin-right: 0;
-  flex: 0 0 27.777778%;
+  flex: 0 0 27.77778%;
   display: block;
   padding-left: 6px;
   padding-right: 6px;
+  box-sizing: border-box;
 }
 
 .portfolio-graph {
@@ -1549,7 +1550,7 @@ table {
   padding-right: 6px;
   box-sizing: border-box;
 }
-.row:last-child {
+.row > *:last-child {
   margin-right: 0;
 }
 
@@ -1576,7 +1577,7 @@ table {
   box-shadow: rgba(0, 0, 0, 0.06) 0px 12px 24px;
   display: block;
   font-size: 13px;
-  height: 100vh;
+  height: 100%;
   resize: vertical;
   overflow: auto;
 }
@@ -1751,6 +1752,7 @@ table {
   box-sizing: border-box;
   height: 36px;
     button,input {
+      outline: none;
       display: flex;
       width: 100%;
       position: relative;
