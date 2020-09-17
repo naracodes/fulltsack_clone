@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'iex-ruby-client'
+require 'date'
 
 # Asset.destroy_all
 # Watchlist.destroy_all
@@ -21,97 +22,97 @@ client = IEX::Api::Client.new(
   endpoint: 'https://sandbox.iexapis.com/v1'
 )
 
-# -------
-demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
+# # -------
+# demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
 
-demo_stocks.each do |demo_stock|
-    stock = client.quote(demo_stock)
-    Asset.create({
-        ticker: stock.symbol,
-        asset_name: stock.company_name,
-        latest_price: stock.latest_price,
-        })
-    end
-# -------
+# demo_stocks.each do |demo_stock|
+#     stock = client.quote(demo_stock)
+#     Asset.create({
+#         ticker: stock.symbol,
+#         asset_name: stock.company_name,
+#         latest_price: stock.latest_price,
+#         })
+#     end
+# # -------
 
-demo_watchlist_assets_46 = ['F', 'GE', 'AAL']
-demo_watchlist_assets_48 = ['LRCX', 'REAL', 'CPRI']
+# demo_watchlist_assets_46 = ['F', 'GE', 'AAL']
+# demo_watchlist_assets_48 = ['LRCX', 'REAL', 'CPRI']
 
-demo_watchlist_assets_46.each do |demo_watchlist_asset|
-    stock = client.quote(demo_watchlist_asset)
-    Watchlist.create({
-        email: 'demo@demo.com',
-        ticker: demo_watchlist_asset,
-        asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
-        asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name,
-        latest_price: stock.latest_price
-        })
-end
-
-demo_user = User.create({
-    email: 'demo@demo.com',
-    password: 'demopassworddemo',
-    id: 12345,
-})
-    
-# demo_watchlist_assets_48.each do |demo_watchlist_asset|
+# demo_watchlist_assets_46.each do |demo_watchlist_asset|
 #     stock = client.quote(demo_watchlist_asset)
 #     Watchlist.create({
-#         user_id: 48,
+#         email: 'demo@demo.com',
 #         ticker: demo_watchlist_asset,
 #         asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
 #         asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name,
 #         latest_price: stock.latest_price
-#     })
+#         })
 # end
 
-Transaction.create({
-    user_id: 46,
-    asset_id: ,
-    transaction_type: "Deposit",
-    transaction_amount: 2000,
-    quantity: 1,
-})
+# demo_user = User.create({
+#     email: 'demo@demo.com',
+#     password: 'demopassworddemo',
+#     id: 12345,
+# })
+    
+# # demo_watchlist_assets_48.each do |demo_watchlist_asset|
+# #     stock = client.quote(demo_watchlist_asset)
+# #     Watchlist.create({
+# #         user_id: 48,
+# #         ticker: demo_watchlist_asset,
+# #         asset_id: Asset.find_by(ticker: demo_watchlist_asset).id,
+# #         asset_name: Asset.find_by(ticker: demo_watchlist_asset).asset_name,
+# #         latest_price: stock.latest_price
+# #     })
+# # end
 
-# BANK DEPOSIT
-Transaction.create({
-    user_id: 46,
-    asset_id: ,
-    transaction_type: "Deposit",
-    transaction_amount: 1000,
-    quantity: 1,
-})
+# Transaction.create({
+#     user_id: 46,
+#     asset_id: ,
+#     transaction_type: "Deposit",
+#     transaction_amount: 2000,
+#     quantity: 1,
+# })
 
-# BANK WITHDRAW
-Transaction.create({
-    user_id: 46,
-    asset_id: ,
-    transaction_type: "Withdraw",
-    transaction_amount: 500,
-    quantity: 1,
-})
+# # BANK DEPOSIT
+# Transaction.create({
+#     user_id: 46,
+#     asset_id: ,
+#     transaction_type: "Deposit",
+#     transaction_amount: 1000,
+#     quantity: 1,
+# })
 
-# BUY
-# WITHDRAW FROM CASH, CONVERT INTO STOCK
-Transaction.create({
-    user_id: 46,
-    ticker: "FB",
-    transaction_type: "Buy",
-    transaction_amount: ,
-    quantity: 3,
-    cost_per_share: 250.00,
-})
+# # BANK WITHDRAW
+# Transaction.create({
+#     user_id: 46,
+#     asset_id: ,
+#     transaction_type: "Withdraw",
+#     transaction_amount: 500,
+#     quantity: 1,
+# })
 
-# SELL
-# CONVERT INTO CASH AND DEPOSIT AS CASH
-Transaction.create({
-    user_id: 46,
-    ticker: ,
-    transaction_type: "Sell",
-    transaction_amount: ,
-    quantity: 2,
-    cost_per_share: 260.00,
-})
+# # BUY
+# # WITHDRAW FROM CASH, CONVERT INTO STOCK
+# Transaction.create({
+#     user_id: 46,
+#     ticker: "FB",
+#     transaction_type: "Buy",
+#     transaction_amount: ,
+#     quantity: 3,
+#     cost_per_share: 250.00,
+# })
+
+# # SELL
+# # CONVERT INTO CASH AND DEPOSIT AS CASH
+# Transaction.create({
+#     user_id: 46,
+#     ticker: ,
+#     transaction_type: "Sell",
+#     transaction_amount: ,
+#     quantity: 2,
+#     cost_per_share: 260.00,
+# })
 
 # 10.times do
 #     Product.create({
@@ -121,3 +122,13 @@ Transaction.create({
 #     })
 # end
 
+balance_init = 1000
+subtractor = (1..20).to_a
+
+10.times do
+    Portfolio.create({
+        user_id: 46,
+        balance: balance_init -= subtractor.sample,
+        date: DateTime.now()
+    })
+end

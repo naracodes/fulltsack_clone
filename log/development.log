@@ -54994,3 +54994,90 @@ Migrating to CreatePortfolios (20200917032501)
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 46]]
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id = 46)[0m
+Started GET "/" for ::1 at 2020-09-17 13:13:25 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (42.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (92.0ms)
+Completed 200 OK in 1672ms (Views: 1594.9ms | ActiveRecord: 75.3ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-17 13:13:27 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (23.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (32.2ms)
+Completed 200 OK in 43ms (Views: 11.7ms | ActiveRecord: 27.3ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (19.9ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 980.0], ["date", "2020-09-17 17:36:07.142427"], ["created_at", "2020-09-17 17:36:07.150754"], ["updated_at", "2020-09-17 17:36:07.150754"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 969.0], ["date", "2020-09-17 17:36:07.172157"], ["created_at", "2020-09-17 17:36:07.172817"], ["updated_at", "2020-09-17 17:36:07.172817"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 966.0], ["date", "2020-09-17 17:36:07.174191"], ["created_at", "2020-09-17 17:36:07.174645"], ["updated_at", "2020-09-17 17:36:07.174645"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 961.0], ["date", "2020-09-17 17:36:07.175759"], ["created_at", "2020-09-17 17:36:07.176131"], ["updated_at", "2020-09-17 17:36:07.176131"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 941.0], ["date", "2020-09-17 17:36:07.176939"], ["created_at", "2020-09-17 17:36:07.177255"], ["updated_at", "2020-09-17 17:36:07.177255"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 926.0], ["date", "2020-09-17 17:36:07.178091"], ["created_at", "2020-09-17 17:36:07.178394"], ["updated_at", "2020-09-17 17:36:07.178394"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 914.0], ["date", "2020-09-17 17:36:07.179240"], ["created_at", "2020-09-17 17:36:07.179556"], ["updated_at", "2020-09-17 17:36:07.179556"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 896.0], ["date", "2020-09-17 17:36:07.180381"], ["created_at", "2020-09-17 17:36:07.180713"], ["updated_at", "2020-09-17 17:36:07.180713"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 893.0], ["date", "2020-09-17 17:36:07.181566"], ["created_at", "2020-09-17 17:36:07.181954"], ["updated_at", "2020-09-17 17:36:07.181954"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["balance", 876.0], ["date", "2020-09-17 17:36:07.182964"], ["created_at", "2020-09-17 17:36:07.183345"], ["updated_at", "2020-09-17 17:36:07.183345"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "portfolios"[0m
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m

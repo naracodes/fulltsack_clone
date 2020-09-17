@@ -1,3 +1,5 @@
+require 'date'
+
 class Api::TransactionsController < ApplicationController
 
     def index
@@ -16,11 +18,34 @@ class Api::TransactionsController < ApplicationController
 
         case @transaction.type
         when "Deposit"
-            @current_user.buying_power += @transaction.transaction_amount
+            last_cash_balance = Portfolio.where(user_id: @current_user.id).last.balance
+            Portfolio.create({
+                user_id: @current_user.id,
+                balance: last_cash_balance += @transaction.transaction_amount,
+                date: DateTime.now()
+            })
+            # @current_user.buying_power += @transaction.transaction_amount
         when "Withdraw"
-            @current_user.buying_power -= @transaction.transaction_amount
+            last_cash_balance = Portfolio.where(user_id: @current_user.id).last.balance
+            Portfolio.create({
+                user_id: @current_user.id,
+                balance: last_cash_balance -= @transaction.transaction_amount,
+                date: DateTime.now()
+            })
+            # @current_user.buying_power -= @transaction.transaction_amount
         when "Buy"
-            @transaction.amount = transaction.quantity * transaction.cost_per_share
+            last_cash_balance = Portfolio.where(user_id: @current_user.id).last.balance
+            # set transaction amount manually (also total cost)
+            @transaction.transaction_amount = transaction.quantity * transaction.cost_per_share
+            
+            Portfolio.create({
+                user_id: @current_user.id,
+                balance: last_cash_balance -= @transaction.transaction_amount,
+                date: DateTime.now()
+            })
+
+            #stocks owned
+            
             
         when "Sell"
             
