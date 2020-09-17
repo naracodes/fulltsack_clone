@@ -1995,10 +1995,12 @@ table {
 .about-section,
 .related-lists-section,
 .asset-news-section,
-.rating-section {
+.rating-section,
+.earnings-section {
   margin-bottom: 60px;
   display: block;
   box-sizing: border-box;
+  width: 676px;
     header {
       margin-bottom: 24px;
       box-sizing: border-box;
@@ -2006,7 +2008,8 @@ table {
     .about-div,
     .related-lists-div,
     .asset-news-div,
-    .rating-div {
+    .rating-div,
+    .earnings-div {
       border-bottom: 1px solid rgb(228, 233, 237);
       padding-bottom: 16px;
       display: flex;
@@ -2015,7 +2018,8 @@ table {
     .about-div-inner,
     .related-lists-div-inner,
     .asset-news-div-inner,
-    .rating-div-inner {
+    .rating-div-inner,
+    .earnings-div-inner {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -2023,7 +2027,8 @@ table {
         .about-h2,
         .related-lists-h2,
         .asset-news-h2,
-        .rating-h2 {
+        .rating-h2,
+        .earnings-h2 {
           display: flex;
           margin: 0;
           align-items: center;
@@ -2186,26 +2191,26 @@ table {
     }
 }
 
-.rating-section .row > * {
-  padding-left: 6px;
-  padding-right: 6px;
-}
+// .rating-section .row > * {
+//   padding-left: 6px;
+//   padding-right: 6px;
+// }
 
-.left-rating {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  width: 218.222222px;
-}
+// .left-rating {
+//   display: flex;
+//   flex-shrink: 0;
+//   justify-content: center;
+//   width: 218.222222px;
+// }
 
-.rating-circle {
-  color: rgb(255, 80, 0);
-  background: rgba(255, 80, 0, 0.2);
-  border-radius: 67px;
-  display: flex;
-  flex-direction: column;
-  height: 134px;
-  justify-content: center;
-  width: 134px;
-  box-sizing: border-box;
-}
+// .rating-circle {
+//   color: rgb(255, 80, 0);
+//   background: rgba(255, 80, 0, 0.2);
+//   border-radius: 67px;
+//   display: flex;
+//   flex-direction: column;
+//   height: 134px;
+//   justify-content: center;
+//   width: 134px;
+//   box-sizing: border-box;
+// }

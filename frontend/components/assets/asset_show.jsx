@@ -61,7 +61,7 @@ class AssetShow extends React.Component {
     } = this.props;
     const ticker =
       this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
-    const companyName = this.props.asset.asset_name
+    const companyName = this.props.asset.asset_name !== undefined
       ? this.props.asset.asset_name.split(",")[0]
       : "";
     Promise.all([
@@ -71,7 +71,7 @@ class AssetShow extends React.Component {
     ]).then((response) => {
       // const companyName = response[1].asset.companyName.split(",")[0];
       fetchAssetNews(ticker);
-      fetchRating(ticker);
+      // fetchRating(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
   }
@@ -450,21 +450,27 @@ class AssetShow extends React.Component {
                             </h2>
                           </div>
                         </div>
-                        <div className="row">
+                        <div className="pending-row">
                           <div className="left-rating">
                             <div className="rating-circle">
-                              <h2>{(assetRating.ratingBuy + assetRating.ratingOverweight) / (assetRating.ratingBuy + assetRating.ratingOverweight + assetRating.ratingHold + assetRating.ratingUnderweight + assetRating.ratingSell + assetRating.ratingNone)}</h2>
-                      <span>{console.log(assetRating)}</span>
                             </div>
                           </div>
-                          <div className="rignt-rating">
-
+                          <div className="right-rating">
                           </div>
                         </div>
                       </div>
-
                     </section>
-                    <section className="earnings"></section>
+                    <section className="earnings-section">
+                      <div className="earnings-heading">
+                        <div className="earnings-div">
+                          <div className="earnings-div-inner">
+                            <h2 className="earnings-h2">
+                              <span>Earnings</span>
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
                     <section className="history"></section>
                   </div>
                 </div>
