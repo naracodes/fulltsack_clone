@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LoginContainer from '../session/login_container';
+import AssetLineChart from "../charts/linechart";
 import WatchlistIndexContainer from '../watchlist/watchlist_index_container';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -192,9 +192,53 @@ class Dashboard extends React.Component {
           <main className="main-container">
             <div className="row">
               <div className="left col-1">
-                <section className="portfolio-graph">GRAPH</section>
-                <section className="pop-collection"></section>
-                <section className="news-stand"></section>
+                <section className="graph-section">
+                  <header className="asset-price">
+                    <h1>Portfolio Graph</h1>
+                  </header>
+                  <div className="react-chart"></div>
+                  <nav className="range">
+                    <div className="range-buttons">
+                      <div className="1D">
+                        <span>1D</span>
+                      </div>
+                      <div className="1W">
+                        <span>1W</span>
+                      </div>
+                      <div className="1M">
+                        <span>1M</span>
+                      </div>
+                      <div className="3M">
+                        <span>3M</span>
+                      </div>
+                      <div className="1Y">
+                        <span>1Y</span>
+                      </div>
+                      <div className="5Y">
+                        <span>ALL</span>
+                      </div>
+                    </div>
+                  </nav>
+                </section>
+                <div className="dashboard-buying-p">
+                  <header className="buying-p-heading">
+                    <div>
+                      <span>Buying Power</span>
+                      <span>$0.00</span>
+                    </div>
+                  </header>
+                </div>
+                <section className="asset-news-section">
+                  <header className="asset-news-heading">
+                    <div className="asset-news-div">
+                      <div className="asset-news-div-inner">
+                        <h2 className="asset-news-h2">
+                          <span>News</span>
+                        </h2>
+                      </div>
+                    </div>
+                  </header>
+                </section>
               </div>
               <div className="right col-2">
                 <div className="watchlist-content">

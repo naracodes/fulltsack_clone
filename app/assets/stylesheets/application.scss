@@ -593,7 +593,7 @@ table {
   
   .login-input .input-box:hover {    
     background: rgb(255, 255, 255);
-    border-color: rgb(228, 233, 237);
+    border-color: rgb(193, 193, 193);
   }
 
 .login-input .input-box:focus {
@@ -1585,7 +1585,7 @@ table {
 .actual-sidebar {
   box-sizing: border-box;
   direction: ltr;
-  height: 619px;
+  height: 100%;
   position: relative;
   width: 276px;
   overflow: hidden auto;
@@ -1596,6 +1596,9 @@ table {
       height: 60px;
       padding: 0 24px;
     }
+  .single-item:hover {
+    background-color: rgb(182, 241, 182);
+  }
   #wl-link {
     text-decoration: none;
   }
@@ -1615,6 +1618,13 @@ table {
 
 
 // Asset show page 9.12
+
+.graph-section nav {
+  border-bottom: 1px solid rgb(193, 193, 193);
+  margin-top: 24px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
 
 .range-buttons {
   height: 33px;
@@ -2216,3 +2226,31 @@ table {
 //   width: 134px;
 //   box-sizing: border-box;
 // }
+
+//portfolio
+
+.react-chart {
+  width: 676px;
+  height: 349px;
+  background-color: salmon;
+}
+
+.dashboard-buying-p {
+  margin-bottom: 60px;
+  margin-top: -24px;
+  box-sizing: border-box;
+  display: block;
+    header {
+      border-bottom: 1px solid rgb(193, 193, 193);
+      border-top: none;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+}
+
+.buying-p-heading div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 700;
+}
