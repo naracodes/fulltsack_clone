@@ -49,7 +49,7 @@ class Api::TransactionsController < ApplicationController
                 @portfo_snapshot = Hash.new()
                 @user_holdings.pluck(:ticker).uniq.each do |holding|
                     average_cost = @user_holdings.where()
-                    @portfo_snapshot[]
+                    @portfo_snapshot
                 end
                 
                 render json: { owned: @user_holdings, transaction: @transaction_record }
@@ -59,10 +59,6 @@ class Api::TransactionsController < ApplicationController
             else
                 "Not a valid transaction type"
             end
-
-            # debugger
-            # @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
-            # render json: { data: @transaction_record }
         end
 
     end
