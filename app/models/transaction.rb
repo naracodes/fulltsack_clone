@@ -17,4 +17,5 @@ class Transaction < ApplicationRecord
     validates :user_id, :ticker, :transaction_type, :transaction_amount, presence: true
 
     
+    
 end

@@ -24,9 +24,23 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Watchlist
 
-    has_many :watched_assets,
-        through: :watchlist_items,
-        source: :asset
+    has_many :transaction_records,
+        foreign_key: :user_id,
+        class_name: :Transaction
+
+    def holdings(ticker)
+        holding_info = Hash.new()
+        self.transaction_records.where(transaction_type: "Buy", ticker: ticker)
+    end
+    
+    def avg_stock_price(ticker)
+        avg_price = Hash.new()
+        self.transaction_records.where(transaction_type: "Buy", ticker: ticker)
+    end
+
+    # has_many :watched_assets,
+    #     through: :watchlist_items,
+    #     source: :asset
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -41,11 +55,6 @@ class User < ApplicationRecord
     def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
-
-    def self.watchlist
-        User.joins(:watchlists).where('user_id = ?', self.id).pluck('watchlists.ticker')
-    end
-    
 
     def ensure_session_token
         self.session_token ||= SecureRandom.urlsafe_base64
@@ -64,5 +73,4 @@ class User < ApplicationRecord
         cash_balance = Transaction.where(transaction_type: "Deposit", user_id: self.id)
         last_position = Transaction.where(transaction_type: "Deposit", user_id: self.id).pluck(:transaction_amount)
     end
-
 end
