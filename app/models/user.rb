@@ -55,11 +55,12 @@ class User < ApplicationRecord
             count = self.transaction_records.where(transaction_type: "Buy", ticker: ticker).offset(holdings[ticker]).pluck(:quantity).inject(:+)
             price_info[ticker] = sum / count
         end
-    end
-    
-    def avg_stock_price(ticker)
-        avg_price = Hash.new()
-        self.transaction_records.where(transaction_type: "Buy", ticker: ticker)
+
+        if ticker
+            price_info[ticker]
+        else
+            price_info
+        end
     end
 
     # has_many :watched_assets,

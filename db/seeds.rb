@@ -110,6 +110,17 @@ stock_qt = [1, 2, 3]
     })
 end
 
+7.times do
+    Transaction.create({
+        user_id: 46,
+        ticker: "FB",
+        transaction_type: transaction_types.sample,
+        transaction_amount: 0,
+        quantity: stock_qt.sample,
+        cost_per_share: 250.00,
+    })
+end
+
     # Transaction.create({
     #     user_id: 46,
     #     ticker: "GOOGL",
