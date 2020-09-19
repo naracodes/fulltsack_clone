@@ -16,6 +16,13 @@ class Api::TransactionsController < ApplicationController
     def create
         @transaction_record = Transaction.new(transaction_params)
         @current_user_id = @transaction_record.user_id
+
+        if @transaction_record.quantity > 1
+            
+        else
+            
+        end
+
         if @transaction_record.save
             case @transaction_record.transaction_type
             when "Deposit"
