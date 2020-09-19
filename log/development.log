@@ -56118,3 +56118,144 @@ Migrating to UpdateTransactions3 (20200918000238)
   [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 46]]
   [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+Started GET "/" for ::1 at 2020-09-18 21:25:04 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (25.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 877ms (Views: 829.1ms | ActiveRecord: 45.7ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-18 21:25:05 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (21.6ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (32.8ms)
+Completed 200 OK in 41ms (Views: 11.5ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/" for ::1 at 2020-09-18 21:26:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-18 21:27:52 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.5ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mTransaction Load (12.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 46]]
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 46]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy\n"]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (6.4ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 67]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 68]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 69]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 70]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 71]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 72]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 73]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 74]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 75]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 76]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 77]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 78]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (6.7ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["created_at", "2020-09-19 01:46:01.809184"], ["updated_at", "2020-09-19 01:46:01.809184"], ["quantity", 3], ["cost_per_share", 250.0], ["transaction_amount", 0.0], ["ticker", "GOOGL"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["created_at", "2020-09-19 01:46:01.817106"], ["updated_at", "2020-09-19 01:46:01.817106"], ["quantity", 1], ["cost_per_share", 250.0], ["transaction_amount", 0.0], ["ticker", "GOOGL"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Sell"], ["created_at", "2020-09-19 01:46:01.818298"], ["updated_at", "2020-09-19 01:46:01.818298"], ["quantity", 3], ["cost_per_share", 250.0], ["transaction_amount", 0.0], ["ticker", "GOOGL"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-19 01:46:01.819499"], ["updated_at", "2020-09-19 01:46:01.819499"], ["quantity", 2], ["cost_per_share", 250.0], ["transaction_amount", 0.0], ["ticker", "GOOGL"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-19 01:46:01.820850"], ["updated_at", "2020-09-19 01:46:01.820850"], ["quantity", 2], ["cost_per_share", 250.0], ["transaction_amount", 0.0], ["ticker", "GOOGL"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-19 01:46:01.822054"], ["updated_at", "2020-09-19 01:46:01.822054"], ["quantity", 3], ["cost_per_share", 250.0], ["transaction_amount", 0.0], ["ticker", "GOOGL"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-19 01:46:01.823245"], ["updated_at", "2020-09-19 01:46:01.823245"], ["quantity", 1], ["cost_per_share", 250.0], ["transaction_amount", 0.0], ["ticker", "GOOGL"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions" WHERE "transactions"."transaction_type" = $1[0m  [["transaction_type", "Buy"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions" WHERE "transactions"."transaction_type" = $1[0m  [["transaction_type", "Sell"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."transaction_type" = $1[0m  [["transaction_type", "Sell"]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."transaction_type" = $1[0m  [["transaction_type", "Buy"]]
