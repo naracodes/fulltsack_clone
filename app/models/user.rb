@@ -28,9 +28,33 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Transaction
 
-    def holdings(ticker)
-        holding_info = Hash.new()
-        self.transaction_records.where(transaction_type: "Buy", ticker: ticker)
+    def holdings(ticker = nil)
+        holding_info = Hash.new(0)
+        self.transaction_records.where(transaction_type: "Buy").each do |buy| 
+            holding_info[buy.ticker] += buy.quantity
+        end
+
+        self.transaction_records.where(transaction_type: "Sell").each do |sell|
+            holding_info[sell.ticker] -= sell.quantity
+        end
+
+        if ticker
+            holding_info[ticker]
+        else
+            holding_info
+        end
+    end
+
+    def avg_price(ticker = nil)
+        price_info = Hash.new(0)
+        price_info["Buy"] = self.transaction_records.where(transaction_type: "Buy")
+        price_info["Sell"] = self.transaction_records.where(transaction_type: "Sell")
+        
+        if ticker
+            
+        else
+            
+        end
     end
     
     def avg_stock_price(ticker)
