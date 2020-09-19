@@ -46,14 +46,14 @@ class User < ApplicationRecord
     end
 
     def avg_price(ticker = nil)
+        holdings = self.holdings
         price_info = Hash.new(0)
-        price_info["Buy"] = self.transaction_records.where(transaction_type: "Buy")
-        price_info["Sell"] = self.transaction_records.where(transaction_type: "Sell")
-        
-        if ticker
-            
-        else
-            
+        avg_price = 0;
+
+        holdings.keys.each do |ticker|
+            sum = self.transaction_records.where(transaction_type: "Buy", ticker: ticker).offset(holdings[ticker]).pluck(:cost_per_share).inject(:+)
+            count = self.transaction_records.where(transaction_type: "Buy", ticker: ticker).offset(holdings[ticker]).pluck(:quantity).inject(:+)
+            price_info[ticker] = sum / count
         end
     end
     
