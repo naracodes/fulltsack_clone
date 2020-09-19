@@ -102,7 +102,7 @@ stock_qt = [1, 2, 3]
 7.times do
     Transaction.create({
         user_id: 46,
-        ticker: demo_stocks.sample,
+        ticker: "GOOGL",
         transaction_type: transaction_types.sample,
         transaction_amount: 0,
         quantity: stock_qt.sample,
