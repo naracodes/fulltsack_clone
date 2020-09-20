@@ -49,10 +49,12 @@ class User < ApplicationRecord
         holdings = self.holdings
         price_info = Hash.new(0)
         avg_price = 0;
-
+        
         holdings.keys.each do |ticker|
-            sum = self.transaction_records.where(transaction_type: "Buy", ticker: ticker).offset(holdings[ticker]).pluck(:cost_per_share).inject(:+)
-            count = self.transaction_records.where(transaction_type: "Buy", ticker: ticker).offset(holdings[ticker]).pluck(:quantity).inject(:+)
+            num_sold = self.transaction_records.where(transaction_type: "Sell", ticker: ticker).count
+            
+            sum = self.transaction_records.where(transaction_type: "Buy", ticker: ticker).offset(num_sold).pluck(:cost_per_share).inject(:+)
+            count = holdings[ticker]
             price_info[ticker] = sum / count
         end
 
@@ -61,6 +63,10 @@ class User < ApplicationRecord
         else
             price_info
         end
+    end
+
+    def cash_balance
+        Portfolio.where(user_id: self.id).last.balance
     end
 
     # has_many :watched_assets,
@@ -89,13 +95,5 @@ class User < ApplicationRecord
         self.session_token = SecureRandom.urlsafe_base64
         self.save!
         self.session_token
-    end
-
-    def buying_power
-        # deposit and withd bonus feature
-        # buy and sell
-        # FIFO - chronological :created_at - things to do later maybe?
-        cash_balance = Transaction.where(transaction_type: "Deposit", user_id: self.id)
-        last_position = Transaction.where(transaction_type: "Deposit", user_id: self.id).pluck(:transaction_amount)
     end
 end
