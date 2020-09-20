@@ -34,12 +34,15 @@ class Api::TransactionsController < ApplicationController
             @bank_trans = Transaction.new(transaction_params)
             if @bank_trans.save
                 case params[:transaction_type]
+                    debugger
                 when "Deposit"
+                    debugger
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                     @portfo_record = Portfolio.create({
                         user_id: @current_user_id,
                         balance: last_cash_balance += @bank_trans.transaction_amount,
                     })
+                    debugger
                 when  "Withdraw"
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                     @portfo_record = Portfolio.create({
@@ -50,6 +53,8 @@ class Api::TransactionsController < ApplicationController
                     "Not a valid trans type"                    
                 end
             end
+            debugger
+            render :bank_index
         else
             debugger
             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
