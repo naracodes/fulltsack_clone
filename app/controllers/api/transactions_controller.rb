@@ -16,7 +16,7 @@ class Api::TransactionsController < ApplicationController
     def create
         @transaction_qt = transaction_params["quantity"].to_i
         @records = []
-        @current_user_id = @transaction_record.user_id
+        @current_user_id = params[:user_id]
 
         if ["Deposit", "Withdraw"].include?(params[:transaction_type])
             @bank_trans = Transaction.new(transaction_params)
@@ -26,14 +26,14 @@ class Api::TransactionsController < ApplicationController
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                     @portfo_record = Portfolio.create({
                         user_id: @current_user_id,
-                        balance: last_cash_balance += @transaction_record.transaction_amount,
+                        balance: last_cash_balance += @bank_trans.transaction_amount,
                     })
                     render json: { data: @portfo_record }    
                 when  "Withdraw"
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                     @portfo_record = Portfolio.create({
                         user_id: @current_user_id,
-                        balance: last_cash_balance -= @transaction_record.transaction_amount
+                        balance: last_cash_balance -= @bank_trans.transaction_amount
                     })
                     render json: { data: @portfo_record }
                 else
@@ -41,19 +41,21 @@ class Api::TransactionsController < ApplicationController
                 end
             end
         else
+            debugger
             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
-            @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
+            params[:transaction_amount] = (params[:quantity].to_i * params[:cost_per_share].to_i).to_s
 
             case params[:transaction_type]
             when "Buy"
+                debugger
                 Portfolio.create({
                     user_id: @current_user_id,
-                    balance: last_cash_balance += @transaction_record.transaction_amount
+                    balance: last_cash_balance -= params[:transaction_amount]
                 })
             when "Sell"
                 Portfolio.create({
                     user_id: @current_user_id,
-                    balance: last_cash_balance -= @transaction_record.transaction_amount
+                    balance: last_cash_balance += params[:transaction_amount]
                 })
             else
                 "Not a valid transaction type"
@@ -69,12 +71,14 @@ class Api::TransactionsController < ApplicationController
             end
 
             @records.dice_and_save
+            debugger
         end
     end
 
     def dice_and_save
         result = true
         self.each do |transaction_obj|
+            debugger
             if !transaction_obj.save
                 result = false
             end

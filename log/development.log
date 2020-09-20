@@ -56412,3 +56412,137 @@ Migrating to UpdatePortfolios (20200919170930)
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+  [1m[36mTransaction Load (6.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (2.0ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 86]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 87]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 88]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 89]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 90]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 91]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 92]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 93]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 94]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 95]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 96]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 97]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 98]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 99]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:31:00 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `user_id' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:19:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:31:30 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `user_id' for #<ActionController::Parameters:0x00007ffd64865ba0>:
+  app/controllers/api/transactions_controller.rb:19:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:31:50 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (22.5ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:45
+Completed 500 Internal Server Error in 17530ms (ActiveRecord: 26.5ms)
+
+
+
+NoMethodError - undefined method `quantity' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:46:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:33:57 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting keyword_end
+...ity] * params[:cost_per_share])
+...                              ^:
+  app/controllers/api/transactions_controller.rb:46:in `'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:35:15 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting keyword_end
+...ity] * params[:cost_per_share])
+...                              ^:
+  app/controllers/api/transactions_controller.rb:46:in `'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:35:25 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" IS NULL ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.6ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 11]]
+  ↳ app/controllers/api/transactions_controller.rb:45
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Portfolio Load (0.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Portfolio Load (0.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Portfolio Load (0.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:45
+Completed 500 Internal Server Error in 123787ms (ActiveRecord: 5.6ms)
+
+
+
+TypeError - no implicit conversion of String into Integer:
+  app/controllers/api/transactions_controller.rb:46:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:37:55 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:45
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
