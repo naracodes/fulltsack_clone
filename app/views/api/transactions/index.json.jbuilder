@@ -14,6 +14,6 @@
 
 @saved_records.each do |saved_record|
     json.set! saved_record.id do
-        json.extract! saved_record, :user_id, :ticker, :transaction_type, :transaction_amount, :quantity, :cost_per_share
+        json.extract! saved_record, :id, :user_id, :ticker, :transaction_type, :transaction_amount, :quantity, :cost_per_share
     end
 end
