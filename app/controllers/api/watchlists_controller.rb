@@ -2,7 +2,8 @@ class Api::WatchlistsController < ApplicationController
 
     def index
         # debugger
-        @watchlist_assets =  Watchlist.where('user_id = ?', current_user.id)
+        # @watchlist_assets =  Watchlist.where('user_id = ?', current_user.id)
+        @watchlist_assets =  Watchlist.where('user_id = ?', 46)
         # @watchlist_assets =  Watchlist.where('email = ?', current_user.email)
         # @watchlist_assets = Watchlist.all
         # debugger

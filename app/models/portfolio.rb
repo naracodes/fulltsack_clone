@@ -10,5 +10,5 @@
 #  updated_at :datetime         not null
 #
 class Portfolio < ApplicationRecord
-    validates :user_id, :balance, :date, presence: true
+    validates :user_id, :balance, presence: true
 end

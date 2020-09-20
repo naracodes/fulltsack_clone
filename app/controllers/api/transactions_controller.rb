@@ -2,16 +2,28 @@ require 'date'
 
 class Api::TransactionsController < ApplicationController
 
-    def index
-        # @transactions = Transaction.where('user_id = ?', current_user.id)
-        @transactions = Transaction.all
-        render :index
+
+    def dice_and_save
+        result = true
+        self.each do |transaction_obj|
+            debugger
+            if !transaction_obj.save
+                result = false
+            end
+        end
+        result
     end
 
-    def show
-        @transaction = Transaction.find(params[:id])
-        render :show
-    end
+    # def index
+    #     # @transactions = Transaction.where('user_id = ?', current_user.id)
+    #     @transactions = Transaction.all
+    #     render :index
+    # end
+
+    # def show
+    #     @transaction = Transaction.find(params[:id])
+    #     render :show
+    # end
 
     def create
         @transaction_qt = transaction_params["quantity"].to_i
@@ -28,14 +40,12 @@ class Api::TransactionsController < ApplicationController
                         user_id: @current_user_id,
                         balance: last_cash_balance += @bank_trans.transaction_amount,
                     })
-                    render json: { data: @portfo_record }    
                 when  "Withdraw"
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                     @portfo_record = Portfolio.create({
                         user_id: @current_user_id,
                         balance: last_cash_balance -= @bank_trans.transaction_amount
                     })
-                    render json: { data: @portfo_record }
                 else
                     "Not a valid trans type"                    
                 end
@@ -43,19 +53,19 @@ class Api::TransactionsController < ApplicationController
         else
             debugger
             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
-            params[:transaction_amount] = (params[:quantity].to_i * params[:cost_per_share].to_i).to_s
+            params[:transaction_amount] = ((params[:quantity].to_i * params[:cost_per_share].to_i) / params[:quantity].to_i).to_s
 
             case params[:transaction_type]
             when "Buy"
                 debugger
                 Portfolio.create({
                     user_id: @current_user_id,
-                    balance: last_cash_balance -= params[:transaction_amount]
+                    balance: last_cash_balance -= params[:transaction_amount].to_i
                 })
             when "Sell"
                 Portfolio.create({
                     user_id: @current_user_id,
-                    balance: last_cash_balance += params[:transaction_amount]
+                    balance: last_cash_balance += params[:transaction_amount].to_i
                 })
             else
                 "Not a valid transaction type"
@@ -70,20 +80,17 @@ class Api::TransactionsController < ApplicationController
                 @records << Transaction.new(transaction_params)
             end
 
-            @records.dice_and_save
-            debugger
-        end
-    end
-
-    def dice_and_save
-        result = true
-        self.each do |transaction_obj|
-            debugger
-            if !transaction_obj.save
-                result = false
+            @records.each do |transaction_obj|
+                debugger
+                if !transaction_obj.save
+                    return
+                end
             end
+            @saved_records = Transaction.last(@records.length)
+            debugger
+            render :index
+            # render json: {message: "success saving all records", data: Transaction.last(@records.length)}
         end
-        result
     end
 
     private

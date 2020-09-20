@@ -56546,3 +56546,618 @@ Unpermitted parameter: :format
   [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
   ↳ app/controllers/api/transactions_controller.rb:45
   [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:47:13 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:45
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:48:13 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:51
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:51
+Completed 500 Internal Server Error in 11321ms (ActiveRecord: 4.8ms)
+
+
+
+NoMethodError - undefined method `date' for #<Portfolio:0x00007fae1dcf1a20>
+Did you mean?  update:
+  app/controllers/api/transactions_controller.rb:51:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:49:40 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:51
+  [1m[36mPortfolio Create (33.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 2176.0], ["created_at", "2020-09-20 01:49:43.568099"], ["updated_at", "2020-09-20 01:49:43.568099"]]
+  ↳ app/controllers/api/transactions_controller.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:51
+Unpermitted parameter: :format
+Completed 500 Internal Server Error in 2897ms (ActiveRecord: 41.0ms)
+
+
+
+NoMethodError - undefined method `dice_and_save' for #<Array:0x00007feeb69c9f08>:
+  app/controllers/api/transactions_controller.rb:73:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:50:25 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[36mPortfolio Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 2076.0], ["created_at", "2020-09-20 01:50:28.297937"], ["updated_at", "2020-09-20 01:50:28.297937"]]
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+Unpermitted parameter: :format
+Completed 500 Internal Server Error in 2385ms (ActiveRecord: 14.1ms)
+
+
+
+NoMethodError - undefined method `dice_and_save' for #<Array:0x00007fbf04e22078>:
+  app/controllers/api/transactions_controller.rb:85:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:53:21 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+... json: {message: success saving all records, data: @records}
+...                         ^~~~~~
+/Users/nara/Library/Mobile Documents/com~apple~CloudDocs/quiche/app/controllers/api/transactions_controller.rb:90: syntax error, unexpected '}', expecting keyword_end
+...ng all records, data: @records}
+...                              ^
+/Users/nara/Library/Mobile Documents/com~apple~CloudDocs/quiche/app/controllers/api/transactions_controller.rb:131: syntax error, unexpected end-of-input, expecting keyword_end
+    # end
+         ^:
+  app/controllers/api/transactions_controller.rb:90:in `'
+
+Started POST "/api/transactions/?user_id=46&ticker=AAPL&transaction_type=Buy&quantity=1&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:53:46 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"AAPL", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[36mPortfolio Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1976.0], ["created_at", "2020-09-20 01:53:49.942788"], ["updated_at", "2020-09-20 01:53:49.942788"]]
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+Unpermitted parameter: :format
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[36mTransaction Create (6.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 01:53:56.017463"], ["updated_at", "2020-09-20 01:53:56.017463"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "AAPL"]]
+  ↳ (byebug):1
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+Completed 200 OK in 29403ms (Views: 0.5ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/api/assets/" for ::1 at 2020-09-19 21:56:19 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mAsset Load (23.8ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (31.2ms)
+Completed 200 OK in 46ms (Views: 17.5ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/api/watchlists/" for ::1 at 2020-09-19 21:56:28 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (22.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 23.6ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/controllers/api/watchlists_controller.rb:5:in `index'
+
+Started GET "/api/watchlists/" for ::1 at 2020-09-19 21:56:37 -0400
+Processing by Api::WatchlistsController#index as JSON
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (18.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (27.6ms)
+Completed 200 OK in 35ms (Views: 11.9ms | ActiveRecord: 21.5ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:58:11 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1776.0], ["created_at", "2020-09-20 01:58:17.782952"], ["updated_at", "2020-09-20 01:58:17.782952"]]
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 01:58:30.787478"], ["updated_at", "2020-09-20 01:58:30.787478"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:90
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 01:58:33.655432"], ["updated_at", "2020-09-20 01:58:33.655432"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:90
+Completed 500 Internal Server Error in 22302ms (Views: 0.4ms | ActiveRecord: 25.8ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/api/transactions_controller.rb:90:in `block in create'
+  app/controllers/api/transactions_controller.rb:85:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 21:59:41 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1576.0], ["created_at", "2020-09-20 01:59:44.012969"], ["updated_at", "2020-09-20 01:59:44.012969"]]
+  ↳ app/controllers/api/transactions_controller.rb:63
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:63
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 01:59:46.971795"], ["updated_at", "2020-09-20 01:59:46.971795"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:90
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 01:59:48.310507"], ["updated_at", "2020-09-20 01:59:48.310507"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:87
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:90
+Completed 500 Internal Server Error in 6441ms (Views: 0.6ms | ActiveRecord: 25.9ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/api/transactions_controller.rb:90:in `block in create'
+  app/controllers/api/transactions_controller.rb:85:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:00:29 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1376.0], ["created_at", "2020-09-20 02:00:31.465660"], ["updated_at", "2020-09-20 02:00:31.465660"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:00:32.016356"], ["updated_at", "2020-09-20 02:00:32.016356"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:88
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:00:32.658066"], ["updated_at", "2020-09-20 02:00:32.658066"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:88
+Completed 500 Internal Server Error in 3189ms (Views: 0.4ms | ActiveRecord: 25.2ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/api/transactions_controller.rb:88:in `block in create'
+  app/controllers/api/transactions_controller.rb:83:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:00:46 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1176.0], ["created_at", "2020-09-20 02:01:15.272798"], ["updated_at", "2020-09-20 02:01:15.272798"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:01:15.756192"], ["updated_at", "2020-09-20 02:01:15.756192"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:88
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:01:16.251257"], ["updated_at", "2020-09-20 02:01:16.251257"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:88
+Completed 500 Internal Server Error in 29564ms (Views: 0.5ms | ActiveRecord: 26.9ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/api/transactions_controller.rb:88:in `block in create'
+  app/controllers/api/transactions_controller.rb:83:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:01:41 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 976.0], ["created_at", "2020-09-20 02:01:43.521242"], ["updated_at", "2020-09-20 02:01:43.521242"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:01:44.949872"], ["updated_at", "2020-09-20 02:01:44.949872"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:01:45.298408"], ["updated_at", "2020-09-20 02:01:45.298408"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:89
+Completed 200 OK in 4242ms (Views: 0.4ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/api/watchlists/" for ::1 at 2020-09-19 22:08:37 -0400
+
+SyntaxError - syntax error, unexpected ':', expecting keyword_end
+        render: json: {data: @watchlist_asse...
+              ^:
+  app/controllers/api/watchlists_controller.rb:10:in `'
+
+Started GET "/api/watchlists/" for ::1 at 2020-09-19 22:08:45 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mWatchlist Load (0.8ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/controllers/api/watchlists_controller.rb:10
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:13:50 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+Completed 500 Internal Server Error in 2029ms (ActiveRecord: 6.0ms)
+
+
+
+TypeError - String can't be coerced into Integer:
+  app/controllers/api/transactions_controller.rb:56:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:14:18 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 876.0], ["created_at", "2020-09-20 02:14:20.760457"], ["updated_at", "2020-09-20 02:14:20.760457"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:14:21.568786"], ["updated_at", "2020-09-20 02:14:21.568786"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:14:22.392814"], ["updated_at", "2020-09-20 02:14:22.392814"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  Rendering api/transactions/show.json.jbuilder
+  Rendered api/transactions/show.json.jbuilder (0.4ms)
+Completed 200 OK in 4022ms (Views: 13.2ms | ActiveRecord: 25.9ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=3&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:16:03 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"3", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 776.0], ["created_at", "2020-09-20 02:16:07.509987"], ["updated_at", "2020-09-20 02:16:07.509987"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:16:10.986158"], ["updated_at", "2020-09-20 02:16:10.986158"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:16:11.829732"], ["updated_at", "2020-09-20 02:16:11.829732"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:16:12.853495"], ["updated_at", "2020-09-20 02:16:12.853495"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (0.4ms)
+Completed 200 OK in 8893ms (Views: 5.9ms | ActiveRecord: 31.0ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=3&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:18:26 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"3", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 676.0], ["created_at", "2020-09-20 02:18:30.969766"], ["updated_at", "2020-09-20 02:18:30.969766"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:18:31.431004"], ["updated_at", "2020-09-20 02:18:31.431004"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:18:32.072120"], ["updated_at", "2020-09-20 02:18:32.072120"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:18:32.803363"], ["updated_at", "2020-09-20 02:18:32.803363"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/api/transactions_controller.rb:89
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (0.4ms)
+Completed 200 OK in 6523ms (Views: 6.1ms | ActiveRecord: 31.3ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=3&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:18:47 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"3", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 576.0], ["created_at", "2020-09-20 02:18:50.007385"], ["updated_at", "2020-09-20 02:18:50.007385"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:18:52.592631"], ["updated_at", "2020-09-20 02:18:52.592631"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:18:53.807100"], ["updated_at", "2020-09-20 02:18:53.807100"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:18:54.965848"], ["updated_at", "2020-09-20 02:18:54.965848"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/api/transactions_controller.rb:89
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (0.4ms)
+Completed 200 OK in 38715ms (Views: 6.0ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/api/assets/" for ::1 at 2020-09-19 22:19:33 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mAsset Load (0.9ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (11.0ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=3&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:24:45 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"3", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 476.0], ["created_at", "2020-09-20 02:24:47.348789"], ["updated_at", "2020-09-20 02:24:47.348789"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:24:47.854983"], ["updated_at", "2020-09-20 02:24:47.854983"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:24:48.856541"], ["updated_at", "2020-09-20 02:24:48.856541"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:24:49.137205"], ["updated_at", "2020-09-20 02:24:49.137205"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/api/transactions_controller.rb:89
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (10.8ms)
+Completed 500 Internal Server Error in 6458ms (ActiveRecord: 31.7ms)
+
+
+
+ActionView::Template::Error - undefined method `asset_name' for #<Transaction:0x00007f9dce1db550>
+Did you mean?  asset_id_change:
+  app/views/api/transactions/index.json.jbuilder:17:in `view template'
+  app/controllers/api/transactions_controller.rb:91:in `create'
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=3&cost_per_share=100.00&transaction_amount=0" for ::1 at 2020-09-19 22:25:06 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"3", "cost_per_share"=>"100.00", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 376.0], ["created_at", "2020-09-20 02:25:08.300349"], ["updated_at", "2020-09-20 02:25:08.300349"]]
+  ↳ app/controllers/api/transactions_controller.rb:61
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:61
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:25:08.534444"], ["updated_at", "2020-09-20 02:25:08.534444"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:25:08.850040"], ["updated_at", "2020-09-20 02:25:08.850040"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-20 02:25:09.446137"], ["updated_at", "2020-09-20 02:25:09.446137"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:85
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/api/transactions_controller.rb:89
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (0.5ms)
+Completed 200 OK in 3514ms (Views: 5.8ms | ActiveRecord: 23.5ms)
+
+
