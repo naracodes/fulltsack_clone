@@ -57583,3 +57583,248 @@ Completed 200 OK in 43ms (Views: 6.4ms | ActiveRecord: 23.9ms)
 
 
   [1m[36mHistory Load (0.4ms)[0m  [1m[34mSELECT "histories".* FROM "histories"[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=1000" for ::1 at 2020-09-20 22:26:44 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"1000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-21 02:26:44.709741"], ["updated_at", "2020-09-21 02:26:44.709741"], ["transaction_amount", 1000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mPortfolio Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1900.0], ["created_at", "2020-09-21 02:26:44.725390"], ["updated_at", "2020-09-21 02:26:44.725390"]]
+  ↳ app/controllers/api/transactions_controller.rb:20
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:20
+  Rendering api/transactions/bank_index.json.jbuilder
+  Rendered api/transactions/bank_index.json.jbuilder (0.2ms)
+Completed 200 OK in 40ms (Views: 5.4ms | ActiveRecord: 21.1ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=3&cost_per_share=200&transaction_amount=0" for ::1 at 2020-09-20 22:27:52 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"3", "cost_per_share"=>"200", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:34
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:37
+  [1m[36mHistory Create (0.6ms)[0m  [1m[32mINSERT INTO "histories" ("user_id", "ticker", "transaction_type", "transaction_amount", "quantity", "cost_per_share", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["ticker", "GOOGL"], ["transaction_type", "Buy"], ["transaction_amount", 200.0], ["quantity", 3], ["cost_per_share", 200.0], ["created_at", "2020-09-21 02:27:52.565020"], ["updated_at", "2020-09-21 02:27:52.565020"]]
+  ↳ app/controllers/api/transactions_controller.rb:37
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1700.0], ["created_at", "2020-09-21 02:27:52.573085"], ["updated_at", "2020-09-21 02:27:52.573085"]]
+  ↳ app/controllers/api/transactions_controller.rb:41
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:41
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-21 02:27:52.580723"], ["updated_at", "2020-09-21 02:27:52.580723"], ["quantity", 1], ["cost_per_share", 200.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-21 02:27:52.586681"], ["updated_at", "2020-09-21 02:27:52.586681"], ["quantity", 1], ["cost_per_share", 200.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-21 02:27:52.588295"], ["updated_at", "2020-09-21 02:27:52.588295"], ["quantity", 1], ["cost_per_share", 200.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:64
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/controllers/api/transactions_controller.rb:68
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (0.4ms)
+Completed 200 OK in 48ms (Views: 5.5ms | ActiveRecord: 22.0ms)
+
+
+  [1m[36mHistory Load (0.3ms)[0m  [1m[34mSELECT "histories".* FROM "histories"[0m
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:31:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/histories"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:31:47 -0400
+
+LoadError - Unable to autoload constant Api::HistoriesController, expected /Users/nara/Library/Mobile Documents/com~apple~CloudDocs/quiche/app/controllers/api/histories_controller.rb to define it:
+
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:32:47 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+
+LoadError - Unable to autoload constant Api::HistoriesController, expected /Users/nara/Library/Mobile Documents/com~apple~CloudDocs/quiche/app/controllers/api/histories_controller.rb to define it:
+
+Started GET "/api/assets/" for ::1 at 2020-09-20 22:32:59 -0400
+Processing by Api::AssetsController#index as JSON
+  Rendering api/assets/index.json.jbuilder
+  [1m[36mAsset Load (7.5ms)[0m  [1m[34mSELECT "assets".* FROM "assets" ORDER BY ticker ASC[0m
+  ↳ app/views/api/assets/index.json.jbuilder:1
+  Rendered api/assets/index.json.jbuilder (16.4ms)
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/" for ::1 at 2020-09-20 22:33:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (19.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 1617ms (Views: 1591.8ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/api/histories" for ::1 at 2020-09-20 22:33:53 -0400
+
+TypeError - superclass mismatch for class HistoriesController:
+  app/controllers/api/histories_controller.rb:1:in `<top (required)>'
+
+Started POST "/__better_errors/cea2213783e57beb/variables" for ::1 at 2020-09-20 22:33:53 -0400
+  [1m[36mHistory Load (0.3ms)[0m  [1m[34mSELECT "histories".* FROM "histories" WHERE "histories"."user_id" = $1[0m  [["user_id", 46]]
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:36:12 -0400
+Processing by Api::HistoriesController#index as JSON
+  Rendering api/histories/index.json.jbuilder
+  [1m[36mHistory Load (0.3ms)[0m  [1m[34mSELECT "histories".* FROM "histories" WHERE "histories"."user_id" = $1[0m  [["user_id", 46]]
+  ↳ app/views/api/histories/index.json.jbuilder:1
+  Rendered api/histories/index.json.jbuilder (20.3ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.4ms)
+
+
+
+ActionView::Template::Error - undefined method `create_at' for #<History:0x00007faefc2475e0>
+Did you mean?  created_at
+               created_at=
+               created_at?:
+  app/views/api/histories/index.json.jbuilder:3:in `view template'
+  app/controllers/api/histories_controller.rb:5:in `index'
+
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:36:21 -0400
+Processing by Api::HistoriesController#index as JSON
+  Rendering api/histories/index.json.jbuilder
+  [1m[36mHistory Load (0.3ms)[0m  [1m[34mSELECT "histories".* FROM "histories" WHERE "histories"."user_id" = $1[0m  [["user_id", 46]]
+  ↳ app/views/api/histories/index.json.jbuilder:1
+  Rendered api/histories/index.json.jbuilder (1.5ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:38:42 -0400
+Processing by Api::HistoriesController#index as JSON
+  Rendering api/histories/index.json.jbuilder
+  [1m[36mHistory Load (0.3ms)[0m  [1m[34mSELECT "histories".* FROM "histories" WHERE "histories"."user_id" = $1[0m  [["user_id", 46]]
+  ↳ app/views/api/histories/index.json.jbuilder:7
+  Rendered api/histories/index.json.jbuilder (206.1ms)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 0.3ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `historytransaction_type' for #<#<Class:0x00007faefc0c5910>:0x00007faefc69aa70>:
+  app/views/api/histories/index.json.jbuilder:10:in `view template'
+  app/controllers/api/histories_controller.rb:5:in `index'
+
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:38:57 -0400
+Processing by Api::HistoriesController#index as JSON
+  Rendering api/histories/index.json.jbuilder
+  [1m[36mHistory Load (0.5ms)[0m  [1m[34mSELECT "histories".* FROM "histories" WHERE "histories"."user_id" = $1[0m  [["user_id", 46]]
+  ↳ app/views/api/histories/index.json.jbuilder:7
+  Rendered api/histories/index.json.jbuilder (3.8ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/transactions/?user_id=46&ticker=GOOGL&transaction_type=Buy&quantity=2&cost_per_share=200&transaction_amount=0" for ::1 at 2020-09-20 22:41:14 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"GOOGL", "transaction_type"=>"Buy", "quantity"=>"2", "cost_per_share"=>"200", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:34
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:37
+  [1m[36mHistory Create (0.4ms)[0m  [1m[32mINSERT INTO "histories" ("user_id", "ticker", "transaction_type", "transaction_amount", "quantity", "cost_per_share", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["ticker", "GOOGL"], ["transaction_type", "Buy"], ["transaction_amount", 400.0], ["quantity", 2], ["cost_per_share", 200.0], ["created_at", "2020-09-21 02:41:14.987923"], ["updated_at", "2020-09-21 02:41:14.987923"]]
+  ↳ app/controllers/api/transactions_controller.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:44
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1500.0], ["created_at", "2020-09-21 02:41:14.989608"], ["updated_at", "2020-09-21 02:41:14.989608"]]
+  ↳ app/controllers/api/transactions_controller.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:44
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:67
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-21 02:41:14.999302"], ["updated_at", "2020-09-21 02:41:14.999302"], ["quantity", 1], ["cost_per_share", 200.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:67
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-21 02:41:15.000843"], ["updated_at", "2020-09-21 02:41:15.000843"], ["quantity", 1], ["cost_per_share", 200.0], ["transaction_amount", 200.0], ["ticker", "GOOGL"]]
+  ↳ app/controllers/api/transactions_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:67
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/controllers/api/transactions_controller.rb:71
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (0.4ms)
+Completed 200 OK in 37ms (Views: 5.5ms | ActiveRecord: 12.1ms)
+
+
+  [1m[36mHistory Load (0.2ms)[0m  [1m[34mSELECT  "histories".* FROM "histories" ORDER BY "histories"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/histories/" for ::1 at 2020-09-20 22:41:42 -0400
+Processing by Api::HistoriesController#index as JSON
+  Rendering api/histories/index.json.jbuilder
+  [1m[36mHistory Load (0.3ms)[0m  [1m[34mSELECT "histories".* FROM "histories" WHERE "histories"."user_id" = $1[0m  [["user_id", 46]]
+  ↳ app/views/api/histories/index.json.jbuilder:7
+  Rendered api/histories/index.json.jbuilder (1.3ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+
+

@@ -13,16 +13,18 @@ class Api::TransactionsController < ApplicationController
                 case params[:transaction_type]
                 when "Deposit"
                     last_cash_balance = !Portfolio.where(user_id: @current_user_id).empty? ? Portfolio.where(user_id: @current_user_id).last.balance : 0
-                    @portfo_record = Portfolio.create({
+                    @portfo_record = Portfolio.new({
                         user_id: @current_user_id,
-                        balance: last_cash_balance += @bank_trans.transaction_amount,
+                        balance: last_cash_balance += @bank_trans.transaction_amount
                     })
+                    @portfo_record.save
                 when  "Withdraw"
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
-                    @portfo_record = Portfolio.create({
+                    @portfo_record = Portfolio.new({
                         user_id: @current_user_id,
-                        balance: last_cash_balance -= @bank_trans.transaction_amount
+                        balance: last_cash_balance -= @bank_trans.transaction_amount                        
                     })
+                    @portfo_record.save
                 else
                     "Not a valid trans type"                    
                 end
@@ -30,9 +32,12 @@ class Api::TransactionsController < ApplicationController
             render :bank_index
         else
             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
-            params[:transaction_amount] = ((params[:quantity].to_i * params[:cost_per_share].to_i) / params[:quantity].to_i).to_s
+            params[:transaction_amount] = (params[:quantity].to_i * params[:cost_per_share].to_i).to_s
 
             History.create(transaction_params)
+            
+            params[:transaction_amount] = ((params[:quantity].to_i * params[:cost_per_share].to_i) / params[:quantity].to_i).to_s
+
 
             case params[:transaction_type]
             when "Buy"
