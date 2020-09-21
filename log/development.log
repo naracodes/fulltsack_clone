@@ -57259,3 +57259,327 @@ Completed 200 OK in 39ms (Views: 11.6ms | ActiveRecord: 25.8ms)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "transactions"."cost_per_share" FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2 AND "transactions"."ticker" = $3 OFFSET $4[0m  [["user_id", 46], ["transaction_type", "Buy"], ["ticker", "FB"], ["OFFSET", 2]]
   [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2 AND "transactions"."ticker" = $3 OFFSET $4[0m  [["user_id", 46], ["transaction_type", "Buy"], ["ticker", "FB"], ["OFFSET", 2]]
   [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1641394129393257645)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateHistories (20200921011418)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (46.3ms)[0m  [1m[35mCREATE TABLE "histories" ("id" bigserial primary key, "user_id" integer, "ticker" character varying, "transaction_type" character varying, "transaction_amount" float, "quantity" integer, "cost_per_share" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200921011418_create_histories.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_histories_on_user_id" ON "histories"  ("user_id")[0m
+  ↳ db/migrate/20200921011418_create_histories.rb:13
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200921011418"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (25.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1641394129393257645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mHistory Load (0.5ms)[0m  [1m[34mSELECT "histories".* FROM "histories"[0m
+  [1m[36mTransaction Load (26.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (1.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 132]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 133]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 134]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 135]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 136]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 137]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mPortfolio Load (24.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (6.0ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.2ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.2ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.2ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.2ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.2ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 28]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 29]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 30]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 31]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 32]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.2ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 33]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Destroy (0.1ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = $1[0m  [["id", 34]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  [1m[35m (19.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "assets"[0m
+Started POST "/api/transactions/?user_id=46&ticker=FB&transaction_type=Deposit&quantity=1&cost_per_share=100&transaction_amount=0" for ::1 at 2020-09-20 21:50:04 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"FB", "transaction_type"=>"Deposit", "quantity"=>"1", "cost_per_share"=>"100", "transaction_amount"=>"0"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mTransaction Create (7.9ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-21 01:50:04.211321"], ["updated_at", "2020-09-21 01:50:04.211321"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 0.0], ["ticker", "FB"]]
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 15.4ms)
+
+
+
+NoMethodError - undefined method `balance' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:15:in `create'
+
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=1000" for ::1 at 2020-09-20 21:51:18 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"1000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-21 01:51:18.221651"], ["updated_at", "2020-09-21 01:51:18.221651"], ["transaction_amount", 1000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 7.0ms)
+
+
+
+NoMethodError - undefined method `balance' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:15:in `create'
+
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=1000" for ::1 at 2020-09-20 21:52:02 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"1000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-21 01:52:02.148418"], ["updated_at", "2020-09-21 01:52:02.148418"], ["transaction_amount", 1000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 7.0ms)
+
+
+
+NoMethodError - undefined method `balance' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:15:in `create'
+
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=1000" for ::1 at 2020-09-20 22:00:36 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"1000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-21 02:00:36.368381"], ["updated_at", "2020-09-21 02:00:36.368381"], ["transaction_amount", 1000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 15.5ms)
+
+
+
+NoMethodError - undefined method `balance' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:15:in `create'
+
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 46]]
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=1000" for ::1 at 2020-09-20 22:06:43 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"1000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-21 02:06:43.525213"], ["updated_at", "2020-09-21 02:06:43.525213"], ["transaction_amount", 1000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 15.3ms)
+
+
+
+NoMethodError - undefined method `balance' for nil:NilClass:
+  app/controllers/api/transactions_controller.rb:15:in `create'
+
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=1000" for ::1 at 2020-09-20 22:07:38 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"1000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-21 02:07:39.021638"], ["updated_at", "2020-09-21 02:07:39.021638"], ["transaction_amount", 1000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:12
+  [1m[36mPortfolio Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:16
+  [1m[36mPortfolio Create (0.7ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 1000.0], ["created_at", "2020-09-21 02:07:39.029984"], ["updated_at", "2020-09-21 02:07:39.029984"]]
+  ↳ app/controllers/api/transactions_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:16
+  Rendering api/transactions/bank_index.json.jbuilder
+  Rendered api/transactions/bank_index.json.jbuilder (0.3ms)
+Completed 200 OK in 29ms (Views: 7.7ms | ActiveRecord: 8.7ms)
+
+
+  [1m[36mHistory Load (0.6ms)[0m  [1m[34mSELECT "histories".* FROM "histories"[0m
+Started POST "/api/transactions/?user_id=46&ticker=FB&transaction_type=Buy&quantity=1&cost_per_share=100&transaction_amount=1000" for ::1 at 2020-09-20 22:08:07 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "ticker"=>"FB", "transaction_type"=>"Buy", "quantity"=>"1", "cost_per_share"=>"100", "transaction_amount"=>"1000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:32
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:35
+  [1m[36mHistory Create (1.4ms)[0m  [1m[32mINSERT INTO "histories" ("user_id", "ticker", "transaction_type", "transaction_amount", "quantity", "cost_per_share", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["ticker", "FB"], ["transaction_type", "Buy"], ["transaction_amount", 100.0], ["quantity", 1], ["cost_per_share", 100.0], ["created_at", "2020-09-21 02:08:07.537571"], ["updated_at", "2020-09-21 02:08:07.537571"]]
+  ↳ app/controllers/api/transactions_controller.rb:35
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 900.0], ["created_at", "2020-09-21 02:08:07.547028"], ["updated_at", "2020-09-21 02:08:07.547028"]]
+  ↳ app/controllers/api/transactions_controller.rb:39
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:39
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:62
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "quantity", "cost_per_share", "transaction_amount", "ticker") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Buy"], ["created_at", "2020-09-21 02:08:07.555057"], ["updated_at", "2020-09-21 02:08:07.555057"], ["quantity", 1], ["cost_per_share", 100.0], ["transaction_amount", 100.0], ["ticker", "FB"]]
+  ↳ app/controllers/api/transactions_controller.rb:62
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:62
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:66
+  Rendering api/transactions/index.json.jbuilder
+  Rendered api/transactions/index.json.jbuilder (0.4ms)
+Completed 200 OK in 43ms (Views: 6.4ms | ActiveRecord: 23.9ms)
+
+
+  [1m[36mHistory Load (0.4ms)[0m  [1m[34mSELECT "histories".* FROM "histories"[0m

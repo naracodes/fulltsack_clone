@@ -2,29 +2,6 @@ require 'date'
 
 class Api::TransactionsController < ApplicationController
 
-
-    def dice_and_save
-        result = true
-        self.each do |transaction_obj|
-            debugger
-            if !transaction_obj.save
-                result = false
-            end
-        end
-        result
-    end
-
-    # def index
-    #     # @transactions = Transaction.where('user_id = ?', current_user.id)
-    #     @transactions = Transaction.all
-    #     render :index
-    # end
-
-    # def show
-    #     @transaction = Transaction.find(params[:id])
-    #     render :show
-    # end
-
     def create
         @transaction_qt = transaction_params["quantity"].to_i
         @records = []
@@ -34,15 +11,12 @@ class Api::TransactionsController < ApplicationController
             @bank_trans = Transaction.new(transaction_params)
             if @bank_trans.save
                 case params[:transaction_type]
-                    debugger
                 when "Deposit"
-                    debugger
-                    last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
+                    last_cash_balance = !Portfolio.where(user_id: @current_user_id).empty? ? Portfolio.where(user_id: @current_user_id).last.balance : 0
                     @portfo_record = Portfolio.create({
                         user_id: @current_user_id,
                         balance: last_cash_balance += @bank_trans.transaction_amount,
                     })
-                    debugger
                 when  "Withdraw"
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                     @portfo_record = Portfolio.create({
@@ -53,16 +27,15 @@ class Api::TransactionsController < ApplicationController
                     "Not a valid trans type"                    
                 end
             end
-            debugger
             render :bank_index
         else
-            debugger
             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
             params[:transaction_amount] = ((params[:quantity].to_i * params[:cost_per_share].to_i) / params[:quantity].to_i).to_s
 
+            History.create(transaction_params)
+
             case params[:transaction_type]
             when "Buy"
-                debugger
                 Portfolio.create({
                     user_id: @current_user_id,
                     balance: last_cash_balance -= params[:transaction_amount].to_i
@@ -86,15 +59,12 @@ class Api::TransactionsController < ApplicationController
             end
 
             @records.each do |transaction_obj|
-                debugger
                 if !transaction_obj.save
                     return
                 end
             end
             @saved_records = Transaction.last(@records.length)
-            debugger
             render :index
-            # render json: {message: "success saving all records", data: Transaction.last(@records.length)}
         end
     end
 
@@ -103,35 +73,3 @@ class Api::TransactionsController < ApplicationController
         params.permit(:user_id, :ticker, :transaction_type, :transaction_amount, :quantity, :cost_per_share)
     end
 end
-
-
-    # def dice_and_save_delete
-    #     if @transaction_record.save
-    #         case @transaction_record.transaction_type
-    #         when "Buy"
-    #             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
-    #             @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
-                
-    #             Portfolio.create({
-    #                 user_id: @current_user_id,
-    #                 balance: last_cash_balance -= @transaction_record.transaction_amount,
-    #                 date: DateTime.now()
-    #             })
-
-    #             #stocks owned
-    #             @user_holdings = Transaction.where(user_id: @current_user_id, transaction_type: "Buy")
-    #             @portfo_snapshot = Hash.new()
-    #             @user_holdings.pluck(:ticker).uniq.each do |holding|
-    #                 average_cost = @user_holdings.where()
-    #                 @portfo_snapshot
-    #             end
-                
-    #             render json: { owned: @user_holdings, transaction: @transaction_record }
-                
-    #         when "Sell"
-    #             @transaction_record.update(transaction_amount: @transaction_record.quantity * @transaction_record.cost_per_share)
-    #         else
-    #             "Not a valid transaction type"
-    #         end
-    #     end
-    # end
