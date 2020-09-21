@@ -1,5 +1,3 @@
-require 'date'
-
 class Api::TransactionsController < ApplicationController
 
     def create
@@ -37,7 +35,6 @@ class Api::TransactionsController < ApplicationController
             History.create(transaction_params)
             
             params[:transaction_amount] = ((params[:quantity].to_i * params[:cost_per_share].to_i) / params[:quantity].to_i).to_s
-
 
             case params[:transaction_type]
             when "Buy"
