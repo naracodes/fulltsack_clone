@@ -57,7 +57,8 @@ class AssetShow extends React.Component {
       fetchCompanyInfo,
       fetchIntraday,
       fetchAssetNews,
-      fetchRating
+      fetchRating,
+      fetchPortfolioCashBalance
     } = this.props;
     const ticker =
       this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
@@ -71,6 +72,7 @@ class AssetShow extends React.Component {
     ]).then((response) => {
       // const companyName = response[1].asset.companyName.split(",")[0];
       fetchAssetNews(ticker);
+      fetchPortfolioCashBalance();
       // fetchRating(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
@@ -98,7 +100,7 @@ class AssetShow extends React.Component {
   }
 
   render() {
-    const { asset, watchlistArr, assetNews, currentUser, rating } = this.props;
+    const { asset, watchlistArr, assetNews, currentUser, rating, portfolio } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     if (!asset || !watchlistArr) {
       return null;
@@ -188,7 +190,7 @@ class AssetShow extends React.Component {
                               <div className="buying-power-value">
                                 <div className="buying-power-value-container">
                                   <span>
-                                    <h3>$0.00</h3>
+                                    <h3>${portfolio.balance}</h3>
                                   </span>
                                   <div className="buying-value-text">
                                     Buying Power
@@ -558,7 +560,7 @@ class AssetShow extends React.Component {
                         </div>
                         <footer className="buying-power-footer">
                           <div className="buying-power-content">
-                            <span>$0.00 Buying Power Available</span>
+                            <span>${portfolio.balance} Buying Power Available</span>
                           </div>
                         </footer>
                       </form>

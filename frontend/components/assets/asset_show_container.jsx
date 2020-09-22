@@ -11,6 +11,7 @@ import {
 } from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist } from '../../actions/watchlist_actions';
 import { fetchAssetNews } from "../../actions/news_actions";
+import { fetchPortfolioCashBalance } from '../../actions/transaction_actions';
 
 
 export const msp = (state, ownProps) => {
@@ -26,6 +27,7 @@ export const msp = (state, ownProps) => {
           currentUser: state.session.user,
           watchlistArr: Object.keys(state.entities.watchlists),
           assetNews: Object.values(news),
+            portfolio: state.entities.transactions,
         };
     }
 }
@@ -42,6 +44,7 @@ export const mdp = dispatch => {
         fetchAssetNews: (ticker) => dispatch(fetchAssetNews(ticker)),
         logout: () => dispatch(logout()),
         fetchRating: ticker => dispatch(fetchRating(ticker)),
+        fetchPortfolioCashBalance: () => dispatch(fetchPortfolioCashBalance()),
     }
 }
 
