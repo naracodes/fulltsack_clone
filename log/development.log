@@ -58124,3 +58124,96 @@ Migrating to UpdatePortfolios1 (20200921162237)
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-09-22 14:28:33 -0400
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nara/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (30.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (86.2ms)
+Completed 200 OK in 1255ms (Views: 1190.0ms | ActiveRecord: 63.5ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 14:28:35 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "64r3kDIs5EVitzGJHT7qzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (27.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (35.6ms)
+Completed 200 OK in 45ms (Views: 11.9ms | ActiveRecord: 30.3ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-22 14:29:11 -0400
+Processing by Api::PortfoliosController#index as JSON
+  Rendering api/portfolios/index.json.jbuilder
+  [1m[36mPortfolio Load (21.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE (user_id = 46)[0m
+  ↳ app/views/api/portfolios/index.json.jbuilder:7
+  Rendered api/portfolios/index.json.jbuilder (24.2ms)
+Completed 200 OK in 31ms (Views: 6.4ms | ActiveRecord: 23.2ms)
+
+
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=10000" for ::1 at 2020-09-22 14:29:37 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"10000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:10
+  [1m[36mTransaction Create (34.8ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-22 18:29:37.791322"], ["updated_at", "2020-09-22 18:29:37.791322"], ["transaction_amount", 10000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:10
+  [1m[36mPortfolio Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:18
+  [1m[36mPortfolio Create (1.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 10000.0], ["created_at", "2020-09-22 18:29:37.832837"], ["updated_at", "2020-09-22 18:29:37.832837"]]
+  ↳ app/controllers/api/transactions_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:18
+  Rendering api/transactions/bank_index.json.jbuilder
+  Rendered api/transactions/bank_index.json.jbuilder (0.2ms)
+Completed 200 OK in 60ms (Views: 5.8ms | ActiveRecord: 41.7ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-22 14:29:57 -0400
+Processing by Api::PortfoliosController#index as JSON
+  Rendering api/portfolios/index.json.jbuilder
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE (user_id = 46)[0m
+  ↳ app/views/api/portfolios/index.json.jbuilder:7
+  Rendered api/portfolios/index.json.jbuilder (1.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/transactions/?user_id=46&transaction_type=Deposit&transaction_amount=10000" for ::1 at 2020-09-22 14:40:43 -0400
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"user_id"=>"46", "transaction_type"=>"Deposit", "transaction_amount"=>"10000"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :format
+Unpermitted parameter: :format
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:10
+  [1m[36mTransaction Create (0.9ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "transaction_type", "created_at", "updated_at", "transaction_amount") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 46], ["transaction_type", "Deposit"], ["created_at", "2020-09-22 18:40:43.888340"], ["updated_at", "2020-09-22 18:40:43.888340"], ["transaction_amount", 10000.0]]
+  ↳ app/controllers/api/transactions_controller.rb:10
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:10
+  [1m[36mPortfolio Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:18
+  [1m[36mPortfolio Create (0.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("user_id", "balance", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 46], ["balance", 20000.0], ["created_at", "2020-09-22 18:40:43.904896"], ["updated_at", "2020-09-22 18:40:43.904896"]]
+  ↳ app/controllers/api/transactions_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:18
+  Rendering api/transactions/bank_index.json.jbuilder
+  Rendered api/transactions/bank_index.json.jbuilder (0.2ms)
+Completed 200 OK in 39ms (Views: 5.7ms | ActiveRecord: 19.2ms)
+
+

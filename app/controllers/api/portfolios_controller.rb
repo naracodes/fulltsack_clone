@@ -2,7 +2,7 @@ class Api::PortfoliosController < ApplicationController
     def index
         # @current_user = current_user
         @current_user_id = 46
-        @portfolio_data = Portfolio.where('user_id = ?', @current_user_id)
+        @portfolio_data = Portfolio.where('user_id = ?', @current_user_id).last
         render :index
     end
 
