@@ -16,8 +16,9 @@ class AssetShow extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.showDropdown  = this.showDropdown.bind(this);
-    this.investInDropdown  = this.investInDropdown.bind(this);
+    this.showDropdown2  = this.showDropdown2.bind(this);
     this.wrapperRef = React.createRef();
+    this.wrapperRef_invest = React.createRef();
     this.state = {
       showDropdown: false,
       investInDropdown: false,
@@ -100,12 +101,13 @@ class AssetShow extends React.Component {
   showDropdown(e) {
     e.preventDefault();
     this.setState({showDropdown: !this.state.showDropdown})
+    debugger
   }
 
-  investInDropdown(e) {
+  showDropdown2(e) {
+    debugger
     e.preventDefault();
-    this.setState({ investInDropdown: !this.state.investInDropdown })
-    console.log('invest in clicked')
+    return this.setState({ investInDropdown: !this.state.investInDropdown })
   }
 
   render() {
@@ -499,13 +501,13 @@ class AssetShow extends React.Component {
                         <div className="order-amount">
                           <div>
                             <div>
-                              <div className="selection" ref={this.wrapperRef}>
+                              <div className="selection" ref={this.wrapperRef_invest}>
                                 <label>Invest In</label>
-                                <div className="choice">
+                                <div className="choice" onClick={this.showDropdown2}>
                                   <div className="inner-choice">
                                     <div className="combo-box">
                                       <div className="invest-option">
-                                        <button className="invest-button" onClick={this.investInDropdown}>
+                                        <div className="invest-button">
                                           <div className="text">
                                             <span>Dollars</span>
                                           </div>
@@ -527,14 +529,24 @@ class AssetShow extends React.Component {
                                               ></path>
                                             </svg>
                                           </div>
-                                        </button>
-                                        {
-                                          this.state.investInDropdown ? (
-                                            <div className="investIn-outer">
-                                              
-                                            </div>
-                                          ) : null
-                                        }
+                                        </div>
+                                          {
+                                            this.state.investInDropdown ? (
+                                              console.log(this.state.investInDropdown)
+                                            ) : console.log(this.state.investInDropdown)
+                                          }
+                                            {/* <div className="investIn-outer">
+                                              <div className="shares-option">
+                                                <div className="shares-option-inner">
+                                                  <span>Shares</span>
+                                                </div>
+                                              </div>
+                                              <div className="dollars-option">
+                                                <div className="dollars-option-inner">
+                                                  <span>Dollars</span>
+                                                </div>
+                                              </div>
+                                            </div> */}
                                       </div>
                                     </div>
                                   </div>

@@ -1774,7 +1774,7 @@ table {
   overflow: hidden;
   box-sizing: border-box;
   height: 36px;
-    button,input {
+    .invest-button, input {
       outline: none;
       display: flex;
       width: 100%;
@@ -1785,10 +1785,10 @@ table {
       border: none;
       border-bottom: 1px solid transparent;
       height: 36px;
-    }
-
-    button {
       cursor: pointer;
+    }
+    svg {
+      margin-right: 5px;
     }
     input {
       text-align: right;
@@ -1796,7 +1796,6 @@ table {
       padding-left: 12px;
       text-indent: 0px;
     }
-    
     .text {
       flex: 1 1 auto;
       overflow: hidden;
@@ -2266,4 +2265,48 @@ table {
   justify-content: space-between;
   font-size: 15px;
   font-weight: 700;
+}
+
+//invest in option dropdown
+.investIn-outer {
+  position: absolute;
+  max-height: 500px;
+  height: 72px;
+  width: 134px;
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.shares-option {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 8px 12px;
+  justify-content: center;
+  cursor: pointer;
+    .shares-option-inner {
+      display: flex;
+      align-items: center;
+    }
+  span {
+    font-size: 100px;
+    line-height: 20px;
+  }
+}
+
+.dollars-option {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  padding: 8px 12px;
+  cursor: pointer;
+    .dollars-option-inner {
+      display: flex;
+      align-items: center;
+    }
+  span {
+    font-size: 13px;
+    line-height: 20px;
+  }
 }
