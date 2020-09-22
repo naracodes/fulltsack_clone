@@ -530,29 +530,19 @@ class AssetShow extends React.Component {
                                             </svg>
                                           </div>
                                         </div>
-                                          {
-                                            this.state.investInDropdown ? (
-                                              <div className="invest-outer">
-                                                SHARESHARESHARESHARESHARE
-                                                {console.log(this.state.investInDropdown)}
-                                              </div>
-
-                                              // console.log(this.state.investInDropdown)
-                                            ) : console.log(this.state.investInDropdown)
-                                          }
-                                            {/* <div className="investIn-outer">
+                                      </div>
+                                        {
+                                          this.state.investInDropdown ? (
+                                            <div className="invest-outer">
                                               <div className="shares-option">
-                                                <div className="shares-option-inner">
-                                                  <span>Shares</span>
-                                                </div>
+                                                <span>Shares</span>
                                               </div>
                                               <div className="dollars-option">
-                                                <div className="dollars-option-inner">
-                                                  <span>Dollars</span>
-                                                </div>
+                                                <span>Dollars</span>
                                               </div>
-                                            </div> */}
-                                      </div>
+                                            </div>
+                                          ) : console.log(this.state.investInDropdown)
+                                        }
                                     </div>
                                   </div>
                                 </div>
