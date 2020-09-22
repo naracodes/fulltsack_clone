@@ -2268,14 +2268,30 @@ table {
 }
 
 //invest in option dropdown
-.investIn-outer {
-  position: absolute;
-  max-height: 500px;
-  height: 72px;
-  width: 134px;
-  overflow: auto;
+// .investIn-outer {
+//   position: absolute;
+//   max-height: 500px;
+//   height: 72px;
+//   width: 134px;
+//   overflow: auto;
+//   box-sizing: border-box;
+//   background-color: #fff;
+// }
+
+.invest-outer {
+  top: 34px;
+  padding: 18px 0 0;
+  right: -12px;
+  width: 296px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 12px 24px 0, rgba(0, 0, 0, 0.06) 0 -12px 24px 0;
   box-sizing: border-box;
-  background-color: #fff;
+  max-height: 824px;
+  position: absolute;
+  display: block;
+  line-height: 20px;
+  z-index: 10;
+  color: red;
 }
 
 .shares-option {

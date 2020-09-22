@@ -532,7 +532,12 @@ class AssetShow extends React.Component {
                                         </div>
                                           {
                                             this.state.investInDropdown ? (
-                                              console.log(this.state.investInDropdown)
+                                              <div className="invest-outer">
+                                                SHARESHARESHARESHARESHARE
+                                                {console.log(this.state.investInDropdown)}
+                                              </div>
+
+                                              // console.log(this.state.investInDropdown)
                                             ) : console.log(this.state.investInDropdown)
                                           }
                                             {/* <div className="investIn-outer">
