@@ -16,9 +16,12 @@ class AssetShow extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.showDropdown  = this.showDropdown.bind(this);
+    this.investInDropdown  = this.investInDropdown.bind(this);
     this.wrapperRef = React.createRef();
     this.state = {
       showDropdown: false,
+      investInDropdown: false,
+      buyingPower: null,
     }
   }
 
@@ -97,6 +100,12 @@ class AssetShow extends React.Component {
   showDropdown(e) {
     e.preventDefault();
     this.setState({showDropdown: !this.state.showDropdown})
+  }
+
+  investInDropdown(e) {
+    e.preventDefault();
+    this.setState({ investInDropdown: !this.state.investInDropdown })
+    console.log('invest in clicked')
   }
 
   render() {
@@ -490,13 +499,13 @@ class AssetShow extends React.Component {
                         <div className="order-amount">
                           <div>
                             <div>
-                              <div className="selection">
+                              <div className="selection" ref={this.wrapperRef}>
                                 <label>Invest In</label>
                                 <div className="choice">
                                   <div className="inner-choice">
                                     <div className="combo-box">
                                       <div className="invest-option">
-                                        <button className="invest-button">
+                                        <button className="invest-button" onClick={this.investInDropdown}>
                                           <div className="text">
                                             <span>Dollars</span>
                                           </div>
@@ -519,6 +528,13 @@ class AssetShow extends React.Component {
                                             </svg>
                                           </div>
                                         </button>
+                                        {
+                                          this.state.investInDropdown ? (
+                                            <div className="investIn-outer">
+                                              
+                                            </div>
+                                          ) : null
+                                        }
                                       </div>
                                     </div>
                                   </div>

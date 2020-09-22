@@ -717,6 +717,19 @@ table {
       align-items: center;
       justify-content: center;
     }
+    #signup-my-account {
+      height: 48px;
+      min-width: 168px;
+      border-radius: 24px;
+      background-color: rgb(0, 200, 5);
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #signup-my-account:hover {
+      background-color: rgb(0, 180, 5);
+    }
     .auth-spacer {
       width: 25px;
     }

@@ -33,7 +33,7 @@ class Home extends React.Component {
         ) : (
           <div className="auth-container">
             <div className="auth-spacer"></div>
-            <Link id="signup" to="/">
+            <Link id="signup-my-account" to="/">
               My Account
             </Link>
           </div>
