@@ -57,7 +57,9 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchPortfolioCashBalance();
     document.addEventListener("mousedown", this.handleClickOutside);
+
   }
 
   componentWillUnmount() {
@@ -70,8 +72,8 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { currentUser, logout } = this.props;
-    // debugger;
+    const { currentUser, logout, portfolio } = this.props;
+    debugger;
     return (
       <div className="dashboard-outermost">
         <div className="header-bar">
@@ -147,7 +149,7 @@ class Dashboard extends React.Component {
                             <div className="buying-power-value">
                               <div className="buying-power-value-container">
                                 <span>
-                                  <h3>$0.00</h3>
+                                  <h3>${portfolio.balance}</h3>
                                 </span>
                                 <div className="buying-value-text">
                                   Buying Power
@@ -224,7 +226,7 @@ class Dashboard extends React.Component {
                   <header className="buying-p-heading">
                     <div>
                       <span>Buying Power</span>
-                      <span>$0.00</span>
+                        <span>${portfolio.balance}</span>
                     </div>
                   </header>
                 </div>

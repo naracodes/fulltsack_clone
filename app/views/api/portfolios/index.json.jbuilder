@@ -4,8 +4,12 @@
 #     end
 # end
 
-json.portfolio_data(@portfolio_data) do |data|
-  json.user_id data.user_id
-  json.balance data.balance
-  json.created_at data.created_at
-end
+# json.portfolio_data([@portfolio_data]) do |data|
+#   json.user_id data.user_id
+#   json.balance data.balance
+#   json.created_at data.created_at
+# end
+
+# json.set! @portfolio_data.user_id do
+  json.extract! @portfolio_data, :user_id, :balance, :created_at
+# end

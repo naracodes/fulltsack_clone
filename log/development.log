@@ -58217,3 +58217,538 @@ Unpermitted parameter: :format
 Completed 200 OK in 39ms (Views: 5.7ms | ActiveRecord: 19.2ms)
 
 
+Started GET "/" for ::1 at 2020-09-22 15:19:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 674ms (Views: 669.7ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/api/session" for ::1 at 2020-09-22 15:19:35 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:77
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:96
+  [1m[36mUser Exists (3.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:96
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$ehmG1ieGypXX5xhO/wnale7.lxtP8QmohZnmnXPqYHfTwb3V7j93G"], ["id", 46], ["LIMIT", 1]]
+  ↳ app/models/user.rb:96
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["updated_at", "2020-09-22 19:19:36.122587"], ["id", 46]]
+  ↳ app/models/user.rb:96
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:96
+  Rendering api/sessions/show.json.jbuilder
+  Rendered api/sessions/show.json.jbuilder (0.2ms)
+Completed 200 OK in 181ms (Views: 5.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:19:36 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:19:36 -0400
+Processing by Api::PortfoliosController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mPortfolio Load (1.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  Rendering api/portfolios/index.json.jbuilder
+  [1m[36mWatchlist Load (0.8ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/portfolios/index.json.jbuilder (4.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.7ms)
+
+
+
+ActionView::Template::Error - undefined method `map' for #<Portfolio:0x00007fcee698ed80>
+Did you mean?  tap:
+  app/views/api/portfolios/index.json.jbuilder:7:in `view template'
+  app/controllers/api/portfolios_controller.rb:6:in `index'
+
+  Rendered api/watchlists/index.json.jbuilder (14.5ms)
+Completed 200 OK in 28ms (Views: 10.7ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:21:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:21:55 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:21:55 -0400
+Processing by Api::PortfoliosController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.5ms)
+  Rendering api/watchlists/index.json.jbuilder
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (3.0ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:23:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:23:12 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:23:12 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Processing by Api::PortfoliosController#index as JSON
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mPortfolio Load (6.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mWatchlist Load (2.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (8.5ms)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 2.9ms)
+
+
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.5ms)
+Completed 200 OK in 19ms (Views: 11.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:24:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 723ms (Views: 721.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:24:51 -0400
+Processing by Api::WatchlistsController#index as JSON
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:24:51 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mWatchlist Load (0.9ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (3.2ms)
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.3ms)
+
+
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:25:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 635ms (Views: 633.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:25:09 -0400
+Processing by Api::WatchlistsController#index as JSON
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:25:09 -0400
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mWatchlist Load (0.8ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (2.2ms)
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 1.1ms)
+
+
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:26:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 713ms (Views: 711.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:28:07 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:28:07 -0400
+Processing by Api::WatchlistsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (2.6ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/watchlists/index.json.jbuilder
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mWatchlist Load (0.9ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (2.8ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:29:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 704ms (Views: 702.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:29:23 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:29:23 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Processing by Api::PortfoliosController#index as JSON
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mPortfolio Load (4.5ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mWatchlist Load (2.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (3.6ms)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 2.2ms)
+
+
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:29:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 378ms (Views: 376.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:30:24 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:30:24 -0400
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+Processing by Api::PortfoliosController#index as JSON
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (2.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/portfolios/index.json.jbuilder
+  Rendering api/watchlists/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.9ms)
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:31:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:31:46 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:31:46 -0400
+Processing by Api::PortfoliosController#index as JSON
+Processing by Api::WatchlistsController#index as JSON
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.8ms)
+
+
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.3ms)
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:33:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 682ms (Views: 680.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:33:14 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:33:14 -0400
+Processing by Api::WatchlistsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mPortfolio Load (5.6ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mWatchlist Load (1.8ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (3.2ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 2.7ms)
+
+
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:34:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:34:24 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:34:24 -0400
+Processing by Api::WatchlistsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mPortfolio Load (5.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mWatchlist Load (2.7ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/watchlists/index.json.jbuilder (8.3ms)
+  Rendered api/portfolios/index.json.jbuilder (0.5ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 3.8ms)
+
+
+Completed 200 OK in 16ms (Views: 9.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:34:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 645ms (Views: 643.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:34:27 -0400
+Processing by Api::WatchlistsController#index as JSON
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:34:27 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mWatchlist Load (1.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (2.8ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mPortfolio Load (1.5ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:35:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:35:35 -0400
+Processing by Api::WatchlistsController#index as JSON
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:35:35 -0400
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mWatchlist Load (0.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (1.6ms)
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.7ms)
+
+
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:35:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:35:51 -0400
+Processing by Api::WatchlistsController#index as JSON
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:35:51 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/watchlists/index.json.jbuilder
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mWatchlist Load (0.7ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/watchlists/index.json.jbuilder (3.4ms)
+  [1m[36mPortfolio Load (2.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:36:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:36:19 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:36:19 -0400
+Processing by Api::WatchlistsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (2.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/watchlists/index.json.jbuilder
+  Rendering api/portfolios/index.json.jbuilder
+  [1m[36mWatchlist Load (5.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/portfolios/index.json.jbuilder (0.8ms)
+  Rendered api/watchlists/index.json.jbuilder (8.7ms)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 2.1ms)
+
+
+Completed 200 OK in 21ms (Views: 13.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:36:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 648ms (Views: 646.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:36:24 -0400
+Processing by Api::WatchlistsController#index as JSON
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:36:24 -0400
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Processing by Api::PortfoliosController#index as JSON
+  Rendering api/watchlists/index.json.jbuilder
+  [1m[36mPortfolio Load (4.6ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  [1m[36mWatchlist Load (2.5ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/watchlists/index.json.jbuilder (7.8ms)
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 2.7ms)
+
+
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2020-09-22 15:36:36 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 643ms (Views: 640.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/watchlists" for ::1 at 2020-09-22 15:36:37 -0400
+Started GET "/api/portfolios" for ::1 at 2020-09-22 15:36:37 -0400
+Processing by Api::WatchlistsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (1.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE (user_id = 46) ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:5
+  Rendering api/watchlists/index.json.jbuilder
+  Rendering api/portfolios/index.json.jbuilder
+  [1m[36mWatchlist Load (3.8ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE (user_id = 46)[0m
+  ↳ app/views/api/watchlists/index.json.jbuilder:1
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 1.9ms)
+
+
+  Rendered api/watchlists/index.json.jbuilder (6.8ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 4.8ms)
+
+
