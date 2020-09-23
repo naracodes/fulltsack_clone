@@ -30,13 +30,13 @@ class AssetShow extends React.Component {
       // estimate: {"Dollars": 0, "Shares": `$${0.00}`},
       estQuantity: 0,
       estCost: 0,
-      order: {
-        user_id: this.props.currentUser.id,
-        ticker: this.props.asset.ticker,
-        transaction_type: "Buy", //or "Sell"
-        cost_per_share: this.props.asset.close,
-        transaction_amount: 0,
-      },
+      // order: {
+      //   user_id: this.props.currentUser.id,
+      //   ticker: this.props.asset.ticker,
+      //   transaction_type: "Buy", //or "Sell"
+      //   cost_per_share: this.props.asset.close,
+      //   transaction_amount: 0,
+      // },
     }
   }
 
