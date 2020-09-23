@@ -1,9 +1,7 @@
 class Api::PortfoliosController < ApplicationController
     def index
         @current_user_id = current_user ? current_user.id : 46
-        # @current_user_id = 46
         @portfolio_data = Portfolio.where(user_id: @current_user_id).last
-        debugger
         render :index
     end
 

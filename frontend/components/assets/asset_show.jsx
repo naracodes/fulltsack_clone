@@ -78,15 +78,19 @@ class AssetShow extends React.Component {
 
   update(field) {
     const { asset } = this.props;
+    let closingPrice =
+      asset.close ||
+      asset.chartData[asset.chartData.length - 1].close ||
+      asset.chartData[asset.chartData.length - 2].close;
     return e => {
       if (field === "Dollars") {
         this.setState({
-          estQuantity: (e.currentTarget.value / asset.close).toFixed(6),
+          estQuantity: (e.currentTarget.value / closingPrice).toFixed(6),
         })
       } else {
         this.setState({
-          estCost: (e.currentTarget.value * asset.close).toFixed(2),
-          order: { transaction_amount: (e.currentTarget.value * asset.close).toFixed(2)}
+          estCost: (e.currentTarget.value * closingPrice).toFixed(2),
+          order: { transaction_amount: (e.currentTarget.value * closingPrice).toFixed(2)}
         })
       }
     }
@@ -318,7 +322,7 @@ class AssetShow extends React.Component {
                         <AssetLineChart
                           data={asset.chartData}
                           company={asset.asset_name}
-                          closePrice={closingPrice}
+                          closePrice={closingPrice.toFixed(2)}
                           className="stock-graph"
                         />
                       </div>
@@ -633,7 +637,7 @@ class AssetShow extends React.Component {
                                     <span>Market Price</span>
                                   </div>
                                   <div className="the-price">
-                                    <span>${asset.close || asset.chartData[asset.chartData.length - 1].close}</span>
+                                    <span>${closingPrice.toFixed(2)}</span>
                                   </div>
                                 </div>
                               ) : null
