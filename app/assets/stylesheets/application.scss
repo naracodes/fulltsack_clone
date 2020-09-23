@@ -1653,8 +1653,11 @@ table {
 }
 
 .order-card {
-  height: 367px;
+  min-height: 367px;
+  box-sizing: border-box;
+  display: block;
   width: 100%;
+  // overflow: hidden;
   // border: 1px solid rgb(224, 221, 221);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.06) 0 12px 24px 0, rgba(0, 0, 0, 0.06) 0 -12px 24px 0;
@@ -1835,7 +1838,7 @@ table {
       text-align: right;
       background-color: rgb(245, 248, 250);
     }
-    input::placeholder {
+    input::placeholder, #shares-input::placeholder {
       color: lightgray;
     }
     #shares-input {
@@ -1850,11 +1853,11 @@ table {
       text-align: right;
       background-color: rgb(245, 248, 250);
     }
-    input:focus {
+    input:focus, #shares-input:focus {
       outline: 0;
       border: 1px solid rgb(255, 80, 0);
     }
-    input:hover {
+    input:hover, #shares-input:hover {
       background-color: transparent;
     }
 }
@@ -2346,4 +2349,35 @@ table {
     font-size: 13px;
     line-height: 20px;
   }
+}
+
+//market price
+.market-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+.market-price-label {
+  margin-right: 12px;
+  min-width: 48px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+    span {
+      color: rgb(0, 200, 5);
+      font-weight: 500;
+    }
+}
+
+.the-price {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+    span {
+      font-weight: 700;
+    }
 }

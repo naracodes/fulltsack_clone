@@ -588,6 +588,18 @@ class AssetShow extends React.Component {
                                 </div>
                               </div>
                             </div>
+                            {
+                              this.state.investOption === "Shares" ? (
+                                <div className="market-price">
+                                  <div className="market-price-label">
+                                    <span>Market Price</span>
+                                  </div>
+                                  <div className="the-price">
+                                    <span>${asset.close}</span>
+                                  </div>
+                                </div>
+                              ) : null
+                            }
                             <div className="est-qt-shares">
                               <div className="est-qt-content">
                                 <div className="est-qt-text">
