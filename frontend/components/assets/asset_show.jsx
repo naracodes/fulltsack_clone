@@ -18,12 +18,14 @@ class AssetShow extends React.Component {
     this.handleClickOutside_invest = this.handleClickOutside_invest.bind(this);
     this.showDropdown  = this.showDropdown.bind(this);
     this.showDropdown2  = this.showDropdown2.bind(this);
+    this.updateInvestOption  = this.updateInvestOption.bind(this);
     this.wrapperRef = React.createRef();
     this.wrapperRef_invest = React.createRef();
     this.state = {
       showDropdown: false,
       investInDropdown: false,
       buyingPower: null,
+      investOption: "Dollars"
     }
   }
 
@@ -40,12 +42,20 @@ class AssetShow extends React.Component {
     };
   }
 
+
   handleLogOut(e) {
     e.preventDefault();
     this.props.logout()
       .then(() => {
         this.props.history.push('/login')
       })
+  }
+
+  updateInvestOption(e) {
+    e.preventDefault();
+    this.setState({
+      investOption: this.state.investOption === "Dollars" ? "Shares" : "Dollars"
+    })
   }
 
   handleClickOutside(e) {
@@ -521,7 +531,7 @@ class AssetShow extends React.Component {
                                       <div className="invest-option">
                                         <div className="invest-button">
                                           <div className="text">
-                                            <span>Dollars</span>
+                                            <span>{this.state.investOption}</span>
                                           </div>
                                           <div className="svg">
                                             <svg
@@ -546,10 +556,10 @@ class AssetShow extends React.Component {
                                         {
                                           this.state.investInDropdown ? (
                                             <div className="invest-outer">
-                                              <div className="shares-option">
+                                              <div className="shares-option" onClick={this.updateInvestOption}>
                                                 <span>Shares</span>
                                               </div>
-                                              <div className="dollars-option">
+                                              <div className="dollars-option" onClick={this.updateInvestOption}>
                                                 <span>Dollars</span>
                                               </div>
                                             </div>
@@ -561,7 +571,7 @@ class AssetShow extends React.Component {
                               </div>
                             </div>
                             <div className="selection">
-                              <label>Amount</label>
+                              <label>{this.state.investOption === "Dollars" ? "Amount" : "Shares"}</label>
                               <div className="choice">
                                 <div className="inner-choice">
                                   <div className="combo-box">
