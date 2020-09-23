@@ -25,7 +25,8 @@ class AssetShow extends React.Component {
       showDropdown: false,
       investInDropdown: false,
       buyingPower: null,
-      investOption: "Dollars"
+      investOption: "Dollars",
+      estimate: {"Dollars": 0, "Shares": `$${0.00}`},
     }
   }
 
@@ -603,10 +604,10 @@ class AssetShow extends React.Component {
                             <div className="est-qt-shares">
                               <div className="est-qt-content">
                                 <div className="est-qt-text">
-                                  <span>Est. Quantity</span>
+                                  <span>{this.state.investOption === "Dollars" ? "Est. Quantity" : "Estimated Cost"}</span>
                                 </div>
                                 <div className="calculated-qt">
-                                  <span>num</span>
+                                    <span>{this.state.estimate[this.state.investOption]}</span>
                                 </div>
                               </div>
                             </div>
