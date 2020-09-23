@@ -576,7 +576,13 @@ class AssetShow extends React.Component {
                                 <div className="inner-choice">
                                   <div className="combo-box">
                                     <div className="invest-option-input">
-                                      <input type="text" placeholder="$0.00" />
+                                      {
+                                        this.state.investOption === "Dollars" ? (
+                                          <input type="text" placeholder="$0.00" />
+                                        ) : (
+                                          <input id="shares-input" type="text" placeholder="0" />
+                                        )
+                                      }
                                     </div>
                                   </div>
                                 </div>
