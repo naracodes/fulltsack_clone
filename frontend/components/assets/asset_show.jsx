@@ -30,6 +30,13 @@ class AssetShow extends React.Component {
       // estimate: {"Dollars": 0, "Shares": `$${0.00}`},
       estQuantity: 0,
       estCost: 0,
+      order: {
+        user_id: this.props.currentUser.id,
+        ticker: this.props.asset.ticker,
+        transaction_type: "Buy", //or "Sell"
+        cost_per_share: this.props.asset.close,
+        transaction_amount: 0,
+      },
     }
   }
 
@@ -50,7 +57,7 @@ class AssetShow extends React.Component {
     const {investOption} = this.state;
     e.preventDefault();
     if (investOption === "Shares") {
-      //buyInShares()
+      //this.props.buyInShares(order)
     }
   }
 
@@ -74,11 +81,12 @@ class AssetShow extends React.Component {
     return e => {
       if (field === "Dollars") {
         this.setState({
-          estQuantity: (e.currentTarget.value / asset.close).toFixed(6)
+          estQuantity: (e.currentTarget.value / asset.close).toFixed(6),
         })
       } else {
         this.setState({
-          estCost: (e.currentTarget.value * asset.close).toFixed(2)
+          estCost: (e.currentTarget.value * asset.close).toFixed(2),
+          order: { transaction_amount: (e.currentTarget.value * asset.close).toFixed(2)}
         })
       }
     }
