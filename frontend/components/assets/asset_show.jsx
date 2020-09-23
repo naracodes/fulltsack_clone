@@ -15,6 +15,7 @@ class AssetShow extends React.Component {
     this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.handleClickOutside_invest = this.handleClickOutside_invest.bind(this);
     this.showDropdown  = this.showDropdown.bind(this);
     this.showDropdown2  = this.showDropdown2.bind(this);
     this.wrapperRef = React.createRef();
@@ -55,6 +56,15 @@ class AssetShow extends React.Component {
     }
   }
 
+  handleClickOutside_invest(e) {
+    if (this.wrapperRef_invest && !this.wrapperRef_invest.current.contains(e.target)) {
+      console.log('clicked outside')
+      this.setState({
+        investInDropdown: false,
+      })
+    }
+  }
+
   componentDidMount() {
     const {
       fetchAsset,
@@ -80,10 +90,12 @@ class AssetShow extends React.Component {
       // fetchRating(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener("mousedown", this.handleClickOutside_invest);
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener("mousedown", this.handleClickOutside_invest);
   }
 
   handleAddToList(e) {
@@ -541,7 +553,7 @@ class AssetShow extends React.Component {
                                                 <span>Dollars</span>
                                               </div>
                                             </div>
-                                          ) : console.log(this.state.investInDropdown)
+                                          ) : null
                                         }
                                     </div>
                                   </div>
