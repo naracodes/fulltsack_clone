@@ -31,9 +31,9 @@ class AssetShow extends React.Component {
       estQuantity: 0,
       estCost: 0,
       // order: {
-      //   user_id: this.props.currentUser.id,
+      //   user_id: null,
       //   ticker: this.props.asset.ticker,
-      //   transaction_type: "Buy", //or "Sell"
+      //   transaction_type: "Buy", //default "Buy" //  "Sell"
       //   cost_per_share: this.props.asset.close,
       //   transaction_amount: 0,
       // },
@@ -54,7 +54,8 @@ class AssetShow extends React.Component {
   }
 
   handlePurchase(e) {
-    const {investOption} = this.state;
+    const { investOption } = this.state;
+    const { currentUser } = this.props;
     e.preventDefault();
     if (investOption === "Shares") {
       //this.props.buyInShares(order)

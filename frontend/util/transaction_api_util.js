@@ -5,19 +5,19 @@ export const fetchPortfolioCashBalance = () => {
     })
 }
 
-// export const addTransaction = (asset, currentUser) => {
-//     debugger
-//     const assetToAdd = $.ajax({
-//         method: 'POST',
-//         url: `/api/watchlists`,
-//         data: {
-//             user_id: currentUser.id,
-//             ticker: asset.ticker,
-//             asset_name: asset.companyName,
-//             latest_price: asset.latestPrice,
-//             // asset_id: asset.id,
-//         }
-//     })
-//     debugger
-//     return assetToAdd;
-// }
+export const addTransaction = (order, currentUser) => {
+    debugger
+    const assetToAdd = $.ajax({
+      method: "POST",
+      url: `/api/portfolios`,
+      data: {
+        user_id: currentUser.id,
+        ticker: "",
+        transaction_type: "",
+        cost_per_share: "",
+        transaction_amount: 0,
+      },
+    });
+    debugger
+    return assetToAdd;
+}
