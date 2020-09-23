@@ -67,6 +67,11 @@ class User < ApplicationRecord
 
     def cash_balance
         Portfolio.where(user_id: self.id).last.balance
+        # Transaction.create({
+        #     user_id: 4,
+        #     transaction_type: "Deposit",
+        #     transaction_amount: 100000,
+        # })
     end
 
     # has_many :watched_assets,

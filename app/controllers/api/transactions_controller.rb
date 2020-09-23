@@ -15,14 +15,14 @@ class Api::TransactionsController < ApplicationController
                         user_id: @current_user_id,
                         balance: last_cash_balance += @bank_trans.transaction_amount
                     })
-                    @portfo_record.save
+                    @portfo_record.save!
                 when  "Withdraw"
                     last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
                     @portfo_record = Portfolio.new({
                         user_id: @current_user_id,
                         balance: last_cash_balance -= @bank_trans.transaction_amount                        
                     })
-                    @portfo_record.save
+                    @portfo_record.save!
                 else
                     "Not a valid trans type"                    
                 end
