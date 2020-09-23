@@ -172,7 +172,10 @@ class AssetShow extends React.Component {
     if (!asset.chartData || !watchlistArr) {
       return null;
     } else {
-      let closingPrice = asset.close || asset.chartData[asset.chartData.length - 1].close
+      let closingPrice =
+        asset.close ||
+        asset.chartData[asset.chartData.length - 1].close ||
+        asset.chartData[asset.chartData.length - 2].close;
       let button = watchlistArr.includes(ticker) ? (
         <button className="add-button" onClick={this.handleRemoveFromList}>Remove</button>
       ) : (
