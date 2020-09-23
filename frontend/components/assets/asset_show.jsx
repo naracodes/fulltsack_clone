@@ -26,7 +26,9 @@ class AssetShow extends React.Component {
       investInDropdown: false,
       buyingPower: null,
       investOption: "Dollars",
-      estimate: {"Dollars": 0, "Shares": `$${0.00}`},
+      // estimate: {"Dollars": 0, "Shares": `$${0.00}`},
+      estQuantity: 0,
+      estCost: 0,
     }
   }
 
@@ -57,6 +59,21 @@ class AssetShow extends React.Component {
     this.setState({
       investOption: this.state.investOption === "Dollars" ? "Shares" : "Dollars"
     })
+  }
+
+  update(field) {
+    const { asset } = this.props;
+    return e => {
+      if (field === "Dollars") {
+        this.setState({
+          estQuantity: (e.currentTarget.value / asset.close).toFixed(6)
+        })
+      } else {
+        this.setState({
+          estCost: (e.currentTarget.value * asset.close).toFixed(2)
+        })
+      }
+    }
   }
 
   handleClickOutside(e) {
@@ -579,9 +596,9 @@ class AssetShow extends React.Component {
                                     <div className="invest-option-input">
                                       {
                                         this.state.investOption === "Dollars" ? (
-                                          <input type="text" placeholder="$0.00" />
+                                          <input type="text" placeholder="$0.00" onChange={this.update("Dollars")}/>
                                         ) : (
-                                          <input id="shares-input" type="text" placeholder="0" />
+                                            <input id="shares-input" type="text" placeholder="0" onChange={this.update("Shares")}/>
                                         )
                                       }
                                     </div>
@@ -607,7 +624,8 @@ class AssetShow extends React.Component {
                                   <span>{this.state.investOption === "Dollars" ? "Est. Quantity" : "Estimated Cost"}</span>
                                 </div>
                                 <div className="calculated-qt">
-                                    <span>{this.state.estimate[this.state.investOption]}</span>
+                                  <span>{this.state.investOption === "Dollars" ? this.state.estQuantity : `$${this.state.estCost}`}</span>
+                                    {/* <span>{this.state.estimate[this.state.investOption]}</span> */}
                                 </div>
                               </div>
                             </div>
