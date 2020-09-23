@@ -169,9 +169,10 @@ class AssetShow extends React.Component {
   render() {
     const { asset, watchlistArr, assetNews, currentUser, rating, portfolio } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (!asset || !watchlistArr) {
+    if (!asset.chartData || !watchlistArr) {
       return null;
     } else {
+      let closingPrice = asset.close || asset.chartData[asset.chartData.length - 1].close
       let button = watchlistArr.includes(ticker) ? (
         <button className="add-button" onClick={this.handleRemoveFromList}>Remove</button>
       ) : (
@@ -308,13 +309,13 @@ class AssetShow extends React.Component {
                   <div>
                     <section className="graph-section">
                       <header className="asset-price">
-                        <h1>{asset.close}</h1>
+                        <h1>HI</h1>
                       </header>
                       <div className="react-chart">
                         <AssetLineChart
                           data={asset.chartData}
                           company={asset.asset_name}
-                          closePrice={asset.close}
+                          closePrice={closingPrice}
                           className="stock-graph"
                         />
                       </div>
@@ -629,7 +630,7 @@ class AssetShow extends React.Component {
                                     <span>Market Price</span>
                                   </div>
                                   <div className="the-price">
-                                    <span>${asset.close}</span>
+                                    <span>${asset.close || asset.chartData[asset.chartData.length - 1].close}</span>
                                   </div>
                                 </div>
                               ) : null
