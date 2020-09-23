@@ -19,6 +19,7 @@ class AssetShow extends React.Component {
     this.showDropdown  = this.showDropdown.bind(this);
     this.showDropdown2  = this.showDropdown2.bind(this);
     this.updateInvestOption  = this.updateInvestOption.bind(this);
+    this.handlePurchase  = this.handlePurchase.bind(this);
     this.wrapperRef = React.createRef();
     this.wrapperRef_invest = React.createRef();
     this.state = {
@@ -45,6 +46,13 @@ class AssetShow extends React.Component {
     };
   }
 
+  handlePurchase(e) {
+    const {investOption} = this.state;
+    e.preventDefault();
+    if (investOption === "Shares") {
+      //buyInShares()
+    }
+  }
 
   handleLogOut(e) {
     e.preventDefault();
@@ -634,7 +642,7 @@ class AssetShow extends React.Component {
                         <div className="review-button-outer">
                           <div className="review-container">
                             <div className="review-button">
-                              <button className="review-submit">
+                              <button className="review-submit" onClick={this.handlePurchase}>
                                 <span>Review Order</span>
                               </button>
                             </div>
