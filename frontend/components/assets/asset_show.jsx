@@ -16,15 +16,19 @@ class AssetShow extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.handleClickOutside_invest = this.handleClickOutside_invest.bind(this);
-    this.showDropdown  = this.showDropdown.bind(this);
-    this.showDropdown2  = this.showDropdown2.bind(this);
-    this.updateInvestOption  = this.updateInvestOption.bind(this);
-    this.handleBuy  = this.handleBuy.bind(this);
+    this.showDropdown = this.showDropdown.bind(this);
+    this.showDropdown2 = this.showDropdown2.bind(this);
+    this.updateInvestOption = this.updateInvestOption.bind(this);
+    this.handleBuyClick = this.handleBuyClick.bind(this);
+    this.handleSellClick = this.handleSellClick.bind(this);
+    this.handleBuy = this.handleBuy.bind(this);
     this.wrapperRef = React.createRef();
     this.wrapperRef_invest = React.createRef();
     this.state = {
       showDropdown: false,
       investInDropdown: false,
+      buyColor: "black",
+      sellColor: "black",
       buyClicked: true,
       sellClicked: false,
       buyingPower: null,
@@ -40,7 +44,27 @@ class AssetShow extends React.Component {
         transaction_amount: "",
         quantity: "",
       },
-    }
+    };
+  }
+
+  handleBuyClick(e) {
+    e.preventDefault();
+    this.setState({
+      buyColor: "rbg(0, 200, 5)",
+      sellColor: "black",
+      buyClicked: true,
+      sellClicked: false,
+    }, () => console.log(this.state));
+  }
+
+  handleSellClick(e) {
+    e.preventDefault();
+    this.setState({
+      sellColor: "rbg(0, 200, 5)",
+      buyColor: "black",
+      sellClicked: true,
+      buyClicked: false,
+    }, () => console.log(this.state));
   }
 
   handleKeyDown(e) {
@@ -66,17 +90,17 @@ class AssetShow extends React.Component {
 
   handleLogOut(e) {
     e.preventDefault();
-    this.props.logout()
-      .then(() => {
-        this.props.history.push('/login')
-      })
+    this.props.logout().then(() => {
+      this.props.history.push("/login");
+    });
   }
 
   updateInvestOption(e) {
     e.preventDefault();
     this.setState({
-      investOption: this.state.investOption === "Dollars" ? "Shares" : "Dollars"
-    })
+      investOption:
+        this.state.investOption === "Dollars" ? "Shares" : "Dollars",
+    });
   }
 
   update(field) {
@@ -85,11 +109,11 @@ class AssetShow extends React.Component {
       asset.close ||
       asset.chartData[asset.chartData.length - 1].close ||
       asset.chartData[asset.chartData.length - 2].close;
-    return e => {
+    return (e) => {
       if (field === "Dollars") {
         this.setState({
           estQuantity: (e.currentTarget.value / closingPrice).toFixed(6),
-        })
+        });
       } else {
         this.setState({
           estCost: (e.currentTarget.value * closingPrice).toFixed(2),
@@ -98,28 +122,34 @@ class AssetShow extends React.Component {
             ticker: asset.ticker,
             transaction_type: this.state.order["transaction_type"],
             cost_per_share: closingPrice,
-            transaction_amount: (e.currentTarget.value * closingPrice).toFixed(2),
+            transaction_amount: (e.currentTarget.value * closingPrice).toFixed(
+              2
+            ),
             quantity: e.currentTarget.value,
           },
         });
       }
-    }
+    };
   }
 
   handleClickOutside(e) {
+    e.preventDefault();
     if (this.wrapperRef && !this.wrapperRef.current.contains(e.target)) {
       this.setState({
         showDropdown: false,
-      })
+      });
     }
   }
 
   handleClickOutside_invest(e) {
-    if (this.wrapperRef_invest && !this.wrapperRef_invest.current.contains(e.target)) {
-      console.log('clicked outside')
+    e.preventDefault();
+    if (
+      this.wrapperRef_invest &&
+      !this.wrapperRef_invest.current.contains(e.target)
+    ) {
       this.setState({
         investInDropdown: false,
-      })
+      });
     }
   }
 
@@ -131,13 +161,14 @@ class AssetShow extends React.Component {
       fetchAssetNews,
       fetchRating,
       fetchPortfolioCashBalance,
-      fetchHoldings
+      fetchHoldings,
     } = this.props;
     const ticker =
       this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
-    const companyName = this.props.asset.asset_name !== undefined
-      ? this.props.asset.asset_name.split(",")[0]
-      : "";
+    const companyName =
+      this.props.asset.asset_name !== undefined
+        ? this.props.asset.asset_name.split(",")[0]
+        : "";
     Promise.all([
       fetchCompanyInfo(ticker),
       fetchAsset(ticker),
@@ -172,31 +203,42 @@ class AssetShow extends React.Component {
 
   showDropdown(e) {
     e.preventDefault();
-    this.setState({showDropdown: !this.state.showDropdown})
+    this.setState({ showDropdown: !this.state.showDropdown });
   }
 
   showDropdown2(e) {
     e.preventDefault();
-    return this.setState({ investInDropdown: !this.state.investInDropdown })
+    return this.setState({ investInDropdown: !this.state.investInDropdown });
   }
 
   render() {
-    const { asset, watchlistArr, assetNews, currentUser, rating, portfolio, holdings } = this.props;
+    const {
+      asset,
+      watchlistArr,
+      assetNews,
+      currentUser,
+      rating,
+      portfolio,
+      holdings,
+    } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     if (!asset.chartData || !watchlistArr || !portfolio.balance) {
       return null;
     } else {
       let stockHoldings = holdings[asset.ticker] ? holdings[asset.ticker] : 0;
-      debugger
       let closingPrice =
         asset.close ||
         asset.chartData[asset.chartData.length - 1].close ||
         asset.chartData[asset.chartData.length - 2].close;
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
       let button = watchlistArr.includes(ticker) ? (
-        <button className="add-button" onClick={this.handleRemoveFromList}>Remove</button>
+        <button className="add-button" onClick={this.handleRemoveFromList}>
+          Remove
+        </button>
       ) : (
-        <button className="add-button" onClick={this.handleAddToList}>Add</button>
+        <button className="add-button" onClick={this.handleAddToList}>
+          Add
+        </button>
       );
       return (
         <div className="asset-show-outermost">
@@ -568,18 +610,22 @@ class AssetShow extends React.Component {
                       <form className="order-form">
                         <div className="order-type">
                           <div className="inner-order-type">
-                            <div className="type">
+                            <div
+                              className="type"
+                              onClick={this.handleBuyClick}
+                              style={{ color: this.state.buyColor }}
+                            >
                               <span>Buy {asset.ticker}</span>
                             </div>
-                            {
-                              stockHoldings ? (
-                            <div className="type">
-                              <span>Sell {asset.ticker}</span>
-                            </div>
-                              ) : (
-                                null
-                              )
-                            }
+                            {stockHoldings ? (
+                              <div
+                                className="type"
+                                onClick={this.handleSellClick}
+                                style={{ color: this.state.sellColor }}
+                              >
+                                <span>Sell {asset.ticker}</span>
+                              </div>
+                            ) : null}
                           </div>
                         </div>
                         <div className="order-amount">
