@@ -30,13 +30,13 @@ class AssetShow extends React.Component {
       // estimate: {"Dollars": 0, "Shares": `$${0.00}`},
       estQuantity: 0,
       estCost: 0,
-      // order: {
-      //   user_id: null,
-      //   ticker: this.props.asset.ticker,
-      //   transaction_type: "Buy", //default "Buy" //  "Sell"
-      //   cost_per_share: this.props.asset.close,
-      //   transaction_amount: 0,
-      // },
+      order: {
+        user_id: "",
+        ticker: "",
+        transaction_type: "Buy", //default "Buy" //  "Sell"
+        cost_per_share: "",
+        transaction_amount: "",
+      },
     }
   }
 
@@ -78,7 +78,7 @@ class AssetShow extends React.Component {
   }
 
   update(field) {
-    const { asset } = this.props;
+    const { asset, currentUser } = this.props;
     let closingPrice =
       asset.close ||
       asset.chartData[asset.chartData.length - 1].close ||
@@ -91,8 +91,13 @@ class AssetShow extends React.Component {
       } else {
         this.setState({
           estCost: (e.currentTarget.value * closingPrice).toFixed(2),
-          order: { transaction_amount: (e.currentTarget.value * closingPrice).toFixed(2)}
-        })
+          order: {
+            user_id: currentUser.id,
+            ticker: asset.ticker,
+            cost_per_share: closingPrice,
+            transaction_amount: (e.currentTarget.value * closingPrice).toFixed(2),
+          },
+        });
       }
     }
   }
