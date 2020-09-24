@@ -481,7 +481,7 @@ class AssetShow extends React.Component {
                       </header>
                       <div className="list-buttons">
                         <div className="button-one">
-                            <span>100 Most Popular</span>
+                          <span>100 Most Popular</span>
                         </div>
                       </div>
                     </section>
@@ -496,36 +496,36 @@ class AssetShow extends React.Component {
                         </div>
                       </header>
                       <div>
-                        {
-                          assetNews.map((article, i) => {
-                            return (
-                              <div key={i} className="article">
-                                <div className="inner-news-content">
-                                  <div className="title-side">
-                                    <div className="news-source">
-                                      <span>{article.source}</span>
-                                        <span className="time-since">xh</span>
-                                    </div>
-                                    <div className="news-title-and-more">
-                                      <h3 className="title-h3">
-                                        {article.headline}
-                                      </h3>
-                                      <div>
-                                        <span>{article.summary.slice(0, 59)}...</span>
-                                      </div>
-                                    </div>
+                        {assetNews.map((article, i) => {
+                          return (
+                            <div key={i} className="article">
+                              <div className="inner-news-content">
+                                <div className="title-side">
+                                  <div className="news-source">
+                                    <span>{article.source}</span>
+                                    <span className="time-since">xh</span>
                                   </div>
-                                  <div className="news-image">
-                                    <img
-                                      src="https://images.robinhood.com/WYBvSMKXdd8z6EYOysmzlW72gWw/aHR0cHM6Ly9pbWFnZXMucm9iaW5ob29kLmNvbS9IeHBzNlktdDZyV3pWaTk4SEs3OTU3alllQm8vYUhSMGNITTZMeTl6TG5scGJXY3VZMjl0TDNWMUwyRndhUzl5WlhNdk1TNHlMM3BwWDJkUE1HUjNMblJFUjBsTVNHcDNURVl1UVhjdExYNUNMMkZFTURGT1JHYzNaSG93TkUxRVFUZGpNakE1VFZSMGFHTklRbkJhUkRFMVpFZEdhbUZJYkhaaVp5MHRMMmgwZEhCek9pOHZiV1ZrYVdFdWVtVnVabk11WTI5dEwyVnVMVlZUTDNKbGRYUmxjbk10Wm1sdVlXNWpaUzVqYjIwdllUYzNOR1F6TWpVeE56Wm1ZbVJtTW1NeE5XTXhNV0ZrTWpZNE1UTTNaR0U"
-                                      alt="image of news"
-                                    />
+                                  <div className="news-title-and-more">
+                                    <h3 className="title-h3">
+                                      {article.headline}
+                                    </h3>
+                                    <div>
+                                      <span>
+                                        {article.summary.slice(0, 59)}...
+                                      </span>
+                                    </div>
                                   </div>
                                 </div>
+                                <div className="news-image">
+                                  <img
+                                    src="https://images.robinhood.com/WYBvSMKXdd8z6EYOysmzlW72gWw/aHR0cHM6Ly9pbWFnZXMucm9iaW5ob29kLmNvbS9IeHBzNlktdDZyV3pWaTk4SEs3OTU3alllQm8vYUhSMGNITTZMeTl6TG5scGJXY3VZMjl0TDNWMUwyRndhUzl5WlhNdk1TNHlMM3BwWDJkUE1HUjNMblJFUjBsTVNHcDNURVl1UVhjdExYNUNMMkZFTURGT1JHYzNaSG93TkUxRVFUZGpNakE1VFZSMGFHTklRbkJhUkRFMVpFZEdhbUZJYkhaaVp5MHRMMmgwZEhCek9pOHZiV1ZrYVdFdWVtVnVabk11WTI5dEwyVnVMVlZUTDNKbGRYUmxjbk10Wm1sdVlXNWpaUzVqYjIwdllUYzNOR1F6TWpVeE56Wm1ZbVJtTW1NeE5XTXhNV0ZrTWpZNE1UTTNaR0U"
+                                    alt="image of news"
+                                  />
+                                </div>
                               </div>
-                            );
-                          })
-                        }
+                            </div>
+                          );
+                        })}
                       </div>
                     </section>
                     <section className="rating-section">
@@ -539,11 +539,9 @@ class AssetShow extends React.Component {
                         </div>
                         <div className="pending-row">
                           <div className="left-rating">
-                            <div className="rating-circle">
-                            </div>
+                            <div className="rating-circle"></div>
                           </div>
-                          <div className="right-rating">
-                          </div>
+                          <div className="right-rating"></div>
                         </div>
                       </div>
                     </section>
@@ -570,20 +568,31 @@ class AssetShow extends React.Component {
                             <div className="type">
                               <span>Buy {asset.ticker}</span>
                             </div>
+                            <div className="type">
+                              <span>Sell {asset.ticker}</span>
+                            </div>
                           </div>
                         </div>
                         <div className="order-amount">
                           <div>
                             <div>
-                              <div className="selection" ref={this.wrapperRef_invest}>
+                              <div
+                                className="selection"
+                                ref={this.wrapperRef_invest}
+                              >
                                 <label>Invest In</label>
-                                <div className="choice" onClick={this.showDropdown2}>
+                                <div
+                                  className="choice"
+                                  onClick={this.showDropdown2}
+                                >
                                   <div className="inner-choice">
                                     <div className="combo-box">
                                       <div className="invest-option">
                                         <div className="invest-button">
                                           <div className="text">
-                                            <span>{this.state.investOption}</span>
+                                            <span>
+                                              {this.state.investOption}
+                                            </span>
                                           </div>
                                           <div className="svg">
                                             <svg
@@ -605,61 +614,82 @@ class AssetShow extends React.Component {
                                           </div>
                                         </div>
                                       </div>
-                                        {
-                                          this.state.investInDropdown ? (
-                                            <div className="invest-outer">
-                                              <div className="shares-option" onClick={this.updateInvestOption}>
-                                                <span>Shares</span>
-                                              </div>
-                                              <div className="dollars-option" onClick={this.updateInvestOption}>
-                                                <span>Dollars</span>
-                                              </div>
-                                            </div>
-                                          ) : null
-                                        }
+                                      {this.state.investInDropdown ? (
+                                        <div className="invest-outer">
+                                          <div
+                                            className="shares-option"
+                                            onClick={this.updateInvestOption}
+                                          >
+                                            <span>Shares</span>
+                                          </div>
+                                          <div
+                                            className="dollars-option"
+                                            onClick={this.updateInvestOption}
+                                          >
+                                            <span>Dollars</span>
+                                          </div>
+                                        </div>
+                                      ) : null}
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div className="selection">
-                              <label>{this.state.investOption === "Dollars" ? "Amount" : "Shares"}</label>
+                              <label>
+                                {this.state.investOption === "Dollars"
+                                  ? "Amount"
+                                  : "Shares"}
+                              </label>
                               <div className="choice">
                                 <div className="inner-choice">
                                   <div className="combo-box">
                                     <div className="invest-option-input">
-                                      {
-                                        this.state.investOption === "Dollars" ? (
-                                          <input type="text" placeholder="$0.00" onChange={this.update("Dollars")}/>
-                                        ) : (
-                                            <input id="shares-input" type="text" placeholder="0" onChange={this.update("Shares")}/>
-                                        )
-                                      }
+                                      {this.state.investOption === "Dollars" ? (
+                                        <input
+                                          type="text"
+                                          placeholder="$0.00"
+                                          onChange={this.update("Dollars")}
+                                        />
+                                      ) : (
+                                        <input
+                                          id="shares-input"
+                                          type="text"
+                                          placeholder="0"
+                                          onChange={this.update("Shares")}
+                                        />
+                                      )}
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            {
-                              this.state.investOption === "Shares" ? (
-                                <div className="market-price">
-                                  <div className="market-price-label">
-                                    <span>Market Price</span>
-                                  </div>
-                                  <div className="the-price">
-                                    <span>${closingPrice.toFixed(2)}</span>
-                                  </div>
+                            {this.state.investOption === "Shares" ? (
+                              <div className="market-price">
+                                <div className="market-price-label">
+                                  <span>Market Price</span>
                                 </div>
-                              ) : null
-                            }
+                                <div className="the-price">
+                                  <span>${closingPrice.toFixed(2)}</span>
+                                </div>
+                              </div>
+                            ) : null}
                             <div className="est-qt-shares">
                               <div className="est-qt-content">
                                 <div className="est-qt-text">
-                                  <span>{this.state.investOption === "Dollars" ? "Est. Quantity" : "Estimated Cost"}</span>
+                                  <span>
+                                    {this.state.investOption === "Dollars"
+                                      ? "Est. Quantity"
+                                      : "Estimated Cost"}
+                                  </span>
                                 </div>
                                 <div className="calculated-qt">
-                                  <span>{this.state.investOption === "Dollars" ? this.state.estQuantity : `$${this.state.estCost}`}</span>
-                                    {/* <span>{this.state.estimate[this.state.investOption]}</span> */}
+                                  <span>
+                                    {this.state.investOption === "Dollars"
+                                      ? this.state.estQuantity
+                                      : `$${this.state.estCost}`}
+                                  </span>
+                                  {/* <span>{this.state.estimate[this.state.investOption]}</span> */}
                                 </div>
                               </div>
                             </div>
@@ -668,7 +698,10 @@ class AssetShow extends React.Component {
                         <div className="review-button-outer">
                           <div className="review-container">
                             <div className="review-button">
-                              <button className="review-submit" onClick={this.handleBuy}>
+                              <button
+                                className="review-submit"
+                                onClick={this.handleBuy}
+                              >
                                 <span>Review Order</span>
                               </button>
                             </div>
@@ -676,7 +709,9 @@ class AssetShow extends React.Component {
                         </div>
                         <footer className="buying-power-footer">
                           <div className="buying-power-content">
-                            <span>${buyingPowerAvailable} Buying Power Available</span>
+                            <span>
+                              ${buyingPowerAvailable} Buying Power Available
+                            </span>
                           </div>
                         </footer>
                       </form>

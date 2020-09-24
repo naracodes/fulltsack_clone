@@ -30,7 +30,7 @@ class Api::TransactionsController < ApplicationController
             render :bank_index
         else
             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
-            debugger
+            # debugger
             # params[:transaction_amount] = (params[:quantity].to_i * params[:cost_per_share].to_i).to_s
 
             History.create(transaction_params)
@@ -58,18 +58,18 @@ class Api::TransactionsController < ApplicationController
                     @records << Transaction.new(transaction_params)
                 end
             else
-                debugger
+                # debugger
                 @records << Transaction.new(transaction_params)
             end
 
             @records.each do |transaction_obj|
-                debugger
+                # debugger
                 if !transaction_obj.save
                     return
                 end
             end
             @saved_records = Transaction.last(@records.length)
-            debugger
+            # debugger
             render :show
         end
     end
