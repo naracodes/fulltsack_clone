@@ -25,6 +25,8 @@ class AssetShow extends React.Component {
     this.state = {
       showDropdown: false,
       investInDropdown: false,
+      buyClicked: true,
+      sellClicked: false,
       buyingPower: null,
       investOption: "Dollars",
       // estimate: {"Dollars": 0, "Shares": `$${0.00}`},
