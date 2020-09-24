@@ -58,7 +58,6 @@ class AssetShow extends React.Component {
     const { investOption } = this.state;
     e.preventDefault();
     if (investOption === "Shares") {
-      debugger
       this.props.addTransaction(this.state.order);
     }
   }
@@ -129,7 +128,8 @@ class AssetShow extends React.Component {
       fetchIntraday,
       fetchAssetNews,
       fetchRating,
-      fetchPortfolioCashBalance
+      fetchPortfolioCashBalance,
+      fetchHoldings
     } = this.props;
     const ticker =
       this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
@@ -144,6 +144,7 @@ class AssetShow extends React.Component {
       // const companyName = response[1].asset.companyName.split(",")[0];
       fetchAssetNews(ticker);
       fetchPortfolioCashBalance();
+      fetchHoldings();
       // fetchRating(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
@@ -170,21 +171,21 @@ class AssetShow extends React.Component {
   showDropdown(e) {
     e.preventDefault();
     this.setState({showDropdown: !this.state.showDropdown})
-    debugger
   }
 
   showDropdown2(e) {
-    debugger
     e.preventDefault();
     return this.setState({ investInDropdown: !this.state.investInDropdown })
   }
 
   render() {
-    const { asset, watchlistArr, assetNews, currentUser, rating, portfolio } = this.props;
+    const { asset, watchlistArr, assetNews, currentUser, rating, portfolio, holdings } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     if (!asset.chartData || !watchlistArr || !portfolio.balance) {
       return null;
     } else {
+      let stockHoldings = holdings[asset.ticker] ? holdings[asset.ticker] : 0;
+      debugger
       let closingPrice =
         asset.close ||
         asset.chartData[asset.chartData.length - 1].close ||
@@ -568,9 +569,15 @@ class AssetShow extends React.Component {
                             <div className="type">
                               <span>Buy {asset.ticker}</span>
                             </div>
+                            {
+                              stockHoldings ? (
                             <div className="type">
                               <span>Sell {asset.ticker}</span>
                             </div>
+                              ) : (
+                                null
+                              )
+                            }
                           </div>
                         </div>
                         <div className="order-amount">

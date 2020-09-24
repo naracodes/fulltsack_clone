@@ -7,7 +7,7 @@ const portfoliosReducer = (oldState = {}, action) => {
     switch (action.type) {
       case RECEIVE_HOLDINGS:
           debugger
-        return action.holdings;
+        return action.holdings["holdings"]
       default:
         return oldState;
     }
