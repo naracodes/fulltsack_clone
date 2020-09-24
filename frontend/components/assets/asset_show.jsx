@@ -19,7 +19,7 @@ class AssetShow extends React.Component {
     this.showDropdown  = this.showDropdown.bind(this);
     this.showDropdown2  = this.showDropdown2.bind(this);
     this.updateInvestOption  = this.updateInvestOption.bind(this);
-    this.handlePurchase  = this.handlePurchase.bind(this);
+    this.handleBuy  = this.handleBuy.bind(this);
     this.wrapperRef = React.createRef();
     this.wrapperRef_invest = React.createRef();
     this.state = {
@@ -36,6 +36,7 @@ class AssetShow extends React.Component {
         transaction_type: "Buy", //default "Buy" //  "Sell"
         cost_per_share: "",
         transaction_amount: "",
+        quantity: "",
       },
     }
   }
@@ -53,12 +54,12 @@ class AssetShow extends React.Component {
     };
   }
 
-  handlePurchase(e) {
+  handleBuy(e) {
     const { investOption } = this.state;
-    const { currentUser } = this.props;
     e.preventDefault();
     if (investOption === "Shares") {
-      //this.props.buyInShares(order)
+      debugger
+      this.props.addTransaction(this.state.order);
     }
   }
 
@@ -94,8 +95,10 @@ class AssetShow extends React.Component {
           order: {
             user_id: currentUser.id,
             ticker: asset.ticker,
+            transaction_type: this.state.order["transaction_type"],
             cost_per_share: closingPrice,
             transaction_amount: (e.currentTarget.value * closingPrice).toFixed(2),
+            quantity: e.currentTarget.value,
           },
         });
       }
@@ -179,13 +182,14 @@ class AssetShow extends React.Component {
   render() {
     const { asset, watchlistArr, assetNews, currentUser, rating, portfolio } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (!asset.chartData || !watchlistArr) {
+    if (!asset.chartData || !watchlistArr || !portfolio.balance) {
       return null;
     } else {
       let closingPrice =
         asset.close ||
         asset.chartData[asset.chartData.length - 1].close ||
         asset.chartData[asset.chartData.length - 2].close;
+      let buyingPowerAvailable = portfolio.balance.toFixed(2);
       let button = watchlistArr.includes(ticker) ? (
         <button className="add-button" onClick={this.handleRemoveFromList}>Remove</button>
       ) : (
@@ -271,7 +275,7 @@ class AssetShow extends React.Component {
                               <div className="buying-power-value">
                                 <div className="buying-power-value-container">
                                   <span>
-                                    <h3>${portfolio.balance}</h3>
+                                    <h3>${buyingPowerAvailable}</h3>
                                   </span>
                                   <div className="buying-value-text">
                                     Buying Power
@@ -664,7 +668,7 @@ class AssetShow extends React.Component {
                         <div className="review-button-outer">
                           <div className="review-container">
                             <div className="review-button">
-                              <button className="review-submit" onClick={this.handlePurchase}>
+                              <button className="review-submit" onClick={this.handleBuy}>
                                 <span>Review Order</span>
                               </button>
                             </div>
@@ -672,7 +676,7 @@ class AssetShow extends React.Component {
                         </div>
                         <footer className="buying-power-footer">
                           <div className="buying-power-content">
-                            <span>${portfolio.balance} Buying Power Available</span>
+                            <span>${buyingPowerAvailable} Buying Power Available</span>
                           </div>
                         </footer>
                       </form>
