@@ -50,7 +50,7 @@ class AssetShow extends React.Component {
   handleBuyClick(e) {
     e.preventDefault();
     this.setState({
-      buyColor: "rbg(0, 200, 5)",
+      buyColor: "#00C805",
       sellColor: "black",
       buyClicked: true,
       sellClicked: false,
@@ -60,7 +60,7 @@ class AssetShow extends React.Component {
   handleSellClick(e) {
     e.preventDefault();
     this.setState({
-      sellColor: "rbg(0, 200, 5)",
+      sellColor: "#00C805",
       buyColor: "black",
       sellClicked: true,
       buyClicked: false,

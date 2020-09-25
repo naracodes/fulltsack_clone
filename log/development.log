@@ -61640,3 +61640,227 @@ Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 2.4ms)
 Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/" for ::1 at 2020-09-24 19:57:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-24 19:57:52 -0400
+Started GET "/api/holdings" for ::1 at 2020-09-24 19:57:52 -0400
+Processing by Api::PortfoliosController#index as JSON
+Processing by Api::HoldingsController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:4
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mTransaction Load (4.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/models/user.rb:33
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  ↳ app/models/user.rb:37
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for ::1 at 2020-09-24 19:57:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 675ms (Views: 673.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-24 19:57:54 -0400
+Started GET "/api/holdings" for ::1 at 2020-09-24 19:57:54 -0400
+Processing by Api::PortfoliosController#index as JSON
+Processing by Api::HoldingsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:4
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/models/user.rb:33
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  ↳ app/models/user.rb:37
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2020-09-24 19:58:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 694ms (Views: 691.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-24 19:58:32 -0400
+Started GET "/api/holdings" for ::1 at 2020-09-24 19:58:32 -0400
+Processing by Api::HoldingsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:4
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/models/user.rb:33
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  ↳ app/models/user.rb:37
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/" for ::1 at 2020-09-24 20:03:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 655ms (Views: 652.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-24 20:03:50 -0400
+Started GET "/api/holdings" for ::1 at 2020-09-24 20:03:50 -0400
+Processing by Api::PortfoliosController#index as JSON
+Processing by Api::HoldingsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mTransaction Load (1.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/models/user.rb:33
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  ↳ app/models/user.rb:37
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:4
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-09-24 20:03:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-24 20:03:51 -0400
+Started GET "/api/holdings" for ::1 at 2020-09-24 20:03:51 -0400
+Processing by Api::HoldingsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/models/user.rb:33
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:4
+  [1m[36mTransaction Load (2.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  ↳ app/models/user.rb:37
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 4.2ms)
+
+
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.3ms)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2020-09-24 20:04:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-24 20:04:19 -0400
+Started GET "/api/holdings" for ::1 at 2020-09-24 20:04:19 -0400
+Processing by Api::PortfoliosController#index as JSON
+Processing by Api::HoldingsController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/models/user.rb:33
+  ↳ app/controllers/api/portfolios_controller.rb:4
+  [1m[36mTransaction Load (2.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  ↳ app/models/user.rb:37
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.5ms)
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-09-24 20:04:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 731ms (Views: 729.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/portfolios" for ::1 at 2020-09-24 20:04:23 -0400
+Started GET "/api/holdings" for ::1 at 2020-09-24 20:04:23 -0400
+Processing by Api::HoldingsController#index as JSON
+Processing by Api::PortfoliosController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Buy"]]
+  ↳ app/models/user.rb:33
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."transaction_type" = $2[0m  [["user_id", 46], ["transaction_type", "Sell"]]
+  ↳ app/models/user.rb:37
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hFBz1UJwOaj2X_uFr-wO2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" DESC LIMIT $2[0m  [["user_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolios_controller.rb:4
+  Rendering api/portfolios/index.json.jbuilder
+  Rendered api/portfolios/index.json.jbuilder (0.4ms)
+Completed 200 OK in 12ms (Views: 6.1ms | ActiveRecord: 2.8ms)
+
+
