@@ -11,6 +11,7 @@ export const receiveCashBalance = balance => {
 }
 
 export const receiveTransaction = transaction => {
+    debugger
   return {
     type: RECEIVE_TRANSACTION,
     transaction,

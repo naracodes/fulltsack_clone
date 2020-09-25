@@ -12,16 +12,13 @@ class AssetNewsIndex extends React.Component {
   render() {
     const { assetNews, companyName, news } = this.props;
     const topThree = !this.props.news ? [] : this.props.news.slice(0, 3);
-    debugger
     if (!news) {
-      debugger
       return (
         <div className="asset-news-stand">
           This is news stand rendering nothing...
         </div>
       );
     } else {
-      debugger
       return (
         <div className="asset-news-stand">
           This is news {!companyName ? "null" : companyName}

@@ -29,7 +29,6 @@ export const msp = (state, ownProps) => {
           watchlistArr: Object.keys(state.entities.watchlists),
           assetNews: Object.values(news),
             portfolio: state.entities.transactions,
-            holdings: state.entities.portfolios,
         };
     }
 }

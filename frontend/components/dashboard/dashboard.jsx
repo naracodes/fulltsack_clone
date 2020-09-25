@@ -21,10 +21,8 @@ class Dashboard extends React.Component {
   }
 
   handleLogOut(e) {
-    debugger;
     e.preventDefault();
     this.props.logout().then(() => {
-      debugger;
       this.props.history.push("/login");
     });
   }

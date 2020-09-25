@@ -10,9 +10,7 @@ export const receiveAssetIntraday = (assetIntraday, ticker) => {
 
 
 export const fetchIntraday = (ticker) => (dispatch) => {
-  debugger;
   return AssetAPIUtil.fetchIntraday(ticker).then((assetIntraday) => {
-    debugger;
     return dispatch(receiveAssetIntraday(assetIntraday, ticker));
   });
 };

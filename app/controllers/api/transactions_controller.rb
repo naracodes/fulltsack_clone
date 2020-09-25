@@ -4,7 +4,6 @@ class Api::TransactionsController < ApplicationController
         @transaction_qt = params[:order][:quantity].to_i
         @records = []
         @current_user_id = params[:order][:user_id]
-
         if ["Deposit", "Withdraw"].include?(params[:order][:transaction_type])
             @bank_trans = Transaction.new(transaction_params)
             if @bank_trans.save
@@ -30,7 +29,7 @@ class Api::TransactionsController < ApplicationController
             render :bank_index
         else
             last_cash_balance = Portfolio.where(user_id: @current_user_id).last.balance
-            # debugger
+            debugger
             # params[:transaction_amount] = (params[:quantity].to_i * params[:cost_per_share].to_i).to_s
 
             History.create(transaction_params)
@@ -69,8 +68,9 @@ class Api::TransactionsController < ApplicationController
                 end
             end
             @saved_records = Transaction.last(@records.length)
-            # debugger
-            render :show
+            @current_user = current_user ? current_user : User.find(46)
+            @user_holdings = @current_user.holdings
+            render json: {portfo: @portfo_record, holdings: @user_holdings}
         end
     end
 

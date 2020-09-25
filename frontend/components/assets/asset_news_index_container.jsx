@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { fetchAssetNews } from "../../actions/news_actions";
 
 const msp = (state) => {
-  debugger;
   let news = state.entities.news ? state.entities.news : {};
   return {
     assetNews: Object.values(news),
@@ -13,7 +12,6 @@ const msp = (state) => {
 };
 
 const mdp = (dispatch) => {
-  debugger;
   return {
     fetchAssetNews: (companyName) => dispatch(fetchAssetNews(companyName)),
   };

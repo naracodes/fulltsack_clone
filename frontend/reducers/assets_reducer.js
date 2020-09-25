@@ -17,7 +17,6 @@ const assetsReducer = (oldState = {}, action) => {
             nextState[action.ticker]["chartData"] = action.assetIntraday;
             return nextState;
         case RECEIVE_RATING:
-            debugger
             nextState[action.ticker].rating = action.rating;
             return nextState;
         case RECEIVE_COMPANY_INFO:

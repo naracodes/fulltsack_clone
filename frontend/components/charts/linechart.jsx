@@ -14,7 +14,6 @@ import Odometer from "react-odometerjs";
 
 class AssetLineChart extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.state = {
       closePrice: null, // null to string

@@ -28,6 +28,7 @@ class AssetShow extends React.Component {
     this.handleSellClick = this.handleSellClick.bind(this);
     this.state = {
       showDropdown: false,
+      stocksOwned: "",
       investInDropdown: false,
       buyColor: "black",
       sellColor: "black",
@@ -97,7 +98,9 @@ class AssetShow extends React.Component {
         this.props.addTransaction(this.state.order);
       }
     } else {
-      
+      if (investOption === "Shares") {
+        this.props.addTransaction(this.state.order);
+      }
     }
   }
 
@@ -135,9 +138,7 @@ class AssetShow extends React.Component {
             ticker: asset.ticker,
             transaction_type: this.state.order["transaction_type"],
             cost_per_share: closingPrice,
-            transaction_amount: (e.currentTarget.value * closingPrice).toFixed(
-              2
-            ),
+            transaction_amount: (e.currentTarget.value * closingPrice).toFixed(2),
             quantity: e.currentTarget.value,
           },
         });
@@ -233,11 +234,11 @@ class AssetShow extends React.Component {
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (!asset.chartData || !watchlistArr || !portfolio.balance) {
+    if (!asset.chartData || !watchlistArr || !portfolio.balance || !portfolio.holdings) {
       return null;
     } else {
-      let stockHoldings = holdings[asset.ticker] ? holdings[asset.ticker] : 0;
-      debugger;
+      let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
+      // let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let closingPrice =
         asset.close ||
         asset.chartData[asset.chartData.length - 1].close ||
@@ -389,7 +390,7 @@ class AssetShow extends React.Component {
                         <AssetLineChart
                           data={asset.chartData}
                           company={asset.asset_name}
-                          closePrice={closingPrice.toFixed(2)}
+                          closePrice={closingPrice}
                           className="stock-graph"
                         />
                       </div>

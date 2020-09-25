@@ -58,7 +58,6 @@ export const receiveNews = (news, ticker) => {
 }
 
 export const receiveRating = (rating, ticker) => {
-    debugger
     return {
         type: RECEIVE_RATING,
         rating,
@@ -123,9 +122,7 @@ export const fetchIntraday = ticker => dispatch => {
 }
 
 export const fetchRating = ticker => dispatch => {
-    debugger
     return AssetAPIUtil.fetchRating(ticker).then(rating => {
-        debugger
         return dispatch(receiveRating(rating, ticker));
     })
 }
