@@ -635,7 +635,11 @@ class AssetShow extends React.Component {
                                 className="selection"
                                 ref={this.wrapperRef_invest}
                               >
-                                <label>Invest In</label>
+                                {this.state.sellClicked ? (
+                                  <label>Sell In</label>
+                                ) : (
+                                  <label>Invest In</label>
+                                )}
                                 <div
                                   className="choice"
                                   onClick={this.showDropdown2}
@@ -732,11 +736,19 @@ class AssetShow extends React.Component {
                             <div className="est-qt-shares">
                               <div className="est-qt-content">
                                 <div className="est-qt-text">
-                                  <span>
-                                    {this.state.investOption === "Dollars"
-                                      ? "Est. Quantity"
-                                      : "Estimated Cost"}
-                                  </span>
+                                  {this.state.buyClicked ? (
+                                    <span>
+                                      {this.state.investOption === "Dollars"
+                                        ? "Est. Quantity"
+                                        : "Estimated Cost"}
+                                    </span>
+                                  ) : (
+                                    <span>
+                                      {this.state.investOption === "Dollars"
+                                        ? "Est. Quantity"
+                                        : "Estimated Credit"}
+                                    </span>
+                                  )}
                                 </div>
                                 <div className="calculated-qt">
                                   <span>
