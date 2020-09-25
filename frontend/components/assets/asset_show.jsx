@@ -384,7 +384,6 @@ class AssetShow extends React.Component {
                   <div>
                     <section className="graph-section">
                       <header className="asset-price">
-                        <h1>HI</h1>
                       </header>
                       <div className="react-chart">
                         <AssetLineChart

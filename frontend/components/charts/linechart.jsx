@@ -40,20 +40,12 @@ class AssetLineChart extends React.Component {
     const { data, company, closePrice } = this.props;
     if (!data) {
       return null;
-    } 
-    // else {
-    //   if (this.state.closePrice === null) { // null -> string and in constructor
-    //     const closePrice = this.props.data[this.props.data.length - 1].close;
-    //     this.setState({
-    //       closePrice: closePrice,
-    //     });
-    //   }
-
+    }
       return (
         <div className="stock-graph">
-          <h1 className="company-name">{company ? company.split(',')[0] : ""}</h1>
+          {/* <h1 className="company-name">{company ? company.split(',')[0] : ""}</h1> */}
           {/* <h3>{this.state.closePrice}</h3> */}
-          <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice : this.state.closePrice} format="(,ddd).dd" /></div>
+          <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice.toFixed(2) : this.state.closePrice.toFixed(2)} format="(,ddd).dd" /></div>
           {/* <ResponsiveContainer id="responsive-container"> */}
             <LineChart
               // id="stock-line-chart"
