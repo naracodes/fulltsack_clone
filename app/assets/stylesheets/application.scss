@@ -2288,6 +2288,16 @@ table {
     }
 }
 
+.left-info-watchlist {
+  // flex: 0 1 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+    .stock-name-span {
+      padding-bottom: 5px;
+    }
+}
+
 .buying-p-heading div {
   display: flex;
   justify-content: space-between;

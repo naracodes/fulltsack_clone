@@ -12,19 +12,17 @@ const WatchlistIndexItem = props => {
                 {/* <Link to={`/stocks/${watchlistAsset.ticker}`} className="single-link">
                 </Link> */}
                     <div className="left-info-watchlist">
-                        <div className="left-info-watchlist-inner">
-                            <span>{watchlistAsset.ticker}</span>
-                            {
-                                stockHoldings ? (
-                                    <span>
-                                        {
-                                            stockHoldings > 1 ? `${stockHoldings} Shares`
-                                            : `${stockHoldings} Share`
-                                        }
-                                    </span>
-                                ) : null
-                            }
-                        </div>
+                        <span className="stock-name-span">{watchlistAsset.ticker}</span>
+                        {
+                            stockHoldings ? (
+                                <span>
+                                    {
+                                        stockHoldings > 1 ? `${stockHoldings} Shares`
+                                        : `${stockHoldings} Share`
+                                    }
+                                </span>
+                            ) : null
+                        }
                     </div>
                     <div>
                         Graph
