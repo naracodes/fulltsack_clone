@@ -90,10 +90,14 @@ class AssetShow extends React.Component {
   }
 
   handleBuy(e) {
-    const { investOption } = this.state;
+    const { investOption, buyClicked, sellClicked } = this.state;
     e.preventDefault();
-    if (investOption === "Shares") {
-      this.props.addTransaction(this.state.order);
+    if (buyClicked) {
+      if (investOption === "Shares") {
+        this.props.addTransaction(this.state.order);
+      }
+    } else {
+      
     }
   }
 
