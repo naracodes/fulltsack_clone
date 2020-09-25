@@ -782,9 +782,17 @@ class AssetShow extends React.Component {
                         </div>
                         <footer className="buying-power-footer">
                           <div className="buying-power-content">
-                            <span>
-                              ${buyingPowerAvailable} Buying Power Available
-                            </span>
+                            {this.state.sellClicked ? (
+                              <span>
+                                {stockHoldings > 1
+                                  ? `${stockHoldings} Shares Available`
+                                  : `${stockHoldings} Share Available`}
+                              </span>
+                            ) : (
+                              <span>
+                                ${buyingPowerAvailable} Buying Power Available
+                              </span>
+                            )}
                           </div>
                         </footer>
                       </form>
