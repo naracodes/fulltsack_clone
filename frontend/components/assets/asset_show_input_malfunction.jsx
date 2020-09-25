@@ -1,13 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import AssetLineChart from "../charts/linechart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
-import {
-  faAngellist,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faAngellist, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+// import AssetNewsIndexContainer from '../assets/asset_news_index_container';
 
 class AssetShow extends React.Component {
   constructor(props) {
@@ -21,15 +18,16 @@ class AssetShow extends React.Component {
     this.showDropdown = this.showDropdown.bind(this);
     this.showDropdown2 = this.showDropdown2.bind(this);
     this.updateInvestOption = this.updateInvestOption.bind(this);
-    this.handleBuy = this.handleBuy.bind(this);
-    this.wrapperRef = React.createRef();
-    this.wrapperRef_invest = React.createRef();
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
+    this.handleOrder = this.handleOrder.bind(this);
+    this.update = this.update.bind(this);
+    this.wrapperRef = React.createRef();
+    this.wrapperRef_invest = React.createRef();
     this.state = {
       showDropdown: false,
       investInDropdown: false,
-      buyColor: "black",
+      buyColor: "#00C805",
       sellColor: "black",
       buyClicked: true,
       sellClicked: false,
@@ -50,30 +48,24 @@ class AssetShow extends React.Component {
 
   handleBuyClick(e) {
     e.preventDefault();
-    this.setState(
-      {
-        buyColor: "#00C805",
-        sellColor: "black",
-        buyClicked: true,
-        sellClicked: false,
-        order: { transaction_type: "Buy" },
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      buyColor: "#00C805",
+      sellColor: "black",
+      buyClicked: true,
+      sellClicked: false,
+      order: { transaction_type: "Buy" }
+    });
   }
 
   handleSellClick(e) {
     e.preventDefault();
-    this.setState(
-      {
-        sellColor: "#00C805",
-        buyColor: "black",
-        sellClicked: true,
-        buyClicked: false,
-        order: { transaction_type: "Sell" },
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      sellColor: "#00C805",
+      buyColor: "black",
+      sellClicked: true,
+      buyClicked: false,
+      order: { transaction_type: "Sell" }
+    }, () => console.log(this.state));
   }
 
   handleKeyDown(e) {
@@ -89,11 +81,15 @@ class AssetShow extends React.Component {
     };
   }
 
-  handleBuy(e) {
-    const { investOption } = this.state;
+  handleOrder(e) {
+    const { investOption, buyClicked, sellClicked } = this.state;
     e.preventDefault();
-    if (investOption === "Shares") {
-      this.props.addTransaction(this.state.order);
+    if (buyClicked) {
+      if (investOption === "Shares") {
+        this.props.addTransaction(this.state.order);
+      }
+    } else if (sellClicked) {
+
     }
   }
 
@@ -119,6 +115,7 @@ class AssetShow extends React.Component {
       asset.chartData[asset.chartData.length - 1].close ||
       asset.chartData[asset.chartData.length - 2].close;
     return (e) => {
+      e.preventDefault();
       if (field === "Dollars") {
         this.setState({
           estQuantity: (e.currentTarget.value / closingPrice).toFixed(6),
@@ -131,9 +128,7 @@ class AssetShow extends React.Component {
             ticker: asset.ticker,
             transaction_type: this.state.order["transaction_type"],
             cost_per_share: closingPrice,
-            transaction_amount: (e.currentTarget.value * closingPrice).toFixed(
-              2
-            ),
+            transaction_amount: (e.currentTarget.value * closingPrice).toFixed(2),
             quantity: e.currentTarget.value,
           },
         });
@@ -142,6 +137,7 @@ class AssetShow extends React.Component {
   }
 
   handleClickOutside(e) {
+    e.preventDefault();
     if (this.wrapperRef && !this.wrapperRef.current.contains(e.target)) {
       this.setState({
         showDropdown: false,
@@ -150,6 +146,7 @@ class AssetShow extends React.Component {
   }
 
   handleClickOutside_invest(e) {
+    e.preventDefault();
     if (
       this.wrapperRef_invest &&
       !this.wrapperRef_invest.current.contains(e.target)
@@ -233,7 +230,6 @@ class AssetShow extends React.Component {
       return null;
     } else {
       let stockHoldings = holdings[asset.ticker] ? holdings[asset.ticker] : 0;
-      debugger;
       let closingPrice =
         asset.close ||
         asset.chartData[asset.chartData.length - 1].close ||
@@ -618,22 +614,20 @@ class AssetShow extends React.Component {
                       <form className="order-form">
                         <div className="order-type">
                           <div className="inner-order-type">
-                            <div className="type">
-                              <span
-                                onClick={this.handleBuyClick}
-                                style={{ color: this.state.buyColor }}
-                              >
-                                Buy {asset.ticker}
-                              </span>
+                            <div
+                              className="type"
+                              onClick={this.handleBuyClick}
+                              style={{ color: this.state.buyColor }}
+                            >
+                              <span>Buy {asset.ticker}</span>
                             </div>
                             {stockHoldings ? (
-                              <div className="type">
-                                <span
-                                  onClick={this.handleSellClick}
-                                  style={{ color: this.state.sellColor }}
-                                >
-                                  Sell {asset.ticker}
-                                </span>
+                              <div
+                                className="type"
+                                onClick={this.handleSellClick}
+                                style={{ color: this.state.sellColor }}
+                              >
+                                <span>Sell {asset.ticker}</span>
                               </div>
                             ) : null}
                           </div>
@@ -645,7 +639,11 @@ class AssetShow extends React.Component {
                                 className="selection"
                                 ref={this.wrapperRef_invest}
                               >
-                                <label>Invest In</label>
+                                {this.state.sellClicked ? (
+                                  <label>Sell In</label>
+                                ) : (
+                                  <label>Invest In</label>
+                                )}
                                 <div
                                   className="choice"
                                   onClick={this.showDropdown2}
@@ -712,16 +710,17 @@ class AssetShow extends React.Component {
                                     <div className="invest-option-input">
                                       {this.state.investOption === "Dollars" ? (
                                         <input
+                                          id="dollars-input"
                                           type="text"
                                           placeholder="$0.00"
-                                          onChange={this.update("Dollars")}
+                                          // onChange={this.update("Dollars")}
                                         />
                                       ) : (
                                         <input
                                           id="shares-input"
                                           type="text"
                                           placeholder="0"
-                                          onChange={this.update("Shares")}
+                                          // onChange={this.update("Shares")}
                                         />
                                       )}
                                     </div>
@@ -773,7 +772,7 @@ class AssetShow extends React.Component {
                             <div className="review-button">
                               <button
                                 className="review-submit"
-                                onClick={this.handleBuy}
+                                onClick={this.handleOrder}
                               >
                                 <span>Review Order</span>
                               </button>
@@ -782,9 +781,21 @@ class AssetShow extends React.Component {
                         </div>
                         <footer className="buying-power-footer">
                           <div className="buying-power-content">
-                            <span>
-                              ${buyingPowerAvailable} Buying Power Available
-                            </span>
+                            {this.state.sellClicked ? (
+                              <span>
+                                {
+                                  stockHoldings > 1 ? (
+                                    `${stockHoldings} Shares Available`
+                                  ) : (
+                                    `${stockHoldings} Share Available`
+                                  )
+                                }
+                              </span>
+                            ) : (
+                              <span>
+                                ${buyingPowerAvailable} Buying Power Available
+                              </span>
+                            )}
                           </div>
                         </footer>
                       </form>
@@ -808,3 +819,4 @@ class AssetShow extends React.Component {
 }
 
 export default AssetShow;
+
