@@ -5,10 +5,11 @@ import WatchlistIndexItem from './watchlist_index_item';
 class WatchlistIndex extends React.Component {
     componentDidMount() {
         this.props.fetchAllWatchlistAssets();
+        this.props.fetchHoldings();
     }
 
     render() {
-        const { watchlistAssets, currentUser } = this.props;
+        const { watchlistAssets, currentUser, holdings } = this.props;
         return (
           <div className="watchlist-items box">
             <header id="list-title">
@@ -21,6 +22,7 @@ class WatchlistIndex extends React.Component {
                         key={watchlistAsset.id}
                         watchlistAsset={watchlistAsset}
                         currentUser={currentUser}
+                        holdings={holdings}
                       />
                     </Link>
               );

@@ -8,6 +8,7 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import numeral from 'numeral';
 
 class AssetShow extends React.Component {
   constructor(props) {
@@ -383,8 +384,7 @@ class AssetShow extends React.Component {
                   </header>
                   <div>
                     <section className="graph-section">
-                      <header className="asset-price">
-                      </header>
+                      <header className="asset-price"></header>
                       <div className="react-chart">
                         <AssetLineChart
                           data={asset.chartData}
@@ -717,15 +717,19 @@ class AssetShow extends React.Component {
                                       {this.state.investOption === "Dollars" ? (
                                         <input
                                           type="text"
+                                          value={this.state.order.quantity}
                                           placeholder="$0.00"
                                           onChange={this.update("Dollars")}
+                                          defaultValue="Reset"
                                         />
                                       ) : (
                                         <input
                                           id="shares-input"
                                           type="text"
+                                          value={this.state.order.quantity}
                                           placeholder="0"
                                           onChange={this.update("Shares")}
+                                          defaultValue="Reset"
                                         />
                                       )}
                                     </div>
@@ -779,7 +783,7 @@ class AssetShow extends React.Component {
                                 className="review-submit"
                                 onClick={this.handleBuy}
                               >
-                                <span>Review Order</span>
+                                <span>Submit Order</span>
                               </button>
                             </div>
                           </div>
