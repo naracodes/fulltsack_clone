@@ -76,7 +76,7 @@ class Dashboard extends React.Component {
     // if (!portfolio.balance) {
     //   return null;
     // } else {
-      let buyingPowerAvailable = portfolio.balance.toFixed(2);
+      let buyingPowerAvailable = portfolio.balance;
       return (
         <div className="dashboard-outermost">
           <div className="header-bar">
