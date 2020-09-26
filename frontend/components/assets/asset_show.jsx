@@ -230,12 +230,11 @@ class AssetShow extends React.Component {
       watchlistArr,
       assetNews,
       currentUser,
-      rating,
       portfolio,
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (!asset.chartData || !watchlistArr || !portfolio.balance || !portfolio.holdings) {
+    if (!asset.chartData || !watchlistArr) {
       return null;
     } else {
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;

@@ -73,9 +73,9 @@ class Dashboard extends React.Component {
     const { currentUser, logout, portfolio } = this.props;
     debugger;
 
-    if (!portfolio.balance) {
-      return null;
-    } else {
+    // if (!portfolio.balance) {
+    //   return null;
+    // } else {
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
       return (
         <div className="dashboard-outermost">
@@ -264,7 +264,7 @@ class Dashboard extends React.Component {
           </div>
         </div>
       );
-    }
+    // }
   }
 }
 
