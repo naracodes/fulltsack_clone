@@ -73,10 +73,10 @@ class Dashboard extends React.Component {
     const { currentUser, logout, portfolio } = this.props;
     debugger;
 
-    // if (!portfolio.balance) {
-    //   return null;
-    // } else {
-      let buyingPowerAvailable = portfolio.balance;
+    if (!portfolio.balance) {
+      return null;
+    } else {
+      let buyingPowerAvailable = portfolio.balance.toFixed(2);
       return (
         <div className="dashboard-outermost">
           <div className="header-bar">
@@ -264,7 +264,7 @@ class Dashboard extends React.Component {
           </div>
         </div>
       );
-    // }
+    }
   }
 }
 
