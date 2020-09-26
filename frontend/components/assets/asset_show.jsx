@@ -720,7 +720,6 @@ class AssetShow extends React.Component {
                                           value={this.state.order.quantity}
                                           placeholder="$0.00"
                                           onChange={this.update("Dollars")}
-                                          defaultValue="Reset"
                                         />
                                       ) : (
                                         <input
@@ -729,7 +728,6 @@ class AssetShow extends React.Component {
                                           value={this.state.order.quantity}
                                           placeholder="0"
                                           onChange={this.update("Shares")}
-                                          defaultValue="Reset"
                                         />
                                       )}
                                     </div>
