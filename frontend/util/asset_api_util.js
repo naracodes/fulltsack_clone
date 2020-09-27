@@ -13,14 +13,6 @@ export const fetchAsset = ticker => {
     })
 }
 
-export const fetchPrice = ticker => {
-    return $.ajax({
-        method: 'GET',
-        // url: `https://sandbox.iexapis.com/stable/crypto/btcusd/quote/latestPrice?token=Tpk_9cc6c16a40494338943d728d111e9998`
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/price?token=Tpk_9cc6c16a40494338943d728d111e9998`
-    })
-}
-
 export const fetchMultipleAssets = (tickersArr) => {
     const tickers = tickersArr.join(',')
     return $.ajax({
@@ -34,13 +26,6 @@ export const fetchIntraday = ticker => { //base 5 min interval
     return $.ajax({
         method: 'GET',
         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=Tpk_9cc6c16a40494338943d728d111e9998&chartInterval=5`
-    })
-}
-
-export const fetchAssetStats = ticker => {
-    return $.ajax({
-        method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/stats/?token=Tpk_9cc6c16a40494338943d728d111e9998`
     })
 }
 
