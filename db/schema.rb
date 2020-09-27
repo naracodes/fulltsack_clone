@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_211614) do
+ActiveRecord::Schema.define(version: 2020_09_27_215806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,18 @@ ActiveRecord::Schema.define(version: 2020_09_24_211614) do
     t.datetime "updated_at", null: false
     t.float "portfolio"
     t.index ["user_id"], name: "index_portfolios_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rating_buy"
+    t.integer "rating_ow"
+    t.integer "rating_hold"
+    t.integer "rating_uw"
+    t.integer "rating_sell"
+    t.integer "rating_none"
+    t.float "rating_scale_mark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "transactions", force: :cascade do |t|
