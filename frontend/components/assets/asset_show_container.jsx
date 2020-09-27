@@ -4,7 +4,6 @@ import AssetShow from './asset_show';
 import { logout } from '../../actions/session_actions';
 import {
   fetchAsset,
-  fetchPrice,
   fetchCompanyInfo,
   fetchIntraday,
   fetchRating
@@ -36,7 +35,6 @@ export const msp = (state, ownProps) => {
 export const mdp = dispatch => {
     return {
         fetchAsset: ticker => dispatch(fetchAsset(ticker)),
-        fetchPrice: ticker => dispatch(fetchPrice(ticker)),
         clearAsset: () => dispatch(clearAsset()),
         addAssetToWatchlist: (asset, currentUser) => dispatch(addAssetToWatchlist(asset, currentUser)),
         deleteAssetFromWatchlist: (asset, currentUser) => dispatch(deleteAssetFromWatchlist(asset, currentUser)),
