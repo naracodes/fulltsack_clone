@@ -191,7 +191,7 @@ class AssetShow extends React.Component {
       fetchAssetNews(ticker);
       fetchPortfolioCashBalance();
       fetchHoldings();
-      // fetchRating(ticker);
+      fetchRating(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("mousedown", this.handleClickOutside_invest);
@@ -238,6 +238,7 @@ class AssetShow extends React.Component {
       return null;
     } else {
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
+      let rating = asset.rating.data;
       // let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let closingPrice =
         asset.close ||
@@ -585,7 +586,7 @@ class AssetShow extends React.Component {
                       </div>
                     </section>
                     <section className="rating-section">
-                      <div className="rating-heading">
+                      <header className="rating-heading">
                         <div className="rating-div">
                           <div className="rating-div-inner">
                             <h2 className="rating-h2">
@@ -599,6 +600,11 @@ class AssetShow extends React.Component {
                           </div>
                           <div className="right-rating"></div>
                         </div>
+                      </header>
+                      <div>
+                        {
+                          `${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`
+                        }
                       </div>
                     </section>
                     <section className="earnings-section">

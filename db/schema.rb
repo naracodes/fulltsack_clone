@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_215806) do
+ActiveRecord::Schema.define(version: 2020_09_27_222736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_215806) do
     t.float "rating_scale_mark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ticker"
   end
 
   create_table "transactions", force: :cascade do |t|
