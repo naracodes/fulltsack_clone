@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AssetLineChart from "../charts/linechart";
+import StackedChart from "../charts/rating_chart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -188,7 +189,7 @@ class AssetShow extends React.Component {
       fetchIntraday(ticker),
     ]).then((response) => {
       // const companyName = response[1].asset.companyName.split(",")[0];
-      fetchAssetNews(ticker);
+      // fetchAssetNews(ticker);
       fetchPortfolioCashBalance();
       fetchHoldings();
       fetchRating(ticker);
@@ -552,7 +553,7 @@ class AssetShow extends React.Component {
                           </div>
                         </div>
                       </header>
-                      <div>
+                      {/* <div>
                         {assetNews.map((article, i) => {
                           return (
                             <div key={i} className="article">
@@ -583,7 +584,7 @@ class AssetShow extends React.Component {
                             </div>
                           );
                         })}
-                      </div>
+                      </div> */}
                     </section>
                     <section className="rating-section">
                       <header className="rating-heading">
@@ -601,10 +602,17 @@ class AssetShow extends React.Component {
                           <div className="right-rating"></div>
                         </div>
                       </header>
-                      <div>
-                        {
-                          `${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`
-                        }
+                      <div className="analyst-ratings-pct">
+                          <StackedChart />
+                          <div>
+                            {`${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
+                          </div>
+                          <div>
+                            {`${((rating.rating_hold) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
+                          </div>
+                          <div>
+                            {`${((rating.rating_sell + rating.rating_uw) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
+                          </div>
                       </div>
                     </section>
                     <section className="earnings-section">
