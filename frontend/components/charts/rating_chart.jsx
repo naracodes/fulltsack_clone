@@ -23,17 +23,13 @@ import {
 // ];
 
 class StackedChart extends React.Component {
-    
-    customizedLabel({percent, index}) {
-        return (
-            <text fill="white" >
-                {`${(percent * 100).toFixed(0)}%`}
-            </text>
-        )
+
+    constructor(props) {
+        super(props)
     }
 
   render() {
-
+      const { buy, hold, sell } = this.props;
     const data = [
       { name: "Page A", uv: 91, pv: 9, amt: 9 },
     //   { name: "Page B", uv: 80, pv: 20, amt: 20 },
@@ -71,11 +67,11 @@ class StackedChart extends React.Component {
         <Tooltip />
         <Legend />
         <Bar dataKey="uv" stackId="a" fill="green">
-          <LabelList position="center">{`${data[0].uv}%`}</LabelList>
+          <LabelList position="center">{`${buy}%`}</LabelList>
         </Bar>
         <Bar dataKey="pv" stackId="a" fill="red">
           <LabelList position="center" dataKey="amt">
-            {`${data[0].amt}%`}
+            {`${hold}%`}
           </LabelList>
         </Bar>
       </BarChart>
