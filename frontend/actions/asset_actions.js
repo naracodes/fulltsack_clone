@@ -103,12 +103,6 @@ export const fetchAsset = ticker => dispatch => {
     })
 }
 
-export const fetchPrice = ticker => dispatch => {
-    return AssetAPIUtil.fetchPrice(ticker).then(assetPrice => {
-        return dispatch(receivePrice(assetPrice));
-    })
-}
-
 export const fetchCompanyInfo = ticker => dispatch => {
     return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
         return dispatch(receiveCompanyInfo(company));

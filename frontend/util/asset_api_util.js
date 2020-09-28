@@ -53,6 +53,7 @@ export const fetchCompanyInfo = ticker => {
 export const fetchRating = ticker => {
     return $.ajax({
       method: "GET",
-      url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tsk_498db2929da24682a573da9403ff8a2a`,
+      url: `/api/ratings/${ticker}`
+    //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tsk_498db2929da24682a573da9403ff8a2a`,
     });
 }
