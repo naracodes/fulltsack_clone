@@ -608,7 +608,7 @@ class AssetShow extends React.Component {
                             hold={((rating.rating_hold) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}
                             sell={'n/a'}
                           />
-                          <div>
+                          {/* <div>
                             {`${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
                           </div>
                           <div>
@@ -616,7 +616,7 @@ class AssetShow extends React.Component {
                           </div>
                           <div>
                             {`${((rating.rating_sell + rating.rating_uw) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
-                          </div>
+                          </div> */}
                       </div>
                     </section>
                     <section className="earnings-section">
