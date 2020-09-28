@@ -42,8 +42,9 @@ class StackedChart extends React.Component {
     debugger
     return (
       <BarChart
+      className="rating-bar-chart"
         width={427}
-        height={124}
+        height={82}
         data={data}
         margin={{
           top: 20,
@@ -54,6 +55,7 @@ class StackedChart extends React.Component {
         layout="vertical"
       >
         <XAxis
+            hide="true"
           type="number"
           domain={[0, 100]}
           ticks={[0, 100]}
@@ -61,17 +63,18 @@ class StackedChart extends React.Component {
         />
         <YAxis
           dataKey="name"
-          type="category"
-          axisLine={{ stroke: "#EAF0F4" }}
+        hide="true"
+        type="category"
+        axisLine={{ stroke: "#EAF0F4" }}
         />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="uv" stackId="a" fill="green">
-          <LabelList position="center">{`${buy}%`}</LabelList>
+        {/* <Legend /> */}
+        <Bar dataKey="uv" stackId="a" fill="#41e538">
+          <LabelList fill="white" position="center">{`${buy}% Buy`}</LabelList>
         </Bar>
-        <Bar dataKey="pv" stackId="a" fill="red">
-          <LabelList position="center" dataKey="amt">
-            {`${hold}%`}
+        <Bar dataKey="pv" stackId="a" fill="#b5b5b5">
+          <LabelList fill="white" position="center" dataKey="amt">
+            {`${hold}% Hold`}
           </LabelList>
         </Bar>
       </BarChart>
