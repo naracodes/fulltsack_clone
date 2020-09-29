@@ -58,11 +58,11 @@ class Dashboard extends React.Component {
     };
   }
 
-  mergeData(userDataArr, stockData) {
+  mergeData(userDataArr, stockData, holdings) {
     userDataArr.forEach((data, i) => {
       // let mergingBalance = userDataArr[i].cash_balance;
       Object.keys(stockData).forEach(ticker => {
-        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close : 0;
+        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * holdings[ticker] : 0;
         // merged += stockData[ticker]["intraday-prices"][i].close
         // return userDataArr[i].cash_balance + stockData[ticker].intraday-prices[i].close
       })
@@ -85,13 +85,15 @@ class Dashboard extends React.Component {
       fetchMultipleIntraday(tickers).then(multIntra => {
         // console.log(res[2].data.data)
         // console.log(multIntra.multIntraday)
+        console.log(res[0].holdings.holdings)
         let userData = res[2].data.data;
         let stockData = multIntra.multIntraday;
+        let holdings = res[0].holdings.holdings;
         // console.log(this.mergeData(userData, stockData))
-        let newData = this.mergeData(userData, stockData)
+        let newData = this.mergeData(userData, stockData, holdings)
         this.setState({
           mergedData: newData,
-        }, () => console.log(this.state));
+        },);
       })
     })
     document.addEventListener("mousedown", this.handleClickOutside);
