@@ -84,7 +84,7 @@ class Dashboard extends React.Component {
       const tickers = Object.keys(res[0].holdings.holdings);
       fetchMultipleIntraday(tickers).then(multIntra => {
         // console.log(res[2].data.data)
-        // console.log(multIntra.multIntraday)
+        console.log(multIntra.multIntraday)
         console.log(res[0].holdings.holdings)
         let userData = res[2].data.data;
         let stockData = multIntra.multIntraday;
