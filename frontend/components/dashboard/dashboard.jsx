@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import PortfoLineChart from '../charts/portfo_chart';
+import { fetchHoldings } from '../../actions/holding_action';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -56,10 +57,17 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
+    const { fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings } = this.props;
+    // const tickers = Object.keys(this.props.portfolio.holdings);
     Promise.all([
-      this.props.fetchPortfolioCashBalance(),
-      this.props.fetchPortfoData()
-    ])
+      fetchHoldings(),
+      fetchPortfolioCashBalance(),
+      fetchPortfoData(),
+    ]).then(res => {
+      console.log(Object.keys(res[0].holdings.holdings))
+      const tickers = Object.keys(res[0].holdings.holdings);
+      fetchMultipleIntraday(tickers);
+    })
     document.addEventListener("mousedown", this.handleClickOutside);
 
   }

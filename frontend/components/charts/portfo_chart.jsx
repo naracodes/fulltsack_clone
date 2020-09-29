@@ -48,9 +48,9 @@ class PortfoLineChart extends React.Component {
             <div className="odometer">
                 $
                 <Odometer
-                value={
-                    data[data.length - 1].cash_balance
-                }
+                // value={
+                //     // data[data.length - 1].cash_balance
+                // }
                 format="(,ddd).dd"
                 />
             </div>
