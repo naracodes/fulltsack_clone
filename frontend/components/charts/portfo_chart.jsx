@@ -41,6 +41,7 @@ class PortfoLineChart extends React.Component {
     if (!data) {
       return null;
     } else {
+        // debugger
         return (
             <div className="stock-graph">
             {/* <h1 className="company-name">{company ? company.split(',')[0] : ""}</h1> */}
@@ -65,7 +66,7 @@ class PortfoLineChart extends React.Component {
                 onMouseLeave={this.handleMouseLeave}
             >
                 <XAxis tickLine={false} dataKey="label" hide={true} />
-                <YAxis hide={true} domain={["auto", "dataMax"]} />
+                <YAxis hide={true} domain={["dataMin", "dataMax"]} />
                 <Tooltip
                 isAnimationActive={false}
                 // offset={5}

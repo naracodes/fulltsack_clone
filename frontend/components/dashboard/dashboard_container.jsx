@@ -18,7 +18,7 @@ const msp = state => {
     }
 }
 
-const mdp = (dispatch) => {
+const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
     fetchPortfolioCashBalance: () => dispatch(fetchPortfolioCashBalance()),

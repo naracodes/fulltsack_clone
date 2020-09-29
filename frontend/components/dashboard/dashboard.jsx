@@ -19,7 +19,9 @@ class Dashboard extends React.Component {
     this.wrapperRef = React.createRef();
     this.state = {
       showDropdown: false,
+      mergedData: "",
     };
+    this.mergeData = this.mergeData.bind(this);
   }
 
   handleLogOut(e) {
@@ -56,6 +58,19 @@ class Dashboard extends React.Component {
     };
   }
 
+  mergeData(userDataArr, stockData) {
+    userDataArr.forEach((data, i) => {
+      // let mergingBalance = userDataArr[i].cash_balance;
+      Object.keys(stockData).forEach(ticker => {
+        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close : 0;
+        // merged += stockData[ticker]["intraday-prices"][i].close
+        // return userDataArr[i].cash_balance + stockData[ticker].intraday-prices[i].close
+      })
+      debugger
+    })
+    return userDataArr;
+  }
+
   componentDidMount() {
     const { fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings } = this.props;
     // const tickers = Object.keys(this.props.portfolio.holdings);
@@ -64,9 +79,20 @@ class Dashboard extends React.Component {
       fetchPortfolioCashBalance(),
       fetchPortfoData(),
     ]).then(res => {
-      console.log(Object.keys(res[0].holdings.holdings))
+      console.log(Object.keys(res[0].holdings.holdings));
+      // console.log(res[2].data)
       const tickers = Object.keys(res[0].holdings.holdings);
-      fetchMultipleIntraday(tickers);
+      fetchMultipleIntraday(tickers).then(multIntra => {
+        // console.log(res[2].data.data)
+        // console.log(multIntra.multIntraday)
+        let userData = res[2].data.data;
+        let stockData = multIntra.multIntraday;
+        // console.log(this.mergeData(userData, stockData))
+        let newData = this.mergeData(userData, stockData)
+        this.setState({
+          mergedData: newData,
+        }, () => console.log(this.state));
+      })
     })
     document.addEventListener("mousedown", this.handleClickOutside);
 
@@ -220,7 +246,7 @@ class Dashboard extends React.Component {
                     </header>
                     <div className="react-chart">
                       <PortfoLineChart
-                        data={this.props.porftoData}
+                        data={this.state.mergedData}
                         className="stock-graph"
                       />
                     </div>
