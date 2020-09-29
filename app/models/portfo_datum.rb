@@ -1,0 +1,2 @@
+class PortfoDatum < ApplicationRecord
+end

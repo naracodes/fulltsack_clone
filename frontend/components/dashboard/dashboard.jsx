@@ -55,7 +55,10 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPortfolioCashBalance();
+    Promise.all([
+      this.props.fetchPortfolioCashBalance(),
+      this.props.fetchPortfoData()
+    ])
     document.addEventListener("mousedown", this.handleClickOutside);
 
   }
@@ -71,7 +74,7 @@ class Dashboard extends React.Component {
 
   render() {
     const { currentUser, logout, portfolio } = this.props;
-    debugger;
+    // debugger;
 
     if (!portfolio.balance) {
       return null;

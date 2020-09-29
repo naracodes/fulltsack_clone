@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import Dashboard from './dashboard';
 import { logout } from "../../actions/session_actions";
 import { fetchPortfolioCashBalance } from '../../actions/transaction_actions';
+import { fetchPortfoData } from '../../actions/portfo_actions';
 
 const msp = state => {
-  debugger
+  // debugger
     return {
         currentUser: state.session.user,
         portfolio: state.entities.transactions,
+        porftoData: state.entities.portfos,
     }
 }
 
@@ -16,6 +18,7 @@ const mdp = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
     fetchPortfolioCashBalance: () => dispatch(fetchPortfolioCashBalance()),
+    fetchPortfoData: () => dispatch(fetchPortfoData()),
   };
 };
 
