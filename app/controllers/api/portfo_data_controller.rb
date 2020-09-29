@@ -1,6 +1,8 @@
 class Api::PortfoDataController < ApplicationController
     def index
-        
+        @current_user = current_user || User.find(46)
+        @all_data = PortfoData.where(user_id: @current_user.id)
+        render json: { data: @all_data}
     end
 
     def create

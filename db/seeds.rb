@@ -160,3 +160,31 @@ end
 #     })
 # end
 
+@last_portfo_data = PortfoDatum.last
+today = Time.now.strftime("%Y-%m-%d")
+market_open = "09:30 AM"
+today_open = Time.parse(market_open)
+@last_portfo_data = @last_portfo_data ? @last_portfo_data.created_at.strftime("%Y-%m-%d") : today_open - (24 * 60 * 60)
+@current_user = current_user || User.find(46)
+
+new_day = last_data_pt < today
+
+if new_day
+    PortfoDatum.create({
+        user_id: @current_user.id,
+        date: today,
+        label: market_open,
+        cash_balance: current_user.cash_balance || User.find(46).cash_balance
+    })
+    until today_open.strftime("%I:%M %p") == "04:30 PM"
+        PortfoDatum.create({
+            user_id: @current_user.id,
+            date: today,
+            label: (today_open += (5 * 60)).strftime("%I:%M %p"),
+            cash_balance: current_user.cash_balance || User.find(46).cash_balance
+        })
+    end
+    # create reset, weekend/holday instance variable methods
+    # today_open.reset!
+    today_open = Time.parse("9:30 AM")
+end
