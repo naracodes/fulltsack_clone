@@ -5,6 +5,7 @@ import WatchlistIndexContainer from '../watchlist/watchlist_index_container';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import PortfoLineChart from '../charts/portfo_chart';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -209,7 +210,12 @@ class Dashboard extends React.Component {
                     <header className="asset-price">
                       <h1>Portfolio Graph</h1>
                     </header>
-                    <div className="react-chart"></div>
+                    <div className="react-chart">
+                      <PortfoLineChart
+                        data={this.props.porftoData}
+                        className="stock-graph"
+                      />
+                    </div>
                     <nav className="range">
                       <div className="range-buttons">
                         <div className="1D">

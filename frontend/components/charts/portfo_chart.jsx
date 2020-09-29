@@ -16,7 +16,7 @@ class PortfoLineChart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      closePrice: null, // null to string
+      cashBalance: null, // null to string
     };
     this.handleHover = this.handleHover.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
@@ -25,19 +25,19 @@ class PortfoLineChart extends React.Component {
   handleHover(e) {
     if (e.activePayload && this.props.data) {
       this.setState({
-        closePrice: e.activePayload[0].payload.close,
+        cashBalance: e.activePayload[0].payload.close,
       });
     }
   }
 
   handleMouseLeave(e) {
     this.setState({
-      closePrice: null,
+      cashBalance: null,
     });
   }
 
   render() {
-    const { data, company, closePrice } = this.props;
+    const { data } = this.props;
     if (!data) {
       return null;
     }
@@ -49,9 +49,7 @@ class PortfoLineChart extends React.Component {
           $
           <Odometer
             value={
-              !this.state.closePrice
-                ? closePrice.toFixed(2)
-                : this.state.closePrice.toFixed(2)
+              !this.state.cashBalance
             }
             format="(,ddd).dd"
           />
@@ -75,7 +73,7 @@ class PortfoLineChart extends React.Component {
           />
           <Line
             type="linear"
-            dataKey="close"
+            dataKey="cash_balance"
             stroke="#1aee99"
             dot={false}
             // activeDot={ { onClick: (e) => console.log(e) } }
