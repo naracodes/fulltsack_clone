@@ -1,6 +1,4 @@
-require 'time'
-
-class Api::PortfoliosDataController < ApplicationController
+class Api::PortfoDataController < ApplicationController
     def index
         
     end
