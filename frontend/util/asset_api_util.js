@@ -29,6 +29,15 @@ export const fetchIntraday = ticker => { //base 5 min interval
     })
 }
 
+export const fetchMultipleIntraday = tickersArr => { // 5 min interval
+    const tickers = tickersArr.join(',');
+    debugger
+    return $.ajax({
+      method: "GET",
+      url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=intraday-prices&token=Tsk_498db2929da24682a573da9403ff8a2a&chartInterval=5`,
+    });
+}
+
 export const fetchAsset1YData = ticker => {
     return $.ajax({
         method: 'GET',

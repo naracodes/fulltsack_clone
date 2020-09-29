@@ -5,6 +5,8 @@ import WatchlistIndexContainer from '../watchlist/watchlist_index_container';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import PortfoLineChart from '../charts/portfo_chart';
+import { fetchHoldings } from '../../actions/holding_action';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -17,7 +19,9 @@ class Dashboard extends React.Component {
     this.wrapperRef = React.createRef();
     this.state = {
       showDropdown: false,
+      mergedData: "",
     };
+    this.mergeData = this.mergeData.bind(this);
   }
 
   handleLogOut(e) {
@@ -54,11 +58,44 @@ class Dashboard extends React.Component {
     };
   }
 
+  mergeData(userDataArr, stockData, holdings) {
+    userDataArr.forEach((data, i) => {
+      // let mergingBalance = userDataArr[i].cash_balance;
+      Object.keys(stockData).forEach(ticker => {
+        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * holdings[ticker] : 0;
+        // merged += stockData[ticker]["intraday-prices"][i].close
+        // return userDataArr[i].cash_balance + stockData[ticker].intraday-prices[i].close
+      })
+      debugger
+    })
+    return userDataArr;
+  }
+
   componentDidMount() {
+    const { fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings } = this.props;
+    // const tickers = Object.keys(this.props.portfolio.holdings);
     Promise.all([
-      this.props.fetchPortfolioCashBalance(),
-      this.props.fetchPortfoData()
-    ])
+      fetchHoldings(),
+      fetchPortfolioCashBalance(),
+      fetchPortfoData(),
+    ]).then(res => {
+      console.log(Object.keys(res[0].holdings.holdings));
+      // console.log(res[2].data)
+      const tickers = Object.keys(res[0].holdings.holdings);
+      fetchMultipleIntraday(tickers).then(multIntra => {
+        // console.log(res[2].data.data)
+        // console.log(multIntra.multIntraday)
+        console.log(res[0].holdings.holdings)
+        let userData = res[2].data.data;
+        let stockData = multIntra.multIntraday;
+        let holdings = res[0].holdings.holdings;
+        // console.log(this.mergeData(userData, stockData))
+        let newData = this.mergeData(userData, stockData, holdings)
+        this.setState({
+          mergedData: newData,
+        },);
+      })
+    })
     document.addEventListener("mousedown", this.handleClickOutside);
 
   }
@@ -209,7 +246,12 @@ class Dashboard extends React.Component {
                     <header className="asset-price">
                       <h1>Portfolio Graph</h1>
                     </header>
-                    <div className="react-chart"></div>
+                    <div className="react-chart">
+                      <PortfoLineChart
+                        data={this.state.mergedData}
+                        className="stock-graph"
+                      />
+                    </div>
                     <nav className="range">
                       <div className="range-buttons">
                         <div className="1D">
