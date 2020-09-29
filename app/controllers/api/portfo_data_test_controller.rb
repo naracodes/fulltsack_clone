@@ -22,7 +22,7 @@ class Api::PortfoliosDataController < ApplicationController
             })
             until today_open.strftime("%I:%M %p") == "04:30 PM"
                 PortfoDatum.create({
-                    user_id: @current_user.id
+                    user_id: @current_user.id,
                     date: today,
                     label: (today_open += (5 * 60)).strftime("%I:%M %p"),
                     cash_balance: current_user.cash_balance || User.find(46).cash_balance

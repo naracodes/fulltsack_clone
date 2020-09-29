@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const AssetIndexItem = props => {
     const { asset } = props;
-    debugger
     return (
         <Link to={`/dashboard/${asset.ticker}`}>{asset.ticker} - {asset.asset_name}</Link>
     )
