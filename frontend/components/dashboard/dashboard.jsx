@@ -72,19 +72,20 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings } = this.props;
+    const { fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings, fetchAssetNews } = this.props;
     // const tickers = Object.keys(this.props.portfolio.holdings);
     Promise.all([
       fetchHoldings(),
       fetchPortfolioCashBalance(),
       fetchPortfoData(),
+      fetchAssetNews("GOOGL"), //testing purposes
     ]).then(res => {
       console.log(Object.keys(res[0].holdings.holdings));
       // console.log(res[2].data)
       const tickers = Object.keys(res[0].holdings.holdings);
       fetchMultipleIntraday(tickers).then(multIntra => {
         // console.log(res[2].data.data)
-        // console.log(multIntra.multIntraday)
+        console.log(multIntra.multIntraday)
         console.log(res[0].holdings.holdings)
         let userData = res[2].data.data;
         let stockData = multIntra.multIntraday;
@@ -110,7 +111,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { currentUser, logout, portfolio } = this.props;
+    const { currentUser, logout, portfolio, assetNews } = this.props;
     // debugger;
 
     if (!portfolio.balance) {
@@ -293,6 +294,40 @@ class Dashboard extends React.Component {
                         </div>
                       </div>
                     </header>
+                    <div>
+                      {assetNews.map((article, i) => {
+                        return (
+                          <a href={article.url} className="article-link">
+                            <div key={i} className="article">
+                              <div className="inner-news-content">
+                                <div className="title-side">
+                                  <div className="news-source">
+                                    <span>{article.source}</span>
+                                    <span className="time-since">xh</span>
+                                  </div>
+                                  <div className="news-title-and-more">
+                                    <h3 className="title-h3">
+                                      {article.headline}
+                                    </h3>
+                                    <div>
+                                      <span>
+                                        {article.summary.slice(0, 59)}...
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="news-image">
+                                  <img
+                                    src={article.image}
+                                    alt="image of news"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
                   </section>
                 </div>
                 <div className="right col-2">
