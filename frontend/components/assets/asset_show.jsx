@@ -189,7 +189,7 @@ class AssetShow extends React.Component {
       fetchIntraday(ticker),
     ]).then((response) => {
       // const companyName = response[1].asset.companyName.split(",")[0];
-      // fetchAssetNews(ticker);
+      fetchAssetNews(ticker);
       fetchPortfolioCashBalance();
       fetchHoldings();
       fetchRating(ticker);
@@ -553,38 +553,40 @@ class AssetShow extends React.Component {
                           </div>
                         </div>
                       </header>
-                      {/* <div>
+                      <div>
                         {assetNews.map((article, i) => {
                           return (
-                            <div key={i} className="article">
-                              <div className="inner-news-content">
-                                <div className="title-side">
-                                  <div className="news-source">
-                                    <span>{article.source}</span>
-                                    <span className="time-since">xh</span>
-                                  </div>
-                                  <div className="news-title-and-more">
-                                    <h3 className="title-h3">
-                                      {article.headline}
-                                    </h3>
-                                    <div>
-                                      <span>
-                                        {article.summary.slice(0, 59)}...
-                                      </span>
+                            <a href={article.url} className="article-link">
+                              <div key={i} className="article">
+                                <div className="inner-news-content">
+                                  <div className="title-side">
+                                    <div className="news-source">
+                                      <span>{article.source}</span>
+                                      <span className="time-since">xh</span>
+                                    </div>
+                                    <div className="news-title-and-more">
+                                      <h3 className="title-h3">
+                                        {article.headline}
+                                      </h3>
+                                      <div>
+                                        <span>
+                                          {article.summary.slice(0, 59)}...
+                                        </span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="news-image">
-                                  <img
-                                    src="https://images.robinhood.com/WYBvSMKXdd8z6EYOysmzlW72gWw/aHR0cHM6Ly9pbWFnZXMucm9iaW5ob29kLmNvbS9IeHBzNlktdDZyV3pWaTk4SEs3OTU3alllQm8vYUhSMGNITTZMeTl6TG5scGJXY3VZMjl0TDNWMUwyRndhUzl5WlhNdk1TNHlMM3BwWDJkUE1HUjNMblJFUjBsTVNHcDNURVl1UVhjdExYNUNMMkZFTURGT1JHYzNaSG93TkUxRVFUZGpNakE1VFZSMGFHTklRbkJhUkRFMVpFZEdhbUZJYkhaaVp5MHRMMmgwZEhCek9pOHZiV1ZrYVdFdWVtVnVabk11WTI5dEwyVnVMVlZUTDNKbGRYUmxjbk10Wm1sdVlXNWpaUzVqYjIwdllUYzNOR1F6TWpVeE56Wm1ZbVJtTW1NeE5XTXhNV0ZrTWpZNE1UTTNaR0U"
-                                    alt="image of news"
-                                  />
+                                  <div className="news-image">
+                                    <img
+                                      src={article.image}
+                                      alt="image of news"
+                                    />
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                            </a>
                           );
                         })}
-                      </div> */}
+                      </div>
                     </section>
                     <section className="rating-section">
                       <header className="rating-heading">

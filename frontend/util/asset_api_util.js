@@ -34,7 +34,9 @@ export const fetchMultipleIntraday = tickersArr => { // 5 min interval
     debugger
     return $.ajax({
       method: "GET",
-      url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=intraday-prices&token=Tsk_498db2929da24682a573da9403ff8a2a&chartInterval=5`,
+      url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=intraday-prices&token=Tpk_9cc6c16a40494338943d728d111e9998
+
+`,
     });
 }
 
@@ -54,15 +56,17 @@ export const fetchAssetk5YData = ticker => {
 
 export const fetchCompanyInfo = ticker => {
     return $.ajax({
-        method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tsk_498db2929da24682a573da9403ff8a2a`
-    })
+      method: "GET",
+      url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tpk_9cc6c16a40494338943d728d111e9998
+
+`,
+    });
 }
 
 export const fetchRating = ticker => {
     return $.ajax({
       method: "GET",
       url: `/api/ratings/${ticker}`
-    //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tsk_498db2929da24682a573da9403ff8a2a`,
+    //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tpk_9cc6c16a40494338943d728d111e9998`,
     });
 }

@@ -2411,3 +2411,17 @@ table {
 .recharts-bar {
   border-radius: 5px;
 }
+
+//news
+.article-link {
+  text-decoration: none;
+}
+
+.article-link:link,
+.article-link:visited {
+  color: black;
+}
+
+.article:hover {
+  background-color: rgb(244, 244, 244);
+}
