@@ -556,8 +556,8 @@ class AssetShow extends React.Component {
                       <div>
                         {assetNews.map((article, i) => {
                           return (
-                            <a href={article.url} className="article-link">
-                              <div key={i} className="article">
+                            <a href={article.url} className="article-link"key={i} key={i}>
+                              <div className="article">
                                 <div className="inner-news-content">
                                   <div className="title-side">
                                     <div className="news-source">
@@ -605,11 +605,11 @@ class AssetShow extends React.Component {
                         </div>
                       </header>
                       <div className="analyst-ratings-pct">
-                          <StackedChart 
+                          {/* <StackedChart 
                             buy={((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}
                             hold={((rating.rating_hold) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}
                             sell={'n/a'}
-                          />
+                          /> */}
                           {/* <div>
                             {`${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
                           </div>
