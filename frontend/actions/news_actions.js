@@ -23,8 +23,14 @@ export const fetchAllNews = () => dispatch => {
     })
 }
 
+let cachedAssetNews;
 export const fetchAssetNews = ticker => dispatch => {
-    return NewsAPIUtil.fetchAssetNews(ticker).then(assetNews => {
-        return dispatch(receiveAssetNews(assetNews));
-    })
+    if (cachedAssetNews.length === 3) {
+        return dispatch(receiveAssetNews(cachedAssetNews))
+    } else {
+        return NewsAPIUtil.fetchAssetNews(ticker).then(assetNews => {
+            cachedAssetNews = assetNews;
+            return dispatch(receiveAssetNews(assetNews));
+        })
+    }
 }
