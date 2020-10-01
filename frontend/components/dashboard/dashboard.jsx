@@ -80,9 +80,13 @@ class Dashboard extends React.Component {
       fetchPortfoData(),
       fetchAssetNews("GOOGL"), //testing purposes
     ]).then(res => {
-      console.log(Object.keys(res[0].holdings.holdings));
-      // console.log(res[2].data)
-      const tickers = Object.keys(res[0].holdings.holdings);
+      // console.log(Object.keys(res[0].holdings.holdings));
+      console.log(
+        Object.keys(res[0].holdings.holdings).filter((ticker) => res[0].holdings.holdings[ticker] > 0)
+      );
+      const tickers = Object.keys(res[0].holdings.holdings).filter(
+        (ticker) => res[0].holdings.holdings[ticker] > 0
+      );
       fetchMultipleIntraday(tickers).then(multIntra => {
         // console.log(res[2].data.data)
         console.log(multIntra.multIntraday)

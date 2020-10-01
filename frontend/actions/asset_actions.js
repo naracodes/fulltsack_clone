@@ -147,11 +147,31 @@ export const fetchIntraday = ticker => dispatch => {
 }
 
 export const fetchMultipleIntraday = tickers => dispatch => {
+    if (tickers.every(ticker => Object.keys(cachedIntraday).includes(ticker))) {
+        let ownedIntra = {};
+        tickers.forEach(ticker => {
+            ownedIntra[ticker] = cachedIntraday[ticker];
+        });
+        return dispatch(receiveMultipleIntraday(ownedIntra));
+    } else {
+        let missingStocks = tickers.filter(ticker => !Object.keys(cachedIntraday).includes(ticker));
+        missingStocks.forEach(ticker => {
+            fetchIntraday(ticker);
+        })
+        fetchMultipleIntraday([...tickers, ...missingStocks]);
+    }
     return AssetAPIUtil.fetchMultipleIntraday(tickers).then(multIntraday => {
         debugger
         return dispatch(receiveMultipleIntraday(multIntraday));
-    })
+    });
 }
+
+// export const fetchMultipleIntraday = tickers => dispatch => {
+//     return AssetAPIUtil.fetchMultipleIntraday(tickers).then(multIntraday => {
+//         debugger
+//         return dispatch(receiveMultipleIntraday(multIntraday));
+//     })
+// }
 
 let cachedRating = {};
 export const fetchRating = ticker => dispatch => {
