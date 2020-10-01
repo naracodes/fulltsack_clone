@@ -87,6 +87,7 @@ class Dashboard extends React.Component {
       const tickers = Object.keys(res[0].holdings.holdings).filter(
         (ticker) => res[0].holdings.holdings[ticker] > 0
       );
+      debugger
       fetchMultipleIntraday(tickers)
       .then(multIntra => {
         // console.log(res[2].data.data)

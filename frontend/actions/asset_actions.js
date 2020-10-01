@@ -134,41 +134,38 @@ export const fetchCompanyInfo = ticker => dispatch => {
 let cachedIntraday = {};
 let lastFetched = {};
 export const fetchIntraday = ticker => dispatch => {
-
-    if (typeof ticker === "string") {
-        let timeNow = new Date().getTime();
-        if (cachedIntraday[ticker] && (timeNow - lastFetched[ticker] < 300000)) {
-            return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
-        } else {
-            return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-                cachedIntraday[ticker] = assetIntraday;
-                lastFetched[ticker] = new Date().getTime();
-                return dispatch(receiveAssetIntraday(assetIntraday, ticker));
-            });
-        };
+    let timeNow = new Date().getTime();
+    if (cachedIntraday[ticker] && (timeNow - lastFetched[ticker] < 300000)) {
+        return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
     } else {
-        let multipleIntra = {};
-        
+        return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
+            debugger
+            cachedIntraday[ticker] = assetIntraday;
+            lastFetched[ticker] = new Date().getTime();
+            return dispatch(receiveAssetIntraday(assetIntraday, ticker));
+        });
     }
 }
 
-    
 // export const fetchIntraday = ticker => dispatch => {
-//     debugger
-//     let timeNow = new Date().getTime();
-//     if (cachedIntraday[ticker] && (timeNow - lastFetched[ticker] < 300000)) {
-//         debugger
-//         return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
+
+//     if (typeof ticker === "string") {
+//         let timeNow = new Date().getTime();
+//         if (cachedIntraday[ticker] && (timeNow - lastFetched[ticker] < 300000)) {
+//             return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
+//         } else {
+//             return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
+//                 cachedIntraday[ticker] = assetIntraday;
+//                 lastFetched[ticker] = new Date().getTime();
+//                 return dispatch(receiveAssetIntraday(assetIntraday, ticker));
+//             });
+//         };
 //     } else {
-//         debugger
-//         return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-//             debugger
-//             cachedIntraday[ticker] = assetIntraday;
-//             lastFetched[ticker] = new Date().getTime();
-//             return dispatch(receiveAssetIntraday(assetIntraday, ticker));
-//         });
+//         let multipleIntra = {};
+
 //     }
 // }
+
 
 // export const fetchMultipleIntraday = tickers => dispatch => {
 //     if (tickers.every(ticker => Object.keys(cachedIntraday).includes(ticker))) {
@@ -185,7 +182,7 @@ export const fetchIntraday = ticker => dispatch => {
 //         let missingStocks = tickers.filter(ticker => !Object.keys(cachedIntraday).includes(ticker));
 //         missingStocks.forEach(ticker => {
 //             debugger
-//             return fetchIntraday(ticker);
+//             AssetAPIUtil.fetchIntraday(ticker);
 //         })
 //         let unique = Array.from(new Set([...tickers, ...missingStocks]));
 //         debugger
