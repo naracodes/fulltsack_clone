@@ -192,7 +192,7 @@ class AssetShow extends React.Component {
       fetchAssetNews(ticker);
       fetchPortfolioCashBalance();
       fetchHoldings();
-      fetchRating(ticker);
+      // fetchRating(ticker);
     });
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("mousedown", this.handleClickOutside_invest);
@@ -235,7 +235,7 @@ class AssetShow extends React.Component {
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (!asset.chartData || !watchlistArr || !portfolio.balance || !portfolio.holdings || !asset.rating) {
+    if (!asset.chartData || !watchlistArr || !portfolio.balance || !portfolio.holdings) {
       return null;
     } else {
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
