@@ -7,10 +7,11 @@ export const fetchAssets = () => {
 
 export const fetchAsset = ticker => {
     return $.ajax({
-        method: 'GET',
-        // url: `https://sandbox.iexapis.com/stable/crypto/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
-    })
+      method: "GET",
+      // url: `https://sandbox.iexapis.com/stable/crypto/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
+      // url: `https://sandbox.iexapis.com/stable/stock/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
+      url: `https://cloud.iexapis.com/stable/stock/${ticker}/quote/?token=pk_9bae36c8264042f68549a11dc83620ac`,
+    });
 }
 
 export const fetchMultipleAssets = (tickersArr) => {
@@ -54,19 +55,20 @@ export const fetchAssetk5YData = ticker => {
     })
 }
 
+
 export const fetchCompanyInfo = ticker => {
     return $.ajax({
       method: "GET",
-      url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tpk_9cc6c16a40494338943d728d111e9998
-
-`,
+      //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tpk_9cc6c16a40494338943d728d111e9998,
+      url: `https://cloud.iexapis.com/stable/stock/${ticker}/company?token=pk_9bae36c8264042f68549a11dc83620ac`,
     });
 }
 
 export const fetchRating = ticker => {
     return $.ajax({
       method: "GET",
-      url: `/api/ratings/${ticker}`
-    //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tpk_9cc6c16a40494338943d728d111e9998`,
+      //   url: `/api/ratings/${ticker}`
+      //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tpk_9cc6c16a40494338943d728d111e9998`,
+      url: `https://cloud.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=pk_9bae36c8264042f68549a11dc83620ac`,
     });
 }

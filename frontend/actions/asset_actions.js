@@ -106,22 +106,40 @@ export const fetchAssets = () => dispatch => {
     })
 }
 
+let cachedAssetQuote = {};
+//later add logic to check if close prop of response is the same as cached, and add if/else
 export const fetchAsset = ticker => dispatch => {
-    return AssetAPIUtil.fetchAsset(ticker).then(asset => {
-        return dispatch(receiveAsset(asset))
-    })
+    if (cachedAssetQuote[ticker]) {
+        return dispatch(receiveAsset(cachedAssetQuote[ticker]));
+    } else {
+        return AssetAPIUtil.fetchAsset(ticker).then(asset => {
+            cachedAssetQuote[ticker] = asset;
+            return dispatch(receiveAsset(asset))
+        });
+    }
 }
 
+let cachedCompanyInfo = {};
 export const fetchCompanyInfo = ticker => dispatch => {
-    return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
-        return dispatch(receiveCompanyInfo(company));
-    })
+    if (cachedCompanyInfo[ticker]) {
+        return dispatch(receiveCompanyInfo(cachedCompanyInfo[ticker]));
+    } else {
+        return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
+            cachedCompanyInfo[ticker] = company;
+            return dispatch(receiveCompanyInfo(company));
+        })
+    }
 }
 
+let cachedIntraday = {};
 export const fetchIntraday = ticker => dispatch => {
-    return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-        return dispatch(receiveAssetIntraday(assetIntraday, ticker));
-    })
+    if (cachedIntraday[ticker]) {
+        return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
+    } else {
+        return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
+            return dispatch(receiveAssetIntraday(assetIntraday, ticker));
+        });
+    }
 }
 
 export const fetchMultipleIntraday = tickers => dispatch => {
@@ -131,8 +149,14 @@ export const fetchMultipleIntraday = tickers => dispatch => {
     })
 }
 
+let cachedRating = {};
 export const fetchRating = ticker => dispatch => {
-    return AssetAPIUtil.fetchRating(ticker).then(rating => {
-        return dispatch(receiveRating(rating, ticker));
-    })
+    if (cachedRating[ticker]) {
+        return dispatch(receiveRating(cachedRating[ticker], ticker));
+    } else {
+        return AssetAPIUtil.fetchRating(ticker).then(rating => {
+            cachedRating[ticker] = rating;
+            return dispatch(receiveRating(rating, ticker));
+        });
+    }
 }

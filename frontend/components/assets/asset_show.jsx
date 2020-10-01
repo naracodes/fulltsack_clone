@@ -239,7 +239,7 @@ class AssetShow extends React.Component {
       return null;
     } else {
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
-      let rating = asset.rating.data;
+      let rating = asset.rating;
       // let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let closingPrice =
         asset.close ||
@@ -556,8 +556,8 @@ class AssetShow extends React.Component {
                       <div>
                         {assetNews.map((article, i) => {
                           return (
-                            <a href={article.url} className="article-link">
-                              <div key={i} className="article">
+                            <a href={article.url} className="article-link"key={i} key={i}>
+                              <div className="article">
                                 <div className="inner-news-content">
                                   <div className="title-side">
                                     <div className="news-source">
@@ -605,11 +605,11 @@ class AssetShow extends React.Component {
                         </div>
                       </header>
                       <div className="analyst-ratings-pct">
-                          <StackedChart 
-                            buy={((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}
-                            hold={((rating.rating_hold) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}
-                            sell={'n/a'}
-                          />
+                          {/* <StackedChart 
+                            buy={((rating.ratingBuy + rating.ratingOverweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell)).toFixed(2) * 100}
+                            hold={((rating.ratingHold) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell)).toFixed(2) * 100}
+                            sell={((rating.ratingSell + rating.raitingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell)).toFixed(2) * 100}
+                          /> */}
                           {/* <div>
                             {`${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
                           </div>
