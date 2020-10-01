@@ -4,7 +4,7 @@ import Dashboard from './dashboard';
 import { logout } from "../../actions/session_actions";
 import { fetchPortfolioCashBalance } from '../../actions/transaction_actions';
 import { fetchPortfoData } from '../../actions/portfo_actions';
-import { fetchMultipleIntraday } from '../../actions/asset_actions';
+import { fetchIntraday, fetchMultipleIntraday } from '../../actions/asset_actions';
 import { fetchHoldings } from '../../actions/holding_action';
 import { fetchAssetNews } from "../../actions/news_actions";
 
@@ -29,6 +29,7 @@ const mdp = dispatch => {
     fetchMultipleIntraday: tickers => dispatch(fetchMultipleIntraday(tickers)),
     fetchHoldings: () => dispatch(fetchHoldings()),
     fetchAssetNews: (ticker) => dispatch(fetchAssetNews(ticker)),
+    // fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
   };
 };
 
