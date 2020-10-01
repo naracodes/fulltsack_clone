@@ -131,10 +131,15 @@ export const fetchCompanyInfo = ticker => dispatch => {
     }
 }
 
+let cachedIntraday = {};
 export const fetchIntraday = ticker => dispatch => {
-    return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-        return dispatch(receiveAssetIntraday(assetIntraday, ticker));
-    })
+    if (cachedIntraday[ticker]) {
+        return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
+    } else {
+        return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
+            return dispatch(receiveAssetIntraday(assetIntraday, ticker));
+        });
+    }
 }
 
 export const fetchMultipleIntraday = tickers => dispatch => {
