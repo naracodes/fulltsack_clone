@@ -139,7 +139,7 @@ export const fetchIntraday = ticker => dispatch => {
         return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
     } else {
         return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-            debugger
+            // debugger
             cachedIntraday[ticker] = assetIntraday;
             lastFetched[ticker] = new Date().getTime();
             return dispatch(receiveAssetIntraday(assetIntraday, ticker));
