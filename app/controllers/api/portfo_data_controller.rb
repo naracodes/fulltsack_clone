@@ -9,16 +9,20 @@ class Api::PortfoDataController < ApplicationController
         @all_data = PortfoDatum.where(user_id: @current_user.id)
 
         new_day = @last_portfo_data ? @last_portfo_data.created_at.strftime("%Y-%m-%d") < today : true;
-        debugger
+        label_now = Time.now.strftime("%I:%M %p")
+
+        last_update_lapsed = Time.parse(label_now) - Time.parse(@last_portfo_data.label)
+        five_min = 300
+        # debugger
         if new_day
-            debugger
+            # debugger
             today_open = Time.parse("9:30 AM")
             @first_of_day = PortfoDatum.create({
                 date: today,
                 label: market_open,
                 cash_balance: current_user.cash_balance || User.find(46).cash_balance
             })
-            until today_open.strftime("%I:%M %p") == "03:55 PM"
+            until today_open.strftime("%I:%M %p") == label_now
                 PortfoDatum.create({
                     user_id: @current_user.id,
                     date: today,
@@ -29,10 +33,19 @@ class Api::PortfoDataController < ApplicationController
             # create reset, weekend/holday instance variable methods
             # today_open.reset!
             today_open = Time.parse("9:30 AM")
-            debugger
+            # debugger
             render :index
+        elsif last_update_lapsed > five_min
+            (last_update_lapsed % five_min).times do
+                PortfoDatum.create({
+                    user_id: @current_user.id,
+                    date: today,
+                    label: (today_open += (5 * 60)).strftime("%I:%M %p"),
+                    cash_balance: current_user.cash_balance || User.find(46).cash_balance
+                })
+            end
         else
-            debugger
+            # debugger
             render :index
         end
 

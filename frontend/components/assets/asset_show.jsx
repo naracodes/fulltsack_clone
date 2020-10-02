@@ -235,7 +235,7 @@ class AssetShow extends React.Component {
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (this.state.loading) {
+    if (this.state.loading || !portfolio) {
       return (
         <div>
           Loading...
@@ -342,7 +342,7 @@ class AssetShow extends React.Component {
                               <div className="buying-power-value">
                                 <div className="buying-power-value-container">
                                   <span>
-                                    <h3>${buyingPowerAvailable}</h3>
+                                    <h3>{numeral(buyingPowerAvailable).format('$0,0.00')}</h3>
                                   </span>
                                   <div className="buying-value-text">
                                     Buying Power
@@ -822,7 +822,7 @@ class AssetShow extends React.Component {
                               </span>
                             ) : (
                               <span>
-                                ${buyingPowerAvailable} Buying Power Available
+                                {numeral(buyingPowerAvailable).format('$0,0.00')} Buying Power Available
                               </span>
                             )}
                           </div>
