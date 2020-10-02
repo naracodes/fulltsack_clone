@@ -29,6 +29,7 @@ class AssetShow extends React.Component {
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
     this.state = {
+      loading: true,
       showDropdown: false,
       stocksOwned: "",
       investInDropdown: false,
@@ -187,12 +188,11 @@ class AssetShow extends React.Component {
       fetchCompanyInfo(ticker),
       fetchAsset(ticker),
       fetchIntraday(ticker),
+      fetchAssetNews(ticker),
+      fetchPortfolioCashBalance(),
+      fetchHoldings()
     ]).then((response) => {
-      // const companyName = response[1].asset.companyName.split(",")[0];
-      fetchAssetNews(ticker);
-      fetchPortfolioCashBalance();
-      fetchHoldings();
-      // fetchRating(ticker);
+      this.setState({ loading: false })
     });
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("mousedown", this.handleClickOutside_invest);
@@ -235,8 +235,12 @@ class AssetShow extends React.Component {
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (!asset.chartData || !watchlistArr || !portfolio.balance || !portfolio.holdings) {
-      return null;
+    if (this.state.loading) {
+      return (
+        <div>
+          Loading...
+        </div>
+      )
     } else {
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let rating = asset.rating;
