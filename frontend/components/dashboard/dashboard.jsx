@@ -19,6 +19,7 @@ class Dashboard extends React.Component {
     this.showDropdown = this.showDropdown.bind(this);
     this.wrapperRef = React.createRef();
     this.state = {
+      loading: true,
       showDropdown: false,
       mergedData: "",
     };
@@ -101,6 +102,7 @@ class Dashboard extends React.Component {
         let newData = this.mergeData(userData, stockData, holdings)
         this.setState({
           mergedData: newData,
+          loading: false,
         },);
       })
     })
@@ -121,8 +123,12 @@ class Dashboard extends React.Component {
     const { currentUser, logout, portfolio, assetNews } = this.props;
     // debugger;
 
-    if (!portfolio.balance) {
-      return null;
+    if (this.state.loading) {
+      return (
+        <div>
+          Loading...
+        </div>
+      )
     } else {
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
       return (
