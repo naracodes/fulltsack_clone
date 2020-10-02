@@ -20,7 +20,7 @@ class Api::PortfoliosDataController < ApplicationController
                 label: market_open,
                 cash_balance: current_user.cash_balance || User.find(46).cash_balance
             })
-            until today_open.strftime("%I:%M %p") == "04:30 PM"
+            until today_open.strftime("%I:%M %p") == "04:00 PM"
                 PortfoDatum.create({
                     user_id: @current_user.id,
                     date: today,
