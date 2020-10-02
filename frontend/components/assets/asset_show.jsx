@@ -243,6 +243,7 @@ class AssetShow extends React.Component {
       )
     } else {
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
+      let valueInStocks = "";
       let rating = asset.rating;
       // let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let closingPrice =

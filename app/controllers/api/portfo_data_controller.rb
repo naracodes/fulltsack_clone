@@ -3,19 +3,19 @@ class Api::PortfoDataController < ApplicationController
         @current_user = current_user || User.find(46)
         today = Time.now.strftime("%Y-%m-%d")
         market_open = "09:30 AM"
+        day_ended = Time.now >= Time.parse("04:00 PM")
+        five_min = 300
 
         @last_portfo_data = PortfoDatum.last
         
         @all_data = PortfoDatum.where(user_id: @current_user.id)
 
-        new_day = @last_portfo_data ? @last_portfo_data.created_at.strftime("%Y-%m-%d") < today : true;
-        label_now = Time.now.strftime("%I:%M %p")
+        new_day = @last_portfo_data ? @last_portfo_data.created_at.strftime("%Y-%m-%d") < today : true
+        label_now = (Time.now <= Time.parse("04:00 PM")) ? Time.now.strftime("%I:%M %p") : "04:00 PM"
+        last_update_lapsed = @last_portfo_data ? Time.parse(label_now) - Time.parse(@last_portfo_data.label) : 0;
 
-        last_update_lapsed = Time.parse(label_now) - Time.parse(@last_portfo_data.label)
-        five_min = 300
-        # debugger
+
         if new_day
-            # debugger
             today_open = Time.parse("9:30 AM")
             @first_of_day = PortfoDatum.create({
                 date: today,
@@ -33,19 +33,19 @@ class Api::PortfoDataController < ApplicationController
             # create reset, weekend/holday instance variable methods
             # today_open.reset!
             today_open = Time.parse("9:30 AM")
-            # debugger
             render :index
-        elsif last_update_lapsed > five_min
-            (last_update_lapsed % five_min).times do
+        elsif ((last_update_lapsed > five_min) && !day_ended)
+            last_label = Time.parse(@last_portfo_data.label)
+            # (last_update_lapsed / five_min).floor.times do
+            until last_label == label_now
                 PortfoDatum.create({
                     user_id: @current_user.id,
                     date: today,
-                    label: (today_open += (5 * 60)).strftime("%I:%M %p"),
+                    label: (last_label += (5 * 60)).strftime("%I:%M %p"),
                     cash_balance: current_user.cash_balance || User.find(46).cash_balance
                 })
             end
         else
-            # debugger
             render :index
         end
 
