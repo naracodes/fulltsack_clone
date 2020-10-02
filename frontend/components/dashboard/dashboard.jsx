@@ -7,6 +7,7 @@ import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import PortfoLineChart from '../charts/portfo_chart';
 import { fetchHoldings } from '../../actions/holding_action';
+import numeral from 'numeral';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -157,6 +158,12 @@ class Dashboard extends React.Component {
                       id="linkedin"
                       icon={faLinkedin}
                       className="brand-icon"
+                      onClick={() =>
+                        window.open(
+                          "https://www.linkedin.com/in/naraskim/",
+                          "_blank"
+                        )
+                      }
                     />
                   </div>
                   <div className="github">
@@ -204,7 +211,7 @@ class Dashboard extends React.Component {
                               <div className="buying-power-value">
                                 <div className="buying-power-value-container">
                                   <span>
-                                    <h3>${buyingPowerAvailable}</h3>
+                                    <h3>{numeral(buyingPowerAvailable).format('$0,0.00')}</h3>
                                   </span>
                                   <div className="buying-value-text">
                                     Buying Power
@@ -286,7 +293,7 @@ class Dashboard extends React.Component {
                     <header className="buying-p-heading">
                       <div>
                         <span>Buying Power</span>
-                        <span>${buyingPowerAvailable}</span>
+                        <span>{numeral(buyingPowerAvailable).format('$0,0.00')}</span>
                       </div>
                     </header>
                   </div>

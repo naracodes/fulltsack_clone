@@ -288,6 +288,7 @@ class AssetShow extends React.Component {
                       id="linkedin"
                       icon={faLinkedin}
                       className="brand-icon"
+                      onClick={() => window.open("https://www.linkedin.com/in/naraskim/", "_blank")}
                     />
                   </div>
                   <div className="github">
@@ -295,6 +296,7 @@ class AssetShow extends React.Component {
                       id="github"
                       icon={faGithub}
                       className="brand-icon"
+                      onClick={() => window.open("https://github.com/hurricanenara", "_blank")}
                     />
                   </div>
                   <div className="angel-list">
@@ -302,6 +304,7 @@ class AssetShow extends React.Component {
                       id="angellist"
                       icon={faAngellist}
                       className="brand-icon"
+                      onClick={() => window.open("https://angel.co/u/naraslee", "_blank")}
                     />
                   </div>
                   <div className="account" ref={this.wrapperRef}>
