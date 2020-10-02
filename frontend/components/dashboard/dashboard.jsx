@@ -107,9 +107,9 @@ class Dashboard extends React.Component {
         })
       } else {
         this.setState({
-          mergedData: userData,
+          mergedData: this.props.portfoData,
           loading: false,
-        })
+        });
       }
     })
     document.addEventListener("mousedown", this.handleClickOutside);

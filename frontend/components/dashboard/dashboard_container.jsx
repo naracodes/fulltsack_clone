@@ -14,7 +14,7 @@ const msp = state => {
     return {
       currentUser: state.session.user,
       portfolio: state.entities.transactions,
-      porftoData: state.entities.portfos,
+      portfoData: state.entities.portfos,
       multIntraday: state.entities.assets,
       tickers: state.entities.transactions.holdings,
       assetNews: Object.values(news),
