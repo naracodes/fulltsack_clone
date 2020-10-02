@@ -53,6 +53,10 @@ class AssetShow extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    this.setState({reviewOrderClicked: false})
+  }
+
   handleBuyClick(e) {
     e.preventDefault();
     this.setState(
@@ -813,8 +817,9 @@ class AssetShow extends React.Component {
                         <div>
                           {
                             this.state.reviewOrderClicked ? (
+                              
                               <div className="review-message">
-                                {`You are placing an order to buy ${this.state.order.quantity} shares of ${this.state.order.ticker} based on the current market price of $${this.state.order.cost_per_share.toFixed(2)}`}
+                                {`You are placing an order to ${this.state.buyClicked ? "buy" : "sell"} ${this.state.order.quantity} shares of ${this.state.order.ticker} based on the current market price of $${this.state.order.cost_per_share}`}
                               </div>
                             ) : null
                           }
