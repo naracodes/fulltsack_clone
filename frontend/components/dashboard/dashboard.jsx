@@ -19,6 +19,7 @@ class Dashboard extends React.Component {
     this.showDropdown = this.showDropdown.bind(this);
     this.wrapperRef = React.createRef();
     this.state = {
+      loading: true,
       showDropdown: false,
       mergedData: "",
     };
@@ -61,14 +62,12 @@ class Dashboard extends React.Component {
 
   mergeData(userDataArr, stockData, holdings) {
     userDataArr.forEach((data, i) => {
-      // let mergingBalance = userDataArr[i].cash_balance;
       Object.keys(stockData).forEach(ticker => {
-        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * holdings[ticker] : 0;
-        // merged += stockData[ticker]["intraday-prices"][i].close
-        // return userDataArr[i].cash_balance + stockData[ticker].intraday-prices[i].close
+        debugger
+        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * holdings[ticker] : (userDataArr[i].cash_balance * -1);
       })
-      debugger
     })
+    console.log(userDataArr);
     return userDataArr;
   }
 
@@ -97,11 +96,13 @@ class Dashboard extends React.Component {
         let userData = res[2].data.data;
         let stockData = multIntra.multIntraday;
         let holdings = res[0].holdings.holdings;
+        debugger
         // console.log(this.mergeData(userData, stockData))
         let newData = this.mergeData(userData, stockData, holdings)
         this.setState({
           mergedData: newData,
-        },);
+          loading: false,
+        }, () => console.log(newData));
       })
     })
     document.addEventListener("mousedown", this.handleClickOutside);
@@ -121,8 +122,12 @@ class Dashboard extends React.Component {
     const { currentUser, logout, portfolio, assetNews } = this.props;
     // debugger;
 
-    if (!portfolio.balance) {
-      return null;
+    if (this.state.loading) {
+      return (
+        <div>
+          Loading...
+        </div>
+      )
     } else {
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
       return (

@@ -51,7 +51,7 @@ export const receiveAssetIntraday = (assetIntraday, ticker) => {
 }
 
 export const receiveMultipleIntraday = multIntraday => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_MULTIPLE_INTRADAY,
         multIntraday,

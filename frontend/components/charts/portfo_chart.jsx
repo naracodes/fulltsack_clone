@@ -66,7 +66,7 @@ class PortfoLineChart extends React.Component {
                 onMouseLeave={this.handleMouseLeave}
             >
                 <XAxis tickLine={false} dataKey="label" hide={true} />
-                <YAxis hide={true} domain={["dataMin", "dataMax"]} />
+                <YAxis hide={true} domain={["dataMin - 20000", "dataMax + 20000"]} />
                 <Tooltip
                 isAnimationActive={false}
                 // offset={5}
@@ -77,6 +77,7 @@ class PortfoLineChart extends React.Component {
                 dataKey="cash_balance"
                 stroke="#1aee99"
                 dot={false}
+                connectNulls={true}
                 // activeDot={ { onClick: (e) => console.log(e) } }
                 />
             </LineChart>

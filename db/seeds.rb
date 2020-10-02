@@ -96,30 +96,30 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
 # # BUY
 # # WITHDRAW FROM CASH, CONVERT INTO STOCK
 
-transaction_types = ["Buy", "Sell"]
-stock_qt = [1, 2, 3]
+# transaction_types = ["Buy", "Sell"]
+# stock_qt = [1, 2, 3]
 
-7.times do
-    Transaction.create({
-        user_id: 46,
-        ticker: "GOOGL",
-        transaction_type: transaction_types.sample,
-        transaction_amount: 0,
-        quantity: stock_qt.sample,
-        cost_per_share: 250.00,
-    })
-end
+# 7.times do
+#     Transaction.create({
+#         user_id: 46,
+#         ticker: "GOOGL",
+#         transaction_type: transaction_types.sample,
+#         transaction_amount: 0,
+#         quantity: stock_qt.sample,
+#         cost_per_share: 250.00,
+#     })
+# end
 
-7.times do
-    Transaction.create({
-        user_id: 46,
-        ticker: "FB",
-        transaction_type: transaction_types.sample,
-        transaction_amount: 0,
-        quantity: stock_qt.sample,
-        cost_per_share: 250.00,
-    })
-end
+# 7.times do
+#     Transaction.create({
+#         user_id: 46,
+#         ticker: "FB",
+#         transaction_type: transaction_types.sample,
+#         transaction_amount: 0,
+#         quantity: stock_qt.sample,
+#         cost_per_share: 250.00,
+#     })
+# end
 
     # Transaction.create({
     #     user_id: 46,
@@ -175,7 +175,7 @@ if new_day
         label: market_open,
         cash_balance: @current_user.cash_balance || User.find(46).cash_balance
     })
-    until today_open.strftime("%I:%M %p") == "04:30 PM"
+    until today_open.strftime("%I:%M %p") == "04:00 PM"
         PortfoDatum.create({
             user_id: @current_user.id,
             date: today,
