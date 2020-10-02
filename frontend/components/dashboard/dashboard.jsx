@@ -86,24 +86,31 @@ class Dashboard extends React.Component {
       );
       const tickers = Object.keys(res[0].holdings.holdings).filter(
         (ticker) => res[0].holdings.holdings[ticker] > 0
-      );
+      )
       debugger
-      fetchMultipleIntraday(tickers)
-      .then(multIntra => {
-        // console.log(res[2].data.data)
-        console.log(multIntra.multIntraday)
-        console.log(res[0].holdings.holdings)
-        let userData = res[2].data.data;
-        let stockData = multIntra.multIntraday;
-        let holdings = res[0].holdings.holdings;
-        debugger
-        // console.log(this.mergeData(userData, stockData))
-        let newData = this.mergeData(userData, stockData, holdings)
+      if (tickers.length) {
+        fetchMultipleIntraday(tickers)
+        .then(multIntra => {
+          // console.log(res[2].data.data)
+          console.log(multIntra.multIntraday)
+          console.log(res[0].holdings.holdings)
+          let userData = res[2].data.data;
+          let stockData = multIntra.multIntraday;
+          let holdings = res[0].holdings.holdings;
+          debugger
+          // console.log(this.mergeData(userData, stockData))
+          let newData = this.mergeData(userData, stockData, holdings)
+          this.setState({
+            mergedData: newData,
+            loading: false,
+          }, () => console.log(newData));
+        })
+      } else {
         this.setState({
-          mergedData: newData,
+          mergedData: userData,
           loading: false,
-        }, () => console.log(newData));
-      })
+        })
+      }
     })
     document.addEventListener("mousedown", this.handleClickOutside);
 
