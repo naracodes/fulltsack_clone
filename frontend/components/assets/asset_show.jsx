@@ -29,6 +29,7 @@ class AssetShow extends React.Component {
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
     this.state = {
+      reviewOrderClicked: false,
       loading: true,
       showDropdown: false,
       stocksOwned: "",
@@ -94,15 +95,23 @@ class AssetShow extends React.Component {
   }
 
   handleBuy(e) {
-    const { investOption, buyClicked, sellClicked } = this.state;
+    const { investOption, buyClicked, sellClicked, reviewOrderClicked } = this.state;
     e.preventDefault();
     if (buyClicked) {
       if (investOption === "Shares") {
-        this.props.addTransaction(this.state.order);
+        if (!reviewOrderClicked) {
+          this.setState({ reviewOrderClicked: true });
+        } else {
+          this.props.addTransaction(this.state.order);
+        }
       }
     } else {
       if (investOption === "Shares") {
-        this.props.addTransaction(this.state.order);
+        if (!reviewOrderClicked) {
+          this.setState({ reviewOrderClicked: true });
+        } else {
+          this.props.addTransaction(this.state.order);
+        }
       }
     }
   }
@@ -801,6 +810,15 @@ class AssetShow extends React.Component {
                             </div>
                           </div>
                         </div>
+                        <div>
+                          {
+                            this.state.reviewOrderClicked ? (
+                              <div className="review-message">
+                                {`You are placing an order to buy ${this.state.order.quantity} shares of ${this.state.order.ticker} based on the current market price of $${this.state.order.cost_per_share.toFixed(2)}`}
+                              </div>
+                            ) : null
+                          }
+                        </div>
                         <div className="review-button-outer">
                           <div className="review-container">
                             <div className="review-button">
@@ -808,7 +826,7 @@ class AssetShow extends React.Component {
                                 className="review-submit"
                                 onClick={this.handleBuy}
                               >
-                                <span>Submit Order</span>
+                                <span>{this.state.reviewOrderClicked ? "Submit Order" : "Review Order"}</span>
                               </button>
                             </div>
                           </div>
