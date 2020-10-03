@@ -66,9 +66,8 @@ class AssetShow extends React.Component {
         buyClicked: true,
         sellClicked: false,
         order: { transaction_type: "Buy" },
-      },
-      () => console.log(this.state)
-    );
+        loading: false,
+      });
   }
 
   handleSellClick(e) {
@@ -248,7 +247,7 @@ class AssetShow extends React.Component {
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (this.state.loading || !portfolio) {
+    if (this.state.loading || !portfolio || !asset) {
       return (
         <div>
           Loading...
@@ -757,7 +756,7 @@ class AssetShow extends React.Component {
                                       {this.state.investOption === "Dollars" ? (
                                         <input
                                           type="text"
-                                          value={this.state.order.quantity}
+                                          value={this.state.order.quantity || ""}
                                           placeholder="$0.00"
                                           onChange={this.update("Dollars")}
                                         />
@@ -765,7 +764,7 @@ class AssetShow extends React.Component {
                                         <input
                                           id="shares-input"
                                           type="text"
-                                          value={this.state.order.quantity}
+                                          value={this.state.order.quantity || ""}
                                           placeholder="0"
                                           onChange={this.update("Shares")}
                                         />
