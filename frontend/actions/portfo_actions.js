@@ -11,9 +11,9 @@ export const receivePortfoData = data => {
 };
 
 export const fetchPortfoData = () => dispatch => {
-    // debugger
+    debugger
   return PortfoAPIUtil.fetchPortfoData().then(data => {
-    //   debugger
+      debugger
     return dispatch(receivePortfoData(data));
   });
 };
