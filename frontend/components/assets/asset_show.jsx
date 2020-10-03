@@ -29,6 +29,8 @@ class AssetShow extends React.Component {
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
     this.state = {
+      orderErrorMessage: null,
+      orderMessage: null,
       reviewOrderClicked: false,
       loading: true,
       showDropdown: false,
@@ -67,6 +69,9 @@ class AssetShow extends React.Component {
         sellClicked: false,
         order: { transaction_type: "Buy" },
         loading: false,
+        orderMessage: null,
+        orderErrorMessage: null,
+        reviewOrderClicked: false,
       });
   }
 
@@ -79,9 +84,10 @@ class AssetShow extends React.Component {
         sellClicked: true,
         buyClicked: false,
         order: { transaction_type: "Sell" },
-      },
-      () => console.log(this.state)
-    );
+        orderMessage: null,
+        orderErrorMessage: null,
+        reviewOrderClicked: false,
+      });
   }
 
   handleKeyDown(e) {
@@ -98,26 +104,79 @@ class AssetShow extends React.Component {
   }
 
   handleBuy(e) {
-    const { investOption, buyClicked, sellClicked, reviewOrderClicked } = this.state;
+    const { investOption, buyClicked, sellClicked, reviewOrderClicked, order } = this.state;
+    const { portfolio, asset } = this.props;
+    const ticker = this.props.match.params.ticker.toUpperCase();
+    let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
+    let buyingPowerAvailable = portfolio.balance;
+
     e.preventDefault();
     if (buyClicked) {
       if (investOption === "Shares") {
-        if (!reviewOrderClicked) {
-          this.setState({ reviewOrderClicked: true });
+        if (!reviewOrderClicked && (stockHoldings >= order.quantity)) {
+          this.setState({
+            reviewOrderClicked: true,
+            orderMessage: `You are placing an order to ${
+              buyClicked ? "buy" : "sell"
+            } ${order.quantity} ${order.quantity > 1 ? "shares" : "share"} of ${
+              order.ticker
+            } based on the current market price of $${
+              order.cost_per_share} for a total cost of $${order.transaction_amount}.`,
+          });
+        } else if (!reviewOrderClicked && stockHoldings < order.quantity) {
+          this.setState({
+            orderErrorMessage: `Not enough buying power. You only have enough buying power to purchase ${(buyingPowerAvailable / order.cost_per_share).toFixed(3)} shares of ${ticker}.`,
+          })
         } else {
-          this.props.addTransaction(this.state.order);
+          this.props.addTransaction(order);
         }
       }
     } else {
       if (investOption === "Shares") {
-        if (!reviewOrderClicked) {
-          this.setState({ reviewOrderClicked: true });
+        if (!reviewOrderClicked && stockHoldings >= order.quantity) {
+          this.setState({
+            reviewOrderClicked: true,
+            orderMessage: `You are placing an order to ${
+              buyClicked ? "buy" : "sell"
+            } ${order.quantity} ${order.quantity > 1 ? "shares" : "share"} of ${
+              order.ticker
+            } based on the current market price of $${
+              order.cost_per_share
+            } for a total cost of $${order.transaction_amount}.`,
+          });
+        } else if (!reviewOrderClicked && stockHoldings < order.quantity) {
+          this.setState({
+            orderErrorMessage: `Not enough shares. You can only sell up to ${stockHoldings} ${
+              stockHoldings > 1 ? "shares" : "share"
+            } of ${order.ticker}.`,
+          });
         } else {
-          this.props.addTransaction(this.state.order);
+          this.props.addTransaction(order);
         }
       }
     }
   }
+  // handleBuy(e) {
+  //   const { investOption, buyClicked, sellClicked, reviewOrderClicked } = this.state;
+  //   e.preventDefault();
+  //   if (buyClicked) {
+  //     if (investOption === "Shares") {
+  //       if (!reviewOrderClicked) {
+  //         this.setState({ reviewOrderClicked: true });
+  //       } else {
+  //         this.props.addTransaction(this.state.order);
+  //       }
+  //     }
+  //   } else {
+  //     if (investOption === "Shares") {
+  //       if (!reviewOrderClicked) {
+  //         this.setState({ reviewOrderClicked: true });
+  //       } else {
+  //         this.props.addTransaction(this.state.order);
+  //       }
+  //     }
+  //   }
+  // }
 
   handleLogOut(e) {
     e.preventDefault();
@@ -814,14 +873,14 @@ class AssetShow extends React.Component {
                           </div>
                         </div>
                         <div>
-                          {
+                          <div className="review-message">
+                            {this.state.orderMessage || this.state.orderErrorMessage}
+                          </div>
+                          {/* {
                             this.state.reviewOrderClicked ? (
                               
-                              <div className="review-message">
-                                {`You are placing an order to ${this.state.buyClicked ? "buy" : "sell"} ${this.state.order.quantity} shares of ${this.state.order.ticker} based on the current market price of $${this.state.order.cost_per_share}`}
-                              </div>
                             ) : null
-                          }
+                          } */}
                         </div>
                         <div className="review-button-outer">
                           <div className="review-container">
