@@ -188,7 +188,7 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
 #     today_open = Time.parse("9:30 AM")
 # end
 
-        @current_user = current_user || User.find(46)
+        @current_user = User.find(4)
         today = Time.now.strftime("%Y-%m-%d")
         todayDate = Time.now
         weekend = todayDate.saturday? || todayDate.sunday?
@@ -215,14 +215,14 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
             @first_of_day = PortfoDatum.create({
                 date: today,
                 label: market_open,
-                cash_balance: current_user.cash_balance || User.find(46).cash_balance
+                cash_balance: @current_user.cash_balance || User.find(4).cash_balance
             })
             until today_open.strftime("%I:%M %p") == label_now
                 PortfoDatum.create({
                     user_id: @current_user.id,
                     date: today,
                     label: (today_open += (5 * 60)).strftime("%I:%M %p"),
-                    cash_balance: current_user.cash_balance || User.find(46).cash_balance
+                    cash_balance: @current_user.cash_balance || User.find(4).cash_balance
                 })
             end
             # create reset, weekend/holday instance variable methods
@@ -238,7 +238,7 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
                     user_id: @current_user.id,
                     date: today,
                     label: (last_label += (5 * 60)).strftime("%I:%M %p"),
-                    cash_balance: current_user.cash_balance || User.find(46).cash_balance
+                    cash_balance: @current_user.cash_balance || User.find(4).cash_balance
                 })
             end
         else
