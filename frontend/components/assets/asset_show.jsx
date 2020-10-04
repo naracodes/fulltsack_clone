@@ -560,7 +560,7 @@ class AssetShow extends React.Component {
                           <span className="info-label">
                             <div className="info-label-div">Market Cap</div>
                           </span>
-                          <div className="info-data">{numeral(asset.marketCap).format('0.00a')}</div>
+                          <div className="info-data capitalize">{numeral(asset.marketCap).format('0.00a')}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
@@ -582,7 +582,7 @@ class AssetShow extends React.Component {
                           <span className="info-label">
                             <div className="info-label-div">Average Volume</div>
                           </span>
-                          <div className="info-data">
+                          <div className="info-data capitalize">
                             {numeral(asset.avgTotalVolume).format('0.00a')}
                           </div>
                         </div>
@@ -617,7 +617,7 @@ class AssetShow extends React.Component {
                                 <span className="info-label">
                                   <div className="info-label-div">Volume</div>
                                 </span>
-                                <div className="info-data">
+                                <div className="info-data capitalize">
                                   {numeral(asset.volume).format('0.00a')}
                                 </div>
                               </div>
@@ -959,7 +959,7 @@ class AssetShow extends React.Component {
                       </button>
                       {button}
                     </div>
-                    <Link to={`/`}>Dashboard</Link>
+                    {/* <Link to={`/`}>Dashboard</Link> */}
                   </div>
                 </div>
               </div>
