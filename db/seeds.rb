@@ -207,7 +207,7 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
 
         if weekend
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
-            render :index
+            # render :index
         elsif new_day
             today_open = Time.parse("9:30 AM")
             @first_of_day = PortfoDatum.create({
@@ -226,7 +226,7 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
             # create reset, weekend/holday instance variable methods
             # today_open.reset!
             today_open = Time.parse("9:30 AM")
-            render :index
+            # render :index
         elsif ((last_update_lapsed > five_min) && !day_ended)
             last_label = Time.parse(@last_portfo_data.label)
             # (last_update_lapsed / five_min).floor.times do
@@ -239,5 +239,5 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
                 })
             end
         else
-            render :index
+            # render :index
         end
