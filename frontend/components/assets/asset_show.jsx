@@ -38,7 +38,7 @@ class AssetShow extends React.Component {
       showDropdown: false,
       stocksOwned: "",
       investInDropdown: false,
-      buyColor: "black",
+      buyColor: "#00C805",
       sellColor: "black",
       buyClicked: true,
       sellClicked: false,
@@ -326,7 +326,7 @@ class AssetShow extends React.Component {
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (this.state.loading || !portfolio || !asset) {
+    if (this.state.loading || !portfolio || !portfolio.holdings || !asset) {
       return (
         <div>
           Loading...

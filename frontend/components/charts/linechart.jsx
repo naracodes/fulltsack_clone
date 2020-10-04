@@ -11,12 +11,14 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import Odometer from "react-odometerjs";
+import numeral from 'numeral';
 
 class AssetLineChart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      closePrice: null, // null to string
+      closePrice: null,
+      loading: true,
     };
     this.handleHover = this.handleHover.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
@@ -37,18 +39,17 @@ class AssetLineChart extends React.Component {
   }
 
   render() {
-    const { data, company, closePrice } = this.props;
+    const { data, closePrice } = this.props;
     if (!data) {
-      return null;
+      <div>
+        Loading...
+      </div>
     }
       return (
         <div className="stock-graph">
-          {/* <h1 className="company-name">{company ? company.split(',')[0] : ""}</h1> */}
-          {/* <h3>{this.state.closePrice}</h3> */}
           <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice.toFixed(2) : this.state.closePrice.toFixed(2)} format="(,ddd).dd" /></div>
           {/* <ResponsiveContainer id="responsive-container"> */}
             <LineChart
-              // id="stock-line-chart"
               width={676}
               height={361}
               data={this.props.data}
@@ -77,31 +78,5 @@ class AssetLineChart extends React.Component {
       );
   }
 }
-
-// const AssetLineChart = props => {
-//     const { data } = props;
-//     debugger
-//     if (!data) {
-//         return null;
-//     } else {
-//         return (
-//             <div className="chartContainer">
-//                 <h3>Hello!</h3>
-//                 <h3>{data[data.length - 1].close}</h3>
-//                 <LineChart
-//                     width={600}
-//                     height={300}
-//                     data={props.data}
-//                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-//                 >
-//                     <XAxis tickLine={false} dataKey="label" hide={true} />
-//                     <YAxis hide={true} domain={["auto", "dataMax"]} />
-//                     <Tooltip />
-//                     <Line type="linear" dataKey="close" stroke="#1aee99" dot={false} />
-//                 </LineChart>
-//             </div>
-//         );
-//     }
-// }
 
 export default AssetLineChart;
