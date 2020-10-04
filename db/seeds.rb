@@ -188,6 +188,19 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
 #     today_open = Time.parse("9:30 AM")
 # end
 
+
+
+Transaction.create({
+    user_id: 4,
+    transaction_type: "Deposit",
+    transaction_amount: 1000000
+})
+
+Portfolio.create({
+    user_id: 4,
+    balance: 1000000
+})
+
         @current_user = User.find(4)
         today = Time.now.strftime("%Y-%m-%d")
         todayDate = Time.now
