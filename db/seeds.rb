@@ -206,11 +206,9 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
 
 
         if weekend
-            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
             render :index
         elsif new_day
-            debugger
             today_open = Time.parse("9:30 AM")
             @first_of_day = PortfoDatum.create({
                 date: today,
@@ -230,7 +228,6 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
             today_open = Time.parse("9:30 AM")
             render :index
         elsif ((last_update_lapsed > five_min) && !day_ended)
-            debugger
             last_label = Time.parse(@last_portfo_data.label)
             # (last_update_lapsed / five_min).floor.times do
             until last_label == label_now
