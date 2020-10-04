@@ -133,8 +133,14 @@ class AssetShow extends React.Component {
           });
         } else if (!reviewOrderClicked && stockHoldings < order.quantity) {
           this.setState({
+            reviewOrderClicked: true,
             orderErrorMessage: `Not enough buying power. You only have enough buying power to purchase ${(buyingPowerAvailable / order.cost_per_share).toFixed(3)} shares of ${ticker}.`,
-          })
+          }, () => console.log(this.state))
+        } else if (reviewOrderClicked && orderErrorMessage) {
+          this.setState({
+            reviewOrderClicked: false,
+            orderErrorMessage: null,
+          });          
         } else {
           this.props.addTransaction(order);
         }
@@ -594,7 +600,7 @@ class AssetShow extends React.Component {
                                   <div className="info-label-div">High Today</div>
                                 </span>
                                 <div className="info-data">
-                                  {numeral(asset.high).format('$0.00')}
+                                  {numeral(asset.high).format('$0,0.00')}
                                 </div>
                               </div>
                               <div className="asset-info">
@@ -602,7 +608,7 @@ class AssetShow extends React.Component {
                                   <div className="info-label-div">Low Today</div>
                                 </span>
                                 <div className="info-data">
-                                  {numeral(asset.low).format('$0.00')}
+                                  {numeral(asset.low).format('$0,0.00')}
                                 </div>
                               </div>
                               <div className="asset-info">
@@ -610,7 +616,7 @@ class AssetShow extends React.Component {
                                   <div className="info-label-div">Open Price</div>
                                 </span>
                                 <div className="info-data">
-                                  {numeral(asset.open).format('$0.00')}
+                                  {numeral(asset.open).format('$0,0.00')}
                                 </div>
                               </div>
                               <div className="asset-info">
@@ -626,7 +632,7 @@ class AssetShow extends React.Component {
                                   <div className="info-label-div">52 Week High</div>
                                 </span>
                                 <div className="info-data">
-                                  {numeral(asset.week52High).format('$0.00')}
+                                  {numeral(asset.week52High).format('$0,0.00')}
                                 </div>
                               </div>
                               <div className="asset-info">
@@ -634,7 +640,7 @@ class AssetShow extends React.Component {
                                   <div className="info-label-div">52 Week Low</div>
                                 </span>
                                 <div className="info-data">
-                                  {numeral(asset.week52Low).format('$0.00')}
+                                  {numeral(asset.week52Low).format('$0,0.00')}
                                 </div>
                               </div>
                             </>
@@ -900,7 +906,7 @@ class AssetShow extends React.Component {
                                   <span>
                                     {this.state.investOption === "Dollars"
                                       ? this.state.estQuantity
-                                      : `$${this.state.estCost}`}
+                                      : `${numeral(this.state.estCost).format('$0,0.00')}`}
                                   </span>
                                   {/* <span>{this.state.estimate[this.state.investOption]}</span> */}
                                 </div>
@@ -912,11 +918,6 @@ class AssetShow extends React.Component {
                           <div className="review-message">
                             {this.state.orderMessage || this.state.orderErrorMessage}
                           </div>
-                          {/* {
-                            this.state.reviewOrderClicked ? (
-                              
-                            ) : null
-                          } */}
                         </div>
                         <div className="review-button-outer">
                           <div className="review-container">
