@@ -524,7 +524,7 @@ class AssetShow extends React.Component {
                           <span className="info-label">
                             <div className="info-label-div">Employees</div>
                           </span>
-                          <div className="info-data">{asset.employees}</div>
+                          <div className="info-data">{numeral(asset.employees).format('0,0')}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
@@ -542,7 +542,7 @@ class AssetShow extends React.Component {
                           <span className="info-label">
                             <div className="info-label-div">Market Cap</div>
                           </span>
-                          <div className="info-data">{asset.marketCap}</div>
+                          <div className="info-data">{numeral(asset.marketCap).format('0.00a')}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
@@ -565,7 +565,7 @@ class AssetShow extends React.Component {
                             <div className="info-label-div">Average Volume</div>
                           </span>
                           <div className="info-data">
-                            {asset.avgTotalVolume}
+                            {numeral(asset.avgTotalVolume).format('0.00a')}
                           </div>
                         </div>
                         <div className="asset-info">
