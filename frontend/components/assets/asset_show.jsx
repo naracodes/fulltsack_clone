@@ -104,7 +104,7 @@ class AssetShow extends React.Component {
   }
 
   handleBuy(e) {
-    const { investOption, buyClicked, sellClicked, reviewOrderClicked, order } = this.state;
+    const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage } = this.state;
     const { portfolio, asset } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
@@ -146,10 +146,16 @@ class AssetShow extends React.Component {
           });
         } else if (!reviewOrderClicked && stockHoldings < order.quantity) {
           this.setState({
+            reviewOrderClicked: true,
             orderErrorMessage: `Not enough shares. You can only sell up to ${stockHoldings} ${
               stockHoldings > 1 ? "shares" : "share"
             } of ${order.ticker}.`,
-          });
+          }, () => console.log(this.state));
+        } else if (reviewOrderClicked && orderErrorMessage) {
+          this.setState({
+            reviewOrderClicked: false,
+            orderErrorMessage: null,
+          })
         } else {
           this.props.addTransaction(order);
         }
@@ -889,7 +895,13 @@ class AssetShow extends React.Component {
                                 className="review-submit"
                                 onClick={this.handleBuy}
                               >
-                                <span>{this.state.reviewOrderClicked ? "Submit Order" : "Review Order"}</span>
+                                {
+                                  this.state.reviewOrderClicked ? (
+                                    <span>{this.state.orderErrorMessage ? "Edit Order" : "Submit Order"}</span>
+                                  ) : (
+                                    <span>Review Order</span>
+                                  )
+                                }
                               </button>
                             </div>
                           </div>
