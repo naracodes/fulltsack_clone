@@ -1538,7 +1538,7 @@ table {
 
 #angellist:hover {
   cursor: pointer;
-  color: #220061;
+  color: #f161e8;
 }
 
 #github:hover {
@@ -1550,6 +1550,24 @@ table {
   cursor: pointer;
   color: rgb(0, 200, 5);
 }
+
+.portfo-link {
+  cursor: pointer;
+    a {
+      text-decoration: none;
+    }
+}
+
+.portfo-link:hover {
+  color: #daa3c3;
+}
+
+
+.portfo-link a:link,
+.portfo-link a:visited {
+  color: black;
+}
+
 
 @media (min-width: 1200px) {
   .logo-container {
@@ -2093,6 +2111,22 @@ table {
         line-height: 28px;
       }
     }
+}
+
+.about-div-inner {
+  button {
+    background: none;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #06eb9f;
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+  }
 }
 
 .company-description {

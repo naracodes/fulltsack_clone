@@ -28,7 +28,9 @@ class AssetShow extends React.Component {
     this.wrapperRef_invest = React.createRef();
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
+    this.toggleShowMore = this.toggleShowMore.bind(this);
     this.state = {
+      showMoreClicked: false,
       orderErrorMessage: null,
       orderMessage: null,
       reviewOrderClicked: false,
@@ -57,6 +59,12 @@ class AssetShow extends React.Component {
 
   componentWillUnmount() {
     this.setState({reviewOrderClicked: false})
+  }
+
+  toggleShowMore() {
+    this.setState({
+      showMoreClicked: !this.state.showMoreClicked
+    }, () => console.log(this.state))
   }
 
   handleBuyClick(e) {
@@ -389,6 +397,9 @@ class AssetShow extends React.Component {
                       onClick={() => window.open("https://angel.co/u/naraslee", "_blank")}
                     />
                   </div>
+                  <div className="portfo-link">
+                    <Link to={"/"}><span>Portfolio</span></Link>
+                  </div>
                   <div className="account" ref={this.wrapperRef}>
                     <span onClick={this.showDropdown}>Account</span>
                     {this.state.showDropdown ? (
@@ -509,6 +520,7 @@ class AssetShow extends React.Component {
                             <h2 className="about-h2">
                               <span>About</span>
                             </h2>
+                            <button onClick={this.toggleShowMore}>{this.state.showMoreClicked ? "Show Less" : "Show More"}</button>
                           </div>
                         </div>
                       </header>
@@ -574,42 +586,60 @@ class AssetShow extends React.Component {
                             {numeral(asset.avgTotalVolume).format('0.00a')}
                           </div>
                         </div>
-                        <div className="asset-info">
-                          <span className="info-label">
-                            <div className="info-label-div"></div>
-                          </span>
-                          <div className="info-data"></div>
-                        </div>
-                        <div className="asset-info">
-                          <span className="info-label">
-                            <div className="info-label-div"></div>
-                          </span>
-                          <div className="info-data"></div>
-                        </div>
-                        <div className="asset-info">
-                          <span className="info-label">
-                            <div className="info-label-div"></div>
-                          </span>
-                          <div className="info-data"></div>
-                        </div>
-                        <div className="asset-info">
-                          <span className="info-label">
-                            <div className="info-label-div"></div>
-                          </span>
-                          <div className="info-data"></div>
-                        </div>
-                        <div className="asset-info">
-                          <span className="info-label">
-                            <div className="info-label-div"></div>
-                          </span>
-                          <div className="info-data"></div>
-                        </div>
-                        <div className="asset-info">
-                          <span className="info-label">
-                            <div className="info-label-div"></div>
-                          </span>
-                          <div className="info-data"></div>
-                        </div>
+                        {
+                          this.state.showMoreClicked ? (
+                            <>
+                              <div className="asset-info">
+                                <span className="info-label">
+                                  <div className="info-label-div">High Today</div>
+                                </span>
+                                <div className="info-data">
+                                  {numeral(asset.high).format('$0.00')}
+                                </div>
+                              </div>
+                              <div className="asset-info">
+                                <span className="info-label">
+                                  <div className="info-label-div">Low Today</div>
+                                </span>
+                                <div className="info-data">
+                                  {numeral(asset.low).format('$0.00')}
+                                </div>
+                              </div>
+                              <div className="asset-info">
+                                <span className="info-label">
+                                  <div className="info-label-div">Open Price</div>
+                                </span>
+                                <div className="info-data">
+                                  {numeral(asset.open).format('$0.00')}
+                                </div>
+                              </div>
+                              <div className="asset-info">
+                                <span className="info-label">
+                                  <div className="info-label-div">Volume</div>
+                                </span>
+                                <div className="info-data">
+                                  {numeral(asset.volume).format('0.00a')}
+                                </div>
+                              </div>
+                              <div className="asset-info">
+                                <span className="info-label">
+                                  <div className="info-label-div">52 Week High</div>
+                                </span>
+                                <div className="info-data">
+                                  {numeral(asset.week52High).format('$0.00')}
+                                </div>
+                              </div>
+                              <div className="asset-info">
+                                <span className="info-label">
+                                  <div className="info-label-div">52 Week Low</div>
+                                </span>
+                                <div className="info-data">
+                                  {numeral(asset.week52Low).format('$0.00')}
+                                </div>
+                              </div>
+                            </>
+                          ) : null
+                        }
                       </div>
                     </section>
                     <section className="related-lists-section">

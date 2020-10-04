@@ -192,6 +192,11 @@ class Dashboard extends React.Component {
                       className="brand-icon"
                     />
                   </div>
+                  <div className="portfo-link">
+                    <Link to={"/"}>
+                      <span>Portfolio</span>
+                    </Link>
+                  </div>
                   <div className="account" ref={this.wrapperRef}>
                     <span onClick={this.showDropdown}>Account</span>
                     {this.state.showDropdown ? (
@@ -223,7 +228,11 @@ class Dashboard extends React.Component {
                               <div className="buying-power-value">
                                 <div className="buying-power-value-container">
                                   <span>
-                                    <h3>{numeral(buyingPowerAvailable).format('$0,0.00')}</h3>
+                                    <h3>
+                                      {numeral(buyingPowerAvailable).format(
+                                        "$0,0.00"
+                                      )}
+                                    </h3>
                                   </span>
                                   <div className="buying-value-text">
                                     Buying Power
@@ -305,7 +314,9 @@ class Dashboard extends React.Component {
                     <header className="buying-p-heading">
                       <div>
                         <span>Buying Power</span>
-                        <span>{numeral(buyingPowerAvailable).format('$0,0.00')}</span>
+                        <span>
+                          {numeral(buyingPowerAvailable).format("$0,0.00")}
+                        </span>
                       </div>
                     </header>
                   </div>
