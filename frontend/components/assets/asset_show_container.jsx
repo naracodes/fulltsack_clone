@@ -16,17 +16,20 @@ import { fetchHoldings } from '../../actions/holding_action';
 
 
 export const msp = (state, ownProps) => {
-    let asset = asset || state.entities.assets[(ownProps.match.params.ticker).toUpperCase()];
+    let asset = asset || state.entities.assets[(ownProps.match.params.ticker).toUpperCase()] || state.entities.assets;
+    debugger
     let news = state.entities.news ? state.entities.news : {};
     if (!asset) {
         return {
             asset: {}
         }
     } else {
+        debugger
         return {
           asset: asset,
           currentUser: state.session.user,
           watchlistArr: Object.keys(state.entities.watchlists),
+          otherData: state.entities.assets,
           assetNews: Object.values(news),
             portfolio: state.entities.transactions,
         };

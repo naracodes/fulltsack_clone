@@ -52,8 +52,9 @@ export const receiveAssetIntraday = (assetIntraday, ticker) => {
 }
 
 export const receive1Week = (asset1Week, ticker) => {
+    debugger
     return {
-      type: RECEIVE_ASSET_INTRADAY,
+      type: RECEIVE_1WEEK,
       asset1Week,
       ticker,
     };
@@ -157,8 +158,10 @@ export const fetchIntraday = ticker => dispatch => {
 }
 
 export const fetch1Week = ticker => dispatch => {
+    debugger
     return AssetAPIUtil.fetch1Week(ticker).then(asset1Week => {
-        return dispatch(receive1Week(asset1Week));
+        debugger
+        return dispatch(receive1Week(asset1Week, ticker));
     })
 }
 

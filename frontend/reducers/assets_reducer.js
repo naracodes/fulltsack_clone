@@ -14,10 +14,14 @@ const assetsReducer = (oldState = {}, action) => {
             nextState[action.asset.symbol] = Object.assign({}, nextState[action.asset.symbol], action.asset);
             return nextState;
         case RECEIVE_ASSET_INTRADAY:
+            debugger
             nextState[action.ticker]["chartData"] = action.assetIntraday;
+            debugger
             return nextState;
         case RECEIVE_1WEEK:
-            return nextState[action.ticker]["1WeekData"] = action.asset1Week;
+            debugger
+            return nextState[action.ticker] = Object.assign({}, nextState[action.ticker], {weekData: action.asset1Week});
+            // return nextState[action.ticker]["1WeekData"] = action.asset1Week;
         case RECEIVE_RATING:
             nextState[action.ticker].rating = action.rating;
             return nextState;

@@ -29,8 +29,9 @@ class AssetShow extends React.Component {
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
     this.toggleShowMore = this.toggleShowMore.bind(this);
-    // this.handleRange = this.handleRange.bind(this);
+    this.handleRangeClick = this.handleRangeClick.bind(this);
     this.state = {
+      data: "",
       clickedRange: "1D",
       showMoreClicked: false,
       orderErrorMessage: null,
@@ -59,15 +60,49 @@ class AssetShow extends React.Component {
     };
   }
 
-  // handleRange(range) {
-  //   this.setState({
-  //     clickedRange: range,
-  //   }, console.log(this.state.clickedRange))
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   debugger
+  //   console.log(this.state.clickedRange, "this.state")
+  //   console.log(nextState.clickedRange, "next state")
+  //   return this.state.clickedRange !== nextState.clickedRange;
   // }
 
-  componentWillUnmount() {
-    this.setState({reviewOrderClicked: false})
+  // componentDidUpdate(prevState) {
+  //   const { fetchIntraday, fetch1Week } = this.props;
+  //   const { clickedRange } = this.state;
+  //   const ticker = this.props.match.params.ticker.toUpperCase();
+  //   let fetchClickedRange;
+  //   debugger
+  //   if (clickedRange === "1D") {
+  //     debugger
+  //     fetchClickedRange = fetchIntraday;
+  //   } else if (clickedRange === "1W") {
+  //     fetchClickedRange = fetch1Week;
+  //   };
+
+  //   if (prevState.clickedRange !== this.state.clickedRange) {
+  //     debugger
+  //     fetchClickedRange(ticker).then(res => {
+  //       console.log("1w data fetched")
+  //     })
+  //   }
+  // }
+
+  handleRangeClick(e) {
+    const ticker = this.props.match.params.ticker.toUpperCase();
+    console.log(e.target.textContent)
+    debugger
+    this.setState({
+      clickedRange: e.target.textContent,
+    }, () => this.props.fetch1Week(ticker).then((res) => {
+      debugger
+      this.setState({loading: false, data: res.asset1Week})
+    }))
   }
+
+  // componentWillUnmount() {
+  //   this.setState({reviewOrderClicked: false})
+  // }
 
   toggleShowMore() {
     this.setState({
@@ -320,7 +355,7 @@ class AssetShow extends React.Component {
       holdings,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    if (this.state.loading || !portfolio || !portfolio.holdings || !asset) {
+    if (this.state.loading || !portfolio || !portfolio.holdings || !asset || !asset.chartData) {
       return (
         <div>
           Loading...
@@ -484,7 +519,7 @@ class AssetShow extends React.Component {
                       <header className="asset-price"></header>
                       <div className="react-chart">
                         <AssetLineChart
-                          data={asset.chartData}
+                          data={this.state.data || asset.chartData}
                           company={asset.asset_name}
                           closePrice={closingPrice}
                           className="stock-graph"
@@ -496,7 +531,7 @@ class AssetShow extends React.Component {
                             <span>1D</span>
                           </div>
                           <div className="1W">
-                            <span>1W</span>
+                            <span onClick={this.handleRangeClick}>1W</span>
                           </div>
                           <div className="1M">
                             <span>1M</span>
