@@ -30,10 +30,24 @@ class User < ApplicationRecord
 
     def holdings_between(prev, cur)
         holdings_snapshot = Hash.new(0)
-        if self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur)
-            
+        buys = self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur)
+        sells = self.transaction_records.where(transaction_type: "Sell", created_at: prev..cur)
+        buys = buys.is_a? Array ? buys : [buys]
+        sells = sells.is_a? Array ? sells : [sells]
+        if buys
+            buys.each do |buy|
+                holdings_snapshot[buy.ticker] += buy.quantity
+            end
+        end
+
+        if sells
+            sells.each do |sell|
+                holdings_snapshot[sell.ticker] -= sell.quantity
+            end
         end
         
+        holdings_snapshot
+
     end
 
     def holdings(ticker = nil)
