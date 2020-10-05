@@ -14,7 +14,8 @@
 #  cost_per_share     :float
 #
 class Transaction < ApplicationRecord
-    validates :user_id, :ticker, :transaction_type, :transaction_amount, :quantity, presence: true
+    validates :user_id, :transaction_type, :transaction_amount, presence: true
 
+    
     
 end

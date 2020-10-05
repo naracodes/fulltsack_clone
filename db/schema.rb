@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_143105) do
+ActiveRecord::Schema.define(version: 2020_10_05_022112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,16 +24,66 @@ ActiveRecord::Schema.define(version: 2020_08_06_143105) do
     t.index ["ticker"], name: "index_assets_on_ticker", unique: true
   end
 
+  create_table "histories", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "ticker"
+    t.string "transaction_type"
+    t.float "transaction_amount"
+    t.integer "quantity"
+    t.float "cost_per_share"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_histories_on_user_id"
+  end
+
+  create_table "holdings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "portfo_data", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "label"
+    t.float "cash_balance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "date"
+    t.json "holdings_snapshot", default: {}
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.float "balance", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "portfolio"
+    t.index ["user_id"], name: "index_portfolios_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rating_buy"
+    t.integer "rating_ow"
+    t.integer "rating_hold"
+    t.integer "rating_uw"
+    t.integer "rating_sell"
+    t.integer "rating_none"
+    t.float "rating_scale_mark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ticker"
+  end
+
   create_table "transactions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "transaction_type", null: false
-    t.float "transaction_amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "asset_id"
-    t.string "ticker", null: false
     t.integer "quantity"
     t.float "cost_per_share"
+    t.float "transaction_amount"
+    t.string "ticker"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 

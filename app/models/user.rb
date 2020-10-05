@@ -19,14 +19,83 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    # has_one :watchlist
     has_many :watchlist_items,
         foreign_key: :user_id,
         class_name: :Watchlist
 
-    has_many :watched_assets,
-        through: :watchlist_items,
-        source: :asset
+    has_many :transaction_records,
+        foreign_key: :user_id,
+        class_name: :Transaction
+
+    def holdings_between(prev, cur, initial=false)
+        # @current_user = current_user ? current_user : User.find(46)
+        @current_user = User.find(46)
+
+        holdings_snapshot = initial ? Hash.new(0) : @current_user.holdings
+        # debugger
+        buys = self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur).to_a
+        sells = self.transaction_records.where(transaction_type: "Sell", created_at: prev..cur).to_a
+        buys = buys.count === 1 ? [buys] : buys
+        sells = sells.count == 1 ? [sells] : sells
+        # debugger
+        if buys[0]
+            # debugger
+            buys.each do |buy|
+                holdings_snapshot[buy.ticker] += buy.quantity
+            end
+        end
+
+        if sells[0]
+            # debugger
+            sells.each do |sell|
+                holdings_snapshot[sell.ticker] -= sell.quantity
+            end
+        end
+        # debugger
+        holdings_snapshot
+
+    end
+
+    def holdings(ticker = nil)
+        holding_info = Hash.new(0)
+        self.transaction_records.where(transaction_type: "Buy").each do |buy| 
+            holding_info[buy.ticker] += buy.quantity
+        end
+
+        self.transaction_records.where(transaction_type: "Sell").each do |sell|
+            holding_info[sell.ticker] -= sell.quantity
+        end
+
+        if ticker
+            holding_info[ticker]
+        else
+            holding_info
+        end
+    end
+
+    def avg_price(ticker = nil)
+        holdings = self.holdings
+        price_info = Hash.new(0)
+        avg_price = 0;
+        
+        holdings.keys.each do |ticker|
+            num_sold = self.transaction_records.where(transaction_type: "Sell", ticker: ticker).count
+            
+            sum = self.transaction_records.where(transaction_type: "Buy", ticker: ticker).offset(num_sold).pluck(:cost_per_share).inject(:+)
+            count = holdings[ticker]
+            price_info[ticker] = sum / count
+        end
+
+        if ticker
+            price_info[ticker]
+        else
+            price_info
+        end
+    end
+
+    def cash_balance
+        Portfolio.where(user_id: self.id).last.balance
+    end
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -42,11 +111,6 @@ class User < ApplicationRecord
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
-    def self.watchlist
-        User.joins(:watchlists).where('user_id = ?', self.id).pluck('watchlists.ticker')
-    end
-    
-
     def ensure_session_token
         self.session_token ||= SecureRandom.urlsafe_base64
     end
@@ -56,13 +120,4 @@ class User < ApplicationRecord
         self.save!
         self.session_token
     end
-
-    def buying_power
-        # deposit and withd bonus feature
-        # buy and sell
-        # FIFO - chronological :created_at - things to do later maybe?
-        cash_balance = Transaction.where(transaction_type: "Deposit", user_id: self.id)
-        last_position = Transaction.where(transaction_type: "Deposit", user_id: self.id).pluck(:transaction_amount)
-    end
-
 end

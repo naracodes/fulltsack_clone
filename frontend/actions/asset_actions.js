@@ -5,9 +5,11 @@ export const RECEIVE_ASSETS = "RECEIVE_ASSETS" //GET QUOTES FOR MULTIPLE TICKERS
 export const RECEIVE_ASSET = "RECEIVE_ASSET"
 export const RECEIVE_ASSET_STATS = "RECEIVE_ASSET_STATS"
 export const RECEIVE_ASSET_INTRADAY = "RECEIVE_ASSET_INTRADAY";
+export const RECEIVE_MULTIPLE_INTRADAY = "RECEIVE_MULTIPLE_INTRADAY";
 export const RECEIVE_PRICE = "RECEIVE_PRICE";
 export const RECEIVE_COMPANY_INFO = "RECEIVE_COMPANY_INFO";
 export const RECEIVE_NEWS = "RECEIVE_NEWS";
+export const RECEIVE_RATING = "RECEIVE_RATING";
 export const CLEAR_PRICE = "CLEAR_PRICE";
 export const CLEAR_ASSET = "CLEAR_ASSET";
 
@@ -48,6 +50,14 @@ export const receiveAssetIntraday = (assetIntraday, ticker) => {
     }
 }
 
+export const receiveMultipleIntraday = multIntraday => {
+    // debugger
+    return {
+        type: RECEIVE_MULTIPLE_INTRADAY,
+        multIntraday,
+    }
+}
+
 export const receiveNews = (news, ticker) => {
     return {
         type: RECEIVE_ASSET_INTRADAY,
@@ -56,16 +66,15 @@ export const receiveNews = (news, ticker) => {
     }
 }
 
-// export const receiveQuoteAndNews = (quoteAndNews) => {
-//     debugger
-//     return {
-//         type: RECEIVE_ASSET_INTRADAY,
-//         quoteAndNews,
-//     }
-// }
+export const receiveRating = (rating, ticker) => {
+    return {
+        type: RECEIVE_RATING,
+        rating,
+        ticker,
+    }
+}
 
 export const receivePrice = assetPrice => {
-    // debugger
     return {
         type: RECEIVE_PRICE,
         assetPrice
@@ -73,7 +82,6 @@ export const receivePrice = assetPrice => {
 }
 
 export const receiveCompanyInfo = company => {
-    debugger
     return {
         type: RECEIVE_COMPANY_INFO,
         company,
@@ -81,67 +89,125 @@ export const receiveCompanyInfo = company => {
 }
 
 export const clearPrice = () => {
-    // debugger
     return {
         type: CLEAR_PRICE,
     }
 }
 
 export const clearAsset = () => {
-    // debugger
     return {
         type: CLEAR_ASSET,
     }
 }
 
-// export const fetchStocks = () => {
-
-// }
-
 export const fetchAssets = () => dispatch => {
-    // debugger
     return AssetAPIUtil.fetchAssets().then(assets => {
-        // debugger
         return dispatch(receiveAllAssets(assets))
     })
 }
 
+let cachedAssetQuote = {};
+//later add logic to check if close prop of response is the same as cached, and add if/else
 export const fetchAsset = ticker => dispatch => {
-    // debugger
-    return AssetAPIUtil.fetchAsset(ticker).then(asset => {
-        // debugger
-        return dispatch(receiveAsset(asset))
-    })
+    if (cachedAssetQuote[ticker]) {
+        return dispatch(receiveAsset(cachedAssetQuote[ticker]));
+    } else {
+        return AssetAPIUtil.fetchAsset(ticker).then(asset => {
+            cachedAssetQuote[ticker] = asset;
+            return dispatch(receiveAsset(asset))
+        });
+    }
 }
 
-export const fetchPrice = ticker => dispatch => {
-    // debugger
-    return AssetAPIUtil.fetchPrice(ticker).then(assetPrice => {
-        // debugger
-        return dispatch(receivePrice(assetPrice));
-    })
-}
-
+let cachedCompanyInfo = {};
 export const fetchCompanyInfo = ticker => dispatch => {
-    debugger
-    return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
-        debugger
-        return dispatch(receiveCompanyInfo(company));
-    })
+    if (cachedCompanyInfo[ticker]) {
+        return dispatch(receiveCompanyInfo(cachedCompanyInfo[ticker]));
+    } else {
+        return AssetAPIUtil.fetchCompanyInfo(ticker).then(company => {
+            cachedCompanyInfo[ticker] = company;
+            return dispatch(receiveCompanyInfo(company));
+        })
+    }
 }
 
+let cachedIntraday = {};
+let lastFetched = {};
 export const fetchIntraday = ticker => dispatch => {
-    debugger
-    return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-        debugger
-        return dispatch(receiveAssetIntraday(assetIntraday, ticker));
+    let timeNow = new Date().getTime();
+    if (cachedIntraday[ticker] && (timeNow - lastFetched[ticker] < 300000)) {
+        return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
+    } else {
+        return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
+            // debugger
+            cachedIntraday[ticker] = assetIntraday;
+            lastFetched[ticker] = new Date().getTime();
+            return dispatch(receiveAssetIntraday(assetIntraday, ticker));
+        });
+    }
+}
+
+// export const fetchIntraday = ticker => dispatch => {
+
+//     if (typeof ticker === "string") {
+//         let timeNow = new Date().getTime();
+//         if (cachedIntraday[ticker] && (timeNow - lastFetched[ticker] < 300000)) {
+//             return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
+//         } else {
+//             return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
+//                 cachedIntraday[ticker] = assetIntraday;
+//                 lastFetched[ticker] = new Date().getTime();
+//                 return dispatch(receiveAssetIntraday(assetIntraday, ticker));
+//             });
+//         };
+//     } else {
+//         let multipleIntra = {};
+
+//     }
+// }
+
+
+// export const fetchMultipleIntraday = tickers => dispatch => {
+//     if (tickers.every(ticker => Object.keys(cachedIntraday).includes(ticker))) {
+//         debugger
+//         let ownedIntra = {};
+//         tickers.forEach(ticker => {
+//             debugger
+//             ownedIntra[ticker] = cachedIntraday[ticker];
+//         });
+//         debugger
+//         return dispatch(receiveMultipleIntraday(ownedIntra));
+//     } else {
+//         debugger
+//         let missingStocks = tickers.filter(ticker => !Object.keys(cachedIntraday).includes(ticker));
+//         missingStocks.forEach(ticker => {
+//             debugger
+//             AssetAPIUtil.fetchIntraday(ticker);
+//         })
+//         let unique = Array.from(new Set([...tickers, ...missingStocks]));
+//         debugger
+//         return fetchMultipleIntraday(unique);
+//     }
+//     // return AssetAPIUtil.fetchMultipleIntraday(tickers).then(multIntraday => {
+//     //     debugger
+//     //     return dispatch(receiveMultipleIntraday(multIntraday));
+//     // });
+// };
+
+export const fetchMultipleIntraday = tickers => dispatch => {
+    return AssetAPIUtil.fetchMultipleIntraday(tickers).then(multIntraday => {
+        return dispatch(receiveMultipleIntraday(multIntraday));
     })
 }
 
-// export const fetchQuoteAndNews = ticker => dispatch => {
-//     debugger
-//     return AssetAPIUtil.fetchQuoteAndNew(ticker).then((quoteAndNews) => {
-//         debugger
-//         return dispatch(receiveQuoteAndNews(quoteAndNews));
-//     })
-// }
+let cachedRating = {};
+export const fetchRating = ticker => dispatch => {
+    if (cachedRating[ticker]) {
+        return dispatch(receiveRating(cachedRating[ticker], ticker));
+    } else {
+        return AssetAPIUtil.fetchRating(ticker).then(rating => {
+            cachedRating[ticker] = rating;
+            return dispatch(receiveRating(rating, ticker));
+        });
+    }
+}

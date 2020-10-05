@@ -7,7 +7,6 @@ export const fetchAllWatchlistAssets = () => {
 }
 
 export const addAssetToWatchlist = (asset, currentUser) => {
-    debugger
     const assetToAdd = $.ajax({
         method: 'POST',
         url: `/api/watchlists`,
@@ -19,7 +18,6 @@ export const addAssetToWatchlist = (asset, currentUser) => {
             // asset_id: asset.id,
         }
     })
-    debugger
     return assetToAdd;
 }
 
@@ -33,7 +31,6 @@ export const addAssetToWatchlist = (asset, currentUser) => {
 // }
 
 export const deleteAssetFromWatchlist = (asset, currentUser) => {
-    debugger
     return $.ajax({
         method: 'DELETE',
         url: `/api/watchlists/${asset.ticker}`,

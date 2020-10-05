@@ -7,7 +7,14 @@ Rails.application.routes.draw do
     resource :session, only: [:new, :create, :destroy]
     resources :assets, except: [:show]
     resources :watchlists, only: [:index, :create]
+    resources :portfolios, only: [:index, :show, :create]
+    resources :transactions, only: [:index, :show, :create]
+    resources :histories, only: [:index, :show, :create]
+    resources :holdings, only: [:index, :show, :create]
+    resources :portfo_data, only: [:index, :show, :create]
+    resources :ratings, only: [:index, :create]
     get '/assets/:ticker', to: 'assets#show'
+    get '/ratings/:ticker', to: 'ratings#show'
     delete 'watchlists/:ticker', to: 'watchlists#destroy'
   end
   

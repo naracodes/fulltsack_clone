@@ -1,5 +1,4 @@
 export const fetchAssets = () => {
-    // debugger
     return $.ajax({
         method: 'GET',
         url: `/api/assets`
@@ -8,29 +7,18 @@ export const fetchAssets = () => {
 
 export const fetchAsset = ticker => {
     return $.ajax({
-        method: 'GET',
-        // url: `https://sandbox.iexapis.com/stable/crypto/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
-    })
+      method: "GET",
+      // url: `https://sandbox.iexapis.com/stable/crypto/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
+      // url: `https://sandbox.iexapis.com/stable/stock/${ticker}/quote/?token=Tpk_9cc6c16a40494338943d728d111e9998`
+      url: `https://cloud.iexapis.com/stable/stock/${ticker}/quote/?token=pk_9bae36c8264042f68549a11dc83620ac`,
+    });
 }
-
-export const fetchPrice = ticker => {
-    return $.ajax({
-        method: 'GET',
-        // url: `https://sandbox.iexapis.com/stable/crypto/btcusd/quote/latestPrice?token=Tpk_9cc6c16a40494338943d728d111e9998`
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/price?token=Tpk_9cc6c16a40494338943d728d111e9998`
-    })
-}
-
-// export const fetchMultipleStocks = (...tickers) => {
-    
-// }
 
 export const fetchMultipleAssets = (tickersArr) => {
     const tickers = tickersArr.join(',')
     return $.ajax({
         method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=quote&token=Tpk_9cc6c16a40494338943d728d111e9998`
+        url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=quote&token=Tpk_9cc6c16a40494338943d728d111e9998`,
     })
 
 }
@@ -38,15 +26,19 @@ export const fetchMultipleAssets = (tickersArr) => {
 export const fetchIntraday = ticker => { //base 5 min interval
     return $.ajax({
         method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=Tpk_9cc6c16a40494338943d728d111e9998&chartInterval=5`
+        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=Tpk_9cc6c16a40494338943d728d111e9998&chartInterval=5`,
     })
 }
 
-export const fetchAssetStats = ticker => {
+export const fetchMultipleIntraday = tickersArr => { // 5 min interval
+    const tickers = tickersArr.join(',');
+    debugger
     return $.ajax({
-        method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/stats/?token=Tpk_9cc6c16a40494338943d728d111e9998`
-    })
+      method: "GET",
+      //   url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=intraday-prices&token=Tpk_9cc6c16a40494338943d728d111e9998&chartInterval=5
+      // url: `https://cloud.iexapis.com/stable/stock/market/batch/date/20201001?symbols=${tickers}&types=intraday-prices&token=pk_9bae36c8264042f68549a11dc83620ac&chartInterval=5`
+      url: `https://sandbox.iexapis.com/stable/stock/market/batch/date/20201001?symbols=${tickers}&types=intraday-prices&token=Tpk_9cc6c16a40494338943d728d111e9998&chartInterval=5`,
+    });
 }
 
 export const fetchAsset1YData = ticker => {
@@ -63,40 +55,20 @@ export const fetchAssetk5YData = ticker => {
     })
 }
 
+
 export const fetchCompanyInfo = ticker => {
-    debugger
     return $.ajax({
-        method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tsk_498db2929da24682a573da9403ff8a2a`
-    })
+      method: "GET",
+      //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/company?token=Tpk_9cc6c16a40494338943d728d111e9998,
+      url: `https://cloud.iexapis.com/stable/stock/${ticker}/company?token=pk_9bae36c8264042f68549a11dc83620ac`,
+    });
 }
 
-// export const fetchQuoteAndNews = ticker => {
-//     debugger
-//     return $.ajax({
-//         method: 'GET',
-//         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/batch?types=quote,news&range=1m&last=1&token=Tpk_9cc6c16a40494338943d728d111e9998`,
-//     })
-// }
-// export const fetchNews = ticker => {
-//     debugger
-//     return $.ajax({
-//         method: 'GET',
-//         url: `https://sandbox.iexapis.com/stable/stock/${ticker}/news/last/1?token=Tsk_498db2929da24682a573da9403ff8a2a`,
-//     })
-// }
-
-
-// const data = (ticker, ...tickers) => {
-//     // return arguments[0]
-//     // return [...arguments][0]
-//     // return [ticker, ...tickers].reduce((acc, el) => acc + ',' + el);
-//     if (Array.isArray(ticker)) {
-//         return ticker.reduce((acc, el) => acc + ',' + el);
-//     } else {
-//         return [ticker, ...tickers].reduce((acc, el) => acc + ',' + el);
-//     }
-// }
-
-// console.log(data(['fb', 'aapl']))
-// console.log(data('fb', 'aapl'))
+export const fetchRating = ticker => {
+    return $.ajax({
+      method: "GET",
+      //   url: `/api/ratings/${ticker}`
+      //   url: `https://sandbox.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=Tpk_9cc6c16a40494338943d728d111e9998`,
+      url: `https://cloud.iexapis.com/stable/stock/${ticker}/recommendation-trends?token=pk_9bae36c8264042f68549a11dc83620ac`,
+    });
+}

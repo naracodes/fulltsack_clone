@@ -11,18 +11,15 @@ export const signup = user => {
 };
 
 export const login = user => {
-    debugger
     const login = $.ajax({
         method: 'POST',
         url: `/api/session`,
         data: { user }
     })
-    debugger
     return login;
 }
 
 export const logout = () => {
-    debugger
     return $.ajax({
         method: 'DELETE',
         url: `/api/session`
