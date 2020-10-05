@@ -121,7 +121,7 @@ class AssetShow extends React.Component {
     e.preventDefault();
     if (buyClicked) {
       if (investOption === "Shares") {
-        if (!reviewOrderClicked && (stockHoldings >= order.quantity)) {
+        if (!reviewOrderClicked && (buyingPowerAvailable >= order.transaction_amount)) {
           this.setState({
             reviewOrderClicked: true,
             orderMessage: `You are placing an order to ${
@@ -131,7 +131,7 @@ class AssetShow extends React.Component {
             } based on the current market price of $${
               order.cost_per_share} for a total cost of $${order.transaction_amount}.`,
           });
-        } else if (!reviewOrderClicked && stockHoldings < order.quantity) {
+        } else if (!reviewOrderClicked && buyingPowerAvailable < order.transaction_amount) {
           this.setState({
             reviewOrderClicked: true,
             orderErrorMessage: `Not enough buying power. You only have enough buying power to purchase ${(buyingPowerAvailable / order.cost_per_share).toFixed(3)} shares of ${ticker}.`,

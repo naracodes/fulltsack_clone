@@ -190,19 +190,19 @@ demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'G
 
 
 
-Transaction.create({
-    user_id: 4,
-    transaction_type: "Deposit",
-    transaction_amount: 1000000
-})
+# Transaction.create({
+#     user_id: 4,
+#     transaction_type: "Deposit",
+#     transaction_amount: 1000000
+# })
 
-Portfolio.create({
-    user_id: 4,
-    balance: 1000000
-})
+# Portfolio.create({
+#     user_id: 4,
+#     balance: 1000000
+# })
 
         @current_user = User.find(4)
-        today = Time.now.strftime("%Y-%m-%d")
+        today = "2020-10-01" || Time.now.strftime("%Y-%m-%d")
         todayDate = Time.now
         weekend = todayDate.saturday? || todayDate.sunday?
         market_open = "09:30 AM"
@@ -218,10 +218,8 @@ Portfolio.create({
         last_update_lapsed = @last_portfo_data ? Time.parse(label_now) - Time.parse(@last_portfo_data.label) : 0;
 
 
-        if weekend
-            @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
-            # render :index
-        elsif new_day
+        if new_day
+            # @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
             today_open = Time.parse("9:30 AM")
             @first_of_day = PortfoDatum.create({
                 date: today,
@@ -239,7 +237,7 @@ Portfolio.create({
             # create reset, weekend/holday instance variable methods
             # today_open.reset!
             today_open = Time.parse("9:30 AM")
-            # render :index
+            render :index
         elsif ((last_update_lapsed > five_min) && !day_ended)
             last_label = Time.parse(@last_portfo_data.label)
             # (last_update_lapsed / five_min).floor.times do
@@ -252,5 +250,41 @@ Portfolio.create({
                 })
             end
         else
-            # render :index
+            render :index
         end
+        # if weekend
+        #     @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
+        #     # render :index
+        # elsif new_day
+        #     today_open = Time.parse("9:30 AM")
+        #     @first_of_day = PortfoDatum.create({
+        #         date: today,
+        #         label: market_open,
+        #         cash_balance: @current_user.cash_balance || User.find(4).cash_balance
+        #     })
+        #     until today_open.strftime("%I:%M %p") == label_now
+        #         PortfoDatum.create({
+        #             user_id: @current_user.id,
+        #             date: today,
+        #             label: (today_open += (5 * 60)).strftime("%I:%M %p"),
+        #             cash_balance: @current_user.cash_balance || User.find(4).cash_balance
+        #         })
+        #     end
+        #     # create reset, weekend/holday instance variable methods
+        #     # today_open.reset!
+        #     today_open = Time.parse("9:30 AM")
+        #     # render :index
+        # elsif ((last_update_lapsed > five_min) && !day_ended)
+        #     last_label = Time.parse(@last_portfo_data.label)
+        #     # (last_update_lapsed / five_min).floor.times do
+        #     until last_label == label_now
+        #         PortfoDatum.create({
+        #             user_id: @current_user.id,
+        #             date: today,
+        #             label: (last_label += (5 * 60)).strftime("%I:%M %p"),
+        #             cash_balance: @current_user.cash_balance || User.find(4).cash_balance
+        #         })
+        #     end
+        # else
+        #     # render :index
+        # end
