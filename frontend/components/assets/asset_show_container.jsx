@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import AssetShow from './asset_show';
 import { logout } from '../../actions/session_actions';
 import {
+    fetch1Week,
   fetchAsset,
   fetchCompanyInfo,
   fetchIntraday,
@@ -46,6 +47,7 @@ export const mdp = dispatch => {
         fetchPortfolioCashBalance: () => dispatch(fetchPortfolioCashBalance()),
         addTransaction: order => dispatch(addTransaction(order)),
         fetchHoldings: () => dispatch(fetchHoldings()),
+        fetch1Week: ticker => dispatch(fetch1Week(ticker)),
     }
 }
 

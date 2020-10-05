@@ -5,6 +5,7 @@ export const RECEIVE_ASSETS = "RECEIVE_ASSETS" //GET QUOTES FOR MULTIPLE TICKERS
 export const RECEIVE_ASSET = "RECEIVE_ASSET"
 export const RECEIVE_ASSET_STATS = "RECEIVE_ASSET_STATS"
 export const RECEIVE_ASSET_INTRADAY = "RECEIVE_ASSET_INTRADAY";
+export const RECEIVE_1WEEK = "RECEIVE_1WEEK";
 export const RECEIVE_MULTIPLE_INTRADAY = "RECEIVE_MULTIPLE_INTRADAY";
 export const RECEIVE_PRICE = "RECEIVE_PRICE";
 export const RECEIVE_COMPANY_INFO = "RECEIVE_COMPANY_INFO";
@@ -48,6 +49,14 @@ export const receiveAssetIntraday = (assetIntraday, ticker) => {
         assetIntraday,
         ticker,
     }
+}
+
+export const receive1Week = (asset1Week, ticker) => {
+    return {
+      type: RECEIVE_ASSET_INTRADAY,
+      asset1Week,
+      ticker,
+    };
 }
 
 export const receiveMultipleIntraday = multIntraday => {
@@ -145,6 +154,12 @@ export const fetchIntraday = ticker => dispatch => {
             return dispatch(receiveAssetIntraday(assetIntraday, ticker));
         });
     }
+}
+
+export const fetch1Week = ticker => dispatch => {
+    return AssetAPIUtil.fetch1Week(ticker).then(asset1Week => {
+        return dispatch(receive1Week(asset1Week));
+    })
 }
 
 // export const fetchIntraday = ticker => dispatch => {

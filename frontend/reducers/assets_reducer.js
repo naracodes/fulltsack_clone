@@ -1,4 +1,4 @@
-import { RECEIVE_ASSET, CLEAR_PRICE, CLEAR_ASSET, RECEIVE_ALL_ASSETS, RECEIVE_COMPANY_INFO,RECEIVE_ASSET_INTRADAY, RECEIVE_RATING, RECEIVE_MULTIPLE_INTRADAY } from '../actions/asset_actions';
+import { RECEIVE_ASSET, CLEAR_PRICE, CLEAR_ASSET, RECEIVE_ALL_ASSETS, RECEIVE_COMPANY_INFO,RECEIVE_ASSET_INTRADAY, RECEIVE_RATING, RECEIVE_MULTIPLE_INTRADAY, RECEIVE_1WEEK } from '../actions/asset_actions';
 
 const assetsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -16,6 +16,8 @@ const assetsReducer = (oldState = {}, action) => {
         case RECEIVE_ASSET_INTRADAY:
             nextState[action.ticker]["chartData"] = action.assetIntraday;
             return nextState;
+        case RECEIVE_1WEEK:
+            return nextState[action.ticker]["1WeekData"] = action.asset1Week;
         case RECEIVE_RATING:
             nextState[action.ticker].rating = action.rating;
             return nextState;

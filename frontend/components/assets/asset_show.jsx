@@ -29,7 +29,9 @@ class AssetShow extends React.Component {
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
     this.toggleShowMore = this.toggleShowMore.bind(this);
+    // this.handleRange = this.handleRange.bind(this);
     this.state = {
+      clickedRange: "1D",
       showMoreClicked: false,
       orderErrorMessage: null,
       orderMessage: null,
@@ -56,6 +58,12 @@ class AssetShow extends React.Component {
       },
     };
   }
+
+  // handleRange(range) {
+  //   this.setState({
+  //     clickedRange: range,
+  //   }, console.log(this.state.clickedRange))
+  // }
 
   componentWillUnmount() {
     this.setState({reviewOrderClicked: false})
@@ -176,27 +184,6 @@ class AssetShow extends React.Component {
       }
     }
   }
-  // handleBuy(e) {
-  //   const { investOption, buyClicked, sellClicked, reviewOrderClicked } = this.state;
-  //   e.preventDefault();
-  //   if (buyClicked) {
-  //     if (investOption === "Shares") {
-  //       if (!reviewOrderClicked) {
-  //         this.setState({ reviewOrderClicked: true });
-  //       } else {
-  //         this.props.addTransaction(this.state.order);
-  //       }
-  //     }
-  //   } else {
-  //     if (investOption === "Shares") {
-  //       if (!reviewOrderClicked) {
-  //         this.setState({ reviewOrderClicked: true });
-  //       } else {
-  //         this.props.addTransaction(this.state.order);
-  //       }
-  //     }
-  //   }
-  // }
 
   handleLogOut(e) {
     e.preventDefault();
@@ -264,21 +251,28 @@ class AssetShow extends React.Component {
       fetchAsset,
       fetchCompanyInfo,
       fetchIntraday,
+      fetch1Week,
       fetchAssetNews,
       fetchRating,
       fetchPortfolioCashBalance,
       fetchHoldings,
     } = this.props;
-    const ticker =
-      this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
-    const companyName =
-      this.props.asset.asset_name !== undefined
-        ? this.props.asset.asset_name.split(",")[0]
-        : "";
+    const { clickedRange } = this.state;
+    let fetchClickedRange;
+    debugger
+    if (clickedRange === "1D") {
+      debugger
+      fetchClickedRange = fetchIntraday;
+    } else if (clickedRange === "1W") {
+      fetchClickedRange = fetch1Week;
+    };
+
+    const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
+    const companyName = this.props.asset.asset_name !== undefined ? this.props.asset.asset_name.split(",")[0] : "";
     Promise.all([
       fetchCompanyInfo(ticker),
       fetchAsset(ticker),
-      fetchIntraday(ticker),
+      fetchClickedRange(ticker),
       fetchAssetNews(ticker),
       fetchPortfolioCashBalance(),
       fetchHoldings()
