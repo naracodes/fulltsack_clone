@@ -10,4 +10,5 @@ json.data(@all_data) do |data|
   json.cash_balance data.cash_balance
   json.created_at data.created_at
   json.date data.date
+  json.holdings_snapshot data.holdings_snapshot
 end

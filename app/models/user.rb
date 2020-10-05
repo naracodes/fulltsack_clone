@@ -32,26 +32,26 @@ class User < ApplicationRecord
         @current_user = User.find(46)
 
         holdings_snapshot = initial ? Hash.new(0) : @current_user.holdings
-        debugger
-        buys = self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur)
-        sells = self.transaction_records.where(transaction_type: "Sell", created_at: prev..cur)
-        buys = buys[0] ? buys : [buys]
-        sells = sells[0] ? sells : [sells]
-        debugger
-        if buys
-            debugger
+        # debugger
+        buys = self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur).to_a
+        sells = self.transaction_records.where(transaction_type: "Sell", created_at: prev..cur).to_a
+        buys = buys.count === 1 ? [buys] : buys
+        sells = sells.count == 1 ? [sells] : sells
+        # debugger
+        if buys[0]
+            # debugger
             buys.each do |buy|
                 holdings_snapshot[buy.ticker] += buy.quantity
             end
         end
 
-        if sells
-            debugger
+        if sells[0]
+            # debugger
             sells.each do |sell|
                 holdings_snapshot[sell.ticker] -= sell.quantity
             end
         end
-        debugger
+        # debugger
         holdings_snapshot
 
     end

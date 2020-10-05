@@ -64,7 +64,7 @@ class Dashboard extends React.Component {
     userDataArr.forEach((data, i) => {
       Object.keys(stockData).forEach(ticker => {
         debugger
-        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * holdings[ticker] : (userDataArr[i].cash_balance * -1);
+        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * data.holdings_snapshot[ticker] : (userDataArr[i].cash_balance * -1);
       })
     })
     console.log(userDataArr);
