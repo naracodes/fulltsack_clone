@@ -28,6 +28,14 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Transaction
 
+    def holdings_between(prev, cur)
+        holdings_snapshot = Hash.new(0)
+        if self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur)
+            
+        end
+        
+    end
+
     def holdings(ticker = nil)
         holding_info = Hash.new(0)
         self.transaction_records.where(transaction_type: "Buy").each do |buy| 
