@@ -19,7 +19,6 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    # has_one :watchlist
     has_many :watchlist_items,
         foreign_key: :user_id,
         class_name: :Watchlist
@@ -28,24 +27,31 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Transaction
 
-    def holdings_between(prev, cur)
-        holdings_snapshot = Hash.new(0)
+    def holdings_between(prev, cur, initial=false)
+        # @current_user = current_user ? current_user : User.find(46)
+        @current_user = User.find(46)
+
+        holdings_snapshot = initial ? Hash.new(0) : @current_user.holdings
+        debugger
         buys = self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur)
         sells = self.transaction_records.where(transaction_type: "Sell", created_at: prev..cur)
-        buys = buys.is_a? Array ? buys : [buys]
-        sells = sells.is_a? Array ? sells : [sells]
+        buys = buys[0] ? buys : [buys]
+        sells = sells[0] ? sells : [sells]
+        debugger
         if buys
+            debugger
             buys.each do |buy|
                 holdings_snapshot[buy.ticker] += buy.quantity
             end
         end
 
         if sells
+            debugger
             sells.each do |sell|
                 holdings_snapshot[sell.ticker] -= sell.quantity
             end
         end
-        
+        debugger
         holdings_snapshot
 
     end
@@ -89,16 +95,7 @@ class User < ApplicationRecord
 
     def cash_balance
         Portfolio.where(user_id: self.id).last.balance
-        # Transaction.create({
-        #     user_id: 4,
-        #     transaction_type: "Deposit",
-        #     transaction_amount: 100000,
-        # })
     end
-
-    # has_many :watched_assets,
-    #     through: :watchlist_items,
-    #     source: :asset
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
