@@ -18,7 +18,7 @@ const mdp = dispatch => {
     return {
         fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
         fetchHoldings: () => dispatch(fetchHoldings()),
-        // fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
+        fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
     }
 }
 

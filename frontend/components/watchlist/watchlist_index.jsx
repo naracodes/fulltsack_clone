@@ -10,10 +10,10 @@ class WatchlistIndex extends React.Component {
       }
     }
     componentDidMount() {
-      const { watchlistAssets, data } = this.props;
-      const watched = watchlistAssets;
-      const owned = Object.keys(data);
-      let missingTickers = watchlistAsset.filter(ticker => !owned.includes(ticker));
+      // const { watchlistAssets, data } = this.props;
+      // const watched = watchlistAssets;
+      // const owned = Object.keys(data);
+      // let missingTickers = watched.filter(ticker => !owned.includes(ticker));
       Promise.all([
         this.props.fetchAllWatchlistAssets(),
         this.props.fetchHoldings()
