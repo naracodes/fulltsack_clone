@@ -26,7 +26,7 @@ class Api::PortfoDataController < ApplicationController
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
             render :index
         elsif new_day
-            # debugger
+            debugger
             @first_of_day = PortfoDatum.create({
                 user_id: @current_user.id,
                 date: today,
