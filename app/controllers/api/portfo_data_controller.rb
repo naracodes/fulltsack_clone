@@ -1,6 +1,6 @@
 class Api::PortfoDataController < ApplicationController
     def index
-        @current_user = current_user || User.find(4)
+        @current_user = current_user || User.find_by(firstName: "Demo")
         today = Time.now.strftime("%Y-%m-%d")
         today_open = Time.parse("9:30 AM")
         todayDate = Time.now
@@ -32,7 +32,7 @@ class Api::PortfoDataController < ApplicationController
                 date: today,
                 holdings_snapshot: holdings_as_of_this_morning,
                 label: market_open,
-                cash_balance: current_user.cash_balance || User.find(4).cash_balance,
+                cash_balance: current_user.cash_balance || User.find_by(firstName: "Demo").cash_balance,
             })
             until today_open.strftime("%I:%M %p") == label_now
                 PortfoDatum.create({
@@ -40,7 +40,7 @@ class Api::PortfoDataController < ApplicationController
                     date: today,
                     holdings_snapshot: @current_user.holdings_between(today_open, today_open + five_min),
                     label: (today_open += (5 * 60)).strftime("%I:%M %p"),
-                    cash_balance: current_user.cash_balance || User.find(4).cash_balance
+                    cash_balance: current_user.cash_balance || User.find_by(firstName: "Demo").cash_balance
                 })
             end
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
@@ -54,7 +54,7 @@ class Api::PortfoDataController < ApplicationController
                     user_id: @current_user.id,
                     date: today,
                     label: (last_label += (5 * 60)).strftime("%I:%M %p"),
-                    cash_balance: current_user.cash_balance || User.find(4).cash_balance
+                    cash_balance: current_user.cash_balance || User.find_by(firstName: "Demo").cash_balance
                 })
             end
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
