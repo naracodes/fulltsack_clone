@@ -66,7 +66,7 @@ class PortfoLineChart extends React.Component {
                 onMouseLeave={this.handleMouseLeave}
             >
                 <XAxis tickLine={false} dataKey="label" hide={true} />
-                <YAxis hide={true} domain={["dataMin - 20000", "dataMax + 20000"]} />
+                <YAxis hide={true} domain={["dataMin", "dataMax"]} />
                 <Tooltip
                 isAnimationActive={false}
                 // offset={5}

@@ -63,7 +63,11 @@ class Dashboard extends React.Component {
   mergeData(userDataArr, stockData, holdings) {
     userDataArr.forEach((data, i) => {
       Object.keys(stockData).forEach(ticker => {
-        debugger
+        if (!stockData[ticker]["intraday-prices"][i].close) {
+          debugger
+          stockData[ticker]["intraday-prices"][i].close = stockData[ticker]["intraday-prices"][i  -1].close;
+          debugger
+        }
         userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * data.holdings_snapshot[ticker] : (userDataArr[i].cash_balance * -1);
       })
     })
@@ -87,7 +91,7 @@ class Dashboard extends React.Component {
       const tickers = Object.keys(res[0].holdings.holdings).filter(
         (ticker) => res[0].holdings.holdings[ticker] > 0
       )
-      debugger
+      // debugger
       if (tickers.length) {
         fetchMultipleIntraday(tickers)
         .then(multIntra => {
@@ -97,7 +101,7 @@ class Dashboard extends React.Component {
           let userData = res[2].data.data;
           let stockData = multIntra.multIntraday;
           let holdings = res[0].holdings.holdings;
-          debugger
+          // debugger
           // console.log(this.mergeData(userData, stockData))
           let newData = this.mergeData(userData, stockData, holdings)
           this.setState({
@@ -127,7 +131,6 @@ class Dashboard extends React.Component {
 
   render() {
     const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday } = this.props;
-    // debugger;
     const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
     if (this.state.loading) {
       return (
