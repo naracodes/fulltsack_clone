@@ -39,7 +39,9 @@ class PortfoLineChart extends React.Component {
   render() {
     const { data } = this.props;
     if (!data) {
-      return null;
+      <div>
+        Loading...
+      </div>
     } else {
         // debugger
         return (
@@ -49,9 +51,7 @@ class PortfoLineChart extends React.Component {
             <div className="odometer">
                 $
                 <Odometer
-                // value={
-                //     // data[data.length - 1].cash_balance
-                // }
+                value={data[data.length - 1].cash_balance}
                 format="(,ddd).dd"
                 />
             </div>
@@ -61,12 +61,12 @@ class PortfoLineChart extends React.Component {
                 width={676}
                 height={361}
                 data={this.props.data}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                margin={{ top: 10, right: 30, left: 20, bottom: 10 }}
                 onMouseMove={this.handleHover}
                 onMouseLeave={this.handleMouseLeave}
             >
                 <XAxis tickLine={false} dataKey="label" hide={true} />
-                <YAxis hide={true} domain={["dataMin - 20000", "dataMax + 20000"]} />
+                <YAxis hide={true} domain={["dataMin", "dataMax"]} />
                 <Tooltip
                 isAnimationActive={false}
                 // offset={5}

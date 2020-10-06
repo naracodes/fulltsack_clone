@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TinyLineChart from '../charts/tiny_linechart';
 
 const WatchlistIndexItem = props => {
-    const { watchlistAsset, holdings } = props;
+    const { watchlistAsset, holdings, data } = props;
     if (!holdings || !watchlistAsset) {
         return null;
     } else {
@@ -25,7 +26,7 @@ const WatchlistIndexItem = props => {
                         }
                     </div>
                     <div>
-                        Graph
+                        <TinyLineChart data={data}/>
                     </div>
                     <div>
                         <span>${watchlistAsset.latest_price.toFixed(2)}</span>
