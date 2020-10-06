@@ -43,7 +43,6 @@ class Dashboard extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    // debugger
     this.props.logout();
   }
 
@@ -64,9 +63,7 @@ class Dashboard extends React.Component {
     userDataArr.forEach((data, i) => {
       Object.keys(stockData).forEach(ticker => {
         if (!stockData[ticker]["intraday-prices"][i].close) {
-          debugger
           stockData[ticker]["intraday-prices"][i].close = stockData[ticker]["intraday-prices"][i  -1].close;
-          debugger
         }
         userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * data.holdings_snapshot[ticker] : (userDataArr[i].cash_balance * -1);
       })
@@ -85,13 +82,10 @@ class Dashboard extends React.Component {
       fetchAssetNews("GOOGL"),
     ]).then(res => {
       // console.log(Object.keys(res[0].holdings.holdings));
-      console.log(
-        Object.keys(res[0].holdings.holdings).filter((ticker) => res[0].holdings.holdings[ticker] > 0)
-      );
+      // console.log(Object.keys(res[0].holdings.holdings).filter((ticker) => res[0].holdings.holdings[ticker] > 0));
       const tickers = Object.keys(res[0].holdings.holdings).filter(
         (ticker) => res[0].holdings.holdings[ticker] > 0
       )
-      // debugger
       if (tickers.length) {
         fetchMultipleIntraday(tickers)
         .then(multIntra => {
@@ -101,7 +95,6 @@ class Dashboard extends React.Component {
           let userData = res[2].data.data;
           let stockData = multIntra.multIntraday;
           let holdings = res[0].holdings.holdings;
-          // debugger
           // console.log(this.mergeData(userData, stockData))
           let newData = this.mergeData(userData, stockData, holdings)
           this.setState({
@@ -282,7 +275,6 @@ class Dashboard extends React.Component {
                 <div className="left col-1">
                   <section className="graph-section">
                     <header className="asset-price">
-                      <h1>Portfolio Graph</h1>
                     </header>
                     <div className="react-chart">
                       <PortfoLineChart

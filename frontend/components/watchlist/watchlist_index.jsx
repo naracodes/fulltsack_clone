@@ -3,32 +3,63 @@ import { Link } from "react-router-dom";
 import WatchlistIndexItem from './watchlist_index_item';
 
 class WatchlistIndex extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        loading: true,
+      }
+    }
     componentDidMount() {
-        this.props.fetchAllWatchlistAssets();
-        this.props.fetchHoldings();
+      const { watchlistAssets, data } = this.props;
+      const watched = watchlistAssets;
+      const owned = Object.keys(data);
+      let missingTickers = watchlistAsset.filter(ticker => !owned.includes(ticker));
+      Promise.all([
+        this.props.fetchAllWatchlistAssets(),
+        this.props.fetchHoldings()
+      ]).then(() => {
+        this.setState({
+          loading: false,
+        });
+        console.log('all fetched in watchlist index');
+      })
     }
 
     render() {
-        const { watchlistAssets, currentUser, holdings } = this.props;
-        return (
-          <div className="watchlist-items box">
-            <header id="list-title">
-              <h3>Watchlist</h3>
-            </header>
-            {watchlistAssets.map((watchlistAsset) => {
-              return (
-                    <Link to={`/stocks/${watchlistAsset.ticker}`} id="wl-link" key={watchlistAsset.id}>
-                      <WatchlistIndexItem
-                        key={watchlistAsset.id}
-                        watchlistAsset={watchlistAsset}
-                        currentUser={currentUser}
-                        holdings={holdings}
-                      />
-                    </Link>
-              );
-            })}
-          </div>
-        );
+        const { watchlistAssets, currentUser, holdings, data } = this.props;
+        debugger
+        if (this.state.loading || !data) {
+          debugger
+          return (
+            <div>
+              Loading...
+            </div>
+          )
+        } else {
+          return (
+            <div className="watchlist-items box">
+              <header id="list-title">
+                <h3>Watchlist</h3>
+              </header>
+              {watchlistAssets.map((watchlistAsset) => {
+                const ticker = watchlistAsset.ticker;
+                console.log(watchlistAsset.ticker)
+                debugger
+                return (
+                      <Link to={`/stocks/${watchlistAsset.ticker}`} id="wl-link" key={watchlistAsset.id}>
+                        <WatchlistIndexItem
+                          key={watchlistAsset.id}
+                          watchlistAsset={watchlistAsset}
+                          currentUser={currentUser}
+                          holdings={holdings}
+                          data={data[watchlistAsset.ticker]["intraday-prices"]}
+                        />
+                      </Link>
+                );
+              })}
+            </div>
+          );
+        }
     }
 }
 
