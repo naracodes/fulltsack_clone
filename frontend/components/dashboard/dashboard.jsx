@@ -78,7 +78,7 @@ class Dashboard extends React.Component {
       fetchHoldings(),
       fetchPortfolioCashBalance(),
       fetchPortfoData(),
-      fetchAssetNews("GOOGL"), //testing purposes
+      fetchAssetNews("GOOGL"),
     ]).then(res => {
       // console.log(Object.keys(res[0].holdings.holdings));
       console.log(
@@ -126,9 +126,9 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { currentUser, logout, portfolio, assetNews } = this.props;
+    const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday } = this.props;
     // debugger;
-
+    const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
     if (this.state.loading) {
       return (
         <div>
