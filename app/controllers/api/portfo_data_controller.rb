@@ -21,7 +21,7 @@ class Api::PortfoDataController < ApplicationController
         market_closed = (Time.now > Time.parse("4:00 PM")) || (Time.now < Time.parse("9:29 AM"))
 
         if weekend || market_closed
-            @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
+            @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
             if @all_data.length != 0
                 render :index
             else

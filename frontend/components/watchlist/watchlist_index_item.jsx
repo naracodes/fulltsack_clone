@@ -26,7 +26,7 @@ const WatchlistIndexItem = props => {
                         }
                     </div>
                     <div>
-                        <TinyLineChart data={data}/>
+                        <TinyLineChart data={data} prevClose={watchlistAsset.prev_close}/>
                     </div>
                     <div>
                         <span>{numeral(watchlistAsset.latest_price).format('$0,0.00')}</span>
