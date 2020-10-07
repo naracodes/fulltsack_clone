@@ -10,18 +10,20 @@ class WatchlistIndex extends React.Component {
       }
     }
     componentDidMount() {
-      // const { watchlistAssets, data } = this.props;
+      const { fetchAllWatchlistAssets, fetchHoldings, fetchMultipleIntraday } = this.props;
       // const watched = watchlistAssets;
       // const owned = Object.keys(data);
       // let missingTickers = watched.filter(ticker => !owned.includes(ticker));
       Promise.all([
-        this.props.fetchAllWatchlistAssets(),
-        this.props.fetchHoldings()
-      ]).then(() => {
-        this.setState({
-          loading: false,
-        });
-        console.log('all fetched in watchlist index');
+        fetchAllWatchlistAssets(),
+        fetchHoldings()
+      ]).then((res) => {
+        const tickers = Object.keys(res[0].assets);
+        fetchMultipleIntraday(tickers).then(() => {
+          this.setState({
+            loading: false,
+          })
+        })
       })
     }
 

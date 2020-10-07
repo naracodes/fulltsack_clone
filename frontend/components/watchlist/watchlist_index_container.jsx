@@ -3,7 +3,7 @@ import WatchlistIndex from './watchlist_index'
 import { connect } from 'react-redux';
 import { fetchAllWatchlistAssets } from '../../actions/watchlist_actions';
 import { fetchHoldings } from '../../actions/holding_action';
-import { fetchIntraday } from '../../actions/asset_actions';
+import { fetchIntraday, fetchMultipleIntraday } from '../../actions/asset_actions';
 
 const msp = state => {
     return {
@@ -19,6 +19,7 @@ const mdp = dispatch => {
         fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
         fetchHoldings: () => dispatch(fetchHoldings()),
         fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
+        fetchMultipleIntraday: tickers => dispatch(fetchMultipleIntraday(tickers)),
     }
 }
 

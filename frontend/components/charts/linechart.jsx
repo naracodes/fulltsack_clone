@@ -68,6 +68,7 @@ class AssetLineChart extends React.Component {
                 type="linear"
                 dataKey="close"
                 stroke="#06993b"
+                strokeWidth={2}
                 dot={false}
                 connectNulls={true}
                 // activeDot={ { onClick: (e) => console.log(e) } }

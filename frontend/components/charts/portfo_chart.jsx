@@ -73,6 +73,7 @@ class PortfoLineChart extends React.Component {
                   type="linear"
                   dataKey="cash_balance"
                   stroke="#1aee99"
+                  strokeWidth={2}
                   dot={false}
                   connectNulls={true}
                   // activeDot={ { onClick: (e) => console.log(e) } }
