@@ -1619,7 +1619,7 @@ table {
   display: block;
   font-size: 13px;
   height: 100%;
-  resize: vertical;
+  resize: none;
   overflow: auto;
 }
 
@@ -1630,7 +1630,8 @@ table {
   position: relative;
   width: 276px;
   overflow: hidden auto;
-  .single-item {
+  .single-item,
+  .watchlist-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1648,7 +1649,17 @@ table {
   #wl-link:visited {
     color: black;
   }
+}
 
+.watchlist-top {
+  border-bottom: 1px rgb(226, 230, 233) solid;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.watchlist-top:hover {
+  background-color: white;
 }
 
 // .single-item {
@@ -1663,7 +1674,7 @@ table {
 .graph-section nav {
   border-bottom: 1px solid rgb(193, 193, 193);
   margin-top: 24px;
-  margin-bottom: 12px;
+  // margin-bottom: 12px;
   box-sizing: border-box;
 }
 
@@ -2324,7 +2335,7 @@ table {
       border-bottom: 1px solid rgb(193, 193, 193);
       border-top: none;
       padding-top: 24px;
-      padding-bottom: 24px;
+      padding-bottom: 36px;
     }
 }
 

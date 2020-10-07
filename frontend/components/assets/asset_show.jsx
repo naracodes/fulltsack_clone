@@ -356,6 +356,7 @@ class AssetShow extends React.Component {
       currentUser,
       portfolio,
       holdings,
+      watchlist,
     } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     if (this.state.loading || !portfolio || !portfolio.holdings || !asset || !asset.data) {
@@ -527,6 +528,7 @@ class AssetShow extends React.Component {
                           company={asset.asset_name}
                           closePrice={closingPrice}
                           className="stock-graph"
+                          prevClose={asset.previousClose}
                         />
                       </div>
                       <nav className="range">

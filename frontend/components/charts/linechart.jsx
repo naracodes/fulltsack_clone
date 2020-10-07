@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  ReferenceLine,
 } from 'recharts';
 import Odometer from "react-odometerjs";
 import numeral from 'numeral';
@@ -64,6 +65,7 @@ class AssetLineChart extends React.Component {
                 // offset={5}
                 // position={{y: -20}}
               />
+              <ReferenceLine y={this.props.prevClose} label="" stroke="#c7c7c7" strokeDasharray="2 2" />
               <Line
                 type="monotone"
                 dataKey="close"

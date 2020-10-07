@@ -41,7 +41,9 @@ class WatchlistIndex extends React.Component {
           return (
             <div className="watchlist-items box">
               <header id="list-title">
-                <h3>Watchlist</h3>
+                <div className="watchlist-top">
+                  Watchlist
+                </div>
               </header>
               {watchlistAssets.map((watchlistAsset) => {
                 const ticker = watchlistAsset.ticker;

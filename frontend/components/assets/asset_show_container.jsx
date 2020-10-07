@@ -33,6 +33,7 @@ export const msp = (state, ownProps) => {
           assetNews: Object.values(news),
             portfolio: state.entities.transactions,
             holdings: state.entities.transactions,
+            // watchlist: state.entities.watchlists,
         };
     }
 }

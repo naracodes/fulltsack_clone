@@ -12,8 +12,6 @@ const WatchlistIndexItem = props => {
         
         return (
             <div className="single-item">
-                {/* <Link to={`/stocks/${watchlistAsset.ticker}`} className="single-link">
-                </Link> */}
                     <div className="left-info-watchlist">
                         <span className="stock-name-span">{watchlistAsset.ticker}</span>
                         {
