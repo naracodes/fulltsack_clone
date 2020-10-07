@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import Odometer from "react-odometerjs";
+import numeral from 'numeral';
 
 class PortfoLineChart extends React.Component {
   constructor(props) {
@@ -48,42 +49,36 @@ class PortfoLineChart extends React.Component {
         // debugger
         return (
             <div className="stock-graph">
-            {/* <h1 className="company-name">{company ? company.split(',')[0] : ""}</h1> */}
-            {/* <h3>{this.state.closePrice}</h3> */}
-            <div className="odometer">
-                $
-                <Odometer
-                value={data[data.length - 1].cash_balance}
-                format="(,ddd).dd"
-                />
-            </div>
-            {/* <ResponsiveContainer id="responsive-container"> */}
-            <LineChart
-                // id="stock-line-chart"
-                width={676}
-                height={361}
-                data={this.props.data}
-                margin={{ top: 10, right: 30, left: 20, bottom: 10 }}
-                onMouseMove={this.handleHover}
-                onMouseLeave={this.handleMouseLeave}
-            >
-                <XAxis tickLine={false} dataKey="label" hide={true} />
-                <YAxis hide={true} domain={["dataMin", "dataMax"]} />
-                <Tooltip
-                isAnimationActive={false}
-                // offset={5}
-                // position={{y: -20}}
-                />
-                <Line
-                type="linear"
-                dataKey="cash_balance"
-                stroke="#1aee99"
-                dot={false}
-                connectNulls={true}
-                // activeDot={ { onClick: (e) => console.log(e) } }
-                />
-            </LineChart>
-            {/* </ResponsiveContainer> */}
+              <div className="odometer">
+                  $<Odometer value={data[data.length - 1].cash_balance}format="(,ddd).dd"/>
+              </div>
+              {/* <ResponsiveContainer id="responsive-container"> */}
+              <LineChart
+                  // id="stock-line-chart"
+                  width={676}
+                  height={361}
+                  data={this.props.data}
+                  margin={{ top: 10, right: 30, left: 20, bottom: 10 }}
+                  onMouseMove={this.handleHover}
+                  onMouseLeave={this.handleMouseLeave}
+              >
+                  <XAxis tickLine={false} dataKey="label" hide={true} />
+                  <YAxis hide={true} domain={["dataMin", "dataMax"]} />
+                  <Tooltip
+                  isAnimationActive={false}
+                  // offset={5}
+                  // position={{y: -20}}
+                  />
+                  <Line
+                  type="linear"
+                  dataKey="cash_balance"
+                  stroke="#1aee99"
+                  dot={false}
+                  connectNulls={true}
+                  // activeDot={ { onClick: (e) => console.log(e) } }
+                  />
+              </LineChart>
+              {/* </ResponsiveContainer> */}
             </div>
         );
     }

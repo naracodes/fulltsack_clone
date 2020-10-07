@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TinyLineChart from '../charts/tiny_linechart';
+import numeral from 'numeral';
 
 const WatchlistIndexItem = props => {
     const { watchlistAsset, holdings, data } = props;
@@ -29,7 +30,7 @@ const WatchlistIndexItem = props => {
                         <TinyLineChart data={data}/>
                     </div>
                     <div>
-                        <span>${watchlistAsset.latest_price.toFixed(2)}</span>
+                        <span>{numeral(watchlistAsset.latest_price).format('$0,0.00')}</span>
                     </div>
             </div>
         )

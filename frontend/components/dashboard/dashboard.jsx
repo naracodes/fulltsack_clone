@@ -217,7 +217,7 @@ class Dashboard extends React.Component {
                               <div className="portfolio-value">
                                 <div className="portfolio-value-container">
                                   <span>
-                                    <h3>$0.00</h3>
+                                    <h3>{numeral(this.state.mergedData[this.state.mergedData.length - 1].cash_balance).format('$0,0.00')}</h3>
                                   </span>
                                   <div className="portfolio-value-text">
                                     Portfolio Value
