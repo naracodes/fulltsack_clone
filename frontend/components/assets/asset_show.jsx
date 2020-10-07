@@ -713,6 +713,9 @@ class AssetShow extends React.Component {
                                   <div className="title-side">
                                     <div className="news-source">
                                       <span>{article.source}</span>
+                                      {
+                                        
+                                      }
                                       <span className="time-since">xh</span>
                                     </div>
                                     <div className="news-title-and-more">

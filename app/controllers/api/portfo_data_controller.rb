@@ -14,7 +14,7 @@ class Api::PortfoDataController < ApplicationController
         
         # @all_data = PortfoDatum.where(user_id: @current_user.id)
 
-        new_day = @last_portfo_data ? @last_portfo_data.created_at.strftime("%Y-%m-%d") < today : true
+        new_day = @last_portfo_data ? @last_portfo_data.date < today : true
         label_now = (Time.now <= Time.parse("04:00 PM") && !weekend) ? Time.now.strftime("%I:%M %p") : "3:55 PM"
         last_update_lapsed = @last_portfo_data ? Time.parse(label_now) - Time.parse(@last_portfo_data.label) : 0;
         holdings_as_of_this_morning = @current_user.holdings_between(@first_trans_data.created_at, today_open, true)
@@ -22,12 +22,14 @@ class Api::PortfoDataController < ApplicationController
 
         if weekend || market_closed
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
+            debugger
             if @all_data.length != 0
                 render :index
             else
                 render json: {}
             end
         elsif new_day
+            debugger
             @first_of_day = PortfoDatum.create({
                 user_id: @current_user.id,
                 date: today,
@@ -48,6 +50,7 @@ class Api::PortfoDataController < ApplicationController
             today_open = Time.parse("9:30 AM")
             render :index
         elsif (last_update_lapsed >= five_min)
+            debugger
             last_label = Time.parse(@last_portfo_data.label)
             until (Time.parse(label_now) - last_label) < five_min
                 PortfoDatum.create({
@@ -58,9 +61,11 @@ class Api::PortfoDataController < ApplicationController
                     cash_balance: current_user.cash_balance || User.find_by(firstName: "Demo").cash_balance
                 })
             end
+            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
             render :index
         else
+            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
             render :index
         end
