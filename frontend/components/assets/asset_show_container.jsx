@@ -26,7 +26,7 @@ export const msp = (state, ownProps) => {
     } else {
         debugger
         return {
-          asset: asset,
+          asset: asset || state.entities.assets,
           currentUser: state.session.user,
           watchlistArr: Object.keys(state.entities.watchlists),
           otherData: state.entities.assets,

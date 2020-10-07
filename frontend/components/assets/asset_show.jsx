@@ -304,15 +304,16 @@ class AssetShow extends React.Component {
     const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
     const companyName = this.props.asset.asset_name !== undefined ? this.props.asset.asset_name.split(",")[0] : "";
     Promise.all([
+      fetchClickedRange(ticker),
+      // fetchIntraday(ticker),
       fetchCompanyInfo(ticker),
       fetchAsset(ticker),
-      fetchClickedRange(ticker),
       fetchAssetNews(ticker),
       fetchPortfolioCashBalance(),
       fetchHoldings()
     ]).then((response) => {
-      console.log(response[2])
-      this.setState({ loading: false, intraday: response[2].assetIntraday }, () => console.log(this.state))
+      // console.log(response)
+      this.setState({ loading: false, intraday: response[0].assetIntraday }, () => console.log(this.state.intraday))
     });
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("mousedown", this.handleClickOutside_invest);

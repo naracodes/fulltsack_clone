@@ -141,20 +141,10 @@ export const fetchCompanyInfo = ticker => dispatch => {
     }
 }
 
-let cachedIntraday = {};
-let lastFetched = {};
 export const fetchIntraday = ticker => dispatch => {
-    let timeNow = new Date().getTime();
-    if (cachedIntraday[ticker] && (timeNow - lastFetched[ticker] < 300000)) {
-        return dispatch(receiveAssetIntraday(cachedIntraday[ticker], ticker));
-    } else {
         return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-            // debugger
-            cachedIntraday[ticker] = assetIntraday;
-            lastFetched[ticker] = new Date().getTime();
             return dispatch(receiveAssetIntraday(assetIntraday, ticker));
-        });
-    }
+    })
 }
 
 export const fetch1Week = ticker => dispatch => {
