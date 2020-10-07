@@ -9,7 +9,7 @@ import {
   fetchIntraday,
   fetchRating
 } from "../../actions/asset_actions";
-import { addAssetToWatchlist, deleteAssetFromWatchlist } from '../../actions/watchlist_actions';
+import { addAssetToWatchlist, deleteAssetFromWatchlist, fetchAllWatchlistAssets } from '../../actions/watchlist_actions';
 import { fetchAssetNews } from "../../actions/news_actions";
 import { addTransaction, fetchPortfolioCashBalance } from '../../actions/transaction_actions';
 import { fetchHoldings } from '../../actions/holding_action';
@@ -32,6 +32,7 @@ export const msp = (state, ownProps) => {
           otherData: state.entities.assets,
           assetNews: Object.values(news),
             portfolio: state.entities.transactions,
+            holdings: state.entities.transactions,
         };
     }
 }
@@ -51,6 +52,7 @@ export const mdp = dispatch => {
         addTransaction: order => dispatch(addTransaction(order)),
         fetchHoldings: () => dispatch(fetchHoldings()),
         fetch1Week: ticker => dispatch(fetch1Week(ticker)),
+        fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
     }
 }
 

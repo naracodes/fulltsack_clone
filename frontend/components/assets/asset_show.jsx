@@ -291,6 +291,7 @@ class AssetShow extends React.Component {
       fetchRating,
       fetchPortfolioCashBalance,
       fetchHoldings,
+      fetchAllWatchlistAssets,
     } = this.props;
     const { clickedRange } = this.state;
     let fetchClickedRange;
@@ -311,10 +312,10 @@ class AssetShow extends React.Component {
       fetchAsset(ticker),
       fetchAssetNews(ticker),
       fetchPortfolioCashBalance(),
-      fetchHoldings()
+      fetchHoldings(),
+      fetchAllWatchlistAssets()
     ]).then((response) => {
-      // console.log(response)
-      this.setState({ loading: false, intraday: response[0].assetIntraday }, () => console.log(this.state.intraday))
+      this.setState({ loading: false, intraday: response[0].assetIntraday })
     });
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("mousedown", this.handleClickOutside_invest);
@@ -364,6 +365,7 @@ class AssetShow extends React.Component {
         </div>
       )
     } else {
+      console.log(this.props.watchlistArr, this.props.match.params.ticker.toUpperCase())
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let valueInStocks = "";
       let rating = asset.rating;
