@@ -62,7 +62,9 @@ class Dashboard extends React.Component {
   mergeData(userDataArr, stockData, holdings) {
     userDataArr.forEach((data, i) => {
       Object.keys(stockData).forEach(ticker => {
+        debugger
         if (!stockData[ticker]["intraday-prices"][i].close) {
+          debugger
           stockData[ticker]["intraday-prices"][i].close = stockData[ticker]["intraday-prices"][i  -1].close;
         }
         userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * data.holdings_snapshot[ticker] : (userDataArr[i].cash_balance * -1);
