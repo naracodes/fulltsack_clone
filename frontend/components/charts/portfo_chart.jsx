@@ -39,9 +39,11 @@ class PortfoLineChart extends React.Component {
   render() {
     const { data } = this.props;
     if (!data) {
-      <div>
-        Loading...
-      </div>
+      return (
+        <div>
+          Loading...
+        </div>
+      )
     } else {
         // debugger
         return (
