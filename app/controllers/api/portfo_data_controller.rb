@@ -22,7 +22,11 @@ class Api::PortfoDataController < ApplicationController
 
         if weekend || market_closed
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
-            render :index
+            if @all_data.length != 0
+                render :index
+            else
+                render json: {}
+            end
         elsif new_day
             @first_of_day = PortfoDatum.create({
                 user_id: @current_user.id,
