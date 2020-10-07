@@ -22,7 +22,6 @@ class Api::PortfoDataController < ApplicationController
 
         if weekend || market_closed
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(79)
-            debugger
             render :index
         elsif new_day
             @first_of_day = PortfoDatum.create({
@@ -45,7 +44,6 @@ class Api::PortfoDataController < ApplicationController
             today_open = Time.parse("9:30 AM")
             render :index
         elsif (last_update_lapsed >= five_min)
-            debugger
             last_label = Time.parse(@last_portfo_data.label)
             until (Time.parse(label_now) - last_label) < five_min
                 PortfoDatum.create({
@@ -57,11 +55,9 @@ class Api::PortfoDataController < ApplicationController
                 })
             end
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
-            debugger
             render :index
         else
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
-            debugger
             render :index
         end
 
