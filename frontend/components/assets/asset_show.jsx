@@ -10,6 +10,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import numeral from 'numeral';
+import moment from 'moment';
 
 class AssetShow extends React.Component {
   constructor(props) {
@@ -713,10 +714,7 @@ class AssetShow extends React.Component {
                                   <div className="title-side">
                                     <div className="news-source">
                                       <span>{article.source}</span>
-                                      {
-                                        
-                                      }
-                                      <span className="time-since">xh</span>
+                                      <span className="time-since">{moment(article.datetime).fromNow()}</span>
                                     </div>
                                     <div className="news-title-and-more">
                                       <h3 className="title-h3">

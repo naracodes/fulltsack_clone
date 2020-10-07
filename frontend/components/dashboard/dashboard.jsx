@@ -8,6 +8,7 @@ import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-
 import PortfoLineChart from '../charts/portfo_chart';
 import { fetchHoldings } from '../../actions/holding_action';
 import numeral from 'numeral';
+import moment from 'moment';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -336,7 +337,7 @@ class Dashboard extends React.Component {
                                 <div className="title-side">
                                   <div className="news-source">
                                     <span>{article.source}</span>
-                                    <span className="time-since">xh</span>
+                                    <span className="time-since">{moment(article.datetime).fromNow()}</span>
                                   </div>
                                   <div className="news-title-and-more">
                                     <h3 className="title-h3">
