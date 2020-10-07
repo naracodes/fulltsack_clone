@@ -33,7 +33,7 @@ class Api::PortfoDataController < ApplicationController
                 date: today,
                 holdings_snapshot: holdings_as_of_this_morning,
                 label: market_open,
-                cash_balance: @current_user.cash_balance || User.find_by(firstName: "Demo").cash_balance,
+                cash_balance: @current_user.cash_balance,
             })
             until (Time.parse(label_now) - today_open) < five_min
                 PortfoDatum.create({
@@ -41,7 +41,7 @@ class Api::PortfoDataController < ApplicationController
                     date: today,
                     holdings_snapshot: @current_user.holdings_between(today_open, today_open + five_min),
                     label: (today_open += (5 * 60)).strftime("%I:%M %p"),
-                    cash_balance: @current_user.cash_balance || User.find_by(firstName: "Demo").cash_balance
+                    cash_balance: @current_user.cash_balance,
                 })
             end
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
@@ -55,7 +55,7 @@ class Api::PortfoDataController < ApplicationController
                     date: today,
                     holdings_snapshot: @current_user.holdings_between(today_open, today_open + five_min),
                     label: (last_label += (5 * 60)).strftime("%I:%M %p"),
-                    cash_balance: @current_user.cash_balance || User.find_by(firstName: "Demo").cash_balance
+                    cash_balance: @current_user.cash_balance,
                 })
             end
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
