@@ -65,7 +65,7 @@ class AssetLineChart extends React.Component {
                 // position={{y: -20}}
               />
               <Line
-                type="linear"
+                type="monotone"
                 dataKey="close"
                 stroke="#00c805"
                 strokeWidth={2}

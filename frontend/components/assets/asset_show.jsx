@@ -365,9 +365,9 @@ class AssetShow extends React.Component {
         </div>
       )
     } else {
-      console.log(this.props.watchlistArr, this.props.match.params.ticker.toUpperCase())
+      // console.log(this.props.watchlistArr, this.props.match.params.ticker.toUpperCase())
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
-      let valueInStocks = "";
+      // let valueInStocks = "";
       let rating = asset.rating;
       // let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let closingPrice =

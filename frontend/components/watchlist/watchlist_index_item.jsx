@@ -9,6 +9,7 @@ const WatchlistIndexItem = props => {
         return null;
     } else {
         let stockHoldings = holdings[watchlistAsset.ticker] ? holdings[watchlistAsset.ticker] : 0;
+        
         return (
             <div className="single-item">
                 {/* <Link to={`/stocks/${watchlistAsset.ticker}`} className="single-link">
