@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
     def holdings_between(prev, cur, initial=false)
         # @current_user = current_user ? current_user : User.find(46)
-        @current_user = User.find(46) || User.find_by(firstName: "Demo")
+        @current_user = User.find_by(firstName: "Demo")
 
         holdings_snapshot = initial ? Hash.new(0) : @current_user.holdings
         buys = self.transaction_records.where(transaction_type: "Buy", created_at: prev..cur).to_a

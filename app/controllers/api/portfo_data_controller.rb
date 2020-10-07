@@ -1,6 +1,6 @@
 class Api::PortfoDataController < ApplicationController
     def index
-        @current_user = current_user || User.find(46) || User.find(4)
+        @current_user = User.find_by(firstName: "Demo")
         today = Time.now.strftime("%Y-%m-%d")
         today_open = Time.parse("9:30 AM")
         todayDate = Time.now
