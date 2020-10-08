@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AssetLineChart from "../charts/linechart";
 import StackedChart from "../charts/rating_chart";
+import CustomTooltip from '../charts/custom_tooltip';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
 import {

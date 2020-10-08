@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from 'recharts';
+import CustomTooltip from '../charts/custom_tooltip';
 import Odometer from "react-odometerjs";
 import numeral from 'numeral';
 
@@ -61,8 +62,9 @@ class AssetLineChart extends React.Component {
               <XAxis tickLine={false} dataKey="label" hide={true} />
               <YAxis hide={true} domain={["auto", "dataMax"]} />
               <Tooltip
+                content={<CustomTooltip/>}
                 isAnimationActive={false}
-                offset={5}
+                offset={2}
                 position={{y: -20}}
               />
               <ReferenceLine y={this.props.prevClose} label="" stroke="#c7c7c7" strokeDasharray="2 2" />
