@@ -3,6 +3,7 @@ class Api::WatchlistsController < ApplicationController
     def index
         @current_user = current_user || User.find_by(firstName: "Demo")
         @watchlist_assets =  Watchlist.where('user_id = ?', @current_user.id)
+        debugger
         holdings = @current_user.holdings
         @ordered = []
 
