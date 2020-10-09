@@ -157,7 +157,7 @@ class AssetShow extends React.Component {
 
   handleBuy(e) {
     const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage } = this.state;
-    const { portfolio, asset } = this.props;
+    const { addTransaction, addAssetToWatchlist, portfolio, asset, currentUser } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
     let buyingPowerAvailable = portfolio.balance;
@@ -186,7 +186,10 @@ class AssetShow extends React.Component {
             orderErrorMessage: null,
           });          
         } else {
-          this.props.addTransaction(order);
+          Promise.all([
+            addTransaction(order),
+            addAssetToWatchlist(asset, currentUser)
+          ]);
         }
       }
     } else {

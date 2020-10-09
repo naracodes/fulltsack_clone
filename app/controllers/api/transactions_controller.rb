@@ -41,6 +41,7 @@ class Api::TransactionsController < ApplicationController
                     user_id: @current_user_id,
                     balance: last_cash_balance -= params[:order][:transaction_amount].to_i
                 })
+                
             when "Sell"
                 @portfo_record = Portfolio.create({
                     user_id: @current_user_id,
