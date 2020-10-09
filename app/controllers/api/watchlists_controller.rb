@@ -3,7 +3,6 @@ class Api::WatchlistsController < ApplicationController
     def index
         @current_user = current_user || User.find_by(firstName: "Demo")
         @watchlist_assets =  Watchlist.where('user_id = ?', @current_user.id)
-        debugger
         holdings = @current_user.holdings
         @ordered = []
 
@@ -28,9 +27,20 @@ class Api::WatchlistsController < ApplicationController
             # debugger
                 # @watchlist_asset.asset_id = Asset.where(ticker: watchlist_params[:ticker]).first.id
                 if @watchlist_asset.save
-                    @watchlist_assets = Watchlist.where('user_id = ?', current_user.id)
+                    debugger
+                    @current_user = current_user || User.find_by(firstName: "Demo")
+                    @watchlist_assets =  Watchlist.where('user_id = ?', @current_user.id)
+                    holdings = @current_user.holdings
+                    @ordered = []
 
-                    # debugger
+                    @watchlist_assets.each do |record|
+                        if holdings[record.ticker] > 0
+                            @ordered.unshift(record)
+                        else
+                            @ordered.push(record)
+                        end
+                    end
+                    debugger
                     render :index
                     # render json: { data: @watchlist_asset }
                 else

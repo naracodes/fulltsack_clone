@@ -25,9 +25,9 @@ class TinyLineChart extends React.Component {
           )
         } else {
           return (
-            <LineChart width={60} height={30} data={this.chopData(data, 5)}>
+            <LineChart width={60} height={30} data={this.chopData(data, 2)}>
               <XAxis tickLine={false} dataKey="label" hide={true} />
-              <YAxis hide={true} domain={["auto", "auto"]} />
+              <YAxis hide={true} domain={["dataMin", "dataMax"]} />
               <ReferenceLine y={this.props.prevClose} label="" stroke="grey" strokeDasharray="2 2" />
               <Line
                 type="linear"
