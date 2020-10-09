@@ -62,11 +62,11 @@ class AssetLineChart extends React.Component {
               <XAxis tickLine={false} dataKey="label" hide={true} />
               <YAxis hide={true} domain={["auto", "dataMax"]} />
               <Tooltip
-                content={<CustomTooltip/>}
+                content={<CustomTooltip />}
                 isAnimationActive={false}
                 offset={2}
-                // coordinate={{y: 1}}
                 position={{y: 20}}
+                // coordinate={{y: 1}}
               />
               <ReferenceLine y={this.props.prevClose} label="" stroke="#c7c7c7" strokeDasharray="2 2" />
               <Line

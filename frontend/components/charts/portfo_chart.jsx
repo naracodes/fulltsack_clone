@@ -1,17 +1,15 @@
-import React, { PureComponent } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import {
   LineChart,
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 import Odometer from "react-odometerjs";
 import numeral from 'numeral';
+import CustomTooltip from '../charts/custom_tooltip';
 
 class PortfoLineChart extends React.Component {
   constructor(props) {
@@ -66,8 +64,9 @@ class PortfoLineChart extends React.Component {
                   <YAxis hide={true} domain={["dataMin - 50", "dataMax + 50"]} />
                   <Tooltip
                   isAnimationActive={false}
-                  // offset={5}
-                  // position={{y: -20}}
+                  content={<CustomTooltip />}
+                  offset={2}
+                  position={{y: 20}}
                   />
                   <Line
                   type="monotone"
