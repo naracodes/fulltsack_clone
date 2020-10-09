@@ -11,6 +11,7 @@
 #  latest_price :float
 #  email        :string
 #  user_id      :integer
+#  prev_close   :float
 #
 require 'test_helper'
 

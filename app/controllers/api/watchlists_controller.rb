@@ -1,12 +1,18 @@
 class Api::WatchlistsController < ApplicationController
 
     def index
-        # debugger
-        @watchlist_assets =  Watchlist.where('user_id = ?', current_user.id)
-        # @watchlist_assets =  Watchlist.where('user_id = ?', 46)
-        # @watchlist_assets =  Watchlist.where('email = ?', current_user.email)
-        # @watchlist_assets = Watchlist.all
-        # debugger
+        @current_user = current_user || User.find_by(firstName: "Demo")
+        @watchlist_assets =  Watchlist.where('user_id = ?', @current_user.id)
+        holdings = @current_user.holdings
+        @ordered = []
+
+        @watchlist_assets.each do |record|
+            if holdings[record.ticker] > 0
+                @ordered.unshift(record)
+            else
+                @ordered.push(record)
+            end
+        end
         render :index
     end
 

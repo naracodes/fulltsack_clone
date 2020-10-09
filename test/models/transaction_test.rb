@@ -5,13 +5,13 @@
 #  id                 :bigint           not null, primary key
 #  user_id            :integer          not null
 #  transaction_type   :string           not null
-#  transaction_amount :float            not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  asset_id           :integer
-#  ticker             :string           not null
 #  quantity           :integer
 #  cost_per_share     :float
+#  transaction_amount :float
+#  ticker             :string
 #
 require 'test_helper'
 

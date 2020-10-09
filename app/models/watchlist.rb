@@ -11,12 +11,28 @@
 #  latest_price :float
 #  email        :string
 #  user_id      :integer
+#  prev_close   :float
 #
 class Watchlist < ApplicationRecord
-    validates :user_id, :ticker, presence: true
-    #artshare api unique validation (user_id and asset_id/ticker)
+    # why does this result in an NoMethodError?
+    has_many :owners,
+        foreign_key: :user_id,
+        class_name: :User
 
-    # belongs_to :user
+    def order_by_ownership
+        @current_user = current_user || User.find_by(firstName: "Demo")
+        holdings = @current_user.holdings
+        ordered = []
 
-    # belongs_to :asset
+        self.each do |record|
+            if holdings[record.ticker] > 0
+                ordered.unshift(record)
+            else
+                ordered.push(record)
+            end
+        end
+        ordered
+    end
+
 end
+

@@ -27,6 +27,11 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Transaction
 
+
+    def name
+        self.firstName
+    end
+
     def holdings_between(prev, cur, initial=false)
         # @current_user = current_user ? current_user : User.find(46)
         @current_user = User.find_by(firstName: "Demo")

@@ -11,6 +11,7 @@
 #  latest_price :float
 #  email        :string
 #  user_id      :integer
+#  prev_close   :float
 #
 
 # This model initially had no columns defined. If you add columns to the
