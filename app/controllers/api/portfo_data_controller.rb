@@ -1,6 +1,6 @@
 class Api::PortfoDataController < ApplicationController
     def index
-        @current_user = User.find_by(firstName: "Demo")
+        @current_user = current_user
         today = Time.now.strftime("%Y-%m-%d")
         today_open = Time.parse("9:30 AM")
         todayDate = Time.now
@@ -17,6 +17,8 @@ class Api::PortfoDataController < ApplicationController
         new_day = @last_portfo_data ? @last_portfo_data.date < today : true
         label_now = (Time.now <= Time.parse("04:00 PM") && !weekend) ? Time.now.strftime("%I:%M %p") : "3:55 PM"
         last_update_lapsed = @last_portfo_data ? Time.parse(label_now) - Time.parse(@last_portfo_data.label) : 0;
+        
+        
         holdings_as_of_this_morning = @current_user.holdings_between(@first_trans_data.created_at, today_open, true)
         market_closed = (Time.now > Time.parse("4:00 PM")) || (Time.now < Time.parse("9:29 AM"))
 

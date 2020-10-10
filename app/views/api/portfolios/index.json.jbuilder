@@ -14,4 +14,4 @@
 # end
 
 
-json.extract! @portfolio_data, :user_id, :balance, :created_at
+json.extract! @portfolio_data, :user_id, :balance

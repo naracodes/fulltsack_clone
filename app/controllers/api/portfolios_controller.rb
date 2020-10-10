@@ -3,13 +3,18 @@ class Api::PortfoliosController < ApplicationController
         # @current_user_id = current_user ? current_user.id : 46
         @current_user = current_user || User.find(46)
         @portfolio_data = Portfolio.where(user_id: @current_user.id).last
-        if !@portfolio_data.empty?
+        debugger
+        if @portfolio_data
+            debugger
             render :index
         else
             Portfolio.create({
                 user_id: @current_user.id,
                 balance: 1000000,
             })
+            @portfolio_data = Portfolio.where(user_id: @current_user.id).last
+            debugger
+            render :index
         end
     end
 
