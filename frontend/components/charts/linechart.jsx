@@ -41,7 +41,7 @@ class AssetLineChart extends React.Component {
   }
 
   render() {
-    const { data, closePrice } = this.props;
+    const { data, closePrice, range } = this.props;
     if (!data) {
       <div>
         Loading...
@@ -64,6 +64,7 @@ class AssetLineChart extends React.Component {
               <Tooltip
                 content={<CustomTooltip />}
                 isAnimationActive={false}
+                range={range}
                 offset={2}
                 position={{y: 20}}
                 // coordinate={{y: 1}}

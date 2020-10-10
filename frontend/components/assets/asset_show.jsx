@@ -82,33 +82,11 @@ class AssetShow extends React.Component {
       })
     }
   }
-  // handleRangeClick(e) {
-  //   const { fetchIntraday, fetch1Week } = this.props;
-  //   const ticker = this.props.match.params.ticker.toUpperCase();
-  //   let range = e.target.textContent;
-  //   let adjustedFetch;
-  //   if (range === "1D") {
-  //     this.setState({ data: this.state.intraday })
-  //   } else if (range === "1W") {
-  //     adjustedFetch = fetch1Week;
-  //   }
-  //   debugger
-  //   this.setState({
-  //     clickedRange: e.target.textContent,
-  //   }, () => adjustedFetch(ticker).then((res) => {
-  //     debugger
-  //     this.setState({loading: false, data: res.data}, () => console.log(this.state))
-  //   }))
-  // }
-
-  // componentWillUnmount() {
-  //   this.setState({reviewOrderClicked: false})
-  // }
 
   toggleShowMore() {
     this.setState({
       showMoreClicked: !this.state.showMoreClicked
-    }, () => console.log(this.state))
+    });
   }
 
   handleBuyClick(e) {
@@ -533,6 +511,7 @@ class AssetShow extends React.Component {
                           closePrice={closingPrice}
                           className="stock-graph"
                           prevClose={asset.previousClose}
+                          range={this.state.clickedRange}
                         />
                       </div>
                       <nav className="range">

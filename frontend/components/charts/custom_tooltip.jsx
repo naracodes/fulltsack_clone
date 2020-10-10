@@ -14,8 +14,7 @@ import {
 class CustomTooltip extends React.Component {
 
   render() {
-    const { active } = this.props;
-    console.log(this.props.payload)
+    const { active, range } = this.props;
     if (active) {
       const { payload, label } = this.props;
       return (

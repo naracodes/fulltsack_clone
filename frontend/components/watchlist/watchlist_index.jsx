@@ -47,7 +47,6 @@ class WatchlistIndex extends React.Component {
               </header>
               {watchlistAssets.map((watchlistAsset) => {
                 const ticker = watchlistAsset.ticker;
-                console.log(watchlistAsset.ticker)
                 debugger
                 return (
                       <Link to={`/stocks/${watchlistAsset.ticker}`} id="wl-link" key={watchlistAsset.id}>
