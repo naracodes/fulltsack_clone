@@ -1,8 +1,16 @@
 class Api::PortfoliosController < ApplicationController
     def index
-        @current_user_id = current_user ? current_user.id : 46
-        @portfolio_data = Portfolio.where(user_id: @current_user_id).last
-        render :index
+        # @current_user_id = current_user ? current_user.id : 46
+        @current_user = current_user || User.find(46)
+        @portfolio_data = Portfolio.where(user_id: @current_user.id).last
+        if !@portfolio_data.empty?
+            render :index
+        else
+            Portfolio.create({
+                user_id: @current_user.id,
+                balance: 1000000,
+            })
+        end
     end
 
     def show
@@ -17,7 +25,7 @@ class Api::PortfoliosController < ApplicationController
 
     private
     def portfolio_params
-        params.permit(:user_id, :balance, :date)
+        params.permit(:user_id, :balance)
     end
 
 end
