@@ -55,7 +55,7 @@ class AssetLineChart extends React.Component {
               width={676}
               height={361}
               data={this.props.data}
-              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 50, right: 30, left: 20, bottom: 50 }}
               onMouseMove={this.handleHover}
               onMouseLeave={this.handleMouseLeave}
             >
