@@ -23,6 +23,9 @@ class Api::PortfoDataController < ApplicationController
 
         if weekend || market_closed
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
+            @all_data.each do |data|
+                data.update(cash_balance: @current_user.cash_balance)
+            end
             @last_label = Time.parse(@all_data.last.label)
             if (@all_data.length != 0) && (@last_label == "03:55 PM")
                 render :index
