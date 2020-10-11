@@ -23,11 +23,24 @@ class Api::PortfoDataController < ApplicationController
         market_closed = (Time.now > Time.parse("4:00 PM")) || (Time.now < Time.parse("9:29 AM"))
 
         if weekend || market_closed
+            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
-            if @all_data.length != 0
+            @last_label = Time.parse(@all_data.last.label)
+            if (@all_data.length != 0) && (@last_label == "03:55 PM")
                 render :index
             else
-                render json: {}
+                debugger
+            until @last_label.strftime("%I:%M %p") == "03:55 PM"
+                PortfoDatum.create({
+                    user_id: @current_user.id,
+                    date: today,
+                    holdings_snapshot: @current_user.holdings_between(today_open, today_open + five_min),
+                    label: (@last_label += (5 * 60)).strftime("%I:%M %p"),
+                    cash_balance: @current_user.cash_balance,
+                })
+            end
+                @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
+                render :index
             end
         elsif new_day
             @first_of_day = PortfoDatum.create({
