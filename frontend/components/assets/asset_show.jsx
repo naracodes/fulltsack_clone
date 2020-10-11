@@ -185,9 +185,9 @@ class AssetShow extends React.Component {
           })
         }
       }
-    } else {
+    } else if (sellClicked) {
       if (investOption === "Shares") {
-        if (!reviewOrderClicked && stockHoldings >= order.quantity) {
+        if (!reviewOrderClicked && (stockHoldings >= order.quantity) && !successMessage) {
           this.setState({
             reviewOrderClicked: true,
             orderMessage: `You are placing an order to ${
@@ -210,8 +210,22 @@ class AssetShow extends React.Component {
             reviewOrderClicked: false,
             orderErrorMessage: null,
           })
+        } else if (!reviewOrderClicked && !orderErrorMessage && !orderMessage) {
+          this.setState({
+            successMessage: null,
+            order: { quantity: "" },
+          });
         } else {
-          this.props.addTransaction(order);
+          this.props.addTransaction(order)
+          .then(() => {
+            this.setState({
+              orderErrorMessage: null,
+              orderMessage: null,
+              successMessage: `You have successfully submitted an order to sell ${order.quantity} shares of ${order.ticker}
+              for a total credit of ${numeral(order.transaction_amount).format('$0,0.00')}.`,
+              reviewOrderClicked: false,
+            })
+          })
         }
       }
     }
