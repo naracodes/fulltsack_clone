@@ -26,9 +26,7 @@ class WatchlistIndex extends React.Component {
 
     render() {
         const { watchlistAssets, currentUser, holdings, data } = this.props;
-        debugger
         if (this.state.loading || !data) {
-          debugger
           return (
             <div>
               Loading...
@@ -44,7 +42,6 @@ class WatchlistIndex extends React.Component {
               </header>
               {watchlistAssets.map((watchlistAsset) => {
                 const ticker = watchlistAsset.ticker;
-                debugger
                 return (
                       <Link to={`/stocks/${ticker}`} id="wl-link" key={watchlistAsset.id}>
                         <WatchlistIndexItem

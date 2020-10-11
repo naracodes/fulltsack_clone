@@ -8,7 +8,6 @@ class Api::PortfoDataController < ApplicationController
         market_open = "09:30 AM"
         day_ended = Time.now >= Time.parse("04:00 PM")
         five_min = 300
-
         @first_trans_data = Transaction.where(user_id: @current_user.id).first
         @last_portfo_data = PortfoDatum.where(user_id: @current_user.id).last
         

@@ -14,12 +14,10 @@ const assetsReducer = (oldState = {}, action) => {
             nextState[action.asset.symbol] = Object.assign({}, nextState[action.asset.symbol], action.asset);
             return nextState;
         case RECEIVE_ASSET_INTRADAY:
-            debugger
             nextState[action.ticker] = Object.assign({}, nextState[action.ticker], {data: action.assetIntraday});
             return nextState;
             // nextState[action.ticker]["chartData"] = action.assetIntraday;
         case RECEIVE_1WEEK:
-            debugger
             return nextState[action.ticker] = Object.assign({}, nextState[action.ticker], {data: action.asset1Week});
             // return nextState[action.ticker]["1WeekData"] = action.asset1Week;
         case RECEIVE_RATING:
@@ -30,7 +28,6 @@ const assetsReducer = (oldState = {}, action) => {
             nextState[company.symbol] = company;
             return nextState;
         case RECEIVE_MULTIPLE_INTRADAY:
-            debugger
             return action.multIntraday;
         case CLEAR_ASSET:
             return {};

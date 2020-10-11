@@ -42,7 +42,6 @@ export const fetch1Week = ticker => {
 
 export const fetchMultipleIntraday = tickersArr => { // 5 min interval
     const tickers = tickersArr.join(',');
-    debugger
     return $.ajax({
       method: "GET",
       //   url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=intraday-prices&token=Tpk_9cc6c16a40494338943d728d111e9998&chartInterval=5

@@ -60,7 +60,7 @@ class Dashboard extends React.Component {
     };
   }
 
-  mergeData(userDataArr, stockData, holdings) {
+  mergeData(userDataArr, stockData) {
     userDataArr.forEach((data, i) => {
       Object.keys(stockData).forEach(ticker => {
         debugger
@@ -68,9 +68,10 @@ class Dashboard extends React.Component {
           debugger
           stockData[ticker]["intraday-prices"][i].close = stockData[ticker]["intraday-prices"][i  -1].close;
         }
+        debugger
         userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * data.holdings_snapshot[ticker] : (userDataArr[i].cash_balance * -1);
-      })
-    })
+      });
+    });
     console.log(userDataArr);
     return userDataArr;
   }
@@ -93,13 +94,14 @@ class Dashboard extends React.Component {
         fetchMultipleIntraday(tickers)
         .then(multIntra => {
           // console.log(res[2].data.data)
+          debugger
           console.log(multIntra.multIntraday)
           console.log(res[0].holdings.holdings)
           let userData = res[2].data.data;
           let stockData = multIntra.multIntraday;
           let holdings = res[0].holdings.holdings;
           // console.log(this.mergeData(userData, stockData))
-          let newData = this.mergeData(userData, stockData, holdings)
+          let newData = this.mergeData(userData, stockData)
           this.setState({
             mergedData: newData,
             loading: false,

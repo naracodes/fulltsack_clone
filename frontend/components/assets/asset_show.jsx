@@ -70,12 +70,9 @@ class AssetShow extends React.Component {
     let range = e.target.textContent;
     let adjustedFetch;
     if (range === "1D") {
-      debugger
       this.setState({ data: this.state.intraday, loading: false })
     } else if (range === "1W") {
-      debugger
       fetch1Week(ticker).then(res => {
-        debugger
         this.setState({
           loading: false,
           data: res.data
@@ -306,9 +303,7 @@ class AssetShow extends React.Component {
     } = this.props;
     const { clickedRange } = this.state;
     let fetchClickedRange;
-    debugger
     if (clickedRange === "1D") {
-      debugger
       fetchClickedRange = fetchIntraday;
     } else if (clickedRange === "1W") {
       fetchClickedRange = fetch1Week;
