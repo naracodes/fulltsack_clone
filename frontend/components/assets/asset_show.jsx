@@ -39,6 +39,7 @@ class AssetShow extends React.Component {
       showMoreClicked: false,
       orderErrorMessage: null,
       orderMessage: null,
+      successMessage: null,
       reviewOrderClicked: false,
       loading: true,
       showDropdown: false,
@@ -134,7 +135,7 @@ class AssetShow extends React.Component {
   }
 
   handleBuy(e) {
-    const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage } = this.state;
+    const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage, successMessage, orderMessage } = this.state;
     const { addTransaction, addAssetToWatchlist, portfolio, asset, currentUser } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
@@ -143,7 +144,7 @@ class AssetShow extends React.Component {
     e.preventDefault();
     if (buyClicked) {
       if (investOption === "Shares") {
-        if (!reviewOrderClicked && (buyingPowerAvailable >= order.transaction_amount)) {
+        if (!reviewOrderClicked && (buyingPowerAvailable >= order.transaction_amount) && !successMessage) {
           this.setState({
             reviewOrderClicked: true,
             orderMessage: `You are placing an order to ${
@@ -162,12 +163,26 @@ class AssetShow extends React.Component {
           this.setState({
             reviewOrderClicked: false,
             orderErrorMessage: null,
-          });          
+          })
+        } else if (!reviewOrderClicked && !orderErrorMessage && !orderMessage) { 
+          this.setState({
+            successMessage: null,
+            order: { quantity: "" },
+          });
         } else {
           Promise.all([
             addTransaction(order),
             addAssetToWatchlist(asset, currentUser)
-          ]);
+          ])
+          .then(() => {
+            this.setState({
+              orderErrorMessage: null,
+              orderMessage: null,
+              successMessage: `You have successfully submitted an order to buy ${order.quantity} shares of ${order.ticker}
+              for a total cost of ${numeral(order.transaction_amount).format('$0,0.00')}.`,
+              reviewOrderClicked: false,
+            })
+          })
         }
       }
     } else {
@@ -934,7 +949,7 @@ class AssetShow extends React.Component {
                         </div>
                         <div>
                           <div className="review-message">
-                            {this.state.orderMessage || this.state.orderErrorMessage}
+                            {this.state.orderMessage || this.state.orderErrorMessage || this.state.successMessage}
                           </div>
                         </div>
                         <div className="review-button-outer">
@@ -948,7 +963,7 @@ class AssetShow extends React.Component {
                                   this.state.reviewOrderClicked ? (
                                     <span>{this.state.orderErrorMessage ? "Edit Order" : "Submit Order"}</span>
                                   ) : (
-                                    <span>Review Order</span>
+                                    <span>{this.state.successMessage ? "Confirm" : "Review Order"}</span>
                                   )
                                 }
                               </button>

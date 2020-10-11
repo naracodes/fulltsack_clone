@@ -23,13 +23,11 @@ class Api::PortfoDataController < ApplicationController
         market_closed = (Time.now > Time.parse("4:00 PM")) || (Time.now < Time.parse("9:29 AM"))
 
         if weekend || market_closed
-            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
             @last_label = Time.parse(@all_data.last.label)
             if (@all_data.length != 0) && (@last_label == "03:55 PM")
                 render :index
             else
-                debugger
             until @last_label.strftime("%I:%M %p") == "03:55 PM"
                 PortfoDatum.create({
                     user_id: @current_user.id,
