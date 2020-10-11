@@ -54,6 +54,7 @@ export const mdp = dispatch => {
         fetchHoldings: () => dispatch(fetchHoldings()),
         fetch1Week: ticker => dispatch(fetch1Week(ticker)),
         fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
+        
     }
 }
 
