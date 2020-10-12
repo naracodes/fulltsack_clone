@@ -415,6 +415,7 @@ class AssetShow extends React.Component {
            currentUser={currentUser}
             buyingPowerAvailable={buyingPowerAvailable}
             history={this.props.history}
+            logout={this.props.logout}
            />
           <div className="asset-container">
             <main className="main-container">
