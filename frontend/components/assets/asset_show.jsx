@@ -20,7 +20,7 @@ class AssetShow extends React.Component {
     this.handleAddToList = this.handleAddToList.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
     this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    // this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.handleClickOutside_invest = this.handleClickOutside_invest.bind(this);
     this.showDropdown = this.showDropdown.bind(this);
@@ -120,18 +120,18 @@ class AssetShow extends React.Component {
       });
   }
 
-  handleKeyDown(e) {
-    // e.preventDefault();
-    return (e) => {
-      if (e.keyCode === 13) {
-        this.props.history.push(
-          `/stocks/${e.currentTarget.value.toUpperCase()}`
-        );
-      } else {
-        return;
-      }
-    };
-  }
+  // handleKeyDown(e) {
+  //   // e.preventDefault();
+  //   return (e) => {
+  //     if (e.keyCode === 13) {
+  //       this.props.history.push(
+  //         `/stocks/${e.currentTarget.value.toUpperCase()}`
+  //       );
+  //     } else {
+  //       return;
+  //     }
+  //   };
+  // }
 
   handleBuy(e) {
     const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage, successMessage, orderMessage } = this.state;
@@ -316,6 +316,14 @@ class AssetShow extends React.Component {
   //   };
   // }
 
+  // componentDidUpdate(prevProps, prevState) {
+  //   const { fetchAsset } = this.props;
+  //   if (prevProps === this.props) {
+  //     fetchAsset(this.props.ticker);
+  //   }
+
+  // } 
+
   componentDidMount() {
     const {
       fetchAsset,
@@ -394,16 +402,15 @@ class AssetShow extends React.Component {
       watchlist,
       ticker,
     } = this.props;
-    if (this.state.loading || !portfolio || !assets) {
+    if (this.state.loading || !portfolio || !assets ) {
       return (
         <div>
           Loading...
         </div>
       )
     } else {
-      debugger
       // console.log(this.props.watchlistArr, this.props.match.params.ticker.toUpperCase())
-      let asset = this.props.assets[ticker];
+      let asset = assets[ticker];
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
       // let valueInStocks = "";

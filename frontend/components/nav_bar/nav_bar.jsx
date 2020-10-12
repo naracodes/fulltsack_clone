@@ -7,16 +7,16 @@ import numeral from 'numeral';
 
 class NavBar extends React.Component {
     constructor(props) {
-        super(props)
-        this.handleLogOut = this.handleLogOut.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-        this.handleKeyDown = this.handleKeyDown.bind(this);
-        this.wrapperRef_nav = React.createRef();
-        this.showDropdown = this.showDropdown.bind(this);
-        this.state = {
-            loading: true,
-            showDropdown: false,
-        };
+      super(props)
+      this.handleLogOut = this.handleLogOut.bind(this);
+      this.handleClickOutside = this.handleClickOutside.bind(this);
+      this.handleKeyDown = this.handleKeyDown.bind(this);
+      this.wrapperRef_nav = React.createRef();
+      this.showDropdown = this.showDropdown.bind(this);
+      this.state = {
+          loading: true,
+          showDropdown: false,
+      };
     }
 
     handleLogOut(e) {
