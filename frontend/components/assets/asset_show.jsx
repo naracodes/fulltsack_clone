@@ -313,7 +313,7 @@ class AssetShow extends React.Component {
       fetchIntraday,
       fetch1Week,
       fetchAssetNews,
-      fetchRating,
+      // fetchRating,
       fetchPortfolioCashBalance,
       fetchHoldings,
       fetchAllWatchlistAssets,
@@ -337,7 +337,7 @@ class AssetShow extends React.Component {
       fetchPortfolioCashBalance(),
       fetchHoldings(),
       fetchAllWatchlistAssets(),
-      fetchRating(ticker),
+      // fetchRating(ticker),
     ]).then((response) => {
       this.setState({ loading: false, intraday: response[0].assetIntraday })
     });
@@ -667,11 +667,11 @@ class AssetShow extends React.Component {
                         </div>
                       </header>
                       <div className="analyst-ratings-pct">
-                          { <StackedChart 
+                          {/* { <StackedChart 
                             buy={((rating.ratingBuy + rating.ratingOverweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                             hold={((rating.ratingHold) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                             sell={((rating.ratingSell + rating.ratingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
-                          />}
+                          />} */}
                           {/* {<div>
                             {`${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
                           </div>

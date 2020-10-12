@@ -9,7 +9,7 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.handleLogOut = this.handleLogOut.bind(this);
-        // this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.wrapperRef_nav = React.createRef();
         this.showDropdown = this.showDropdown.bind(this);
@@ -34,22 +34,22 @@ class NavBar extends React.Component {
       };
   }
 
-  // handleClickOutside(e) {
-  //     debugger
-  //   if (this.wrapperRef_nav && !this.wrapperRef_nav.current.contains(e.target)) {
-  //       debugger
-  //     this.setState({
-  //       showDropdown: false,
-  //     });
-  //   }
-  // }
+  handleClickOutside(e) {
+      debugger
+    if (this.wrapperRef_nav && !this.wrapperRef_nav.current.contains(e.target)) {
+        debugger
+      this.setState({
+        showDropdown: false,
+      });
+    }
+  }
 
   componentDidMount() {
-    // document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener("mousedown", this.handleClickOutside);
   }
 
   componentWillUnmount() {
-    // document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
   showDropdown(e) {
