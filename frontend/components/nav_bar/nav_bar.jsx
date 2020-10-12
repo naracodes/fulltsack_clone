@@ -9,8 +9,8 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.handleLogOut = this.handleLogOut.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-        this.handleKeyDown = this.handleKeyDown(this);
+        // this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
         this.wrapperRef_nav = React.createRef();
         this.showDropdown = this.showDropdown.bind(this);
         this.state = {
@@ -27,33 +27,29 @@ class NavBar extends React.Component {
     }
 
   handleKeyDown(e) {
-    return (e) => {
+    const { history } = this.props;
       if (e.keyCode === 13) {
-        this.props.history.push(
-          `/stocks/${e.currentTarget.value.toUpperCase()}`
-        );
-      } else {
-        return;
-      }
-    };
+        debugger
+        history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
+      };
   }
 
-  handleClickOutside(e) {
-      debugger
-    if (this.wrapperRef_nav && !this.wrapperRef_nav.current.contains(e.target)) {
-        debugger
-      this.setState({
-        showDropdown: false,
-      });
-    }
-  }
+  // handleClickOutside(e) {
+  //     debugger
+  //   if (this.wrapperRef_nav && !this.wrapperRef_nav.current.contains(e.target)) {
+  //       debugger
+  //     this.setState({
+  //       showDropdown: false,
+  //     });
+  //   }
+  // }
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClickOutside);
+    // document.addEventListener("mousedown", this.handleClickOutside);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside);
+    // document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
   showDropdown(e) {
@@ -63,7 +59,7 @@ class NavBar extends React.Component {
   }
 
     render() {
-        const { currentUser, mergedData, buyingPowerAvailable } = this.props;
+        const { currentUser, buyingPowerAvailable } = this.props;
         return (
         <div className="header-bar">
             <div className="header-container">
@@ -144,7 +140,7 @@ class NavBar extends React.Component {
                               <div className="portfolio-value">
                                 <div className="portfolio-value-container">
                                   <span>
-                                    <h3>{numeral(mergedData[mergedData.length - 1].cash_balance).format('$0,0.00')}</h3>
+                                    {/* <h3>{numeral(mergedData[mergedData.length - 1].cash_balance).format('$0,0.00')}</h3> */}
                                   </span>
                                   <div className="portfolio-value-text">
                                     Portfolio Value

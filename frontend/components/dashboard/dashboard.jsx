@@ -146,6 +146,7 @@ class Dashboard extends React.Component {
             currentUser={currentUser}
             mergedData={mergedData}
             buyingPowerAvailable={buyingPowerAvailable}
+            history={this.props.history}
             />
           <div className="dashboard-container">
             <main className="main-container">

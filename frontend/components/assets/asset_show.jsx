@@ -336,7 +336,8 @@ class AssetShow extends React.Component {
       fetchAssetNews(ticker),
       fetchPortfolioCashBalance(),
       fetchHoldings(),
-      fetchAllWatchlistAssets()
+      fetchAllWatchlistAssets(),
+      fetchRating(ticker),
     ]).then((response) => {
       this.setState({ loading: false, intraday: response[0].assetIntraday })
     });
@@ -392,7 +393,7 @@ class AssetShow extends React.Component {
       // console.log(this.props.watchlistArr, this.props.match.params.ticker.toUpperCase())
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       // let valueInStocks = "";
-      let rating = asset.rating;
+      let rating = asset.rating[0]
       // let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let closingPrice =
         asset.close ||
@@ -410,11 +411,11 @@ class AssetShow extends React.Component {
       );
       return (
         <div className="asset-show-outermost">
-          {/* <NavBar
+          <NavBar
            currentUser={currentUser}
             buyingPowerAvailable={buyingPowerAvailable}
-
-           /> */}
+            history={this.props.history}
+           />
           <div className="asset-container">
             <main className="main-container">
               <div className="row">
@@ -665,12 +666,12 @@ class AssetShow extends React.Component {
                         </div>
                       </header>
                       <div className="analyst-ratings-pct">
-                          {/* <StackedChart 
-                            buy={((rating.ratingBuy + rating.ratingOverweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell)).toFixed(2) * 100}
-                            hold={((rating.ratingHold) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell)).toFixed(2) * 100}
-                            sell={((rating.ratingSell + rating.raitingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell)).toFixed(2) * 100}
-                          /> */}
-                          {/* <div>
+                          { <StackedChart 
+                            buy={((rating.ratingBuy + rating.ratingOverweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
+                            hold={((rating.ratingHold) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
+                            sell={((rating.ratingSell + rating.ratingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
+                          />}
+                          {/* {<div>
                             {`${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
                           </div>
                           <div>
@@ -678,7 +679,7 @@ class AssetShow extends React.Component {
                           </div>
                           <div>
                             {`${((rating.rating_sell + rating.rating_uw) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
-                          </div> */}
+                          </div>} */}
                       </div>
                     </section>
                     <section className="earnings-section">

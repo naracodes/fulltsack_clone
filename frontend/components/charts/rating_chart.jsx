@@ -11,6 +11,7 @@ import {
   Legend,
   LabelList,
 } from "recharts";
+import numeral from 'numeral';
 
 class StackedChart extends React.Component {
 
@@ -29,7 +30,7 @@ class StackedChart extends React.Component {
       {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
       {name: 'Page G', uv: 3490, pv: 4300, amt: 2100}, */
     ];
-    // debugger
+    debugger
     return (
       <BarChart
       className="rating-bar-chart"
@@ -45,7 +46,7 @@ class StackedChart extends React.Component {
         layout="vertical"
       >
         <XAxis
-            hide="true"
+          hide={true}
           type="number"
           domain={[0, 100]}
           ticks={[0, 100]}
@@ -53,20 +54,26 @@ class StackedChart extends React.Component {
         />
         <YAxis
           dataKey="name"
-        hide="true"
-        type="category"
-        axisLine={{ stroke: "#EAF0F4" }}
+          hide={true}
+          type="category"
+          axisLine={{ stroke: "#EAF0F4" }}
         />
         <Tooltip />
         {/* <Legend /> */}
         <Bar dataKey="uv" stackId="a" fill="#41e538">
-          <LabelList fill="white" position="center">{`${buy}% Buy`}</LabelList>
+          <LabelList fill="white" position="center">{`${numeral(buy).format('0%')} Buy`}</LabelList>
         </Bar>
         <Bar dataKey="pv" stackId="a" fill="#b5b5b5">
-          <LabelList fill="white" position="center" dataKey="amt">
-            {`${hold}% Hold`}
-          </LabelList>
+          <LabelList fill="white" position="center" dataKey="amt">{`${numeral(hold).format('0%')} Hold`}</LabelList>
         </Bar>
+        
+          {
+            (typeof sell === 'number') ? (
+              <Bar dataKey="pv" stackId="a" fill="red">
+                <LabelList fill="white" position="center" dataKey="amt">{`${numeral(sell).format('0%')} Sell`}</LabelList>
+              </Bar>
+            ) : null
+          }
       </BarChart>
     );
   }
