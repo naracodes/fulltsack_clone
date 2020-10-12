@@ -246,7 +246,8 @@ class AssetShow extends React.Component {
   }
 
   update(field) {
-    const { asset, currentUser } = this.props;
+    const { assets, currentUser, ticker } = this.props;
+    let asset = assets[ticker];
     let closingPrice =
       asset.close ||
       asset.data[asset.data.length - 1].close ||
@@ -306,6 +307,15 @@ class AssetShow extends React.Component {
   //   })
   // }
 
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   debugger
+  //   if (this.props.history.pathname == nextProps.history.pathname) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   };
+  // }
+
   componentDidMount() {
     const {
       fetchAsset,
@@ -326,20 +336,21 @@ class AssetShow extends React.Component {
       fetchClickedRange = fetch1Week;
     };
 
-    const ticker = this.props.asset.ticker || this.props.match.params.ticker.toUpperCase();
-    const companyName = this.props.asset.asset_name !== undefined ? this.props.asset.asset_name.split(",")[0] : "";
+    const ticker = this.props.match.params.ticker.toUpperCase();
     Promise.all([
+      fetchAsset(ticker),
       fetchClickedRange(ticker),
       // fetchIntraday(ticker),
       fetchCompanyInfo(ticker),
-      fetchAsset(ticker),
       fetchAssetNews(ticker),
       fetchPortfolioCashBalance(),
       fetchHoldings(),
       fetchAllWatchlistAssets(),
       // fetchRating(ticker),
     ]).then((response) => {
-      this.setState({ loading: false, intraday: response[0].assetIntraday })
+      debugger
+      console.log('all fetched')
+      this.setState({ loading: false, intraday: response[1].assetIntraday })
     });
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("mousedown", this.handleClickOutside_invest);
@@ -374,26 +385,29 @@ class AssetShow extends React.Component {
 
   render() {
     const {
-      asset,
+      assets,
       watchlistArr,
       assetNews,
       currentUser,
       portfolio,
       holdings,
       watchlist,
+      ticker,
     } = this.props;
-    const ticker = this.props.match.params.ticker.toUpperCase();
-    if (this.state.loading || !portfolio || !portfolio.holdings || !asset || !asset.data) {
+    if (this.state.loading || !portfolio || !assets) {
       return (
         <div>
           Loading...
         </div>
       )
     } else {
+      debugger
       // console.log(this.props.watchlistArr, this.props.match.params.ticker.toUpperCase())
+      let asset = this.props.assets[ticker];
       let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
+      console.log(ticker)
       // let valueInStocks = "";
-      let rating = asset.rating[0]
+      // let rating = asset.rating[0]
       // let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
       let closingPrice =
         asset.close ||

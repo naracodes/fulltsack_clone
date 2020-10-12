@@ -13,30 +13,46 @@ import { addAssetToWatchlist, deleteAssetFromWatchlist, fetchAllWatchlistAssets 
 import { fetchAssetNews } from "../../actions/news_actions";
 import { addTransaction, fetchPortfolioCashBalance } from '../../actions/transaction_actions';
 import { fetchHoldings } from '../../actions/holding_action';
+import { withRouter } from "react-router";
+
 
 
 export const msp = (state, ownProps) => {
-    let asset = asset || state.entities.assets[(ownProps.match.params.ticker).toUpperCase()] || state.entities.assets;
     debugger
-    let news = state.entities.news ? state.entities.news : {};
-    if (!asset) {
-        return {
-            asset: {}
-        }
-    } else {
-        debugger
-        return {
-          asset: asset || state.entities.assets,
-          currentUser: state.session.user,
-          watchlistArr: Object.keys(state.entities.watchlists),
-          otherData: state.entities.assets,
-          assetNews: Object.values(news),
-            portfolio: state.entities.transactions,
-            holdings: state.entities.transactions,
-            // watchlist: state.entities.watchlists,
-        };
-    }
+    return {
+        assets: state.entities.assets,
+        currentUser: state.session.user,
+        watchlistArr: Object.keys(state.entities.watchlists),
+        otherData: state.entities.assets,
+        assetNews: Object.values(state.entities.news),
+        portfolio: state.entities.transactions,
+        holdings: state.entities.transactions,
+        ticker: ownProps.match.params.ticker,
+        // watchlist: state.entities.watchlists,
+    };
 }
+// export const msp = (state, ownProps) => {
+//     let asset = asset || state.entities.assets[(ownProps.match.params.ticker).toUpperCase()] || state.entities.assets;
+//     debugger
+//     let news = state.entities.news ? state.entities.news : {};
+//     if (!asset) {
+//         return {
+//             asset: {}
+//         }
+//     } else {
+//         debugger
+//         return {
+//           asset: asset || state.entities.assets,
+//           currentUser: state.session.user,
+//           watchlistArr: Object.keys(state.entities.watchlists),
+//           otherData: state.entities.assets,
+//           assetNews: Object.values(news),
+//             portfolio: state.entities.transactions,
+//             holdings: state.entities.transactions,
+//             // watchlist: state.entities.watchlists,
+//         };
+//     }
+// }
 
 export const mdp = dispatch => {
     return {
@@ -59,4 +75,4 @@ export const mdp = dispatch => {
 }
 
 
-export default connect(msp, mdp)(AssetShow);
+export default withRouter(connect(msp, mdp)(AssetShow));

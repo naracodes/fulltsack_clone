@@ -20,24 +20,29 @@ class NavBar extends React.Component {
     }
 
     handleLogOut(e) {
+        const { logout, history } = this.props;
         e.preventDefault();
-        this.props.logout().then(() => {
-        this.props.history.push("/login");
-        });
+        logout().then(() => { history.push("/login") });
     }
 
   handleKeyDown(e) {
     const { history } = this.props;
       if (e.keyCode === 13) {
         debugger
-        history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
+        if (history.location.pathname === "/") {
+          debugger
+          history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
+        } else {
+          debugger
+          history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
+        };
       };
   }
 
   handleClickOutside(e) {
-      debugger
+      // debugger
     if (this.wrapperRef_nav && !this.wrapperRef_nav.current.contains(e.target)) {
-        debugger
+        // debugger
       this.setState({
         showDropdown: false,
       });
