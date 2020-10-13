@@ -208,7 +208,7 @@ class Dashboard extends React.Component {
                     <div>
                       {assetNews.map((article, i) => {
                         return (
-                          <a href={article.url} className="article-link">
+                          <a href={article.url} className="article-link" key={i}>
                             <div key={i} className="article">
                               <div className="inner-news-content">
                                 <div className="title-side">

@@ -21,13 +21,13 @@ class AssetShow extends React.Component {
     this.handleLogOut = this.handleLogOut.bind(this);
     this.handleRemoveFromList = this.handleRemoveFromList.bind(this);
     // this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
+    // this.handleClickOutside = this.handleClickOutside.bind(this);
     this.handleClickOutside_invest = this.handleClickOutside_invest.bind(this);
-    this.showDropdown = this.showDropdown.bind(this);
+    // this.showDropdown = this.showDropdown.bind(this);
     this.showDropdown2 = this.showDropdown2.bind(this);
     this.updateInvestOption = this.updateInvestOption.bind(this);
     this.handleBuy = this.handleBuy.bind(this);
-    this.wrapperRef = React.createRef();
+    // this.wrapperRef = React.createRef();
     this.wrapperRef_invest = React.createRef();
     this.handleBuyClick = this.handleBuyClick.bind(this);
     this.handleSellClick = this.handleSellClick.bind(this);
@@ -273,13 +273,13 @@ class AssetShow extends React.Component {
     };
   }
 
-  handleClickOutside(e) {
-    if (this.wrapperRef && !this.wrapperRef.current.contains(e.target)) {
-      this.setState({
-        showDropdown: false,
-      });
-    }
-  }
+  // handleClickOutside(e) {
+  //   if (this.wrapperRef && !this.wrapperRef.current.contains(e.target)) {
+  //     this.setState({
+  //       showDropdown: false,
+  //     });
+  //   }
+  // }
 
   handleClickOutside_invest(e) {
     if (
@@ -307,22 +307,57 @@ class AssetShow extends React.Component {
   //   })
   // }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   debugger
-  //   if (this.props.history.pathname == nextProps.history.pathname) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   };
-  // }
+  shouldComponentUpdate(nextProps, nextState) {
+    debugger
+    if (this.props.ticker === nextProps.match.params.ticker) {
+      return true;
+    } else {
+      return false;
+    };
+  }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   const { fetchAsset } = this.props;
-  //   if (prevProps === this.props) {
-  //     fetchAsset(this.props.ticker);
-  //   }
+  componentDidUpdate(prevProps, prevState) {
+    const { fetchAsset } = this.props;
+    
+    if (this.props.ticker !== prevProps.match.params.ticker) {
+        const {
+          fetchAsset,
+          fetchCompanyInfo,
+          fetchIntraday,
+          fetch1Week,
+          fetchAssetNews,
+          // fetchRating,
+          fetchPortfolioCashBalance,
+          fetchHoldings,
+          fetchAllWatchlistAssets,
+        } = this.props;
+        const { clickedRange } = this.state;
+        let fetchClickedRange;
+        if (clickedRange === "1D") {
+          fetchClickedRange = fetchIntraday;
+        } else if (clickedRange === "1W") {
+          fetchClickedRange = fetch1Week;
+        };
 
-  // } 
+        const ticker = this.props.match.params.ticker.toUpperCase();
+        Promise.all([
+          fetchAsset(ticker),
+          fetchClickedRange(ticker),
+          // fetchIntraday(ticker),
+          fetchCompanyInfo(ticker),
+          fetchAssetNews(ticker),
+          fetchPortfolioCashBalance(),
+          fetchHoldings(),
+          fetchAllWatchlistAssets(),
+          // fetchRating(ticker),
+        ]).then((response) => {
+          debugger
+          console.log('all fetched')
+          this.setState({ loading: false, intraday: response[1].assetIntraday })
+        });
+    }
+  }
+
 
   componentDidMount() {
     const {
@@ -381,10 +416,10 @@ class AssetShow extends React.Component {
     deleteAssetFromWatchlist(asset, currentUser);
   }
 
-  showDropdown(e) {
-    e.preventDefault();
-    this.setState({ showDropdown: !this.state.showDropdown });
-  }
+  // showDropdown(e) {
+  //   e.preventDefault();
+  //   this.setState({ showDropdown: !this.state.showDropdown });
+  // }
 
   showDropdown2(e) {
     e.preventDefault();

@@ -29,13 +29,10 @@ class NavBar extends React.Component {
     const { history } = this.props;
       if (e.keyCode === 13) {
         debugger
-        if (history.location.pathname === "/") {
-          debugger
-          history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
-        } else {
-          debugger
-          history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
-        };
+        history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
+        // debugger
+        // if (history.location.pathname === "/") {
+        // };
       };
   }
 
