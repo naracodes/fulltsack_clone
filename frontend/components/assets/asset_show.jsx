@@ -153,7 +153,7 @@ class AssetShow extends React.Component {
             } ${order.quantity} ${order.quantity > 1 ? "shares" : "share"} of ${
               order.ticker
             } based on the current market price of $${
-              order.cost_per_share} for a total cost of $${order.transaction_amount}.`,
+              order.cost_per_share} for a total cost of $${numeral(order.transaction_amount).format('$0,0.00')}.`,
           });
         } else if (!reviewOrderClicked && buyingPowerAvailable < order.transaction_amount && !successMessage) {
           this.setState({

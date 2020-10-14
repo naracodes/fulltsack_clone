@@ -2488,3 +2488,10 @@ table {
   letter-spacing: -0.01px;
   line-height: 20px;
 }
+
+//order type cursor
+.inner-order-type {
+  .type {
+    cursor: pointer;
+  }
+}
