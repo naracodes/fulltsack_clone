@@ -155,7 +155,7 @@ class AssetShow extends React.Component {
             } based on the current market price of $${
               order.cost_per_share} for a total cost of $${order.transaction_amount}.`,
           });
-        } else if (!reviewOrderClicked && buyingPowerAvailable < order.transaction_amount) {
+        } else if (!reviewOrderClicked && buyingPowerAvailable < order.transaction_amount && !successMessage) {
           this.setState({
             reviewOrderClicked: true,
             orderErrorMessage: `Not enough buying power. You only have enough buying power to purchase ${(buyingPowerAvailable / order.cost_per_share).toFixed(3)} shares of ${ticker}.`,
@@ -200,9 +200,9 @@ class AssetShow extends React.Component {
               order.ticker
             } based on the current market price of $${
               order.cost_per_share
-            } for a total cost of $${order.transaction_amount}.`,
+            } for a total cost of $${numeral(order.transaction_amount).format('$0,0.00')}.`,
           });
-        } else if (!reviewOrderClicked && stockHoldings < order.quantity) {
+        } else if (!reviewOrderClicked && stockHoldings < order.quantity && !successMessage) {
           this.setState({
             reviewOrderClicked: true,
             orderErrorMessage: `Not enough shares. You can only sell up to ${stockHoldings} ${
