@@ -21,6 +21,7 @@ const assetsReducer = (oldState = {}, action) => {
             return nextState[action.ticker] = Object.assign({}, nextState[action.ticker], {data: action.asset1Week});
             // return nextState[action.ticker]["1WeekData"] = action.asset1Week;
         case RECEIVE_RATING:
+            debugger
             nextState[action.ticker].rating = action.rating;
             return nextState;
         case RECEIVE_COMPANY_INFO:
