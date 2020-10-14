@@ -67,204 +67,6 @@ table {
   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
 }
 
-//Asset show page
-
-// .asset-show-outermost {
-//   padding-top: 64px;
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .asset-container {
-//   display: grid;
-//   width: 100%;
-//   height: 2330px;
-//   grid-template-columns: repeat(3, 1fr) 275px;
-//   grid-template-rows: repeat(16, 1fr);
-//   border: hotpink 1px solid;
-//   padding-top: 36px;
-//   // column-gap: 70px;
-//   gap: 50px 50px;
-// }
-
-// .transaction-sidebar {
-//   grid-column: 4 / 4;
-//   grid-row: 1 / 10;
-//   background-color: lightcoral;
-// }
-
-// .stock-graph {
-//   grid-area: 1 / 1 / 4 / 4;
-//   background-color: rgba(237, 237, 237, 1);
-//   width: 676px;
-// }
-
-// #responsive-container {
-//   min-width: 676px;
-//   margin-right: 20px;
-// }
-
-// .about {
-//   display: grid;
-//   grid-area: 4 / 1 / 6 / 4;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-template-rows: repeat(4, 1fr);
-//   background-color: lightgray;
-//   font-size: 22px;
-//   gap: 5px;
-// }
-
-// .about .asset-description {
-//   grid-area: 2 / 1 / 2 / 4;
-//   font-size: 15px;
-// }
-
-// .about .ceo {
-//   grid-area: 3 / 1 / 3 / 1;
-//   font-size: 15px;
-// }
-
-// .about .employees {
-//   grid-area: 3 / 2 / 3 / 2;
-//   font-size: 15px;
-// }
-
-// .about .hq {
-//   grid-area: 3 / 3 / 3 / 3;
-//   font-size: 15px;
-// }
-
-// .about .founded {
-//   grid-area: 3 / 4 / 3 / 4;
-//   font-size: 15px;
-// }
-
-// .about .market-cap {
-//   grid-area: 4 / 1 / 4 / 1;
-//   font-size: 15px;
-// }
-
-// .about .pe-ratio {
-//   grid-area: 4 / 2 / 4 / 2;
-//   font-size: 15px;
-// }
-
-// .about .dividend {
-//   grid-area: 4 / 3 / 4 / 3;
-//   font-size: 15px;
-// }
-
-// .about .avg-vol {
-//   grid-area: 4 / 4 / 4 / 4;
-//   font-size: 15px;
-// }
-
-// //read more
-
-// .read-more-state {
-//   display: none;
-// }
-
-// .read-more-target {
-//   opacity: 0;
-//   max-height: 0;
-//   font-size: 0;
-//   transition: 10ms ease;
-// }
-
-// .read-more-state:checked ~ .read-more-wrap .read-more-target {
-//   opacity: 1;
-//   font-size: 15px;
-//   // height: 99%;
-// }
-
-// .read-more-state ~ .read-more-trigger:before {
-//   content: "Read more";
-// }
-
-// .read-more-state:checked ~ .read-more-trigger:before {
-//   content: "Read less";
-// }
-
-// .read-more-trigger {
-//   cursor: pointer;
-//   // display: inline-block;
-//   text-align: right;
-//   padding: 0 .5em;
-//   font-size: .9em;
-//   line-height: 2;
-//   // border: 1px solid #ddd;
-//   // border-radius: .25em;
-// }
-
-// //abount grid collections
-
-// .collections {
-//   grid-area: 6 / 1 / 6 / 4;
-//   background-color: #dedede;
-// }
-
-// .asset-news-stand {
-//   grid-area: 7 / 1 / 11 / 4;
-//   display: grid;
-//   grid-template-rows: repeat(4, 1fr);
-//   grid-template-columns: repeat(4, 1fr);
-//   gap: 35px 3px;
-//   background-color: #dedede;
-// }
-
-// .analyst-ratings {
-//   grid-area: 11 / 1 / 13 / 4;
-//   background-color: #dedede;
-// }
-
-// .earnings {
-//   grid-area: 13 / 1 / 15 / 4;
-//   background-color: #dedede;
-// }
-
-// // news stand grid
-
-// .news-item-0 {
-//   grid-area: 2 / 1 / 2 / 5;
-//   display: flex;
-//   justify-content: space-between;
-//     &:hover {
-//     background-color: lightyellow;
-//     cursor: pointer;
-//   }
-// }
-
-// .news-item-1 {
-//   grid-area: 3 / 1 / 3 / 5;
-//   display: flex;
-//   justify-content: space-between;
-//     &:hover {
-//     background-color: lightyellow;
-//     cursor: pointer;
-//   }
-// }
-
-// .news-item-2 {
-//   grid-area: 4 / 1 / 5 / 5;
-//   display: flex;
-//   justify-content: space-between;
-//     &:hover {
-//     background-color: lightyellow;
-//     cursor: pointer;
-//   }
-// }
-
-// .asset-show-image {
-//   width: 200px;
-//   height: 134px;
-// }
-
-// .company-name {
-//   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
-//   font-size: 32px;
-// }
-
 .odometer {
   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
   font-size: 32px;
@@ -290,7 +92,6 @@ table {
   background-color: #fff;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
   padding: 0 24px;
-  // position: fixed;
     #logo {
       text-decoration: none;
       font-size: 24px;
@@ -323,8 +124,6 @@ table {
     box-sizing: border-box;
     margin: 0 auto;
     display: block;
-  // flex-wrap: wrap;
-  // flex-direction: row;
 }
 
 @media (max-width: 1279px) and (min-width: 1024px) {
@@ -400,9 +199,6 @@ table {
   width: 696px;
   display: block;
   visibility: visible;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   }
 
 }
@@ -693,15 +489,6 @@ table {
     text-decoration: none;
   }
 }
-
-// .image-container {
-//   display: flex;
-//   margin-top: 30px;
-//   margin-bottom: 20px;
-//   align-content: center;
-// }
-
-
 
 .auth-container {
   display: flex;
@@ -1222,127 +1009,6 @@ table {
       }
 }
 
-/*-----------------*/
-/*----DASHBOARD----*/
-/*-----------------*/
-
-// .logout-container {
-//   display: flex;
-//   padding-top: 10px;
-//   justify-content: flex-end;
-//   padding-right: 10px;
-// }
-
-// .logout-container button {
-//   font-size: 15px;
-//   color: #00ff14;
-//   font-weight: 800;
-//   background-color: white;
-//   border: none;
-  
-// }
-
-// .dropdown-trigger {
-//   // width: 200px;
-//   position: relative;
-//   padding-right: 10px;
-// }
-
-// .dropdown-list {
-//   display: none;
-//   position: absolute;
-//   padding-top: 70px;
-//   background-color: whitesmoke;
-//   border: rgb(235, 239, 243) solid 0.5px;
-//   border-radius: 2px;
-//   right: 7px;
-//   min-width: 100px;
-//   height: 46px;
-//   cursor: pointer;
-// }
-
-// .dropdown-trigger:hover > .dropdown-list {
-//   display: block;
-// }
-
-// .dashboard-body {
-//   // display: flex;
-//   // margin-top: 64px;
-//   justify-content: center;
-// }
-
-// .header-bar {
-//   width: 100%;
-//   height: 64px;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-
-
-// .dashboard-grid {
-//   display: grid;
-//   width: 1080px;
-//   height: 1950px;
-//   grid-template-columns: repeat(3, 1fr) 275px;
-//   grid-template-rows: repeat(10, 1fr);
-//   border: hotpink 1px solid;
-//   gap: 60px 60px;
-//   margin: 0 auto;
-// }
-
-// .box {
-//   background-color: beige;
-// }
-
-// .portfolio-graph {
-//   grid-area: 1 / 1 / 5 / 4;
-//   background-color: lightblue;
-// }
-
-// .pop-collection {
-//   grid-area: 5 / 1 / 7 / 4;
-//   background-color: lightblue;
-// }
-
-// .news-stand {
-//   grid-area: 7 / 1 / 20 / 4;
-//   background-color: lightblue;
-// }
-
-// .watchlist-items {
-//   // display: flex;
-//   // justify-content: start;
-//   grid-column: 4 / 4;
-//   grid-row: 1 / 10;
-// }
-
-// .watchlist-item {
-//   font-size: 14px;
-//   align-content: center;
-//   color: #242c2b;
-//   font-family: Capsule Sans Text,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif;
-//   list-style: none;
-//   height: 60px;
-//   border: olivedrab 1px solid;
-// }
-
-// .watchlist-item a {
-//   font-size: 13px;
-//   // width: 100%;
-//   list-style: none;
-//   color: #242c2b;
-//   display: flex;
-//   justify-content: space-between;
-//   text-decoration: none;
-// }
-
-// .watchlist-item:hover {
-//   background-color: rgb(192, 245, 191);
-// }
-
-
-
 // ---------------------------
 
 .dashboard-outermost,
@@ -1426,24 +1092,6 @@ table {
   height: 64px;
   box-sizing: border-box;
 }
-
-// .header-bar .logo-container {
-//   left: 48px;
-//   position: absolute;
-//   margin-right: 6px;
-// }
-
-// .logo-container a,
-// .header-bar .logo-container a:active,
-// .header-bar .logo-container a:visited {
-//   font-size: 30px;
-//   text-decoration: none;
-//   color: #000000;
-// }
-
-// .header-bar .logo-container a:hover {
-//   color: #00ff14;
-// }
 
 .search-outer {
   flex-basis: 480px;
