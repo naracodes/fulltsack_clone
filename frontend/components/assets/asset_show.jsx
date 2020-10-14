@@ -102,6 +102,7 @@ class AssetShow extends React.Component {
         orderMessage: null,
         orderErrorMessage: null,
         reviewOrderClicked: false,
+        successMessage: null,
       });
   }
 
@@ -117,6 +118,7 @@ class AssetShow extends React.Component {
         orderMessage: null,
         orderErrorMessage: null,
         reviewOrderClicked: false,
+        successMessage: null,
       });
   }
 
@@ -135,7 +137,7 @@ class AssetShow extends React.Component {
 
   handleBuy(e) {
     const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage, successMessage, orderMessage } = this.state;
-    const { addTransaction, addAssetToWatchlist, portfolio, asset, currentUser } = this.props;
+    const { addTransaction, addAssetToWatchlist, portfolio, asset, currentUser, watchlistArr } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
     let buyingPowerAvailable = portfolio.balance;
@@ -169,11 +171,14 @@ class AssetShow extends React.Component {
             order: { quantity: "" },
           });
         } else {
+
           Promise.all([
-            addTransaction(order),
-            addAssetToWatchlist(asset, currentUser)
+            addTransaction(order)
           ])
           .then(() => {
+            if (!watchlistArr.includes(ticker)) {
+              addAssetToWatchlist(asset, currentUser);
+            };
             this.setState({
               orderErrorMessage: null,
               orderMessage: null,
