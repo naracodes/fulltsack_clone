@@ -61,7 +61,7 @@ class NavBar extends React.Component {
   }
 
     render() {
-        const { currentUser, buyingPowerAvailable } = this.props;
+        const { currentUser, buyingPowerAvailable, portfoValue } = this.props;
         return (
         <div className="header-bar">
             <div className="header-container">
@@ -142,7 +142,7 @@ class NavBar extends React.Component {
                               <div className="portfolio-value">
                                 <div className="portfolio-value-container">
                                   <span>
-                                    {/* <h3>{numeral(mergedData[mergedData.length - 1].cash_balance).format('$0,0.00')}</h3> */}
+                                    <h3>{portfoValue}</h3>
                                   </span>
                                   <div className="portfolio-value-text">
                                     Portfolio Value

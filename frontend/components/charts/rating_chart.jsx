@@ -58,7 +58,7 @@ class StackedChart extends React.Component {
           type="category"
           axisLine={{ stroke: "#EAF0F4" }}
         />
-        <Tooltip />
+        {/* <Tooltip /> */}
         {/* <Legend /> */}
         <Bar dataKey="uv" stackId="a" fill="#41e538">
           <LabelList fill="white" position="center">{`${numeral(buy).format('0%')} Buy`}</LabelList>
