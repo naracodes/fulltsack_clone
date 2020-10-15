@@ -9,6 +9,7 @@ class Api::TransactionsController < ApplicationController
             if @bank_trans.save
                 case params[:order][:transaction_type]
                 when "Deposit"
+                    debugger
                     last_cash_balance = !Portfolio.where(user_id: @current_user_id).empty? ? Portfolio.where(user_id: @current_user_id).last.balance : 0
                     @portfo_record = Portfolio.new({
                         user_id: @current_user_id,

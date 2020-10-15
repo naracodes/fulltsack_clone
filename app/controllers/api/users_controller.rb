@@ -8,6 +8,7 @@ class Api::UsersController < ApplicationController
                 transaction_type: "Deposit",
                 transaction_amount: 1000000,
             })
+            debugger
             render :show
         else
             render json: @user.errors.full_messages, status: 422

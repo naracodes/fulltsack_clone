@@ -10,6 +10,7 @@ class Api::PortfoDataController < ApplicationController
         five_min = 300
         @first_trans_data = Transaction.where(user_id: @current_user.id).first
         @last_portfo_data = PortfoDatum.where(user_id: @current_user.id).last
+        new_user = (todayDate - @current_user.create_at < 60)
         
         # @all_data = PortfoDatum.where(user_id: @current_user.id)
 
