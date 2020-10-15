@@ -24,10 +24,8 @@ class Api::WatchlistsController < ApplicationController
     def create
         if !Watchlist.exists?(ticker: params[:ticker], user_id: params[:user_id])
             @watchlist_asset = Watchlist.new(watchlist_params)
-            # debugger
                 # @watchlist_asset.asset_id = Asset.where(ticker: watchlist_params[:ticker]).first.id
                 if @watchlist_asset.save
-                    debugger
                     @current_user = current_user || User.find_by(firstName: "Demo")
                     @watchlist_assets =  Watchlist.where('user_id = ?', @current_user.id)
                     holdings = @current_user.holdings
@@ -40,7 +38,6 @@ class Api::WatchlistsController < ApplicationController
                             @ordered.push(record)
                         end
                     end
-                    debugger
                     render :index
                     # render json: { data: @watchlist_asset }
                 else
