@@ -411,8 +411,8 @@ class AssetShow extends React.Component {
 
   handleAddToList(e) {
     e.preventDefault();
-    const { addAssetToWatchlist, currentUser, asset } = this.props;
-    addAssetToWatchlist(asset, currentUser);
+    const { addAssetToWatchlist, currentUser, assets, ticker } = this.props;
+    addAssetToWatchlist(assets[ticker], currentUser);
   }
 
   handleRemoveFromList(e) {
