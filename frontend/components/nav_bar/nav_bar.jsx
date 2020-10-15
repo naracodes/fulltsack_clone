@@ -107,6 +107,12 @@ class NavBar extends React.Component {
                       id="github"
                       icon={faGithub}
                       className="brand-icon"
+                      onClick={() =>
+                        window.open(
+                          "https://github.com/hurricanenara",
+                          "_blank"
+                        )
+                      }
                     />
                   </div>
                   <div className="angel-list">
@@ -114,6 +120,12 @@ class NavBar extends React.Component {
                       id="angellist"
                       icon={faAngellist}
                       className="brand-icon"
+                      onClick={() =>
+                        window.open(
+                          "https://angel.co/u/naraslee",
+                          "_blank"
+                        )
+                      }
                     />
                   </div>
                   <div className="portfo-link">
