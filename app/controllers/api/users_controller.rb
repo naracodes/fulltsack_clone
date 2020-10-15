@@ -3,6 +3,11 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             login!(@user)
+            Transaction.create({
+                user_id: @user.id,
+                transaction_type: "Deposit",
+                transaction_amount: 1000000,
+            })
             render :show
         else
             render json: @user.errors.full_messages, status: 422
