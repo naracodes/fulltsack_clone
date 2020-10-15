@@ -477,6 +477,7 @@ class AssetShow extends React.Component {
             buyingPowerAvailable={buyingPowerAvailable}
             history={this.props.history}
             logout={this.props.logout}
+            portfoValue={+window.localStorage.getItem("portfoVal")}
            />
           <div className="asset-container">
             <main className="main-container">

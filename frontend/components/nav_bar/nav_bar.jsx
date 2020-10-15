@@ -142,7 +142,7 @@ class NavBar extends React.Component {
                               <div className="portfolio-value">
                                 <div className="portfolio-value-container">
                                   <span>
-                                    <h3>{portfoValue}</h3>
+                                    <h3>{numeral(portfoValue).format('$0,0.00')}</h3>
                                   </span>
                                   <div className="portfolio-value-text">
                                     Portfolio Value

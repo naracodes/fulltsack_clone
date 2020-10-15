@@ -140,7 +140,8 @@ class Dashboard extends React.Component {
       )
     } else {
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
-      let portfoValue = numeral(mergedData[mergedData.length - 1].cash_balance).format('$0,0.00');
+      let portfoValue = mergedData[mergedData.length - 1].cash_balance.toFixed(2)
+      window.localStorage.setItem("portfoVal", (portfoValue));
       return (
         <div className="dashboard-outermost">
           <NavBar 
