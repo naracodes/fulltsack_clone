@@ -451,7 +451,7 @@ class AssetShow extends React.Component {
     } else {
       // console.log(this.props.watchlistArr, this.props.match.params.ticker.toUpperCase())
       let asset = assets[ticker];
-      let stockHoldings = portfolio.holdings[asset.ticker] ? portfolio.holdings[asset.ticker] : 0;
+      let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
       // let valueInStocks = "";
       let rating = asset.rating[0];

@@ -25,9 +25,7 @@ class Api::UsersController < ApplicationController
             endpoint: 'https://cloud.iexapis.com/v1'
             )
             rand_tickers.shuffle.each do |ticker|
-                debugger
                 @quote = client.quote(ticker)
-                debugger
                 Watchlist.create({
                     ticker: ticker,
                     user_id: @current_user.id,
