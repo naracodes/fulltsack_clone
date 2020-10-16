@@ -11,7 +11,6 @@ class Api::PortfoDataController < ApplicationController
         @first_trans_data = Transaction.where(user_id: @current_user.id).first
         @last_portfo_data = PortfoDatum.where(user_id: @current_user.id).last
         new_user = (todayDate - @current_user.created_at < 100)
-        debugger
         
         # @all_data = PortfoDatum.where(user_id: @current_user.id)
 
@@ -24,7 +23,6 @@ class Api::PortfoDataController < ApplicationController
         market_closed = (Time.now > Time.parse("4:00 PM")) || (Time.now < Time.parse("9:29 AM"))
 
         if (weekend || market_closed ) && !new_user
-            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
             @all_data.each do |data|
                 data.update(cash_balance: @current_user.cash_balance)
@@ -46,9 +44,7 @@ class Api::PortfoDataController < ApplicationController
                 render :index
             end
         elsif new_user
-            debugger
             if weekend || market_closed
-                debugger
                 @first_of_day = PortfoDatum.create({
                 user_id: @current_user.id,
                 date: today,
@@ -69,7 +65,6 @@ class Api::PortfoDataController < ApplicationController
                 today_open = Time.parse("9:30 AM")
                 render :index
             elsif new_day
-                debugger
                 @first_of_day = PortfoDatum.create({
                     user_id: @current_user.id,
                     date: today,
@@ -91,7 +86,6 @@ class Api::PortfoDataController < ApplicationController
                 render :index
             end
         elsif new_day && !new_user
-            debugger
             @first_of_day = PortfoDatum.create({
                 user_id: @current_user.id,
                 date: today,
@@ -112,7 +106,6 @@ class Api::PortfoDataController < ApplicationController
             today_open = Time.parse("9:30 AM")
             render :index
         elsif (last_update_lapsed >= five_min) && !new_user
-            debugger
             last_label = Time.parse(@last_portfo_data.label)
             until (Time.parse(label_now) - last_label) < five_min
                 PortfoDatum.create({
@@ -123,11 +116,9 @@ class Api::PortfoDataController < ApplicationController
                     cash_balance: @current_user.cash_balance,
                 })
             end
-            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
             render :index
         else
-            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
             render :index
         end
