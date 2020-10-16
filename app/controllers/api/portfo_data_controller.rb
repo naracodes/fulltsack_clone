@@ -10,7 +10,8 @@ class Api::PortfoDataController < ApplicationController
         five_min = 300
         @first_trans_data = Transaction.where(user_id: @current_user.id).first
         @last_portfo_data = PortfoDatum.where(user_id: @current_user.id).last
-        new_user = (todayDate - @current_user.create_at < 60)
+        new_user = (todayDate - @current_user.created_at < 600)
+        debugger
         
         # @all_data = PortfoDatum.where(user_id: @current_user.id)
 
@@ -22,7 +23,8 @@ class Api::PortfoDataController < ApplicationController
         holdings_as_of_this_morning = @current_user.holdings_between(@first_trans_data.created_at, today_open, true)
         market_closed = (Time.now > Time.parse("4:00 PM")) || (Time.now < Time.parse("9:29 AM"))
 
-        if weekend || market_closed
+        if (weekend || market_closed ) && !new_user
+            debugger
             @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
             @all_data.each do |data|
                 data.update(cash_balance: @current_user.cash_balance)
@@ -43,7 +45,51 @@ class Api::PortfoDataController < ApplicationController
                 @all_data = PortfoDatum.where(user_id: @current_user.id).last(78)
                 render :index
             end
+        elsif new_user
+            debugger
+            if weekend || market_closed
+                @first_of_day = PortfoDatum.create({
+                user_id: @current_user.id,
+                date: today,
+                holdings_snapshot: {},
+                label: market_open,
+                cash_balance: @current_user.cash_balance,
+                })
+                until PortfoDatum.last.label == "03:55 PM"
+                    PortfoDatum.create({
+                        user_id: @current_user.id,
+                        date: today,
+                        holdings_snapshot: {},
+                        label: (today_open += (5 * 60)).strftime("%I:%M %p"),
+                        cash_balance: @current_user.cash_balance,
+                    })
+                end
+                @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
+                today_open = Time.parse("9:30 AM")
+                render :index
+            elsif new_day
+                @first_of_day = PortfoDatum.create({
+                    user_id: @current_user.id,
+                    date: today,
+                    holdings_snapshot: holdings_as_of_this_morning,
+                    label: market_open,
+                    cash_balance: @current_user.cash_balance,
+                })
+                until (Time.parse(label_now) - today_open) < five_min
+                    PortfoDatum.create({
+                        user_id: @current_user.id,
+                        date: today,
+                        holdings_snapshot: @current_user.holdings_between(today_open, today_open + five_min),
+                        label: (today_open += (5 * 60)).strftime("%I:%M %p"),
+                        cash_balance: @current_user.cash_balance,
+                    })
+                end
+                @all_data = PortfoDatum.where(user_id: @current_user.id, date: today)
+                today_open = Time.parse("9:30 AM")
+                render :index
+            end
         elsif new_day
+            debugger
             @first_of_day = PortfoDatum.create({
                 user_id: @current_user.id,
                 date: today,
