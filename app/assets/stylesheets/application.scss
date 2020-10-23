@@ -103,7 +103,8 @@ table {
 }
 
 #logo:visited,
-#logo:link {
+#logo:link,
+#logo:active {
   color: black;
 }
 
@@ -127,6 +128,12 @@ table {
 }
 
 @media (max-width: 1279px) and (min-width: 1024px) {
+  .splash-container {
+    min-width: 1024px;
+    max-width: 100%;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
   .splash-container-2 {
     margin-left: -9px;
     margin-right: -9px;
@@ -158,16 +165,41 @@ table {
   height: 100%;
   width: 100%;
   object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 //login
 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .splash-container-2 {
+    margin-left: -7px;
+    margin-right: -7px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 32px;
+    padding-right: 32px;
+    justify-content: center;
+  }
+  .inner-content {
+    padding: 50px 0;
+  }
+  .splash-signup {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
 
 @media (min-width: 1280px) {
   .splash-container {
     min-width: 1280px;
     max-width: 1280px;
-    padding-left: 37px;
+    padding-left: 50;
     padding-right: 37px;
     display: block;
   }
@@ -229,6 +261,10 @@ table {
   }
   .login-outermost-3 .left-image {
     background-image: url("https://cdn.robinhood.com/assets/generated_assets/cdfcb3cb965d71cf114d0aeb8f0a50cd.jpg");
+  }
+  .image-container {
+    min-width: 100%;
+    min-height: 540px;
   }
 }
 
@@ -478,6 +514,12 @@ table {
   .right-content-3 {
     min-height: 603px;
   }
+  .inner-content {
+    padding: 100px 0;
+  }
+  .image-container {
+    min-height: 603px;
+  }
 }
 
 .splash-signup2 {
@@ -550,7 +592,9 @@ table {
   justify-content: center;
 }
 
-.auth-container a:visited {
+.auth-container a:visited,
+.auth-container a:link,
+.auth-container a:active {
   color: black;
 }
 
