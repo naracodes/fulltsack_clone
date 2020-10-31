@@ -86,7 +86,8 @@ class Home extends React.Component {
                         <div className="image-container">
                           <img
                             src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
-                            srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
+                            // srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
+                            srcSet="https://cdn.robinhood.com/assets/robinhood/brand/_next/static/images/1x__284c8d0c799d3c9649ca021c00228275.png, https://cdn.robinhood.com/assets/robinhood/brand/_next/static/images/2x__ff9c36e27d7018cf707b95d8675793a3.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/_next/static/images/3x__45f00d7b296cb52968f1bca4ef766fc1.png 3x"
                             alt=""
                           />
                         </div>
