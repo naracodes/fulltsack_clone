@@ -19,12 +19,14 @@ require 'json'
 # Transaction.destroy_all
 
 if Asset.count == 0
-  path = File.join(File.dirname(__FILE__), "test.json")
-  records = JSON.parse(File.read(path))
-  records.each do |record|
+  nyse = File.join(File.dirname(__FILE__), "nyse.json")
+  nasdaq = File.join(File.dirname(__FILE__), "nasdaq.json")
+  nyse_records = JSON.parse(File.read(nyse))
+  nasdaq_records = JSON.parse(File.read(nasdaq))
+  (nyse_records + nasdaq_records).each do |record|
     Asset.create!({
       ticker: record["Symbol"],
-      asset_name: record["company_name"]
+      asset_name: record["Company Name"]
     })
   end
   puts "assets are seeded"

@@ -250,10 +250,6 @@
 "Company Name": "Federal Agricultural Mortgage Corporation"
 },
 {
-"Symbol": "AGM.A",
-"Company Name": "Federal Agricultural Mortgage Corporation"
-},
-{
 "Symbol": "AGN",
 "Company Name": "Allergan"
 },
@@ -330,8 +326,6 @@
 "Symbol": "AIV",
 "Company Name": "Apartment Investment and Management Company"
 },
-
-
 {
 "Symbol": "AIZ",
 "Company Name": "Assurant"
@@ -2106,7 +2100,6 @@
 "Symbol": "CMP",
 "Company Name": "Compass Minerals Intl Inc"
 },
-{
 {
 "Symbol": "CMS",
 "Company Name": "CMS Energy Corporation"
@@ -8848,7 +8841,6 @@
 "Company Name": "Saratoga Investment Corp New"
 },
 {
-{
 "Symbol": "SBGL",
 "Company Name": "Sibanye Gold"
 },
@@ -8856,8 +8848,6 @@
 "Symbol": "SBH",
 "Company Name": "Sally Beauty Holdings (Name to be changed from Sally Holdings)"
 },
-
-
 {
 "Symbol": "SBR",
 "Company Name": "Sabine Royalty Trust"
