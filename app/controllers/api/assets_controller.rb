@@ -18,7 +18,7 @@ class Api::AssetsController < ApplicationController
         if @asset.save
             render json: { status: 'Saved!', message: 'saved', data: @asset}, status: :ok
         else
-            render json: { status: 'ERROR', message: 'asset not saved', data: article.errors }, status: :unprocessable_entity
+            render json: { status: 'ERROR', message: 'asset not saved', data: @asset.errors }, status: :unprocessable_entity
         end
     end
     
@@ -27,7 +27,7 @@ class Api::AssetsController < ApplicationController
         if @asset.update_attributes(asset_params)
             render json: { status: 'Success!', message: 'updated asset', data: @asset}, status: :ok
         else
-            render json: { status: 'ERROR', message: 'asset not updated', data: article.errors }, status: :unprocessable_entity
+            render json: { status: 'ERROR', message: 'asset not updated', data: @asset.errors }, status: :unprocessable_entity
         end
     end
     

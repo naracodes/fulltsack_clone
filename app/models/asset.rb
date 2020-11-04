@@ -10,5 +10,6 @@
 #  latest_price :float
 #
 class Asset < ApplicationRecord
-    validates :ticker, :asset_name, presence: true, uniqueness: true
+    validates :ticker, presence: true, uniqueness: true
+    validates :ticker, presence: true
 end
