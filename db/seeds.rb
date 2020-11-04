@@ -8,10 +8,36 @@
 
 require 'iex-ruby-client'
 require 'date'
+require 'json' 
+
+# test_file = File.read('./test.json')
+# test_file = File.open "test.json"
+
 
 # Asset.destroy_all
 # Watchlist.destroy_all
 # Transaction.destroy_all
+
+if Asset.count == 0
+  path = File.join(File.dirname(__FILE__), "test.json")
+  records = JSON.parse(File.read(path))
+  records.each do |record|
+    Asset.create!({
+      ticker: record["Symbol"],
+      asset_name: record["company_name"]
+    })
+  end
+  puts "assets are seeded"
+end
+
+# file = File.open "test.json"
+# data = JSON.load file
+# test_asset = data[0]
+
+# Asset.create({
+#   ticker: test_asset['Symbol'],
+#   asset_name: test_asset['company_name']
+# })
 
 IEX::Api.configure do |config|
     config.publishable_token = 'Tpk_9cc6c16a40494338943d728d111e9998' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
@@ -24,7 +50,7 @@ client = IEX::Api::Client.new(
 )
 
 # # -------
-demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
+# demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
 
 
 

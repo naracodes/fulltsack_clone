@@ -1,0 +1,29 @@
+[
+{
+"company_name": "iShares MSCI All Country Asia Information Technology Index Fund",
+"Financial Status": "N",
+"Market Category": "G",
+"Round Lot Size": 100,
+"Security Name": "iShares MSCI All Country Asia Information Technology Index Fund",
+"Symbol": "AAIT",
+"Test Issue": "N"
+},
+{
+"company_name": "American Airlines Group, Inc.",
+"Financial Status": "N",
+"Market Category": "Q",
+"Round Lot Size": 100,
+"Security Name": "American Airlines Group, Inc. - Common Stock",
+"Symbol": "AAL",
+"Test Issue": "N"
+},
+{
+"company_name": "Atlantic American Corporation",
+"Financial Status": "N",
+"Market Category": "G",
+"Round Lot Size": 100,
+"Security Name": "Atlantic American Corporation - Common Stock",
+"Symbol": "AAME",
+"Test Issue": "N"
+}
+]
