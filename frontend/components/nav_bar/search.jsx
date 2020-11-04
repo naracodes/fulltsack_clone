@@ -20,24 +20,24 @@ class Search extends React.Component {
       };
   }
 
-    render() {
-        return (
-              <div className="search-outer">
-                <div className="search-box">
-                  <div className="search-inner-box">
-                    <FontAwesomeIcon icon={faSearch} className="search-icon" />
-                    <input
-                      type="text"
-                      id="search-bar"
-                      onKeyDown={this.handleKeyDown}
-                      tabIndex="0"
-                      placeholder="Search"
-                    />
-                  </div>
-                </div>
+  render() {
+    return (
+          <div className="search-outer">
+            <div className="search-box">
+              <div className="search-inner-box">
+                <FontAwesomeIcon icon={faSearch} className="search-icon" />
+                <input
+                  type="text"
+                  id="search-bar"
+                  onKeyDown={this.handleKeyDown}
+                  tabIndex="0"
+                  placeholder="Search"
+                />
               </div>
-            )
-    }
+            </div>
+          </div>
+      )
+  }
 }
 
 export default Search;

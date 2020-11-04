@@ -26,6 +26,8 @@ client = IEX::Api::Client.new(
 # # -------
 demo_stocks = ['F', 'GE', 'AAL', 'DIS', 'AAPL', 'DAL', 'MSFT', 'TSLA', 'CCL', 'GPRO', 'ACB', 'AMZN', 'LRCX', 'REAL', 'CPRI']
 
+
+
 # demo_stocks.each do |demo_stock|
 #     stock = client.quote(demo_stock)
 #     Asset.create({
