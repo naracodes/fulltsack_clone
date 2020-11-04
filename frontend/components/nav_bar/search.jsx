@@ -6,7 +6,19 @@ import { Link } from "react-router-dom";
 class Search extends React.Component {
     constructor(props) {
       super(props)
+      this.handleKeyDown = this.handleKeyDown.bind(this);
     }
+
+  handleKeyDown(e) {
+    const { history } = this.props;
+      if (e.keyCode === 13) {
+        debugger
+        history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
+        // debugger
+        // if (history.location.pathname === "/") {
+        // };
+      };
+  }
 
     render() {
         return (

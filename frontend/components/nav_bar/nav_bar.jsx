@@ -74,7 +74,7 @@ class NavBar extends React.Component {
                   />
                 </Link>
               </div>
-              <Search />
+              <Search history={this.props.history}/>
               <div className="header-right">
                 <div className="header-right-box">
                   <div className="linked-in">
