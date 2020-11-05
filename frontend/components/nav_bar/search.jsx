@@ -7,16 +7,17 @@ class Search extends React.Component {
   constructor(props) {
     super(props)
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.renderSuggestion = this.renderSuggestion.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchAssets();
+    const { fetchAssets } = this.props;
+    fetchAssets();
   }
 
   handleKeyDown(e) {
     const { history } = this.props;
       if (e.keyCode === 13) {
-        debugger
         history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
         // debugger
         // if (history.location.pathname === "/") {
@@ -24,7 +25,26 @@ class Search extends React.Component {
       };
   }
 
+  renderSuggestion(e) {
+    const { assets } = this.props;
+    const names = Object.keys(assets.data);
+    const tickers = Object.values(assets.data)
+    debugger
+
+    assets.data.map(obj => {
+      debugger
+      obj.companyName
+      ticker.startsWith(e.currentTarget.value.toUpperCase())
+    })
+    return (
+      <div className="suggestion">
+        {}
+      </div>
+    )
+  }
+
   render() {
+    const { assets } = this.props;
     return (
       <div className="search-outer">
         <div className="search-box">
@@ -34,6 +54,7 @@ class Search extends React.Component {
               type="text"
               id="search-bar"
               onKeyDown={this.handleKeyDown}
+              onChange={this.renderSuggestion}
               tabIndex="0"
               placeholder="Search"
             />

@@ -1,5 +1,4 @@
 export const fetchAssets = () => {
-  debugger
     return $.ajax({
         method: 'GET',
         url: `/api/assets`
@@ -75,7 +74,6 @@ export const fetchCompanyInfo = ticker => {
 }
 
 export const fetchRating = ticker => {
-  debugger
     return $.ajax({
       method: "GET",
       //   url: `/api/ratings/${ticker}`

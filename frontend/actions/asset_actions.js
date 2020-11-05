@@ -16,7 +16,6 @@ export const CLEAR_ASSET = "CLEAR_ASSET";
 
 
 export const receiveAllAssets = assets => {
-    debugger
     return {
         type: RECEIVE_ALL_ASSETS,
         assets
@@ -53,7 +52,6 @@ export const receiveAssetIntraday = (assetIntraday, ticker) => {
 }
 
 export const receive1Week = (asset1Week, ticker) => {
-    debugger
     return {
       type: RECEIVE_1WEEK,
       asset1Week,
@@ -62,7 +60,6 @@ export const receive1Week = (asset1Week, ticker) => {
 }
 
 export const receiveMultipleIntraday = multIntraday => {
-    // debugger
     return {
         type: RECEIVE_MULTIPLE_INTRADAY,
         multIntraday,
@@ -112,9 +109,7 @@ export const clearAsset = () => {
 }
 
 export const fetchAssets = () => dispatch => {
-    debugger
     return AssetAPIUtil.fetchAssets().then(assets => {
-        debugger
         return dispatch(receiveAllAssets(assets))
     })
 }
@@ -151,9 +146,7 @@ export const fetchIntraday = ticker => dispatch => {
 }
 
 export const fetch1Week = ticker => dispatch => {
-    debugger
     return AssetAPIUtil.fetch1Week(ticker).then(asset1Week => {
-        debugger
         return dispatch(receive1Week(asset1Week, ticker));
     })
 }
@@ -180,27 +173,20 @@ export const fetch1Week = ticker => dispatch => {
 
 // export const fetchMultipleIntraday = tickers => dispatch => {
 //     if (tickers.every(ticker => Object.keys(cachedIntraday).includes(ticker))) {
-//         debugger
 //         let ownedIntra = {};
 //         tickers.forEach(ticker => {
-//             debugger
 //             ownedIntra[ticker] = cachedIntraday[ticker];
 //         });
-//         debugger
 //         return dispatch(receiveMultipleIntraday(ownedIntra));
 //     } else {
-//         debugger
 //         let missingStocks = tickers.filter(ticker => !Object.keys(cachedIntraday).includes(ticker));
 //         missingStocks.forEach(ticker => {
-//             debugger
 //             AssetAPIUtil.fetchIntraday(ticker);
 //         })
 //         let unique = Array.from(new Set([...tickers, ...missingStocks]));
-//         debugger
 //         return fetchMultipleIntraday(unique);
 //     }
 //     // return AssetAPIUtil.fetchMultipleIntraday(tickers).then(multIntraday => {
-//     //     debugger
 //     //     return dispatch(receiveMultipleIntraday(multIntraday));
 //     // });
 // };
