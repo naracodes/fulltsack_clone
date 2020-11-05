@@ -16,6 +16,7 @@ export const CLEAR_ASSET = "CLEAR_ASSET";
 
 
 export const receiveAllAssets = assets => {
+    debugger
     return {
         type: RECEIVE_ALL_ASSETS,
         assets
@@ -111,7 +112,9 @@ export const clearAsset = () => {
 }
 
 export const fetchAssets = () => dispatch => {
+    debugger
     return AssetAPIUtil.fetchAssets().then(assets => {
+        debugger
         return dispatch(receiveAllAssets(assets))
     })
 }

@@ -7,7 +7,6 @@ class Api::AssetsController < ApplicationController
     
     def show
         # @asset = Asset.find_by(id: params[:id])
-        # debugger
         @asset = Asset.find_by(ticker: params[:ticker].upcase)
         # render json: { status: 'Success!', message: 'Showing asset', data: @asset}, status: :ok
         render json: { data: @asset }

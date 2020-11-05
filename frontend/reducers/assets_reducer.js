@@ -5,8 +5,8 @@ const assetsReducer = (oldState = {}, action) => {
     let nextState = Object.assign({}, oldState);
 
     switch (action.type) {
-        case RECEIVE_ALL_ASSETS:
-            return action.assets;
+        // case RECEIVE_ALL_ASSETS:
+        //     return action.assets;
         case RECEIVE_ASSET:
             action.asset.asset_name = action.asset.companyName;
             action.asset.ticker = action.asset.symbol;

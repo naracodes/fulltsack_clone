@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from './search';
+import SearchContainer from './search_container';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -48,6 +49,7 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
+
     document.addEventListener("mousedown", this.handleClickOutside);
   }
 
@@ -74,7 +76,7 @@ class NavBar extends React.Component {
                   />
                 </Link>
               </div>
-              <Search history={this.props.history}/>
+              <SearchContainer history={this.props.history}/>
               <div className="header-right">
                 <div className="header-right-box">
                   <div className="linked-in">

@@ -64,12 +64,9 @@ class Dashboard extends React.Component {
   mergeData(userDataArr, stockData, hold) {
     userDataArr.forEach((data, i) => {
       Object.keys(stockData).forEach(ticker => {
-        debugger
         if (!stockData[ticker]["intraday-prices"][i].close) {
-          debugger
           stockData[ticker]["intraday-prices"][i].close = stockData[ticker]["intraday-prices"][i  -1].close;
         }
-        debugger
         userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * hold[ticker] : (userDataArr[i].cash_balance * -1);
       });
     });
@@ -78,7 +75,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings, fetchAssetNews } = this.props;
+    const { fetchAssets, fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings, fetchAssetNews } = this.props;
     // const tickers = Object.keys(this.props.portfolio.holdings);
     Promise.all([
       fetchHoldings(),
@@ -95,7 +92,6 @@ class Dashboard extends React.Component {
         fetchMultipleIntraday(tickers)
         .then(multIntra => {
           // console.log(res[2].data.data)
-          debugger
           console.log(multIntra.multIntraday)
           console.log(res[0].holdings.holdings)
           let userData = res[2].data.data;

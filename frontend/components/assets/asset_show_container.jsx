@@ -23,7 +23,6 @@ export const msp = (state, ownProps) => {
         assets: state.entities.assets,
         currentUser: state.session.user,
         watchlistArr: Object.keys(state.entities.watchlists),
-        otherData: state.entities.assets,
         assetNews: Object.values(state.entities.news),
         portfolio: state.entities.transactions,
         holdings: state.entities.transactions,

@@ -6,7 +6,6 @@ const portfosReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_PORTFO_DATA:
-            debugger
             return action.data.data;
         default:
             return oldState;
