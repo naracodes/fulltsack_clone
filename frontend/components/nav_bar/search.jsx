@@ -43,7 +43,7 @@ class Search extends React.Component {
   renderSuggestion(e) {
     const { assets } = this.props;
     if (assets.data.length && this.state.searchVal) {
-      const filtered = assets.data.filter(obj => obj.companyName.startsWith(this.state.searchVal.toUpperCase()) && obj.ticker.startsWith(this.state.searchVal.toUpperCase())).slice(0, 5);
+      const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) && obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
       return (
         <ul>
           <h5>Stocks</h5>
@@ -92,6 +92,7 @@ class Search extends React.Component {
                 onChange={this.handleInput}
                 tabIndex="0"
                 placeholder="Search"
+                autoComplete={"new-password"}
               />
             </div>
           </div>
