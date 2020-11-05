@@ -82,25 +82,41 @@ class Search extends React.Component {
       )
     } else {
       return (
-        <div className="search-outer">
-          <div className="search-box">
-            <div className="search-inner-box">
-              <div className="search-icon">
-                <FontAwesomeIcon icon={faSearch} className="search-icon" />
+        <div className="search-outer _1zE1DEKKkb_B8-dvy2eaio">
+          <div className="search-box css-1jn7eh0-Search">
+            <div className="search-inner-box css-1nfpjpv-Search">
+              <div className="icon-container css-1imcgs8-Search">
+                <div className="">
+                  <div className="magnify css-a7qme1-Search">
+                    <span className="css-1lhkpt1">
+                      <FontAwesomeIcon icon={faSearch} className="search-icon" />
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    className="search-input remove-legacy css-1ctuxqo-Search"
+                    id="search-bar"
+                    onKeyDown={this.handleKeyDown}
+                    onChange={this.handleInput}
+                    tabIndex="0"
+                    placeholder="Search"
+                    autoComplete={"new-password"}
+                  />
+                </div>
+                </div>
+              <div className="test-div">
+                <ul>
+                  <li>Test list Test list t</li>
+                  <li>Test listTest list</li>
+                  <li>Test list</li>
+                  <li>TeTest listst list</li>
+                  <li>Test list</li>
+                  <li>Test liTest listst</li>
+                </ul>
               </div>
-                <input
-                  type="text"
-                  className="search-input"
-                  id="search-bar"
-                  onKeyDown={this.handleKeyDown}
-                  onChange={this.handleInput}
-                  tabIndex="0"
-                  placeholder="Search"
-                  autoComplete={"new-password"}
-                />
-              <div className="lower-box">
+              {/* <div className="lower-box">
                 {this.renderSuggestion()}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
