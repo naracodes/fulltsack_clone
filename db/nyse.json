@@ -25,11 +25,11 @@
 },
 {
 "Symbol": "AAV",
-"Company Name": "Advantage Oil & Gas Ltd  Ordinary Shares"
+"Company Name": "Advantage Oil & Gas Ltd Ordinary Shares"
 },
 {
 "Symbol": "AB",
-"Company Name": "Allianceberstein Holding L.P.  Units"
+"Company Name": "Allianceberstein Holding L.P. Units"
 },
 {
 "Symbol": "ABB",
@@ -41,7 +41,7 @@
 },
 {
 "Symbol": "ABC",
-"Company Name": "AmerisourceBergen Corporation (Holding Co)"
+"Company Name": "AmerisourceBergen"
 },
 {
 "Symbol": "ABEV",
@@ -58,15 +58,13 @@
 {
 "Symbol": "ABR",
 "Company Name": "Arbor Realty Trust"
-},
-
-{
+},{
 "Symbol": "ABT",
 "Company Name": "Abbott Laboratories"
 },
 {
 "Symbol": "ABX",
-"Company Name": "Barrick Gold Corporation"
+"Company Name": "Barrick Gold"
 },
 {
 "Symbol": "ACC",
@@ -74,7 +72,7 @@
 },
 {
 "Symbol": "ACCO",
-"Company Name": "Acco Brands Corporation"
+"Company Name": "Acco Brands"
 },
 {
 "Symbol": "ACG",
@@ -82,7 +80,7 @@
 },
 {
 "Symbol": "ACH",
-"Company Name": "Aluminum Corporation of China"
+"Company Name": "Aluminum"
 },
 {
 "Symbol": "ACI",
@@ -102,7 +100,7 @@
 },
 {
 "Symbol": "ACRE",
-"Company Name": "Ares Commercial Real Estate Corporation"
+"Company Name": "Ares Commercial Real Estate"
 },
 {
 "Symbol": "ACT",
@@ -110,11 +108,11 @@
 },
 {
 "Symbol": "ACW",
-"Company Name": "Accuride Corporation"
+"Company Name": "Accuride"
 },
 {
 "Symbol": "ADC",
-"Company Name": "Agree Realty Corporation"
+"Company Name": "Agree Realty"
 },
 {
 "Symbol": "ADM",
@@ -126,39 +124,39 @@
 },
 {
 "Symbol": "ADS",
-"Company Name": "Alliance Data Systems Corporation"
+"Company Name": "Alliance Data Systems"
 },
 {
 "Symbol": "ADT",
-"Company Name": "ADT Corporation"
+"Company Name": "ADT"
 },
 {
 "Symbol": "ADX",
-"Company Name": "Adams Express Company (The)"
+"Company Name": "Adams Express"
 },
 {
 "Symbol": "AEB",
-"Company Name": "AEGON N.V. Perp. Cap. Secs. Floating Rate (Netherlands)"
+"Company Name": "AEGON"
 },
 {
 "Symbol": "AEC",
-"Company Name": "Associated Estates Realty Corporation"
+"Company Name": "Associated Estates Realty"
 },
 {
 "Symbol": "AED",
-"Company Name": "AEGON N.V. Perp. Cap. Securities (Netherlands)"
+"Company Name": "AEGON"
 },
 {
 "Symbol": "AEE",
-"Company Name": "Ameren Corporation"
+"Company Name": "Ameren"
 },
 {
 "Symbol": "AEG",
-"Company Name": "AEGON N.V."
+"Company Name": "AEGON"
 },
 {
 "Symbol": "AEH",
-"Company Name": "AEGON N.V. Perp. Cap Secs."
+"Company Name": "AEGON"
 },
 {
 "Symbol": "AEK",
@@ -182,11 +180,11 @@
 },
 {
 "Symbol": "AER",
-"Company Name": "Aercap Holdings N.V. Ordinary Shares"
+"Company Name": "Aercap Holdings"
 },
 {
 "Symbol": "AES",
-"Company Name": "The AES Corporation"
+"Company Name": "The AES"
 },
 {
 "Symbol": "AET",
@@ -194,15 +192,11 @@
 },
 {
 "Symbol": "AF",
-"Company Name": "Astoria Financial Corporation"
-},
-
-{
+"Company Name": "Astoria Financial"
+},{
 "Symbol": "AFB",
 "Company Name": "AllianceBernstein National Municipal Income Fund Inc"
-},
-
-{
+},{
 "Symbol": "AFG",
 "Company Name": "American Financial Group"
 },
@@ -214,8 +208,6 @@
 "Symbol": "AFL",
 "Company Name": "AFLAC Incorporated"
 },
-
-
 {
 "Symbol": "AFSD",
 "Company Name": "Aflac Incorporated 5.50% Subordinated Debentures due September 15, 2052"
@@ -223,23 +215,21 @@
 {
 "Symbol": "AFT",
 "Company Name": "Apollo Senior Floating Rate Fund"
-},
-
-{
+},{
 "Symbol": "AG",
 "Company Name": "First Majestic Silver Corp. Ordinary Shares (Canada)"
 },
 {
 "Symbol": "AGC",
-"Company Name": "Advent Claymore Convertible Securities and Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Advent Claymore Convertible Securities and Income Fund"
 },
 {
 "Symbol": "AGCO",
-"Company Name": "AGCO Corporation"
+"Company Name": "AGCO"
 },
 {
 "Symbol": "AGD",
-"Company Name": "Alpine Global Dynamic Dividend Fund Shares of Beneficial Interest"
+"Company Name": "Alpine Global Dynamic Dividend Fund"
 },
 {
 "Symbol": "AGI",
@@ -247,7 +237,7 @@
 },
 {
 "Symbol": "AGM",
-"Company Name": "Federal Agricultural Mortgage Corporation"
+"Company Name": "Federal Agricultural Mortgage"
 },
 {
 "Symbol": "AGN",
@@ -271,7 +261,7 @@
 },
 {
 "Symbol": "AHC",
-"Company Name": "A.H. Belo Corporation"
+"Company Name": "A.H. Belo"
 },
 {
 "Symbol": "AHH",
@@ -296,9 +286,7 @@
 {
 "Symbol": "AI",
 "Company Name": "Arlington Asset Investment Corp"
-},
-
-{
+},{
 "Symbol": "AIF",
 "Company Name": "Apollo Tactical Income Fund"
 },
@@ -307,12 +295,8 @@
 "Company Name": "American International Group New"
 },
 {
-"Symbol": "AIG.W",
-"Company Name": "American International Group Warrant expiring January 19, 2021"
-},
-{
 "Symbol": "AIN",
-"Company Name": "Albany International Corporation"
+"Company Name": "Albany International"
 },
 {
 "Symbol": "AIR",
@@ -335,14 +319,6 @@
 "Company Name": "Arthur J. Gallagher & Co."
 },
 {
-"Symbol": "AKO.A",
-"Company Name": "Embotelladora Andina"
-},
-{
-"Symbol": "AKO.B",
-"Company Name": "Embotelladora Andina"
-},
-{
 "Symbol": "AKP",
 "Company Name": "Alliance California Municipal Income Fund Inc"
 },
@@ -352,15 +328,15 @@
 },
 {
 "Symbol": "AKS",
-"Company Name": "AK Steel Holding Corporation"
+"Company Name": "AK Steel Holding"
 },
 {
 "Symbol": "AL",
-"Company Name": "Air Lease Corporation"
+"Company Name": "Air Lease"
 },
 {
 "Symbol": "ALB",
-"Company Name": "Albemarle Corporation"
+"Company Name": "Albemarle"
 },
 {
 "Symbol": "ALDW",
@@ -388,7 +364,7 @@
 },
 {
 "Symbol": "ALL",
-"Company Name": "Allstate Corporation (The)"
+"Company Name": "Allstate"
 },
 {
 "Symbol": "ALLE",
@@ -444,7 +420,7 @@
 },
 {
 "Symbol": "AMH",
-"Company Name": "American Homes 4 Rent Common Shares of Beneficial Interest"
+"Company Name": "American Homes 4 Rent"
 },
 {
 "Symbol": "AMID",
@@ -464,11 +440,11 @@
 },
 {
 "Symbol": "AMT",
-"Company Name": "American Tower Corporation (REIT)"
+"Company Name": "American Tower"
 },
 {
 "Symbol": "AMTD",
-"Company Name": "TD Ameritrade Holding Corporation"
+"Company Name": "TD Ameritrade Holding"
 },
 {
 "Symbol": "AMTG",
@@ -496,7 +472,7 @@
 },
 {
 "Symbol": "ANH",
-"Company Name": "Anworth Mortgage Asset Corporation"
+"Company Name": "Anworth Mortgage Asset"
 },
 {
 "Symbol": "ANN",
@@ -532,7 +508,7 @@
 },
 {
 "Symbol": "AOS",
-"Company Name": "A.O. Smith Corporation"
+"Company Name": "A.O. Smith"
 },
 {
 "Symbol": "AP",
@@ -540,7 +516,7 @@
 },
 {
 "Symbol": "APA",
-"Company Name": "Apache Corporation"
+"Company Name": "Apache"
 },
 {
 "Symbol": "APAM",
@@ -552,7 +528,7 @@
 },
 {
 "Symbol": "APC",
-"Company Name": "Anadarko Petroleum Corporation"
+"Company Name": "Anadarko Petroleum"
 },
 {
 "Symbol": "APD",
@@ -564,7 +540,7 @@
 },
 {
 "Symbol": "APH",
-"Company Name": "Amphenol Corporation"
+"Company Name": "Amphenol"
 },
 {
 "Symbol": "APL",
@@ -580,7 +556,7 @@
 },
 {
 "Symbol": "AR",
-"Company Name": "Antero Resources Corporation"
+"Company Name": "Antero Resources"
 },
 {
 "Symbol": "ARC",
@@ -625,9 +601,7 @@
 {
 "Symbol": "ARMK",
 "Company Name": "Aramark"
-},
-
-{
+},{
 "Symbol": "ARO",
 "Company Name": "Aeropostale Inc"
 },
@@ -642,16 +616,12 @@
 {
 "Symbol": "ARR",
 "Company Name": "ARMOUR Residential REIT"
-},
-
-{
+},{
 "Symbol": "ARW",
 "Company Name": "Arrow Electronics"
-},
-
-{
+},{
 "Symbol": "ASA",
-"Company Name": "ASA  Gold and Precious Metals"
+"Company Name": "ASA Gold and Precious Metals"
 },
 {
 "Symbol": "ASB",
@@ -659,7 +629,7 @@
 },
 {
 "Symbol": "ASC",
-"Company Name": "Ardmore Shipping Corporation"
+"Company Name": "Ardmore Shipping"
 },
 {
 "Symbol": "ASG",
@@ -687,11 +657,11 @@
 },
 {
 "Symbol": "AT",
-"Company Name": "Atlantic Power Corporation Ordinary Shares (Canada)"
+"Company Name": "Atlantic Power"
 },
 {
 "Symbol": "ATE",
-"Company Name": "Advantest Corporation (Kabushiki Kaisha Advantest) ADS American Depositary Shares"
+"Company Name": "Advantest"
 },
 {
 "Symbol": "ATEN",
@@ -715,7 +685,7 @@
 },
 {
 "Symbol": "ATO",
-"Company Name": "Atmos Energy Corporation"
+"Company Name": "Atmos Energy"
 },
 {
 "Symbol": "ATR",
@@ -727,7 +697,7 @@
 },
 {
 "Symbol": "ATU",
-"Company Name": "Actuant Corporation"
+"Company Name": "Actuant"
 },
 {
 "Symbol": "ATV",
@@ -759,7 +729,7 @@
 },
 {
 "Symbol": "AVA",
-"Company Name": "Avista Corporation"
+"Company Name": "Avista"
 },
 {
 "Symbol": "AVAL",
@@ -771,7 +741,7 @@
 },
 {
 "Symbol": "AVG",
-"Company Name": "AVG Technologies N.V. Ordinary Shares"
+"Company Name": "AVG Technologies"
 },
 {
 "Symbol": "AVH",
@@ -803,11 +773,11 @@
 },
 {
 "Symbol": "AVX",
-"Company Name": "AVX Corporation"
+"Company Name": "AVX"
 },
 {
 "Symbol": "AVY",
-"Company Name": "Avery Dennison Corporation"
+"Company Name": "Avery Dennison"
 },
 {
 "Symbol": "AWF",
@@ -827,7 +797,7 @@
 },
 {
 "Symbol": "AWP",
-"Company Name": "Alpine Global Premier Properties Fund Alpine Global Premier Properties Fund Common Shares of Beneficial Interest"
+"Company Name": "Alpine Global Premier Properties Fund Alpine Global Premier Properties Fund"
 },
 {
 "Symbol": "AWR",
@@ -843,7 +813,7 @@
 },
 {
 "Symbol": "AXLL",
-"Company Name": "Axiall Corporation"
+"Company Name": "Axiall"
 },
 {
 "Symbol": "AXP",
@@ -851,7 +821,7 @@
 },
 {
 "Symbol": "AXR",
-"Company Name": "AMREP Corporation"
+"Company Name": "AMREP"
 },
 {
 "Symbol": "AXS",
@@ -891,7 +861,7 @@
 },
 {
 "Symbol": "BA",
-"Company Name": "Boeing Company (The)"
+"Company Name": "Boeing"
 },
 {
 "Symbol": "BABA",
@@ -899,15 +869,7 @@
 },
 {
 "Symbol": "BAC",
-"Company Name": "Bank of America Corporation"
-},
-{
-"Symbol": "BAC.A",
-"Company Name": "Bank of America Corporation"
-},
-{
-"Symbol": "BAC.B",
-"Company Name": "Bank of America Corporation Class B Warrants expiring 10/28/2018"
+"Company Name": "Bank of America"
 },
 {
 "Symbol": "BAF",
@@ -915,7 +877,7 @@
 },
 {
 "Symbol": "BAH",
-"Company Name": "Booz Allen Hamilton Holding Corporation"
+"Company Name": "Booz Allen Hamilton Holding"
 },
 {
 "Symbol": "BAK",
@@ -959,7 +921,7 @@
 },
 {
 "Symbol": "BBG",
-"Company Name": "Bill Barrett Corporation"
+"Company Name": "Bill Barrett"
 },
 {
 "Symbol": "BBK",
@@ -971,11 +933,11 @@
 },
 {
 "Symbol": "BBN",
-"Company Name": "BlackRock Build America Bond Trust Common Shares of Beneficial Interest"
+"Company Name": "BlackRock Build America Bond Trust"
 },
 {
 "Symbol": "BBT",
-"Company Name": "BB&T Corporation"
+"Company Name": "BB&T"
 },
 {
 "Symbol": "BBVA",
@@ -987,7 +949,7 @@
 },
 {
 "Symbol": "BBX",
-"Company Name": "BBX Capital Corporation"
+"Company Name": "BBX Capital"
 },
 {
 "Symbol": "BBY",
@@ -995,7 +957,7 @@
 },
 {
 "Symbol": "BC",
-"Company Name": "Brunswick Corporation"
+"Company Name": "Brunswick"
 },
 {
 "Symbol": "BCA",
@@ -1019,7 +981,7 @@
 },
 {
 "Symbol": "BCO",
-"Company Name": "Brinks Company (The)"
+"Company Name": "Brinks"
 },
 {
 "Symbol": "BCR",
@@ -1035,7 +997,7 @@
 },
 {
 "Symbol": "BCX",
-"Company Name": "BlackRock Resources Common Shares of Beneficial Interest"
+"Company Name": "BlackRock Resources"
 },
 {
 "Symbol": "BDC",
@@ -1055,7 +1017,7 @@
 },
 {
 "Symbol": "BEE",
-"Company Name": "Strategic Hotels & Resorts  Inc"
+"Company Name": "Strategic Hotels & Resorts Inc"
 },
 {
 "Symbol": "BEL",
@@ -1072,14 +1034,6 @@
 {
 "Symbol": "BERY",
 "Company Name": "Berry Plastics Group"
-},
-{
-"Symbol": "BF.A",
-"Company Name": "Brown Forman Inc"
-},
-{
-"Symbol": "BF.B",
-"Company Name": "Brown Forman Inc Class B"
 },
 {
 "Symbol": "BFAM",
@@ -1115,16 +1069,14 @@
 },
 {
 "Symbol": "BGC",
-"Company Name": "General Cable Corporation"
-},
-
-{
+"Company Name": "General Cable"
+},{
 "Symbol": "BGG",
-"Company Name": "Briggs & Stratton Corporation"
+"Company Name": "Briggs & Stratton"
 },
 {
 "Symbol": "BGH",
-"Company Name": "Babson Capital Global Short Duration High Yield Fund Common Shares of Beneficial Interests"
+"Company Name": "Babson Capital Global Short Duration High Yield Funds"
 },
 {
 "Symbol": "BGR",
@@ -1199,16 +1151,8 @@
 "Company Name": "Bio"
 },
 {
-"Symbol": "BIO.B",
-"Company Name": "Bio"
-},
-{
 "Symbol": "BIOA",
 "Company Name": "BioAmber"
-},
-{
-"Symbol": "BIOA.W",
-"Company Name": "BioAmber Warrant, expiring May 9, 2017"
 },
 {
 "Symbol": "BIP",
@@ -1228,7 +1172,7 @@
 },
 {
 "Symbol": "BK",
-"Company Name": "Bank of New York Mellon Corporation (The)"
+"Company Name": "Bank of New York Mellon"
 },
 {
 "Symbol": "BKD",
@@ -1240,7 +1184,7 @@
 },
 {
 "Symbol": "BKH",
-"Company Name": "Black Hills Corporation"
+"Company Name": "Black Hills"
 },
 {
 "Symbol": "BKK",
@@ -1272,7 +1216,7 @@
 },
 {
 "Symbol": "BLL",
-"Company Name": "Ball Corporation"
+"Company Name": "Ball"
 },
 {
 "Symbol": "BLOX",
@@ -1340,11 +1284,11 @@
 },
 {
 "Symbol": "BOE",
-"Company Name": "Blackrock Global Blackrock Global Opportunities Equity Trust Common Shares of Beneficial Interest"
+"Company Name": "Blackrock Global Blackrock Global Opportunities Equity Trust"
 },
 {
 "Symbol": "BOH",
-"Company Name": "Bank of Hawaii Corporation"
+"Company Name": "Bank of Hawaii"
 },
 {
 "Symbol": "BOI",
@@ -1356,7 +1300,7 @@
 },
 {
 "Symbol": "BORN",
-"Company Name": "China New Borun Corporation American Depositary Shares"
+"Company Name": "China New Borun"
 },
 {
 "Symbol": "BOXC",
@@ -1392,7 +1336,7 @@
 },
 {
 "Symbol": "BQH",
-"Company Name": "Blackrock New York Municipal Bond Trust Common Shares of Beneficial Interest"
+"Company Name": "Blackrock New York Municipal Bond Trust"
 },
 {
 "Symbol": "BR",
@@ -1400,19 +1344,11 @@
 },
 {
 "Symbol": "BRC",
-"Company Name": "Brady Corporation"
+"Company Name": "Brady"
 },
 {
 "Symbol": "BRFS",
 "Company Name": "BRF"
-},
-{
-"Symbol": "BRK.A",
-"Company Name": "Berkshire Hathaway"
-},
-{
-"Symbol": "BRK.B",
-"Company Name": "Berkshire Hathaway New"
 },
 {
 "Symbol": "BRO",
@@ -1452,7 +1388,7 @@
 },
 {
 "Symbol": "BSE",
-"Company Name": "Blackrock New York Municipal Income Quality Trust Common Shares of Beneficial Interest"
+"Company Name": "Blackrock New York Municipal Income Quality Trust"
 },
 {
 "Symbol": "BSI",
@@ -1460,7 +1396,7 @@
 },
 {
 "Symbol": "BSL",
-"Company Name": "Blackstone GSO Senior Floating Rate Term Fund Common Shares of Beneficial Interest"
+"Company Name": "Blackstone GSO Senior Floating Rate Term Fund"
 },
 {
 "Symbol": "BSMX",
@@ -1468,11 +1404,11 @@
 },
 {
 "Symbol": "BST",
-"Company Name": "BlackRock Science and Technology Trust Common Shares of Beneficial Interest"
+"Company Name": "BlackRock Science and Technology Trust"
 },
 {
 "Symbol": "BSX",
-"Company Name": "Boston Scientific Corporation"
+"Company Name": "Boston Scientific"
 },
 {
 "Symbol": "BT",
@@ -1500,11 +1436,11 @@
 },
 {
 "Symbol": "BTT",
-"Company Name": "BlackRock Municipal Target Term Trust (The) Common Shares of Beneficial Interest"
+"Company Name": "BlackRock Municipal Target Term Trust (The)"
 },
 {
 "Symbol": "BTU",
-"Company Name": "Peabody Energy Corporation"
+"Company Name": "Peabody Energy"
 },
 {
 "Symbol": "BTZ",
@@ -1516,7 +1452,7 @@
 },
 {
 "Symbol": "BUI",
-"Company Name": "BlackRock Utility and Infrastructure Trust Common Shares of Beneficial Interest"
+"Company Name": "BlackRock Utility and Infrastructure Trust"
 },
 {
 "Symbol": "BURL",
@@ -1576,11 +1512,11 @@
 },
 {
 "Symbol": "BYD",
-"Company Name": "Boyd Gaming Corporation"
+"Company Name": "Boyd Gaming"
 },
 {
 "Symbol": "BYM",
-"Company Name": "Blackrock Municipal Income Quality Trust Common Shares of Beneficial Interest"
+"Company Name": "Blackrock Municipal Income Quality Trust"
 },
 {
 "Symbol": "BZH",
@@ -1593,14 +1529,6 @@
 {
 "Symbol": "C",
 "Company Name": "Citigroup"
-},
-{
-"Symbol": "C.A",
-"Company Name": "Citigroup Warrants"
-},
-{
-"Symbol": "C.B",
-"Company Name": "Citigroup Class B Warant expiring October 28, 2018"
 },
 {
 "Symbol": "CAB",
@@ -1636,7 +1564,7 @@
 },
 {
 "Symbol": "CAM",
-"Company Name": "Cameron International Corporation"
+"Company Name": "Cameron International"
 },
 {
 "Symbol": "CAP",
@@ -1656,11 +1584,11 @@
 },
 {
 "Symbol": "CATO",
-"Company Name": "Cato Corporation (The)"
+"Company Name": "Cato"
 },
 {
 "Symbol": "CB",
-"Company Name": "Chubb Corporation (The)"
+"Company Name": "Chubb"
 },
 {
 "Symbol": "CBA",
@@ -1680,11 +1608,11 @@
 },
 {
 "Symbol": "CBI",
-"Company Name": "Chicago Bridge & Iron Company N.V."
+"Company Name": "Chicago Bridge & Iron Company"
 },
 {
 "Symbol": "CBK",
-"Company Name": "Christopher & Banks Corporation"
+"Company Name": "Christopher & Banks"
 },
 {
 "Symbol": "CBL",
@@ -1692,7 +1620,7 @@
 },
 {
 "Symbol": "CBM",
-"Company Name": "Cambrex Corporation"
+"Company Name": "Cambrex"
 },
 {
 "Symbol": "CBPX",
@@ -1704,15 +1632,11 @@
 },
 {
 "Symbol": "CBS",
-"Company Name": "CBS Corporation Class B"
-},
-{
-"Symbol": "CBS.A",
-"Company Name": "CBS Corporation CBS Corporation"
+"Company Name": "CBS"
 },
 {
 "Symbol": "CBT",
-"Company Name": "Cabot Corporation"
+"Company Name": "Cabot"
 },
 {
 "Symbol": "CBU",
@@ -1724,7 +1648,7 @@
 },
 {
 "Symbol": "CCC",
-"Company Name": "Calgon Carbon Corporation"
+"Company Name": "Calgon Carbon"
 },
 {
 "Symbol": "CCE",
@@ -1740,7 +1664,7 @@
 },
 {
 "Symbol": "CCJ",
-"Company Name": "Cameco Corporation"
+"Company Name": "Cameco"
 },
 {
 "Symbol": "CCK",
@@ -1748,7 +1672,7 @@
 },
 {
 "Symbol": "CCL",
-"Company Name": "Carnival Corporation"
+"Company Name": "Carnival"
 },
 {
 "Symbol": "CCM",
@@ -1769,9 +1693,7 @@
 {
 "Symbol": "CCU",
 "Company Name": "Compania Cervecerias Unidas,"
-},
-
-{
+},{
 "Symbol": "CCZ",
 "Company Name": "Comcast Holdings ZONES"
 },
@@ -1780,12 +1702,8 @@
 "Company Name": "Coeur Mining"
 },
 {
-"Symbol": "CDE.W",
-"Company Name": "Coeur Mining Warrant expiring April 16, 2017"
-},
-{
 "Symbol": "CDI",
-"Company Name": "CDI Corporation"
+"Company Name": "CDI"
 },
 {
 "Symbol": "CDR",
@@ -1793,15 +1711,15 @@
 },
 {
 "Symbol": "CE",
-"Company Name": "Celanese Corporation Celanese Corporation Series A"
+"Company Name": "Celanese"
 },
 {
 "Symbol": "CEA",
-"Company Name": "China Eastern Airlines Corporation Ltd."
+"Company Name": "China Eastern Airlines"
 },
 {
 "Symbol": "CEB",
-"Company Name": "Corporate Executive Board Company (The)"
+"Company Name": "Corporate Executive Board"
 },
 {
 "Symbol": "CEE",
@@ -1821,7 +1739,7 @@
 },
 {
 "Symbol": "CEN",
-"Company Name": "Center Coast MLP & Infrastructure Fund Common Shares of Beneficial Interest"
+"Company Name": "Center Coast MLP & Infrastructure Fund"
 },
 {
 "Symbol": "CEO",
@@ -1845,7 +1763,7 @@
 },
 {
 "Symbol": "CFN",
-"Company Name": "CareFusion Corporation"
+"Company Name": "CareFusion"
 },
 {
 "Symbol": "CFR",
@@ -1853,7 +1771,7 @@
 },
 {
 "Symbol": "CFX",
-"Company Name": "Colfax Corporation"
+"Company Name": "Colfax"
 },
 {
 "Symbol": "CGA",
@@ -1889,7 +1807,7 @@
 },
 {
 "Symbol": "CHK",
-"Company Name": "Chesapeake Energy Corporation"
+"Company Name": "Chesapeake Energy"
 },
 {
 "Symbol": "CHKR",
@@ -1901,7 +1819,7 @@
 },
 {
 "Symbol": "CHMI",
-"Company Name": "Cherry Hill Mortgage Investment Corporation"
+"Company Name": "Cherry Hill Mortgage Investment"
 },
 {
 "Symbol": "CHMT",
@@ -1917,7 +1835,7 @@
 },
 {
 "Symbol": "CHSP",
-"Company Name": "Chesapeake Lodging Trust Common Shares of Beneficial Interest"
+"Company Name": "Chesapeake Lodging Trust"
 },
 {
 "Symbol": "CHT",
@@ -1929,7 +1847,7 @@
 },
 {
 "Symbol": "CI",
-"Company Name": "Cigna Corporation"
+"Company Name": "Cigna"
 },
 {
 "Symbol": "CIB",
@@ -1941,7 +1859,7 @@
 },
 {
 "Symbol": "CIEN",
-"Company Name": "Ciena Corporation"
+"Company Name": "Ciena"
 },
 {
 "Symbol": "CIF",
@@ -1952,16 +1870,12 @@
 "Company Name": "Comp En De Mn Cemig ADS American Depositary Shares"
 },
 {
-"Symbol": "CIG.C",
-"Company Name": "Comp En De Mn Cemig ADS American Depositary Receipts"
-},
-{
 "Symbol": "CII",
 "Company Name": "Blackrock Capital and Income Fund"
 },
 {
 "Symbol": "CIM",
-"Company Name": "Chimera Investment Corporation"
+"Company Name": "Chimera Investment"
 },
 {
 "Symbol": "CIO",
@@ -1994,11 +1908,9 @@
 {
 "Symbol": "CL",
 "Company Name": "Colgate"
-},
-
-{
+},{
 "Symbol": "CLB",
-"Company Name": "Core Laboratories N.V."
+"Company Name": "Core Laboratories"
 },
 {
 "Symbol": "CLC",
@@ -2010,7 +1922,7 @@
 },
 {
 "Symbol": "CLDT",
-"Company Name": "Chatham Lodging Trust (REIT) Common Shares of Beneficial Interest"
+"Company Name": "Chatham Lodging Trust (REIT)"
 },
 {
 "Symbol": "CLF",
@@ -2046,11 +1958,11 @@
 },
 {
 "Symbol": "CLW",
-"Company Name": "Clearwater Paper Corporation"
+"Company Name": "Clearwater Paper"
 },
 {
 "Symbol": "CLX",
-"Company Name": "Clorox Company (The)"
+"Company Name": "Clorox"
 },
 {
 "Symbol": "CM",
@@ -2059,10 +1971,6 @@
 {
 "Symbol": "CMA",
 "Company Name": "Comerica Incorporated"
-},
-{
-"Symbol": "CMA.W",
-"Company Name": "Comerica Incorporated Warrant expiring November 14, 2018"
 },
 {
 "Symbol": "CMC",
@@ -2094,7 +2002,7 @@
 },
 {
 "Symbol": "CMO",
-"Company Name": "Capstead Mortgage Corporation"
+"Company Name": "Capstead Mortgage"
 },
 {
 "Symbol": "CMP",
@@ -2102,7 +2010,7 @@
 },
 {
 "Symbol": "CMS",
-"Company Name": "CMS Energy Corporation"
+"Company Name": "CMS Energy"
 },
 {
 "Symbol": "CMU",
@@ -2110,11 +2018,11 @@
 },
 {
 "Symbol": "CNA",
-"Company Name": "CNA Financial Corporation"
+"Company Name": "CNA Financial"
 },
 {
 "Symbol": "CNC",
-"Company Name": "Centene Corporation"
+"Company Name": "Centene"
 },
 {
 "Symbol": "CNCO",
@@ -2122,7 +2030,7 @@
 },
 {
 "Symbol": "CNHI",
-"Company Name": "CNH Industrial N.V. Common Shares"
+"Company Name": "CNH Industrial"
 },
 {
 "Symbol": "CNI",
@@ -2134,7 +2042,7 @@
 },
 {
 "Symbol": "CNL",
-"Company Name": "Cleco Corporation"
+"Company Name": "Cleco"
 },
 {
 "Symbol": "CNNX",
@@ -2166,7 +2074,7 @@
 },
 {
 "Symbol": "CO",
-"Company Name": "China Cord Blood Corporation"
+"Company Name": "China Cord Blood"
 },
 {
 "Symbol": "CODE",
@@ -2174,19 +2082,15 @@
 },
 {
 "Symbol": "CODI",
-"Company Name": "Compass Diversified Holdings Shares of Beneficial Interest"
+"Company Name": "Compass Diversified Holdings"
 },
 {
 "Symbol": "COF",
-"Company Name": "Capital One Financial Corporation"
-},
-{
-"Symbol": "COF.W",
-"Company Name": "Capital One Financial Corporation Warrants expiring November 14, 2018"
+"Company Name": "Capital One Financial"
 },
 {
 "Symbol": "COG",
-"Company Name": "Cabot Oil & Gas Corporation"
+"Company Name": "Cabot Oil & Gas"
 },
 {
 "Symbol": "COH",
@@ -2206,7 +2110,7 @@
 },
 {
 "Symbol": "COR",
-"Company Name": "CoreSite Realty Corporation"
+"Company Name": "CoreSite Realty"
 },
 {
 "Symbol": "CORR",
@@ -2214,7 +2118,7 @@
 },
 {
 "Symbol": "COT",
-"Company Name": "Cott Corporation"
+"Company Name": "Cott"
 },
 {
 "Symbol": "COTY",
@@ -2254,11 +2158,11 @@
 },
 {
 "Symbol": "CPG",
-"Company Name": "Crescent Point Energy Corporation Ordinary Shares (Canada)"
+"Company Name": "Crescent Point Energy"
 },
 {
 "Symbol": "CPK",
-"Company Name": "Chesapeake Utilities Corporation"
+"Company Name": "Chesapeake Utilities"
 },
 {
 "Symbol": "CPL",
@@ -2266,7 +2170,7 @@
 },
 {
 "Symbol": "CPN",
-"Company Name": "Calpine Corporation"
+"Company Name": "Calpine"
 },
 {
 "Symbol": "CPS",
@@ -2282,19 +2186,11 @@
 },
 {
 "Symbol": "CRC",
-"Company Name": "California Resources Corporation"
+"Company Name": "California Resources"
 },
 {
 "Symbol": "CRCM",
 "Company Name": "Care.com"
-},
-{
-"Symbol": "CRD.A",
-"Company Name": "Crawford & Company"
-},
-{
-"Symbol": "CRD.B",
-"Company Name": "Crawford & Company"
 },
 {
 "Symbol": "CRH",
@@ -2322,7 +2218,7 @@
 },
 {
 "Symbol": "CRS",
-"Company Name": "Carpenter Technology Corporation"
+"Company Name": "Carpenter Technology"
 },
 {
 "Symbol": "CRT",
@@ -2338,11 +2234,11 @@
 },
 {
 "Symbol": "CSC",
-"Company Name": "Computer Sciences Corporation"
+"Company Name": "Computer Sciences"
 },
 {
 "Symbol": "CSG",
-"Company Name": "Chambers Street Properties Common Shares of Beneficial Interest"
+"Company Name": "Chambers Street Properties"
 },
 {
 "Symbol": "CSH",
@@ -2370,11 +2266,11 @@
 },
 {
 "Symbol": "CSTM",
-"Company Name": "Constellium N.V. Ordinary Shares"
+"Company Name": "Constellium"
 },
 {
 "Symbol": "CSU",
-"Company Name": "Capital Senior Living Corporation"
+"Company Name": "Capital Senior Living"
 },
 {
 "Symbol": "CSV",
@@ -2382,7 +2278,7 @@
 },
 {
 "Symbol": "CSX",
-"Company Name": "CSX Corporation"
+"Company Name": "CSX"
 },
 {
 "Symbol": "CTB",
@@ -2395,28 +2291,20 @@
 {
 "Symbol": "CTLT",
 "Company Name": "Catalent"
-},
-
-{
+},{
 "Symbol": "CTR",
 "Company Name": "ClearBridge Energy MLP Total Return Fund"
 },
 {
 "Symbol": "CTS",
-"Company Name": "CTS Corporation"
+"Company Name": "CTS"
 },
 {
 "Symbol": "CTT",
 "Company Name": "CatchMark Timber Trust"
-},
-
-
-
-
-
-{
+},{
 "Symbol": "CUB",
-"Company Name": "Cubic Corporation"
+"Company Name": "Cubic"
 },
 {
 "Symbol": "CUBE",
@@ -2425,9 +2313,7 @@
 {
 "Symbol": "CUBI",
 "Company Name": "Customers Bancorp, Inc"
-},
-
-{
+},{
 "Symbol": "CUDA",
 "Company Name": "Barracuda Networks"
 },
@@ -2441,15 +2327,15 @@
 },
 {
 "Symbol": "CVA",
-"Company Name": "Covanta Holding Corporation"
+"Company Name": "Covanta Holding"
 },
 {
 "Symbol": "CVB",
-"Company Name": "Lehman ABS Corporation 7.75% Corp Backed Tr Ctfs, Kinder Morgan Debenture"
+"Company Name": "Lehman ABS"
 },
 {
 "Symbol": "CVC",
-"Company Name": "Cablevision Systems Corporation"
+"Company Name": "Cablevision Systems"
 },
 {
 "Symbol": "CVD",
@@ -2461,11 +2347,11 @@
 },
 {
 "Symbol": "CVEO",
-"Company Name": "Civeo Corporation"
+"Company Name": "Civeo"
 },
 {
 "Symbol": "CVG",
-"Company Name": "Convergys Corporation"
+"Company Name": "Convergys"
 },
 {
 "Symbol": "CVI",
@@ -2481,7 +2367,7 @@
 },
 {
 "Symbol": "CVS",
-"Company Name": "CVS Health Corporation"
+"Company Name": "CVS Health"
 },
 {
 "Symbol": "CVT",
@@ -2489,7 +2375,7 @@
 },
 {
 "Symbol": "CVX",
-"Company Name": "Chevron Corporation"
+"Company Name": "Chevron"
 },
 {
 "Symbol": "CW",
@@ -2525,7 +2411,7 @@
 },
 {
 "Symbol": "CXW",
-"Company Name": "Corrections Corporation of America"
+"Company Name": "Corrections"
 },
 {
 "Symbol": "CYD",
@@ -2537,7 +2423,7 @@
 },
 {
 "Symbol": "CYN",
-"Company Name": "City National Corporation"
+"Company Name": "City National"
 },
 {
 "Symbol": "CYNI",
@@ -2561,7 +2447,7 @@
 },
 {
 "Symbol": "DAC",
-"Company Name": "Danaos Corporation"
+"Company Name": "Danaos"
 },
 {
 "Symbol": "DAL",
@@ -2569,7 +2455,7 @@
 },
 {
 "Symbol": "DAN",
-"Company Name": "Dana Holding Corporation When"
+"Company Name": "Dana Holding"
 },
 {
 "Symbol": "DANG",
@@ -2593,7 +2479,7 @@
 },
 {
 "Symbol": "DBL",
-"Company Name": "DoubleLine Opportunistic Credit Fund Common Shares of Beneficial Interest"
+"Company Name": "DoubleLine Opportunistic Credit Fund"
 },
 {
 "Symbol": "DCA",
@@ -2633,11 +2519,11 @@
 },
 {
 "Symbol": "DDC",
-"Company Name": "Dominion Diamond Corporation"
+"Company Name": "Dominion Diamond"
 },
 {
 "Symbol": "DDD",
-"Company Name": "3D Systems Corporation"
+"Company Name": "3D Systems"
 },
 {
 "Symbol": "DDE",
@@ -2665,7 +2551,7 @@
 },
 {
 "Symbol": "DECK",
-"Company Name": "Deckers Outdoor Corporation"
+"Company Name": "Deckers Outdoor"
 },
 {
 "Symbol": "DEG",
@@ -2677,7 +2563,7 @@
 },
 {
 "Symbol": "DEL",
-"Company Name": "Deltic Timber Corporation"
+"Company Name": "Deltic Timber"
 },
 {
 "Symbol": "DEO",
@@ -2685,7 +2571,7 @@
 },
 {
 "Symbol": "DEX",
-"Company Name": "Delaware Enhanced Global Dividend Common Shares of Beneficial Interest"
+"Company Name": "Delaware Enhanced Global Dividend"
 },
 {
 "Symbol": "DF",
@@ -2705,7 +2591,7 @@
 },
 {
 "Symbol": "DG",
-"Company Name": "Dollar General Corporation"
+"Company Name": "Dollar General"
 },
 {
 "Symbol": "DGI",
@@ -2721,7 +2607,7 @@
 },
 {
 "Symbol": "DHG",
-"Company Name": "Deutsche High Income Opportunities Fund, Inc  New"
+"Company Name": "Deutsche High Income Opportunities Fund, Inc New"
 },
 {
 "Symbol": "DHI",
@@ -2729,7 +2615,7 @@
 },
 {
 "Symbol": "DHR",
-"Company Name": "Danaher Corporation"
+"Company Name": "Danaher"
 },
 {
 "Symbol": "DHT",
@@ -2741,7 +2627,7 @@
 },
 {
 "Symbol": "DIAX",
-"Company Name": "Nuveen Dow 30SM Dynamic Overwrite Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Dow 30SM Dynamic Overwrite Fund"
 },
 {
 "Symbol": "DIN",
@@ -2749,7 +2635,7 @@
 },
 {
 "Symbol": "DIS",
-"Company Name": "Walt Disney Company (The)"
+"Company Name": "Walt Disney"
 },
 {
 "Symbol": "DK",
@@ -2789,7 +2675,7 @@
 },
 {
 "Symbol": "DLX",
-"Company Name": "Deluxe Corporation"
+"Company Name": "Deluxe"
 },
 {
 "Symbol": "DM",
@@ -2809,7 +2695,7 @@
 },
 {
 "Symbol": "DNB",
-"Company Name": "Dun & Bradstreet Corporation (The)"
+"Company Name": "Dun & Bradstreet"
 },
 {
 "Symbol": "DNI",
@@ -2837,7 +2723,7 @@
 },
 {
 "Symbol": "DOC",
-"Company Name": "Physicians Realty Trust Common Shares of Beneficial Interest"
+"Company Name": "Physicians Realty Trust"
 },
 {
 "Symbol": "DOM",
@@ -2845,15 +2731,15 @@
 },
 {
 "Symbol": "DOOR",
-"Company Name": "Masonite International Corporation Ordinary Shares (Canada)"
+"Company Name": "Masonite International"
 },
 {
 "Symbol": "DOV",
-"Company Name": "Dover Corporation"
+"Company Name": "Dover"
 },
 {
 "Symbol": "DOW",
-"Company Name": "Dow Chemical Company (The)"
+"Company Name": "Dow Chemical"
 },
 {
 "Symbol": "DPG",
@@ -2881,7 +2767,7 @@
 },
 {
 "Symbol": "DRA",
-"Company Name": "Diversified Real Asset Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Diversified Real Asset Income Fund"
 },
 {
 "Symbol": "DRC",
@@ -2893,7 +2779,7 @@
 },
 {
 "Symbol": "DRE",
-"Company Name": "Duke Realty Corporation"
+"Company Name": "Duke Realty"
 },
 {
 "Symbol": "DRH",
@@ -2909,7 +2795,7 @@
 },
 {
 "Symbol": "DRL",
-"Company Name": "Doral Financial Corporation NEW"
+"Company Name": "Doral Financial"
 },
 {
 "Symbol": "DRQ",
@@ -2921,7 +2807,7 @@
 },
 {
 "Symbol": "DSL",
-"Company Name": "DoubleLine Income Solutions Fund Common Shares of Beneficial Interests"
+"Company Name": "DoubleLine Income Solutions Funds"
 },
 {
 "Symbol": "DSM",
@@ -2977,11 +2863,11 @@
 },
 {
 "Symbol": "DUK",
-"Company Name": "Duke Energy Corporation (Holding Company)"
+"Company Name": "Duke Energy"
 },
 {
 "Symbol": "DUKH",
-"Company Name": "Duke Energy Corporation 5.125% Junior Subordinated Debentures due 2073"
+"Company Name": "Duke Energy"
 },
 {
 "Symbol": "DV",
@@ -2997,7 +2883,7 @@
 },
 {
 "Symbol": "DVN",
-"Company Name": "Devon Energy Corporation"
+"Company Name": "Devon Energy"
 },
 {
 "Symbol": "DWRE",
@@ -3020,10 +2906,6 @@
 "Company Name": "Dynegy"
 },
 {
-"Symbol": "DYN.W",
-"Company Name": "Dynegy Warrant expiring October 2, 2017"
-},
-{
 "Symbol": "E",
 "Company Name": "ENI S.p.A."
 },
@@ -3041,7 +2923,7 @@
 },
 {
 "Symbol": "EARN",
-"Company Name": "Ellington Residential Mortgage REIT Common Shares of Beneficial Interest"
+"Company Name": "Ellington Residential Mortgage REIT"
 },
 {
 "Symbol": "EAT",
@@ -3056,10 +2938,6 @@
 "Company Name": "Centrais Elc Braz Pfb B Elbras American Depositary Shares"
 },
 {
-"Symbol": "EBR.B",
-"Company Name": "Centrais Elc Braz Pfb B Elbras American Depositary Shares"
-},
-{
 "Symbol": "EBS",
 "Company Name": "Emergent Biosolutions"
 },
@@ -3069,7 +2947,7 @@
 },
 {
 "Symbol": "ECA",
-"Company Name": "Encana Corporation"
+"Company Name": "Encana"
 },
 {
 "Symbol": "ECC",
@@ -3081,11 +2959,11 @@
 },
 {
 "Symbol": "ECOM",
-"Company Name": "ChannelAdvisor Corporation"
+"Company Name": "ChannelAdvisor"
 },
 {
 "Symbol": "ECR",
-"Company Name": "Eclipse Resources Corporation"
+"Company Name": "Eclipse Resources"
 },
 {
 "Symbol": "ECT",
@@ -3101,15 +2979,15 @@
 },
 {
 "Symbol": "EDE",
-"Company Name": "Empire District Electric Company (The)"
+"Company Name": "Empire District Electric"
 },
 {
 "Symbol": "EDF",
-"Company Name": "Stone Harbor Emerging Markets Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Stone Harbor Emerging Markets Income Fund"
 },
 {
 "Symbol": "EDI",
-"Company Name": "Stone Harbor Emerging Markets Total Income Fund Common Shares of Beneficial Interests"
+"Company Name": "Stone Harbor Emerging Markets Total Income Funds"
 },
 {
 "Symbol": "EDN",
@@ -3157,7 +3035,7 @@
 },
 {
 "Symbol": "EFT",
-"Company Name": "Eaton Vance Floating Rate Income Trust Common Shares of Beneficial Interest"
+"Company Name": "Eaton Vance Floating Rate Income Trust"
 },
 {
 "Symbol": "EFX",
@@ -3173,11 +3051,11 @@
 },
 {
 "Symbol": "EGN",
-"Company Name": "Energen Corporation"
+"Company Name": "Energen"
 },
 {
 "Symbol": "EGO",
-"Company Name": "Eldorado Gold Corporation Ordinary Shares"
+"Company Name": "Eldorado Gold"
 },
 {
 "Symbol": "EGP",
@@ -3241,7 +3119,7 @@
 },
 {
 "Symbol": "ELX",
-"Company Name": "Emulex Corporation"
+"Company Name": "Emulex"
 },
 {
 "Symbol": "ELY",
@@ -3249,7 +3127,7 @@
 },
 {
 "Symbol": "EMC",
-"Company Name": "EMC Corporation"
+"Company Name": "EMC"
 },
 {
 "Symbol": "EMD",
@@ -3349,7 +3227,7 @@
 },
 {
 "Symbol": "EOI",
-"Company Name": "Eaton Vance Enhance Equity Income Fund Eaton Vance Enhanced Equity Income Fund Shares of Beneficial Interest"
+"Company Name": "Eaton Vance Enhance Equity Income Fund Eaton Vance Enhanced Equity Income Fund"
 },
 {
 "Symbol": "EOS",
@@ -3369,7 +3247,7 @@
 },
 {
 "Symbol": "EPE",
-"Company Name": "EP Energy Corporation"
+"Company Name": "EP Energy"
 },
 {
 "Symbol": "EPR",
@@ -3377,16 +3255,14 @@
 },
 {
 "Symbol": "EQC",
-"Company Name": "Equity Commonwealth Common Shares of Beneficial Interest"
-},
-
-{
+"Company Name": "Equity Commonwealth"
+},{
 "Symbol": "EQM",
 "Company Name": "EQT Midstream Partners, LP Common Units representing"
 },
 {
 "Symbol": "EQR",
-"Company Name": "Equity Residential Common Shares of Beneficial Interest"
+"Company Name": "Equity Residential"
 },
 {
 "Symbol": "EQS",
@@ -3394,7 +3270,7 @@
 },
 {
 "Symbol": "EQT",
-"Company Name": "EQT Corporation"
+"Company Name": "EQT"
 },
 {
 "Symbol": "EQY",
@@ -3406,7 +3282,7 @@
 },
 {
 "Symbol": "ERF",
-"Company Name": "Enerplus Corporation"
+"Company Name": "Enerplus"
 },
 {
 "Symbol": "ERJ",
@@ -3430,7 +3306,7 @@
 },
 {
 "Symbol": "ESL",
-"Company Name": "Esterline Technologies Corporation"
+"Company Name": "Esterline Technologies"
 },
 {
 "Symbol": "ESNT",
@@ -3470,11 +3346,11 @@
 },
 {
 "Symbol": "ETM",
-"Company Name": "Entercom Communications Corporation"
+"Company Name": "Entercom Communications"
 },
 {
 "Symbol": "ETN",
-"Company Name": "Eaton Corporation, PLC Ordinary Shares"
+"Company Name": "Eaton"
 },
 {
 "Symbol": "ETO",
@@ -3486,19 +3362,19 @@
 },
 {
 "Symbol": "ETR",
-"Company Name": "Entergy Corporation"
+"Company Name": "Entergy"
 },
 {
 "Symbol": "ETV",
-"Company Name": "Eaton Vance Corporation Eaton Vance Tax"
+"Company Name": "Eaton Vance"
 },
 {
 "Symbol": "ETW",
-"Company Name": "Eaton Vance Corporation Eaton Vance Tax"
+"Company Name": "Eaton Vance"
 },
 {
 "Symbol": "ETX",
-"Company Name": "Eaton Vance Municipal Income Term Trust Common Shares of Beneficial Interest"
+"Company Name": "Eaton Vance Municipal Income Term Trust"
 },
 {
 "Symbol": "ETY",
@@ -3506,11 +3382,11 @@
 },
 {
 "Symbol": "EV",
-"Company Name": "Eaton Vance Corporation"
+"Company Name": "Eaton Vance"
 },
 {
 "Symbol": "EVC",
-"Company Name": "Entravision Communications Corporation"
+"Company Name": "Entravision Communications"
 },
 {
 "Symbol": "EVDY",
@@ -3526,7 +3402,7 @@
 },
 {
 "Symbol": "EVG",
-"Company Name": "Eaton Vance Short Diversified Income Fund Eaton Vance Short Duration Diversified Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Eaton Vance Short Diversified Income Fund Eaton Vance Short Duration Diversified Income Fund"
 },
 {
 "Symbol": "EVGN",
@@ -3546,7 +3422,7 @@
 },
 {
 "Symbol": "EVT",
-"Company Name": "Eaton Vance Tax Advantaged Dividend Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Eaton Vance Tax Advantaged Dividend Income Fund"
 },
 {
 "Symbol": "EVTC",
@@ -3554,7 +3430,7 @@
 },
 {
 "Symbol": "EW",
-"Company Name": "Edwards Lifesciences Corporation"
+"Company Name": "Edwards Lifesciences"
 },
 {
 "Symbol": "EXAM",
@@ -3562,11 +3438,11 @@
 },
 {
 "Symbol": "EXAR",
-"Company Name": "Exar Corporation"
+"Company Name": "Exar"
 },
 {
 "Symbol": "EXC",
-"Company Name": "Exelon Corporation"
+"Company Name": "Exelon"
 },
 {
 "Symbol": "EXCU",
@@ -3586,7 +3462,7 @@
 },
 {
 "Symbol": "EXK",
-"Company Name": "Endeavour Silver Corporation Ordinary Shares (Canada)"
+"Company Name": "Endeavour Silver"
 },
 {
 "Symbol": "EXL",
@@ -3614,23 +3490,19 @@
 },
 {
 "Symbol": "FAC",
-"Company Name": "First Acceptance Corporation"
+"Company Name": "First Acceptance"
 },
 {
 "Symbol": "FAF",
-"Company Name": "First American Corporation (New)"
+"Company Name": "First American"
 },
 {
 "Symbol": "FAM",
-"Company Name": "First Trust/Aberdeen Global Opportunity Income Fund First Trust/Aberdeen Global Opportunity Income Fund Common Shares of Beneficial Interest"
-},
-{
-"Symbol": "FAV",
-"Company Name": "First Trust Dividend and Income Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust/Aberdeen Global Opportunity Income Fund"
 },
 {
 "Symbol": "FBC",
-"Company Name": "Flagstar Bancorp"
+"Company Name": "Flagstar"
 },
 {
 "Symbol": "FBHS",
@@ -3638,7 +3510,7 @@
 },
 {
 "Symbol": "FBP",
-"Company Name": "First BanCorp. New"
+"Company Name": "First BanCorp (Puerto Rico)"
 },
 {
 "Symbol": "FBR",
@@ -3646,31 +3518,19 @@
 },
 {
 "Symbol": "FC",
-"Company Name": "Franklin Covey Company"
-},
-{
-"Symbol": "FCAM",
-"Company Name": "Fiat Chrysler Automobiles N.V. Mandatory Convertible Securities"
+"Company Name": "Franklin Covey"
 },
 {
 "Symbol": "FCAU",
-"Company Name": "Fiat Chrysler Automobiles N.V. Common Shares"
+"Company Name": "Fiat Chrysler Automobiles"
 },
 {
 "Symbol": "FCB",
 "Company Name": "FCB Financial Holdings"
 },
 {
-"Symbol": "FCE.A",
-"Company Name": "Forest City Enterprises"
-},
-{
-"Symbol": "FCE.B",
-"Company Name": "Forest City Enterprises"
-},
-{
 "Symbol": "FCF",
-"Company Name": "First Commonwealth Financial Corporation"
+"Company Name": "First Commonwealth Financial"
 },
 {
 "Symbol": "FCH",
@@ -3682,39 +3542,31 @@
 },
 {
 "Symbol": "FCT",
-"Company Name": "First Trust Senior Floating Rate Income Fund II Common Shares of Beneficial Interest"
+"Company Name": "First Trust Senior Floating Rate Income Fund II"
 },
 {
 "Symbol": "FCX",
 "Company Name": "Freeport"
 },
 {
-"Symbol": "FDI",
-"Company Name": "Fort Dearborn Income Securities"
-},
-{
-"Symbol": "FDO",
-"Company Name": "Family Dollar Stores"
-},
-{
 "Symbol": "FDP",
-"Company Name": "Fresh Del Monte Produce"
+"Company Name": "Fresh Del Monte"
 },
 {
 "Symbol": "FDS",
-"Company Name": "FactSet Research Systems"
+"Company Name": "FactSet"
 },
 {
 "Symbol": "FDX",
-"Company Name": "FedEx Corporation"
+"Company Name": "FedEx"
 },
 {
 "Symbol": "FE",
-"Company Name": "FirstEnergy Corporation"
+"Company Name": "FirstEnergy"
 },
 {
 "Symbol": "FEI",
-"Company Name": "First Trust MLP and Energy Income Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust MLP and Energy Income Fund"
 },
 {
 "Symbol": "FELP",
@@ -3726,7 +3578,7 @@
 },
 {
 "Symbol": "FEO",
-"Company Name": "First Trust/Aberdeen Emerging Opportunity Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust/Aberdeen Emerging Opportunity Fund"
 },
 {
 "Symbol": "FET",
@@ -3734,7 +3586,7 @@
 },
 {
 "Symbol": "FF",
-"Company Name": "FutureFuel Corp.  Common shares"
+"Company Name": "FutureFuel Corp. Common shares"
 },
 {
 "Symbol": "FFA",
@@ -3750,27 +3602,19 @@
 },
 {
 "Symbol": "FGB",
-"Company Name": "First Trust Specialty Finance and Financial Opportunities Fund"
+"Company Name": "FGB"
 },
 {
 "Symbol": "FGL",
 "Company Name": "Fidelity & Guaranty Life"
 },
 {
-"Symbol": "FGP",
-"Company Name": "Ferrellgas Partners, L.P."
-},
-{
 "Symbol": "FHN",
-"Company Name": "First Horizon National Corporation"
-},
-{
-"Symbol": "FHY",
-"Company Name": "First Trust Strategic High Income Fund II First Trust Strategic High Income Fund II Common Shares of Beneficial Interest"
+"Company Name": "First Horizon National"
 },
 {
 "Symbol": "FI",
-"Company Name": "Frank's International N.V."
+"Company Name": "Frank's International"
 },
 {
 "Symbol": "FICO",
@@ -3778,7 +3622,7 @@
 },
 {
 "Symbol": "FIF",
-"Company Name": "First Trust Energy Infrastructure Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust Energy Infrastructure Fund"
 },
 {
 "Symbol": "FIG",
@@ -3810,11 +3654,11 @@
 },
 {
 "Symbol": "FLR",
-"Company Name": "Fluor Corporation"
+"Company Name": "Fluor"
 },
 {
 "Symbol": "FLS",
-"Company Name": "Flowserve Corporation"
+"Company Name": "Flowserve"
 },
 {
 "Symbol": "FLT",
@@ -3830,11 +3674,11 @@
 },
 {
 "Symbol": "FMC",
-"Company Name": "FMC Corporation"
+"Company Name": "FMC"
 },
 {
 "Symbol": "FMD",
-"Company Name": "First Marblehead Corporation (The)"
+"Company Name": "First Marblehead"
 },
 {
 "Symbol": "FMN",
@@ -3842,11 +3686,11 @@
 },
 {
 "Symbol": "FMO",
-"Company Name": "Fiduciary/Claymore MLP Opportunity Fund Fiduciary/Claymore MLP Opportunity Fund Common Shares of Beneficial Interest"
+"Company Name": "Fiduciary/Claymore Energy Infrastructure Fund"
 },
 {
 "Symbol": "FMS",
-"Company Name": "Fresenius Medical Care AG"
+"Company Name": "Fresenius Medical Care"
 },
 {
 "Symbol": "FMSA",
@@ -3858,7 +3702,7 @@
 },
 {
 "Symbol": "FMY",
-"Company Name": "First Trust Motgage Income Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust Motgage Income Fund"
 },
 {
 "Symbol": "FN",
@@ -3866,15 +3710,11 @@
 },
 {
 "Symbol": "FNB",
-"Company Name": "F.N.B. Corporation"
+"Company Name": "F.N.B."
 },
 {
 "Symbol": "FNF",
-"Company Name": "FNF Group of Fidelity National Financial"
-},
-{
-"Symbol": "FNFV",
-"Company Name": "FNFV Group of Fidelity National Financial"
+"Company Name": "Fidelity National Financial"
 },
 {
 "Symbol": "FNV",
@@ -3882,7 +3722,7 @@
 },
 {
 "Symbol": "FOE",
-"Company Name": "Ferro Corporation"
+"Company Name": "Ferro"
 },
 {
 "Symbol": "FOF",
@@ -3894,19 +3734,15 @@
 },
 {
 "Symbol": "FPF",
-"Company Name": "First Trust Intermediate Duration Preferred & Income Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust Intermediate Duration Preferred & Income Fund"
 },
 {
 "Symbol": "FPL",
-"Company Name": "First Trust New Opportunities MLP & Energy Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust New Opportunities MLP & Energy Fund"
 },
 {
 "Symbol": "FPO",
-"Company Name": "First Potomac Realty Trust Common Shares of Beneficial Interest"
-},
-{
-"Symbol": "FPT",
-"Company Name": "Federated Premier Intermediate Municipal Income Fund Federated Premier Intermediate Municipal Income Fund"
+"Company Name": "First Potomac Realty Trust"
 },
 {
 "Symbol": "FR",
@@ -3922,7 +3758,7 @@
 },
 {
 "Symbol": "FRM",
-"Company Name": "Furmanite Corporation"
+"Company Name": "Furmanite"
 },
 {
 "Symbol": "FRO",
@@ -3931,15 +3767,13 @@
 {
 "Symbol": "FRT",
 "Company Name": "Federal Realty Investment Trust"
-},
-
-{
+},{
 "Symbol": "FSD",
-"Company Name": "First Trust High Income Long Short Fund Common Shares of Beneficial Interest"
+"Company Name": "First Trust High Income Long Short Fund"
 },
 {
 "Symbol": "FSIC",
-"Company Name": "FS Investment Corporation"
+"Company Name": "FS Investment"
 },
 {
 "Symbol": "FSL",
@@ -3951,7 +3785,7 @@
 },
 {
 "Symbol": "FSS",
-"Company Name": "Federal Signal Corporation"
+"Company Name": "Federal Signal"
 },
 {
 "Symbol": "FT",
@@ -3967,7 +3801,7 @@
 },
 {
 "Symbol": "FTT",
-"Company Name": "Federated Enhanced Treasury Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Federated Enhanced Treasury Income Fund"
 },
 {
 "Symbol": "FUL",
@@ -4011,7 +3845,7 @@
 },
 {
 "Symbol": "GBAB",
-"Company Name": "Guggenheim Build America Bonds Managed Duration Trust Common Shares of Beneficial Interest"
+"Company Name": "Guggenheim Build America Bonds Managed Duration Trust"
 },
 {
 "Symbol": "GBL",
@@ -4047,7 +3881,7 @@
 },
 {
 "Symbol": "GD",
-"Company Name": "General Dynamics Corporation"
+"Company Name": "General Dynamics"
 },
 {
 "Symbol": "GDF",
@@ -4055,35 +3889,27 @@
 },
 {
 "Symbol": "GDL",
-"Company Name": "GDL Fund, The Common Shares of Beneficial Interest"
+"Company Name": "GDL Fund, The"
 },
 {
 "Symbol": "GDO",
-"Company Name": "Western Asset Global Corporate Defined Opportunity Fund Western Asset Global Corporate Defined Opportunity Fund"
+"Company Name": "Western Asset Global Corp Defined Opportunity Fund"
 },
 {
 "Symbol": "GDP",
-"Company Name": "Goodrich Petroleum Corporation"
+"Company Name": "Goodrich Petroleum"
 },
 {
 "Symbol": "GDV",
-"Company Name": "Gabelli Dividend & Income Trust Common Shares of Beneficial Interest"
+"Company Name": "Gabelli Dividend & Income Trust"
 },
 {
 "Symbol": "GE",
 "Company Name": "General Electric Company"
-},
-
-{
+},{
 "Symbol": "GEF",
 "Company Name": "Greif"
 },
-{
-"Symbol": "GEF.B",
-"Company Name": "Greif Corporation Class B"
-},
-
-
 {
 "Symbol": "GEL",
 "Company Name": "Genesis Energy, L.P. Common Units"
@@ -4094,7 +3920,7 @@
 },
 {
 "Symbol": "GEQ",
-"Company Name": "Guggenheim Equal Weight Enhanced Equity Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Guggenheim Equal Weight Enhanced Equity Income Fund"
 },
 {
 "Symbol": "GER",
@@ -4114,7 +3940,7 @@
 },
 {
 "Symbol": "GFF",
-"Company Name": "Griffon Corporation"
+"Company Name": "Griffon"
 },
 {
 "Symbol": "GFI",
@@ -4146,7 +3972,7 @@
 },
 {
 "Symbol": "GGM",
-"Company Name": "Guggenheim Credit Allocation Fund Common Shares of Beneficial Interest"
+"Company Name": "Guggenheim Credit Allocation Fund"
 },
 {
 "Symbol": "GGP",
@@ -4158,7 +3984,7 @@
 },
 {
 "Symbol": "GGZ",
-"Company Name": "Gabelli Global Small and Mid Cap Value Trust (The) Common Shares of Beneficial Interest"
+"Company Name": "Gabelli Global Small and Mid Cap Value Trust (The)"
 },
 {
 "Symbol": "GHC",
@@ -4174,7 +4000,7 @@
 },
 {
 "Symbol": "GHM",
-"Company Name": "Graham Corporation"
+"Company Name": "Graham"
 },
 {
 "Symbol": "GHY",
@@ -4217,10 +4043,6 @@
 "Company Name": "Synthetic Fixed"
 },
 {
-"Symbol": "GJS",
-"Company Name": "Goldman Sachs Group Securities STRATS Trust for Goldman Sachs Group Securities, Series 2006"
-},
-{
 "Symbol": "GJT",
 "Company Name": "Synthetic Fixed"
 },
@@ -4246,11 +4068,11 @@
 },
 {
 "Symbol": "GLP",
-"Company Name": "Global Partners LP Global Partners LP Common Units representing"
+"Company Name": "Global Partners"
 },
 {
 "Symbol": "GLPW",
-"Company Name": "Global Power Equipment Group Inc"
+"Company Name": "Global Power Equipment"
 },
 {
 "Symbol": "GLT",
@@ -4262,23 +4084,11 @@
 },
 {
 "Symbol": "GM",
-"Company Name": "General Motors Company"
-},
-{
-"Symbol": "GM.A",
-"Company Name": "General Motors Company Warrant (Expires 07/10/2016)"
-},
-{
-"Symbol": "GM.B",
-"Company Name": "General Motors Company Warrant (Expires 07/10/2019)"
-},
-{
-"Symbol": "GM.C",
-"Company Name": "General Motors Company Warrants (expiring December 31, 2015)"
+"Company Name": "General Motors"
 },
 {
 "Symbol": "GME",
-"Company Name": "Gamestop Corporation"
+"Company Name": "Gamestop"
 },
 {
 "Symbol": "GMED",
@@ -4290,23 +4100,11 @@
 },
 {
 "Symbol": "GMT",
-"Company Name": "GATX Corporation"
-},
-{
-"Symbol": "GMZ",
-"Company Name": "Goldman Sachs MLP Income Opportunities Fund"
-},
-{
-"Symbol": "GNC",
-"Company Name": "GNC Holdings"
+"Company Name": "GATX"
 },
 {
 "Symbol": "GNE",
-"Company Name": "Genie Energy Ltd. Class B Stock"
-},
-{
-"Symbol": "GNI",
-"Company Name": "Great Northern Iron Ore Properties"
+"Company Name": "Genie Energy"
 },
 {
 "Symbol": "GNRC",
@@ -4314,7 +4112,7 @@
 },
 {
 "Symbol": "GNT",
-"Company Name": "GAMCO Natural Resources, Gold & Income Trust"
+"Company Name": "GAMCO Natural Resources; Gold & Income Trust"
 },
 {
 "Symbol": "GNW",
@@ -4322,7 +4120,7 @@
 },
 {
 "Symbol": "GOF",
-"Company Name": "Guggenheim Strategic Opportunities Fund Common Shares of Beneficial Interest"
+"Company Name": "Guggenheim Strategic Opportunities Fund"
 },
 {
 "Symbol": "GOL",
@@ -4330,7 +4128,7 @@
 },
 {
 "Symbol": "GOV",
-"Company Name": "Government Properties Income Trust Common Shares of Beneficial Interest"
+"Company Name": "Government Properties Income Trust"
 },
 {
 "Symbol": "GPC",
@@ -4366,7 +4164,7 @@
 },
 {
 "Symbol": "GPX",
-"Company Name": "GP Strategies Corporation"
+"Company Name": "GP Strategies"
 },
 {
 "Symbol": "GRA",
@@ -4377,44 +4175,24 @@
 "Company Name": "Grana y Montero"
 },
 {
-"Symbol": "GRO",
-"Company Name": "Agria Corporation American Depositary Shares"
-},
-{
-"Symbol": "GRP.U",
-"Company Name": "Granite Real Estate Stapled Units, each consisting of one unit of Granite Real Estate Trust and one common share of Granite REIT"
-},
-{
-"Symbol": "GRR",
-"Company Name": "Asia Tigers Fund (The)"
-},
-{
-"Symbol": "GRT",
-"Company Name": "Glimcher Realty Trust"
-},
-{
 "Symbol": "GRUB",
 "Company Name": "GrubHub"
 },
 {
 "Symbol": "GRX",
-"Company Name": "The Gabelli Healthcare & Wellness Trust Common Shares of Beneficial Interest"
+"Company Name": "The Gabelli Healthcare & Wellness Trust"
 },
 {
 "Symbol": "GS",
 "Company Name": "Goldman Sachs Group (The)"
-},
-
-{
+},{
 "Symbol": "GSH",
 "Company Name": "Guangshen Railway Company"
 },
 {
 "Symbol": "GSI",
 "Company Name": "General Steel Holdings"
-},
-
-{
+},{
 "Symbol": "GSK",
 "Company Name": "GlaxoSmithKline PLC"
 },
@@ -4431,10 +4209,6 @@
 "Company Name": "Gray Communications Systems"
 },
 {
-"Symbol": "GTN.A",
-"Company Name": "Gray Television"
-},
-{
 "Symbol": "GTS",
 "Company Name": "Triple"
 },
@@ -4444,10 +4218,8 @@
 },
 {
 "Symbol": "GTY",
-"Company Name": "Getty Realty Corporation"
-},
-
-{
+"Company Name": "Getty Realty"
+},{
 "Symbol": "GUT",
 "Company Name": "Gabelli Utility Trust (The)"
 },
@@ -4488,20 +4260,16 @@
 "Company Name": "CABCO Series 2004"
 },
 {
-"Symbol": "GYC",
-"Company Name": "Corporate Asset Backed Corp CABCO Corporate Asset Backed Corporation CABCO Series 2004"
-},
-{
 "Symbol": "GZT",
 "Company Name": "Gazit"
 },
 {
 "Symbol": "H",
-"Company Name": "Hyatt Hotels Corporation"
+"Company Name": "Hyatt Hotels"
 },
 {
 "Symbol": "HAE",
-"Company Name": "Haemonetics Corporation"
+"Company Name": "Haemonetics"
 },
 {
 "Symbol": "HAL",
@@ -4521,11 +4289,7 @@
 },
 {
 "Symbol": "HBM",
-"Company Name": "Hudbay Minerals Inc Ordinary Shares (Canada)"
-},
-{
-"Symbol": "HBM.W",
-"Company Name": "HudBay Minerals Inc Warrants Expiring 07/20/2018 (Canada)"
+"Company Name": "Hudbay Minerals"
 },
 {
 "Symbol": "HCA",
@@ -4538,9 +4302,7 @@
 {
 "Symbol": "HCI",
 "Company Name": "HCI Group"
-},
-
-{
+},{
 "Symbol": "HCLP",
 "Company Name": "Hi"
 },
@@ -4562,7 +4324,7 @@
 },
 {
 "Symbol": "HDY",
-"Company Name": "HyperDynamics Corporation"
+"Company Name": "HyperDynamics"
 },
 {
 "Symbol": "HE",
@@ -4570,11 +4332,7 @@
 },
 {
 "Symbol": "HEI",
-"Company Name": "Heico Corporation"
-},
-{
-"Symbol": "HEI.A",
-"Company Name": "Heico Corporation"
+"Company Name": "Heico"
 },
 {
 "Symbol": "HELI",
@@ -4586,11 +4344,11 @@
 },
 {
 "Symbol": "HEQ",
-"Company Name": "John Hancock Hedged Equity & Income Fund Common Shares of Beneficial Interest"
+"Company Name": "John Hancock Hedged Equity & Income Fund"
 },
 {
 "Symbol": "HES",
-"Company Name": "Hess Corporation"
+"Company Name": "Hess"
 },
 {
 "Symbol": "HF",
@@ -4598,15 +4356,11 @@
 },
 {
 "Symbol": "HFC",
-"Company Name": "HollyFrontier Corporation"
+"Company Name": "HollyFrontier"
 },
 {
 "Symbol": "HGG",
 "Company Name": "HHGregg"
-},
-{
-"Symbol": "HGH",
-"Company Name": "Hartford Financial Services Group (The) 7.875% Fixed to Floating Rate Junior Subordinated Debentures due 2042"
 },
 {
 "Symbol": "HGT",
@@ -4614,7 +4368,7 @@
 },
 {
 "Symbol": "HHC",
-"Company Name": "Howard Hughes Corporation (The)"
+"Company Name": "Howard Hughes"
 },
 {
 "Symbol": "HHS",
@@ -4630,15 +4384,11 @@
 },
 {
 "Symbol": "HIE",
-"Company Name": "Miller/Howard High Income Equity Fund Common Shares of Beneficial Interest"
+"Company Name": "Miller/Howard High Income Equity Fund"
 },
 {
 "Symbol": "HIG",
-"Company Name": "Hartford Financial Services Group (The)"
-},
-{
-"Symbol": "HIG.W",
-"Company Name": "Hartford Financial Services Group (The) Warrants expiring June 26, 2019"
+"Company Name": "Hartford Financial"
 },
 {
 "Symbol": "HII",
@@ -4665,12 +4415,8 @@
 "Company Name": "Western Asset High Income Fund II"
 },
 {
-"Symbol": "HJV",
-"Company Name": "MS Structured Asset Corp MS Structured Asset Corp. SATURNS J.C. Penney Company Debenture Backed Series 2007"
-},
-{
 "Symbol": "HK",
-"Company Name": "Halcon Resources Corporation"
+"Company Name": "Halcon Resources"
 },
 {
 "Symbol": "HL",
@@ -4682,7 +4428,7 @@
 },
 {
 "Symbol": "HLS",
-"Company Name": "HealthSouth Corporation"
+"Company Name": "HealthSouth"
 },
 {
 "Symbol": "HLT",
@@ -4702,19 +4448,19 @@
 },
 {
 "Symbol": "HMLP",
-"Company Name": "Hoegh LNG Partners LP Common Units representing"
+"Company Name": "Hoegh LNG"
 },
 {
 "Symbol": "HMN",
-"Company Name": "Horace Mann Educators Corporation"
+"Company Name": "Horace Mann"
 },
 {
 "Symbol": "HMY",
-"Company Name": "Harmony Gold Mining Company"
+"Company Name": "Harmony Gold Mining"
 },
 {
 "Symbol": "HNI",
-"Company Name": "HNI Corporation"
+"Company Name": "HNI"
 },
 {
 "Symbol": "HNP",
@@ -4758,7 +4504,7 @@
 },
 {
 "Symbol": "HPI",
-"Company Name": "John Hancock Preferred Income Fund Common Shares of Beneficial Interest"
+"Company Name": "John Hancock Preferred Income Fund"
 },
 {
 "Symbol": "HPP",
@@ -4806,11 +4552,11 @@
 },
 {
 "Symbol": "HRL",
-"Company Name": "Hormel Foods Corporation"
+"Company Name": "Hormel Foods"
 },
 {
 "Symbol": "HRS",
-"Company Name": "Harris Corporation"
+"Company Name": "Harris"
 },
 {
 "Symbol": "HRTG",
@@ -4822,15 +4568,11 @@
 },
 {
 "Symbol": "HSC",
-"Company Name": "Harsco Corporation"
+"Company Name": "Harsco"
 },
 {
 "Symbol": "HSEA",
 "Company Name": "HSBC Holdings, plc. Perpetual Sub Cap Secs"
-},
-{
-"Symbol": "HSEB",
-"Company Name": "HSBC Holdings plc PERP SUB CAP SECS EXCH PREF SHS SER 2 (United Kingdom)"
 },
 {
 "Symbol": "HSP",
@@ -4854,15 +4596,11 @@
 },
 {
 "Symbol": "HTD",
-"Company Name": "John Hancock Tax Advantaged Dividend Income Fund Common Shares of Beneficial Interest"
-},
-
-{
+"Company Name": "John Hancock Tax Advantaged Dividend Income Fund"
+},{
 "Symbol": "HTGC",
 "Company Name": "Hercules Technology Growth Capital"
 },
-
-
 {
 "Symbol": "HTGZ",
 "Company Name": "Hercules Technology Growth Capital 7.00% Note due 2019"
@@ -4888,14 +4626,6 @@
 "Company Name": "Hertz Global Holdings, Inc"
 },
 {
-"Symbol": "HUB.A",
-"Company Name": "Hubbell Inc A"
-},
-{
-"Symbol": "HUB.B",
-"Company Name": "Hubbell Inc Class B"
-},
-{
 "Symbol": "HUBS",
 "Company Name": "HubSpot"
 },
@@ -4905,7 +4635,7 @@
 },
 {
 "Symbol": "HUN",
-"Company Name": "Huntsman Corporation"
+"Company Name": "Huntsman"
 },
 {
 "Symbol": "HVB",
@@ -4916,16 +4646,12 @@
 "Company Name": "Haverty Furniture Companies"
 },
 {
-"Symbol": "HVT.A",
-"Company Name": "Haverty Furniture Companies"
-},
-{
 "Symbol": "HW",
 "Company Name": "Headwaters Incorporated"
 },
 {
 "Symbol": "HXL",
-"Company Name": "Hexcel Corporation"
+"Company Name": "Hexcel"
 },
 {
 "Symbol": "HY",
@@ -4961,11 +4687,11 @@
 },
 {
 "Symbol": "IAE",
-"Company Name": "Voya Asia Pacific High Dividend Equity Income Fund ING Asia Pacific High Dividend Equity Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Voya Asia Pacific High Dividend Equity Income Fund"
 },
 {
 "Symbol": "IAG",
-"Company Name": "Iamgold Corporation Ordinary Shares"
+"Company Name": "Iamgold"
 },
 {
 "Symbol": "IBA",
@@ -4973,7 +4699,7 @@
 },
 {
 "Symbol": "IBM",
-"Company Name": "International Business Machines Corporation"
+"Company Name": "International Business Machines"
 },
 {
 "Symbol": "IBN",
@@ -5009,7 +4735,7 @@
 },
 {
 "Symbol": "IDE",
-"Company Name": "Voya Infrastructure, Industrials and Materials Fund Common Shares of Beneficial Interest"
+"Company Name": "Voya Infrastructure, Industrials and Materials Fund"
 },
 {
 "Symbol": "IDG",
@@ -5017,12 +4743,10 @@
 },
 {
 "Symbol": "IDT",
-"Company Name": "IDT Corporation Class B"
-},
-
-{
+"Company Name": "IDT"
+},{
 "Symbol": "IEX",
-"Company Name": "IDEX Corporation"
+"Company Name": "IDEX"
 },
 {
 "Symbol": "IFF",
@@ -5038,7 +4762,7 @@
 },
 {
 "Symbol": "IGA",
-"Company Name": "Voya Global Advantage and Premium Opportunity Fund Common Shares of Beneficial Interest"
+"Company Name": "Voya Global Advantage and Premium Opportunity Fund"
 },
 {
 "Symbol": "IGD",
@@ -5066,7 +4790,7 @@
 },
 {
 "Symbol": "IHG",
-"Company Name": "Intercontinental Hotels Group American Depositary Shares (Each representing one Ordinary Share)"
+"Company Name": "Intercontinental Hotels"
 },
 {
 "Symbol": "IHS",
@@ -5074,7 +4798,7 @@
 },
 {
 "Symbol": "IID",
-"Company Name": "Voya International High Dividend Equity Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Voya International High Dividend Equity Income Fund"
 },
 {
 "Symbol": "IIF",
@@ -5090,11 +4814,11 @@
 },
 {
 "Symbol": "IMAX",
-"Company Name": "Imax Corporation"
+"Company Name": "Imax"
 },
 {
 "Symbol": "IMN",
-"Company Name": "Imation Corporation"
+"Company Name": "Imation"
 },
 {
 "Symbol": "IMPR",
@@ -5110,15 +4834,7 @@
 },
 {
 "Symbol": "INB",
-"Company Name": "Cohen & Steers Global Income Builder Common Shares of Beneficial Interest"
-},
-{
-"Symbol": "IND",
-"Company Name": "ING Group, N.V. Perpetual Debt Securities"
-},
-{
-"Symbol": "INF",
-"Company Name": "Brookfield Global Listed Infrastructure Income Fund Closed End Fund"
+"Company Name": "Cohen & Steers Global Income Builder"
 },
 {
 "Symbol": "INFY",
@@ -5126,11 +4842,11 @@
 },
 {
 "Symbol": "ING",
-"Company Name": "ING Group, N.V."
+"Company Name": "ING Group,"
 },
 {
 "Symbol": "INGR",
-"Company Name": "Ingredion Incorporated"
+"Company Name": "Ingredion"
 },
 {
 "Symbol": "INN",
@@ -5138,7 +4854,7 @@
 },
 {
 "Symbol": "INT",
-"Company Name": "World Fuel Services Corporation"
+"Company Name": "World Fuel Services"
 },
 {
 "Symbol": "INVN",
@@ -5146,7 +4862,7 @@
 },
 {
 "Symbol": "INXN",
-"Company Name": "InterXion Holding N.V. Ordinary Shares (0.01 nominal value)"
+"Company Name": "InterXion Holding"
 },
 {
 "Symbol": "INZ",
@@ -5154,11 +4870,11 @@
 },
 {
 "Symbol": "IO",
-"Company Name": "Ion Geophysical Corporation"
+"Company Name": "Ion Geophysical"
 },
 {
 "Symbol": "IOC",
-"Company Name": "InterOil Corporation"
+"Company Name": "InterOil"
 },
 {
 "Symbol": "IP",
@@ -5166,7 +4882,7 @@
 },
 {
 "Symbol": "IPG",
-"Company Name": "Interpublic Group of Companies (The)"
+"Company Name": "Interpublic Group"
 },
 {
 "Symbol": "IPI",
@@ -5182,19 +4898,15 @@
 },
 {
 "Symbol": "IRC",
-"Company Name": "Inland Real Estate Corporation"
-},
-{
-"Symbol": "IRE",
-"Company Name": "Governor and Company of the Bank of Ireland (The)"
+"Company Name": "Inland Real Estate"
 },
 {
 "Symbol": "IRET",
-"Company Name": "Investors Real Estate Trust Shares of Beneficial Interest"
+"Company Name": "Investors Real Estate Trust"
 },
 {
 "Symbol": "IRF",
-"Company Name": "International Rectifier Corporation"
+"Company Name": "International Rectifier"
 },
 {
 "Symbol": "IRL",
@@ -5206,7 +4918,7 @@
 },
 {
 "Symbol": "IRR",
-"Company Name": "Voya Natural Resources Equity Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Voya Natural Resources Equity Income Fund"
 },
 {
 "Symbol": "IRS",
@@ -5218,15 +4930,15 @@
 },
 {
 "Symbol": "ISF",
-"Company Name": "ING Group, N.V. Perp Hybrid Cap Secs (Netherlands)"
+"Company Name": "ING Group,"
 },
 {
 "Symbol": "ISG",
-"Company Name": "ING Group, N.V. Perpetual Dent Secs 6.125%"
+"Company Name": "ING Group,"
 },
 {
 "Symbol": "ISH",
-"Company Name": "International Shipholding Corporation"
+"Company Name": "International Shipholding"
 },
 {
 "Symbol": "ISP",
@@ -5246,7 +4958,7 @@
 },
 {
 "Symbol": "ITT",
-"Company Name": "ITT Corporation New"
+"Company Name": "ITT"
 },
 {
 "Symbol": "ITUB",
@@ -5258,11 +4970,11 @@
 },
 {
 "Symbol": "IVC",
-"Company Name": "Invacare Corporation"
+"Company Name": "Invacare"
 },
 {
 "Symbol": "IVH",
-"Company Name": "Ivy High Income Opportunities Fund Common Shares of Beneficial Interest"
+"Company Name": "Ivy High Income Opportunities Fund"
 },
 {
 "Symbol": "IVR",
@@ -5278,7 +4990,7 @@
 },
 {
 "Symbol": "JAH",
-"Company Name": "Jarden Corporation"
+"Company Name": "Jarden"
 },
 {
 "Symbol": "JBK",
@@ -5298,11 +5010,11 @@
 },
 {
 "Symbol": "JBT",
-"Company Name": "John Bean Technologies Corporation"
+"Company Name": "John Bean Technologies"
 },
 {
 "Symbol": "JCE",
-"Company Name": "Nuveen Core Equity Alpha Fund Nuveen Core Equity Alpha Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Core Equity Alpha Fund Nuveen Core Equity Alpha Fund"
 },
 {
 "Symbol": "JCI",
@@ -5314,7 +5026,7 @@
 },
 {
 "Symbol": "JDD",
-"Company Name": "Nuveen Diversified Dividend and Income Fund Shares of Beneficial Interest"
+"Company Name": "Nuveen Diversified Dividend and Income Fund"
 },
 {
 "Symbol": "JE",
@@ -5330,7 +5042,7 @@
 },
 {
 "Symbol": "JFC",
-"Company Name": "JPMorgan China Region  Fund"
+"Company Name": "JPMorgan China Region Fund"
 },
 {
 "Symbol": "JFR",
@@ -5338,7 +5050,7 @@
 },
 {
 "Symbol": "JGH",
-"Company Name": "Nuveen Global High Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Global High Income Fund"
 },
 {
 "Symbol": "JGV",
@@ -5346,7 +5058,7 @@
 },
 {
 "Symbol": "JGW",
-"Company Name": "J.G. Wentworth Company (The)"
+"Company Name": "J.G. Wentworth"
 },
 {
 "Symbol": "JHI",
@@ -5382,7 +5094,7 @@
 },
 {
 "Symbol": "JMF",
-"Company Name": "Nuveen Energy MLP Total Return Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Energy MLP Total Return Fund"
 },
 {
 "Symbol": "JMI",
@@ -5390,7 +5102,7 @@
 },
 {
 "Symbol": "JMLP",
-"Company Name": "Nuveen All Cap Energy MLP Opportunities Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen All Cap Energy MLP Opportunities Fund"
 },
 {
 "Symbol": "JMM",
@@ -5400,11 +5112,9 @@
 "Symbol": "JMP",
 "Company Name": "JMP Group LLC Common Shares"
 },
-
-
 {
 "Symbol": "JMT",
-"Company Name": "Nuveen Mortgage Opportunity Term Fund 2 Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Mortgage Opportunity Term Fund 2"
 },
 {
 "Symbol": "JNJ",
@@ -5420,7 +5130,7 @@
 },
 {
 "Symbol": "JOE",
-"Company Name": "St. Joe Company (The)"
+"Company Name": "St. Joe"
 },
 {
 "Symbol": "JOF",
@@ -5436,7 +5146,7 @@
 },
 {
 "Symbol": "JPC",
-"Company Name": "Nuveen  Preferred Income Opportunities Fund"
+"Company Name": "Nuveen Preferred Income Opportunities Fund"
 },
 {
 "Symbol": "JPEP",
@@ -5444,31 +5154,27 @@
 },
 {
 "Symbol": "JPI",
-"Company Name": "Nuveen Preferred and Income Term Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Preferred and Income Term Fund"
 },
 {
 "Symbol": "JPM",
 "Company Name": "JP Morgan Chase & Co."
 },
 {
-"Symbol": "JPM.W",
-"Company Name": "J P Morgan Chase & Co Warrant expiring October 28, 2018"
-},
-{
 "Symbol": "JPS",
-"Company Name": "Nuveen Quality Preferred Income Fund 2 Shares of Beneficial Interest"
+"Company Name": "Nuveen Quality Preferred Income Fund 2"
 },
 {
 "Symbol": "JPW",
-"Company Name": "Nuveen Flexible Investment Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Flexible Investment Income Fund"
 },
 {
 "Symbol": "JQC",
-"Company Name": "Nuveen Credit Strategies Income Fund Shares of Beneficial Interest"
+"Company Name": "Nuveen Credit Strategies Income Fund"
 },
 {
 "Symbol": "JRI",
-"Company Name": "Nuveen Real Asset Income and Growth Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Real Asset Income and Growth Fund"
 },
 {
 "Symbol": "JRN",
@@ -5476,11 +5182,11 @@
 },
 {
 "Symbol": "JRO",
-"Company Name": "Nuveen Floating Rate Income Opportuntiy Fund Shares of Beneficial Interest"
+"Company Name": "Nuveen Floating Rate Income Opportuntiy Fund"
 },
 {
 "Symbol": "JSD",
-"Company Name": "Nuveen Short Duration Credit Opportunities Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Short Duration Credit Opportunities Fund"
 },
 {
 "Symbol": "JTA",
@@ -5492,15 +5198,7 @@
 },
 {
 "Symbol": "JTP",
-"Company Name": "Nuveen Quality Preferred Income Fund Shares of Beneficial Interest"
-},
-{
-"Symbol": "JW.A",
-"Company Name": "John Wiley & Sons"
-},
-{
-"Symbol": "JW.B",
-"Company Name": "John Wiley & Sons"
+"Company Name": "Nuveen Quality Preferred Income Fund"
 },
 {
 "Symbol": "JWN",
@@ -5516,10 +5214,8 @@
 },
 {
 "Symbol": "KAMN",
-"Company Name": "Kaman Corporation"
-},
-
-{
+"Company Name": "Kaman"
+},{
 "Symbol": "KAR",
 "Company Name": "KAR Auction Services, Inc"
 },
@@ -5561,19 +5257,15 @@
 },
 {
 "Symbol": "KEM",
-"Company Name": "Kemet Corporation New"
-},
-{
-"Symbol": "KEN.V",
-"Company Name": "Kenon Holdings Ltd. Ordinary Shares When Issued"
+"Company Name": "Kemet"
 },
 {
 "Symbol": "KEP",
-"Company Name": "Korea Electric Power Corporation"
+"Company Name": "Korea Electric Power"
 },
 {
 "Symbol": "KEX",
-"Company Name": "Kirby Corporation"
+"Company Name": "Kirby"
 },
 {
 "Symbol": "KEY",
@@ -5585,10 +5277,8 @@
 },
 {
 "Symbol": "KF",
-"Company Name": "Korea Fund (The) New"
+"Company Name": "Korea Fund"
 },
-
-
 {
 "Symbol": "KFS",
 "Company Name": "Kingsway Financial Services Ordinary Shares"
@@ -5599,19 +5289,15 @@
 },
 {
 "Symbol": "KGC",
-"Company Name": "Kinross Gold Corporation"
+"Company Name": "Kinross Gold"
 },
 {
 "Symbol": "KHI",
-"Company Name": "Deutsche High Income Trust Shares of Beneficial Interest"
+"Company Name": "Deutsche High Income Trust"
 },
 {
 "Symbol": "KIM",
-"Company Name": "Kimco Realty Corporation"
-},
-{
-"Symbol": "KING",
-"Company Name": "King Digital Entertainment plc Ordinary Share"
+"Company Name": "Kimco Realty"
 },
 {
 "Symbol": "KIO",
@@ -5642,20 +5328,16 @@
 "Company Name": "Kinder Morgan"
 },
 {
-"Symbol": "KMI.W",
-"Company Name": "Kinder Morgan Warrants Expiring 2017"
-},
-{
 "Symbol": "KMM",
-"Company Name": "Deutsche  Multi"
+"Company Name": "Deutsche Multi"
 },
 {
 "Symbol": "KMPA",
-"Company Name": "Kemper Corporation 7.375% Subordinated Debentures due 2054"
+"Company Name": "Kemper"
 },
 {
 "Symbol": "KMPR",
-"Company Name": "Kemper Corporation"
+"Company Name": "Kemper"
 },
 {
 "Symbol": "KMT",
@@ -5667,7 +5349,7 @@
 },
 {
 "Symbol": "KN",
-"Company Name": "Knowles Corporation"
+"Company Name": "Knowles"
 },
 {
 "Symbol": "KND",
@@ -5679,7 +5361,7 @@
 },
 {
 "Symbol": "KNM",
-"Company Name": "Konami Corporation American Depositary Shares (Each repstg one share of)"
+"Company Name": "Konami"
 },
 {
 "Symbol": "KNOP",
@@ -5696,14 +5378,6 @@
 {
 "Symbol": "KODK",
 "Company Name": "Eastman Kodak Company Common New"
-},
-{
-"Symbol": "KODK.A",
-"Company Name": "Eastman Kodak Company Wt Exp 135%"
-},
-{
-"Symbol": "KODK.W",
-"Company Name": "Eastman Kodak Company Warrant (Expiring September 3, 2018)"
 },
 {
 "Symbol": "KOF",
@@ -5723,7 +5397,7 @@
 },
 {
 "Symbol": "KR",
-"Company Name": "Kroger Company (The)"
+"Company Name": "Kroger"
 },
 {
 "Symbol": "KRA",
@@ -5731,7 +5405,7 @@
 },
 {
 "Symbol": "KRC",
-"Company Name": "Kilroy Realty Corporation"
+"Company Name": "Kilroy Realty"
 },
 {
 "Symbol": "KRG",
@@ -5743,19 +5417,19 @@
 },
 {
 "Symbol": "KS",
-"Company Name": "KapStone Paper and Packaging Corporation"
+"Company Name": "KapStone Paper and Packaging"
 },
 {
 "Symbol": "KSM",
-"Company Name": "Deutsche Strategic Municiple Income Trust Common Shares of Beneficial Interest"
+"Company Name": "Deutsche Strategic Municiple Income Trust"
 },
 {
 "Symbol": "KSS",
-"Company Name": "Kohl's Corporation"
+"Company Name": "Kohl's"
 },
 {
 "Symbol": "KST",
-"Company Name": "Deutsche Strategic Income Trust Shares of Beneficial Interest"
+"Company Name": "Deutsche Strategic Income Trust"
 },
 {
 "Symbol": "KSU",
@@ -5763,7 +5437,7 @@
 },
 {
 "Symbol": "KT",
-"Company Name": "KT Corporation"
+"Company Name": "KT"
 },
 {
 "Symbol": "KTF",
@@ -5791,7 +5465,7 @@
 },
 {
 "Symbol": "KWR",
-"Company Name": "Quaker Chemical Corporation"
+"Company Name": "Quaker Chemical"
 },
 {
 "Symbol": "KYE",
@@ -5803,11 +5477,11 @@
 },
 {
 "Symbol": "KYO",
-"Company Name": "Kyocera Corporation"
+"Company Name": "Kyocera"
 },
 {
 "Symbol": "L",
-"Company Name": "Loews Corporation"
+"Company Name": "Loews"
 },
 {
 "Symbol": "LAD",
@@ -5835,7 +5509,7 @@
 },
 {
 "Symbol": "LC",
-"Company Name": "LendingClub Corporation"
+"Company Name": "LendingClub"
 },
 {
 "Symbol": "LCI",
@@ -5843,7 +5517,7 @@
 },
 {
 "Symbol": "LCM",
-"Company Name": "Advent/Claymore Enhanced Growth & Income Fund Advent/Claymore Enhanced Growth & Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Advent/Claymore Enhanced Growth & Income Fund Advent/Claymore Enhanced Growth & Income Fund"
 },
 {
 "Symbol": "LDF",
@@ -5867,7 +5541,7 @@
 },
 {
 "Symbol": "LEA",
-"Company Name": "Lear Corporation"
+"Company Name": "Lear"
 },
 {
 "Symbol": "LEAF",
@@ -5887,11 +5561,7 @@
 },
 {
 "Symbol": "LEN",
-"Company Name": "Lennar Corporation"
-},
-{
-"Symbol": "LEN.B",
-"Company Name": "Lennar Corporation Class B"
+"Company Name": "Lennar"
 },
 {
 "Symbol": "LEO",
@@ -5919,7 +5589,7 @@
 },
 {
 "Symbol": "LGF",
-"Company Name": "Lions Gate Entertainment Corporation"
+"Company Name": "Lions Gate Entertainment"
 },
 {
 "Symbol": "LGI",
@@ -5927,7 +5597,7 @@
 },
 {
 "Symbol": "LH",
-"Company Name": "Laboratory Corporation of America Holdings"
+"Company Name": "Laboratory"
 },
 {
 "Symbol": "LHO",
@@ -5959,15 +5629,11 @@
 },
 {
 "Symbol": "LMT",
-"Company Name": "Lockheed Martin Corporation"
+"Company Name": "Lockheed Martin"
 },
 {
 "Symbol": "LNC",
-"Company Name": "Lincoln National Corporation"
-},
-{
-"Symbol": "LNC.W",
-"Company Name": "Lincoln National Corporation Warrant expiring July 10, 2019"
+"Company Name": "Lincoln National"
 },
 {
 "Symbol": "LND",
@@ -5975,15 +5641,15 @@
 },
 {
 "Symbol": "LNKD",
-"Company Name": "LinkedIn Corporation"
+"Company Name": "LinkedIn"
 },
 {
 "Symbol": "LNN",
-"Company Name": "Lindsay Corporation"
+"Company Name": "Lindsay"
 },
 {
 "Symbol": "LNT",
-"Company Name": "Alliant Energy Corporation"
+"Company Name": "Alliant Energy"
 },
 {
 "Symbol": "LO",
@@ -6047,7 +5713,7 @@
 },
 {
 "Symbol": "LUK",
-"Company Name": "Leucadia National Corporation"
+"Company Name": "Leucadia National"
 },
 {
 "Symbol": "LUV",
@@ -6115,11 +5781,11 @@
 },
 {
 "Symbol": "MAC",
-"Company Name": "Macerich Company (The)"
+"Company Name": "Macerich"
 },
 {
 "Symbol": "MAIN",
-"Company Name": "Main Street Capital Corporation"
+"Company Name": "Main Street Capital"
 },
 {
 "Symbol": "MAN",
@@ -6131,7 +5797,7 @@
 },
 {
 "Symbol": "MAS",
-"Company Name": "Masco Corporation"
+"Company Name": "Masco"
 },
 {
 "Symbol": "MATX",
@@ -6139,7 +5805,7 @@
 },
 {
 "Symbol": "MAV",
-"Company Name": "Pioneer Municipal High Income Advantage Trust Common Shares of Beneficial Interest"
+"Company Name": "Pioneer Municipal High Income Advantage Trust"
 },
 {
 "Symbol": "MBI",
@@ -6147,7 +5813,7 @@
 },
 {
 "Symbol": "MBLY",
-"Company Name": "Mobileye N.V. Ordinary Shares"
+"Company Name": "Mobileye"
 },
 {
 "Symbol": "MBT",
@@ -6163,11 +5829,11 @@
 },
 {
 "Symbol": "MCC",
-"Company Name": "Medley Capital Corporation"
+"Company Name": "Medley Capital"
 },
 {
 "Symbol": "MCD",
-"Company Name": "McDonald's Corporation"
+"Company Name": "McDonald's"
 },
 {
 "Symbol": "MCI",
@@ -6175,7 +5841,7 @@
 },
 {
 "Symbol": "MCK",
-"Company Name": "McKesson Corporation"
+"Company Name": "McKesson"
 },
 {
 "Symbol": "MCN",
@@ -6183,25 +5849,21 @@
 },
 {
 "Symbol": "MCO",
-"Company Name": "Moody's Corporation"
+"Company Name": "Moody's"
 },
 {
 "Symbol": "MCP",
 "Company Name": "Molycorp, Inc"
-},
-
-{
+},{
 "Symbol": "MCR",
 "Company Name": "MFS Charter Income Trust"
 },
 {
 "Symbol": "MCS",
-"Company Name": "Marcus Corporation (The)"
-},
-
-{
+"Company Name": "Marcus"
+},{
 "Symbol": "MCY",
-"Company Name": "Mercury General Corporation"
+"Company Name": "Mercury General"
 },
 {
 "Symbol": "MD",
@@ -6217,7 +5879,7 @@
 },
 {
 "Symbol": "MDP",
-"Company Name": "Meredith Corporation"
+"Company Name": "Meredith"
 },
 {
 "Symbol": "MDR",
@@ -6261,7 +5923,7 @@
 },
 {
 "Symbol": "MFC",
-"Company Name": "Manulife Financial Corporation"
+"Company Name": "Manulife Financial"
 },
 {
 "Symbol": "MFD",
@@ -6273,16 +5935,14 @@
 },
 {
 "Symbol": "MFL",
-"Company Name": "Blackrock MuniHoldings Investment Quality Fund Common Shares of Beneficial Interest"
+"Company Name": "Blackrock MuniHoldings Investment Quality Fund"
 },
 {
 "Symbol": "MFM",
 "Company Name": "MFS Municipal Income Trust"
-},
-
-{
+},{
 "Symbol": "MFT",
-"Company Name": "Blackrock MuniYield Investment Quality Fund Common Shares of Beneficial Interest"
+"Company Name": "Blackrock MuniYield Investment Quality Fund"
 },
 {
 "Symbol": "MFV",
@@ -6303,9 +5963,7 @@
 {
 "Symbol": "MGM",
 "Company Name": "MGM Resorts International"
-},
-
-{
+},{
 "Symbol": "MGU",
 "Company Name": "Macquarie Global Infrastructure Total Return Fund"
 },
@@ -6327,7 +5985,7 @@
 },
 {
 "Symbol": "MHI",
-"Company Name": "Pioneer Municipal High Income Trust Common Shares of Beneficial Interest"
+"Company Name": "Pioneer Municipal High Income Trust"
 },
 {
 "Symbol": "MHK",
@@ -6336,17 +5994,13 @@
 {
 "Symbol": "MHN",
 "Company Name": "Blackrock MuniHoldings New York Quality Fund"
-},
-
-
-
-{
+},{
 "Symbol": "MHO",
 "Company Name": "M/I Homes"
 },
 {
 "Symbol": "MHR",
-"Company Name": "Magnum Hunter Resources Corporation"
+"Company Name": "Magnum Hunter Resources"
 },
 {
 "Symbol": "MHY",
@@ -6401,12 +6055,8 @@
 "Company Name": "McCormick & Company, Incorporated"
 },
 {
-"Symbol": "MKC.V",
-"Company Name": "McCormick & Company, Incorporated"
-},
-{
 "Symbol": "MKL",
-"Company Name": "Markel Corporation"
+"Company Name": "Markel"
 },
 {
 "Symbol": "MLI",
@@ -6434,7 +6084,7 @@
 },
 {
 "Symbol": "MMD",
-"Company Name": "MainStay DefinedTerm Municipal Opportunities Fund Common Shares of Beneficial Interest"
+"Company Name": "MainStay DefinedTerm Municipal Opportunities Fund"
 },
 {
 "Symbol": "MMI",
@@ -6470,7 +6120,7 @@
 },
 {
 "Symbol": "MNI",
-"Company Name": "McClatchy Company (The)"
+"Company Name": "McClatchy"
 },
 {
 "Symbol": "MNK",
@@ -6482,7 +6132,7 @@
 },
 {
 "Symbol": "MNR",
-"Company Name": "Monmouth Real Estate Investment Corporation"
+"Company Name": "Monmouth Real Estate Investment"
 },
 {
 "Symbol": "MO",
@@ -6495,14 +6145,6 @@
 {
 "Symbol": "MODN",
 "Company Name": "Model N"
-},
-{
-"Symbol": "MOG.A",
-"Company Name": "Moog"
-},
-{
-"Symbol": "MOG.B",
-"Company Name": "Moog Class B"
 },
 {
 "Symbol": "MOH",
@@ -6518,7 +6160,7 @@
 },
 {
 "Symbol": "MOS",
-"Company Name": "Mosaic Company (The)"
+"Company Name": "Mosaic"
 },
 {
 "Symbol": "MOV",
@@ -6530,7 +6172,7 @@
 },
 {
 "Symbol": "MPC",
-"Company Name": "Marathon Petroleum Corporation"
+"Company Name": "Marathon Petroleum"
 },
 {
 "Symbol": "MPG",
@@ -6554,7 +6196,7 @@
 },
 {
 "Symbol": "MPX",
-"Company Name": "Marine Products Corporation"
+"Company Name": "Marine Products"
 },
 {
 "Symbol": "MQT",
@@ -6586,7 +6228,7 @@
 },
 {
 "Symbol": "MRO",
-"Company Name": "Marathon Oil Corporation"
+"Company Name": "Marathon Oil"
 },
 {
 "Symbol": "MS",
@@ -6599,9 +6241,7 @@
 {
 "Symbol": "MSB",
 "Company Name": "Mesabi Trust"
-},
-
-{
+},{
 "Symbol": "MSCI",
 "Company Name": "MSCI Inc"
 },
@@ -6639,7 +6279,7 @@
 },
 {
 "Symbol": "MSP",
-"Company Name": "Madison Strategic Sector Premium Fund Madison Strategic Sector Premium Fund Common Shares of Beneficial Interest"
+"Company Name": "Madison Strategic Sector Premium Fund Madison Strategic Sector Premium Fund"
 },
 {
 "Symbol": "MSZ",
@@ -6651,13 +6291,8 @@
 },
 {
 "Symbol": "MTB",
-"Company Name": "M&T Bank Corporation"
+"Company Name": "M&T Bank"
 },
-{
-"Symbol": "MTB.W",
-"Company Name": "M&T Bank Corporation Warrant (Expiring December 23, 2018)"
-},
-
 {
 "Symbol": "MTD",
 "Company Name": "Mettler"
@@ -6668,11 +6303,11 @@
 },
 {
 "Symbol": "MTG",
-"Company Name": "MGIC Investment Corporation"
+"Company Name": "MGIC Investment"
 },
 {
 "Symbol": "MTH",
-"Company Name": "Meritage Homes Corporation"
+"Company Name": "Meritage Homes"
 },
 {
 "Symbol": "MTL",
@@ -6692,7 +6327,7 @@
 },
 {
 "Symbol": "MTRN",
-"Company Name": "Materion Corporation"
+"Company Name": "Materion"
 },
 {
 "Symbol": "MTS",
@@ -6708,7 +6343,7 @@
 },
 {
 "Symbol": "MTW",
-"Company Name": "Manitowoc Company (The)"
+"Company Name": "Manitowoc"
 },
 {
 "Symbol": "MTX",
@@ -6744,7 +6379,7 @@
 },
 {
 "Symbol": "MUR",
-"Company Name": "Murphy Oil Corporation"
+"Company Name": "Murphy Oil"
 },
 {
 "Symbol": "MUS",
@@ -6761,9 +6396,7 @@
 {
 "Symbol": "MVC",
 "Company Name": "MVC Capital"
-},
-
-{
+},{
 "Symbol": "MVNR",
 "Company Name": "Mavenir Systems"
 },
@@ -6801,7 +6434,7 @@
 },
 {
 "Symbol": "MWV",
-"Company Name": "Meadwestvaco Corporation"
+"Company Name": "Meadwestvaco"
 },
 {
 "Symbol": "MWW",
@@ -6809,7 +6442,7 @@
 },
 {
 "Symbol": "MX",
-"Company Name": "MagnaChip Semiconductor Corporation Depositary Shares, each representing one share of"
+"Company Name": "MagnaChip Semiconductor"
 },
 {
 "Symbol": "MXE",
@@ -6897,7 +6530,7 @@
 },
 {
 "Symbol": "NAV",
-"Company Name": "Navistar International Corporation"
+"Company Name": "Navistar International"
 },
 {
 "Symbol": "NAZ",
@@ -6905,11 +6538,11 @@
 },
 {
 "Symbol": "NBB",
-"Company Name": "Nuveen Build America Bond Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Build America Bond Fund"
 },
 {
 "Symbol": "NBD",
-"Company Name": "Nuveen Build America Bond Opportunity Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Build America Bond Opportunity Fund"
 },
 {
 "Symbol": "NBG",
@@ -6917,7 +6550,7 @@
 },
 {
 "Symbol": "NBHC",
-"Company Name": "National Bank Holdings Corporation"
+"Company Name": "National Bank Holdings"
 },
 {
 "Symbol": "NBL",
@@ -6945,7 +6578,7 @@
 },
 {
 "Symbol": "NCR",
-"Company Name": "NCR Corporation"
+"Company Name": "NCR"
 },
 {
 "Symbol": "NCS",
@@ -6953,7 +6586,7 @@
 },
 {
 "Symbol": "NCT",
-"Company Name": "Newcastle Investment Corporation"
+"Company Name": "Newcastle Investment"
 },
 {
 "Symbol": "NCV",
@@ -6961,7 +6594,7 @@
 },
 {
 "Symbol": "NCZ",
-"Company Name": "AllianzGI Convertible & Income Fund II Common Shares of Beneficial Interest"
+"Company Name": "AllianzGI Convertible & Income Fund II"
 },
 {
 "Symbol": "NDP",
@@ -6973,7 +6606,7 @@
 },
 {
 "Symbol": "NE",
-"Company Name": "Noble Corporation Ordinary Shares (UK)"
+"Company Name": "Noble"
 },
 {
 "Symbol": "NEA",
@@ -6985,11 +6618,11 @@
 },
 {
 "Symbol": "NEFF",
-"Company Name": "Neff Corporation"
+"Company Name": "Neff"
 },
 {
 "Symbol": "NEM",
-"Company Name": "Newmont Mining Corporation"
+"Company Name": "Newmont Mining"
 },
 {
 "Symbol": "NEP",
@@ -7005,7 +6638,7 @@
 },
 {
 "Symbol": "NEV",
-"Company Name": "Nuveen Enhanced Municipal Value Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Enhanced Municipal Value Fund"
 },
 {
 "Symbol": "NEWM",
@@ -7061,7 +6694,7 @@
 },
 {
 "Symbol": "NID",
-"Company Name": "Nuveen Intermediate Duration Municipal Term Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Intermediate Duration Municipal Term Fund"
 },
 {
 "Symbol": "NIE",
@@ -7077,15 +6710,15 @@
 },
 {
 "Symbol": "NIQ",
-"Company Name": "Nuveenn Intermediate Duration Quality Municipal Term Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveenn Intermediate Duration Quality Municipal Term Fund"
 },
 {
 "Symbol": "NJ",
-"Company Name": "Nidec Corporation (Nihon Densan Kabushiki Kaisha) American Depositary Shares"
+"Company Name": "Nidec"
 },
 {
 "Symbol": "NJR",
-"Company Name": "NewJersey Resources Corporation"
+"Company Name": "NewJersey Resources"
 },
 {
 "Symbol": "NKA",
@@ -7113,7 +6746,7 @@
 },
 {
 "Symbol": "NLSN",
-"Company Name": "Nielsen N.V."
+"Company Name": "Nielsen"
 },
 {
 "Symbol": "NLY",
@@ -7133,7 +6766,7 @@
 },
 {
 "Symbol": "NMFC",
-"Company Name": "New Mountain Finance Corporation"
+"Company Name": "New Mountain Finance"
 },
 {
 "Symbol": "NMI",
@@ -7153,7 +6786,7 @@
 },
 {
 "Symbol": "NMS",
-"Company Name": "Nuveen Minnesota Municipal Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Nuveen Minnesota Municipal Income Fund"
 },
 {
 "Symbol": "NMT",
@@ -7165,7 +6798,7 @@
 },
 {
 "Symbol": "NNA",
-"Company Name": "Navios Maritime Acquisition Corporation"
+"Company Name": "Navios Maritime Acquisition"
 },
 {
 "Symbol": "NNC",
@@ -7197,15 +6830,15 @@
 },
 {
 "Symbol": "NOC",
-"Company Name": "Northrop Grumman Corporation"
+"Company Name": "Northrop Grumman"
 },
 {
 "Symbol": "NOK",
-"Company Name": "Nokia Corporation Sponsored American Depositary Shares"
+"Company Name": "Nokia"
 },
 {
 "Symbol": "NOR",
-"Company Name": "Noranda Aluminum Holding Corporation"
+"Company Name": "Noranda Aluminum Holding"
 },
 {
 "Symbol": "NORD",
@@ -7257,7 +6890,7 @@
 },
 {
 "Symbol": "NPTN",
-"Company Name": "NeoPhotonics Corporation"
+"Company Name": "NeoPhotonics"
 },
 {
 "Symbol": "NPV",
@@ -7317,7 +6950,7 @@
 },
 {
 "Symbol": "NS",
-"Company Name": "Nustar Energy L.P.  Common Units"
+"Company Name": "Nustar Energy L.P. Common Units"
 },
 {
 "Symbol": "NSAM",
@@ -7325,7 +6958,7 @@
 },
 {
 "Symbol": "NSC",
-"Company Name": "Norfolk Southern Corporation"
+"Company Name": "Norfolk Southern"
 },
 {
 "Symbol": "NSH",
@@ -7377,7 +7010,7 @@
 },
 {
 "Symbol": "NTT",
-"Company Name": "Nippon Telegraph and Telephone Corporation"
+"Company Name": "Nippon Telegraph and Telephone"
 },
 {
 "Symbol": "NTX",
@@ -7393,7 +7026,7 @@
 },
 {
 "Symbol": "NUE",
-"Company Name": "Nucor Corporation"
+"Company Name": "Nucor"
 },
 {
 "Symbol": "NUM",
@@ -7437,11 +7070,11 @@
 },
 {
 "Symbol": "NWE",
-"Company Name": "NorthWestern Corporation"
+"Company Name": "NorthWestern"
 },
 {
 "Symbol": "NWHM",
-"Company Name": "New Home Company (The)"
+"Company Name": "New Home"
 },
 {
 "Symbol": "NWL",
@@ -7457,7 +7090,7 @@
 },
 {
 "Symbol": "NX",
-"Company Name": "Quanex Building Products Corporation"
+"Company Name": "Quanex Building Products"
 },
 {
 "Symbol": "NXC",
@@ -7497,11 +7130,11 @@
 },
 {
 "Symbol": "NYT",
-"Company Name": "New York Times Company (The)"
+"Company Name": "New York Times"
 },
 {
 "Symbol": "O",
-"Company Name": "Realty Income Corporation"
+"Company Name": "Realty Income"
 },
 {
 "Symbol": "OAK",
@@ -7533,7 +7166,7 @@
 },
 {
 "Symbol": "OCN",
-"Company Name": "Ocwen Financial Corporation NEW"
+"Company Name": "Ocwen Financial"
 },
 {
 "Symbol": "OCR",
@@ -7557,7 +7190,7 @@
 },
 {
 "Symbol": "OGE",
-"Company Name": "OGE Energy Corporation"
+"Company Name": "OGE Energy"
 },
 {
 "Symbol": "OGS",
@@ -7577,10 +7210,6 @@
 },
 {
 "Symbol": "OIBR",
-"Company Name": "Oi"
-},
-{
-"Symbol": "OIBR.C",
 "Company Name": "Oi"
 },
 {
@@ -7605,7 +7234,7 @@
 },
 {
 "Symbol": "OLN",
-"Company Name": "Olin Corporation"
+"Company Name": "Olin"
 },
 {
 "Symbol": "OLP",
@@ -7621,7 +7250,7 @@
 },
 {
 "Symbol": "OME",
-"Company Name": "Omega Protein Corporation"
+"Company Name": "Omega Protein"
 },
 {
 "Symbol": "OMG",
@@ -7665,7 +7294,7 @@
 },
 {
 "Symbol": "ORB",
-"Company Name": "Orbital Sciences Corporation"
+"Company Name": "Orbital Sciences"
 },
 {
 "Symbol": "ORC",
@@ -7673,11 +7302,11 @@
 },
 {
 "Symbol": "ORCL",
-"Company Name": "Oracle Corporation"
+"Company Name": "Oracle"
 },
 {
 "Symbol": "ORI",
-"Company Name": "Old Republic International Corporation"
+"Company Name": "Old Republic International"
 },
 {
 "Symbol": "ORN",
@@ -7685,7 +7314,7 @@
 },
 {
 "Symbol": "OSK",
-"Company Name": "Oshkosh Corporation (Holding Company)Common Stock"
+"Company Name": "Oshkosh"
 },
 {
 "Symbol": "OUBS",
@@ -7705,7 +7334,7 @@
 },
 {
 "Symbol": "OXY",
-"Company Name": "Occidental Petroleum Corporation"
+"Company Name": "Occidental Petroleum"
 },
 {
 "Symbol": "OZM",
@@ -7737,7 +7366,7 @@
 },
 {
 "Symbol": "PAH",
-"Company Name": "Platform Specialty Products Corporation"
+"Company Name": "Platform Specialty Products"
 },
 {
 "Symbol": "PAI",
@@ -7753,7 +7382,7 @@
 },
 {
 "Symbol": "PAR",
-"Company Name": "PAR Technology Corporation"
+"Company Name": "PAR Technology"
 },
 {
 "Symbol": "PAY",
@@ -7792,10 +7421,6 @@
 "Company Name": "Petroleo Brasileiro"
 },
 {
-"Symbol": "PBR.A",
-"Company Name": "Petroleo Brasileiro"
-},
-{
 "Symbol": "PBT",
 "Company Name": "Permian Basin Royalty Trust"
 },
@@ -7817,11 +7442,11 @@
 },
 {
 "Symbol": "PCI",
-"Company Name": "PIMCO Dynamic Credit Income Fund Common Shares of Beneficial Interest"
+"Company Name": "PIMCO Dynamic Credit Income Fund"
 },
 {
 "Symbol": "PCK",
-"Company Name": "Pimco California Municipal Income Fund II Common Shares of Beneficial Interest"
+"Company Name": "Pimco California Municipal Income Fund II"
 },
 {
 "Symbol": "PCL",
@@ -7837,7 +7462,7 @@
 },
 {
 "Symbol": "PCP",
-"Company Name": "Precision Castparts Corporation"
+"Company Name": "Precision Castparts"
 },
 {
 "Symbol": "PCQ",
@@ -7853,7 +7478,7 @@
 },
 {
 "Symbol": "PDS",
-"Company Name": "Precision Drilling Corporation"
+"Company Name": "Precision Drilling"
 },
 {
 "Symbol": "PDT",
@@ -7865,7 +7490,7 @@
 },
 {
 "Symbol": "PEB",
-"Company Name": "Pebblebrook Hotel Trust Common Shares of Beneficial Interest"
+"Company Name": "Pebblebrook Hotel Trust"
 },
 {
 "Symbol": "PEG",
@@ -7877,7 +7502,7 @@
 },
 {
 "Symbol": "PEO",
-"Company Name": "Petroleum Resources Corporation"
+"Company Name": "Petroleum Resources"
 },
 {
 "Symbol": "PEP",
@@ -7917,7 +7542,7 @@
 },
 {
 "Symbol": "PFL",
-"Company Name": "PIMCO Income Strategy Fund Shares of Beneficial Interest"
+"Company Name": "PIMCO Income Strategy Fund"
 },
 {
 "Symbol": "PFN",
@@ -7941,7 +7566,7 @@
 },
 {
 "Symbol": "PG",
-"Company Name": "Procter & Gamble Company (The)"
+"Company Name": "Procter & Gamble"
 },
 {
 "Symbol": "PGEM",
@@ -7949,7 +7574,7 @@
 },
 {
 "Symbol": "PGH",
-"Company Name": "Pengrowth Energy Corporation"
+"Company Name": "Pengrowth Energy"
 },
 {
 "Symbol": "PGI",
@@ -7961,11 +7586,11 @@
 },
 {
 "Symbol": "PGP",
-"Company Name": "Pimco Global Stocksplus & Income Fund Pimco Global StocksPlus & Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Pimco Global Stocksplus & Income Fund Pimco Global StocksPlus & Income Fund"
 },
 {
 "Symbol": "PGR",
-"Company Name": "Progressive Corporation (The)"
+"Company Name": "Progressive"
 },
 {
 "Symbol": "PGRE",
@@ -7973,7 +7598,7 @@
 },
 {
 "Symbol": "PGZ",
-"Company Name": "Principal Real Estate Income Fund Common Shares of Beneficial Interest"
+"Company Name": "Principal Real Estate Income Fund"
 },
 {
 "Symbol": "PH",
@@ -7981,11 +7606,11 @@
 },
 {
 "Symbol": "PHD",
-"Company Name": "Pioneer Floating Rate Trust Pioneer Floating Rate Trust Shares of Beneficial Interest"
+"Company Name": "Pioneer Floating Rate Trust Pioneer Floating Rate Trust"
 },
 {
 "Symbol": "PHG",
-"Company Name": "Koninklijke Philips N.V. NY Registry Shares"
+"Company Name": "Koninklijke Philips"
 },
 {
 "Symbol": "PHH",
@@ -8005,7 +7630,7 @@
 },
 {
 "Symbol": "PHT",
-"Company Name": "Pioneer High Income Trust Common Shares of Beneficial Interest"
+"Company Name": "Pioneer High Income Trust"
 },
 {
 "Symbol": "PHX",
@@ -8030,9 +7655,7 @@
 {
 "Symbol": "PJC",
 "Company Name": "Piper Jaffray Companies"
-},
-
-{
+},{
 "Symbol": "PJS",
 "Company Name": "PreferredPlus Trust Ser FAR 1 Tr Ctf"
 },
@@ -8042,11 +7665,11 @@
 },
 {
 "Symbol": "PKE",
-"Company Name": "Park Electrochemical Corporation"
+"Company Name": "Park Electrochemical"
 },
 {
 "Symbol": "PKG",
-"Company Name": "Packaging Corporation of America"
+"Company Name": "Packaging"
 },
 {
 "Symbol": "PKI",
@@ -8054,7 +7677,7 @@
 },
 {
 "Symbol": "PKO",
-"Company Name": "Pimco Income Opportunity Fund Common Shares of Beneficial Interest"
+"Company Name": "Pimco Income Opportunity Fund"
 },
 {
 "Symbol": "PKX",
@@ -8066,7 +7689,7 @@
 },
 {
 "Symbol": "PL",
-"Company Name": "Protective Life Corporation"
+"Company Name": "Protective Life"
 },
 {
 "Symbol": "PLD",
@@ -8074,7 +7697,7 @@
 },
 {
 "Symbol": "PLL",
-"Company Name": "Pall Corporation"
+"Company Name": "Pall"
 },
 {
 "Symbol": "PLOW",
@@ -8090,7 +7713,7 @@
 },
 {
 "Symbol": "PMC",
-"Company Name": "Pharmerica Corporation"
+"Company Name": "Pharmerica"
 },
 {
 "Symbol": "PMF",
@@ -8098,7 +7721,7 @@
 },
 {
 "Symbol": "PML",
-"Company Name": "Pimco Municipal Income Fund II Common Shares of Beneficial Interest"
+"Company Name": "Pimco Municipal Income Fund II"
 },
 {
 "Symbol": "PMM",
@@ -8110,19 +7733,15 @@
 },
 {
 "Symbol": "PMT",
-"Company Name": "PennyMac Mortgage Investment Trust Common Shares of Beneficial Interest"
+"Company Name": "PennyMac Mortgage Investment Trust"
 },
 {
 "Symbol": "PMX",
-"Company Name": "PIMCO Municipal Income Fund III Common Shares of Beneficial Interest"
+"Company Name": "PIMCO Municipal Income Fund III"
 },
 {
 "Symbol": "PNC",
 "Company Name": "PNC Financial Services Group (The)"
-},
-{
-"Symbol": "PNC.W",
-"Company Name": "PNC Financial Services Group Warrant expiring December 31, 2018"
 },
 {
 "Symbol": "PNF",
@@ -8130,7 +7749,7 @@
 },
 {
 "Symbol": "PNI",
-"Company Name": "Pimco New York Municipal Income Fund II Common Shares of Beneficial Interest"
+"Company Name": "Pimco New York Municipal Income Fund II"
 },
 {
 "Symbol": "PNK",
@@ -8143,11 +7762,9 @@
 {
 "Symbol": "PNR",
 "Company Name": "Pentair plc. Ordinary Share"
-},
-
-{
+},{
 "Symbol": "PNW",
-"Company Name": "Pinnacle West Capital Corporation"
+"Company Name": "Pinnacle West Capital"
 },
 {
 "Symbol": "PNX",
@@ -8159,7 +7776,7 @@
 },
 {
 "Symbol": "POL",
-"Company Name": "PolyOne Corporation"
+"Company Name": "PolyOne"
 },
 {
 "Symbol": "POM",
@@ -8175,7 +7792,7 @@
 },
 {
 "Symbol": "POT",
-"Company Name": "Potash Corporation of Saskatchewan"
+"Company Name": "Potash"
 },
 {
 "Symbol": "POWR",
@@ -8187,7 +7804,7 @@
 },
 {
 "Symbol": "PPL",
-"Company Name": "PP&L Corporation"
+"Company Name": "PP&L"
 },
 {
 "Symbol": "PPO",
@@ -8195,11 +7812,11 @@
 },
 {
 "Symbol": "PPP",
-"Company Name": "Primero Mining Corp.  New Common Shares (Canada)"
+"Company Name": "Primero Mining Corp. New Common Shares (Canada)"
 },
 {
 "Symbol": "PPR",
-"Company Name": "Voya Prime Rate Trust Shares of Beneficial Interest"
+"Company Name": "Voya Prime Rate Trust"
 },
 {
 "Symbol": "PPS",
@@ -8208,15 +7825,13 @@
 {
 "Symbol": "PPT",
 "Company Name": "Putnam Premier Income Trust"
-},
-
-{
+},{
 "Symbol": "PQ",
 "Company Name": "Petroquest Energy Inc"
 },
 {
 "Symbol": "PRA",
-"Company Name": "ProAssurance Corporation"
+"Company Name": "ProAssurance"
 },
 {
 "Symbol": "PRE",
@@ -8225,9 +7840,7 @@
 {
 "Symbol": "PRGO",
 "Company Name": "Perrigo Company plc Ordinary Shares"
-},
-
-{
+},{
 "Symbol": "PRI",
 "Company Name": "Primerica"
 },
@@ -8242,9 +7855,7 @@
 {
 "Symbol": "PRU",
 "Company Name": "Prudential Financial"
-},
-
-{
+},{
 "Symbol": "PSA",
 "Company Name": "Public Storage"
 },
@@ -8294,7 +7905,7 @@
 },
 {
 "Symbol": "PVA",
-"Company Name": "Penn Virginia Corporation"
+"Company Name": "Penn Virginia"
 },
 {
 "Symbol": "PVG",
@@ -8330,7 +7941,7 @@
 },
 {
 "Symbol": "PYN",
-"Company Name": "PIMCO New York Municipal Income Fund III Common Shares of Beneficial Interest"
+"Company Name": "PIMCO New York Municipal Income Fund III"
 },
 {
 "Symbol": "PYS",
@@ -8346,7 +7957,7 @@
 },
 {
 "Symbol": "PZC",
-"Company Name": "PIMCO California Municipal Income Fund III Common Shares of Beneficial Interest"
+"Company Name": "PIMCO California Municipal Income Fund III"
 },
 {
 "Symbol": "PZE",
@@ -8378,7 +7989,7 @@
 },
 {
 "Symbol": "QTM",
-"Company Name": "Quantum Corporation"
+"Company Name": "Quantum"
 },
 {
 "Symbol": "QTS",
@@ -8398,7 +8009,7 @@
 },
 {
 "Symbol": "RAD",
-"Company Name": "Rite Aid Corporation"
+"Company Name": "Rite Aid"
 },
 {
 "Symbol": "RAI",
@@ -8410,7 +8021,7 @@
 },
 {
 "Symbol": "RAS",
-"Company Name": "RAIT Financial Trust New Common Shares of Beneficial Interest"
+"Company Name": "RAIT Financial Trust New"
 },
 {
 "Symbol": "RATE",
@@ -8426,7 +8037,7 @@
 },
 {
 "Symbol": "RBC",
-"Company Name": "Regal Beloit Corporation"
+"Company Name": "Regal Beloit"
 },
 {
 "Symbol": "RBS",
@@ -8434,7 +8045,7 @@
 },
 {
 "Symbol": "RCAP",
-"Company Name": "RCS CAPITAL CORPORATION"
+"Company Name": "RCS CAPITAL"
 },
 {
 "Symbol": "RCI",
@@ -8457,14 +8068,6 @@
 "Company Name": "Radian Group"
 },
 {
-"Symbol": "RDS.A",
-"Company Name": "Royal Dutch Shell PLC Royal Dutch Shell American Depositary Shares (Each representing two"
-},
-{
-"Symbol": "RDS.B",
-"Company Name": "Royal Dutch Shell PLC Royal Dutch Shell PLC American Depositary Shares (Each representing two Class B Ordinary Shares)"
-},
-{
 "Symbol": "RDY",
 "Company Name": "Dr. Reddy's Laboratories Ltd"
 },
@@ -8474,11 +8077,11 @@
 },
 {
 "Symbol": "REG",
-"Company Name": "Regency Centers Corporation"
+"Company Name": "Regency Centers"
 },
 {
 "Symbol": "REN",
-"Company Name": "Resolute Energy Corporation Comon Stock"
+"Company Name": "Resolute Energy"
 },
 {
 "Symbol": "RENN",
@@ -8490,7 +8093,7 @@
 },
 {
 "Symbol": "RESI",
-"Company Name": "Altisource Residential Corporation"
+"Company Name": "Altisource Residential"
 },
 {
 "Symbol": "REV",
@@ -8498,7 +8101,7 @@
 },
 {
 "Symbol": "REX",
-"Company Name": "REX American Resources Corporation"
+"Company Name": "REX American Resources"
 },
 {
 "Symbol": "REXR",
@@ -8506,7 +8109,7 @@
 },
 {
 "Symbol": "RF",
-"Company Name": "Regions Financial Corporation"
+"Company Name": "Regions Financial"
 },
 {
 "Symbol": "RFI",
@@ -8516,8 +8119,6 @@
 "Symbol": "RFP",
 "Company Name": "Resolute Forest Products"
 },
-
-
 {
 "Symbol": "RGA",
 "Company Name": "Reinsurance Group of America, Incorporated"
@@ -8536,7 +8137,7 @@
 },
 {
 "Symbol": "RGS",
-"Company Name": "Regis Corporation"
+"Company Name": "Regis"
 },
 {
 "Symbol": "RGT",
@@ -8581,9 +8182,7 @@
 {
 "Symbol": "RIT",
 "Company Name": "LMP Real Estate Income Fund Inc"
-},
-
-{
+},{
 "Symbol": "RJF",
 "Company Name": "Raymond James Financial"
 },
@@ -8597,7 +8196,7 @@
 },
 {
 "Symbol": "RL",
-"Company Name": "Ralph Lauren Corporation"
+"Company Name": "Ralph Lauren"
 },
 {
 "Symbol": "RLD",
@@ -8609,7 +8208,7 @@
 },
 {
 "Symbol": "RLH",
-"Company Name": "Red Lions Hotels Corporation"
+"Company Name": "Red Lions Hotels"
 },
 {
 "Symbol": "RLI",
@@ -8669,7 +8268,7 @@
 },
 {
 "Symbol": "ROG",
-"Company Name": "Rogers Corporation"
+"Company Name": "Rogers"
 },
 {
 "Symbol": "ROK",
@@ -8705,7 +8304,7 @@
 },
 {
 "Symbol": "RRC",
-"Company Name": "Range Resources Corporation"
+"Company Name": "Range Resources"
 },
 {
 "Symbol": "RRMS",
@@ -8729,7 +8328,7 @@
 },
 {
 "Symbol": "RSH",
-"Company Name": "Radioshack Corporation"
+"Company Name": "Radioshack"
 },
 {
 "Symbol": "RSO",
@@ -8777,7 +8376,7 @@
 },
 {
 "Symbol": "RXN",
-"Company Name": "Rexnord Corporation"
+"Company Name": "Rexnord"
 },
 {
 "Symbol": "RY",
@@ -8789,7 +8388,7 @@
 },
 {
 "Symbol": "RYI",
-"Company Name": "Ryerson Holding Corporation"
+"Company Name": "Ryerson Holding"
 },
 {
 "Symbol": "RYL",
@@ -8805,7 +8404,7 @@
 },
 {
 "Symbol": "S",
-"Company Name": "Sprint Corporation"
+"Company Name": "Sprint"
 },
 {
 "Symbol": "SA",
@@ -8817,7 +8416,7 @@
 },
 {
 "Symbol": "SAIC",
-"Company Name": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION"
+"Company Name": "SCIENCE APPLICATIONS INTERNATIONAL"
 },
 {
 "Symbol": "SALT",
@@ -8825,7 +8424,7 @@
 },
 {
 "Symbol": "SAM",
-"Company Name": "Boston Beer Company (The)"
+"Company Name": "Boston Beer"
 },
 {
 "Symbol": "SAN",
@@ -8833,10 +8432,8 @@
 },
 {
 "Symbol": "SAP",
-"Company Name": "SAP  SE ADS"
-},
-
-{
+"Company Name": "SAP SE ADS"
+},{
 "Symbol": "SAR",
 "Company Name": "Saratoga Investment Corp New"
 },
@@ -8870,7 +8467,7 @@
 },
 {
 "Symbol": "SCCO",
-"Company Name": "Southern Copper Corporation"
+"Company Name": "Southern Copper"
 },
 {
 "Symbol": "SCD",
@@ -8878,15 +8475,15 @@
 },
 {
 "Symbol": "SCG",
-"Company Name": "SCANA Corporation"
+"Company Name": "SCANA"
 },
 {
 "Symbol": "SCHW",
-"Company Name": "Charles Schwab Corporation (The)"
+"Company Name": "Charles Schwab"
 },
 {
 "Symbol": "SCI",
-"Company Name": "Service Corporation International"
+"Company Name": "Service"
 },
 {
 "Symbol": "SCL",
@@ -8894,17 +8491,13 @@
 },
 {
 "Symbol": "SCM",
-"Company Name": "Stellus Capital Investment Corporation"
-},
-
-{
+"Company Name": "Stellus Capital Investment"
+},{
 "Symbol": "SCS",
 "Company Name": "Steelcase"
-},
-
-{
+},{
 "Symbol": "SCX",
-"Company Name": "L.S. Starrett Company (The)"
+"Company Name": "L.S. Starrett"
 },
 {
 "Symbol": "SD",
@@ -8936,15 +8529,15 @@
 },
 {
 "Symbol": "SEE",
-"Company Name": "Sealed Air Corporation"
+"Company Name": "Sealed Air"
 },
 {
 "Symbol": "SEM",
-"Company Name": "Select Medical Holdings Corporation"
+"Company Name": "Select Medical Holdings"
 },
 {
 "Symbol": "SEMG",
-"Company Name": "Semgroup Corporation"
+"Company Name": "Semgroup"
 },
 {
 "Symbol": "SEP",
@@ -8956,7 +8549,7 @@
 },
 {
 "Symbol": "SF",
-"Company Name": "Stifel Financial Corporation"
+"Company Name": "Stifel Financial"
 },
 {
 "Symbol": "SFB",
@@ -8973,9 +8566,7 @@
 {
 "Symbol": "SFL",
 "Company Name": "Ship Finance International"
-},
-
-{
+},{
 "Symbol": "SFS",
 "Company Name": "Smart & Final Stores"
 },
@@ -8993,7 +8584,7 @@
 },
 {
 "Symbol": "SGM",
-"Company Name": "Stonegate Mortgage Corporation"
+"Company Name": "Stonegate Mortgage"
 },
 {
 "Symbol": "SGU",
@@ -9001,10 +8592,8 @@
 },
 {
 "Symbol": "SGY",
-"Company Name": "Stone Energy Corporation"
-},
-
-{
+"Company Name": "Stone Energy"
+},{
 "Symbol": "SHG",
 "Company Name": "Shinhan Financial Group Co Ltd American Depositary Shares"
 },
@@ -9034,11 +8623,11 @@
 },
 {
 "Symbol": "SIR",
-"Company Name": "Select Income REIT Common Shares of Beneficial Interest"
+"Company Name": "Select Income REIT"
 },
 {
 "Symbol": "SIX",
-"Company Name": "Six Flags Entertainment Corporation New"
+"Company Name": "Six Flags Entertainment"
 },
 {
 "Symbol": "SJI",
@@ -9046,7 +8635,7 @@
 },
 {
 "Symbol": "SJM",
-"Company Name": "J.M. Smucker Company (The) New"
+"Company Name": "J.M. Smucker"
 },
 {
 "Symbol": "SJR",
@@ -9058,7 +8647,7 @@
 },
 {
 "Symbol": "SJW",
-"Company Name": "SJW Corporation"
+"Company Name": "SJW"
 },
 {
 "Symbol": "SKH",
@@ -9078,7 +8667,7 @@
 },
 {
 "Symbol": "SLB",
-"Company Name": "Schlumberger N.V."
+"Company Name": "Schlumberger"
 },
 {
 "Symbol": "SLCA",
@@ -9090,14 +8679,12 @@
 },
 {
 "Symbol": "SLG",
-"Company Name": "SL Green Realty Corporation"
+"Company Name": "SL Green Realty"
 },
 {
 "Symbol": "SLH",
 "Company Name": "Solera Holdings Solera Holdings"
 },
-
-
 {
 "Symbol": "SLW",
 "Company Name": "Silver Wheaton Corp Common Shares (Canada)"
@@ -9116,7 +8703,7 @@
 },
 {
 "Symbol": "SMI",
-"Company Name": "Semiconductor  Manufacturing International Corporation ADR"
+"Company Name": "Semiconductor Manufacturing International"
 },
 {
 "Symbol": "SMLP",
@@ -9124,7 +8711,7 @@
 },
 {
 "Symbol": "SMM",
-"Company Name": "Salient Midstream Common Shares of Beneficial Interest"
+"Company Name": "Salient Midstream"
 },
 {
 "Symbol": "SMP",
@@ -9132,7 +8719,7 @@
 },
 {
 "Symbol": "SN",
-"Company Name": "Sanchez Energy Corporation"
+"Company Name": "Sanchez Energy"
 },
 {
 "Symbol": "SNA",
@@ -9140,14 +8727,12 @@
 },
 {
 "Symbol": "SNE",
-"Company Name": "Sony Corporation"
+"Company Name": "Sony"
 },
 {
 "Symbol": "SNH",
 "Company Name": "Senior Housing Properties Trust"
-},
-
-{
+},{
 "Symbol": "SNI",
 "Company Name": "Scripps Networks Interactive, Inc Common"
 },
@@ -9161,7 +8746,7 @@
 },
 {
 "Symbol": "SNP",
-"Company Name": "China Petroleum & Chemical Corporation"
+"Company Name": "China Petroleum & Chemical"
 },
 {
 "Symbol": "SNR",
@@ -9173,7 +8758,7 @@
 },
 {
 "Symbol": "SNX",
-"Company Name": "Synnex Corporation"
+"Company Name": "Synnex"
 },
 {
 "Symbol": "SNY",
@@ -9181,11 +8766,11 @@
 },
 {
 "Symbol": "SO",
-"Company Name": "Southern Company (The)"
+"Company Name": "Southern"
 },
 {
 "Symbol": "SOL",
-"Company Name": "Renesola Ltd. Common Shares of Beneficial Interest"
+"Company Name": "Renesola Ltd."
 },
 {
 "Symbol": "SON",
@@ -9197,7 +8782,7 @@
 },
 {
 "Symbol": "SPA",
-"Company Name": "Sparton Corporation"
+"Company Name": "Sparton"
 },
 {
 "Symbol": "SPB",
@@ -9233,7 +8818,7 @@
 },
 {
 "Symbol": "SPW",
-"Company Name": "SPX Corporation"
+"Company Name": "SPX"
 },
 {
 "Symbol": "SPXX",
@@ -9249,7 +8834,7 @@
 },
 {
 "Symbol": "SR",
-"Company Name": "Standard Register Company (The)"
+"Company Name": "Standard Register"
 },
 {
 "Symbol": "SRC",
@@ -9261,7 +8846,7 @@
 },
 {
 "Symbol": "SRF",
-"Company Name": "The Cushing Royalty & Income Fund Common Shares of Beneficial Interest"
+"Company Name": "The Cushing Royalty & Income Fund"
 },
 {
 "Symbol": "SRI",
@@ -9277,7 +8862,7 @@
 },
 {
 "Symbol": "SRV",
-"Company Name": "The Cushing MLP Total Return Fund Common Shares of Beneficial Interest"
+"Company Name": "The Cushing MLP Total Return Fund"
 },
 {
 "Symbol": "SSD",
@@ -9305,7 +8890,7 @@
 },
 {
 "Symbol": "SSP",
-"Company Name": "E.W. Scripps Company (The)"
+"Company Name": "E.W. Scripps"
 },
 {
 "Symbol": "SSS",
@@ -9317,12 +8902,10 @@
 },
 {
 "Symbol": "SSW",
-"Company Name": "Seaspan Corporation Seaspan Corporation Common Shares"
-},
-
-{
+"Company Name": "Seaspan"
+},{
 "Symbol": "ST",
-"Company Name": "Sensata Technologies Holding N.V. Ordinary Shares"
+"Company Name": "Sensata Technologies Holding"
 },
 {
 "Symbol": "STAG",
@@ -9338,23 +8921,15 @@
 },
 {
 "Symbol": "STC",
-"Company Name": "Stewart Information Services Corporation"
+"Company Name": "Stewart Information Services"
 },
 {
 "Symbol": "STE",
-"Company Name": "STERIS Corporation"
+"Company Name": "STERIS"
 },
 {
 "Symbol": "STI",
 "Company Name": "SunTrust Banks"
-},
-{
-"Symbol": "STI.A",
-"Company Name": "SunTrust Banks"
-},
-{
-"Symbol": "STI.B",
-"Company Name": "SunTrust Banks Class B Warrant (Expiring November 14, 2018)"
 },
 {
 "Symbol": "STJ",
@@ -9370,7 +8945,7 @@
 },
 {
 "Symbol": "STM",
-"Company Name": "STMicroelectronics N.V."
+"Company Name": "STMicroelectronics"
 },
 {
 "Symbol": "STN",
@@ -9390,11 +8965,11 @@
 },
 {
 "Symbol": "STOR",
-"Company Name": "STORE Capital Corporation"
+"Company Name": "STORE Capital"
 },
 {
 "Symbol": "STR",
-"Company Name": "Questar Corporation"
+"Company Name": "Questar"
 },
 {
 "Symbol": "STRI",
@@ -9402,7 +8977,7 @@
 },
 {
 "Symbol": "STT",
-"Company Name": "State Street Corporation"
+"Company Name": "State Street"
 },
 {
 "Symbol": "STV",
@@ -9414,10 +8989,6 @@
 },
 {
 "Symbol": "STZ",
-"Company Name": "Constellation Brands"
-},
-{
-"Symbol": "STZ.B",
 "Company Name": "Constellation Brands"
 },
 {
@@ -9486,7 +9057,7 @@
 },
 {
 "Symbol": "SWX",
-"Company Name": "Southwest Gas Corporation"
+"Company Name": "Southwest Gas"
 },
 {
 "Symbol": "SWY",
@@ -9510,7 +9081,7 @@
 },
 {
 "Symbol": "SXI",
-"Company Name": "Standex International Corporation"
+"Company Name": "Standex International"
 },
 {
 "Symbol": "SXL",
@@ -9518,7 +9089,7 @@
 },
 {
 "Symbol": "SXT",
-"Company Name": "Sensient Technologies Corporation"
+"Company Name": "Sensient Technologies"
 },
 {
 "Symbol": "SYF",
@@ -9526,7 +9097,7 @@
 },
 {
 "Symbol": "SYK",
-"Company Name": "Stryker Corporation"
+"Company Name": "Stryker"
 },
 {
 "Symbol": "SYT",
@@ -9538,11 +9109,11 @@
 },
 {
 "Symbol": "SYY",
-"Company Name": "Sysco Corporation"
+"Company Name": "Sysco"
 },
 {
 "Symbol": "SZC",
-"Company Name": "Cushing Renaissance Fund (The) Common Shares of Beneficial Interest"
+"Company Name": "Cushing Renaissance Fund (The)"
 },
 {
 "Symbol": "T",
@@ -9554,7 +9125,7 @@
 },
 {
 "Symbol": "TAC",
-"Company Name": "TransAlta Corporation Ordinary Shares"
+"Company Name": "TransAlta"
 },
 {
 "Symbol": "TAHO",
@@ -9568,8 +9139,6 @@
 "Symbol": "TAL",
 "Company Name": "TAL International Group"
 },
-
-
 {
 "Symbol": "TAOM",
 "Company Name": "Taomee Holdings"
@@ -9577,10 +9146,6 @@
 {
 "Symbol": "TAP",
 "Company Name": "Molson Coors Brewing Company Class B"
-},
-{
-"Symbol": "TAP.A",
-"Company Name": "Molson Coors Brewing  Company Molson Coors Brewing Company"
 },
 {
 "Symbol": "TARO",
@@ -9596,18 +9161,12 @@
 },
 {
 "Symbol": "TCAP",
-"Company Name": "Triangle Capital Corporation"
+"Company Name": "Triangle Capital"
 },
 {
 "Symbol": "TCB",
-"Company Name": "TCF Financial Corporation"
+"Company Name": "TCF Financial"
 },
-{
-"Symbol": "TCB.W",
-"Company Name": "TCF Financial Corporation TCF Financial Corporation Warrants"
-},
-
-
 {
 "Symbol": "TCI",
 "Company Name": "Transcontinental Realty Investors"
@@ -9627,23 +9186,17 @@
 {
 "Symbol": "TCPI",
 "Company Name": "TCP International Holdings Ltd. Common Shares"
-},
-
-{
+},{
 "Symbol": "TCS",
 "Company Name": "Container Store (The)"
 },
 {
 "Symbol": "TD",
 "Company Name": "Toronto Dominion Bank (The)"
-},
-
-{
+},{
 "Symbol": "TDC",
-"Company Name": "Teradata Corporation"
-},
-
-{
+"Company Name": "Teradata"
+},{
 "Symbol": "TDF",
 "Company Name": "Templeton Dragon Fund"
 },
@@ -9654,9 +9207,7 @@
 {
 "Symbol": "TDI",
 "Company Name": "Telephone and Data Systems Sr Nt"
-},
-
-{
+},{
 "Symbol": "TDS",
 "Company Name": "Telephone and Data Systems Common Shares"
 },
@@ -9714,16 +9265,14 @@
 },
 {
 "Symbol": "TEX",
-"Company Name": "Terex Corporation"
-},
-
-{
+"Company Name": "Terex"
+},{
 "Symbol": "TFX",
 "Company Name": "Teleflex Incorporated"
 },
 {
 "Symbol": "TG",
-"Company Name": "Tredegar Corporation"
+"Company Name": "Tredegar"
 },
 {
 "Symbol": "TGH",
@@ -9743,11 +9292,11 @@
 },
 {
 "Symbol": "TGT",
-"Company Name": "Target Corporation"
+"Company Name": "Target"
 },
 {
 "Symbol": "THC",
-"Company Name": "Tenet Healthcare Corporation"
+"Company Name": "Tenet Healthcare"
 },
 {
 "Symbol": "THG",
@@ -9763,7 +9312,7 @@
 },
 {
 "Symbol": "THQ",
-"Company Name": "Tekla Healthcare Opportunies Fund Shares of Beneficial Interest"
+"Company Name": "Tekla Healthcare Opportunies Fund"
 },
 {
 "Symbol": "THR",
@@ -9775,10 +9324,6 @@
 },
 {
 "Symbol": "TI",
-"Company Name": "Telecom Italia S.P.A. New"
-},
-{
-"Symbol": "TI.A",
 "Company Name": "Telecom Italia S.P.A. New"
 },
 {
@@ -9799,7 +9344,7 @@
 },
 {
 "Symbol": "TK",
-"Company Name": "Teekay Corporation"
+"Company Name": "Teekay"
 },
 {
 "Symbol": "TKC",
@@ -9811,7 +9356,7 @@
 },
 {
 "Symbol": "TKR",
-"Company Name": "Timken Company (The)"
+"Company Name": "Timken"
 },
 {
 "Symbol": "TLI",
@@ -9839,7 +9384,7 @@
 },
 {
 "Symbol": "TM",
-"Company Name": "Toyota Motor Corporation"
+"Company Name": "Toyota Motor"
 },
 {
 "Symbol": "TMH",
@@ -9847,11 +9392,11 @@
 },
 {
 "Symbol": "TMHC",
-"Company Name": "Taylor Morrison Home Corporation"
+"Company Name": "Taylor Morrison Home"
 },
 {
 "Symbol": "TMK",
-"Company Name": "Torchmark Corporation"
+"Company Name": "Torchmark"
 },
 {
 "Symbol": "TMO",
@@ -9859,7 +9404,7 @@
 },
 {
 "Symbol": "TMST",
-"Company Name": "Timken Steel Corporation Common Shares"
+"Company Name": "Timken Steel"
 },
 {
 "Symbol": "TMUS",
@@ -9903,7 +9448,7 @@
 },
 {
 "Symbol": "TPC",
-"Company Name": "Tutor Perini Corporation"
+"Company Name": "Tutor Perini"
 },
 {
 "Symbol": "TPH",
@@ -9983,11 +9528,11 @@
 },
 {
 "Symbol": "TRNO",
-"Company Name": "Terreno Realty Corporation"
+"Company Name": "Terreno Realty"
 },
 {
 "Symbol": "TRP",
-"Company Name": "TransCanada Corporation"
+"Company Name": "TransCanada"
 },
 {
 "Symbol": "TRQ",
@@ -10007,7 +9552,7 @@
 },
 {
 "Symbol": "TRW",
-"Company Name": "TRW Automotive Holdings Corporation"
+"Company Name": "TRW Automotive Holdings"
 },
 {
 "Symbol": "TS",
@@ -10027,7 +9572,7 @@
 },
 {
 "Symbol": "TSLF",
-"Company Name": "THL Credit Senior Loan Fund Common Shares of Beneficial Interest"
+"Company Name": "THL Credit Senior Loan Fund"
 },
 {
 "Symbol": "TSLX",
@@ -10047,7 +9592,7 @@
 },
 {
 "Symbol": "TSO",
-"Company Name": "Tesoro Corporation"
+"Company Name": "Tesoro"
 },
 {
 "Symbol": "TSQ",
@@ -10063,7 +9608,7 @@
 },
 {
 "Symbol": "TTC",
-"Company Name": "Toro Company (The)"
+"Company Name": "Toro"
 },
 {
 "Symbol": "TTF",
@@ -10083,7 +9628,7 @@
 },
 {
 "Symbol": "TU",
-"Company Name": "Telus Corporation Ordinary Shares"
+"Company Name": "Telus"
 },
 {
 "Symbol": "TUMI",
@@ -10091,7 +9636,7 @@
 },
 {
 "Symbol": "TUP",
-"Company Name": "Tupperware Brands Corporation"
+"Company Name": "Tupperware Brands"
 },
 {
 "Symbol": "TV",
@@ -10147,11 +9692,11 @@
 },
 {
 "Symbol": "TXTR",
-"Company Name": "Textura Corporation"
+"Company Name": "Textura"
 },
 {
 "Symbol": "TY",
-"Company Name": "Tri Continental Corporation"
+"Company Name": "Tri Continental"
 },
 {
 "Symbol": "TYC",
@@ -10159,7 +9704,7 @@
 },
 {
 "Symbol": "TYG",
-"Company Name": "Tortoise Energy Infrastructure Corporation"
+"Company Name": "Tortoise Energy Infrastructure"
 },
 {
 "Symbol": "TYL",
@@ -10179,7 +9724,7 @@
 },
 {
 "Symbol": "UAM",
-"Company Name": "Universal American Corporation New"
+"Company Name": "Universal American"
 },
 {
 "Symbol": "UAN",
@@ -10206,20 +9751,16 @@
 "Company Name": "UDR"
 },
 {
-"Symbol": "UE.V",
-"Company Name": "Urban Edge Properties Common Shares of Beneficial Interest When Issued"
-},
-{
 "Symbol": "UFI",
 "Company Name": "Unifi New"
 },
 {
 "Symbol": "UFS",
-"Company Name": "Domtar Corporation (NEW)"
+"Company Name": "Domtar"
 },
 {
 "Symbol": "UGI",
-"Company Name": "UGI Corporation"
+"Company Name": "UGI"
 },
 {
 "Symbol": "UGP",
@@ -10235,11 +9776,11 @@
 },
 {
 "Symbol": "UIL",
-"Company Name": "UIL Holdings Corporation"
+"Company Name": "UIL Holdings"
 },
 {
 "Symbol": "UIS",
-"Company Name": "Unisys Corporation New"
+"Company Name": "Unisys"
 },
 {
 "Symbol": "UL",
@@ -10247,7 +9788,7 @@
 },
 {
 "Symbol": "UMC",
-"Company Name": "United Microelectronics Corporation (NEW)"
+"Company Name": "United Microelectronics"
 },
 {
 "Symbol": "UMH",
@@ -10259,7 +9800,7 @@
 },
 {
 "Symbol": "UNF",
-"Company Name": "Unifirst Corporation"
+"Company Name": "Unifirst"
 },
 {
 "Symbol": "UNH",
@@ -10271,11 +9812,11 @@
 },
 {
 "Symbol": "UNP",
-"Company Name": "Union Pacific Corporation"
+"Company Name": "Union Pacific"
 },
 {
 "Symbol": "UNT",
-"Company Name": "Unit Corporation"
+"Company Name": "Unit"
 },
 {
 "Symbol": "UPL",
@@ -10307,11 +9848,11 @@
 },
 {
 "Symbol": "USG",
-"Company Name": "USG Corporation"
+"Company Name": "USG"
 },
 {
 "Symbol": "USM",
-"Company Name": "United States Cellular Corporation"
+"Company Name": "United States Cellular"
 },
 {
 "Symbol": "USNA",
@@ -10331,11 +9872,11 @@
 },
 {
 "Symbol": "UTL",
-"Company Name": "UNITIL Corporation"
+"Company Name": "UNITIL"
 },
 {
 "Symbol": "UTX",
-"Company Name": "United Technologies Corporation"
+"Company Name": "United Technologies"
 },
 {
 "Symbol": "UVE",
@@ -10343,28 +9884,22 @@
 },
 {
 "Symbol": "UVV",
-"Company Name": "Universal Corporation"
+"Company Name": "Universal"
 },
-
-
 {
 "Symbol": "V",
 "Company Name": "Visa"
 },
 {
 "Symbol": "VAC",
-"Company Name": "Marriot Vacations Worldwide Corporation"
+"Company Name": "Marriot Vacations Worldwide"
 },
 {
 "Symbol": "VAL",
-"Company Name": "Valspar Corporation (The)"
+"Company Name": "Valspar"
 },
 {
 "Symbol": "VALE",
-"Company Name": "VALE"
-},
-{
-"Symbol": "VALE.P",
 "Company Name": "VALE"
 },
 {
@@ -10377,7 +9912,7 @@
 },
 {
 "Symbol": "VC",
-"Company Name": "Visteon Corporation"
+"Company Name": "Visteon"
 },
 {
 "Symbol": "VCO",
@@ -10405,7 +9940,7 @@
 },
 {
 "Symbol": "VFC",
-"Company Name": "V.F. Corporation"
+"Company Name": "V.F."
 },
 {
 "Symbol": "VG",
@@ -10445,7 +9980,7 @@
 },
 {
 "Symbol": "VLO",
-"Company Name": "Valero Energy Corporation"
+"Company Name": "Valero Energy"
 },
 {
 "Symbol": "VLP",
@@ -10462,10 +9997,6 @@
 {
 "Symbol": "VLY",
 "Company Name": "Valley National Bancorp"
-},
-{
-"Symbol": "VLY.W",
-"Company Name": "Valley National Bancorp Warrants Expiring 11/14/2018"
 },
 {
 "Symbol": "VMC",
@@ -10496,10 +10027,6 @@
 "Company Name": "Vornado Realty Trust"
 },
 {
-"Symbol": "VNO.V",
-"Company Name": "Vornado Realty Trust Common Shares of Beneficial Interest Ex"
-},
-{
 "Symbol": "VNTV",
 "Company Name": "Vantiv"
 },
@@ -10525,11 +10052,11 @@
 },
 {
 "Symbol": "VRS",
-"Company Name": "Verso Corporation"
+"Company Name": "Verso"
 },
 {
 "Symbol": "VRTV",
-"Company Name": "Veritiv Corporation"
+"Company Name": "Veritiv"
 },
 {
 "Symbol": "VRX",
@@ -10549,7 +10076,7 @@
 },
 {
 "Symbol": "VTA",
-"Company Name": "Invesco Credit Opportunities Fund Common Shares of Beneficial Interest"
+"Company Name": "Invesco Credit Opportunities Fund"
 },
 {
 "Symbol": "VTN",
@@ -10558,15 +10085,13 @@
 {
 "Symbol": "VTR",
 "Company Name": "Ventas"
-},
-
-{
+},{
 "Symbol": "VTTI",
 "Company Name": "VTTI Energy Partners LP Common Units representing"
 },
 {
 "Symbol": "VVC",
-"Company Name": "Vectren Corporation"
+"Company Name": "Vectren"
 },
 {
 "Symbol": "VVI",
@@ -10579,15 +10104,13 @@
 {
 "Symbol": "VZ",
 "Company Name": "Verizon Communications"
-},
-
-{
+},{
 "Symbol": "W",
 "Company Name": "Wayfair"
 },
 {
 "Symbol": "WAB",
-"Company Name": "Westinghouse Air Brake Technologies Corporation"
+"Company Name": "Westinghouse Air Brake Technologies"
 },
 {
 "Symbol": "WAC",
@@ -10603,7 +10126,7 @@
 },
 {
 "Symbol": "WAT",
-"Company Name": "Waters Corporation"
+"Company Name": "Waters"
 },
 {
 "Symbol": "WBAI",
@@ -10615,15 +10138,11 @@
 },
 {
 "Symbol": "WBK",
-"Company Name": "Westpac Banking Corporation"
+"Company Name": "Westpac Banking"
 },
 {
 "Symbol": "WBS",
-"Company Name": "Webster Financial Corporation"
-},
-{
-"Symbol": "WBS.W",
-"Company Name": "Webster Financial Corporation Warrant (expiring November 21, 2018)"
+"Company Name": "Webster Financial"
 },
 {
 "Symbol": "WCC",
@@ -10659,7 +10178,7 @@
 },
 {
 "Symbol": "WEC",
-"Company Name": "Wisconsin Energy Corporation"
+"Company Name": "Wisconsin Energy"
 },
 {
 "Symbol": "WES",
@@ -10676,10 +10195,6 @@
 {
 "Symbol": "WFC",
 "Company Name": "Wells Fargo & Company"
-},
-{
-"Symbol": "WFC.W",
-"Company Name": "Wells Fargo & Company Warrants expiring October 28, 2018"
 },
 {
 "Symbol": "WFT",
@@ -10707,7 +10222,7 @@
 },
 {
 "Symbol": "WHR",
-"Company Name": "Whirlpool Corporation"
+"Company Name": "Whirlpool"
 },
 {
 "Symbol": "WHX",
@@ -10739,7 +10254,7 @@
 },
 {
 "Symbol": "WLK",
-"Company Name": "Westlake Chemical Corporation"
+"Company Name": "Westlake Chemical"
 },
 {
 "Symbol": "WLKP",
@@ -10747,7 +10262,7 @@
 },
 {
 "Symbol": "WLL",
-"Company Name": "Whiting Petroleum Corporation"
+"Company Name": "Whiting Petroleum"
 },
 {
 "Symbol": "WLT",
@@ -10763,7 +10278,7 @@
 },
 {
 "Symbol": "WMC",
-"Company Name": "Western Asset Mortgage Capital Corporation"
+"Company Name": "Western Asset Mortgage Capital"
 },
 {
 "Symbol": "WMK",
@@ -10783,7 +10298,7 @@
 },
 {
 "Symbol": "WNC",
-"Company Name": "Wabash National Corporation"
+"Company Name": "Wabash National"
 },
 {
 "Symbol": "WNR",
@@ -10831,7 +10346,7 @@
 },
 {
 "Symbol": "WRB",
-"Company Name": "W.R. Berkley Corporation"
+"Company Name": "W.R. Berkley"
 },
 {
 "Symbol": "WRE",
@@ -10840,9 +10355,7 @@
 {
 "Symbol": "WRI",
 "Company Name": "Weingarten Realty Investors"
-},
-
-{
+},{
 "Symbol": "WSH",
 "Company Name": "Willis Group Holdings Public"
 },
@@ -10853,10 +10366,6 @@
 {
 "Symbol": "WSO",
 "Company Name": "Watsco"
-},
-{
-"Symbol": "WSO.B",
-"Company Name": "Watsco Class B"
 },
 {
 "Symbol": "WSR",
@@ -10888,7 +10397,7 @@
 },
 {
 "Symbol": "WU",
-"Company Name": "Western Union Company (The)"
+"Company Name": "Western Union"
 },
 {
 "Symbol": "WUBA",
@@ -10896,7 +10405,7 @@
 },
 {
 "Symbol": "WWAV",
-"Company Name": "Whitewave Foods Company (The)"
+"Company Name": "Whitewave Foods"
 },
 {
 "Symbol": "WWE",
@@ -10916,11 +10425,11 @@
 },
 {
 "Symbol": "WYN",
-"Company Name": "Wyndham Worldwide Corp Common  Stock"
+"Company Name": "Wyndham Worldwide Corp Common Stock"
 },
 {
 "Symbol": "X",
-"Company Name": "United States Steel Corporation"
+"Company Name": "United States Steel"
 },
 {
 "Symbol": "XCO",
@@ -10940,7 +10449,7 @@
 },
 {
 "Symbol": "XKE",
-"Company Name": "Lehman ABS Corporation Corporate"
+"Company Name": "Lehman ABS"
 },
 {
 "Symbol": "XL",
@@ -10956,11 +10465,11 @@
 },
 {
 "Symbol": "XOM",
-"Company Name": "Exxon Mobil Corporation"
+"Company Name": "Exxon Mobil"
 },
 {
 "Symbol": "XON",
-"Company Name": "Intrexon Corporation"
+"Company Name": "Intrexon"
 },
 {
 "Symbol": "XOXO",
@@ -10980,7 +10489,7 @@
 },
 {
 "Symbol": "XRX",
-"Company Name": "Xerox Corporation"
+"Company Name": "Xerox"
 },
 {
 "Symbol": "XYL",
@@ -10988,11 +10497,11 @@
 },
 {
 "Symbol": "Y",
-"Company Name": "Alleghany Corporation"
+"Company Name": "Alleghany"
 },
 {
 "Symbol": "YDKN",
-"Company Name": "Yadkin Financial Corporation"
+"Company Name": "Yadkin Financial"
 },
 {
 "Symbol": "YELP",

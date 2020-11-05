@@ -2206,5 +2206,9 @@ table {
 
 .lower-box .stock-suggestion {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.stock-nav-link {
+  text-decoration: none;
 }

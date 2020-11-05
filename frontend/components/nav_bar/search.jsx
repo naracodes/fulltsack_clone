@@ -53,10 +53,11 @@ class Search extends React.Component {
                 <NavLink
                   key={i}
                   to={`/stocks/${stock.ticker}`}
+                  className="stock-nav-link"
                   >
                   <li className="stock-suggestion">
-                    <span>{stock.ticker}</span>
-                    <span>{stock.companyName}</span>
+                    <span className="suggestion-ticker">{stock.ticker}</span>
+                    <span className="suggestion-name">{stock.companyName}</span>
                   </li>
                 </NavLink>
               )
