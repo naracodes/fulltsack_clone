@@ -45,7 +45,7 @@ class Search extends React.Component {
     if (assets.data.length && this.state.searchVal) {
       const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) && obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
       return (
-        <ul>
+        <ul className="stock-suggestion-box">
           <h5>Stocks</h5>
           {
             filtered.map((stock, i) => {
@@ -54,7 +54,7 @@ class Search extends React.Component {
                   key={i}
                   to={`/stocks/${stock.ticker}`}
                   >
-                  <li>
+                  <li className="stock-suggestion">
                     <span>{stock.ticker}</span>
                     <span>{stock.companyName}</span>
                   </li>
@@ -84,19 +84,24 @@ class Search extends React.Component {
         <div className="search-outer">
           <div className="search-box">
             <div className="search-inner-box">
-              <FontAwesomeIcon icon={faSearch} className="search-icon" />
-              <input
-                type="text"
-                id="search-bar"
-                onKeyDown={this.handleKeyDown}
-                onChange={this.handleInput}
-                tabIndex="0"
-                placeholder="Search"
-                autoComplete={"new-password"}
-              />
+              <div className="search-icon">
+                <FontAwesomeIcon icon={faSearch} className="search-icon" />
+              </div>
+                <input
+                  type="text"
+                  className="search-input"
+                  id="search-bar"
+                  onKeyDown={this.handleKeyDown}
+                  onChange={this.handleInput}
+                  tabIndex="0"
+                  placeholder="Search"
+                  autoComplete={"new-password"}
+                />
+              <div className="lower-box">
+                {this.renderSuggestion()}
+              </div>
             </div>
           </div>
-          {this.renderSuggestion()}
         </div>
       )
 

@@ -1175,11 +1175,19 @@ table {
 
 .search-inner-box {
   display: flex;
-  height: 34px;
   padding-left: 5% ;
   align-items: center;
   color: lightgray;
+  min-height: 34px;
 }
+
+// .search-input {
+//   display: flex;
+//   padding-left: 5% ;
+//   align-items: center;
+//   color: lightgray;
+//   // min-height: 34px;
+// }
 
 .search-inner-box:focus-within {
   color: black;
@@ -2186,4 +2194,17 @@ table {
   .type {
     cursor: pointer;
   }
+}
+
+//stock suggestion search box
+.stock-suggestion-box {
+  position: absolute;
+  left: 240px;
+  padding-top: 20px;
+  height: 50px;
+}
+
+.lower-box .stock-suggestion {
+  display: flex;
+  justify-content: space-evenly;
 }
