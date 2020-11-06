@@ -102,19 +102,31 @@ class Search extends React.Component {
                     autoComplete={"new-password"}
                   />
                 </div>
-              {/* <div className="test-div">
+              <div className="test-div">
                 <ul>
-                  <li>Test list Test list t</li>
-                  <li>Test listTest list</li>
-                  <li>Test list</li>
-                  <li>TeTest listst list</li>
-                  <li>Test list</li>
-                  <li>Test liTest listst</li>
+                  <li>
+                    Test list Test list t
+                  </li>
+                  <li>
+                    Test listTest list
+                  </li>
+                  <li>
+                    Test list
+                  </li>
+                  <li>
+                    TeTest listst list
+                  </li>
+                  <li>
+                    Test list
+                  </li>
+                  <li>
+                    Test liTest listst
+                  </li>
                 </ul>
-              </div> */}
-              <div className="lower-box">
-                {this.renderSuggestion()}
               </div>
+              {/* <div className="lower-box">
+                {this.renderSuggestion()}
+              </div> */}
             </div>
           </div>
         </div>
