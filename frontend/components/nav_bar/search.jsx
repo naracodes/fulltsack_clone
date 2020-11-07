@@ -103,26 +103,64 @@ class Search extends React.Component {
                   />
                 </div>
               <div className="test-div">
-                <ul>
-                  <li>
-                    Test list Test list t
+                <table border="1" style={{width: "100%"}}>
+                  <colgroup>
+                    <col span="1" style={{width: "25%"}} />
+                    <col span="1" style={{width: "75%"}} />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>GO</td>
+                      <td>Grocery Outlet</td>
+                    </tr>
+                    <tr>
+                      <td>GOOGL</td>
+                      <td>Alphabet Class A</td>
+                    </tr>
+                    <tr>
+                      <td>GOOG</td>
+                      <td>Alphabet Class C</td>
+                    </tr>
+                    <tr>
+                      <td>GLD</td>
+                      <td>SPDR Gold Trust</td>
+                    </tr>
+                    <tr>
+                      <td>GOLD</td>
+                      <td>Barrick Gold</td>
+                    </tr>
+                    <tr>
+                      <td>GDX</td>
+                      <td>VanEck Vectors Gold Miners ETF</td>
+                    </tr>
+                  </tbody>
+                </table>
+                {/* <ul>
+                  <li className="stock-suggestion">
+                    <span className="suggestion-ticker">GO</span>
+                    <span className="suggestion-name">Grocery Outlet</span>
                   </li>
-                  <li>
-                    Test listTest list
+                  <li className="stock-suggestion">
+                    <span className="suggestion-ticker">GOOGL</span>
+                    <span className="suggestion-name">Alphabet Class A</span>
                   </li>
-                  <li>
-                    Test list
+                  <li className="stock-suggestion">
+                    <span className="suggestion-ticker">GOOG</span>
+                    <span className="suggestion-name">Alphabet Class C</span>
                   </li>
-                  <li>
-                    TeTest listst list
+                  <li className="stock-suggestion">
+                    <span className="suggestion-ticker">GLD</span>
+                    <span className="suggestion-name">SPDR Gold Trust</span>
                   </li>
-                  <li>
-                    Test list
+                  <li className="stock-suggestion">
+                    <span className="suggestion-ticker">GOLD</span>
+                    <span className="suggestion-name">Barrick Gold</span>
                   </li>
-                  <li>
-                    Test liTest listst
+                  <li className="stock-suggestion">
+                    <span className="suggestion-ticker">GDX</span>
+                    <span className="suggestion-name">VanEck Vectors Gold Miners ETF</span>
                   </li>
-                </ul>
+                </ul> */}
               </div>
               {/* <div className="lower-box">
                 {this.renderSuggestion()}
