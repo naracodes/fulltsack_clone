@@ -2273,7 +2273,7 @@ table {
 .icon-container {
   display: flex;
   height: 36px;
-  padding-left: 12px;
+  padding-left: 24px;
   box-sizing: border-box;
 }
 
@@ -2308,12 +2308,36 @@ table {
 }
 
 .test-div {
+  // margin-left: 24px;
+  margin-bottom: 24px;
+  h4 {
+    color: rgb(148, 148, 148);
+    font-weight: 400;
+    font-size: 13px;
+    padding-left: 24px;
+  }
+  tr {
+    margin-left: 24px;
+    cursor: pointer;
+  }
   td {
+    font-size: 13px;
     padding-bottom: 5px;
     text-align: left;
     vertical-align: middle;
     height: 30px;
+    font-weight: 600;
   }
-
-
 }
+
+.test-div tr:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.test-div tr td:first-of-type {
+  padding-left: 24px;
+}
+
+// .test-div tbody tr:last-child {
+//   color: red;
+// }
