@@ -104,7 +104,7 @@ class Search extends React.Component {
                 </div>
               <div className="test-div">
                 <table border="1" style={{width: "100%"}}>
-                  <colgroup>
+                  <colgroup style={{height: "30px"}}>
                     <col span="1" style={{width: "25%"}} />
                     <col span="1" style={{width: "75%"}} />
                   </colgroup>

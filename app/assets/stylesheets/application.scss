@@ -1224,10 +1224,6 @@ table {
 //   box-sizing: border-box;
 // }
 
-// .test-div {
-//   position: relative;
-// }
-
 // .magnify {
 //   display: flex;
 //   flex: 0 0 auto;
@@ -2309,4 +2305,15 @@ table {
   .suggestion-ticker {
     padding-right: 20px;
   }
+}
+
+.test-div {
+  td {
+    padding-bottom: 5px;
+    text-align: left;
+    vertical-align: middle;
+    height: 50px;
+  }
+
+
 }
