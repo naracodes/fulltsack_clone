@@ -24,9 +24,10 @@ class Search extends React.Component {
     fetchAssets().then(() => this.setState({loading: false}));
   }
 
-  // handleClick(e, ticker) {
+  // handleClick(ticker) {
   //   const { history } = this.props;
   //   // return e => {
+  //     debugger
   //     history.push(`/stocks/${ticker.toUpperCase()}`);
   //   // }
   // }
@@ -56,10 +57,10 @@ class Search extends React.Component {
         <div className="test-div">
           <h4>Stocks</h4>
           <table style={{width: "100%"}}>
-            <colgroup style={{height: "30px"}}>
+            {/* <colgroup style={{height: "30px"}}>
               <col span="1" style={{width: "20%"}} />
               <col span="1" style={{width: "80%"}} />
-            </colgroup>
+            </colgroup> */}
               <tbody>
                 {
                   filtered.map((stock, i) => {
