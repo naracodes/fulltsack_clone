@@ -8,9 +8,10 @@ import SearchItem from './search_item';
 class Search extends React.Component {
   constructor(props) {
     super(props)
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    // this.handleKeyDown = this.handleKeyDown.bind(this);
     this.renderSuggestion = this.renderSuggestion.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
     this.state = {
       loading: true,
       filtered: null,
@@ -23,15 +24,22 @@ class Search extends React.Component {
     fetchAssets().then(() => this.setState({loading: false}));
   }
 
-  handleKeyDown(e) {
-    const { history } = this.props;
-      if (e.keyCode === 13) {
-        history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
-        // debugger
-        // if (history.location.pathname === "/") {
-        // };
-      };
-  }
+  // handleClick(e, ticker) {
+  //   const { history } = this.props;
+  //   // return e => {
+  //     history.push(`/stocks/${ticker.toUpperCase()}`);
+  //   // }
+  // }
+
+  // handleKeyDown(e) {
+  //   const { history } = this.props;
+  //     if (e.keyCode === 13) {
+  //       history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
+  //       // debugger
+  //       // if (history.location.pathname === "/") {
+  //       // };
+  //     };
+  // }
 
   handleInput(e) {
     const searchVal = e.currentTarget.value;
@@ -45,25 +53,37 @@ class Search extends React.Component {
     if (assets.data.length && this.state.searchVal) {
       const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) && obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
       return (
-        <ul className="stock-suggestion-box">
-          <h5>Stocks</h5>
-          {
-            filtered.map((stock, i) => {
-              return (
-                <NavLink
-                  key={i}
-                  to={`/stocks/${stock.ticker}`}
-                  className="stock-nav-link"
-                  >
-                  <li className="stock-suggestion">
-                    <span className="suggestion-ticker">{stock.ticker}</span>
-                    <span className="suggestion-name">{stock.companyName}</span>
-                  </li>
-                </NavLink>
-              )
-            })
-          }
-        </ul>
+        <div className="test-div">
+          <h4>Stocks</h4>
+          <table style={{width: "100%"}}>
+            <colgroup style={{height: "30px"}}>
+              <col span="1" style={{width: "20%"}} />
+              <col span="1" style={{width: "80%"}} />
+            </colgroup>
+              <tbody>
+                {
+                  filtered.map((stock, i) => {
+                    return (
+                        <tr key={i}>
+                          <td>{stock.ticker}</td>
+                          <td>{stock.companyName}</td>
+                        </tr>
+                      // <NavLink
+                      //   key={i}
+                      //   to={`/stocks/${stock.ticker}`}
+                      //   className="stock-nav-link"
+                      //   >
+                      //   <li className="stock-suggestion">
+                      //     <span className="suggestion-ticker">{stock.ticker}</span>
+                      //     <span className="suggestion-name">{stock.companyName}</span>
+                      //   </li>
+                      // </NavLink>
+                    )
+                  })
+                }
+              </tbody>
+          </table>
+        </div>
       )
     } else {
       return (
@@ -95,14 +115,14 @@ class Search extends React.Component {
                     type="text"
                     className="search-input"
                     id="search-bar"
-                    onKeyDown={this.handleKeyDown}
+                    // onKeyDown={this.handleKeyDown}
                     onChange={this.handleInput}
                     tabIndex="0"
                     placeholder="Search"
                     autoComplete={"new-password"}
                   />
                 </div>
-              <div className="test-div">
+              {/* <div className="test-div">
                 <h4>Stocks</h4>
                 <table style={{width: "100%"}}>
                   <colgroup style={{height: "30px"}}>
@@ -136,36 +156,8 @@ class Search extends React.Component {
                     </tr>
                   </tbody>
                 </table>
-                {/* <ul>
-                  <li className="stock-suggestion">
-                    <span className="suggestion-ticker">GO</span>
-                    <span className="suggestion-name">Grocery Outlet</span>
-                  </li>
-                  <li className="stock-suggestion">
-                    <span className="suggestion-ticker">GOOGL</span>
-                    <span className="suggestion-name">Alphabet Class A</span>
-                  </li>
-                  <li className="stock-suggestion">
-                    <span className="suggestion-ticker">GOOG</span>
-                    <span className="suggestion-name">Alphabet Class C</span>
-                  </li>
-                  <li className="stock-suggestion">
-                    <span className="suggestion-ticker">GLD</span>
-                    <span className="suggestion-name">SPDR Gold Trust</span>
-                  </li>
-                  <li className="stock-suggestion">
-                    <span className="suggestion-ticker">GOLD</span>
-                    <span className="suggestion-name">Barrick Gold</span>
-                  </li>
-                  <li className="stock-suggestion">
-                    <span className="suggestion-ticker">GDX</span>
-                    <span className="suggestion-name">VanEck Vectors Gold Miners ETF</span>
-                  </li>
-                </ul> */}
-              </div>
-              {/* <div className="lower-box">
-                {this.renderSuggestion()}
               </div> */}
+                {this.renderSuggestion()}
             </div>
           </div>
         </div>
