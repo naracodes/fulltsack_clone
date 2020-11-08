@@ -28,6 +28,7 @@ class Search extends React.Component {
     const { history } = this.props;
     return e => {
       debugger
+
       history.push(`/stocks/${ticker.toUpperCase()}`);
     }
   }
