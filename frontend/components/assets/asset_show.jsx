@@ -313,7 +313,6 @@ class AssetShow extends React.Component {
   // }
 
   // shouldComponentUpdate(nextProps, nextState) {
-  //   debugger
   //   if (this.props.ticker === nextProps.match.params.ticker) {
   //     return true;
   //   } else {
@@ -356,7 +355,6 @@ class AssetShow extends React.Component {
   //         fetchAllWatchlistAssets(),
   //         fetchRating(ticker),
   //       ]).then((response) => {
-  //         debugger
   //         console.log('all fetched')
   //         this.setState({ loading: false, intraday: response[1].assetIntraday })
   //       });
@@ -396,7 +394,6 @@ class AssetShow extends React.Component {
       fetchAllWatchlistAssets(),
       fetchRating(ticker),
     ]).then((response) => {
-      debugger
       console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday })
     });
@@ -407,13 +404,17 @@ class AssetShow extends React.Component {
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
     document.removeEventListener("mousedown", this.handleClickOutside_invest);
-    debugger
     this.props.clearAsset();
+    // this.setState({loading: true});
   }
 
-  shouldComponentUpdate() {
-    
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   // debugger
+  //   // this.forceUpdate();
+  //   // return this.props.ticker === nextProps.ticker;
+  //   // const nextTicker = window.localStorage.getItem("nextTicker")
+  //   // return this.state.loading
+  // }
 
   handleAddToList(e) {
     e.preventDefault();
@@ -450,6 +451,7 @@ class AssetShow extends React.Component {
         </div>
       )
     } else {
+      // this.setState({loading:true})
       let asset = assets[ticker];
       let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
