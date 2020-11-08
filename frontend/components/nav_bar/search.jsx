@@ -52,7 +52,8 @@ class Search extends React.Component {
   renderSuggestion(e) {
     const { assets } = this.props;
     if (assets.data.length && this.state.searchVal) {
-      const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) && obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
+      const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) && 
+      obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 6);
       return (
         <div className="test-div">
           <h4>Stocks</h4>
@@ -65,10 +66,16 @@ class Search extends React.Component {
                 {
                   filtered.map((stock, i) => {
                     return (
-                        <tr key={i}>
+                      <Link
+                      key={i}
+                      className="nav-link"
+                      to={`/stocks/${stock.ticker}`}
+                      >
+                        <tr>
                           <td>{stock.ticker}</td>
                           <td>{stock.companyName}</td>
                         </tr>
+                      </Link>
                       // <NavLink
                       //   key={i}
                       //   to={`/stocks/${stock.ticker}`}
