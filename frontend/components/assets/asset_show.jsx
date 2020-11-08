@@ -442,7 +442,7 @@ class AssetShow extends React.Component {
       watchlist,
       ticker,
     } = this.props;
-    if (this.state.loading || !portfolio || !assets ) {
+    if (this.state.loading || !portfolio || !assets || !ticker || !assets[ticker] ) {
       return (
         <div>
           Loading...
