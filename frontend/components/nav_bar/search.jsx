@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AssetShowContainer from '../assets/asset_show_container';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SearchItem from './search_item';
@@ -26,9 +27,11 @@ class Search extends React.Component {
 
   handleClick(ticker) {
     const { history } = this.props;
+    debugger
     return e => {
       debugger
       history.push(`/stocks/${ticker.toUpperCase()}`);
+      window.localStorage.setItem("nextTicker", ticker);
     }
   }
 

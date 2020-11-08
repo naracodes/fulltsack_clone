@@ -7,7 +7,8 @@ import {
   fetchAsset,
   fetchCompanyInfo,
   fetchIntraday,
-  fetchRating
+  fetchRating,
+  clearAsset
 } from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist, fetchAllWatchlistAssets } from '../../actions/watchlist_actions';
 import { fetchAssetNews } from "../../actions/news_actions";
