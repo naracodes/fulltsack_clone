@@ -2301,14 +2301,14 @@ table {
   padding-right: 24px;
 }
 
-.stock-nav-link {
-  text-decoration: none;
-  color: black;
+// .stock-nav-link {
+//   text-decoration: none;
+//   color: black;
 
-  .suggestion-ticker {
-    padding-right: 20px;
-  }
-}
+//   .suggestion-ticker {
+//     padding-right: 20px;
+//   }
+// }
 
 .test-div {
   // margin-left: 24px;
@@ -2344,3 +2344,7 @@ table {
 // .test-div tbody tr:last-child {
 //   color: red;
 // }
+
+.nav-link {
+  display: block;
+}

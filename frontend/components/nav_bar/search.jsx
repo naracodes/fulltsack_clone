@@ -11,7 +11,7 @@ class Search extends React.Component {
     // this.handleKeyDown = this.handleKeyDown.bind(this);
     this.renderSuggestion = this.renderSuggestion.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       loading: true,
       filtered: null,
@@ -24,13 +24,13 @@ class Search extends React.Component {
     fetchAssets().then(() => this.setState({loading: false}));
   }
 
-  // handleClick(ticker) {
-  //   const { history } = this.props;
-  //   // return e => {
-  //     debugger
-  //     history.push(`/stocks/${ticker.toUpperCase()}`);
-  //   // }
-  // }
+  handleClick(ticker) {
+    const { history } = this.props;
+    return e => {
+      debugger
+      history.push(`/stocks/${ticker.toUpperCase()}`);
+    }
+  }
 
   // handleKeyDown(e) {
   //   const { history } = this.props;
@@ -57,15 +57,15 @@ class Search extends React.Component {
         <div className="test-div">
           <h4>Stocks</h4>
           <table style={{width: "100%"}}>
-            {/* <colgroup style={{height: "30px"}}>
+            <colgroup style={{height: "30px"}}>
               <col span="1" style={{width: "20%"}} />
               <col span="1" style={{width: "80%"}} />
-            </colgroup> */}
+            </colgroup>
               <tbody>
                 {
                   filtered.map((stock, i) => {
                     return (
-                        <tr key={i}>
+                        <tr key={i} onClick={this.handleClick(stock.ticker)}>
                           <td>{stock.ticker}</td>
                           <td>{stock.companyName}</td>
                         </tr>
