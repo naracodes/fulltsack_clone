@@ -561,9 +561,9 @@ class AssetShow extends React.Component {
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">Founded</div>
+                            <div className="info-label-div">Sector</div>
                           </span>
-                          <div className="info-data">????</div>
+                            <div className="info-data">{asset.sector}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
