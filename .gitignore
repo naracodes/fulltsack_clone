@@ -8,3 +8,4 @@ log/development.log
 !/log/.keep
 !/tmp/.keep
 .byebug_history
+.env
