@@ -31,8 +31,8 @@ export const fetchMultipleAssets = (tickersArr) => {
 export const fetchIntraday = ticker => { //base 5 min interval
     return $.ajax({
         method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=${iexKey}&chartInterval=5`,
-        // url: `https://cloud.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=${iexKey}&chartInterval=5`,
+        // url: `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=${iexKey}&chartInterval=5`,
+        url: `https://cloud.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=${iexKey}&chartInterval=5`,
     })
 }
 
