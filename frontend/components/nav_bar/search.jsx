@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AssetShowContainer from '../assets/asset_show_container';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SearchItem from './search_item';
+import AssetShowContainer from '../assets/asset_show_container';
 
 class Search extends React.Component {
   constructor(props) {
@@ -30,7 +30,8 @@ class Search extends React.Component {
     debugger
     return e => {
       debugger
-      history.push(`/stocks/${ticker.toUpperCase()}`);
+      // history.push(`/stocks/${ticker.toUpperCase()}`);
+      <AssetShowContainer ticker={ticker} />
       window.localStorage.setItem("nextTicker", ticker);
     }
   }

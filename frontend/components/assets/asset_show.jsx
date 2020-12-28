@@ -313,6 +313,7 @@ class AssetShow extends React.Component {
   // }
 
   // shouldComponentUpdate(nextProps, nextState) {
+  //   debugger
   //   if (this.props.ticker === nextProps.match.params.ticker) {
   //     return true;
   //   } else {
@@ -322,7 +323,7 @@ class AssetShow extends React.Component {
 
   // componentDidUpdate(prevProps, prevState) {
   //   const { fetchAsset } = this.props;
-    
+  //   debugger
   //   if (this.props.ticker !== prevProps.match.params.ticker) {
   //       const {
   //         fetchAsset,
@@ -369,7 +370,7 @@ class AssetShow extends React.Component {
       fetchIntraday,
       fetch1Week,
       fetchAssetNews,
-      fetchRating,
+      // fetchRating,
       fetchPortfolioCashBalance,
       fetchHoldings,
       fetchAllWatchlistAssets,
@@ -381,8 +382,8 @@ class AssetShow extends React.Component {
     } else if (clickedRange === "1W") {
       fetchClickedRange = fetch1Week;
     };
-
     const ticker = this.props.match.params.ticker.toUpperCase();
+    debugger
     Promise.all([
       fetchAsset(ticker),
       fetchClickedRange(ticker),
@@ -392,7 +393,7 @@ class AssetShow extends React.Component {
       fetchPortfolioCashBalance(),
       fetchHoldings(),
       fetchAllWatchlistAssets(),
-      fetchRating(ticker),
+      // fetchRating(ticker),
     ]).then((response) => {
       console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday })
@@ -404,7 +405,7 @@ class AssetShow extends React.Component {
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
     document.removeEventListener("mousedown", this.handleClickOutside_invest);
-    this.props.clearAsset();
+    // this.props.clearAsset();
     // this.setState({loading: true});
   }
 
@@ -455,7 +456,7 @@ class AssetShow extends React.Component {
       let asset = assets[ticker];
       let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
-      let rating = asset.rating[0];
+      // let rating = asset.rating[0];
       let closingPrice =
         asset.close ||
         asset.data[asset.data.length - 1].close ||
@@ -561,9 +562,9 @@ class AssetShow extends React.Component {
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
-                            <div className="info-label-div">Founded</div>
+                            <div className="info-label-div">Sector</div>
                           </span>
-                          <div className="info-data">????</div>
+                            <div className="info-data">{asset.sector}</div>
                         </div>
                         <div className="asset-info">
                           <span className="info-label">
@@ -712,7 +713,7 @@ class AssetShow extends React.Component {
                         })}
                       </div>
                     </section>
-                    <section className="rating-section">
+                    {/* <section className="rating-section">
                       <header className="rating-heading">
                         <div className="rating-div">
                           <div className="rating-div-inner">
@@ -734,17 +735,8 @@ class AssetShow extends React.Component {
                             hold={((rating.ratingHold) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                             sell={((rating.ratingSell + rating.ratingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                           />}
-                          {/* {<div>
-                            {`${((rating.rating_buy + rating.rating_ow) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
-                          </div>
-                          <div>
-                            {`${((rating.rating_hold) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
-                          </div>
-                          <div>
-                            {`${((rating.rating_sell + rating.rating_uw) / (rating.rating_buy + rating.rating_hold + rating.rating_ow)).toFixed(2) * 100}%`}
-                          </div>} */}
                       </div>
-                    </section>
+                    </section> */}
                     <section className="earnings-section">
                       <div className="earnings-heading">
                         <div className="earnings-div">
