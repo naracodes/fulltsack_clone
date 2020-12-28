@@ -320,46 +320,46 @@ class AssetShow extends React.Component {
   //   };
   // }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   const { fetchAsset } = this.props;
-    
-  //   if (this.props.ticker !== prevProps.match.params.ticker) {
-  //       const {
-  //         fetchAsset,
-  //         fetchCompanyInfo,
-  //         fetchIntraday,
-  //         fetch1Week,
-  //         fetchAssetNews,
-  //         fetchRating,
-  //         fetchPortfolioCashBalance,
-  //         fetchHoldings,
-  //         fetchAllWatchlistAssets,
-  //       } = this.props;
-  //       const { clickedRange } = this.state;
-  //       let fetchClickedRange;
-  //       if (clickedRange === "1D") {
-  //         fetchClickedRange = fetchIntraday;
-  //       } else if (clickedRange === "1W") {
-  //         fetchClickedRange = fetch1Week;
-  //       };
+  componentDidUpdate(prevProps, prevState) {
+    const { fetchAsset } = this.props;
+    // debugger
+    if (this.props.ticker !== prevProps.match.params.ticker) {
+        const {
+          fetchAsset,
+          fetchCompanyInfo,
+          fetchIntraday,
+          fetch1Week,
+          fetchAssetNews,
+          fetchRating,
+          fetchPortfolioCashBalance,
+          fetchHoldings,
+          fetchAllWatchlistAssets,
+        } = this.props;
+        const { clickedRange } = this.state;
+        let fetchClickedRange;
+        if (clickedRange === "1D") {
+          fetchClickedRange = fetchIntraday;
+        } else if (clickedRange === "1W") {
+          fetchClickedRange = fetch1Week;
+        };
 
-  //       const ticker = this.props.match.params.ticker.toUpperCase();
-  //       Promise.all([
-  //         fetchAsset(ticker),
-  //         fetchClickedRange(ticker),
-  //         // fetchIntraday(ticker),
-  //         fetchCompanyInfo(ticker),
-  //         fetchAssetNews(ticker),
-  //         fetchPortfolioCashBalance(),
-  //         fetchHoldings(),
-  //         fetchAllWatchlistAssets(),
-  //         fetchRating(ticker),
-  //       ]).then((response) => {
-  //         console.log('all fetched')
-  //         this.setState({ loading: false, intraday: response[1].assetIntraday })
-  //       });
-  //   }
-  // }
+        const ticker = this.props.match.params.ticker.toUpperCase();
+        Promise.all([
+          fetchAsset(ticker),
+          fetchClickedRange(ticker),
+          // fetchIntraday(ticker),
+          fetchCompanyInfo(ticker),
+          fetchAssetNews(ticker),
+          fetchPortfolioCashBalance(),
+          fetchHoldings(),
+          fetchAllWatchlistAssets(),
+          fetchRating(ticker),
+        ]).then((response) => {
+          console.log('all fetched')
+          this.setState({ loading: false, intraday: response[1].assetIntraday })
+        });
+    }
+  }
 
 
   componentDidMount() {
@@ -369,7 +369,7 @@ class AssetShow extends React.Component {
       fetchIntraday,
       fetch1Week,
       fetchAssetNews,
-      fetchRating,
+      // fetchRating,
       fetchPortfolioCashBalance,
       fetchHoldings,
       fetchAllWatchlistAssets,
@@ -381,8 +381,8 @@ class AssetShow extends React.Component {
     } else if (clickedRange === "1W") {
       fetchClickedRange = fetch1Week;
     };
-
     const ticker = this.props.match.params.ticker.toUpperCase();
+    debugger
     Promise.all([
       fetchAsset(ticker),
       fetchClickedRange(ticker),
@@ -392,7 +392,7 @@ class AssetShow extends React.Component {
       fetchPortfolioCashBalance(),
       fetchHoldings(),
       fetchAllWatchlistAssets(),
-      fetchRating(ticker),
+      // fetchRating(ticker),
     ]).then((response) => {
       console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday })
@@ -404,7 +404,7 @@ class AssetShow extends React.Component {
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
     document.removeEventListener("mousedown", this.handleClickOutside_invest);
-    this.props.clearAsset();
+    // this.props.clearAsset();
     // this.setState({loading: true});
   }
 
@@ -455,7 +455,7 @@ class AssetShow extends React.Component {
       let asset = assets[ticker];
       let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
-      let rating = asset.rating[0];
+      // let rating = asset.rating[0];
       let closingPrice =
         asset.close ||
         asset.data[asset.data.length - 1].close ||
@@ -712,7 +712,7 @@ class AssetShow extends React.Component {
                         })}
                       </div>
                     </section>
-                    <section className="rating-section">
+                    {/* <section className="rating-section">
                       <header className="rating-heading">
                         <div className="rating-div">
                           <div className="rating-div-inner">
@@ -735,7 +735,7 @@ class AssetShow extends React.Component {
                             sell={((rating.ratingSell + rating.ratingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                           />}
                       </div>
-                    </section>
+                    </section> */}
                     <section className="earnings-section">
                       <div className="earnings-heading">
                         <div className="earnings-div">
