@@ -313,6 +313,7 @@ class AssetShow extends React.Component {
   // }
 
   // shouldComponentUpdate(nextProps, nextState) {
+  //   debugger
   //   if (this.props.ticker === nextProps.match.params.ticker) {
   //     return true;
   //   } else {
@@ -320,46 +321,48 @@ class AssetShow extends React.Component {
   //   };
   // }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   const { fetchAsset } = this.props;
-  //   // debugger
-  //   if (this.props.ticker !== prevProps.match.params.ticker) {
-  //       const {
-  //         fetchAsset,
-  //         fetchCompanyInfo,
-  //         fetchIntraday,
-  //         fetch1Week,
-  //         fetchAssetNews,
-  //         fetchRating,
-  //         fetchPortfolioCashBalance,
-  //         fetchHoldings,
-  //         fetchAllWatchlistAssets,
-  //       } = this.props;
-  //       const { clickedRange } = this.state;
-  //       let fetchClickedRange;
-  //       if (clickedRange === "1D") {
-  //         fetchClickedRange = fetchIntraday;
-  //       } else if (clickedRange === "1W") {
-  //         fetchClickedRange = fetch1Week;
-  //       };
 
-  //       const ticker = this.props.match.params.ticker.toUpperCase();
-  //       Promise.all([
-  //         fetchAsset(ticker),
-  //         fetchClickedRange(ticker),
-  //         // fetchIntraday(ticker),
-  //         fetchCompanyInfo(ticker),
-  //         fetchAssetNews(ticker),
-  //         fetchPortfolioCashBalance(),
-  //         fetchHoldings(),
-  //         fetchAllWatchlistAssets(),
-  //         fetchRating(ticker),
-  //       ]).then((response) => {
-  //         console.log('all fetched')
-  //         this.setState({ loading: false, intraday: response[1].assetIntraday })
-  //       });
-  //   }
-  // }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { fetchAsset } = this.props;
+    debugger
+    if (this.props.ticker !== prevProps.match.params.ticker) {
+        const {
+          fetchAsset,
+          fetchCompanyInfo,
+          fetchIntraday,
+          fetch1Week,
+          fetchAssetNews,
+          fetchRating,
+          fetchPortfolioCashBalance,
+          fetchHoldings,
+          fetchAllWatchlistAssets,
+        } = this.props;
+        const { clickedRange } = this.state;
+        let fetchClickedRange;
+        if (clickedRange === "1D") {
+          fetchClickedRange = fetchIntraday;
+        } else if (clickedRange === "1W") {
+          fetchClickedRange = fetch1Week;
+        };
+
+        const ticker = this.props.match.params.ticker.toUpperCase();
+        Promise.all([
+          fetchAsset(ticker),
+          fetchClickedRange(ticker),
+          // fetchIntraday(ticker),
+          fetchCompanyInfo(ticker),
+          fetchAssetNews(ticker),
+          fetchPortfolioCashBalance(),
+          fetchHoldings(),
+          fetchAllWatchlistAssets(),
+          fetchRating(ticker),
+        ]).then((response) => {
+          console.log('all fetched')
+          this.setState({ loading: false, intraday: response[1].assetIntraday })
+        });
+    }
+  }
 
 
   componentDidMount() {
