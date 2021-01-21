@@ -19,7 +19,6 @@ import { withRouter } from "react-router";
 
 
 export const msp = (state, ownProps) => {
-    debugger
     return {
         assets: state.entities.assets,
         currentUser: state.session.user,
@@ -33,14 +32,12 @@ export const msp = (state, ownProps) => {
 }
 // export const msp = (state, ownProps) => {
 //     let asset = asset || state.entities.assets[(ownProps.match.params.ticker).toUpperCase()] || state.entities.assets;
-//     debugger
 //     let news = state.entities.news ? state.entities.news : {};
 //     if (!asset) {
 //         return {
 //             asset: {}
 //         }
 //     } else {
-//         debugger
 //         return {
 //           asset: asset || state.entities.assets,
 //           currentUser: state.session.user,

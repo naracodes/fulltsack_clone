@@ -137,7 +137,7 @@ class AssetShow extends React.Component {
 
   handleBuy(e) {
     const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage, successMessage, orderMessage } = this.state;
-    const { addTransaction, addAssetToWatchlist, portfolio, asset, currentUser, watchlistArr } = this.props;
+    const { addTransaction, addAssetToWatchlist, portfolio, assets, currentUser, watchlistArr } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
     let buyingPowerAvailable = portfolio.balance;
@@ -153,7 +153,7 @@ class AssetShow extends React.Component {
             } ${order.quantity} ${order.quantity > 1 ? "shares" : "share"} of ${
               order.ticker
             } based on the current market price of $${
-              order.cost_per_share} for a total cost of $${numeral(order.transaction_amount).format('$0,0.00')}.`,
+              order.cost_per_share} for a total cost of ${numeral(order.transaction_amount).format('$0,0.00')}.`,
           });
         } else if (!reviewOrderClicked && buyingPowerAvailable < order.transaction_amount && !successMessage) {
           this.setState({
@@ -177,6 +177,8 @@ class AssetShow extends React.Component {
           ])
           .then(() => {
             if (!watchlistArr.includes(ticker)) {
+              debugger
+              const asset = assets[ticker];
               addAssetToWatchlist(asset, currentUser);
             };
             this.setState({
@@ -323,46 +325,46 @@ class AssetShow extends React.Component {
 
 
 
-  componentDidUpdate(prevProps, prevState) {
-    const { fetchAsset } = this.props;
-    debugger
-    if (this.props.ticker !== prevProps.match.params.ticker) {
-        const {
-          fetchAsset,
-          fetchCompanyInfo,
-          fetchIntraday,
-          fetch1Week,
-          fetchAssetNews,
-          fetchRating,
-          fetchPortfolioCashBalance,
-          fetchHoldings,
-          fetchAllWatchlistAssets,
-        } = this.props;
-        const { clickedRange } = this.state;
-        let fetchClickedRange;
-        if (clickedRange === "1D") {
-          fetchClickedRange = fetchIntraday;
-        } else if (clickedRange === "1W") {
-          fetchClickedRange = fetch1Week;
-        };
+  // componentDidUpdate(prevProps, prevState) {
+  //   const { fetchAsset } = this.props;
+  //   debugger
+  //   if (this.props.ticker !== prevProps.match.params.ticker) {
+  //       const {
+  //         fetchAsset,
+  //         fetchCompanyInfo,
+  //         fetchIntraday,
+  //         fetch1Week,
+  //         fetchAssetNews,
+  //         fetchRating,
+  //         fetchPortfolioCashBalance,
+  //         fetchHoldings,
+  //         fetchAllWatchlistAssets,
+  //       } = this.props;
+  //       const { clickedRange } = this.state;
+  //       let fetchClickedRange;
+  //       if (clickedRange === "1D") {
+  //         fetchClickedRange = fetchIntraday;
+  //       } else if (clickedRange === "1W") {
+  //         fetchClickedRange = fetch1Week;
+  //       };
 
-        const ticker = this.props.match.params.ticker.toUpperCase();
-        Promise.all([
-          fetchAsset(ticker),
-          fetchClickedRange(ticker),
-          // fetchIntraday(ticker),
-          fetchCompanyInfo(ticker),
-          fetchAssetNews(ticker),
-          fetchPortfolioCashBalance(),
-          fetchHoldings(),
-          fetchAllWatchlistAssets(),
-          fetchRating(ticker),
-        ]).then((response) => {
-          console.log('all fetched')
-          this.setState({ loading: false, intraday: response[1].assetIntraday })
-        });
-    }
-  }
+  //       const ticker = this.props.match.params.ticker.toUpperCase();
+  //       Promise.all([
+  //         fetchAsset(ticker),
+  //         fetchClickedRange(ticker),
+  //         // fetchIntraday(ticker),
+  //         fetchCompanyInfo(ticker),
+  //         fetchAssetNews(ticker),
+  //         fetchPortfolioCashBalance(),
+  //         fetchHoldings(),
+  //         fetchAllWatchlistAssets(),
+  //         fetchRating(ticker),
+  //       ]).then((response) => {
+  //         console.log('all fetched')
+  //         this.setState({ loading: false, intraday: response[1].assetIntraday })
+  //       });
+  //   }
+  // }
 
 
   componentDidMount() {
