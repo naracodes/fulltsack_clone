@@ -102,21 +102,23 @@ class Search extends React.Component {
     if (assets.data.length && this.state.searchVal) {
       // const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) &&
       //  obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
-      const filtered = assets.data.filter(obj => this.strStr(obj.ticker.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0);
+      const filtered = assets.data.filter(obj => this.strStr(obj.companyName.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0 || this.strStr(obj.ticker.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0);
       return (
         <div className="test-div">
+          <h4>Stocks</h4>
           {
             filtered.map((stock, i) => {
-              return (
+              return (                
                   <NavLink 
                    key={i}
                    to={`/stocks/${stock.ticker}`}
                    className="stock-nav-link"
+                   style={{textDecoration: 'none'}}
                   >
-                    <li>
-                      <span>{stock.ticker}</span>
-                      <span>{stock.companyName}</span>
-                    </li>
+                    <div className="each-stock">
+                      <div className="each-stock-ticker">{stock.ticker}</div>
+                      <div className="each=stock-name">{stock.companyName}</div>
+                    </div>
                   </NavLink>
               )
             })

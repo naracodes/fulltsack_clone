@@ -2244,9 +2244,40 @@ table {
 //   justify-content: space-between;
 // }
 
-// .stock-nav-link {
-//   text-decoration: none;
-// }
+.stock-nav-link .each-stock :link,
+.stock-nav-link .each-stock :active,
+.stock-nav-link .each-stock :visited {
+  text-decoration: none;
+  color: black;
+}
+
+.each-stock {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  list-style: none;
+  margin-left: 24px;
+  margin-top: 8px;
+  color: black;
+}
+
+.each-stock .each-stock-ticker {
+  width: 20%;
+  text-decoration: none;
+}
+
+.each-stock .each-stock-ticker:link,
+.each-stock .each-stock-ticker:active,
+.each-stock .each-stock-ticker:visited {
+  text-decoration: none;
+  color: black;
+}
+.each-stock .each-stock-name {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  text-decoration: none
+}
 
 .search-outer {
   flex-basis: 480px;
