@@ -460,7 +460,7 @@ class AssetShow extends React.Component {
       let asset = assets[ticker];
       let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
-      let rating = asset.rating[0];
+      let rating = asset.rating ? asset.rating[0] : undefined;
       let closingPrice =
         asset.close ||
         asset.data[asset.data.length - 1].close ||
@@ -734,7 +734,7 @@ class AssetShow extends React.Component {
                         </div>
                       </header>
                       <div className="analyst-ratings-pct">
-                          { <StackedChart 
+                          { rating === undefined ? `Ratings currently unavailable for ${ticker}` : <StackedChart 
                             buy={((rating.ratingBuy + rating.ratingOverweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                             hold={((rating.ratingHold) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                             sell={((rating.ratingSell + rating.ratingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}

@@ -35,4 +35,3 @@ class Watchlist < ApplicationRecord
     end
 
 end
-
