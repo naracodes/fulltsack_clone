@@ -53,10 +53,56 @@ class Search extends React.Component {
     })
   }
 
+  kmp(needle) {
+      const lps = new Array(needle.length).fill(0);
+    let j = 0;
+    for (let i = 1; i < lps.length;) {
+        if (needle[i] !== needle[j]) {
+            if (j === 0) {
+                i++;
+            } else {
+                j = lps[j - 1];
+            }
+        } else if (needle[i] === needle[j]) {
+            lps[i] = j + 1;
+            j++;
+            i++;
+        }
+    }
+    return lps;
+  }
+
+  strStr(haystack, needle) {
+      if (needle.length === 0) return 0;
+    const lps = this.kmp(needle);
+    let j = 0;
+    for (let i = 0; i < haystack.length;) {
+        if (haystack[i] === needle[j]) {
+            if (j < needle.length - 1) {
+                i++;
+                j++
+            } else {
+                return i - j;
+            }
+        } else if (haystack[i] !== needle[j]) {
+            if (j === 0) {
+                i++;
+            } else {
+                j = lps[j - 1];
+            }
+        }
+    }
+    return -1;
+  }
+
+
+
   renderSuggestion(e) {
     const { assets } = this.props;
     if (assets.data.length && this.state.searchVal) {
-      const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) && obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
+      // const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) &&
+      //  obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
+      const filtered = assets.data.filter(obj => this.strStr(obj.ticker.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0);
       return (
         <div className="test-div">
           {
