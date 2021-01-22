@@ -2251,14 +2251,23 @@ table {
   color: black;
 }
 
+.each-stock:hover {
+  background-color: rgb(222, 222, 222);
+}
+
 .each-stock {
   display: flex;
   flex-direction: row;
-  width: 85%;
   list-style: none;
-  margin-left: 24px;
-  margin-top: 8px;
+  padding-left: 24px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: black;
+  font-size: 14px;
+}
+
+.each-stock:hover {
+
 }
 
 .each-stock .each-stock-ticker {
