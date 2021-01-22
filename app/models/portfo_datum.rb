@@ -12,4 +12,5 @@
 #  holdings_snapshot :json
 #
 class PortfoDatum < ApplicationRecord
+    
 end

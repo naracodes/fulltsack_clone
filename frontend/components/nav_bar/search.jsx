@@ -102,7 +102,7 @@ class Search extends React.Component {
     if (assets.data.length && this.state.searchVal) {
       // const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) &&
       //  obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
-      const filtered = assets.data.filter(obj => this.strStr(obj.companyName.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0 || this.strStr(obj.ticker.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0);
+      const filtered = assets.data.filter(obj => this.strStr(obj.companyName.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0 || this.strStr(obj.ticker.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0).slice(0, 6);
       return (
         <div className="test-div">
           <h4>Stocks</h4>
