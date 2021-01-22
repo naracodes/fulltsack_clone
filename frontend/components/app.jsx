@@ -11,6 +11,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 export default () => (
   <div>
     <Route exact path="/stocks/:ticker" component={AssetShowContainer} />
+    {/* <Route exact path="/stocks/:ticker" component={(props) => <AssetShowContainer {...props} key={window.location.pathname}/>} /> */}
     {/* <Route exact path="/us/en" component={Home} /> */}
     <Route exact path="/us/en" component={HomeContainer} />
     <AuthRoute path="/login" component={LoginContainer} />

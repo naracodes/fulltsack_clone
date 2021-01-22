@@ -1,1 +1,0 @@
-json.extract! @portfo_record, :user_id, :balance, :created_at

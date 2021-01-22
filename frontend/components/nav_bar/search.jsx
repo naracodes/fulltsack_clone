@@ -59,36 +59,54 @@ class Search extends React.Component {
       const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) && obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
       return (
         <div className="test-div">
-          <h4>Stocks</h4>
-          <table style={{width: "100%"}}>
-            <colgroup style={{height: "30px"}}>
-              <col span="1" style={{width: "20%"}} />
-              <col span="1" style={{width: "80%"}} />
-            </colgroup>
-              <tbody>
-                {
-                  filtered.map((stock, i) => {
-                    return (
-                        <tr key={i} onClick={this.handleClick(stock.ticker)}>
-                          <td>{stock.ticker}</td>
-                          <td>{stock.companyName}</td>
-                        </tr>
-                      // <NavLink
-                      //   key={i}
-                      //   to={`/stocks/${stock.ticker}`}
-                      //   className="stock-nav-link"
-                      //   >
-                      //   <li className="stock-suggestion">
-                      //     <span className="suggestion-ticker">{stock.ticker}</span>
-                      //     <span className="suggestion-name">{stock.companyName}</span>
-                      //   </li>
-                      // </NavLink>
-                    )
-                  })
-                }
-              </tbody>
-          </table>
+          {
+            filtered.map((stock, i) => {
+              return (
+                  <NavLink 
+                   key={i}
+                   to={`/stocks/${stock.ticker}`}
+                   className="stock-nav-link"
+                  >
+                    <li>
+                      <span>{stock.ticker}</span>
+                      <span>{stock.companyName}</span>
+                    </li>
+                  </NavLink>
+              )
+            })
+          }
         </div>
+        // <div className="test-div">
+        //   <h4>Stocks</h4>
+        //   <table style={{width: "100%"}}>
+        //     <colgroup style={{height: "30px"}}>
+        //       <col span="1" style={{width: "20%"}} />
+        //       <col span="1" style={{width: "80%"}} />
+        //     </colgroup>
+        //       <tbody>
+        //         {
+        //           filtered.map((stock, i) => {
+        //             return (
+        //                 <tr key={i} onClick={this.handleClick(stock.ticker)}>
+        //                   <td>{stock.ticker}</td>
+        //                   <td>{stock.companyName}</td>
+        //                 </tr>
+        //               // <NavLink
+        //               //   key={i}
+        //               //   to={`/stocks/${stock.ticker}`}
+        //               //   className="stock-nav-link"
+        //               //   >
+        //               //   <li className="stock-suggestion">
+        //               //     <span className="suggestion-ticker">{stock.ticker}</span>
+        //               //     <span className="suggestion-name">{stock.companyName}</span>
+        //               //   </li>
+        //               // </NavLink>
+        //             )
+        //           })
+        //         }
+        //       </tbody>
+        //   </table>
+        // </div>
       )
     } else {
       return (

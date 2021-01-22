@@ -137,7 +137,7 @@ class AssetShow extends React.Component {
 
   handleBuy(e) {
     const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage, successMessage, orderMessage } = this.state;
-    const { addTransaction, addAssetToWatchlist, portfolio, asset, currentUser, watchlistArr } = this.props;
+    const { addTransaction, addAssetToWatchlist, portfolio, assets, currentUser, watchlistArr } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
     let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
     let buyingPowerAvailable = portfolio.balance;
@@ -153,7 +153,7 @@ class AssetShow extends React.Component {
             } ${order.quantity} ${order.quantity > 1 ? "shares" : "share"} of ${
               order.ticker
             } based on the current market price of $${
-              order.cost_per_share} for a total cost of $${numeral(order.transaction_amount).format('$0,0.00')}.`,
+              order.cost_per_share} for a total cost of ${numeral(order.transaction_amount).format('$0,0.00')}.`,
           });
         } else if (!reviewOrderClicked && buyingPowerAvailable < order.transaction_amount && !successMessage) {
           this.setState({
@@ -177,6 +177,8 @@ class AssetShow extends React.Component {
           ])
           .then(() => {
             if (!watchlistArr.includes(ticker)) {
+              debugger
+              const asset = assets[ticker];
               addAssetToWatchlist(asset, currentUser);
             };
             this.setState({
@@ -321,6 +323,8 @@ class AssetShow extends React.Component {
   //   };
   // }
 
+
+
   // componentDidUpdate(prevProps, prevState) {
   //   const { fetchAsset } = this.props;
   //   debugger
@@ -370,7 +374,7 @@ class AssetShow extends React.Component {
       fetchIntraday,
       fetch1Week,
       fetchAssetNews,
-      // fetchRating,
+      fetchRating,
       fetchPortfolioCashBalance,
       fetchHoldings,
       fetchAllWatchlistAssets,
@@ -393,7 +397,7 @@ class AssetShow extends React.Component {
       fetchPortfolioCashBalance(),
       fetchHoldings(),
       fetchAllWatchlistAssets(),
-      // fetchRating(ticker),
+      fetchRating(ticker),
     ]).then((response) => {
       console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday })
@@ -456,7 +460,7 @@ class AssetShow extends React.Component {
       let asset = assets[ticker];
       let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
-      // let rating = asset.rating[0];
+      let rating = asset.rating ? asset.rating[0] : undefined;
       let closingPrice =
         asset.close ||
         asset.data[asset.data.length - 1].close ||
@@ -713,7 +717,7 @@ class AssetShow extends React.Component {
                         })}
                       </div>
                     </section>
-                    {/* <section className="rating-section">
+                    <section className="rating-section">
                       <header className="rating-heading">
                         <div className="rating-div">
                           <div className="rating-div-inner">
@@ -730,13 +734,13 @@ class AssetShow extends React.Component {
                         </div>
                       </header>
                       <div className="analyst-ratings-pct">
-                          { <StackedChart 
+                          { rating === undefined ? `Ratings currently unavailable for ${ticker}` : <StackedChart 
                             buy={((rating.ratingBuy + rating.ratingOverweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                             hold={((rating.ratingHold) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                             sell={((rating.ratingSell + rating.ratingUnderweight) / (rating.ratingBuy + rating.ratingOverweight + rating.ratingHold + rating.ratingUnderweight + rating.ratingSell))}
                           />}
                       </div>
-                    </section> */}
+                    </section>
                     <section className="earnings-section">
                       <div className="earnings-heading">
                         <div className="earnings-div">
