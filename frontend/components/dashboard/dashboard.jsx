@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
       showDropdown: false,
       mergedData: "",
     };
-    this.mergeData = this.mergeData.bind(this);
+    // this.mergeData = this.mergeData.bind(this);
   }
 
   handleLogOut(e) {
@@ -61,18 +61,18 @@ class Dashboard extends React.Component {
   //   };
   // }
 
-  mergeData(userDataArr, stockData, hold) {
-    userDataArr.forEach((data, i) => {
-      Object.keys(stockData).forEach(ticker => {
-        if (!stockData[ticker]["intraday-prices"][i].close) {
-          stockData[ticker]["intraday-prices"][i].close = stockData[ticker]["intraday-prices"][i  -1].close;
-        }
-        userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * hold[ticker] : (userDataArr[i].cash_balance * -1);
-      });
-    });
-    console.log(userDataArr);
-    return userDataArr;
-  }
+  // mergeData(userDataArr, stockData, hold) {
+  //   userDataArr.forEach((data, i) => {
+  //     Object.keys(stockData).forEach(ticker => {
+  //       if (!stockData[ticker]["intraday-prices"][i].close) {
+  //         stockData[ticker]["intraday-prices"][i].close = stockData[ticker]["intraday-prices"][i  -1].close;
+  //       }
+  //       userDataArr[i].cash_balance += stockData[ticker]["intraday-prices"][i] ? stockData[ticker]["intraday-prices"][i].close * hold[ticker] : (userDataArr[i].cash_balance * -1);
+  //     });
+  //   });
+  //   console.log(userDataArr);
+  //   return userDataArr;
+  // }
 
   componentDidMount() {
     const { fetchAssets, fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings, fetchAssetNews } = this.props;
@@ -80,36 +80,36 @@ class Dashboard extends React.Component {
     Promise.all([
       fetchHoldings(),
       fetchPortfolioCashBalance(),
-      fetchPortfoData(),
+      // fetchPortfoData(),
       fetchAssetNews("GOOGL"),
     ]).then(res => {
       // console.log(Object.keys(res[0].holdings.holdings));
       // console.log(Object.keys(res[0].holdings.holdings).filter((ticker) => res[0].holdings.holdings[ticker] > 0));
-      const tickers = Object.keys(res[0].holdings.holdings).filter(
-        (ticker) => res[0].holdings.holdings[ticker] > 0
-      )
-      if (tickers.length) {
-        fetchMultipleIntraday(tickers)
-        .then(multIntra => {
-          // console.log(res[2].data.data)
-          console.log(multIntra.multIntraday)
-          console.log(res[0].holdings.holdings)
-          let userData = res[2].data.data;
-          let stockData = multIntra.multIntraday;
-          let holdings = res[0].holdings.holdings;
-          // console.log(this.mergeData(userData, stockData))
-          let newData = this.mergeData(userData, stockData, res[0].holdings.holdings)
-          this.setState({
-            mergedData: newData,
-            loading: false,
-          }, () => console.log(newData));
-        })
-      } else {
-        this.setState({
-          mergedData: this.props.portfoData,
-          loading: false,
-        });
-      }
+      // const tickers = Object.keys(res[0].holdings.holdings).filter(
+      //   (ticker) => res[0].holdings.holdings[ticker] > 0
+      // )
+      // if (tickers.length) {
+      //   fetchMultipleIntraday(tickers)
+      //   .then(multIntra => {
+      //     // console.log(res[2].data.data)
+      //     console.log(multIntra.multIntraday)
+      //     console.log(res[0].holdings.holdings)
+      //     let userData = res[2].data.data;
+      //     let stockData = multIntra.multIntraday;
+      //     let holdings = res[0].holdings.holdings;
+      //     // console.log(this.mergeData(userData, stockData))
+      //     let newData = this.mergeData(userData, stockData, res[0].holdings.holdings)
+      //     this.setState({
+      //       mergedData: newData,
+      //       loading: false,
+      //     }, () => console.log(newData));
+      //   })
+      // } else {
+      //   this.setState({
+      //     mergedData: this.props.portfoData,
+      //     loading: false,
+      //   });
+      // }
     })
     // document.addEventListener("mousedown", this.handleClickOutside);
 
@@ -127,26 +127,27 @@ class Dashboard extends React.Component {
   render() {
     const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday } = this.props;
     const { mergedData } = this.state;
+    // const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
     const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
-    if (this.state.loading) {
+    if (!this.state) {
       return (
         <div>
           Loading...
         </div>
       )
     } else {
-      let buyingPowerAvailable = portfolio.balance.toFixed(2);
-      let portfoValue = mergedData[mergedData.length - 1].cash_balance.toFixed(2)
-      window.localStorage.setItem("portfoVal", (portfoValue));
+      // let buyingPowerAvailable = portfolio.balance.toFixed(2);
+      // let portfoValue = mergedData[mergedData.length - 1].cash_balance.toFixed(2)
+      // window.localStorage.setItem("portfoVal", (portfoValue));
       return (
         <div className="dashboard-outermost">
           <NavBar 
             currentUser={currentUser}
-            mergedData={mergedData}
-            buyingPowerAvailable={buyingPowerAvailable}
+            // mergedData={mergedData}
+            // buyingPowerAvailable={buyingPowerAvailable}
             history={this.props.history}
             logout={this.props.logout}
-            portfoValue={portfoValue}
+            // portfoValue={portfoValue}
             />
           <div className="dashboard-container">
             <main className="main-container">
@@ -156,10 +157,10 @@ class Dashboard extends React.Component {
                     <header className="asset-price">
                     </header>
                     <div className="react-chart">
-                      <PortfoLineChart
+                      {/* <PortfoLineChart
                         data={mergedData}
                         className="stock-graph"
-                      />
+                      /> */}
                     </div>
                     <nav className="range">
                       <div className="range-buttons">
@@ -189,7 +190,7 @@ class Dashboard extends React.Component {
                       <div>
                         <span>Buying Power</span>
                         <span>
-                          {numeral(buyingPowerAvailable).format("$0,0.00")}
+                          {/* {numeral(buyingPowerAvailable).format("$0,0.00")} */}
                         </span>
                       </div>
                     </header>

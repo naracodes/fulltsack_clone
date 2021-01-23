@@ -6,10 +6,10 @@ class Api::PortfoliosController < ApplicationController
         if @portfolio_data
             render :index
         else
-            Portfolio.create({
-                user_id: @current_user.id,
-                balance: 1000000,
-            })
+            # Portfolio.create({
+            #    user_id: @current_user.id,
+            #    balance: 1000000,
+            #})
             @portfolio_data = Portfolio.where(user_id: @current_user.id).last
             render :index
         end

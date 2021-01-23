@@ -12,5 +12,17 @@
 #  holdings_snapshot :json
 #
 class PortfoDatum < ApplicationRecord
+    require 'rufus-scheduler'
+    scheduler = Rufus::Scheduler.new
+
+    @today = Time.now
     
+    def get_portfo_data(range)
+        if range == "1D"
+        elsif range == "1W"
+        elsif range == "1M"
+        elsif range == "3M"
+        elsif range == "1Y"
+        end
+    end
 end

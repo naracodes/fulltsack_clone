@@ -11,7 +11,12 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+require 'rufus-scheduler'
+
 class User < ApplicationRecord
+    require 'rufus-scheduler'
+    load "#{Rails.root}/config/initializers/scheduler.rb"
+
     # FIG VAPER
     validates :email, :password_digest, presence: true, uniqueness: true
     validates :password, length: { minimum: 10, allow_nil: true }
@@ -30,6 +35,22 @@ class User < ApplicationRecord
 
     def name
         self.firstName
+    end
+
+    def record
+        scheduler = Rufus::Scheduler.new
+        @current_user_id = self.id
+        @current_user = User.find(@current_user_id)
+        scheduler.every '5s' do
+            puts Time.now
+            PortfoDatum.create!({
+                user_id: @current_user_id,
+                date: Time.now,
+                holdings_snapshot: @current_user.holdings,
+                label: Time.now.strftime("%I:%M %p"),
+                cash_balance: 1000000
+            })
+        end
     end
 
     def holdings_between(prev, cur, initial=false)
@@ -94,6 +115,10 @@ class User < ApplicationRecord
     end
 
     def cash_balance
+        Portfolio.where(user_id: self.id).last.balance
+    end
+    
+    def last_cash_balance
         Portfolio.where(user_id: self.id).last.balance
     end
 
