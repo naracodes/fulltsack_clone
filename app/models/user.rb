@@ -41,15 +41,8 @@ class User < ApplicationRecord
         scheduler = Rufus::Scheduler.new
         @current_user_id = self.id
         @current_user = User.find(@current_user_id)
-        scheduler.every '5s' do
-            puts Time.now
-            PortfoDatum.create!({
-                user_id: @current_user_id,
-                date: Time.now,
-                holdings_snapshot: @current_user.holdings,
-                label: Time.now.strftime("%I:%M %p"),
-                cash_balance: 1000000
-            })
+        scheduler.cron "*/1 10-15 * * *" do
+            Rails.logger.info("TRIGGER #{Time.now}")
         end
     end
 
