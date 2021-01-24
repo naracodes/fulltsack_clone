@@ -2,7 +2,6 @@ class Api::HoldingsController < ApplicationController
     def index
         @current_user = current_user
         if Transaction.where(user_id: @current_user.id).count < 2
-            debugger
             render json: { holdings: {} }
         else
             @user_holdings = @current_user.holdings

@@ -76,13 +76,15 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     const { fetchAssets, fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings, fetchAssetNews } = this.props;
+    debugger
     // const tickers = Object.keys(this.props.portfolio.holdings);
     Promise.all([
-      fetchHoldings(),
       fetchPortfolioCashBalance(),
+      fetchHoldings(),
+      fetchAssetNews("GOOGL")
       // fetchPortfoData(),
-      fetchAssetNews("GOOGL"),
-    ]).then(res => {
+    ])
+    // .then(res => {
       // console.log(Object.keys(res[0].holdings.holdings));
       // console.log(Object.keys(res[0].holdings.holdings).filter((ticker) => res[0].holdings.holdings[ticker] > 0));
       // const tickers = Object.keys(res[0].holdings.holdings).filter(
@@ -110,7 +112,7 @@ class Dashboard extends React.Component {
       //     loading: false,
       //   });
       // }
-    })
+    // })
     // document.addEventListener("mousedown", this.handleClickOutside);
 
   }
@@ -126,17 +128,17 @@ class Dashboard extends React.Component {
 
   render() {
     const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday } = this.props;
-    const { mergedData } = this.state;
+    // const { mergedData } = this.state;
     // const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
-    const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
-    if (!this.state) {
+    const notAllFetched = !currentUser || !portfolio || !assetNews;
+    if (!currentUser || !portfolio.balance || !assetNews) {
       return (
         <div>
           Loading...
         </div>
       )
     } else {
-      // let buyingPowerAvailable = portfolio.balance.toFixed(2);
+      let buyingPowerAvailable = portfolio.balance.toFixed(2);
       // let portfoValue = mergedData[mergedData.length - 1].cash_balance.toFixed(2)
       // window.localStorage.setItem("portfoVal", (portfoValue));
       return (
@@ -144,7 +146,7 @@ class Dashboard extends React.Component {
           <NavBar 
             currentUser={currentUser}
             // mergedData={mergedData}
-            // buyingPowerAvailable={buyingPowerAvailable}
+            buyingPowerAvailable={buyingPowerAvailable}
             history={this.props.history}
             logout={this.props.logout}
             // portfoValue={portfoValue}
@@ -190,7 +192,7 @@ class Dashboard extends React.Component {
                       <div>
                         <span>Buying Power</span>
                         <span>
-                          {/* {numeral(buyingPowerAvailable).format("$0,0.00")} */}
+                          {numeral(buyingPowerAvailable).format("$0,0.00")}
                         </span>
                       </div>
                     </header>

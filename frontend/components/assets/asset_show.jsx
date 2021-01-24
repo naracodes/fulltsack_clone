@@ -429,8 +429,8 @@ class AssetShow extends React.Component {
 
   handleRemoveFromList(e) {
     e.preventDefault();
-    const { deleteAssetFromWatchlist, currentUser, asset } = this.props;
-    deleteAssetFromWatchlist(asset, currentUser);
+    const { deleteAssetFromWatchlist, currentUser, assets, ticker } = this.props;
+    deleteAssetFromWatchlist(assets[ticker], currentUser);
   }
 
   showDropdown2(e) {
