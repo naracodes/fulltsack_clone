@@ -41,8 +41,21 @@ class User < ApplicationRecord
         scheduler = Rufus::Scheduler.new
         @current_user_id = self.id
         @current_user = User.find(@current_user_id)
-        scheduler.cron "*/1 10-15 * * *" do
-            Rails.logger.info("TRIGGER #{Time.now}")
+        scheduler.cron '* * * * *' do |job|
+            Rails.logger.info '=' * 80
+            Rails.logger.info Time.now
+            Rails.logger.info '-' * 80
+            Rails.logger.info [ :env_tz, ENV['TZ'] ].inspect
+            Rails.logger.info [ :uname, (`uname -a` rescue nil) ].inspect
+            Rails.logger.info [ :rv, RUBY_VERSION, :rp, RUBY_PLATFORM ].inspect
+            Rails.logger.info [ :ra, (Rails::VERSION.to_s rescue :nora) ].inspect
+            Rails.logger.info EtOrbi.render_nozone_time(Time.now.to_f)
+            Rails.logger.info EtOrbi.platform_info
+            Rails.logger.info [ :fu, Fugit::VERSION, :rs, Rufus::Scheduler::VERSION ].inspect
+            Rails.logger.info '-' * 80
+            Rails.logger.info Fugit.parse('*/1 5-15 * * 0-5').inspect
+            Rails.logger.info [ :nt, Fugit.parse('*/1 5-15 * * 0-5').next_time.to_s ].inspect
+            Rails.logger.info '-' * 80
         end
     end
 
