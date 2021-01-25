@@ -8,7 +8,8 @@ import {
   fetchCompanyInfo,
   fetchIntraday,
   fetchRating,
-  clearAsset
+  clearAsset,
+  fetchHistoricalPrices
 } from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist, fetchAllWatchlistAssets } from '../../actions/watchlist_actions';
 import { fetchAssetNews } from "../../actions/news_actions";
@@ -27,6 +28,7 @@ export const msp = (state, ownProps) => {
         portfolio: state.entities.transactions,
         holdings: state.entities.transactions,
         ticker: ownProps.match.params.ticker,
+        historical: state.entities.historical,
         // watchlist: state.entities.watchlists,
     };
 }
@@ -67,7 +69,7 @@ export const mdp = dispatch => {
         fetchHoldings: () => dispatch(fetchHoldings()),
         fetch1Week: ticker => dispatch(fetch1Week(ticker)),
         fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
-        
+        fetchHistoricalPrices: (ticker, range) => dispatch(fetchHistoricalPrices(ticker, range)),
     }
 }
 

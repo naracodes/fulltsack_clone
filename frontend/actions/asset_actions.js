@@ -8,6 +8,7 @@ export const RECEIVE_ASSET_INTRADAY = "RECEIVE_ASSET_INTRADAY";
 export const RECEIVE_1WEEK = "RECEIVE_1WEEK";
 export const RECEIVE_MULTIPLE_INTRADAY = "RECEIVE_MULTIPLE_INTRADAY";
 export const RECEIVE_PRICE = "RECEIVE_PRICE";
+export const RECEIVE_HISTORICAL_PRICES = "RECEIVE_HISTORICAL_PRICES";
 export const RECEIVE_COMPANY_INFO = "RECEIVE_COMPANY_INFO";
 export const RECEIVE_NEWS = "RECEIVE_NEWS";
 export const RECEIVE_RATING = "RECEIVE_RATING";
@@ -89,6 +90,13 @@ export const receivePrice = assetPrice => {
     }
 }
 
+export const receiveHistoricalPrices = historicalPrices => {
+    return {
+        type: RECEIVE_HISTORICAL_PRICES,
+        historicalPrices
+    }
+}
+
 export const receiveCompanyInfo = company => {
     return {
         type: RECEIVE_COMPANY_INFO,
@@ -148,6 +156,12 @@ export const fetchIntraday = ticker => dispatch => {
 export const fetch1Week = ticker => dispatch => {
     return AssetAPIUtil.fetch1Week(ticker).then(asset1Week => {
         return dispatch(receive1Week(asset1Week, ticker));
+    })
+}
+
+export const fetchHistoricalPrices = (ticker, range) => dispatch => {
+    return AssetAPIUtil.fetchHistoricalPrices(ticker, range).then(historicalPrices => {
+        return dispatch(receiveHistoricalPrices(historicalPrices));
     })
 }
 

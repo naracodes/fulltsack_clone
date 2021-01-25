@@ -1,8 +1,6 @@
 require 'iex-ruby-client'
 
 class Api::UsersController < ApplicationController
-
-
     def create
         @current_user = current_user
         rand_tickers = ["GOOGL", "FB", "TWTR", "GE", "AAPL", "NFLX", "STNG"]

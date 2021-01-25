@@ -953,6 +953,9 @@ class AssetShow extends React.Component {
                         </footer>
                       </form>
                     </div>
+                    <div className="for-fun">
+                      Max Profit
+                    </div>
                     <div className="sidebar-buttons">
                       {button}
                     </div>

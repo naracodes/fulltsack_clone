@@ -6,6 +6,7 @@ import newsReducer from './news_reducer'
 import transactionsReducer from "./transactions_reducer";
 import portfosReducer from "./portfo_reducer";
 import searchReducer from "./search_reducer";
+import historicalReducer from "./historical_reducer";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -15,6 +16,7 @@ const entitiesReducer = combineReducers({
     transactions: transactionsReducer,
     portfos: portfosReducer,
     data: searchReducer,
+    historical: historicalReducer,
 });
 
 export default entitiesReducer;
