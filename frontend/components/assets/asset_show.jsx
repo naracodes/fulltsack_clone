@@ -386,7 +386,7 @@ class AssetShow extends React.Component {
       fetchRating(ticker),
     ]).then((response) => {
       console.log('all fetched')
-      this.setState({ loading: false, intraday: response[1].assetIntraday })
+      this.setState({ loading: false, intraday: response[1].assetIntraday, hindsight: null })
     });
     }
   }
@@ -433,17 +433,11 @@ class AssetShow extends React.Component {
 
   componentWillUnmount() {
     const { clearHistoricalPrices, clearAsset } = this.props;
-    Promise.all([
-      clearHistoricalPrices(),
-      clearAsset()
-    ]).then(() => console.log("Subscription all cleared"));
-  }
-
-  componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
-    document.removeEventListener("mousedown", this.handleClickOutside_invest);
-    // this.props.clearAsset();
-    // this.setState({loading: true});
+    document.removeEventListener("mousedown", this.handleClickOutside_invest); 
+    clearHistoricalPrices();
+    clearAsset();
+    this.setState({hindsight: null});
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
