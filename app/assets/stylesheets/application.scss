@@ -1816,7 +1816,8 @@ table {
 .related-lists-section,
 .asset-news-section,
 .rating-section,
-.earnings-section {
+.earnings-section,
+.hindsight-section {
   margin-bottom: 60px;
   display: block;
   box-sizing: border-box;
@@ -1829,6 +1830,7 @@ table {
     .related-lists-div,
     .asset-news-div,
     .rating-div,
+    .hindsight-div,
     .earnings-div {
       border-bottom: 1px solid rgb(228, 233, 237);
       padding-bottom: 16px;
@@ -1839,6 +1841,7 @@ table {
     .related-lists-div-inner,
     .asset-news-div-inner,
     .rating-div-inner,
+    .hindsight-div-inner,
     .earnings-div-inner {
       display: flex;
       justify-content: space-between;
@@ -1848,6 +1851,7 @@ table {
         .related-lists-h2,
         .asset-news-h2,
         .rating-h2,
+        .hindsight-h2,
         .earnings-h2 {
           display: flex;
           margin: 0;
@@ -2374,4 +2378,36 @@ table {
 
 .nav-link {
   display: block;
+}
+
+// hindsight section
+
+.hindsight-ranges {
+  display: flex;
+  flex-direction: row;
+
+    li {
+      margin-right: 13px;
+      border-radius: 30%;
+      padding: 10px;
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    :nth-child(1) {
+      background-color: rgb(223, 96, 255);
+    }
+    :nth-child(2) {
+      background-color: rgb(223, 106, 252);
+    }
+    :nth-child(3) {
+      background-color: rgb(223, 124, 248);
+    }
+    :nth-child(4) {
+      background-color: rgb(237, 171, 253);
+    }
+    :nth-child(5) {
+      background-color: rgb(241, 199, 252);
+    }
 }

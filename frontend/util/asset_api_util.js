@@ -69,9 +69,10 @@ export const fetchAssetk5YData = ticker => {
 }
 
 export const fetchHistoricalPrices = (ticker, range) => {
+  debugger
     return $.ajax({
         method: 'GET',
-        url: `https://sandbox.iexapis.com/stable/stock/${ticker}/chart/${range}?token=${iexKey}`
+        url: `https://cloud.iexapis.com/stable/stock/${ticker}/chart/${range}?token=${iexKey}`
     })
 }
 

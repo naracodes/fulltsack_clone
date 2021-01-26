@@ -6,6 +6,7 @@ const historicalReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_HISTORICAL_PRICES:
+            debugger
             return action.historicalPrices;
         default:
             return oldState;

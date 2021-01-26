@@ -91,6 +91,7 @@ export const receivePrice = assetPrice => {
 }
 
 export const receiveHistoricalPrices = historicalPrices => {
+    debugger
     return {
         type: RECEIVE_HISTORICAL_PRICES,
         historicalPrices
@@ -160,7 +161,9 @@ export const fetch1Week = ticker => dispatch => {
 }
 
 export const fetchHistoricalPrices = (ticker, range) => dispatch => {
+    debugger
     return AssetAPIUtil.fetchHistoricalPrices(ticker, range).then(historicalPrices => {
+        debugger
         return dispatch(receiveHistoricalPrices(historicalPrices));
     })
 }

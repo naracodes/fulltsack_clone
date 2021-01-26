@@ -33,6 +33,7 @@ class AssetShow extends React.Component {
     this.handleSellClick = this.handleSellClick.bind(this);
     this.toggleShowMore = this.toggleShowMore.bind(this);
     this.handleRangeClick = this.handleRangeClick.bind(this);
+    this.handleHindsight = this.handleHindsight.bind(this);
     // this.calculatePortfo = this.calculatePortfo.bind(this);
     this.state = {
       intraday: "",
@@ -62,6 +63,13 @@ class AssetShow extends React.Component {
         cost_per_share: "",
         transaction_amount: "",
         quantity: "",
+      },
+      historical: {
+        "1M": [],
+        "3M": [],
+        "6M": [],
+        "1Y": [],
+        "2Y": [],
       },
     };
   }
@@ -298,6 +306,30 @@ class AssetShow extends React.Component {
       });
     }
   }
+
+  maxProfit(historicalPricesArr) {
+    if (historicalPricesArr.length <= 1)  return 0;
+    let maxProfit = 0;
+    for (let i = 0; i < historicalPricesArr.length; i++) {
+      if (historicalPricesArr[i] - historicalPricesArr[i - 1]) {
+        maxProfit += historicalPricesArr[i] - historicalPricesArr[i - 1];
+      }
+    }
+    return maxProfit;
+  }  
+
+  handleHindsight(e) {
+    const { fetchHistoricalPrices, ticker } = this.props;
+    const range = e.target.textContent;
+    console.log(range);
+    fetchHistoricalPrices(ticker, range).then(res => {
+      const prices = res.historicalPrices;
+      this.setState({historical: {range: prices.map(obj => obj.close)}}, () => console.log(this.state.historical));
+    })
+    console.log(this.maxProfit(this.state.historical));
+  }
+
+
 
   // calculatePortfo() {
   //   const { asset, portfolio } = this.props;
@@ -741,7 +773,7 @@ class AssetShow extends React.Component {
                           />}
                       </div>
                     </section>
-                    <section className="earnings-section">
+                    {/* <section className="earnings-section">
                       <div className="earnings-heading">
                         <div className="earnings-div">
                           <div className="earnings-div-inner">
@@ -749,6 +781,30 @@ class AssetShow extends React.Component {
                               <span>Earnings</span>
                             </h2>
                           </div>
+                        </div>
+                      </div>
+                    </section> */}
+                    <section className="hindsight-section">
+                      <header className="hindsight-heading">
+                        <div className="hindsight-div">
+                          <div className="hindsight-div-inner">
+                            <h2 className="hindsight-h2">
+                              <span>Hindsight</span>
+                            </h2>
+                          </div>
+                        </div>
+                      </header>
+                      <div className="hindsight-profit">
+                        <ul className="hindsight-ranges">
+                          <li onClick={this.handleHindsight}>1M</li>
+                          <li onClick={this.handleHindsight}>3M</li>
+                          <li onClick={this.handleHindsight}>6M</li>
+                          <li onClick={this.handleHindsight}>1Y</li>
+                          <li onClick={this.handleHindsight}>2Y</li>
+                        </ul>
+                        <div className="clicked-hindsight">
+                          Clicked hindsigh information will
+                          render here.
                         </div>
                       </div>
                     </section>
@@ -952,9 +1008,6 @@ class AssetShow extends React.Component {
                           </div>
                         </footer>
                       </form>
-                    </div>
-                    <div className="for-fun">
-                      Max Profit
                     </div>
                     <div className="sidebar-buttons">
                       {button}
