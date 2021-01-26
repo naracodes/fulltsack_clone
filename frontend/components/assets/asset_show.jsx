@@ -34,11 +34,13 @@ class AssetShow extends React.Component {
     this.toggleShowMore = this.toggleShowMore.bind(this);
     this.handleRangeClick = this.handleRangeClick.bind(this);
     this.handleHindsight = this.handleHindsight.bind(this);
+    this.renderHindsight = this.renderHindsight.bind(this);
     // this.calculatePortfo = this.calculatePortfo.bind(this);
     this.state = {
       intraday: "",
       data: "",
       clickedRange: "1D",
+      clickedHindsight: null,
       showMoreClicked: false,
       orderErrorMessage: null,
       orderMessage: null,
@@ -347,14 +349,16 @@ class AssetShow extends React.Component {
         debugger
         this.setState({ 
           historical: {[range]: prices},
-          hindsight: this.maxProfit(prices)
+          hindsight: this.maxProfit(prices),
+          clickedHindsight: range,
         }, () => console.log(this.state.historical));
       });
       // this.setState({ hindsight: this.maxProfit(historical[range]) });
     } else {
       debugger
       this.setState({
-        hindsight: this.maxProfit(historicalState[range].prices.map(obj => obj.close))
+        hindsight: this.maxProfit(historicalState[range].prices.map(obj => obj.close)),
+        clickedHindsight: range,
       }, () => console.log(this.state.historical))
     }
   }
@@ -463,6 +467,28 @@ class AssetShow extends React.Component {
   showDropdown2(e) {
     e.preventDefault();
     return this.setState({ investInDropdown: !this.state.investInDropdown });
+  }
+
+  renderHindsight(amount, range) {
+    const { ticker } = this.props;
+    if (range === "1M") {
+      range = "one month.";
+    } else if (range === "3M") {
+      range = "three months.";
+    } else if (range === "6M") {
+      range = "six months.";
+    } else if (range === "1Y") {
+      range = "one year."
+    } else if (range === "2Y") {
+      range = "two years."
+    }
+    return (
+      <div className="hindsight-result">
+        <span>
+          {`In hindsight, Narabot made a profit of ${numeral(amount).format('$0,0.00')} per ${ticker} share in ${range}`}
+        </span>
+      </div>
+    )
   }
 
   render() {
@@ -796,7 +822,7 @@ class AssetShow extends React.Component {
                         </ul>
                         <div className="clicked-hindsight">
                           {
-                            this.state.hindsight ? numeral(this.state.hindsight).format('$0,0.00') : null
+                            this.state.hindsight ? this.renderHindsight(this.state.hindsight, this.state.clickedHindsight) : null
                           }
                         </div>
                       </div>

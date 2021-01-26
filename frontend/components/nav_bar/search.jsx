@@ -13,16 +13,37 @@ class Search extends React.Component {
     this.renderSuggestion = this.renderSuggestion.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.wrapperRef_search = React.createRef();
     this.state = {
       loading: true,
       filtered: null,
       searchVal: "",
+      ticker: null,
     }
   }
 
   componentDidMount() {
-    const { fetchAssets } = this.props;
-    fetchAssets().then(() => this.setState({loading: false}));
+    const { fetchAssets, ticker } = this.props;
+    fetchAssets().then(() => this.setState({loading: false, searchVal: "", ticker}));
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+  }
+
+  handleClickOutside(e) {
+      // debugger
+    if (this.wrapperRef_search && !this.wrapperRef_search.current.contains(e.target)) {
+        // debugger
+      this.setState({
+        searchVal: "",
+      });
+    }
   }
 
   handleClick(ticker) {
@@ -175,7 +196,7 @@ class Search extends React.Component {
       return (
         <div className="search-outer">
           <div className="search-box">
-            <div className="search-inner-box">
+            <div className="search-inner-box" ref={this.wrapperRef_search}>
               <div className="icon-container">
                   <div className="magnify">
                     <span className="search-icon-box">
@@ -188,6 +209,7 @@ class Search extends React.Component {
                     id="search-bar"
                     // onKeyDown={this.handleKeyDown}
                     onChange={this.handleInput}
+                    onFocus={this.handleInput}
                     tabIndex="0"
                     placeholder="Search"
                     autoComplete={"new-password"}
