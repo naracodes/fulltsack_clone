@@ -15,6 +15,7 @@ const assetsReducer = (oldState = {}, action) => {
             return nextState;
         case RECEIVE_ASSET_INTRADAY:
             nextState[action.ticker] = Object.assign({}, nextState[action.ticker], {data: action.assetIntraday});
+            debugger
             return nextState;
             // nextState[action.ticker]["chartData"] = action.assetIntraday;
         case RECEIVE_1WEEK:
