@@ -88,7 +88,7 @@ class AssetShow extends React.Component {
       debugger
       this.setState({ data: asset.data, loading: false })
     }
-    if (!historicalState[range]) {
+    if (!historicalState[range] && range !== "1D") {
       debugger
       fetchHistoricalPrices(ticker, range).then(res => {
         debugger
@@ -99,7 +99,7 @@ class AssetShow extends React.Component {
           data: res.historicalPrices,
         }, () => console.log(this.state.data.length))
       })
-    } else {
+    } else if (historicalState[range] && range !== "1D") {
       debugger
       this.setState({
         data: historicalState[range].prices
