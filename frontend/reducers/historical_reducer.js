@@ -1,4 +1,4 @@
-import { RECEIVE_HISTORICAL_PRICES } from '../actions/asset_actions';
+import { CLEAR_HISTORICAL_PRICES, RECEIVE_HISTORICAL_PRICES } from '../actions/asset_actions';
 
 const historicalReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -6,8 +6,11 @@ const historicalReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_HISTORICAL_PRICES:
+            nextState[action.range] = Object.assign({}, nextState[action.range], {prices: action.historicalPrices})
             debugger
-            return action.historicalPrices;
+            return nextState;
+        case CLEAR_HISTORICAL_PRICES:
+            return {};
         default:
             return oldState;
     }

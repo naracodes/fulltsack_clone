@@ -65,12 +65,13 @@ class AssetShow extends React.Component {
         quantity: "",
       },
       historical: {
-        "1M": [],
-        "3M": [],
-        "6M": [],
-        "1Y": [],
-        "2Y": [],
+        "1M": null,
+        "3M": null,
+        "6M": null,
+        "1Y": null,
+        "2Y": null,
       },
+      hindsight: null,
     };
   }
  
@@ -319,14 +320,28 @@ class AssetShow extends React.Component {
   }  
 
   handleHindsight(e) {
-    const { fetchHistoricalPrices, ticker } = this.props;
+    const { fetchHistoricalPrices, ticker, historicalState } = this.props;
+    const { historical } = this.state;
     const range = e.target.textContent;
-    console.log(range);
-    fetchHistoricalPrices(ticker, range).then(res => {
-      const prices = res.historicalPrices;
-      this.setState({historical: {range: prices.map(obj => obj.close)}}, () => console.log(this.state.historical));
-    })
-    console.log(this.maxProfit(this.state.historical));
+    debugger
+    if (!historicalState[range]) {
+      debugger
+      fetchHistoricalPrices(ticker, range).then(res => {
+        debugger
+        const prices = res.historicalPrices.map(obj => obj.close);
+        debugger
+        this.setState({ 
+          historical: {[range]: prices},
+          hindsight: this.maxProfit(prices)
+        }, () => console.log(this.state.historical));
+      });
+      // this.setState({ hindsight: this.maxProfit(historical[range]) });
+    } else {
+      debugger
+      this.setState({
+        hindsight: this.maxProfit(historicalState[range].prices.map(obj => obj.close))
+      }, () => console.log(this.state.historical))
+    }
   }
 
 
@@ -803,8 +818,9 @@ class AssetShow extends React.Component {
                           <li onClick={this.handleHindsight}>2Y</li>
                         </ul>
                         <div className="clicked-hindsight">
-                          Clicked hindsigh information will
-                          render here.
+                          {
+                            this.state.hindsight ? this.state.hindsight : null
+                          }
                         </div>
                       </div>
                     </section>

@@ -28,7 +28,7 @@ export const msp = (state, ownProps) => {
         portfolio: state.entities.transactions,
         holdings: state.entities.transactions,
         ticker: ownProps.match.params.ticker,
-        historical: state.entities.historical,
+        historicalState: state.entities.historical,
         // watchlist: state.entities.watchlists,
     };
 }

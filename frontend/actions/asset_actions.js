@@ -14,6 +14,7 @@ export const RECEIVE_NEWS = "RECEIVE_NEWS";
 export const RECEIVE_RATING = "RECEIVE_RATING";
 export const CLEAR_PRICE = "CLEAR_PRICE";
 export const CLEAR_ASSET = "CLEAR_ASSET";
+export const CLEAR_HISTORICAL_PRICES = "CLEAR_HISTORICAL_PRICES";
 
 
 export const receiveAllAssets = assets => {
@@ -90,11 +91,12 @@ export const receivePrice = assetPrice => {
     }
 }
 
-export const receiveHistoricalPrices = historicalPrices => {
+export const receiveHistoricalPrices = (historicalPrices, range) => {
     debugger
     return {
         type: RECEIVE_HISTORICAL_PRICES,
-        historicalPrices
+        historicalPrices,
+        range
     }
 }
 
@@ -108,6 +110,12 @@ export const receiveCompanyInfo = company => {
 export const clearPrice = () => {
     return {
         type: CLEAR_PRICE,
+    }
+}
+
+export const clearHistoricalPrices = () => {
+    return {
+        type: CLEAR_HISTORICAL_PRICES,
     }
 }
 
@@ -164,7 +172,7 @@ export const fetchHistoricalPrices = (ticker, range) => dispatch => {
     debugger
     return AssetAPIUtil.fetchHistoricalPrices(ticker, range).then(historicalPrices => {
         debugger
-        return dispatch(receiveHistoricalPrices(historicalPrices));
+        return dispatch(receiveHistoricalPrices(historicalPrices, range));
     })
 }
 
