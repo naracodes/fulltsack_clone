@@ -41,21 +41,35 @@ class User < ApplicationRecord
         scheduler = Rufus::Scheduler.new
         @current_user_id = self.id
         @current_user = User.find(@current_user_id)
-        scheduler.cron '* * * * *' do |job|
-            Rails.logger.info '=' * 80
-            Rails.logger.info Time.now
-            Rails.logger.info '-' * 80
-            Rails.logger.info [ :env_tz, ENV['TZ'] ].inspect
-            Rails.logger.info [ :uname, (`uname -a` rescue nil) ].inspect
-            Rails.logger.info [ :rv, RUBY_VERSION, :rp, RUBY_PLATFORM ].inspect
-            Rails.logger.info [ :ra, (Rails::VERSION.to_s rescue :nora) ].inspect
-            Rails.logger.info EtOrbi.render_nozone_time(Time.now.to_f)
-            Rails.logger.info EtOrbi.platform_info
-            Rails.logger.info [ :fu, Fugit::VERSION, :rs, Rufus::Scheduler::VERSION ].inspect
-            Rails.logger.info '-' * 80
-            Rails.logger.info Fugit.parse('*/1 5-15 * * 0-5').inspect
-            Rails.logger.info [ :nt, Fugit.parse('*/1 5-15 * * 0-5').next_time.to_s ].inspect
-            Rails.logger.info '-' * 80
+        # create record every 5 minutes from 9:30 - 9:55)
+        scheduler.cron '30-55/5 9 * * 1-5' do
+            PortfoDatum.create!({
+                user_id: @current_user_id,
+                date: Time.now,
+                holdings_snapshot: @current_user.holdings,
+                label: Time.now.strftime("%I:%M %p"),
+                cash_balance: @current_user.cash_balance
+            })
+        end
+        # create record every 5 minutes from 10:00 - 15:55
+        scheduler.cron '*/5 10-15 * * 1-5' do
+            PortfoDatum.create!({
+                user_id: @current_user_id,
+                date: Time.now,
+                holdings_snapshot: @current_user.holdings,
+                label: Time.now.strftime("%I:%M %p"),
+                cash_balance: @current_user.cash_balance
+            })
+        end
+        # create record at 16:00
+        scheduler.cron '0 16 * * 1-5' do
+            PortfoDatum.create!({
+                user_id: @current_user_id,
+                date: Time.now,
+                holdings_snapshot: @current_user.holdings,
+                label: Time.now.strftime("%I:%M %p"),
+                cash_balance: @current_user.cash_balance
+            })
         end
     end
 
