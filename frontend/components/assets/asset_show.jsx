@@ -72,6 +72,7 @@ class AssetShow extends React.Component {
         "2Y": null,
       },
       hindsight: null,
+      rangeColor: "#00C805",
     };
   }
  
@@ -86,7 +87,7 @@ class AssetShow extends React.Component {
     console.log(range);
     if (range === "1D") {
       debugger
-      this.setState({ data: asset.data, loading: false })
+      this.setState({ data: asset.data, loading: false, clickedRange: range })
     }
     if (!historicalState[range] && range !== "1D") {
       debugger
@@ -97,12 +98,14 @@ class AssetShow extends React.Component {
         this.setState({
           historical: {[range]: prices},
           data: res.historicalPrices,
+          clickedRange: range,
         }, () => console.log(this.state.data.length))
       })
     } else if (historicalState[range] && range !== "1D") {
       debugger
       this.setState({
-        data: historicalState[range].prices
+        data: historicalState[range].prices,
+        clickedRange: range,
       });
     }
   }
@@ -534,22 +537,22 @@ class AssetShow extends React.Component {
                       <nav className="range">
                         <div className="range-buttons">
                           <div className="1D">
-                            <span onClick={this.handleRangeClick}>1D</span>
+                            <span onClick={this.handleRangeClick} style={this.state.clickedRange === "1D" ? {color: this.state.rangeColor} : {color: "black"}}>1D</span>
                           </div>
                           <div className="1W">
-                            <span onClick={this.handleRangeClick}>1W</span>
+                            <span onClick={this.handleRangeClick} style={this.state.clickedRange === "5DM" ? {color: this.state.rangeColor} : {color: "black"}}>1W</span>
                           </div>
                           <div className="1M">
-                            <span onClick={this.handleRangeClick}>1M</span>
+                            <span onClick={this.handleRangeClick} style={this.state.clickedRange === "1M" ? {color: this.state.rangeColor} : {color: "black"}}>1M</span>
                           </div>
                           <div className="3M">
-                            <span onClick={this.handleRangeClick}>3M</span>
+                            <span onClick={this.handleRangeClick} style={this.state.clickedRange === "3M" ? {color: this.state.rangeColor} : {color: "black"}}>3M</span>
                           </div>
                           <div className="1Y">
-                            <span onClick={this.handleRangeClick}>1Y</span>
+                            <span onClick={this.handleRangeClick} style={this.state.clickedRange === "1Y" ? {color: this.state.rangeColor} : {color: "black"}}>1Y</span>
                           </div>
                           <div className="5Y">
-                            <span onClick={this.handleRangeClick}>5Y</span>
+                            <span onClick={this.handleRangeClick} style={this.state.clickedRange === "5Y" ? {color: this.state.rangeColor} : {color: "black"}}>5Y</span>
                           </div>
                         </div>
                       </nav>
@@ -932,7 +935,7 @@ class AssetShow extends React.Component {
                                   <span>Market Price</span>
                                 </div>
                                 <div className="the-price">
-                                  {/* <span>${closingPrice.toFixed(2)}</span> */}
+                                  <span>${closingPrice.toFixed(2)}</span>
                                 </div>
                               </div>
                             ) : null}
