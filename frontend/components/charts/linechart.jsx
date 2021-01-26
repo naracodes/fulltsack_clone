@@ -49,7 +49,7 @@ class AssetLineChart extends React.Component {
     }
       return (
         <div className="stock-graph">
-          <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice.toFixed(2) : this.state.closePrice.toFixed(2)} format="(,ddd).dd" /></div>
+          {/* <div className="odometer">$<Odometer value={!this.state.closePrice ? closePrice.toFixed(2) : this.state.closePrice.toFixed(2)} format="(,ddd).dd" /></div> */}
           {/* <ResponsiveContainer id="responsive-container"> */}
             <LineChart
               width={676}

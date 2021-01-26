@@ -76,19 +76,34 @@ class AssetShow extends React.Component {
   }
  
   handleRangeClick(e) {
-    const { fetchIntraday, fetch1Week } = this.props;
+    debugger
+    const { fetchIntraday, fetch1Week, assets, historicalState, fetchHistoricalPrices } = this.props;
+    const { intraday, data, historical } = this.state;
     const ticker = this.props.match.params.ticker.toUpperCase();
+    const asset = assets[ticker];
     let range = e.target.textContent;
-    let adjustedFetch;
+    if (range === "1W") range = "5DM";
+    console.log(range);
     if (range === "1D") {
-      this.setState({ data: this.state.intraday, loading: false })
-    } else if (range === "1W") {
-      fetch1Week(ticker).then(res => {
+      debugger
+      this.setState({ data: asset.data, loading: false })
+    }
+    if (!historicalState[range]) {
+      debugger
+      fetchHistoricalPrices(ticker, range).then(res => {
+        debugger
+        const prices = res.historicalPrices.map(obj => obj.close);
+        debugger
         this.setState({
-          loading: false,
-          data: res.data
-        })
+          historical: {[range]: prices},
+          data: res.historicalPrices,
+        }, () => console.log(this.state.data.length))
       })
+    } else {
+      debugger
+      this.setState({
+        data: historicalState[range].prices
+      });
     }
   }
 
@@ -341,77 +356,7 @@ class AssetShow extends React.Component {
     }
   }
 
-
-
-  // calculatePortfo() {
-  //   const { asset, portfolio } = this.props;
-  //   let closingPrice =
-  //     asset.close ||
-  //     asset.data[asset.data.length - 1].close ||
-  //     asset.data[asset.data.length - 2].close;
-  //   let cashBalance = portfolio.balance;
-  //   let holdings = portfolio.holdings;
-  //   Object.keys(holdings).forEach(ticker => {
-  //     if (holdings[ticker]) {
-  //       cashBalance += 
-  //     }
-  //   })
-  // }
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   debugger
-  //   if (this.props.ticker === nextProps.match.params.ticker) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   };
-  // }
-
-
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   const { fetchAsset } = this.props;
-  //   debugger
-  //   if (this.props.ticker !== prevProps.match.params.ticker) {
-  //       const {
-  //         fetchAsset,
-  //         fetchCompanyInfo,
-  //         fetchIntraday,
-  //         fetch1Week,
-  //         fetchAssetNews,
-  //         fetchRating,
-  //         fetchPortfolioCashBalance,
-  //         fetchHoldings,
-  //         fetchAllWatchlistAssets,
-  //       } = this.props;
-  //       const { clickedRange } = this.state;
-  //       let fetchClickedRange;
-  //       if (clickedRange === "1D") {
-  //         fetchClickedRange = fetchIntraday;
-  //       } else if (clickedRange === "1W") {
-  //         fetchClickedRange = fetch1Week;
-  //       };
-
-  //       const ticker = this.props.match.params.ticker.toUpperCase();
-  //       Promise.all([
-  //         fetchAsset(ticker),
-  //         fetchClickedRange(ticker),
-  //         // fetchIntraday(ticker),
-  //         fetchCompanyInfo(ticker),
-  //         fetchAssetNews(ticker),
-  //         fetchPortfolioCashBalance(),
-  //         fetchHoldings(),
-  //         fetchAllWatchlistAssets(),
-  //         fetchRating(ticker),
-  //       ]).then((response) => {
-  //         console.log('all fetched')
-  //         this.setState({ loading: false, intraday: response[1].assetIntraday })
-  //       });
-  //   }
-  // }
-
   componentDidUpdate(prevProps, prevState) {
-    debugger
     const {
       fetchAsset,
       fetchCompanyInfo,
@@ -426,7 +371,6 @@ class AssetShow extends React.Component {
     } = this.props;
     // const { clickedRange } = this.state;
     if (prevProps.ticker !== this.props.ticker) {
-      debugger
       Promise.all([
       fetchAsset(ticker),
       // fetchClickedRange(ticker),
@@ -596,16 +540,16 @@ class AssetShow extends React.Component {
                             <span onClick={this.handleRangeClick}>1W</span>
                           </div>
                           <div className="1M">
-                            <span>1M</span>
+                            <span onClick={this.handleRangeClick}>1M</span>
                           </div>
                           <div className="3M">
-                            <span>3M</span>
+                            <span onClick={this.handleRangeClick}>3M</span>
                           </div>
                           <div className="1Y">
-                            <span>1Y</span>
+                            <span onClick={this.handleRangeClick}>1Y</span>
                           </div>
                           <div className="5Y">
-                            <span>5Y</span>
+                            <span onClick={this.handleRangeClick}>5Y</span>
                           </div>
                         </div>
                       </nav>
