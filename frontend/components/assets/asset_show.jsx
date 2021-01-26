@@ -264,10 +264,7 @@ class AssetShow extends React.Component {
   update(field) {
     const { assets, currentUser, ticker } = this.props;
     let asset = assets[ticker];
-    let closingPrice =
-      asset.close ||
-      asset.data[asset.data.length - 1].close ||
-      asset.data[asset.data.length - 2].close;
+    let closingPrice = asset.data ? asset.data[asset.data.length - 1].close : 0;
     return (e) => {
       if (field === "Dollars") {
         this.setState({
@@ -413,6 +410,40 @@ class AssetShow extends React.Component {
   //   }
   // }
 
+  componentDidUpdate(prevProps, prevState) {
+    debugger
+    const {
+      fetchAsset,
+      fetchCompanyInfo,
+      fetchIntraday,
+      fetch1Week,
+      fetchAssetNews,
+      fetchRating,
+      fetchPortfolioCashBalance,
+      fetchHoldings,
+      fetchAllWatchlistAssets,
+      ticker,
+    } = this.props;
+    // const { clickedRange } = this.state;
+    if (prevProps.ticker !== this.props.ticker) {
+      debugger
+      Promise.all([
+      fetchAsset(ticker),
+      // fetchClickedRange(ticker),
+      fetchIntraday(ticker),
+      fetchCompanyInfo(ticker),
+      fetchAssetNews(ticker),
+      fetchPortfolioCashBalance(),
+      fetchHoldings(),
+      fetchAllWatchlistAssets(),
+      fetchRating(ticker),
+    ]).then((response) => {
+      console.log('all fetched')
+      this.setState({ loading: false, intraday: response[1].assetIntraday })
+    });
+    }
+  }
+
 
   componentDidMount() {
     const {
@@ -426,19 +457,19 @@ class AssetShow extends React.Component {
       fetchHoldings,
       fetchAllWatchlistAssets,
     } = this.props;
-    const { clickedRange } = this.state;
-    let fetchClickedRange;
-    if (clickedRange === "1D") {
-      fetchClickedRange = fetchIntraday;
-    } else if (clickedRange === "1W") {
-      fetchClickedRange = fetch1Week;
-    };
+    // const { clickedRange } = this.state;
+    // let fetchClickedRange;
+    // if (clickedRange === "1D") {
+    //   fetchClickedRange = fetchIntraday;
+    // } else if (clickedRange === "1W") {
+    //   fetchClickedRange = fetch1Week;
+    // };
     const ticker = this.props.match.params.ticker.toUpperCase();
     debugger
     Promise.all([
       fetchAsset(ticker),
-      fetchClickedRange(ticker),
-      // fetchIntraday(ticker),
+      // fetchClickedRange(ticker),
+      fetchIntraday(ticker),
       fetchCompanyInfo(ticker),
       fetchAssetNews(ticker),
       fetchPortfolioCashBalance(),
@@ -451,6 +482,14 @@ class AssetShow extends React.Component {
     });
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("mousedown", this.handleClickOutside_invest);
+  }
+
+  componentWillUnmount() {
+    const { clearHistoricalPrices, clearAsset } = this.props;
+    Promise.all([
+      clearHistoricalPrices(),
+      clearAsset()
+    ]).then(() => console.log("Subscription all cleared"));
   }
 
   componentWillUnmount() {
@@ -496,7 +535,7 @@ class AssetShow extends React.Component {
       watchlist,
       ticker,
     } = this.props;
-    if (this.state.loading || !portfolio || !assets || !ticker || !assets[ticker] ) {
+    if (this.state.loading || !portfolio || !assets || !ticker || !assets[ticker] || !assets[ticker].data ) {
       return (
         <div>
           Loading...
@@ -508,10 +547,7 @@ class AssetShow extends React.Component {
       let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
       console.log(ticker)
       let rating = asset.rating ? asset.rating[0] : undefined;
-      let closingPrice =
-        asset.close ||
-        asset.data[asset.data.length - 1].close ||
-        asset.data[asset.data.length - 2].close;
+      let closingPrice = asset.data ? asset.data[asset.data.length - 1].close : 0;
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
       let button = watchlistArr.includes(ticker) ? (
         <button className="add-button" onClick={this.handleRemoveFromList}>
@@ -819,7 +855,7 @@ class AssetShow extends React.Component {
                         </ul>
                         <div className="clicked-hindsight">
                           {
-                            this.state.hindsight ? this.state.hindsight : null
+                            this.state.hindsight ? numeral(this.state.hindsight).format('$0,0.00') : null
                           }
                         </div>
                       </div>
@@ -952,7 +988,7 @@ class AssetShow extends React.Component {
                                   <span>Market Price</span>
                                 </div>
                                 <div className="the-price">
-                                  <span>${closingPrice.toFixed(2)}</span>
+                                  {/* <span>${closingPrice.toFixed(2)}</span> */}
                                 </div>
                               </div>
                             ) : null}

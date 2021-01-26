@@ -9,7 +9,8 @@ import {
   fetchIntraday,
   fetchRating,
   clearAsset,
-  fetchHistoricalPrices
+  fetchHistoricalPrices,
+  clearHistoricalPrices
 } from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist, fetchAllWatchlistAssets } from '../../actions/watchlist_actions';
 import { fetchAssetNews } from "../../actions/news_actions";
@@ -20,6 +21,8 @@ import { withRouter } from "react-router";
 
 
 export const msp = (state, ownProps) => {
+    debugger
+    const ticker = ownProps.match.params.ticker;
     return {
         assets: state.entities.assets,
         currentUser: state.session.user,
@@ -27,31 +30,11 @@ export const msp = (state, ownProps) => {
         assetNews: Object.values(state.entities.news),
         portfolio: state.entities.transactions,
         holdings: state.entities.transactions,
-        ticker: ownProps.match.params.ticker,
+        ticker,
         historicalState: state.entities.historical,
         // watchlist: state.entities.watchlists,
     };
 }
-// export const msp = (state, ownProps) => {
-//     let asset = asset || state.entities.assets[(ownProps.match.params.ticker).toUpperCase()] || state.entities.assets;
-//     let news = state.entities.news ? state.entities.news : {};
-//     if (!asset) {
-//         return {
-//             asset: {}
-//         }
-//     } else {
-//         return {
-//           asset: asset || state.entities.assets,
-//           currentUser: state.session.user,
-//           watchlistArr: Object.keys(state.entities.watchlists),
-//           otherData: state.entities.assets,
-//           assetNews: Object.values(news),
-//             portfolio: state.entities.transactions,
-//             holdings: state.entities.transactions,
-//             // watchlist: state.entities.watchlists,
-//         };
-//     }
-// }
 
 export const mdp = dispatch => {
     return {
@@ -70,6 +53,7 @@ export const mdp = dispatch => {
         fetch1Week: ticker => dispatch(fetch1Week(ticker)),
         fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
         fetchHistoricalPrices: (ticker, range) => dispatch(fetchHistoricalPrices(ticker, range)),
+        clearHistoricalPrices: () => dispatch(clearHistoricalPrices()),
     }
 }
 
