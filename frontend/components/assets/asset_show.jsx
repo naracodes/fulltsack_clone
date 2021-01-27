@@ -357,6 +357,7 @@ class AssetShow extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log("Component Did Update")
     const {
       fetchAsset,
       fetchCompanyInfo,
@@ -368,6 +369,7 @@ class AssetShow extends React.Component {
       fetchHoldings,
       fetchAllWatchlistAssets,
       ticker,
+      clearHistoricalPrices
     } = this.props;
     // const { clickedRange } = this.state;
     if (prevProps.ticker !== this.props.ticker) {
@@ -381,6 +383,7 @@ class AssetShow extends React.Component {
       fetchHoldings(),
       fetchAllWatchlistAssets(),
       fetchRating(ticker),
+      clearHistoricalPrices()
     ]).then((response) => {
       console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday, hindsight: null })
@@ -390,6 +393,7 @@ class AssetShow extends React.Component {
 
 
   componentDidMount() {
+    console.log("Componenet Did Mount")
     const {
       fetchAsset,
       fetchCompanyInfo,
@@ -400,6 +404,7 @@ class AssetShow extends React.Component {
       fetchPortfolioCashBalance,
       fetchHoldings,
       fetchAllWatchlistAssets,
+      clearHistoricalPrices
     } = this.props;
     // const { clickedRange } = this.state;
     // let fetchClickedRange;
@@ -419,6 +424,7 @@ class AssetShow extends React.Component {
       fetchHoldings(),
       fetchAllWatchlistAssets(),
       fetchRating(ticker),
+      clearHistoricalPrices()
     ]).then((response) => {
       console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday })
