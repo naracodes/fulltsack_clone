@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTextTransition, { presets } from "react-text-transition";
 import { Link } from "react-router-dom";
 import AssetLineChart from "../charts/linechart";
 import StackedChart from "../charts/rating_chart";
@@ -13,6 +14,7 @@ import {
 import numeral from 'numeral';
 import moment from 'moment';
 import NavBar from "../nav_bar/nav_bar";
+
 
 class AssetShow extends React.Component {
   constructor(props) {
@@ -75,6 +77,7 @@ class AssetShow extends React.Component {
       },
       hindsight: null,
       rangeColor: "#00C805",
+      hindsightOpacity: 0,
     };
   }
  
@@ -101,6 +104,7 @@ class AssetShow extends React.Component {
           historical: {[range]: prices},
           data: res.historicalPrices,
           clickedRange: range,
+          hindsightOpacity: 1,
         }, () => console.log(this.state.data.length))
       })
     } else if (historicalState[range] && range !== "1D") {
@@ -108,6 +112,7 @@ class AssetShow extends React.Component {
       this.setState({
         data: historicalState[range].prices,
         clickedRange: range,
+        hindsightOpacity: 1,
       });
     }
   }
@@ -484,9 +489,12 @@ class AssetShow extends React.Component {
     }
     return (
       <div className="hindsight-result">
-        <span>
+        <div>
           {`In hindsight, Narabot made a profit of ${numeral(amount).format('$0,0.00')} per ${ticker} share in ${range}`}
-        </span>
+        </div>
+        <div>
+          Ask <a href="http://narasbot.herokuapp.com/#/" target="_blank" rel="noreferrer noopener" className="narabot">her</a> how she did it!
+        </div>
       </div>
     )
   }

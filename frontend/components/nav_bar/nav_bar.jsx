@@ -86,7 +86,8 @@ class NavBar extends React.Component {
                       onClick={() =>
                         window.open(
                           "https://www.linkedin.com/in/naraskim/",
-                          "_blank"
+                          "_blank",
+                          "noopener"
                         )
                       }
                     />
@@ -99,7 +100,8 @@ class NavBar extends React.Component {
                       onClick={() =>
                         window.open(
                           "https://github.com/hurricanenara",
-                          "_blank"
+                          "_blank",
+                          "noopener"
                         )
                       }
                     />
@@ -112,7 +114,8 @@ class NavBar extends React.Component {
                       onClick={() =>
                         window.open(
                           "https://angel.co/u/naraslee",
-                          "_blank"
+                          "_blank",
+                          "noopener"
                         )
                       }
                     />

@@ -2411,3 +2411,21 @@ table {
       background-color: rgb(184, 154, 236);
     }
 }
+
+.hindsight-result {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-left: 4px;
+    :first-child {
+      margin-bottom: 9px;
+    }
+}
+
+.narabot:link,
+.narabot:active,
+.narabot:visited {
+  text-decoration: none;
+  color: rgb(251, 118, 140);
+  font-weight: 600;
+}
