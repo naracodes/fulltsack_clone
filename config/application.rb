@@ -12,6 +12,7 @@ module Quiche
     config.load_defaults 5.2
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = :local
+    config.assets.initialize_on_precompile = false
   #   IEX::Api.configure do |config|
   #     config.publishable_token = 'publishable_token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
   #     config.secret_token = 'Tpk_9cc6c16a40494338943d728d111e9998' # defaults to ENV['IEX_API_SECRET_TOKEN']
