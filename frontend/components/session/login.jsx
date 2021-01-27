@@ -16,12 +16,9 @@ class Login extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
-        // debugger;
         this.props.login(this.state)
             .then(() => {
-                // debugger
                 this.props.history.push('/');
             })
     }

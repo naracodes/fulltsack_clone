@@ -5,7 +5,6 @@ export const RECEIVE_WATCHLIST_ASSET = "RECEIVE_WATCHLIST_ASSET";
 export const REMOVE_WATCHLIST_ASSET = "REMOVE_WATCHLIST_ASSET";
 
 export const receiveWatchlistAssets = (assets) => {
-    debugger
     return {
         type: RECEIVE_WATCHLIST_ASSETS,
         assets,
@@ -13,7 +12,6 @@ export const receiveWatchlistAssets = (assets) => {
 }
 
 export const receiveWatchlistAsset = asset => {
-    debugger
     return {
         type: RECEIVE_WATCHLIST_ASSET,
         asset,

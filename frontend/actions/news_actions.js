@@ -60,16 +60,12 @@ export const fetchAllNews = () => dispatch => {
 // ];
 let cachedAssetNews = {};
 export const fetchAssetNews = ticker => dispatch => {
-    // debugger
     if (cachedAssetNews[ticker]) {
-        // debugger
         return dispatch(receiveAssetNews(cachedAssetNews[ticker]))
     } else {
-        // debugger
         return NewsAPIUtil.fetchAssetNews(ticker).then(assetNews => {
             // cachedAssetNews[ticker] = assetNews;
             cachedAssetNews = Object.assign({}, cachedAssetNews, { [ticker]: assetNews });
-            // debugger
             return dispatch(receiveAssetNews(assetNews));
         })
     }

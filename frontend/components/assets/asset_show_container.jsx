@@ -21,7 +21,6 @@ import { withRouter } from "react-router";
 
 
 export const msp = (state, ownProps) => {
-    debugger
     const ticker = ownProps.match.params.ticker;
     return {
         assets: state.entities.assets,

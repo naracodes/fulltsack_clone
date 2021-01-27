@@ -37,9 +37,7 @@ class Search extends React.Component {
   }
 
   handleClickOutside(e) {
-      // debugger
     if (this.wrapperRef_search && !this.wrapperRef_search.current.contains(e.target)) {
-        // debugger
       this.setState({
         searchVal: "",
       });
@@ -48,9 +46,7 @@ class Search extends React.Component {
 
   handleClick(ticker) {
     const { history } = this.props;
-    debugger
     return e => {
-      debugger
       // history.push(`/stocks/${ticker.toUpperCase()}`);
       <AssetShowContainer ticker={ticker} />
       window.localStorage.setItem("nextTicker", ticker);
@@ -61,7 +57,6 @@ class Search extends React.Component {
   //   const { history } = this.props;
   //     if (e.keyCode === 13) {
   //       history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
-  //       // debugger
   //       // if (history.location.pathname === "/") {
   //       // };
   //     };

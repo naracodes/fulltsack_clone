@@ -92,7 +92,6 @@ export const receivePrice = assetPrice => {
 }
 
 export const receiveHistoricalPrices = (historicalPrices, range) => {
-    debugger
     return {
         type: RECEIVE_HISTORICAL_PRICES,
         historicalPrices,
@@ -157,9 +156,7 @@ export const fetchCompanyInfo = ticker => dispatch => {
 }
 
 export const fetchIntraday = ticker => dispatch => {
-    debugger
         return AssetAPIUtil.fetchIntraday(ticker).then(assetIntraday => {
-            debugger
             return dispatch(receiveAssetIntraday(assetIntraday, ticker));
     })
 }
@@ -171,9 +168,7 @@ export const fetch1Week = ticker => dispatch => {
 }
 
 export const fetchHistoricalPrices = (ticker, range) => dispatch => {
-    debugger
     return AssetAPIUtil.fetchHistoricalPrices(ticker, range).then(historicalPrices => {
-        debugger
         return dispatch(receiveHistoricalPrices(historicalPrices, range));
     })
 }

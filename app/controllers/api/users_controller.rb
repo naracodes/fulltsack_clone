@@ -9,7 +9,6 @@ class Api::UsersController < ApplicationController
         if @user.save
             login!(@user)
             puts "User Created"
-            debugger
             Transaction.create({
                 user_id: @user.id,
                 transaction_type: "Deposit",
@@ -39,7 +38,6 @@ class Api::UsersController < ApplicationController
                     prev_close: @quote.previous_close,
                 })
             end
-            debugger
             render :show
         else
             render json: @user.errors.full_messages, status: 422

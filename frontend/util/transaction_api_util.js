@@ -6,7 +6,6 @@ export const fetchPortfolioCashBalance = () => {
 }
 
 export const addTransaction = order => {
-    // debugger
     const assetToAdd = $.ajax({
       method: "POST",
       url: `/api/transactions`,

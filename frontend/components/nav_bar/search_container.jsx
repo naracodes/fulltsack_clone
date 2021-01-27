@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { fetchAssets } from '../../actions/asset_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         assets: state.entities.data,
         asset: state.entities.assets,

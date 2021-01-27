@@ -10,7 +10,6 @@ import { fetchAssetNews } from "../../actions/news_actions";
 
 const msp = state => {
   let news = state.entities.news ? state.entities.news : {};
-  // debugger
     return {
       currentUser: state.session.user,
       portfolio: state.entities.transactions,

@@ -29,7 +29,6 @@ export const fetchMultipleAssets = (tickersArr) => {
 }
 
 export const fetchIntraday = ticker => { //base 5 min interval
-  debugger
     return $.ajax({
         method: 'GET',
         // url: `https://sandbox.iexapis.com/stable/stock/${ticker}/intraday-prices/?token=${iexKey}&chartInterval=5`,
@@ -70,7 +69,6 @@ export const fetchAssetk5YData = ticker => {
 }
 
 export const fetchHistoricalPrices = (ticker, range) => {
-  debugger
     return $.ajax({
         method: 'GET',
         url: `https://cloud.iexapis.com/stable/stock/${ticker}/chart/${range}?token=${iexKey}`

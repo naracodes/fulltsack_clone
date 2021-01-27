@@ -11,7 +11,6 @@ export const receiveCashBalance = balance => {
 }
 
 export const receiveTransaction = transaction => {
-    // debugger
   return {
     type: RECEIVE_TRANSACTION,
     transaction,
@@ -26,7 +25,6 @@ export const fetchPortfolioCashBalance = () => dispatch => {
 
 export const addTransaction = order => dispatch => {
     return TransactionAPIUtil.addTransaction(order).then(transaction => {
-        // debugger
         return dispatch(receiveTransaction(transaction));
     })
 }

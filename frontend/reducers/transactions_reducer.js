@@ -11,10 +11,8 @@ const transactionsReducer = (oldState = {}, action) => {
         case RECEIVE_TRANSACTION:
             nextState.holdings = action.transaction.holdings
             nextState.balance = action.transaction.portfo.balance
-            // debugger
             return Object.assign({}, oldState, nextState);
         case RECEIVE_HOLDINGS:
-            // debugger
             nextState.holdings = action.holdings["holdings"];
             return Object.assign({}, oldState, nextState);
         default:

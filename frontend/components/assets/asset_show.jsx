@@ -82,7 +82,6 @@ class AssetShow extends React.Component {
   }
  
   handleRangeClick(e) {
-    debugger
     const { fetchIntraday, fetch1Week, assets, historicalState, fetchHistoricalPrices } = this.props;
     const { intraday, data, historical } = this.state;
     const ticker = this.props.match.params.ticker.toUpperCase();
@@ -91,15 +90,11 @@ class AssetShow extends React.Component {
     if (range === "1W") range = "5DM";
     console.log(range);
     if (range === "1D") {
-      debugger
       this.setState({ data: asset.data, loading: false, clickedRange: range })
     }
     if (!historicalState[range] && range !== "1D") {
-      debugger
       fetchHistoricalPrices(ticker, range).then(res => {
-        debugger
         const prices = res.historicalPrices.map(obj => obj.close);
-        debugger
         this.setState({
           historical: {[range]: prices},
           data: res.historicalPrices,
@@ -108,7 +103,6 @@ class AssetShow extends React.Component {
         }, () => console.log(this.state.data.length))
       })
     } else if (historicalState[range] && range !== "1D") {
-      debugger
       this.setState({
         data: historicalState[range].prices,
         clickedRange: range,
@@ -211,7 +205,6 @@ class AssetShow extends React.Component {
           ])
           .then(() => {
             if (!watchlistArr.includes(ticker)) {
-              debugger
               const asset = assets[ticker];
               addAssetToWatchlist(asset, currentUser);
             };
@@ -345,13 +338,9 @@ class AssetShow extends React.Component {
     const { fetchHistoricalPrices, ticker, historicalState } = this.props;
     const { historical } = this.state;
     const range = e.target.textContent;
-    debugger
     if (!historicalState[range]) {
-      debugger
       fetchHistoricalPrices(ticker, range).then(res => {
-        debugger
         const prices = res.historicalPrices.map(obj => obj.close);
-        debugger
         this.setState({ 
           historical: {[range]: prices},
           hindsight: this.maxProfit(prices),
@@ -360,7 +349,6 @@ class AssetShow extends React.Component {
       });
       // this.setState({ hindsight: this.maxProfit(historical[range]) });
     } else {
-      debugger
       this.setState({
         hindsight: this.maxProfit(historicalState[range].prices.map(obj => obj.close)),
         clickedHindsight: range,
@@ -421,7 +409,6 @@ class AssetShow extends React.Component {
     //   fetchClickedRange = fetch1Week;
     // };
     const ticker = this.props.match.params.ticker.toUpperCase();
-    debugger
     Promise.all([
       fetchAsset(ticker),
       // fetchClickedRange(ticker),
@@ -450,7 +437,6 @@ class AssetShow extends React.Component {
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
-  //   // debugger
   //   // this.forceUpdate();
   //   // return this.props.ticker === nextProps.ticker;
   //   // const nextTicker = window.localStorage.getItem("nextTicker")
@@ -493,7 +479,7 @@ class AssetShow extends React.Component {
           {`In hindsight, Narabot made a profit of ${numeral(amount).format('$0,0.00')} per ${ticker} share in ${range}`}
         </div>
         <div>
-          Ask <a href="http://narasbot.herokuapp.com/#/" target="_blank" rel="noreferrer noopener" className="narabot">her</a> how she did it!
+          {/* Ask <a href="http://narasbot.herokuapp.com/#/" target="_blank" rel="noreferrer noopener" className="narabot">her</a> how she did it! */}
         </div>
       </div>
     )

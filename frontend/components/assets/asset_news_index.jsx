@@ -2,7 +2,6 @@ import React from "react";
 
 class AssetNewsIndex extends React.Component {
   // componentDidMount() {
-  //   debugger;
   //   const { companyName } = this.props;
   //   // const formatCompanyName = !companyName ? "" : companyName.split(",")[0];
   //   const formatCompanyName = !this.props.companyName ? "" : this.props.companyName.split(",")[0];

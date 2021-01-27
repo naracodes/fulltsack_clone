@@ -30,18 +30,14 @@ class NavBar extends React.Component {
   handleKeyDown(e) {
     const { history } = this.props;
       if (e.keyCode === 13) {
-        debugger
         history.push(`/stocks/${e.currentTarget.value.toUpperCase()}`);
-        // debugger
         // if (history.location.pathname === "/") {
         // };
       };
   }
 
   handleClickOutside(e) {
-      // debugger
     if (this.wrapperRef_nav && !this.wrapperRef_nav.current.contains(e.target)) {
-        // debugger
       this.setState({
         showDropdown: false,
       });
@@ -57,7 +53,6 @@ class NavBar extends React.Component {
   }
 
   showDropdown(e) {
-    debugger
     e.preventDefault();
     this.setState({ showDropdown: !this.state.showDropdown }, () => console.log(this.state));
   }
@@ -86,8 +81,7 @@ class NavBar extends React.Component {
                       onClick={() =>
                         window.open(
                           "https://www.linkedin.com/in/naraskim/",
-                          "_blank",
-                          "noopener"
+                          "_blank"
                         )
                       }
                     />
@@ -100,8 +94,7 @@ class NavBar extends React.Component {
                       onClick={() =>
                         window.open(
                           "https://github.com/hurricanenara",
-                          "_blank",
-                          "noopener"
+                          "_blank"
                         )
                       }
                     />
@@ -114,8 +107,7 @@ class NavBar extends React.Component {
                       onClick={() =>
                         window.open(
                           "https://angel.co/u/naraslee",
-                          "_blank",
-                          "noopener"
+                          "_blank"
                         )
                       }
                     />

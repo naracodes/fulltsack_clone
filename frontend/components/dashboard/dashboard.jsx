@@ -76,7 +76,6 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     const { fetchAssets, fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings, fetchAssetNews } = this.props;
-    debugger
     // const tickers = Object.keys(this.props.portfolio.holdings);
     Promise.all([
       fetchPortfolioCashBalance(),

@@ -7,7 +7,6 @@ export const fetchAllWatchlistAssets = () => {
 }
 
 export const addAssetToWatchlist = (asset, currentUser) => {
-    debugger
     const assetToAdd = $.ajax({
         method: 'POST',
         url: `/api/watchlists`,
@@ -21,15 +20,6 @@ export const addAssetToWatchlist = (asset, currentUser) => {
     })
     return assetToAdd;
 }
-
-// export const addAssetToWatchlist = asset => {
-//     debugger
-//     return $.ajax({
-//         method: 'POST',
-//         url: `/api/watchlists`,
-//         data: { asset }
-//     })
-// }
 
 export const deleteAssetFromWatchlist = (asset, currentUser) => {
     return $.ajax({

@@ -6,7 +6,6 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const receiveCurrentUser = user => {
-    // debugger
     return {
         type: RECEIVE_CURRENT_USER,
         user
@@ -14,14 +13,12 @@ export const receiveCurrentUser = user => {
 }
 
 export const logoutCurrentUser = () => {
-    // debugger
     return {
         type: LOGOUT_CURRENT_USER,
     }
 }
 
 export const receiveErrors = errors => {
-    // debugger
     return {
         type: RECEIVE_SESSION_ERRORS,
         errors
@@ -36,23 +33,17 @@ export const clearErrors = () => {
 
 
 export const createNewUser = user => dispatch => {
-    // debugger;
     return APIUtil.signup(user).then(response => {
-        // debugger
         return dispatch(receiveCurrentUser(response))
     }, err => {
-        // debugger
         return dispatch(receiveErrors(err.responseJSON))
     })
 }
 
 export const login = user => dispatch => {
-    // debugger
     return APIUtil.login(user).then(response => {
-        // debugger
         return dispatch(receiveCurrentUser(response))
     }, err => {
-        // debugger
         return dispatch(receiveErrors(err.responseJSON))
     })
 }
@@ -67,7 +58,6 @@ export const login = user => dispatch => {
 
 
 export const logout = () => dispatch => {
-    // debugger
     return APIUtil.logout().then(() => {
         return dispatch(logoutCurrentUser())
     })

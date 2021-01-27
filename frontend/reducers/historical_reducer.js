@@ -7,7 +7,6 @@ const historicalReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_HISTORICAL_PRICES:
             nextState[action.range] = Object.assign({}, nextState[action.range], {prices: action.historicalPrices})
-            debugger
             return nextState;
         case CLEAR_HISTORICAL_PRICES:
             return {};

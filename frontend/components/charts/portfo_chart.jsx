@@ -94,7 +94,6 @@ class PortfoLineChart extends React.Component {
 
 // const PortfoLineChart = props => {
 //     const { data } = props;
-//     debugger
 //     if (!data) {
 //         return null;
 //     } else {
