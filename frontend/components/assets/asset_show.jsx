@@ -324,12 +324,12 @@ class AssetShow extends React.Component {
   }
 
   maxProfit(historicalPricesArr) {
-    if (historicalPricesArr.length <= 1)  return 0;
+    if (historicalPricesArr.length <= 1) return 0;
     let maxProfit = 0;
     for (let i = 0; i < historicalPricesArr.length; i++) {
-      if (historicalPricesArr[i] - historicalPricesArr[i - 1]) {
-        maxProfit += historicalPricesArr[i] - historicalPricesArr[i - 1];
-      }
+        if (historicalPricesArr[i] > historicalPricesArr[i - 1]) {
+            maxProfit += historicalPricesArr[i] - historicalPricesArr[i - 1];
+        }
     }
     return maxProfit;
   }  
