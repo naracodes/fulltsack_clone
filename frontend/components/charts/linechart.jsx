@@ -69,11 +69,11 @@ class AssetLineChart extends React.Component {
                 position={{y: 20}}
                 // coordinate={{y: 1}}
               />
-              <ReferenceLine y={this.props.prevClose} label="" stroke="#c7c7c7" strokeDasharray="2 2" />
+              <ReferenceLine y={this.props.prevClose} label="" stroke="#41E538" strokeDasharray="2 2" />
               <Line
                 type="monotone"
                 dataKey="close"
-                stroke="#00c805"
+                stroke="#41E538"
                 strokeWidth={2}
                 dot={false}
                 connectNulls={true}

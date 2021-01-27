@@ -1463,11 +1463,11 @@ table {
   white-space: nowrap;
   cursor: pointer;
   width: 100%;
-  border-color: rgb(255, 80, 0);
+  border-color: rgb(65, 229, 56);
   border-style: solid;
   border-width: 1px;
   height: 48px;
-  color: rgb(255, 80, 0);
+  color: rgb(65, 229, 56);
   font-weight: 700;
   align-items: center;
   border-radius: 5px;
@@ -1675,7 +1675,7 @@ table {
       margin-bottom: 12px;
       box-sizing: border-box;
         button {
-          background-color: rgb(255, 80, 0);
+          background-color: #41E538;
           height: 48px;
           min-width: 120px;
           line-height: 20px;
@@ -1692,7 +1692,7 @@ table {
             }
         }
         button:hover {
-          background-color: rgba(255,106,38,1);
+          background-color: #3bcf33;
         }
     }
 }
@@ -1710,7 +1710,7 @@ table {
       text-align: center;
       box-sizing: border-box;
         span {
-          color: rgb(255, 80, 0);
+          color: #41E538;
           font-size: 13px;
           line-height: 20px;
           font-weight: 500;

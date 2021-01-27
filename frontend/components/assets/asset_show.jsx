@@ -52,7 +52,7 @@ class AssetShow extends React.Component {
       showDropdown: false,
       stocksOwned: "",
       investInDropdown: false,
-      buyColor: "#00C805",
+      buyColor: "#41E538",
       sellColor: "black",
       buyClicked: true,
       sellClicked: false,
@@ -76,7 +76,7 @@ class AssetShow extends React.Component {
         "2Y": null,
       },
       hindsight: null,
-      rangeColor: "#00C805",
+      rangeColor: "#41E538",
       hindsightOpacity: 0,
     };
   }
@@ -88,7 +88,6 @@ class AssetShow extends React.Component {
     const asset = assets[ticker];
     let range = e.target.textContent;
     if (range === "1W") range = "5DM";
-    console.log(range);
     if (range === "1D") {
       this.setState({ data: asset.data, loading: false, clickedRange: range })
     }
@@ -100,7 +99,7 @@ class AssetShow extends React.Component {
           data: res.historicalPrices,
           clickedRange: range,
           hindsightOpacity: 1,
-        }, () => console.log(this.state.data.length))
+        });
       })
     } else if (historicalState[range] && range !== "1D") {
       this.setState({
@@ -121,8 +120,8 @@ class AssetShow extends React.Component {
     e.preventDefault();
     this.setState(
       {
-        buyColor: "#00C805",
-        sellColor: "black",
+        buyColor: "#41E538",
+        sellColor: "#ff6a26",
         buyClicked: true,
         sellClicked: false,
         order: { transaction_type: "Buy" },
@@ -138,7 +137,7 @@ class AssetShow extends React.Component {
     e.preventDefault();
     this.setState(
       {
-        sellColor: "#00C805",
+        sellColor: "#41E538",
         buyColor: "black",
         sellClicked: true,
         buyClicked: false,
@@ -167,7 +166,7 @@ class AssetShow extends React.Component {
     const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage, successMessage, orderMessage } = this.state;
     const { addTransaction, addAssetToWatchlist, portfolio, assets, currentUser, watchlistArr } = this.props;
     const ticker = this.props.match.params.ticker.toUpperCase();
-    let stockHoldings = portfolio.holdings[ticker] ? portfolio.holdings[ticker] : 0;
+    let stockHoldings = portfolio.holdings ? portfolio.holdings[ticker] : 0;
     let buyingPowerAvailable = portfolio.balance;
 
     e.preventDefault();
@@ -187,7 +186,7 @@ class AssetShow extends React.Component {
           this.setState({
             reviewOrderClicked: true,
             orderErrorMessage: `Not enough buying power. You only have enough buying power to purchase ${(buyingPowerAvailable / order.cost_per_share).toFixed(3)} shares of ${ticker}.`,
-          }, () => console.log(this.state))
+          })
         } else if (reviewOrderClicked && orderErrorMessage) {
           this.setState({
             reviewOrderClicked: false,
@@ -228,7 +227,7 @@ class AssetShow extends React.Component {
             } ${order.quantity} ${order.quantity > 1 ? "shares" : "share"} of ${
               order.ticker
             } based on the current market price of $${
-              order.cost_per_share
+              numeral(order.cost_per_share).format('$0,0.00')
             } for a total cost of $${numeral(order.transaction_amount).format('$0,0.00')}.`,
           });
         } else if (!reviewOrderClicked && stockHoldings < order.quantity && !successMessage) {
@@ -237,7 +236,7 @@ class AssetShow extends React.Component {
             orderErrorMessage: `Not enough shares. You can only sell up to ${stockHoldings} ${
               stockHoldings > 1 ? "shares" : "share"
             } of ${order.ticker}.`,
-          }, () => console.log(this.state));
+          });
         } else if (reviewOrderClicked && orderErrorMessage) {
           this.setState({
             reviewOrderClicked: false,
@@ -345,19 +344,18 @@ class AssetShow extends React.Component {
           historical: {[range]: prices},
           hindsight: this.maxProfit(prices),
           clickedHindsight: range,
-        }, () => console.log(this.state.historical));
+        });
       });
       // this.setState({ hindsight: this.maxProfit(historical[range]) });
     } else {
       this.setState({
         hindsight: this.maxProfit(historicalState[range].prices.map(obj => obj.close)),
         clickedHindsight: range,
-      }, () => console.log(this.state.historical))
+      })
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("Component Did Update")
     const {
       fetchAsset,
       fetchCompanyInfo,
@@ -385,7 +383,6 @@ class AssetShow extends React.Component {
       fetchRating(ticker),
       clearHistoricalPrices()
     ]).then((response) => {
-      console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday, hindsight: null })
     });
     }
@@ -393,7 +390,6 @@ class AssetShow extends React.Component {
 
 
   componentDidMount() {
-    console.log("Componenet Did Mount")
     const {
       fetchAsset,
       fetchCompanyInfo,
@@ -426,7 +422,6 @@ class AssetShow extends React.Component {
       fetchRating(ticker),
       clearHistoricalPrices()
     ]).then((response) => {
-      console.log('all fetched')
       this.setState({ loading: false, intraday: response[1].assetIntraday })
     });
     document.addEventListener("mousedown", this.handleClickOutside);
@@ -512,7 +507,6 @@ class AssetShow extends React.Component {
       // this.setState({loading:true})
       let asset = assets[ticker];
       let stockHoldings = portfolio.holdings ? portfolio.holdings[asset.ticker] : 0;
-      console.log(ticker)
       let rating = asset.rating ? asset.rating[0] : undefined;
       let closingPrice = asset.data ? asset.data[asset.data.length - 1].close : 0;
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
