@@ -479,7 +479,7 @@ class AssetShow extends React.Component {
           {`In hindsight, Narabot made a profit of ${numeral(amount).format('$0,0.00')} per ${ticker} share in ${range}`}
         </div>
         <div>
-          {/* Ask <a href="http://narasbot.herokuapp.com/#/" target="_blank" rel="noreferrer noopener" className="narabot">her</a> how she did it! */}
+          Ask <a href="http://narasbot.herokuapp.com/#/" target="_blank" rel="noreferrer noopener" className="narabot">her</a> how she did it!
         </div>
       </div>
     )
