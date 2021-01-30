@@ -473,7 +473,10 @@ class AssetShow extends React.Component {
       range = "one year."
     } else if (range === "2Y") {
       range = "two years."
+    } else if (range === "5Y") {
+      range = "five years."
     }
+    
     return (
       <div className="hindsight-result">
         <div>
@@ -813,6 +816,7 @@ class AssetShow extends React.Component {
                           <li onClick={this.handleHindsight}>6M</li>
                           <li onClick={this.handleHindsight}>1Y</li>
                           <li onClick={this.handleHindsight}>2Y</li>
+                          <li onClick={this.handleHindsight}>5Y</li>
                         </ul>
                         <div className="clicked-hindsight">
                           {
