@@ -35,6 +35,9 @@ module Quiche
     # client = IEX::Api::Client.new(secret_token: 'Tpk_9cc6c16a40494338943d728d111e9998')
     # puts 'hello'
     # puts client.get('MSFT')
+
+
+
   end
 
 end
