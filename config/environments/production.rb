@@ -98,7 +98,7 @@ Rails.application.configure do
   scheduler = Rufus::Scheduler.new
 
   # create record every 5 minutes from 9:30 - 9:55)
-  scheduler.cron '30-55/5 9 * * 1-5' do
+  scheduler.cron '30-55/5 9 * * 0-5' do
     User.all.each do |user|
       PortfoDatum.create!({
           user_id: user.id,
@@ -110,7 +110,7 @@ Rails.application.configure do
     end
   end
   # create record every 5 minutes from 10:00 - 15:55
-  scheduler.cron '*/1 10-15 * * 1-5' do
+  scheduler.cron '*/1 10-15 * * 0-5' do
     User.all.each do |user|
       PortfoDatum.create!({
           user_id: user.id,
@@ -122,7 +122,7 @@ Rails.application.configure do
     end
   end
   # create record at 16:00
-  scheduler.cron '0 16 * * 1-5' do
+  scheduler.cron '0 16 * * 0-5' do
     User.all.each do |user|
       PortfoDatum.create!({
           user_id: user.id,
