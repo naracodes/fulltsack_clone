@@ -35,32 +35,6 @@ class Dashboard extends React.Component {
     });
   }
 
-  // handleClickOutside(e) {
-  //   if (this.wrapperRef && !this.wrapperRef.current.contains(e.target)) {
-  //     this.setState({
-  //       showDropdown: false,
-  //     });
-  //   }
-  // }
-
-  // handleClick(e) {
-  //   e.preventDefault();
-  //   this.props.logout();
-  // }
-
-  // handleKeyDown(e) {
-  //   // e.preventDefault();
-  //   return (e) => {
-  //     if (e.keyCode === 13) {
-  //       this.props.history.push(
-  //         `/stocks/${e.currentTarget.value.toUpperCase()}`
-  //       );
-  //     } else {
-  //       return;
-  //     }
-  //   };
-  // }
-
   // mergeData(userDataArr, stockData, hold) {
   //   userDataArr.forEach((data, i) => {
   //     Object.keys(stockData).forEach(ticker => {

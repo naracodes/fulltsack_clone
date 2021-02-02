@@ -4,7 +4,7 @@ import Dashboard from './dashboard';
 import { logout } from "../../actions/session_actions";
 import { fetchPortfolioCashBalance } from '../../actions/transaction_actions';
 import { fetchPortfoData } from '../../actions/portfo_actions';
-import { fetchAssets, fetchIntraday, fetchMultipleIntraday } from '../../actions/asset_actions';
+import { fetchAssets, fetchHistoricalPrices, fetchIntraday, fetchMultipleIntraday } from '../../actions/asset_actions';
 import { fetchHoldings } from '../../actions/holding_action';
 import { fetchAssetNews } from "../../actions/news_actions";
 
@@ -17,6 +17,7 @@ const msp = state => {
       multIntraday: state.entities.assets,
       tickers: state.entities.transactions.holdings,
       assetNews: Object.values(news),
+      historicalState: state.entities.historical,
     };
 }
 
@@ -30,6 +31,7 @@ const mdp = dispatch => {
     fetchAssetNews: (ticker) => dispatch(fetchAssetNews(ticker)),
     fetchAssets: () => dispatch(fetchAssets()),
     // fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
+    fetchHistoricalPrices: (ticker, range) => dispatch(fetchHistoricalPrices(ticker, range)),
   };
 };
 
