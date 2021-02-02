@@ -149,19 +149,6 @@ class AssetShow extends React.Component {
       });
   }
 
-  // handleKeyDown(e) {
-  //   // e.preventDefault();
-  //   return (e) => {
-  //     if (e.keyCode === 13) {
-  //       this.props.history.push(
-  //         `/stocks/${e.currentTarget.value.toUpperCase()}`
-  //       );
-  //     } else {
-  //       return;
-  //     }
-  //   };
-  // }
-
   handleBuy(e) {
     const { investOption, buyClicked, sellClicked, reviewOrderClicked, order, orderErrorMessage, successMessage, orderMessage } = this.state;
     const { addTransaction, addAssetToWatchlist, portfolio, assets, currentUser, watchlistArr } = this.props;
@@ -303,14 +290,6 @@ class AssetShow extends React.Component {
     };
   }
 
-  // handleClickOutside(e) {
-  //   if (this.wrapperRef && !this.wrapperRef.current.contains(e.target)) {
-  //     this.setState({
-  //       showDropdown: false,
-  //     });
-  //   }
-  // }
-
   handleClickOutside_invest(e) {
     if (
       this.wrapperRef_invest &&
@@ -402,13 +381,6 @@ class AssetShow extends React.Component {
       fetchAllWatchlistAssets,
       clearHistoricalPrices
     } = this.props;
-    // const { clickedRange } = this.state;
-    // let fetchClickedRange;
-    // if (clickedRange === "1D") {
-    //   fetchClickedRange = fetchIntraday;
-    // } else if (clickedRange === "1W") {
-    //   fetchClickedRange = fetch1Week;
-    // };
     const ticker = this.props.match.params.ticker.toUpperCase();
     Promise.all([
       fetchAsset(ticker),

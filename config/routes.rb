@@ -11,10 +11,11 @@ Rails.application.routes.draw do
     resources :transactions, only: [:index, :show, :create]
     resources :histories, only: [:index, :show, :create]
     resources :holdings, only: [:index, :show, :create]
-    resources :portfo_data, only: [:index, :show, :create]
+    # resources :portfo_data, only: [:index, :show, :create]
     resources :ratings, only: [:index, :create]
     get '/assets/:ticker', to: 'assets#show'
     get '/ratings/:ticker', to: 'ratings#show'
+    get '/portfo_data/:range', to: 'portfo_data#index'
     delete 'watchlists/:ticker', to: 'watchlists#destroy'
   end
   

@@ -10,12 +10,14 @@ class WatchlistIndex extends React.Component {
       }
     }
     componentDidMount() {
-      const { fetchAllWatchlistAssets, fetchHoldings, fetchMultipleIntraday } = this.props;
+      const { fetchAllWatchlistAssets, fetchHoldings, fetchMultipleIntraday, holdings } = this.props;
       Promise.all([
         fetchAllWatchlistAssets(),
         fetchHoldings()
       ]).then((res) => {
+        console.log(Object.keys(res[1].holdings.holdings))
         const tickers = Object.keys(res[0].assets);
+        // const tickers = Object.keys(res[1].holdings.holdings);
         fetchMultipleIntraday(tickers).then(() => {
           this.setState({
             loading: false,
@@ -49,7 +51,7 @@ class WatchlistIndex extends React.Component {
                           watchlistAsset={watchlistAsset}
                           currentUser={currentUser}
                           holdings={holdings}
-                          data={data[ticker]["intraday-prices"]}
+                          data={data.multiple[ticker]["intraday-prices"]}
                         />
                       </Link>
                 );

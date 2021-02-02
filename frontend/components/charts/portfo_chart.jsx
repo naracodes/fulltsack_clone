@@ -48,14 +48,14 @@ class PortfoLineChart extends React.Component {
         return (
           <div className="stock-graph">
             <div className="odometer">
-              $
+              {/* $
               <Odometer
                 value={
                   !this.state.cashBalance
                     ? cashBalance.toFixed(2)
                     : this.state.cashBalance.toFixed(2)
                 } format="(,ddd).dd"
-              />
+              /> */}
             </div>
             {/* <ResponsiveContainer id="responsive-container"> */}
             <LineChart

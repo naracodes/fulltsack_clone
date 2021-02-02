@@ -15,6 +15,7 @@ export const RECEIVE_RATING = "RECEIVE_RATING";
 export const CLEAR_PRICE = "CLEAR_PRICE";
 export const CLEAR_ASSET = "CLEAR_ASSET";
 export const CLEAR_HISTORICAL_PRICES = "CLEAR_HISTORICAL_PRICES";
+export const RECEIVE_HISTORICAL_BATCH_PRICES = "RECEIVE_HISTORICAL_BATCH_PRICES";
 
 
 export const receiveAllAssets = assets => {
@@ -61,10 +62,11 @@ export const receive1Week = (asset1Week, ticker) => {
     };
 }
 
-export const receiveMultipleIntraday = multIntraday => {
+export const receiveMultipleIntraday = (multIntraday, tickers) => {
     return {
         type: RECEIVE_MULTIPLE_INTRADAY,
         multIntraday,
+        tickers,
     }
 }
 
@@ -96,6 +98,14 @@ export const receiveHistoricalPrices = (historicalPrices, range) => {
         type: RECEIVE_HISTORICAL_PRICES,
         historicalPrices,
         range
+    }
+}
+export const receiveHistoricalBatchPrices = (historicalBatchPrices, range, tickersArr) => {
+    return {
+        type: RECEIVE_HISTORICAL_BATCH_PRICES,
+        historicalBatchPrices,
+        range,
+        tickersArr,
     }
 }
 
@@ -173,9 +183,15 @@ export const fetchHistoricalPrices = (ticker, range) => dispatch => {
     })
 }
 
+export const fetchHistoricalBatch = (tickersArr, range) => dispatch => {
+    return AssetAPIUtil.fetchHistoricalBatch(tickersArr, range).then(historicalBatchPrices => {
+        return dispatch(receiveHistoricalBatchPrices(historicalBatchPrices, range, tickersArr));
+    })
+}
+
 export const fetchMultipleIntraday = tickers => dispatch => {
     return AssetAPIUtil.fetchMultipleIntraday(tickers).then(multIntraday => {
-        return dispatch(receiveMultipleIntraday(multIntraday));
+        return dispatch(receiveMultipleIntraday(multIntraday, tickers));
     })
 }
 

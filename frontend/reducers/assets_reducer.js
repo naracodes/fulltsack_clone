@@ -1,4 +1,4 @@
-import { RECEIVE_ASSET, CLEAR_PRICE, CLEAR_ASSET, RECEIVE_ALL_ASSETS, RECEIVE_COMPANY_INFO,RECEIVE_ASSET_INTRADAY, RECEIVE_RATING, RECEIVE_MULTIPLE_INTRADAY, RECEIVE_1WEEK } from '../actions/asset_actions';
+import { RECEIVE_ASSET, CLEAR_PRICE, CLEAR_ASSET, RECEIVE_ALL_ASSETS, RECEIVE_COMPANY_INFO,RECEIVE_ASSET_INTRADAY, RECEIVE_RATING, RECEIVE_MULTIPLE_INTRADAY, RECEIVE_1WEEK, RECEIVE_HISTORICAL_BATCH_PRICES } from '../actions/asset_actions';
 
 const assetsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -28,7 +28,11 @@ const assetsReducer = (oldState = {}, action) => {
             nextState[company.symbol] = company;
             return nextState;
         case RECEIVE_MULTIPLE_INTRADAY:
-            return action.multIntraday;
+            nextState["multiple"] = Object.assign({}, nextState["multiple"], action.multIntraday);
+            return nextState;
+            // return action.multIntraday;
+        case RECEIVE_HISTORICAL_BATCH_PRICES:
+            nextState["historicalBatch"][action.range] = Object.assign({}, nextState["historicalBatch"][action.range], action.historicalBatchPrices)
         case CLEAR_ASSET:
             return {};
         default:

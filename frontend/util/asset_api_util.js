@@ -75,6 +75,15 @@ export const fetchHistoricalPrices = (ticker, range) => {
     })
 }
 
+export const fetchHistoricalBatch = (tickersArr, range) => {
+  debugger
+  const tickers = tickersArr.join(',');
+    return $.ajax({
+        method: 'GET',
+        url: `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=chart&range=${range}&token=${iexKey}`
+    })
+}
+
 
 export const fetchCompanyInfo = ticker => {
     return $.ajax({
