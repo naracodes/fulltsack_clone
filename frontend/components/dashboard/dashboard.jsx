@@ -24,6 +24,7 @@ class Dashboard extends React.Component {
       loading: true,
       showDropdown: false,
       mergedData: "",
+      clickedRange: "1D",
     };
     // this.mergeData = this.mergeData.bind(this);
   }
@@ -52,10 +53,10 @@ class Dashboard extends React.Component {
     const { fetchAssets, fetchPortfoData, fetchPortfolioCashBalance, fetchMultipleIntraday, fetchHoldings, fetchAssetNews } = this.props;
     // const tickers = Object.keys(this.props.portfolio.holdings);
     Promise.all([
+      fetchPortfoData("1D"),
       fetchPortfolioCashBalance(),
       fetchHoldings(),
-      fetchAssetNews("GOOGL")
-      // fetchPortfoData(),
+      fetchAssetNews("GOOGL"),
     ])
     // .then(res => {
       // console.log(Object.keys(res[0].holdings.holdings));
@@ -91,16 +92,11 @@ class Dashboard extends React.Component {
   }
 
   componentWillUnmount() {
-    // document.removeEventListener("mousedown", this.handleClickOutside);
   }
-
-  // showDropdown(e) {
-  //   e.preventDefault();
-  //   this.setState({ showDropdown: !this.state.showDropdown });
-  // }
 
   render() {
     const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday } = this.props;
+    debugger
     // const { mergedData } = this.state;
     // const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
     const notAllFetched = !currentUser || !portfolio || !assetNews;
@@ -132,10 +128,10 @@ class Dashboard extends React.Component {
                     <header className="asset-price">
                     </header>
                     <div className="react-chart">
-                      {/* <PortfoLineChart
-                        data={mergedData}
+                      <PortfoLineChart
+                        data={portfoData[this.state.clickedRange].data}
                         className="stock-graph"
-                      /> */}
+                      />
                     </div>
                     <nav className="range">
                       <div className="range-buttons">

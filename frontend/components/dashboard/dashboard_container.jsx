@@ -25,7 +25,7 @@ const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
     fetchPortfolioCashBalance: () => dispatch(fetchPortfolioCashBalance()),
-    fetchPortfoData: () => dispatch(fetchPortfoData()),
+    fetchPortfoData: (range) => dispatch(fetchPortfoData(range)),
     fetchMultipleIntraday: tickers => dispatch(fetchMultipleIntraday(tickers)),
     fetchHoldings: () => dispatch(fetchHoldings()),
     fetchAssetNews: (ticker) => dispatch(fetchAssetNews(ticker)),
