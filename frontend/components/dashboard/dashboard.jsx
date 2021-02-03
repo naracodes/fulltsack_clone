@@ -42,8 +42,10 @@ class Dashboard extends React.Component {
     let portfoLength = portfoDataPoints.data.length;
     if (range === "1D") {
       debugger
-      // if (portfoLength > stockLength) portfoDataPoints.data.slice(0, stockLength);
-      portfoDataPoints.data.slice(0, stockLength).forEach((obj, i) => {
+      console.log(portfoLength, "portfoLength");
+      console.log(stockLength, "stockLength");
+      if (portfoLength > stockLength) portfoDataPoints.data.splice(stockLength);
+      portfoDataPoints.data.forEach((obj, i) => {
         let j = 0;
         if (stockLength > portfoLength) {
           j = stockLength - portfoLength + i;
