@@ -149,7 +149,7 @@ class Dashboard extends React.Component {
                         <div className="1D">
                           <span>1D</span>
                         </div>
-                        <div className="1W">
+                        {/* <div className="1W">
                           <span onClick={this.handleRangeClick}>1W</span>
                         </div>
                         <div className="1M">
@@ -163,7 +163,7 @@ class Dashboard extends React.Component {
                         </div>
                         <div className="5Y">
                           <span>ALL</span>
-                        </div>
+                        </div> */}
                       </div>
                     </nav>
                   </section>
