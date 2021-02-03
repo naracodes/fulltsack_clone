@@ -35,8 +35,6 @@ class Dashboard extends React.Component {
   }
 
   mergeData(range="1D", portfoDataPoints, stockData, holdings) {
-    const { multIntraday, tickers, portfoData } = this.props;
-    const { mergedData, historicalBatch, historicalPortfo } = this.state;
     const ownedStocks = Object.keys(holdings.holdings);
     let stockLength = stockData[ownedStocks[0]]["intraday-prices"].length;
     let portfoLength = portfoDataPoints.data.length;
@@ -99,6 +97,7 @@ class Dashboard extends React.Component {
       console.log(res)
       fetchMultipleIntraday(Object.keys(res[1].holdings.holdings)).then((multRes) => {
         console.log(multRes, "multRes")
+        console.log(res[0].data.length, "portfo data length")
         let newData = this.mergeData(this.clickedRange, res[0].data, multRes.multIntraday, res[1].holdings)
         this.setState({
           historicalPortfo: newData
