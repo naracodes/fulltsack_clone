@@ -38,18 +38,19 @@ class Dashboard extends React.Component {
     const { multIntraday, tickers, portfoData } = this.props;
     const { mergedData, historicalBatch, historicalPortfo } = this.state;
     const ownedStocks = Object.keys(holdings.holdings);
-
+    let stockLength = stockData[ownedStocks[0]]["intraday-prices"].length;
+    let portfoLength = portfoDataPoints.data.length;
     if (range === "1D") {
       debugger
+      if (portfoLength > stockLength) portfoDataPoints.data.slice(0, stockLength);
       portfoDataPoints.data.forEach((obj, i) => {
         let j = 0;
-        if (stockData[ownedStocks[0]]["intraday-prices"].length > portfoDataPoints.data.length) {
-          j = stockData[ownedStocks[0]]["intraday-prices"].length - portfoDataPoints.data.length + i;
+        if (stockLength > portfoLength) {
+          j = stockLength - portfoLength + i;
         } else {
           j = i;
         }
         let currentSnapshot = portfoDataPoints.data[i].holdings_snapshot; // {ticker: numberOfShares, ticker: numberofShares}
-        let currentCash = portfoDataPoints.data[i].cash_balance;
         Object.keys(currentSnapshot).forEach((ticker) => {
           debugger
           stockData[ticker]["intraday-prices"][j].close = stockData[ticker]["intraday-prices"][j].close ? stockData[ticker]["intraday-prices"][j].close : stockData[ticker]["intraday-prices"][j - 1].close
