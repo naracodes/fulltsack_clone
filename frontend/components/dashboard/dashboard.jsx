@@ -17,26 +17,14 @@ class Dashboard extends React.Component {
     this.state = {
       loading: true,
       showDropdown: false,
-      mergedData: {
-        "1D": null,
-        "1W": null,
-        "1M": null,
-        "3M": null,
-        "1Y": null,
-        "ALL": null,
-      },
-      historicalBatch: {
-        "1D": null,
-        "1W": null,
-        "1M": null,
-        "3M": null,
-        "1Y": null,
-        "ALL": null,        
-      },
+      mergedData: "",
+      historicalBatch: "",
+      historicalPortfo: null,
       intraday: null,
       clickedRange: "",
     };
     this.mergeData = this.mergeData.bind(this);
+    this.handleRangeClick = this.handleRangeClick.bind(this);
   }
 
   handleLogOut(e) {
@@ -46,23 +34,41 @@ class Dashboard extends React.Component {
     });
   }
 
-  mergeData(e) {
-    const { fetchHistoricalBatch, tickers } = this.props;
-    const { historicalBatch } = this.state;
-    const tickersArr = Object.keys(tickers);
-    let range = e.target.textContent;
-    debugger
-    if (!historicalBatch[range]) {
-      debugger
-      fetchHistoricalBatch(tickers, range).then(res => {
-        console.log(res);
-      })
+  mergeData(range, portfoDataPoints, stockData) {
+    const { multIntraday, tickers, portfoData } = this.props;
+    const { mergedData, historicalBatch, historicalPortfo } = this.state;
+
+    const ownedStocks = Object.keys(tickers);
+    const ownedIntraday = {};
+    ownedStocks.forEach(ticker => {
+      ownedIntraday[ticker] = multIntraday.multiple[ticker]["intraday-prices"];
+    });
+
+    if (range === "1D") {
+      for (let i = 0; i < 78; i++) {
+        let j = ownedIntraday[0].length - portfoData[range] + i;
+        historicalPortfo.map(obj => {
+        })
+      }
     }
   }
 
   handleRangeClick(e) {
-    
-
+    const { fetchHistoricalBatch, tickers } = this.props;
+    const { historicalBatch } = this.state;
+    const tickersArr = Object.keys(tickers);
+    if (range === "1W") range = "5DM";
+    let range = e.target.textContent;
+    debugger
+    if (!historicalBatch[range]) {
+      debugger
+      fetchHistoricalBatch(tickersArr, range).then(res => {
+        console.log(res);
+        this.setState({
+          historicalBatch: {[range]: res.historicalBatchPrices }
+        }, () => console.log(this.state));
+      })
+    }
   }
 
   componentDidMount() {
@@ -78,8 +84,8 @@ class Dashboard extends React.Component {
       console.log(res)
       debugger
       this.setState({
-        historicalBatch: {"1D": res[0].data.data}
-      })
+        historicalPortfo: res[0].data.data
+      }, () => console.log(this.state));
     })
   }
 
@@ -118,7 +124,7 @@ class Dashboard extends React.Component {
                     </header>
                     <div className="react-chart">
                       <PortfoLineChart
-                        data={this.state.historicalBatch["1D"]}
+                        data={this.state.historicalPortfo}
                         className="stock-graph"
                       />
                     </div>
@@ -128,16 +134,16 @@ class Dashboard extends React.Component {
                           <span>1D</span>
                         </div>
                         <div className="1W">
-                          <span>1W</span>
+                          <span onClick={this.handleRangeClick}>1W</span>
                         </div>
                         <div className="1M">
-                          <span onClick={this.mergeData}>1M</span>
+                          <span onClick={this.handleRangeClick}>1M</span>
                         </div>
                         <div className="3M">
-                          <span>3M</span>
+                          <span onClick={this.handleRangeClick}>3M</span>
                         </div>
                         <div className="1Y">
-                          <span>1Y</span>
+                          <span onClick={this.handleRangeClick}>1Y</span>
                         </div>
                         <div className="5Y">
                           <span>ALL</span>
