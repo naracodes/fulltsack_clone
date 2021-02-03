@@ -42,7 +42,10 @@ class Dashboard extends React.Component {
     if (range === "1D") {
       debugger
       portfoDataPoints.data.forEach((obj, i) => {
-        let j = stockData[ownedStocks[0]]["intraday-prices"].length - portfoDataPoints.data.length + i;
+        let j = 0;
+        if (stockData[ownedStocks[0]]["intraday-prices"].length > portfoDataPoints.data.length) {
+          j = stockData[ownedStocks[0]]["intraday-prices"].length - portfoDataPoints.data.length + i;
+        }
         let currentSnapshot = portfoDataPoints.data[i].holdings_snapshot; // {ticker: numberOfShares, ticker: numberofShares}
         let currentCash = portfoDataPoints.data[i].cash_balance;
         Object.keys(currentSnapshot).forEach((ticker) => {
@@ -57,9 +60,6 @@ class Dashboard extends React.Component {
       })
       debugger
       return portfoDataPoints.data;
-      // for (let i = 0; i < stockData.multiple[ownedStocks[0]]["intraday-prices"].length; i++) {
-      //   debugger
-      // }
     }
   }
 
