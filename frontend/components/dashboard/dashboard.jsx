@@ -95,13 +95,10 @@ class Dashboard extends React.Component {
     ])
     .then(res => {
       console.log(res)
-      let portfoDataFromRes = res[0].data.length;
-      let holdings = res[1].holdings;
       fetchMultipleIntraday(Object.keys(res[1].holdings.holdings)).then((multRes) => {
         console.log(multRes, "multRes")
-        console.log(res)
-        console.log(portfoDataFromRes, "portfo data length")
-        let newData = this.mergeData(this.clickedRange, portfoDataFromRes, multRes.multIntraday, holdings)
+        console.log(res[0].data.data.length, "portfo data length")
+        let newData = this.mergeData(this.clickedRange, res[0].data, multRes.multIntraday, res[1].holdings)
         this.setState({
           historicalPortfo: newData
         }, () => console.log(newData));
