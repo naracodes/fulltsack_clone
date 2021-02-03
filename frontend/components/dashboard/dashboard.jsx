@@ -34,22 +34,32 @@ class Dashboard extends React.Component {
     });
   }
 
-  mergeData(range, portfoDataPoints, stockData) {
+  mergeData(range="1D", portfoDataPoints, stockData, holdings) {
     const { multIntraday, tickers, portfoData } = this.props;
     const { mergedData, historicalBatch, historicalPortfo } = this.state;
-
-    const ownedStocks = Object.keys(tickers);
-    const ownedIntraday = {};
-    ownedStocks.forEach(ticker => {
-      ownedIntraday[ticker] = multIntraday.multiple[ticker]["intraday-prices"];
-    });
+    const ownedStocks = Object.keys(holdings.holdings);
 
     if (range === "1D") {
-      for (let i = 0; i < 78; i++) {
-        let j = ownedIntraday[0].length - portfoData[range] + i;
-        historicalPortfo.map(obj => {
+      debugger
+      portfoDataPoints.data.forEach((obj, i) => {
+        let j = stockData[ownedStocks[0]]["intraday-prices"].length - portfoDataPoints.data.length + i;
+        let currentSnapshot = portfoDataPoints.data[i].holdings_snapshot; // {ticker: numberOfShares, ticker: numberofShares}
+        let currentCash = portfoDataPoints.data[i].cash_balance;
+        Object.keys(currentSnapshot).forEach((ticker) => {
+          debugger
+          stockData[ticker]["intraday-prices"][j].close = stockData[ticker]["intraday-prices"][j].close ? stockData[ticker]["intraday-prices"][j].close : stockData[ticker]["intraday-prices"][j - 1].close
+          portfoDataPoints.data[i].cash_balance += stockData[ticker]["intraday-prices"][j].close * currentSnapshot[ticker];
         })
-      }
+        // for (let ticker in currentSnapshot) {
+        //   currentCash += stockData.multiple[ticker][j].close * currentSnapshot[ticker];
+        // }
+        // historicalPortfo[i].cash_balance = currentCash;
+      })
+      debugger
+      return portfoDataPoints.data;
+      // for (let i = 0; i < stockData.multiple[ownedStocks[0]]["intraday-prices"].length; i++) {
+      //   debugger
+      // }
     }
   }
 
@@ -82,29 +92,30 @@ class Dashboard extends React.Component {
     ])
     .then(res => {
       console.log(res)
-      debugger
-      this.setState({
-        historicalPortfo: res[0].data.data
-      }, () => console.log(this.state));
-    })
+      fetchMultipleIntraday(Object.keys(res[1].holdings.holdings)).then((multRes) => {
+        console.log(multRes, "multRes")
+        let newData = this.mergeData(this.clickedRange, res[0].data, multRes.multIntraday, res[1].holdings)
+        this.setState({
+          historicalPortfo: newData
+        }, () => console.log(newData));
+      });
+    });
   }
 
   render() {
-    const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday, holdings } = this.props;
-    // const { mergedData } = this.state;
-    // const notAllFetched = !currentUser || !portfolio || !assetNews || !portfoData || !multIntraday;
+    const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday, holdings, tickers } = this.props;
+    const { mergedData, historicalBatch, historicalPortfo } = this.state;
     const notAllFetched = !currentUser || !portfolio || !assetNews;
-    if (!currentUser || !portfolio.balance || !assetNews || !portfoData) {
+    if (!currentUser || !portfolio.balance || !assetNews || !portfoData || !historicalPortfo || !multIntraday) {
       return (
         <div>
           Loading...
         </div>
       )
     } else {
-      debugger
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
-      // let portfoValue = mergedData[mergedData.length - 1].cash_balance.toFixed(2)
-      // window.localStorage.setItem("portfoVal", (portfoValue));
+      let portfoValue = historicalPortfo[historicalPortfo.length - 1].cash_balance.toFixed(2)
+      window.localStorage.setItem("portfoVal", (portfoValue));
       return (
         <div className="dashboard-outermost">
           <NavBar 
@@ -113,7 +124,7 @@ class Dashboard extends React.Component {
             buyingPowerAvailable={buyingPowerAvailable}
             history={this.props.history}
             logout={this.props.logout}
-            // portfoValue={portfoValue}
+            portfoValue={portfoValue}
             />
           <div className="dashboard-container">
             <main className="main-container">
@@ -125,6 +136,7 @@ class Dashboard extends React.Component {
                     <div className="react-chart">
                       <PortfoLineChart
                         data={this.state.historicalPortfo}
+                        // data={this.mergeData("1D", portfoData, multIntraday, holdings)}
                         className="stock-graph"
                       />
                     </div>

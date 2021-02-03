@@ -49,7 +49,8 @@ export const fetchMultipleIntraday = tickersArr => { // 5 min interval
     return $.ajax({
       method: "GET",
         // url: `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=${tickers}&types=intraday-prices&token=${iexKey}&chartInterval=5`,
-      url: `https://cloud.iexapis.com/stable/stock/market/batch/date/20201001?symbols=${tickers}&types=intraday-prices&token=${iexKey}&chartInterval=5`,
+      url: `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${tickersArr}&types=intraday-prices&token=${iexKey}&chartInterval=5`,
+      // url: `https://cloud.iexapis.com/stable/stock/market/batch/date/20201001?symbols=${tickers}&types=intraday-prices&token=${iexKey}&chartInterval=5`,
     //   url: `https://sandbox.iexapis.com/stable/stock/market/batch/date/20201001?symbols=${tickers}&types=intraday-prices&token=${iexKey}&chartInterval=5`,
     });
 }
@@ -76,7 +77,6 @@ export const fetchHistoricalPrices = (ticker, range) => {
 }
 
 export const fetchHistoricalBatch = (tickersArr, range) => {
-  debugger
   const tickers = tickersArr.join(',');
     return $.ajax({
         method: 'GET',

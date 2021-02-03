@@ -32,11 +32,8 @@ const assetsReducer = (oldState = {}, action) => {
             return nextState;
             // return action.multIntraday;
         case RECEIVE_HISTORICAL_BATCH_PRICES:
-            debugger
             if (!nextState["historicalBatch"]) nextState["historicalBatch"] = {};
-            debugger
             nextState["historicalBatch"][action.range] = Object.assign({}, nextState["historicalBatch"][action.range], action.historicalBatchPrices);
-            debugger
             return nextState;
         case CLEAR_ASSET:
             return {};

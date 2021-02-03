@@ -28,7 +28,7 @@ class WatchlistIndex extends React.Component {
 
     render() {
         const { watchlistAssets, currentUser, holdings, data } = this.props;
-        if (this.state.loading || !data) {
+        if (this.state.loading || !data.multiple) {
           return (
             <div>
               Loading...

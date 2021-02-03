@@ -48,14 +48,14 @@ class PortfoLineChart extends React.Component {
         return (
           <div className="stock-graph">
             <div className="odometer">
-              {/* $
+              $
               <Odometer
                 value={
                   !this.state.cashBalance
                     ? cashBalance.toFixed(2)
                     : this.state.cashBalance.toFixed(2)
                 } format="(,ddd).dd"
-              /> */}
+              />
             </div>
             {/* <ResponsiveContainer id="responsive-container"> */}
             <LineChart
@@ -68,7 +68,7 @@ class PortfoLineChart extends React.Component {
               onMouseLeave={this.handleMouseLeave}
             >
               <XAxis tickLine={false} dataKey="label" hide={true} />
-              <YAxis hide={true} domain={["dataMin - 50", "dataMax + 50"]} />
+              <YAxis hide={true} domain={["auto", "dataMax + 400"]} />
               <Tooltip
                 isAnimationActive={false}
                 content={<CustomTooltip />}

@@ -34,6 +34,7 @@ const mdp = dispatch => {
     // fetchIntraday: ticker => dispatch(fetchIntraday(ticker)),
     fetchHistoricalPrices: (ticker, range) => dispatch(fetchHistoricalPrices(ticker, range)),
     fetchHistoricalBatch: (tickersArr, range) => dispatch(fetchHistoricalBatch(tickersArr, range)),
+    fetchMultipleIntraday: tickers => dispatch(fetchMultipleIntraday(tickers)),
   };
 };
 
