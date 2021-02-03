@@ -45,6 +45,8 @@ class Dashboard extends React.Component {
         let j = 0;
         if (stockData[ownedStocks[0]]["intraday-prices"].length > portfoDataPoints.data.length) {
           j = stockData[ownedStocks[0]]["intraday-prices"].length - portfoDataPoints.data.length + i;
+        } else {
+          j = i;
         }
         let currentSnapshot = portfoDataPoints.data[i].holdings_snapshot; // {ticker: numberOfShares, ticker: numberofShares}
         let currentCash = portfoDataPoints.data[i].cash_balance;
