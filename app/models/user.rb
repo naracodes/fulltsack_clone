@@ -37,42 +37,6 @@ class User < ApplicationRecord
         self.firstName
     end
 
-    def record
-        scheduler = Rufus::Scheduler.new
-        @current_user_id = self.id
-        @current_user = User.find(@current_user_id)
-        # create record every 5 minutes from 9:30 - 9:55)
-        scheduler.cron '30-55/5 9 * * 1-5' do
-            PortfoDatum.create!({
-                user_id: @current_user_id,
-                date: Time.now,
-                holdings_snapshot: @current_user.holdings,
-                label: Time.now.strftime("%I:%M %p"),
-                cash_balance: @current_user.cash_balance
-            })
-        end
-        # create record every 5 minutes from 10:00 - 15:55
-        scheduler.cron '*/5 10-15 * * 1-5' do
-            PortfoDatum.create!({
-                user_id: @current_user_id,
-                date: Time.now,
-                holdings_snapshot: @current_user.holdings,
-                label: Time.now.strftime("%I:%M %p"),
-                cash_balance: @current_user.cash_balance
-            })
-        end
-        # create record at 16:00
-        scheduler.cron '0 16 * * 1-5' do
-            PortfoDatum.create!({
-                user_id: @current_user_id,
-                date: Time.now,
-                holdings_snapshot: @current_user.holdings,
-                label: Time.now.strftime("%I:%M %p"),
-                cash_balance: @current_user.cash_balance
-            })
-        end
-    end
-
     def holdings_between(prev, cur, initial=false)
         # @current_user = current_user ? current_user : User.find(46)
         @current_user = User.find_by(firstName: "Demo")

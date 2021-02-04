@@ -18,7 +18,6 @@ class Api::UsersController < ApplicationController
                 user_id: @current_user.id,
                 balance: 1000000
             })
-            @user.record()
             IEX::Api.configure do |config|
                 config.publishable_token = 'pk_9bae36c8264042f68549a11dc83620ac' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
                 config.endpoint = 'https://cloud.iexapis.com/v1'
