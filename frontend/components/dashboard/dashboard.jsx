@@ -95,14 +95,21 @@ class Dashboard extends React.Component {
     ])
     .then(res => {
       console.log(res)
-      fetchMultipleIntraday(Object.keys(res[1].holdings.holdings)).then((multRes) => {
-        console.log(multRes, "multRes")
-        console.log(res[0].data.data.length, "portfo data length")
-        let newData = this.mergeData(this.clickedRange, res[0].data, multRes.multIntraday, res[1].holdings)
+      if (Object.keys(res[1].holdings.holdings).length > 0) {
+        fetchMultipleIntraday(Object.keys(res[1].holdings.holdings)).then((multRes) => {
+          console.log(multRes, "multRes")
+          console.log(res[0].data.data.length, "portfo data length")
+          let newData = this.mergeData(this.clickedRange, res[0].data, multRes.multIntraday, res[1].holdings)
+          this.setState({
+            historicalPortfo: newData
+          }, () => console.log(newData));
+        });
+      } else {
         this.setState({
-          historicalPortfo: newData
-        }, () => console.log(newData));
-      });
+          loading: false,
+        })
+        console.log("all fetched")
+      }
     });
   }
 
@@ -110,7 +117,7 @@ class Dashboard extends React.Component {
     const { currentUser, logout, portfolio, assetNews, portfoData, multIntraday, holdings, tickers } = this.props;
     const { mergedData, historicalBatch, historicalPortfo } = this.state;
     const notAllFetched = !currentUser || !portfolio || !assetNews;
-    if (!currentUser || !portfolio.balance || !assetNews || !portfoData || !historicalPortfo || !multIntraday) {
+    if (!currentUser || !portfolio.balance || !assetNews) {
       return (
         <div>
           Loading...
@@ -118,7 +125,7 @@ class Dashboard extends React.Component {
       )
     } else {
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
-      let portfoValue = historicalPortfo[historicalPortfo.length - 1].cash_balance.toFixed(2)
+      let portfoValue = historicalPortfo ? historicalPortfo[historicalPortfo.length - 1].cash_balance.toFixed(2) : buyingPowerAvailable;
       window.localStorage.setItem("portfoVal", (portfoValue));
       return (
         <div className="dashboard-outermost">
