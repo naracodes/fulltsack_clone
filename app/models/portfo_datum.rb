@@ -12,8 +12,6 @@
 #  holdings_snapshot :json
 #
 class PortfoDatum < ApplicationRecord
-    require 'rufus-scheduler'
-    scheduler = Rufus::Scheduler.new
 
     @today = Time.now
     

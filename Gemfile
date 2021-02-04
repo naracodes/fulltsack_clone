@@ -57,7 +57,6 @@ group :development do
   gem 'annotate'
   gem 'faker'
   gem 'iex-ruby-client'
-  gem 'rufus-scheduler'
 
 end
 

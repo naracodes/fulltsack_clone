@@ -11,11 +11,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-require 'rufus-scheduler'
 
 class User < ApplicationRecord
-    require 'rufus-scheduler'
-    load "#{Rails.root}/config/initializers/scheduler.rb"
 
     # FIG VAPER
     validates :email, :password_digest, presence: true, uniqueness: true
