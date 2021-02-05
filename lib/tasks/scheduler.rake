@@ -1,3 +1,5 @@
+require 'time'
+
 desc "Record cash balance"
 task :record => :environment do
     User.all.each do |user|
