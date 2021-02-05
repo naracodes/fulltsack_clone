@@ -42,6 +42,9 @@ class Dashboard extends React.Component {
       debugger
       console.log(portfoLength, "portfoLength");
       console.log(stockLength, "stockLength");
+      if (portfoDataPoints.data.length === 0) {
+        return null;
+      }
       if (portfoLength > stockLength) portfoDataPoints.data.splice(stockLength);
       portfoDataPoints.data.forEach((obj, i) => {
         let j = 0;
@@ -125,7 +128,8 @@ class Dashboard extends React.Component {
       )
     } else {
       let buyingPowerAvailable = portfolio.balance.toFixed(2);
-      let portfoValue = historicalPortfo ? historicalPortfo[historicalPortfo.length - 1].cash_balance.toFixed(2) : buyingPowerAvailable;
+      debugger
+      let portfoValue = (historicalPortfo) ? historicalPortfo[historicalPortfo.length - 1].cash_balance.toFixed(2) : buyingPowerAvailable;
       window.localStorage.setItem("portfoVal", (portfoValue));
       return (
         <div className="dashboard-outermost">
