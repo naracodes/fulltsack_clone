@@ -11,7 +11,7 @@ module Quiche
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.time_zone = 'Eastern Time (US & Canada)'
-    config.active_record.default_timezone = :local
+    config.active_record.default_timezone = 'Eastern Time (US & Canada)'
     config.assets.initialize_on_precompile = false
     #   IEX::Api.configure do |config|
     #     config.publishable_token = 'publishable_token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
