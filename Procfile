@@ -1,1 +1,1 @@
-record: rake record
+record: rake scheduler.rake
