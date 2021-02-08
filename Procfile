@@ -1,1 +1,1 @@
-record: heroku run --size Free --app quichelite -- rake record
+record: rake scheduler.rake
