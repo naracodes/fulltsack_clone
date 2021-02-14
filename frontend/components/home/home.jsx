@@ -66,9 +66,17 @@ class Home extends React.Component {
                         <div className="splash-signup">
                           <div className="splash-signup-2">
                             <div className="splash-signup-3">
-                              <Link id="signup-black" to="/signup">
-                                  Sign Up
-                              </Link>
+                              {
+                                currentUser ? (
+                                <Link id="signup-black" to="/">
+                                    My Account
+                                </Link>
+                                ) : (
+                                <Link id="signup-black" to="/signup">
+                                    Sign Up
+                                </Link>
+                                )
+                              }
                             </div>
                           </div>
                         </div>
@@ -84,12 +92,14 @@ class Home extends React.Component {
                           srcset="https://cdn.robinhood.com/assets/robinhood/brand/1x__d05b6c860541960976715b15872f6027.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__cc315b9c078102e16b08ae0e8490ee9f.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__f91478063fabe05577d7e75323c10826.png 3x"></img>
                         </video> */}
                         <div className="image-container">
-                          <img
+                          {/* <video autoPlay="autoplay" src="app/assets/images/oven.mp4"></video> */}
+                          <img src="https://firebasestorage.googleapis.com/v0/b/quiche-4d5bc.appspot.com/o/imgs%2Foven123.gif?alt=media&token=7a98cb5f-71a6-4ef7-887f-1e6ba5c6bf13" alt=""/>
+                          {/* <img
                             src="https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png"
                             // srcSet="https://cdn.robinhood.com/assets/robinhood/brand/1x__350f48095cefa5b4a8139e5797e5232d.png, https://cdn.robinhood.com/assets/robinhood/brand/2x__60c096535b512cab08cdcd6c20101c66.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/3x__b51cb4c0082f7a85930fbd59782a6f8e.png 3x"
                             srcSet="https://cdn.robinhood.com/assets/robinhood/brand/_next/static/images/1x__284c8d0c799d3c9649ca021c00228275.png, https://cdn.robinhood.com/assets/robinhood/brand/_next/static/images/2x__ff9c36e27d7018cf707b95d8675793a3.png 2x, https://cdn.robinhood.com/assets/robinhood/brand/_next/static/images/3x__45f00d7b296cb52968f1bca4ef766fc1.png 3x"
                             alt=""
-                          />
+                          /> */}
                         </div>
                       </div>
                     </div>
