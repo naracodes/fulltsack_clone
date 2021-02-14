@@ -58,9 +58,11 @@ class Home extends React.Component {
                         </div>
                         <div className="short-intro">
                           <span className="paragraph">
-                              Quiche Lorem ipsum dolor sit amet, consectetur
-                              adipiscing elit. etur adipiscing elit etur adipiscing
-                              elit.
+                            Easy as 1, 2, 3
+                            <br/>
+                            Let it bake, let it grow
+                            <br/>
+                            Reap what you sow
                           </span>
                         </div>
                         <div className="splash-signup">

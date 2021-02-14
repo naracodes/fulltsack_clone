@@ -202,7 +202,57 @@ table {
   }
 }
 
+
+@media (min-width: 768px) {
+  .image-container {
+    width: 100%;
+    // left: 40%;
+  }
+
+  .image-container img {
+    margin-bottom: 100px;
+  }
+  .right-content-3 {
+    overflow: visible;
+  }
+  .heading h1 {
+    font-family: "Capsule Sans Display",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    text-decoration: unset;
+  }
+  .short-intro span {
+    font-family: "Capsule Sans Display",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+  }
+  .splash-signup {
+    margin-top: 24px;
+    a {
+      width: auto;
+    }
+  }
+  .right-content-3 {
+    min-width: 100%;
+  }
+  .login-outermost-3 .left-image {
+    background-image: url("https://cdn.robinhood.com/assets/generated_assets/cdfcb3cb965d71cf114d0aeb8f0a50cd.jpg");
+  }
+  .image-container {
+    min-width: 100%;
+    min-height: 540px;
+  }
+}
+
 @media (min-width: 1280px) {
+
+  .image-container img {
+    margin-bottom: 50px;
+  }
   .splash-container {
     min-width: 1280px;
     max-width: 1280px;
@@ -242,49 +292,6 @@ table {
 
 }
 
-@media (min-width: 768px) {
-  .image-container {
-    width: 100%;
-    // left: 40%;
-  }
-
-  .image-container img {
-    margin-bottom: 100px;
-  }
-  .right-content-3 {
-    overflow: visible;
-  }
-  .heading h1 {
-    font-family: "Capsule Sans Display",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    font-size: 52px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 60px;
-    text-decoration: unset;
-  }
-  .short-intro span {
-    font-family: "Capsule Sans Display",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-  }
-  .splash-signup {
-    a {
-      width: auto;
-    }
-  }
-  .right-content-3 {
-    min-width: 100%;
-  }
-  .login-outermost-3 .left-image {
-    background-image: url("https://cdn.robinhood.com/assets/generated_assets/cdfcb3cb965d71cf114d0aeb8f0a50cd.jpg");
-  }
-  .image-container {
-    min-width: 100%;
-    min-height: 540px;
-  }
-}
 
 .login-outermost {
   align-items: center;
@@ -1307,7 +1314,7 @@ table {
 
 .account span:hover {
   cursor: pointer;
-  color: rgb(0, 200, 5);
+  color: rgb(255, 242, 0);
 }
 
 .portfo-link {
@@ -1318,7 +1325,7 @@ table {
 }
 
 .portfo-link span:hover {
-  color: #daa3c3;
+  color: #ffd642;
 }
 
 
@@ -1398,7 +1405,7 @@ table {
       padding: 0 24px;
     }
   .single-item:hover {
-    background-color: rgb(182, 241, 182);
+    background-color: rgb(245, 254, 138);
   }
   #wl-link {
     text-decoration: none;
@@ -1485,11 +1492,11 @@ table {
   white-space: nowrap;
   cursor: pointer;
   width: 100%;
-  border-color: rgb(65, 229, 56);
+  border-color: #f4e000;
   border-style: solid;
   border-width: 1px;
   height: 48px;
-  color: rgb(65, 229, 56);
+  color: #f4e000;
   font-weight: 700;
   align-items: center;
   border-radius: 5px;
@@ -1697,7 +1704,7 @@ table {
       margin-bottom: 12px;
       box-sizing: border-box;
         button {
-          background-color: #41E538;
+          background-color: #f4e000;
           height: 48px;
           min-width: 120px;
           line-height: 20px;
@@ -1732,7 +1739,7 @@ table {
       text-align: center;
       box-sizing: border-box;
         span {
-          color: #41E538;
+          color: #cdc02f;
           font-size: 13px;
           line-height: 20px;
           font-weight: 500;
@@ -2418,22 +2425,22 @@ table {
       cursor: pointer;
     }
     :nth-child(1) {
-      background-color: rgb(184, 154, 236);
+      background-color: rgb(251, 96, 0);
     }
     :nth-child(2) {
-      background-color: rgb(184, 154, 236);
+      background-color: rgb(237, 91, 0);
     }
     :nth-child(3) {
-      background-color: rgb(184, 154, 236);
+      background-color: rgb(210, 82, 2);
     }
     :nth-child(4) {
-      background-color: rgb(184, 154, 236);
+      background-color: rgb(180, 69, 0);
     }
     :nth-child(5) {
-      background-color: rgb(184, 154, 236);
+      background-color: rgb(162, 62, 0);
     }
     :nth-child(6) {
-      background-color: rgb(184, 154, 236);
+      background-color: rgb(140, 54, 0);
     }
 }
 
