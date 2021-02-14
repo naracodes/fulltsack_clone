@@ -7,9 +7,11 @@ class Api::PortfoDataController < ApplicationController
         @data
         if range == "1D"
             if @current_time.saturday?
-                @data = PortfoDatum.where('created_at >= ?', 1.days.ago).where(user_id: @current_user.id).order('id ASC')
+                @data = PortfoDatum.where(created_at: @current_time.yesterday.all_day).where(user_id: @current_user.id).order('id ASC')
+                # @data = PortfoDatum.where('created_at >= ?', 1.days.ago).where(user_id: @current_user.id).order('id ASC')
             elsif @current_time.sunday?
-               @data = PortfoDatum.where('created_at >= ?', 2.days.ago).where(user_id: @current_user.id).order('id ASC')
+            #    @data = PortfoDatum.where('created_at >= ?', 2.days.ago).where(user_id: @current_user.id).order('id ASC')
+            @data = PortfoDatum.where(created_at: @current_time.yesterday.yesterday.all_day).where(user_id: @current_user.id).order('id ASC')
             else
                 @data = PortfoDatum.where(created_at: Time.current.all_day, user_id: @current_user.id).order('created_at ASC')
             end
