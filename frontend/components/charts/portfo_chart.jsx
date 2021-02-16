@@ -40,7 +40,6 @@ class PortfoLineChart extends React.Component {
     if (!data) {
       return (
         <div>
-          Start trading to see your portfolio chart!
         </div>
       )
     } else {

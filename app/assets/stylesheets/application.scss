@@ -382,20 +382,19 @@ table {
     font-size: 13px;
     padding-left: 13px;
     cursor: pointer;
-    color: rgb(0, 200, 5);
+    color: rgb(163, 203, 0);
   }
 }
 
 .the-actual-button {
-  background: rgb(0, 200, 5);
-  border-color: rgb(0, 200, 5);
+  background: rgb(198, 247, 0);
+  border-color: rgb(198, 247, 0);
   align-items: center;
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
     height: 48px;
-
     justify-content: center;
     min-width: 120px;
     padding: 0 48px;
@@ -410,7 +409,7 @@ table {
 }
 
 .the-actual-button:hover {
-  background-color: rgb(0, 180, 5);;
+  background-color: rgb(163, 203, 0);
 }
 
 .login-input {
@@ -452,7 +451,7 @@ table {
       padding: 14px 0px;
       letter-spacing: -0.1px;
         #signup-link {
-          color: rgb(0, 200, 5);
+          color: rgb(163, 203, 0);
           text-decoration: none;
           font-weight: 500;
 
@@ -467,7 +466,7 @@ table {
 
 .login-input .input-box:focus {
   background-color: #fff;
-  border-color: rgb(0, 200, 5);
+  border-color: rgb(163, 203, 0);
 }
 
 .login-input label > :first-child {
@@ -583,7 +582,7 @@ table {
       height: 48px;
       min-width: 144px;
       border-radius: 24px;
-      background-color: rgb(0, 200, 5);
+      background-color: rgb(163, 203, 0);
       box-sizing: border-box;
       display: inline-flex;
       align-items: center;
@@ -593,14 +592,16 @@ table {
       height: 48px;
       min-width: 168px;
       border-radius: 24px;
-      background-color: rgb(0, 200, 5);
+      background-color: rgb(0, 0, 0);
+      color: white;
       box-sizing: border-box;
       display: inline-flex;
       align-items: center;
       justify-content: center;
     }
     #signup-my-account:hover {
-      background-color: rgb(0, 180, 5);
+      background-color: rgb(235, 254, 18);
+      color: black;
     }
     .auth-spacer {
       width: 25px;
@@ -768,7 +769,7 @@ table {
 .first-name-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(0, 200, 5);
+  border-color: rgb(163, 203, 0);
 }
 
 .first-name-input-2::placeholder,
@@ -815,7 +816,7 @@ table {
 .last-name-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(0, 200, 5);
+  border-color: rgb(163, 203, 0);
 }
 
 .email-container {
@@ -857,7 +858,7 @@ table {
 .email-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(0, 200, 5);
+  border-color: rgb(163, 203, 0);
 }
 
 .password-container {
@@ -898,7 +899,7 @@ table {
 .password-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(0, 200, 5);
+  border-color: rgb(163, 203, 0);
 }
 
 .button-container {
@@ -911,7 +912,7 @@ table {
       box-sizing: border-box;
       display: block;
         button {
-          background-color: rgb(0, 200, 5);
+          background-color: rgb(163, 203, 0);
           height: 48px;
           min-width: 120px;
           justify-content: center;
@@ -943,7 +944,7 @@ table {
   }
 
   a {
-  color: rgb(0, 200, 5);
+  color: rgb(163, 203, 0);
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
@@ -994,7 +995,7 @@ table {
       color: rgb(180, 189, 194);
       line-height: 20px;
         a {
-          color: rgb(0, 200, 5);
+          color: rgb(163, 203, 0);
           text-decoration: none;
           font-weight: 500;
         }
@@ -1014,7 +1015,7 @@ table {
       line-height: 20px;
         a {
           text-decoration: none;
-          color: rgb(0, 200, 5);
+          color: rgb(163, 203, 0);
           font-weight: 500;
           padding-right: 10px;
         }
@@ -1492,19 +1493,19 @@ table {
   white-space: nowrap;
   cursor: pointer;
   width: 100%;
-  border-color: #f4e000;
+  border-color: rgb(163, 203, 0);
   border-style: solid;
   border-width: 1px;
   height: 48px;
-  color: #f4e000;
+  color: rgb(163, 203, 0);
   font-weight: 700;
   align-items: center;
   border-radius: 5px;
 }
 
 .add-button:hover {
-  border-color: rgba(255,106,38,1);
-  color: rgba(255,106,38,1);
+  border-color: rgb(144, 0, 255);
+  color: rgb(144, 0, 255);
 }
 
 .order-form {
@@ -1704,7 +1705,7 @@ table {
       margin-bottom: 12px;
       box-sizing: border-box;
         button {
-          background-color: #f4e000;
+          background-color: rgb(163, 203, 0);
           height: 48px;
           min-width: 120px;
           line-height: 20px;
@@ -1721,7 +1722,7 @@ table {
             }
         }
         button:hover {
-          background-color: #3bcf33;
+          background-color: rgb(153, 190, 5);
         }
     }
 }
@@ -1739,7 +1740,7 @@ table {
       text-align: center;
       box-sizing: border-box;
         span {
-          color: #cdc02f;
+          color: rgb(163, 203, 0);
           font-size: 13px;
           line-height: 20px;
           font-weight: 500;
@@ -2212,7 +2213,7 @@ table {
   line-height: 20px;
   letter-spacing: -0.1px;
     span {
-      color: rgb(0, 200, 5);
+      color: rgb(163, 203, 0);
       font-weight: 500;
     }
 }
