@@ -39,9 +39,6 @@ class Dashboard extends React.Component {
     let stockLength = stockData[ownedStocks[0]]["intraday-prices"].length;
     let portfoLength = portfoDataPoints.data.length;
     if (range === "1D") {
-      debugger
-      console.log(portfoLength, "portfoLength");
-      console.log(stockLength, "stockLength");
       if (portfoDataPoints.data.length === 0) {
         return null;
       }
@@ -55,7 +52,6 @@ class Dashboard extends React.Component {
         }
         let currentSnapshot = portfoDataPoints.data[i].holdings_snapshot; // {ticker: numberOfShares, ticker: numberofShares}
         Object.keys(currentSnapshot).forEach((ticker) => {
-          debugger
           stockData[ticker]["intraday-prices"][j].close = stockData[ticker]["intraday-prices"][j].close ? stockData[ticker]["intraday-prices"][j].close : stockData[ticker]["intraday-prices"][j - 1].close
           portfoDataPoints.data[i].cash_balance += stockData[ticker]["intraday-prices"][j].close * currentSnapshot[ticker];
         })
@@ -64,7 +60,6 @@ class Dashboard extends React.Component {
         // }
         // historicalPortfo[i].cash_balance = currentCash;
       })
-      debugger
       return portfoDataPoints.data;
     }
   }
@@ -79,10 +74,9 @@ class Dashboard extends React.Component {
     if (!historicalBatch[range]) {
       debugger
       fetchHistoricalBatch(tickersArr, range).then(res => {
-        console.log(res);
         this.setState({
           historicalBatch: {[range]: res.historicalBatchPrices }
-        }, () => console.log(this.state));
+        });
       })
     }
   }
@@ -97,21 +91,17 @@ class Dashboard extends React.Component {
       fetchAssetNews("GOOGL"),
     ])
     .then(res => {
-      console.log(res)
       if (Object.keys(res[1].holdings.holdings).length > 0) {
         fetchMultipleIntraday(Object.keys(res[1].holdings.holdings)).then((multRes) => {
-          console.log(multRes, "multRes")
-          console.log(res[0].data.data.length, "portfo data length")
           let newData = this.mergeData(this.clickedRange, res[0].data, multRes.multIntraday, res[1].holdings)
           this.setState({
             historicalPortfo: newData
-          }, () => console.log(newData));
+          }, () => console.log("Hi! Welcome :-)"));
         });
       } else {
         this.setState({
           loading: false,
-        })
-        console.log("all fetched")
+        });
       }
     });
   }

@@ -15,7 +15,6 @@ class WatchlistIndex extends React.Component {
         fetchAllWatchlistAssets(),
         fetchHoldings()
       ]).then((res) => {
-        console.log(Object.keys(res[1].holdings.holdings))
         const tickers = Object.keys(res[0].assets);
         // const tickers = Object.keys(res[1].holdings.holdings);
         fetchMultipleIntraday(tickers).then(() => {

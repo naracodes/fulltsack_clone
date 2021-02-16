@@ -82,7 +82,6 @@ class PortfoLineChart extends React.Component {
                 strokeWidth={2}
                 dot={false}
                 connectNulls={true}
-                // activeDot={ { onClick: (e) => console.log(e) } }
               />
             </LineChart>
             {/* </ResponsiveContainer> */}

@@ -65,7 +65,7 @@ class AssetShow extends React.Component {
       sellClicked: true,
       buyClicked: false,
       order: { transaction_type: "Sell" }
-    }, () => console.log(this.state));
+    });
   }
 
   handleKeyDown(e) {

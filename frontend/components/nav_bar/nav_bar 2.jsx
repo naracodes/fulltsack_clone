@@ -52,7 +52,7 @@ class NavBar extends React.Component {
 
   showDropdown(e) {
     e.preventDefault();
-    this.setState({ showDropdown: !this.state.showDropdown }, () => console.log(this.state));
+    this.setState({ showDropdown: !this.state.showDropdown });
   }
 
     render() {
