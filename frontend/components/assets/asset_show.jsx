@@ -407,7 +407,6 @@ class AssetShow extends React.Component {
     clearHistoricalPrices();
     clearAsset();
     clearRating();
-    // console.log('clearRating called')
     this.setState({hindsight: null});
   }
 
