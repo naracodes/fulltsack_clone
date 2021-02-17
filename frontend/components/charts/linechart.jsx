@@ -73,7 +73,7 @@ class AssetLineChart extends React.Component {
               <Line
                 type="monotone"
                 dataKey="close"
-                stroke="#41E538"
+                stroke="#add5ff"
                 strokeWidth={2}
                 dot={false}
                 connectNulls={true}

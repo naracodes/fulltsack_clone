@@ -114,7 +114,7 @@ table {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: rgb(235, 254, 18);
+  background-color: #f8cb64;
   border-bottom-color: #000000;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -382,13 +382,13 @@ table {
     font-size: 13px;
     padding-left: 13px;
     cursor: pointer;
-    color: rgb(163, 203, 0);
+    color: #f8cb64;
   }
 }
 
 .the-actual-button {
-  background: rgb(198, 247, 0);
-  border-color: rgb(198, 247, 0);
+  background: #f8cb64;
+  border-color: #f8cb64;
   align-items: center;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -409,7 +409,7 @@ table {
 }
 
 .the-actual-button:hover {
-  background-color: rgb(163, 203, 0);
+  background-color: #add5ff;
 }
 
 .login-input {
@@ -451,7 +451,7 @@ table {
       padding: 14px 0px;
       letter-spacing: -0.1px;
         #signup-link {
-          color: rgb(163, 203, 0);
+          color: #f8cb64;
           text-decoration: none;
           font-weight: 500;
 
@@ -466,7 +466,7 @@ table {
 
 .login-input .input-box:focus {
   background-color: #fff;
-  border-color: rgb(163, 203, 0);
+  border-color: #f8cb64;
 }
 
 .login-input label > :first-child {
@@ -582,7 +582,7 @@ table {
       height: 48px;
       min-width: 144px;
       border-radius: 24px;
-      background-color: rgb(163, 203, 0);
+      background-color: #f8cb64;
       box-sizing: border-box;
       display: inline-flex;
       align-items: center;
@@ -600,7 +600,7 @@ table {
       justify-content: center;
     }
     #signup-my-account:hover {
-      background-color: rgb(235, 254, 18);
+      background-color: #f8cb64;
       color: black;
     }
     .auth-spacer {
@@ -769,7 +769,7 @@ table {
 .first-name-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(163, 203, 0);
+  border-color: #f8cb64;
 }
 
 .first-name-input-2::placeholder,
@@ -816,7 +816,7 @@ table {
 .last-name-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(163, 203, 0);
+  border-color: #f8cb64;
 }
 
 .email-container {
@@ -858,7 +858,7 @@ table {
 .email-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(163, 203, 0);
+  border-color: #f8cb64;
 }
 
 .password-container {
@@ -899,7 +899,7 @@ table {
 .password-input-2:focus {
   outline: 0px;
   background-color: rgb(255, 255, 255);
-  border-color: rgb(163, 203, 0);
+  border-color: #f8cb64;
 }
 
 .button-container {
@@ -912,7 +912,7 @@ table {
       box-sizing: border-box;
       display: block;
         button {
-          background-color: rgb(163, 203, 0);
+          background-color: #f8cb64;
           height: 48px;
           min-width: 120px;
           justify-content: center;
@@ -930,7 +930,7 @@ table {
           cursor: pointer;
         }
         button:hover {
-          background-color: rgb(0, 180, 5);
+          background-color: #add5ff;
         }
     }
 }
@@ -944,7 +944,7 @@ table {
   }
 
   a {
-  color: rgb(163, 203, 0);
+  color: #f8cb64;
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
@@ -995,7 +995,7 @@ table {
       color: rgb(180, 189, 194);
       line-height: 20px;
         a {
-          color: rgb(163, 203, 0);
+          color: #f8cb64;
           text-decoration: none;
           font-weight: 500;
         }
@@ -1015,7 +1015,7 @@ table {
       line-height: 20px;
         a {
           text-decoration: none;
-          color: rgb(163, 203, 0);
+          color: #f8cb64;
           font-weight: 500;
           padding-right: 10px;
         }
@@ -1326,7 +1326,7 @@ table {
 }
 
 .portfo-link span:hover {
-  color: #ffd642;
+  color: #add5ff;
 }
 
 
@@ -1406,7 +1406,7 @@ table {
       padding: 0 24px;
     }
   .single-item:hover {
-    background-color: rgb(245, 254, 138);
+    background-color: #add5ff;
   }
   #wl-link {
     text-decoration: none;
@@ -1493,19 +1493,19 @@ table {
   white-space: nowrap;
   cursor: pointer;
   width: 100%;
-  border-color: rgb(163, 203, 0);
+  border-color: #f8cb64;
   border-style: solid;
   border-width: 1px;
   height: 48px;
-  color: rgb(163, 203, 0);
+  color: #f8cb64;
   font-weight: 700;
   align-items: center;
   border-radius: 5px;
 }
 
 .add-button:hover {
-  border-color: rgb(144, 0, 255);
-  color: rgb(144, 0, 255);
+  border-color: #add5ff;
+  color: #add5ff;
 }
 
 .order-form {
@@ -1664,7 +1664,7 @@ table {
     }
     input:focus, #shares-input:focus {
       outline: 0;
-      border: 1px solid rgb(255, 80, 0);
+      border: 1px solid #add5ff;
     }
     input:hover, #shares-input:hover {
       background-color: transparent;
@@ -1705,7 +1705,7 @@ table {
       margin-bottom: 12px;
       box-sizing: border-box;
         button {
-          background-color: rgb(163, 203, 0);
+          background-color: #f8cb64;
           height: 48px;
           min-width: 120px;
           line-height: 20px;
@@ -1722,7 +1722,7 @@ table {
             }
         }
         button:hover {
-          background-color: rgb(153, 190, 5);
+          background-color: #add5ff;
         }
     }
 }
@@ -1740,7 +1740,7 @@ table {
       text-align: center;
       box-sizing: border-box;
         span {
-          color: rgb(163, 203, 0);
+          color: #f8cb64;
           font-size: 13px;
           line-height: 20px;
           font-weight: 500;
@@ -1892,6 +1892,7 @@ table {
         font-weight: 50;
         letter-spacing: -0.33px;
         line-height: 28px;
+        // color: #00ff00;
       }
     }
 }
@@ -1905,7 +1906,7 @@ table {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: #a600ffd6;
+    color: #ba7c4d;
     cursor: pointer;
     font-weight: 500;
     outline: none;
@@ -2213,7 +2214,7 @@ table {
   line-height: 20px;
   letter-spacing: -0.1px;
     span {
-      color: rgb(163, 203, 0);
+      color: #f8cb64;
       font-weight: 500;
     }
 }

@@ -52,7 +52,7 @@ class AssetShow extends React.Component {
       showDropdown: false,
       stocksOwned: "",
       investInDropdown: false,
-      buyColor: "#41E538",
+      buyColor: "#ba7c4d",
       sellColor: "black",
       buyClicked: true,
       sellClicked: false,
@@ -76,7 +76,7 @@ class AssetShow extends React.Component {
         "2Y": null,
       },
       hindsight: null,
-      rangeColor: "#41E538",
+      rangeColor: "#ba7c4d",
       hindsightOpacity: 0,
     };
   }
@@ -120,8 +120,8 @@ class AssetShow extends React.Component {
     e.preventDefault();
     this.setState(
       {
-        buyColor: "#41E538",
-        sellColor: "#ff6a26",
+        buyColor: "#ba7c4d",
+        sellColor: "black",
         buyClicked: true,
         sellClicked: false,
         order: { transaction_type: "Buy" },
@@ -137,7 +137,7 @@ class AssetShow extends React.Component {
     e.preventDefault();
     this.setState(
       {
-        sellColor: "#41E538",
+        sellColor: "#ba7c4d",
         buyColor: "black",
         sellClicked: true,
         buyClicked: false,

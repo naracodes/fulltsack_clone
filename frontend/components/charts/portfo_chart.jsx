@@ -77,7 +77,7 @@ class PortfoLineChart extends React.Component {
               <Line
                 type="monotone"
                 dataKey="cash_balance"
-                stroke="#1aee99"
+                stroke="#add5ff"
                 strokeWidth={2}
                 dot={false}
                 connectNulls={true}

@@ -32,7 +32,7 @@ class TinyLineChart extends React.Component {
               <Line
                 type="linear"
                 dataKey="close"
-                stroke="red"
+                stroke={data[0].close - data[data.length - 1].close < 0 ? "#bdecb6" : "#facbd1"}
                 strokeWidth={1}
                 dot={false}
                 connectNulls={true}
