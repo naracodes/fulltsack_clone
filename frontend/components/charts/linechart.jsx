@@ -46,6 +46,10 @@ class AssetLineChart extends React.Component {
       <div>
         Loading...
       </div>
+    } else if (!data.every(data => data.close !== null)) {
+      <div>
+        There was a problem fetching data from IEX Cloud. Please try again.
+      </div>      
     }
     console.log(this.props)
       return (

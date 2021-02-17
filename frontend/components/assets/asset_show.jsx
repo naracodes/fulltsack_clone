@@ -406,7 +406,7 @@ class AssetShow extends React.Component {
     document.removeEventListener("mousedown", this.handleClickOutside_invest); 
     clearHistoricalPrices();
     clearAsset();
-    // clearRating();
+    clearRating();
     // console.log('clearRating called')
     this.setState({hindsight: null});
   }
