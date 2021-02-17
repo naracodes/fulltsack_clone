@@ -59,16 +59,16 @@ class StackedChart extends React.Component {
         />
         {/* <Tooltip /> */}
         {/* <Legend /> */}
-        <Bar dataKey="uv" stackId="a" fill="#41e538">
+        <Bar dataKey="uv" stackId="a" fill="#bdecb6">
           <LabelList fill="white" position="center">{`${numeral(buy).format('0%')} Buy`}</LabelList>
         </Bar>
-        <Bar dataKey="pv" stackId="a" fill="#b5b5b5">
+        <Bar dataKey="pv" stackId="a" fill="#ba7c4d">
           <LabelList fill="white" position="center" dataKey="amt">{`${numeral(hold).format('0%')} Hold`}</LabelList>
         </Bar>
         
           {
             (typeof sell === 'number') ? (
-              <Bar dataKey="pv" stackId="a" fill="red">
+              <Bar dataKey="pv" stackId="a" fill="#facbd1">
                 <LabelList fill="white" position="center" dataKey="amt">{`${numeral(sell).format('0%')} Sell`}</LabelList>
               </Bar>
             ) : null

@@ -600,8 +600,8 @@ table {
       justify-content: center;
     }
     #signup-my-account:hover {
-      background-color: #f8cb64;
-      color: black;
+      background-color: #ba7c4d;
+      color: white;
     }
     .auth-spacer {
       width: 25px;
@@ -1315,7 +1315,7 @@ table {
 
 .account span:hover {
   cursor: pointer;
-  color: rgb(255, 242, 0);
+  color: #ba7c4d;
 }
 
 .portfo-link {
@@ -1326,7 +1326,7 @@ table {
 }
 
 .portfo-link span:hover {
-  color: #add5ff;
+  color: #ba7c4d;
 }
 
 
@@ -2427,22 +2427,22 @@ table {
       cursor: pointer;
     }
     :nth-child(1) {
-      background-color: rgb(251, 96, 0);
+      background-color: #add5ff;
     }
     :nth-child(2) {
-      background-color: rgb(237, 91, 0);
+      background-color: #98c6f7;
     }
     :nth-child(3) {
-      background-color: rgb(210, 82, 2);
+      background-color: #8dc3fc;
     }
     :nth-child(4) {
-      background-color: rgb(180, 69, 0);
+      background-color: #8dc3fc;
     }
     :nth-child(5) {
-      background-color: rgb(162, 62, 0);
+      background-color: #5ba6f6;
     }
     :nth-child(6) {
-      background-color: rgb(140, 54, 0);
+      background-color: #3b93f2;
     }
 }
 
