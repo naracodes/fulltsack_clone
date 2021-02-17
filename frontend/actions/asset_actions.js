@@ -14,6 +14,7 @@ export const RECEIVE_NEWS = "RECEIVE_NEWS";
 export const RECEIVE_RATING = "RECEIVE_RATING";
 export const CLEAR_PRICE = "CLEAR_PRICE";
 export const CLEAR_ASSET = "CLEAR_ASSET";
+export const CLEAR_RATING = "CLEAR_RATING";
 export const CLEAR_HISTORICAL_PRICES = "CLEAR_HISTORICAL_PRICES";
 export const RECEIVE_HISTORICAL_BATCH_PRICES = "RECEIVE_HISTORICAL_BATCH_PRICES";
 
@@ -119,6 +120,12 @@ export const receiveCompanyInfo = company => {
 export const clearPrice = () => {
     return {
         type: CLEAR_PRICE,
+    }
+}
+
+export const clearRating = () => {
+    return {
+        type: CLEAR_RATING,
     }
 }
 

@@ -10,7 +10,8 @@ import {
   fetchRating,
   clearAsset,
   fetchHistoricalPrices,
-  clearHistoricalPrices
+  clearHistoricalPrices,
+  clearRating
 } from "../../actions/asset_actions";
 import { addAssetToWatchlist, deleteAssetFromWatchlist, fetchAllWatchlistAssets } from '../../actions/watchlist_actions';
 import { fetchAssetNews } from "../../actions/news_actions";
@@ -53,6 +54,7 @@ export const mdp = dispatch => {
         fetchAllWatchlistAssets: () => dispatch(fetchAllWatchlistAssets()),
         fetchHistoricalPrices: (ticker, range) => dispatch(fetchHistoricalPrices(ticker, range)),
         clearHistoricalPrices: () => dispatch(clearHistoricalPrices()),
+        clearRating: () => dispatch(clearRating()),
     }
 }
 

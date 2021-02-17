@@ -1,4 +1,4 @@
-import { RECEIVE_ASSET, CLEAR_PRICE, CLEAR_ASSET, RECEIVE_ALL_ASSETS, RECEIVE_COMPANY_INFO,RECEIVE_ASSET_INTRADAY, RECEIVE_RATING, RECEIVE_MULTIPLE_INTRADAY, RECEIVE_1WEEK, RECEIVE_HISTORICAL_BATCH_PRICES } from '../actions/asset_actions';
+import { RECEIVE_ASSET, CLEAR_PRICE, CLEAR_ASSET, RECEIVE_ALL_ASSETS, RECEIVE_COMPANY_INFO,RECEIVE_ASSET_INTRADAY, RECEIVE_RATING, RECEIVE_MULTIPLE_INTRADAY, RECEIVE_1WEEK, RECEIVE_HISTORICAL_BATCH_PRICES, CLEAR_RATING } from '../actions/asset_actions';
 
 const assetsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -35,6 +35,8 @@ const assetsReducer = (oldState = {}, action) => {
             if (!nextState["historicalBatch"]) nextState["historicalBatch"] = {};
             nextState["historicalBatch"][action.range] = Object.assign({}, nextState["historicalBatch"][action.range], action.historicalBatchPrices);
             return nextState;
+        case CLEAR_RATING:
+            return {};
         case CLEAR_ASSET:
             return {};
         default:

@@ -57,7 +57,7 @@ class AssetShow extends React.Component {
       buyClicked: true,
       sellClicked: false,
       buyingPower: null,
-      investOption: "Dollars",
+      investOption: "Shares",
       estQuantity: 0,
       estCost: 0,
       order: {
@@ -401,11 +401,13 @@ class AssetShow extends React.Component {
   }
 
   componentWillUnmount() {
-    const { clearHistoricalPrices, clearAsset } = this.props;
+    const { clearHistoricalPrices, clearAsset, clearRating } = this.props;
     document.removeEventListener("mousedown", this.handleClickOutside);
     document.removeEventListener("mousedown", this.handleClickOutside_invest); 
     clearHistoricalPrices();
     clearAsset();
+    // clearRating();
+    // console.log('clearRating called')
     this.setState({hindsight: null});
   }
 
@@ -848,7 +850,7 @@ class AssetShow extends React.Component {
                                             </span>
                                           </div>
                                           <div className="svg">
-                                            <svg
+                                            {/* <svg
                                               width="27"
                                               height="27"
                                               viewBox="0 0 27 27"
@@ -863,11 +865,11 @@ class AssetShow extends React.Component {
                                                 clipRule="evenodd"
                                                 d="M9.66675 11.6667L13.0001 7.5L16.3334 11.6667H9.66675Z"
                                               ></path>
-                                            </svg>
+                                            </svg> */}
                                           </div>
                                         </div>
                                       </div>
-                                      {this.state.investInDropdown ? (
+                                      {/* {this.state.investInDropdown ? (
                                         <div className="invest-outer">
                                           <div
                                             className="shares-option"
@@ -882,7 +884,7 @@ class AssetShow extends React.Component {
                                             <span>Dollars</span>
                                           </div>
                                         </div>
-                                      ) : null}
+                                      ) : null} */}
                                     </div>
                                   </div>
                                 </div>
