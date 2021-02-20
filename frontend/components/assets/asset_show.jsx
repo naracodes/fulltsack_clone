@@ -562,7 +562,7 @@ class AssetShow extends React.Component {
                       <div className="company-description">
                         <h3>
                           <span className="company-span">
-                            <CustomText numChars={200}>
+                            <CustomText numChars={200} showMoreText={"Read More"} showLessText={"Read Less"}>
                               {asset.description}
                             </CustomText>
                           </span>
