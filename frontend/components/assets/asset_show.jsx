@@ -14,6 +14,7 @@ import {
 import numeral from 'numeral';
 import moment from 'moment';
 import NavBar from "../nav_bar/nav_bar";
+import CustomText from './custom_text';
 
 
 class AssetShow extends React.Component {
@@ -561,7 +562,9 @@ class AssetShow extends React.Component {
                       <div className="company-description">
                         <h3>
                           <span className="company-span">
-                            {asset.description}
+                            <CustomText numChars={200}>
+                              {asset.description}
+                            </CustomText>
                           </span>
                         </h3>
                       </div>
