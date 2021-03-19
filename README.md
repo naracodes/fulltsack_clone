@@ -53,7 +53,6 @@ Unfortunately, the $$$ you will be deposited can't be taken away, but here's wha
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Ruby on Rails](https://rubyonrails.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [React](https://reactjs.org/)
@@ -99,6 +98,9 @@ If running on a local machine is preferred, follow the instructions below.
 <details open="open">
   <summary>At a Glance</summary>
   <ol>
+        <ul>
+            <li><a href="#search">Search</a></li>
+        </ul>
         <details open="open">
             <summary>Registration</summary>
                 <ul>
@@ -126,6 +128,9 @@ If running on a local machine is preferred, follow the instructions below.
         </details>
   </ol>
 </details>
+
+### Search
+The search function in Quiche is extraordinary in that it uses the <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Knuth-Morris-Pratt</a> algorithm.
 
 ### Registration
 #### Sign Up
@@ -170,7 +175,9 @@ If running on a local machine is preferred, follow the instructions below.
 <br>
 
 #### Hindsight
+
 <img src="app/assets/images/readme/hindsight.gif" width="395" height="55">
+<p>Hindsight is a feature that calculates the maximum profit in hindsight based on range with day-close prices as inputs. The calculation is made using <a href="https://brilliant.org/wiki/greedy-algorithm/#:~:text=A%20greedy%20algorithm%20is%20a,to%20solve%20the%20entire%20problem.">Greedy Algorithm</a> and <a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>.</p>
 <br>
 
 ## Contact
