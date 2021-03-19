@@ -29,6 +29,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 <br>
@@ -126,9 +127,6 @@ If running on a local machine is preferred, follow the instructions below.
   </ol>
 </details>
 
-### Contact
-#### naralee0124@gmail.com
-
 ### Registration
 #### Sign Up
 <img src="app/assets/images/readme/sign-up.gif" width="400" height="250">
@@ -174,6 +172,11 @@ If running on a local machine is preferred, follow the instructions below.
 #### Hindsight
 <img src="app/assets/images/readme/hindsight.gif" width="395" height="55">
 <br>
+
+## Contact
+<div>
+    <a href="https://github.com/hurricanenara/quiche/issues">LinkedIn</a>
+</div>
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
