@@ -50,8 +50,6 @@ Unfortunately, the $$$ you will be deposited can't be taken away, but here's wha
 * Gliding smooth historical price charts in multiple ranges
 * Aesthetically soothing pastel themed pages
 
-<br>
-
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
@@ -62,7 +60,7 @@ This section should list any major frameworks that you built your project using.
 
 <!-- GETTING STARTED -->
 ## Getting Started
----
+
 Quiche is availalbe on the web here:
 <a href="https://quichelite.herokuapp.com/#/us/en">Live Demo</a>.
 
@@ -74,7 +72,7 @@ If running on a local machine is preferred, follow the instructions below.
     ```sh
     git clone https://github.com/hurricanenara/quiche.git
     ```
-    or down load from repository home: 
+    or download from repository home: 
     <img align="center" width="200" height="140" src="app/assets/images/readme/download.png">
 
 2. Install necessary modules and packages by running
@@ -96,7 +94,7 @@ If running on a local machine is preferred, follow the instructions below.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
----
+
 <details open="open">
   <summary>At a Glance</summary>
   <ol>
