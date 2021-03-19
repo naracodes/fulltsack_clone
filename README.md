@@ -126,15 +126,16 @@ If running on a local machine is preferred, follow the instructions below.
   </ol>
 </details>
 
+### Contact
+#### naralee0124@gmail.com
+
 ### Registration
 #### Sign Up
 <img src="app/assets/images/readme/sign-up.gif" width="400" height="250">
 <br>
-<br>
 
 #### Sign In
 <img src="app/assets/images/readme/sign-in.gif" width="300" height="250">
-<br>
 <br>
 
 ---
