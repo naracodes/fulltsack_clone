@@ -1,20 +1,11 @@
 import React from "react";
-import ReactTextTransition, { presets } from "react-text-transition";
-import { Link } from "react-router-dom";
 import AssetLineChart from "../charts/linechart";
 import StackedChart from "../charts/rating_chart";
-import CustomTooltip from '../charts/custom_tooltip';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
-import {
-  faAngellist,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 import numeral from 'numeral';
 import moment from 'moment';
 import NavBar from "../nav_bar/nav_bar";
 import CustomText from './custom_text';
+import Spinner from '../ui/Spinner';
 
 
 class AssetShow extends React.Component {
@@ -477,7 +468,7 @@ class AssetShow extends React.Component {
     if (this.state.loading || !portfolio || !assets || !ticker || !assets[ticker] || !assets[ticker].data ) {
       return (
         <div>
-          Loading...
+          <Spinner type="Loader" />
         </div>
       )
     } else {

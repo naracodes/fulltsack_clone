@@ -2,9 +2,8 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import SearchItem from './search_item';
 import AssetShowContainer from '../assets/asset_show_container';
+import Spinner from '../ui/Spinner';
 
 class Search extends React.Component {
   constructor(props) {
@@ -184,7 +183,7 @@ class Search extends React.Component {
     if (this.state.loading) {
       return (
         <div>
-          Loading...
+          <Spinner type="Skinny-loader" />
         </div>
       )
     } else {

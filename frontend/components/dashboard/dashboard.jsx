@@ -1,15 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import AssetLineChart from "../charts/linechart";
 import WatchlistIndexContainer from '../watchlist/watchlist_index_container';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPizzaSlice, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import PortfoLineChart from '../charts/portfo_chart';
 import NavBar from '../nav_bar/nav_bar';
-import { fetchHoldings } from '../../actions/holding_action';
 import numeral from 'numeral';
 import moment from 'moment';
+import Spinner from '../ui/Spinner';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -113,7 +108,7 @@ class Dashboard extends React.Component {
     if (!currentUser || !portfolio.balance || !assetNews) {
       return (
         <div>
-          Loading...
+          <Spinner type="Loader" />
         </div>
       )
     } else {

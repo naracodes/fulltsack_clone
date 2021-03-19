@@ -1,5 +1,6 @@
 import React  from "react";
 import { LineChart, Line, XAxis, YAxis, ReferenceLine } from "recharts";
+import Spinner from '../ui/Spinner';
 
 
 class TinyLineChart extends React.Component {
@@ -20,7 +21,7 @@ class TinyLineChart extends React.Component {
         if (!data) {
           return (
             <div>
-              Loading...
+              <Spinner type="Skinny-loader" />
             </div>
           )
         } else {

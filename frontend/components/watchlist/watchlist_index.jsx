@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import WatchlistIndexItem from './watchlist_index_item';
+import Spinner from '../ui/Spinner';
 
 class WatchlistIndex extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class WatchlistIndex extends React.Component {
         if (this.state.loading || !data.multiple) {
           return (
             <div>
-              Loading...
+              <Spinner type="Skinny-loader" />
             </div>
           )
         } else {

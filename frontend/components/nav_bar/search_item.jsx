@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Spinner from '../ui/Spinner';
 
 const SearchItem = props => {
     const { item } = props;
     if (!item) {
         <div>
-            Loading...
+            <Spinner type="Skinny-loader" />
         </div>
     } else {
         return (

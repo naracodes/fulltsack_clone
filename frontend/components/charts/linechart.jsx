@@ -13,7 +13,7 @@ import {
 } from 'recharts';
 import CustomTooltip from '../charts/custom_tooltip';
 import Odometer from "react-odometerjs";
-import numeral from 'numeral';
+import Spinner from '../ui/Spinner';
 
 class AssetLineChart extends React.Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class AssetLineChart extends React.Component {
     const { data, closePrice, range } = this.props;
     if (!data) {
       <div>
-        Loading...
+        <Spinner type="Loader" />
       </div>
     } else if (!data.every(data => data.close !== null)) {
       <div>
