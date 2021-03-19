@@ -139,6 +139,7 @@ If running on a local machine is preferred, follow the instructions below.
 <img src="app/assets/images/readme/sign-in.gif" width="300" height="250">
 <br>
 <br>
+
 ---
 
 ### Dashboard
@@ -159,29 +160,21 @@ If running on a local machine is preferred, follow the instructions below.
 #### Buy
 <img src="app/assets/images/readme/buy.gif" width="200" height="280">
 <br>
-<br>
 
 #### Sell
 <img src="app/assets/images/readme/sell.gif" width="200" height="280">
-<br>
 <br>
 
 #### Charts
 <img src="app/assets/images/readme/charts.gif" width="410" height="280">
 <br>
-<br>
 
 #### Analyst Ratings
 <img src="app/assets/images/readme/analyst-ratings.png" width="300" height="50">
 <br>
-<br>
 
 #### Hindsight
 <img src="app/assets/images/readme/hindsight.gif" width="395" height="55">
-<br>
-<br>
-
-
 <br>
 
 <!-- ACKNOWLEDGEMENTS -->
