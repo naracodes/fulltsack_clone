@@ -176,7 +176,7 @@ If running on a local machine is preferred, follow the instructions below.
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
----
+
 * [GitHub Pages](https://pages.github.com)
 * [IEX Cloud](https://iexcloud.io/)
 * [Postman](https://www.postman.com/)
