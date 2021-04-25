@@ -70,9 +70,7 @@ const assetsReducer = (oldState = {}, action) => {
       );
       return nextState;
     case CLEAR_RATING:
-      nextState[action.ticker].rating = {};
-      // return {};
-      return nextState;
+      return {};
     case CLEAR_ASSET:
       return {};
     default:
