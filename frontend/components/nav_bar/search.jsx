@@ -1,13 +1,13 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import AssetShowContainer from '../assets/asset_show_container';
-import Spinner from '../ui/Spinner';
+import AssetShowContainer from "../assets/asset_show_container";
+import Spinner from "../ui/Spinner";
 
 class Search extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     // this.handleKeyDown = this.handleKeyDown.bind(this);
     this.renderSuggestion = this.renderSuggestion.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -19,12 +19,14 @@ class Search extends React.Component {
       filtered: null,
       searchVal: "",
       ticker: null,
-    }
+    };
   }
 
   componentDidMount() {
     const { fetchAssets, ticker } = this.props;
-    fetchAssets().then(() => this.setState({loading: false, searchVal: "", ticker}));
+    fetchAssets().then(() =>
+      this.setState({ loading: false, searchVal: "", ticker })
+    );
     document.addEventListener("mousedown", this.handleClickOutside);
   }
 
@@ -32,11 +34,13 @@ class Search extends React.Component {
     document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-  }
+  componentDidUpdate(prevProps, prevState) {}
 
   handleClickOutside(e) {
-    if (this.wrapperRef_search && !this.wrapperRef_search.current.contains(e.target)) {
+    if (
+      this.wrapperRef_search &&
+      !this.wrapperRef_search.current.contains(e.target)
+    ) {
       this.setState({
         searchVal: "",
       });
@@ -45,11 +49,11 @@ class Search extends React.Component {
 
   handleClick(ticker) {
     const { history } = this.props;
-    return e => {
+    return (e) => {
       // history.push(`/stocks/${ticker.toUpperCase()}`);
-      <AssetShowContainer ticker={ticker} />
+      <AssetShowContainer ticker={ticker} />;
       window.localStorage.setItem("nextTicker", ticker);
-    }
+    };
   }
 
   // handleKeyDown(e) {
@@ -65,79 +69,86 @@ class Search extends React.Component {
     const searchVal = e.currentTarget.value;
     this.setState({
       searchVal,
-    })
+    });
   }
 
   kmp(needle) {
-      const lps = new Array(needle.length).fill(0);
+    const lps = new Array(needle.length).fill(0);
     let j = 0;
-    for (let i = 1; i < lps.length;) {
-        if (needle[i] !== needle[j]) {
-            if (j === 0) {
-                i++;
-            } else {
-                j = lps[j - 1];
-            }
-        } else if (needle[i] === needle[j]) {
-            lps[i] = j + 1;
-            j++;
-            i++;
+    for (let i = 1; i < lps.length; ) {
+      if (needle[i] !== needle[j]) {
+        if (j === 0) {
+          i++;
+        } else {
+          j = lps[j - 1];
         }
+      } else if (needle[i] === needle[j]) {
+        lps[i] = j + 1;
+        j++;
+        i++;
+      }
     }
     return lps;
   }
 
   strStr(haystack, needle) {
-      if (needle.length === 0) return 0;
+    if (needle.length === 0) return 0;
     const lps = this.kmp(needle);
     let j = 0;
-    for (let i = 0; i < haystack.length;) {
-        if (haystack[i] === needle[j]) {
-            if (j < needle.length - 1) {
-                i++;
-                j++
-            } else {
-                return i - j;
-            }
-        } else if (haystack[i] !== needle[j]) {
-            if (j === 0) {
-                i++;
-            } else {
-                j = lps[j - 1];
-            }
+    for (let i = 0; i < haystack.length; ) {
+      if (haystack[i] === needle[j]) {
+        if (j < needle.length - 1) {
+          i++;
+          j++;
+        } else {
+          return i - j;
         }
+      } else if (haystack[i] !== needle[j]) {
+        if (j === 0) {
+          i++;
+        } else {
+          j = lps[j - 1];
+        }
+      }
     }
     return -1;
   }
-
-
 
   renderSuggestion(e) {
     const { assets } = this.props;
     if (assets.data.length && this.state.searchVal) {
       // const filtered = assets.data.filter(obj => obj.companyName.toLowerCase().startsWith(this.state.searchVal.toLowerCase()) &&
       //  obj.ticker.toLowerCase().startsWith(this.state.searchVal[0].toLowerCase())).slice(0, 5);
-      const filtered = assets.data.filter(obj => this.strStr(obj.companyName.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0 || this.strStr(obj.ticker.toLowerCase(), this.state.searchVal.toLowerCase()) >= 0).slice(0, 6);
+      const filtered = assets.data
+        .filter(
+          (obj) =>
+            this.strStr(
+              obj.companyName.toLowerCase(),
+              this.state.searchVal.toLowerCase()
+            ) >= 0 ||
+            this.strStr(
+              obj.ticker.toLowerCase(),
+              this.state.searchVal.toLowerCase()
+            ) >= 0
+        )
+        .slice(0, 6);
       return (
         <div className="test-div">
           <h4>Stocks</h4>
-          {
-            filtered.map((stock, i) => {
-              return (                
-                  <NavLink 
-                   key={i}
-                   to={`/stocks/${stock.ticker}`}
-                   className="stock-nav-link"
-                   style={{textDecoration: 'none'}}
-                  >
-                    <div className="each-stock">
-                      <div className="each-stock-ticker">{stock.ticker}</div>
-                      <div className="each=stock-name">{stock.companyName}</div>
-                    </div>
-                  </NavLink>
-              )
-            })
-          }
+          {filtered.map((stock, i) => {
+            return (
+              <NavLink
+                key={i}
+                to={`/stocks/${stock.ticker}`}
+                className="stock-nav-link"
+                style={{ textDecoration: "none" }}>
+                <div className="each-stock">
+                  <div className="each-stock-ticker">{stock.ticker}</div>
+                  <div className="each=stock-name">{stock.companyName}</div>
+                </div>
+              </NavLink>
+            );
+          })}
         </div>
         // <div className="test-div">
         //   <h4>Stocks</h4>
@@ -170,11 +181,9 @@ class Search extends React.Component {
         //       </tbody>
         //   </table>
         // </div>
-      )
+      );
     } else {
-      return (
-        <div></div>
-      )
+      return <div></div>;
     }
   }
 
@@ -185,30 +194,30 @@ class Search extends React.Component {
         <div>
           <Spinner type="Skinny-loader" />
         </div>
-      )
+      );
     } else {
       return (
         <div className="search-outer">
           <div className="search-box">
             <div className="search-inner-box" ref={this.wrapperRef_search}>
               <div className="icon-container">
-                  <div className="magnify">
-                    <span className="search-icon-box">
-                      <FontAwesomeIcon icon={faSearch} className="search-icon" />
-                    </span>
-                  </div>
-                  <input
-                    type="text"
-                    className="search-input"
-                    id="search-bar"
-                    // onKeyDown={this.handleKeyDown}
-                    onChange={this.handleInput}
-                    onFocus={this.handleInput}
-                    tabIndex="0"
-                    placeholder="Search"
-                    autoComplete={"new-password"}
-                  />
+                <div className="magnify">
+                  <span className="search-icon-box">
+                    <FontAwesomeIcon icon={faSearch} className="search-icon" />
+                  </span>
                 </div>
+                <input
+                  type="search"
+                  className="search-input"
+                  id="search-bar"
+                  // onKeyDown={this.handleKeyDown}
+                  onChange={this.handleInput}
+                  onFocus={this.handleInput}
+                  tabIndex="0"
+                  placeholder="Search"
+                  autoComplete={"new-password"}
+                />
+              </div>
               {/* <div className="test-div">
                 <h4>Stocks</h4>
                 <table style={{width: "100%"}}>
@@ -244,12 +253,11 @@ class Search extends React.Component {
                   </tbody>
                 </table>
               </div> */}
-                {this.renderSuggestion()}
+              {this.renderSuggestion()}
             </div>
           </div>
         </div>
-      )
-
+      );
     }
   }
 }
